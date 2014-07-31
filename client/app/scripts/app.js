@@ -47,7 +47,7 @@ angular.module('loopbackApp', [
 .config(function($routeProvider, $httpProvider) {
 
   // Intercept 401 responses and redirect to login screen
-  $httpProvider.interceptors.push(function($q, $location, AppAuth) {
+  $httpProvider.interceptors.push(function($q, $location, AppAuth, $notification) {
     return {
       responseError: function(rejection) {
         console.log('intercepted rejection of ', rejection.config.url, rejection.status);
@@ -60,6 +60,8 @@ angular.module('loopbackApp', [
           if ($location.path() !== '/register') {
             $location.path('/login');
           }
+
+          $notification.warning('Error 401 received', 'We received a 401 error from the API! Redirecting to login');
         }
         return $q.reject(rejection);
       }
