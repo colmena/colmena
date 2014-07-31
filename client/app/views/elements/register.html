@@ -1,0 +1,10 @@
+<form class="form-signin" role="form" ng-submit="register()">
+  <h2 class="form-signin-heading">Register or <a href='#/login'>sign in</a></h2>
+  <div class="alert alert-danger" ng-if="registerError">{{registerError.message}}</div>
+  <input type="text" class="form-control" placeholder="First Name" ng-model="registration.firstName" required>
+  <input type="text" class="form-control" placeholder="Last Name" ng-model="registration.lastName" required>
+  <input type="text" class="form-control" placeholder="Email" ng-model="registration.email" required>
+  <input type="password" class="form-control" placeholder="Password" ng-model="registration.password" required>
+  <input type="password" class="form-control" placeholder="Confrim Password" ng-model="confirmPassword" required>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+</form>

@@ -2,16 +2,43 @@
 
 /**
  * @ngdoc function
- * @name clientApp.controller:MainCtrl
+ * @name loopbackApp.controller:AppCtrl
  * @description
  * # MainCtrl
- * Controller of the clientApp
+ * Controller of the loopbackApp
  */
-angular.module('clientApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+angular.module('loopbackApp')
+  .config(function($stateProvider) {
+    $stateProvider
+    .state('app', {
+      abstract: true,
+      url: '/app',
+      templateUrl: 'views/app.html',
+      controller: 'MainCtrl'
+    });
+  })
+  .controller('MainCtrl', function ($scope, $state, $location, $notification, AppAuth, User) {
+
+    AppAuth.ensureHasCurrentUser(User);
+    $scope.currentUser = AppAuth.currentUser;
+
+    $scope.menuoptions = [{
+      name: 'Home',
+      sref: 'app.home'
+    } , {
+      name: 'Items',
+      sref: 'app.items.list'
+    }];
+
+    $scope.toplinks = [{
+      name: 'Logout',
+      action: function() {
+        User.logout(function() {
+          $scope.currentUser = AppAuth.currentUser = null;
+          $state.go('login');
+          $notification.info('Logged out', 'You are logged out!');
+        });
+      }
+    }];
+
   });

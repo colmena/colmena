@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: SandboxCtrl', function () {
 
   // load the controller's module
   beforeEach(module('loopbackApp'));
 
-  var MainCtrl,
+  var SandboxCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    SandboxCtrl = $controller('SandboxCtrl', {
       $scope: scope
     });
   }));

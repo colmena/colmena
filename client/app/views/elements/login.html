@@ -1,0 +1,14 @@
+<form class="form-signin" role="form" ng-submit="login()">
+  <h2 class="form-signin-heading">Sign in or <a href='#/register'>register</a></h2>
+  <div class="alert alert-danger" ng-if="loginError">{{loginError.message}}</div>
+  <input type="email" class="form-control" placeholder="Email" ng-model="credentials.email" required autofocus>
+  <input type="password" class="form-control" placeholder="Password" ng-model="credentials.password" required>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="remember-me" ng-model="credentials.rememberMe"> Remember me
+    </label>
+  </div>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+</form>

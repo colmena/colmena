@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: ItemsCtrl', function () {
 
   // load the controller's module
   beforeEach(module('loopbackApp'));
 
-  var MainCtrl,
+  var ItemsCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    ItemsCtrl = $controller('ItemsCtrl', {
       $scope: scope
     });
   }));
