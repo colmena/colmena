@@ -1,0 +1,20 @@
+{
+  "name": "item",
+  "plural": "items",
+  "base": "PersistedModel",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
