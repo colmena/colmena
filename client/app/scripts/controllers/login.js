@@ -10,8 +10,8 @@
 angular.module('loopbackApp')
   .controller('LoginCtrl', function ($scope, $routeParams, $location, $notification, User, AppAuth) {
     $scope.credentials = {
-      email: 'foo@bar.com',
-      password: '123456',
+      email: 'admin@admin.com',
+      password: 'admin',
       rememberMe: true
     };
 
