@@ -23,7 +23,7 @@ angular.module('loopbackApp', [
 
 .controller('LayoutCtrl', function ($scope) {
 
-  $scope.appName = "Loopback - Angular - Bootstrap";
+  $scope.appName = "LB-NG-BS";
 
 })
 
