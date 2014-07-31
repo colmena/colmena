@@ -28,6 +28,17 @@ angular.module('loopbackApp')
       controller: 'SandboxCtrl'
     })
 
+    .state('sandbox.users', {
+      url: '/users',
+      template: '<pre>{{users | json}}</pre>',
+      controller: function($scope, User) {
+        $scope.users = User.find({}, function(err, data){
+          console.log(data);
+          return;
+        });
+      }
+    })
+
     ;
   })
   .controller('SandboxCtrl', function ($scope, $notification) {
@@ -42,9 +53,12 @@ angular.module('loopbackApp')
       name: 'Notifications',
       sref: '.notifications'
     } , {
-      name: 'Forms',
-      sref: '.forms'
-    }];
+        name: 'Forms',
+        sref: '.forms'
+    } , {
+      name: 'Users',
+      sref: '.users'
+  }];
 
 
 
