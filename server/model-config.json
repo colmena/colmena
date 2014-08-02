@@ -28,5 +28,9 @@
   "item": {
     "dataSource": "db",
     "public": true
+  },
+  "Note": {
+    "dataSource": "db",
+    "public": true
   }
 }
