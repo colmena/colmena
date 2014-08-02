@@ -355,8 +355,37 @@ module.exports = function (grunt) {
         configFile: 'client/test/karma.conf.js',
         singleRun: true
       }
+    },
+    loopback_angular: {
+      services: {
+        options: {
+          input: 'server/server.js',
+          output: 'client/app/scripts/lb-services.js',
+          apiUrl: 'http://0.0.0.0:3000/api/'
+        }
+      }
+    },
+    docular: {
+      groups: [
+        {
+          groupTitle: 'LoopBack',
+          groupId: 'loopback',
+          sections: [
+            {
+              id: 'lbServices',
+              title: 'LoopBack Services',
+              scripts: [ 'client/app/scripts/lb-services.js' ]
+            }
+          ]
+        }
+      ]
     }
+
   });
+
+  // Load the plugin that provides the "loopback-angular" and "grunt-docular" tasks.
+  grunt.loadNpmTasks('grunt-loopback-angular');
+  grunt.loadNpmTasks('grunt-docular');
 
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
@@ -384,7 +413,7 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test'
-    
+
   ]);
 
   grunt.registerTask('build', [
@@ -407,6 +436,14 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'newer:jshint',
     'test',
+    'loopback_angular',
+    'docular',
     'build'
   ]);
+
+  grunt.registerTask('loopback', [
+    'loopback_angular',
+    'docular'
+  ]);
+
 };
