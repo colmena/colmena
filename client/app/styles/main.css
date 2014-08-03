@@ -4,6 +4,22 @@ body {
   padding-bottom: 20px;
 }
 
+.navbar-default a.navbar-brand {
+  border: 2px solid black;
+  border-radius: 4px;
+  background: gold;
+  font-family: courier;
+  letter-spacing: 5px;
+  color: black;
+  line-height: 16px;
+  padding-left: 18px;
+}
+
+.navbar-default a.navbar-brand:hover {
+  background: #D4AF37;
+  color: white;
+}
+
 .navbar {
   margin-bottom: 20px;
 }
