@@ -58,10 +58,10 @@ angular.module('loopbackApp')
   loadItems();
 
   $scope.delete = function(id) {
-    if (confirm('Are you sure?') === false) {
-      $notification.success('Delete canceled!', 'Yay!!');
-      return false;
-    }
+    // if (confirm('Are you sure?') === false) {
+      // $notification.success('Delete canceled!', 'Yay!!');
+      // return false;
+    // }
     Item.deleteById(id, function() {
       $notification.success('Item deleted', 'Your item is deleted!');
       loadItems();
