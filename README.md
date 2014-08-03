@@ -35,17 +35,21 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
     git clone https://github.com/beeman/lb-ng-bs.git
 
-### Install the Node dependencies:
+### Install the Node packages:
 
     npm install
 
-### Install the Bower dependencies:
+### Install the Bower packages:
 
     bower install
 
 ### Run a test to see if all is well:
 
     grunt
+
+### Clone, install and run in a oneliner
+
+    git clone https://github.com/beeman/lb-ng-bs.git && cd lb-ng-bs && npm install && bower install && grunt && npm start & grunt serve
 
 ## Running
 
