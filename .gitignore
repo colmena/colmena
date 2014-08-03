@@ -4,4 +4,3 @@ dist
 .sass-cache
 bower_components
 client/app/scripts/lb-services.js
-storage
