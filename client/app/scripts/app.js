@@ -23,7 +23,7 @@ angular.module('loopbackApp', [
 
 .controller('LayoutCtrl', function ($scope) {
 
-  $scope.appName = "LB-NG-BS";
+  $scope.appName = 'LB-NG-BS';
 
 })
 
