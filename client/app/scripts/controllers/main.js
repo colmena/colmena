@@ -17,7 +17,7 @@ angular.module('loopbackApp')
       controller: 'MainCtrl'
     });
   })
-  .controller('MainCtrl', function ($scope, $state, $location, $notification, AppAuth, User) {
+  .controller('MainCtrl', function ($scope, $state, $location, toasty, AppAuth, User) {
 
     AppAuth.ensureHasCurrentUser(User);
     $scope.currentUser = AppAuth.currentUser;
@@ -39,7 +39,7 @@ angular.module('loopbackApp')
         User.logout(function() {
           $scope.currentUser = AppAuth.currentUser = null;
           $state.go('login');
-          $notification.info('Logged out', 'You are logged out!');
+          toasty.pop.success({title: 'Logged out', msg: 'You are logged out!', sound: false});
         });
       }
     }];

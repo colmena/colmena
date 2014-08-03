@@ -11,9 +11,9 @@
     "angular-animate": "1.2.21",
     "angular-touch": "1.2.21",
     "angular-ui-router": "~0.2.10",
-    "angular-notifications": "git://github.com/beeman/angular-notifications.git",
     "font-awesome": "~4.1.0",
-    "angular-formly": "~0.0.14"
+    "angular-formly": "~0.0.14",
+    "angular-toasty": "git@github.com:beeman/angular-toasty.git"
   },
   "devDependencies": {
     "angular-mocks": "1.2.21",

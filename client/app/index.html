@@ -10,9 +10,8 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/angular-toasty/css/ng-toasty.css" />
     <!-- endbower -->
-
-    <link rel="stylesheet" href="bower_components/angular-notifications/notification.css" />
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
@@ -23,7 +22,9 @@
     <div class="container">
       <div ui-view></div>
     </div>
-    <div notifications="bottom right"></div>
+    <div ng-controller="toasty-controller">
+      <toasty-container toasty-defaults='{"timeout": 3000, "close-button":true, "sound": false}'></toasty-container>
+    </div>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -37,8 +38,8 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/angular-notifications/notification.js"></script>
     <script src="bower_components/angular-formly/dist/formly.min.js"></script>
+    <script src="bower_components/angular-toasty/js/ng-toasty.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

@@ -16,9 +16,9 @@ angular.module('loopbackApp')
       controller: 'SandboxCtrl'
     })
 
-    .state('sandbox.notifications', {
+    .state('sandbox.toasts', {
       url: '',
-      templateUrl: 'views/sandbox/notifications.html',
+      templateUrl: 'views/sandbox/toasts.html',
       controller: 'SandboxCtrl'
     })
 
@@ -41,38 +41,31 @@ angular.module('loopbackApp')
 
     ;
   })
-  .controller('SandboxCtrl', function ($scope, $notification) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('SandboxCtrl', function ($scope, toasty) {
 
 
     $scope.items = [{
-      name: 'Notifications',
-      sref: '.notifications'
+      name: 'Toasts',
+      sref: '.toasts'
     } , {
-        name: 'Forms',
-        sref: '.forms'
+      name: 'Forms',
+      sref: '.forms'
     } , {
       name: 'Users',
       sref: '.users'
-  }];
+    }];
 
-
-
-    $scope.notification = {
+    $scope.toasty = {
       title: 'Notify me!',
       text: 'This is the body!'
     };
 
-
-    $scope.notify = function() {
-      $notification.info($scope.notification.title, $scope.notification.text, $scope.notification);
-      $notification.error($scope.notification.title, $scope.notification.text);
-      $notification.success($scope.notification.title, $scope.notification.text);
-      $notification.warning($scope.notification.title, $scope.notification.text);
+    $scope.toast = function() {
+      toasty.pop.success({title: $scope.toasty.title, msg: $scope.toasty.text, sound: false});
+      toasty.pop.warning({title: $scope.toasty.title, msg: $scope.toasty.text, sound: false});
+      toasty.pop.wait({title: $scope.toasty.title, msg: $scope.toasty.text, sound: false});
+      toasty.pop.error({title: $scope.toasty.title, msg: $scope.toasty.text, sound: false});
+      toasty.pop.info({title: $scope.toasty.title, msg: $scope.toasty.text, sound: false});
     };
 
 

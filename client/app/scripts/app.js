@@ -17,8 +17,8 @@ angular.module('loopbackApp', [
   'ngTouch',
   'ui.router',
   'lbServices',
-  'notifications',
-  'formly'
+  'formly',
+  'toasty'
 ])
 
 .controller('LayoutCtrl', function ($scope) {
@@ -47,7 +47,7 @@ angular.module('loopbackApp', [
 .config(function($routeProvider, $httpProvider) {
 
   // Intercept 401 responses and redirect to login screen
-  $httpProvider.interceptors.push(function($q, $location, AppAuth, $notification) {
+  $httpProvider.interceptors.push(function($q, $location, AppAuth, toasty) {
     return {
       responseError: function(rejection) {
         console.log('intercepted rejection of ', rejection.config.url, rejection.status);
@@ -61,7 +61,7 @@ angular.module('loopbackApp', [
             $location.path('/login');
           }
 
-          $notification.warning('Error 401 received', 'We received a 401 error from the API! Redirecting to login');
+          toasty.warning({title: 'Error 401 received', msg: 'We received a 401 error from the API! Redirecting to login', sound: false});
         }
         return $q.reject(rejection);
       }

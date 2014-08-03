@@ -8,7 +8,7 @@
  * Controller of the loopbackApp
  */
 angular.module('loopbackApp')
-  .controller('LoginCtrl', function ($scope, $routeParams, $location, $notification, User, AppAuth) {
+  .controller('LoginCtrl', function ($scope, $routeParams, $location, toasty, User, AppAuth) {
     $scope.credentials = {
       email: 'admin@admin.com',
       password: 'admin',
@@ -24,15 +24,13 @@ angular.module('loopbackApp')
           var next = $location.nextAfterLogin || '/';
           $location.nextAfterLogin = null;
           AppAuth.currentUser = $scope.loginResult.user;
-          $notification.success('Logged in', 'You are logged in!');
-
+          toasty.pop.success({title: 'Logged in', msg: 'You are logged in!', sound: false});
           if(next === '/login') {
             next = '/';
           }
           $location.path(next);
         },
         function(res) {
-          $notification.warning('Error signin in!', res.data.error.message);
           $scope.loginError = res.data.error;
         }
       );
@@ -60,18 +58,18 @@ angular.module('loopbackApp')
             }, $scope.registration,
             function() {
               AppAuth.currentUser = $scope.loginResult.user;
-              $notification.success('Registered', 'You are registered!');
+              toasty.pop.success({title: 'Registered', msg: 'You are registered!', sound: false});
               $location.path('/');
             },
             function(res) {
-              $notification.warning('Error signin in after registration!', res.data.error.message);
+              toasty.pop.warning({title: 'Error signin in after registration!', msg: res.data.error.message, sound: false});
               $scope.loginError = res.data.error;
             }
           );
 
         },
         function(res) {
-          $notification.warning('Error registering!', res.data.error.message);
+          toasty.pop.error({title: 'Error registering!', msg: res.data.error.message, sound: false});
           $scope.registerError = res.data.error;
         }
       );

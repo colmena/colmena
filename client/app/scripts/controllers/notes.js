@@ -38,7 +38,7 @@ angular.module('loopbackApp')
     });
   })
 
-  .controller('NotesCtrl', function($scope, $state, $stateParams, $notification, Note) {
+  .controller('NotesCtrl', function($scope, $state, $stateParams, toasty, Note) {
 
   var noteId = $stateParams.id;
 
@@ -60,16 +60,15 @@ angular.module('loopbackApp')
 
   $scope.delete = function(id) {
     // if (confirm('Are you sure?') === false) {
-    //   $notification.success('Delete canceled!', 'Yay!!');
     //   return false;
     // }
     Note.deleteById(id, function() {
-      $notification.success('Note deleted', 'Your note is deleted!');
+      toasty.pop.success({title: 'Note deleted', msg: 'Your note is deleted!', sound: false});
       loadItems();
       $state.go('app.notes.list');
       console.log();
     }, function(err) {
-      $notification.success('Error deleting note', 'Your note is note deleted! ' + err);
+      toasty.pop.error({title: 'Error deleting note', msg: 'Your note is not deleted!', sound: false});
     });
 
   };
@@ -94,7 +93,7 @@ angular.module('loopbackApp')
 
   $scope.onSubmit = function() {
     Note.upsert($scope.note, function() {
-      $notification.success('Note saved', 'Your note is safe with us!');
+      toasty.pop.success({title: 'Note saved', msg: 'Your note is safe with us!', sound: false});
       $state.go('^.list');
     }, function(err) {
       console.log(err);

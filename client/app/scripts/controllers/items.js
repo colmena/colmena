@@ -37,7 +37,7 @@ angular.module('loopbackApp')
     });
   })
 
-.controller('ItemsCtrl', function($scope, $state, $stateParams, $notification, Item) {
+.controller('ItemsCtrl', function($scope, $state, $stateParams, toasty, Item) {
 
   var itemId = $stateParams.id;
 
@@ -59,16 +59,15 @@ angular.module('loopbackApp')
 
   $scope.delete = function(id) {
     // if (confirm('Are you sure?') === false) {
-      // $notification.success('Delete canceled!', 'Yay!!');
       // return false;
     // }
     Item.deleteById(id, function() {
-      $notification.success('Item deleted', 'Your item is deleted!');
+      toasty.pop.success({title: 'Item deleted', msg: 'Your item is deleted!', sound: false});
       loadItems();
       $state.go('app.items.list');
       console.log();
     }, function(err) {
-      $notification.success('Error deleting item', 'Your item is note deleted! ' + err);
+      toasty.pop.error({title: 'Error deleting item', msg: 'Your item is not deleted!', sound: false});
     });
 
   };
@@ -102,7 +101,7 @@ angular.module('loopbackApp')
   $scope.onSubmit = function() {
 
     Item.upsert($scope.item, function() {
-      $notification.success('Item added', 'Your item is safe with us!');
+      toasty.pop.success({title: 'Item saved', msg: 'Your item is safe with us!', sound: false});
       $state.go('^.list');
     }, function(err) {
       console.log(err);
