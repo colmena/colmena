@@ -25,6 +25,7 @@
     "grunt": "^0.4.5",
     "loopback": "^2.0.0",
     "loopback-boot": "^2.0.0",
+    "loopback-component-storage": "^1.0.5",
     "loopback-datasource-juggler": "^2.0.0",
     "serve-favicon": "^2.0.1"
   },

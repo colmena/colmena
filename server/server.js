@@ -11,6 +11,15 @@ app.use(loopback.compress());
 
 // -- Add your pre-processing middleware here --
 
+var ds = loopback.createDataSource({
+    connector: require('loopback-component-storage'),
+    provider: 'filesystem',
+    root: path.join(__dirname, '../', 'storage')
+});
+var container = ds.createModel('container');
+
+app.model(container);
+
 // boot scripts mount components like REST API
 boot(app, __dirname);
 

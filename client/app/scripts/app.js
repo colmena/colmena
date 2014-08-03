@@ -18,7 +18,8 @@ angular.module('loopbackApp', [
   'ui.router',
   'lbServices',
   'formly',
-  'toasty'
+  'toasty',
+  'angularFileUpload'
 ])
 
 .controller('LayoutCtrl', function ($scope) {
