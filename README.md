@@ -10,7 +10,7 @@ it beholds of. I'm open to suggestions for a better name.
 ## Goal
 
 My goal is to have a starter project which can be used to quickly build an API
-with a frontend that is easily extendable.
+with a frontend that are easily extendable.
 
 ## Features
 
@@ -19,10 +19,10 @@ with a frontend that is easily extendable.
 - Angular UI-Router
 - JSON-based based forms by [angular-formly](https://github.com/nimbly/angular-formly)
 - Notifications by [angular-toasty](https://github.com/Salakar/angular-toasty)
+- File upload with [Loopback storage services](https://github.com/strongloop/loopback-component-storage/)
 
 ### Soon to come:
 
-- File upload
 - Social authentication based on Passport.
 
 ## Installation
