@@ -67,7 +67,7 @@ angular.module('loopbackApp')
       $state.go('app.items.list');
       console.log();
     }, function(err) {
-      toasty.pop.error({title: 'Error deleting item', msg: 'Your item is not deleted!', sound: false});
+      toasty.pop.error({title: 'Error deleting item', msg: 'Your item is not deleted: ' + err, sound: false});
     });
 
   };

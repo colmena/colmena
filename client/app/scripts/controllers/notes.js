@@ -68,7 +68,7 @@ angular.module('loopbackApp')
       $state.go('app.notes.list');
       console.log();
     }, function(err) {
-      toasty.pop.error({title: 'Error deleting note', msg: 'Your note is not deleted!', sound: false});
+      toasty.pop.error({title: 'Error deleting note', msg: 'Your note is not deleted: ' + err, sound: false});
     });
 
   };
