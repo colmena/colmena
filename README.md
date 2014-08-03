@@ -9,7 +9,7 @@ it beholds of. I'm open to suggestions for a better name.
 
 ## Goal
 
-My goals is to have a starter project which can be used to quickly build an API
+My goal is to have a starter project which can be used to quickly build an API
 with a frontend that is easily extendable.
 
 ## Features
