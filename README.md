@@ -1,16 +1,6 @@
-# LoopBack-aNGular-BootStrap
+# loopback-angular-admin
 
-This is my Sandbox-project to play around connecting a
-[Loopback API](http://loopback.io) to an [AngularJS](https://angularjs.org/)
-gui which is spiced up by [Bootstrap](http://getbootstrap.com/).
-
-The name of the project is totally uninspired but I figured it does say what
-it beholds of. I'm open to suggestions for a better name.
-
-## Goal
-
-My goal is to have a starter project which can be used to quickly build an API
-with a frontend that are easily extendable.
+The goal is to have a starter project which can be used to quickly build an API with a frontend that are easily extended.
 
 ## Features
 
@@ -36,7 +26,7 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
 ### Checkout this project:
 
-    git clone https://github.com/beeman/lb-ng-bs.git
+    git clone https://github.com/beeman/loopback-angular-admin.git
 
 ### Install the Node packages:
 
@@ -52,7 +42,7 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
 ### Clone, install and run in a oneliner
 
-    git clone https://github.com/beeman/lb-ng-bs.git && cd lb-ng-bs && npm install && bower install && grunt && npm start & grunt serve
+    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && bower install && grunt && npm start & grunt serve
 
 ## Running
 
@@ -90,4 +80,4 @@ The GUI is built with [generator-angular](https://www.npmjs.org/package/generato
 
 These should help you quickly add code to your project. Further details tailored to this project might follow in the future.
 
-If you have any problems please [contact me](https://github.com/beeman/lb-ng-bs/issues).
+If you have any problems please [contact me](https://github.com/beeman/loopback-angular-admin/issues).
