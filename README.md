@@ -22,9 +22,10 @@ with a frontend that are easily extendable.
 - File upload with [Loopback storage services](https://github.com/strongloop/loopback-component-storage/)
 - Admin themplate powered by [SB-Admin](http://startbootstrap.com/template-overviews/sb-admin/)
 
-### Soon to come:
+### TODO:
 
 - Social authentication based on Passport.
+- Detect if API is online
 
 ## Installation
 
