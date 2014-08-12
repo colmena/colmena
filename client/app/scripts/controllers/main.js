@@ -38,6 +38,10 @@ angular.module('loopbackApp')
       name: 'Notes',
       sref: 'app.notes.list',
       icon: 'fa-file'
+    } , {
+      name: 'Settings',
+      sref: 'app.settings.list',
+      icon: 'fa-cog'
     }];
 
     $scope.toplinks = [{
