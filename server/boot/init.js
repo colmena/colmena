@@ -42,4 +42,20 @@ module.exports = function(app) {
   });
 
 
+
+  var Category = app.models.Category;
+  var Product = app.models.Product;
+
+  Category.create({
+    name: 'General Products'
+  }, function (err, category) {
+    if(err) { console.log('err', err); }
+      Product.create({name: 'Generic product', categoryId: category.id}, function (err, data) {
+        console.log(data);
+      });
+      Product.create({name: 'Specific product', categoryId: category.id}, function (err, data) {
+        console.log(data);
+      });
+  });
+
 };
