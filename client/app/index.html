@@ -14,14 +14,17 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+
+    <link rel="stylesheet" href="styles/sb-admin.css" >
+    <link rel="stylesheet" href="styles/maisn.css">
     <!-- endbuild -->
   </head>
   <body>
 
-    <div class="container">
-      <div ui-view></div>
+    <div class="container-fluid">
+        <div ui-view></div>
     </div>
+
     <div ng-controller="toasty-controller">
       <toasty-container toasty-defaults='{"timeout": 3000, "close-button":true, "sound": false}'></toasty-container>
     </div>

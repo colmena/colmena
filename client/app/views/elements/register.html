@@ -1,10 +1,20 @@
-<form class="form-signin" role="form" ng-submit="register()">
-  <h2 class="form-signin-heading">Register or <a href='#/login'>sign in</a></h2>
-  <div class="alert alert-danger" ng-if="registerError">{{registerError.message}}</div>
-  <input type="text" class="form-control" placeholder="First Name" ng-model="registration.firstName" required>
-  <input type="text" class="form-control" placeholder="Last Name" ng-model="registration.lastName" required>
-  <input type="text" class="form-control" placeholder="Email" ng-model="registration.email" required>
-  <input type="password" class="form-control" placeholder="Password" ng-model="registration.password" required>
-  <input type="password" class="form-control" placeholder="Confrim Password" ng-model="confirmPassword" required>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-</form>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Register or <a href='#/login'>sign in</a></h3>
+      </div>
+      <div class="panel-body">
+        <form class="form-signin" role="form" ng-submit="register()">
+          <div class="alert alert-danger" ng-if="registerError">{{registerError.message}}</div>
+          <input type="text" class="form-control" placeholder="First Name" ng-model="registration.firstName" required>
+          <input type="text" class="form-control" placeholder="Last Name" ng-model="registration.lastName" required>
+          <input type="text" class="form-control" placeholder="Email" ng-model="registration.email" required>
+          <input type="password" class="form-control" placeholder="Password" ng-model="registration.password" required>
+          <input type="password" class="form-control" placeholder="Confrim Password" ng-model="confirmPassword" required>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

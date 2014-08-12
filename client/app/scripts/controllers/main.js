@@ -23,21 +23,26 @@ angular.module('loopbackApp')
     $scope.currentUser = AppAuth.currentUser;
 
     $scope.menuoptions = [{
-      name: 'Home',
-      sref: 'app.home'
+      name: 'Dashboard',
+      sref: 'app.home',
+      icon: 'fa-dashboard'
     } , {
       name: 'Posts',
-      sref: 'app.posts.list'
+      sref: 'app.posts.list',
+      icon: 'fa-file'
     } , {
       name: 'Items',
-      sref: 'app.items.list'
+      sref: 'app.items.list',
+      icon: 'fa-file'
     } , {
       name: 'Notes',
-      sref: 'app.notes.list'
+      sref: 'app.notes.list',
+      icon: 'fa-file'
     }];
 
     $scope.toplinks = [{
       name: 'Logout',
+      icon: 'fa-power-off',
       action: function() {
         User.logout(function() {
           $scope.currentUser = AppAuth.currentUser = null;

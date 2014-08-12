@@ -1,16 +1,28 @@
 <div ng-controller="MainCtrl">
 
-  <navbar></navbar>
 
-  <div class="row">
-    <div class="col-md-2">
-      <div class='list-group'>
-        <a ng-repeat="item in menuoptions" class="list-group-item" href="" ui-sref="{{item.sref}}">{{item.name}}</a>
-      </div>
+
+    <div id="wrapper">
+
+
+
+        <navbar></navbar>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                  <div ui-view></div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
     </div>
-    <div class="col-md-10">
-      <div ui-view></div>
-    </div>
-  </div>
+    <!-- /#wrapper -->
+
+
 
 </div>
