@@ -9,9 +9,9 @@
       </a>
     </span>
     <h4 class="list-group-item-heading">
-      <a href="" ui-sref="^.view({id: item.id})">{{item.title}}</a>
+      <a href="" ui-sref="^.view({id: item.id})">{{item.name}}</a>
     </h4>
-    <p class="list-group-item-text">{{item.body}}</p>
+    <p class="list-group-item-text">{{item | json}}</p>
   </div>
   <div ng-show="!products.length" class="list-group-item">
     <h4 class="list-group-item-heading">
