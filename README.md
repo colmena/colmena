@@ -27,6 +27,7 @@ with a frontend that are easily extendable.
 - Social authentication based on Passport.
 - Detect if API is online
 
+
 ## Installation
 
 ### Dependencies
