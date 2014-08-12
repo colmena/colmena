@@ -29,23 +29,27 @@ angular.module('loopbackApp')
     } , {
       name: 'Posts',
       sref: 'app.posts.list',
-      icon: 'fa-file'
+      icon: 'fa-edit'
     } , {
       name: 'Items',
       sref: 'app.items.list',
-      icon: 'fa-file'
+      icon: 'fa-file-o'
     } , {
       name: 'Notes',
       sref: 'app.notes.list',
-      icon: 'fa-file'
+      icon: 'fa-file-o'
     } , {
       name: 'Categories',
       sref: 'app.categories.list',
-      icon: 'fa-file'
+      icon: 'fa-folder'
     } , {
       name: 'Products',
       sref: 'app.products.list',
       icon: 'fa-file'
+    } , {
+      name: 'Sandbox',
+      sref: 'app.sandbox.index',
+      icon: 'fa-inbox'
     } , {
       name: 'Settings',
       sref: 'app.settings.list',

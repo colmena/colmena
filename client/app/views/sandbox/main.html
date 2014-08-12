@@ -1,16 +1,18 @@
-<div ng-controller="MainCtrl">
 
-  <navbar></navbar>
+<h2 class="page-header">
+  Sandbox
+  <small>Try your sand here!</small>
+</h2>
 
-  <div class="row">
-    <div class="col-md-2">
-      <div class='list-group'>
-        <a ng-repeat="item in items" class="list-group-item" href="" ui-sref="{{item.sref}}">{{item.name}}</a>
-      </div>
-    </div>
-    <div class="col-md-10">
-      <div ui-view></div>
-    </div>
+<div class="row">
+  <div class="col-md-2">
+    <ul class="nav nav-pills nav-stacked">
+      <li ng-repeat="item in items" ui-sref-active="active" >
+        <a href="" ui-sref="{{item.sref}}">{{item.name}}</a>
+      </li>
+    </ul>
   </div>
-
+  <div class="col-md-10">
+    <div ui-view></div>
+  </div>
 </div>

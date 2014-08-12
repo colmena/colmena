@@ -6,7 +6,14 @@
 
 <div ui-view></div>
 
-<a href="" ui-sref="sandbox.toasts" class='btn btn-default'>Sandbox</a>
+<div class="row">
+  <div class="col-md-6">
+    <h4>Current user</h4>
+    <pre>{{currentUser | json}}</pre>
+  </div>
 
-<hr>
-<pre>{{currentUser | json}}</pre>
+  <div class="col-md-6">
+    <h4>Settings</h4>
+    <pre>{{settings | json}}</pre>
+  </div>
+</div>

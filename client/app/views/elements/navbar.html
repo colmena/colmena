@@ -18,7 +18,7 @@
     </ul>
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav side-nav">
-            <li ng-repeat="item in menuoptions">
+            <li ng-repeat="item in menuoptions" ui-sref-active="active">
               <a class="" href="" ui-sref="{{item.sref}}"><i class="fa fa-fw {{item.icon}}"></i> {{item.name}}</a>
             </li>
         </ul>

@@ -9,32 +9,37 @@
  */
 angular.module('loopbackApp')
   .config(function($stateProvider) {
-    $stateProvider.state('sandbox', {
+    $stateProvider.state('app.sandbox', {
       abstract: true,
       url: '/sandbox',
       templateUrl: 'views/sandbox/main.html',
       controller: 'SandboxCtrl'
     })
 
-    .state('sandbox.toasts', {
+    .state('app.sandbox.index', {
       url: '',
+      templateUrl: 'views/sandbox/index.html',
+      controller: 'SandboxCtrl'
+    })
+    .state('app.sandbox.toasts', {
+      url: '/toasts',
       templateUrl: 'views/sandbox/toasts.html',
       controller: 'SandboxCtrl'
     })
 
-    .state('sandbox.forms', {
+    .state('app.sandbox.forms', {
       url: '/forms',
       templateUrl: 'views/sandbox/forms.html',
       controller: 'SandboxCtrl'
     })
 
-    .state('sandbox.storage', {
+    .state('app.sandbox.storage', {
       url: '/storage',
       templateUrl: 'views/sandbox/storage.html',
       controller: 'SandboxCtrl'
     })
 
-    .state('sandbox.users', {
+    .state('app.sandbox.users', {
       url: '/users',
       template: '<pre>{{users | json}}</pre>',
       controller: function($scope, User) {
@@ -48,6 +53,9 @@ angular.module('loopbackApp')
   .controller('SandboxCtrl', function($scope, $http, toasty) {
 
     $scope.items = [{
+      name: 'Index',
+      sref: '.index'
+    }, {
       name: 'Toasts',
       sref: '.toasts'
     }, {
@@ -56,9 +64,6 @@ angular.module('loopbackApp')
     }, {
       name: 'Storage',
       sref: '.storage'
-    }, {
-      name: 'Users',
-      sref: '.users'
     }];
 
     $scope.toasty = {
