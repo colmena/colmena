@@ -58,4 +58,14 @@ module.exports = function(app) {
       });
   });
 
+  var Setting = app.models.Setting;
+
+  Setting.create({
+    key: 'appName',
+    value: 'Loopback-Angular-Admin'
+  }, function (err, data) {
+    if(err) { console.log('err', err); }
+    console.log(data);
+  });
+
 };
