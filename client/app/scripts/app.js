@@ -22,9 +22,23 @@ angular.module('loopbackApp', [
   'angularFileUpload'
 ])
 
-.controller('LayoutCtrl', function ($scope) {
+.controller('LayoutCtrl', function ($scope, Setting) {
 
   $scope.appName = 'LB-NG-BS';
+
+  $scope.settings = {};
+
+  Setting.find(function(settings){
+    settings.forEach(function(item){
+      console.log('item');
+      console.log(item);
+      $scope.settings[item.key] = item.value;
+    });
+
+
+    console.log($scope.settings);
+  });
+
 
 })
 
