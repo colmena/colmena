@@ -20,6 +20,7 @@ with a frontend that are easily extendable.
 - JSON-based based forms by [angular-formly](https://github.com/nimbly/angular-formly)
 - Notifications by [angular-toasty](https://github.com/Salakar/angular-toasty)
 - File upload with [Loopback storage services](https://github.com/strongloop/loopback-component-storage/)
+- Admin themplate powered by [SB-Admin](http://startbootstrap.com/template-overviews/sb-admin/)
 
 ### Soon to come:
 
