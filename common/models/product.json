@@ -5,10 +5,18 @@
   "properties": {
     "name": {
       "type": "string"
+    },
+    "categoryId": {
+      "type": "string"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "category": {
+      "model": "Category",
+      "type": "belongsTo"
+    }
+  },
   "acls": [],
   "methods": []
 }
