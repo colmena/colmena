@@ -79,9 +79,14 @@ angular.module('loopbackApp')
     label: 'Title',
     required: true
   }, {
-    key: 'body',
+    key: 'content',
+    type: 'textarea',
+    label: 'Content',
+    required: true
+  }, {
+    key: 'image',
     type: 'text',
-    label: 'Body',
+    label: 'image',
     required: true
   }];
 
