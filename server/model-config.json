@@ -40,5 +40,13 @@
   "Setting": {
     "dataSource": "db",
     "public": true
+  },
+  "Product": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Category": {
+    "dataSource": "db",
+    "public": true
   }
 }

@@ -39,6 +39,14 @@ angular.module('loopbackApp')
       sref: 'app.notes.list',
       icon: 'fa-file'
     } , {
+      name: 'Categories',
+      sref: 'app.categories.list',
+      icon: 'fa-file'
+    } , {
+      name: 'Products',
+      sref: 'app.products.list',
+      icon: 'fa-file'
+    } , {
       name: 'Settings',
       sref: 'app.settings.list',
       icon: 'fa-cog'
