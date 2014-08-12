@@ -1,0 +1,15 @@
+<h4>
+  <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+
+  <span ng-show="!post.id">Add a new post</span>
+  <span ng-show="post.id">Edit post</span>
+
+</h4>
+
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="alert alert-danger" ng-if="addError">Could not add post!</div>
+    <formly-form result="post" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
+  </div>
+</div>

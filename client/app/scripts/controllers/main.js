@@ -26,6 +26,9 @@ angular.module('loopbackApp')
       name: 'Home',
       sref: 'app.home'
     } , {
+      name: 'Posts',
+      sref: 'app.posts.list'
+    } , {
       name: 'Items',
       sref: 'app.items.list'
     } , {
