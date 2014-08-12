@@ -1,0 +1,32 @@
+<div class="" style="margin-bottom: 40px" ng-controller="FilesCtrl" data-ng-init="load()">
+
+  <div class='list-group'>
+
+
+    <table class="table table-bordererd">
+      <tbody>
+        <tr ng-repeat="file in files">
+          <td>
+            <a href="http://localhost:3000/api/containers/container1/download/{{file.name}}"><strong>{{file.name }}</strong></a>
+          </td>
+          <td>
+            <td>
+              <button type="button" class="btn btn-danger btn-xs" ng-click="delete($index, file.name)" title="Delete the file">
+                <span class="fa fa-trash-o"></span>
+
+              </button>
+            </td>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div ng-show="!files.length" class="list-group-item">
+      <h4 class="list-group-item-heading">
+      There are no files
+      </h4>
+      <p class="list-group-item-text">Click <a href="" ui-sref="^.upload">here</a> to upload some!</p>
+    </div>
+  </div>
+</div>

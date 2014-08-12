@@ -47,6 +47,10 @@ angular.module('loopbackApp')
       sref: 'app.products.list',
       icon: 'fa-file'
     } , {
+      name: 'Files',
+      sref: 'app.files.list',
+      icon: 'fa-file-o'
+    } , {
       name: 'Sandbox',
       sref: 'app.sandbox.index',
       icon: 'fa-inbox'
