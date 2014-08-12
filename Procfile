@@ -1,1 +1,2 @@
-web: npm start
+serve: npm run dev
+grunt: grunt serve
