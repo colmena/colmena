@@ -1,13 +1,13 @@
 {
-  "name": "lb-ng-bs",
-  "description": "Loopback 2.x + AngularJS 1.x + Bootstrap 3.x",
-  "version": "0.0.0",
+  "name": "loopback-angular-admin",
+  "description": "Quickly create admin interfaces on a Loopback 2.0 API",
+  "version": "0.0.2",
   "homepage": "https://github.com/beeman/express-pinger",
   "author": "Bram Borggreve <borggreve@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/beeman/lb-ng-bs"
+    "url": "https://github.com/beeman/loopback-angular-admin"
   },
   "bugs": {
     "url": "https://github.com/beeman/express-pinger/issues"
