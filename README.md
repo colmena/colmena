@@ -10,13 +10,14 @@ The goal is to have a starter project which can be used to quickly build an API 
 - JSON-based based forms by [angular-formly](https://github.com/nimbly/angular-formly)
 - Notifications by [angular-toasty](https://github.com/Salakar/angular-toasty)
 - File upload with [Loopback storage services](https://github.com/strongloop/loopback-component-storage/)
-- Admin themplate powered by [SB-Admin](http://startbootstrap.com/template-overviews/sb-admin/)
+- Admin template powered by [SB-Admin](http://startbootstrap.com/template-overviews/sb-admin/)
 
 ### TODO:
 
 - Social authentication based on Passport.
 - Detect if API is online
-
+- Change template to [Ehesp/Responsive-Dashboard](https://github.com/Ehesp/Responsive-Dashboard)
+- Loading indicators
 
 ## Installation
 
