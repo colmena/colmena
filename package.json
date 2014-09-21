@@ -61,7 +61,7 @@
     "grunt-ngmin": "^0.0.3",
     "grunt-svgmin": "^0.4.0",
     "grunt-usemin": "^2.3.0",
-    "grunt-wiredep": "^1.8.0",
+    "grunt-wiredep": "^1.9.0",
     "jshint-stylish": "^0.4.0",
     "karma": "^0.12.21",
     "karma-jasmine": "^0.1.5",
