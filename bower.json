@@ -20,6 +20,14 @@
     "angular-mocks": "1.2.21",
     "angular-scenario": "1.2.21"
   },
+  "overrides": {
+    "angular-formly": {
+      "main": [
+        "dist/formly.bootstrap.min.js",
+        "dist/formly.bootstrap.map.js"
+      ]
+    }  
+  },
   "appPath": "client/app/",
   "resolutions": {
     "angular": "1.2.21"
