@@ -25,7 +25,7 @@
     "dataSource": "db",
     "public": false
   },
-  "item": {
+  "Page": {
     "dataSource": "db",
     "public": true
   },

@@ -1,0 +1,15 @@
+<h4>
+  <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+
+  <span ng-show="!page.id">Add a new page</span>
+  <span ng-show="page.id">Edit page</span>
+
+</h4>
+
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="alert alert-danger" ng-if="addError">Could not add page!</div>
+    <formly-form result="page" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
+  </div>
+</div>

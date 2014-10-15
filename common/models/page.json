@@ -1,15 +1,22 @@
 {
-  "name": "item",
-  "plural": "items",
+  "name": "Page",
+  "plural": "pages",
   "base": "PersistedModel",
   "properties": {
     "id": {
       "type": "string"
     },
     "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
       "type": "string"
     },
-    "description": {
+    "content": {
+      "type": "string"
+    },
+    "extended": {
       "type": "string"
     }
   },
