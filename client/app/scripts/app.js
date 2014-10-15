@@ -76,7 +76,7 @@ angular.module('loopbackApp', [
             $location.path('/login');
           }
 
-          toasty.warning({title: 'Error 401 received', msg: 'We received a 401 error from the API! Redirecting to login', sound: false});
+          toasty.pop.warning({title: 'Error 401 received', msg: 'We received a 401 error from the API! Redirecting to login', sound: false});
         }
         return $q.reject(rejection);
       }
