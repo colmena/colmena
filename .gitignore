@@ -7,3 +7,4 @@ client/app/scripts/lb-services.js
 storage
 npm-debug.log
 .idea/
+docular_generated
