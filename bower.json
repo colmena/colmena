@@ -24,7 +24,7 @@
     "angular-formly": {
       "main": [
         "dist/formly.bootstrap.min.js",
-        "dist/formly.bootstrap.map.js"
+        "dist/formly.bootstrap.min.map"
       ]
     }  
   },
