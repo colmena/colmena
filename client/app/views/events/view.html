@@ -1,0 +1,17 @@
+
+<h4>
+  <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+  {{event.name}}
+
+  <span class="pull-right btn-group" style="margin-top: 7px;">
+    <a href="" class="btn btn-sm btn-default" ui-sref="^.edit({id: event.id})">
+      <i class="fa fa-pencil"></i>
+    </a>
+    <a href="" class="btn btn-sm btn-default" ng-click="delete({id: event.id})">
+      <i class="fa fa-trash-o"></i>
+    </a>
+  </span>
+
+</h4>
+<hr>
+<pre>{{event | json}}</pre>

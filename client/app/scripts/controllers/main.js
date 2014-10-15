@@ -31,6 +31,10 @@ angular.module('loopbackApp')
       sref: 'app.posts.list',
       icon: 'fa-edit'
     } , {
+      name: 'Events',
+      sref: 'app.events.list',
+      icon: 'fa-calendar-o'
+    } , {
       name: 'Items',
       sref: 'app.items.list',
       icon: 'fa-file-o'

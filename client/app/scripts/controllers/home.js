@@ -8,22 +8,22 @@
  * Controller of the loopbackApp
  */
 angular.module('loopbackApp')
-  .config(function($stateProvider) {
+  .config(function ($stateProvider) {
     $stateProvider.state('app.home', {
       url: '',
       templateUrl: 'views/home.html',
       controller: 'HomeCtrl'
     });
   })
-  .controller('HomeCtrl', function($scope, $http, Post, Product) {
+  .controller('HomeCtrl', function ($scope, $http, Post, Product, Event) {
 
     $scope.count = {};
 
-    Post.find(function(posts) {
+    Post.find(function (posts) {
       $scope.count.posts = posts.length;
     });
 
-    Product.find(function(products) {
+    Product.find(function (products) {
       $scope.count.products = products.length;
     });
 
@@ -31,13 +31,13 @@ angular.module('loopbackApp')
     $scope.count.files = 0;
 
 
-    $http.get('http://localhost:3000/api/containers/container1/files').success(function(data) {
+    $http.get('http://localhost:3000/api/containers/container1/files').success(function (data) {
       $scope.count.files = data.length;
     });
 
-    // Event.find(function(events){
-    // $scope.count.events = events.length;
-    // });
+    Event.find(function (events) {
+      $scope.count.events = events.length;
+    });
 
     // Post.find(function(posts){
     //   $scope.count.posts = posts.length;

@@ -1,0 +1,45 @@
+{
+  "name": "Event",
+  "plural": "events",
+  "base": "PersistedModel",
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "start_time": {
+      "type": "date",
+      "required": true
+    },
+    "end_time": {
+      "type": "date"
+    },
+    "timezone": {
+      "type": "String"
+    },
+    "location": {
+      "type": "String"
+    },
+    "url": {
+      "type": "String"
+    },
+    "image": {
+      "type": "String"
+    },
+    "tickets": {
+      "type": "String"
+    },
+    "tags": {
+      "type": [
+        "string"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
