@@ -24,16 +24,14 @@
     "errorhandler": "^1.1.1",
     "grunt": "^0.4.5",
     "loopback": "^2.1.2",
-    "loopback": "^2.1.2",
+    "loopback-boot": "^2.1.0",
     "loopback-component-storage": "^1.0.5",
-    "loopback": "^2.1.2",
     "serve-favicon": "^2.0.1"
   },
   "optionalDependencies": {
     "loopback-explorer": "^1.2.8"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
     "grunt-autoprefixer": "^1.0.0",
     "grunt-concurrent": "^0.5.0",
     "grunt-contrib-clean": "^0.6.0",
