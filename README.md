@@ -2,6 +2,8 @@
 
 The goal is to have a starter project which can be used to quickly build an API with a frontend that are easily extended.
 
+[![NPM version](https://badge.fury.io/js/loopback-angular-admin.png)](http://badge.fury.io/js/loopback-angular-admin)
+
 ## Features
 
 - A Loopback REST API with authentication enabled built on the [Loopback Generator](https://www.npmjs.org/package/generator-loopback)
