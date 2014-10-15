@@ -6,3 +6,4 @@ bower_components
 client/app/scripts/lb-services.js
 storage
 npm-debug.log
+.idea/
