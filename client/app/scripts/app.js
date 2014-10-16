@@ -20,7 +20,8 @@ angular.module('loopbackApp', [
   'formly',
   'toasty',
   'angularFileUpload',
-  'config'
+  'config',
+  'ui.markdown'
 ])
 
 .controller('LayoutCtrl', function ($scope, Setting, ENV) {

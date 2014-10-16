@@ -1,15 +1,34 @@
 <h4>
-  <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+    <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
 
-  <span ng-show="!page.id">Add a new page</span>
-  <span ng-show="page.id">Edit page</span>
+    <span ng-show="!page.id">Add a new page</span>
+    <span ng-show="page.id">Edit page</span>
 
 </h4>
 
 
 <div class="row">
-  <div class="col-md-4">
-    <div class="alert alert-danger" ng-if="addError">Could not add page!</div>
-    <formly-form result="page" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
-  </div>
+    <div class="col-md-4">
+        <div class="alert alert-danger" ng-if="addError">Could not add page!</div>
+        <formly-form result="page" fields="formFields" options="formOptions"></formly-form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-xs-12">
+        <p>
+            <button class="btn btn-success" ng-click="onSubmit()">Save</button>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-xs-12">
+        <textarea ui-markdown-editor="editorOptions" ng-model="page.content"></textarea>
+    </div>
+    <div class="col-md-6 col-xs-12">
+        <div ng-bind-markdown="page.content">
+
+        </div>
+    </div>
 </div>

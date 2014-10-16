@@ -48,7 +48,7 @@ angular.module('loopbackApp')
       console.log(err);
     });
   } else {
-    $scope.page = {};
+    $scope.page = {'content': '# Start typing here!'};
   }
 
   function loadPages() {
@@ -81,14 +81,6 @@ angular.module('loopbackApp')
     key: 'slug',
     label: 'Slug',
     type: 'text'
-  }, {
-    key: 'content',
-    label: 'Content',
-    type: 'textarea'
-  }, {
-    key: 'extended',
-    label: 'Extended content',
-    type: 'textarea'
   }];
 
   $scope.formOptions = {
@@ -98,7 +90,7 @@ angular.module('loopbackApp')
 
       //Hide the submit button that is added automaticaly
       //default: false
-      hideSubmit: false,
+      hideSubmit: true,
 
       //Set the text on the default submit button
       //default: Submit

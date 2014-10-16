@@ -1,8 +1,8 @@
 
 <h4>
-  <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+  <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i> Pages</a>
   {{page.name}}
-
+  <small>{{page.slug}}</small>
   <span class="pull-right btn-group" style="margin-top: 7px;">
     <a href="" class="btn btn-sm btn-default" ui-sref="^.edit({id: page.id})">
       <i class="fa fa-pencil"></i>
@@ -11,7 +11,9 @@
       <i class="fa fa-trash-o"></i>
     </a>
   </span>
-
 </h4>
-<hr>
-<pre>{{page | json}}</pre>
+<div class="row">
+    <div class="col-md-12">
+        <div ng-bind-markdown="page.content"></div>
+    </div>
+</div>
