@@ -13,7 +13,7 @@
     "angular-ui-router": "~0.2.10",
     "font-awesome": "~4.1.0",
     "angular-formly": "~0.0.14",
-    "angular-toasty": "git@github.com:beeman/angular-toasty.git",
+    "angular-toasty": "~0.1.8",
     "angular-file-upload": "v0.4.0"
   },
   "devDependencies": {
@@ -26,7 +26,7 @@
         "dist/formly.bootstrap.min.js",
         "dist/formly.bootstrap.min.map"
       ]
-    }  
+    }
   },
   "appPath": "client/app/",
   "resolutions": {
