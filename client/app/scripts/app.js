@@ -19,12 +19,14 @@ angular.module('loopbackApp', [
   'lbServices',
   'formly',
   'toasty',
-  'angularFileUpload'
+  'angularFileUpload',
+  'config'
 ])
 
-.controller('LayoutCtrl', function ($scope, Setting) {
+.controller('LayoutCtrl', function ($scope, Setting, ENV) {
 
   $scope.appName = 'LB-NG-BS';
+  $scope.apiUrl = ENV.apiUrl;
 
   $scope.settings = {};
 
