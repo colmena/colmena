@@ -28,7 +28,7 @@ angular.module('loopbackApp')
     });
   })
 
-  .controller('UploadCtrl', function($scope, $fileUploader) {
+  .controller('UploadCtrl', function($scope, $fileUploader, ENV) {
 
     // create a uploader with options
     var uploader = $scope.uploader = $fileUploader.create({

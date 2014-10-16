@@ -15,7 +15,7 @@ angular.module('loopbackApp')
       controller: 'HomeCtrl'
     });
   })
-  .controller('HomeCtrl', function ($scope, $http, Post, Product, Event) {
+  .controller('HomeCtrl', function ($scope, $http, Post, Product, Event, ENV) {
 
     $scope.count = {};
 
