@@ -14,7 +14,8 @@
     "font-awesome": "~4.1.0",
     "angular-formly": "~0.0.14",
     "angular-toasty": "~0.1.8",
-    "angular-file-upload": "v0.4.0"
+    "angular-file-upload": "v0.4.0",
+    "angular-markdown-editor": "*"
   },
   "devDependencies": {
     "angular-mocks": "1.2.21",
