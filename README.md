@@ -13,6 +13,7 @@ The goal is to have a starter project which can be used to quickly build an API 
 - Notifications by [angular-toasty](https://github.com/Salakar/angular-toasty)
 - File upload with [Loopback storage services](https://github.com/strongloop/loopback-component-storage/)
 - Admin template powered by [SB-Admin](http://startbootstrap.com/template-overviews/sb-admin/)
+- Markdown Editor with live preview with [angular-markdown-editor](https://github.com/JimLiu/angular-markdown-editor)
 
 ### TODO:
 
@@ -69,7 +70,6 @@ Rebuild the lb-services.js file with the correct `API_URL` for development.
 
     API_URL=http://0.0.0.0:3000/api grunt
 
-API_URL=http://0.0.0.0:3000/api grunt
 To run the client you issue the command:
 
     grunt serve
@@ -90,6 +90,8 @@ Set `INITDB` to true if you want to load the initial dataset, which creates the 
 
 
 ## Development
+
+Please refer the the following commits to see what it takes to [add](https://github.com/beeman/loopback-angular-admin/commit/16b1015554a41e45ca670d25fd258340908c4dbf) or [rename](https://github.com/beeman/loopback-angular-admin/commit/88254ce59af29818aec900514693e3fe6c94acea) a model in the API and the client.
 
 For development you'd want to look into [yeoman](http://yeoman.io).
 

@@ -39,22 +39,23 @@ angular.module('loopbackApp')
 
 
     var createDate = function (date, time) {
-      if (!date || !time)
+      if (!date || !time) {
         return date || time;
+      }
 
       var out = angular.copy(time);
       out.setFullYear(date.getFullYear());
       out.setMonth(date.getMonth());
       out.setDate(date.getDate());
       return out;
-    }
+    };
 
     var splitDate = function () {
       var event = $scope.event;
-      event.start_date = event.start_time = event.start;
-      event.end_date = event.end_time = event.end;
+      event.startDate = event.startTime = event.start;
+      event.endDate = event.endTime = event.end;
       event.start = event.end = null;
-    }
+    };
 
     if (eventId) {
       $scope.event = Event.findById({
@@ -99,7 +100,7 @@ angular.module('loopbackApp')
       $event.stopPropagation();
 
       this.opened = true;
-    }
+    };
 
     $scope.formFields = [
       {
