@@ -358,7 +358,7 @@ module.exports = function (grunt) {
         options: {
           input: 'server/server.js',
           output: 'client/app/scripts/lb-services.js',
-          apiUrl: 'http://0.0.0.0:3000/api/'
+          apiUrl: process.env.API_URL || '/api/'
         }
       }
     },
