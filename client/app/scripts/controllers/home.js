@@ -31,7 +31,7 @@ angular.module('loopbackApp')
     $scope.count.files = 0;
 
 
-    $http.get('/api/containers/container1/files').success(function (data) {
+    $http.get(ENV.apiUrl + '/containers/container1/files').success(function (data) {
       $scope.count.files = data.length;
     });
 

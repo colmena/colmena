@@ -33,7 +33,7 @@ angular.module('loopbackApp')
     // create a uploader with options
     var uploader = $scope.uploader = $fileUploader.create({
       scope: $scope, // to automatically update the html. Default: $rootScope
-      url: '/api/containers/container1/upload',
+      url: ENV.apiUrl + '/containers/container1/upload',
       formData: [{
         key: 'value'
       }],
@@ -103,17 +103,17 @@ angular.module('loopbackApp')
     });
 
   })
-  .controller('FilesCtrl', function($scope, $http) {
+  .controller('FilesCtrl', function($scope, $http, ENV) {
 
     $scope.load = function() {
-      $http.get('/api/containers/container1/files').success(function(data) {
+      $http.get(ENV.apiUrl + '/containers/container1/files').success(function(data) {
         console.log(data);
         $scope.files = data;
       });
     };
 
     $scope.delete = function(index, id) {
-      $http.delete('/api/containers/container1/files/' + encodeURIComponent(id)).success(function(data, status, headers) {
+      $http.delete(ENV.apiUrl + '/containers/container1/files/' + encodeURIComponent(id)).success(function(data, status, headers) {
         console.log(data);
         console.log(status);
         console.log(headers);
