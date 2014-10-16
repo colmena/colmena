@@ -4,6 +4,7 @@ dist
 .sass-cache
 bower_components
 client/app/scripts/lb-services.js
+client/app/scripts/config.js
 storage
 npm-debug.log
 .idea/
