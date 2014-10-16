@@ -26,6 +26,7 @@
     "loopback": "^2.5.0",
     "loopback-boot": "^2.1.0",
     "loopback-component-storage": "^1.0.5",
+    "loopback-connector-mongodb": "^1.4.4",
     "serve-favicon": "^2.1.5"
   },
   "optionalDependencies": {

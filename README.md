@@ -73,6 +73,17 @@ It will open the project in your default browser with livereload enabled.
 This will take care of reloading the page when you change your code.
 
 
+## Connect to a database
+
+You can specify the URL to the MongoDB database you want to use with the `MONGODB_URL` environment variable.
+
+    MONGODB_URL="mongodb://localhost:27017/loopback-angular-admin" npm start
+
+Set `INITDB` to true if you want to load the initial dataset, which creates the admin user. The memory database (default) does this automatically.
+
+    INITDB=true MONGODB_URL="mongodb://localhost:27017/loopback-angular-admin" npm start
+
+
 ## Development
 
 For development you'd want to look into [yeoman](http://yeoman.io).

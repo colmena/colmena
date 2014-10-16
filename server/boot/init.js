@@ -2,7 +2,7 @@
 
 module.exports = function(app) {
 
-  if (app.dataSources.db.name !== 'Memory') {
+  if (app.dataSources.db.name !== 'Memory' && !process.env.INITDB) {
     return;
   }
 
