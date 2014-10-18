@@ -30,7 +30,7 @@
     "codemirror": {
       "main": [
         "lib/codemirror.css",
-        "theme/solarized.css",
+        "theme/monokai.css",
         "lib/codemirror.js",
         "addon/mode/overlay.js",
         "mode/gfm/gfm.js",
