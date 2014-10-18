@@ -1,6 +1,6 @@
 <!doctype html>
 <html ng-app="loopbackApp" ng-controller="LayoutCtrl">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>{{settings.appName}}</title>
     <meta name="description" content="">
@@ -11,76 +11,76 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" href="bower_components/angular-toasty/css/ng-toasty.css" />
+    <link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="bower_components/codemirror/theme/solarized.css" />
+    <link rel="stylesheet" href="bower_components/angular-markdown-editor/dist/angular-markdown-editor.css" />
     <!-- endbower -->
 
-    <link rel="stylesheet" type="text/css" href="bower_components/codemirror/lib/codemirror.css">
-    <link rel="stylesheet" type="text/css" href="bower_components/codemirror/theme/solarized.css">
-    <link rel="stylesheet" href="bower_components/angular-markdown-editor/dist/angular-markdown-editor.css" />
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
 
-    <link rel="stylesheet" href="styles/sb-admin.css" >
+    <link rel="stylesheet" href="styles/sb-admin.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-  </head>
-  <body>
+</head>
+<body>
 
-    <div class="container-fluid">
-        <div ui-view></div>
-    </div>
+<div class="container-fluid">
+    <div ui-view></div>
+</div>
 
-    <div ng-controller="toasty-controller">
-      <toasty-container toasty-defaults='{"timeout": 3000, "close-button":true, "sound": false}'></toasty-container>
-    </div>
+<div ng-controller="toasty-controller">
+    <toasty-container toasty-defaults='{"timeout": 3000, "close-button":true, "sound": false}'></toasty-container>
+</div>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/angular-formly/dist/formly.bootstrap.min.js"></script>
-    <script src="bower_components/angular-toasty/js/ng-toasty.js"></script>
-    <script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
-    <!-- endbower -->
-    <script src="bower_components/codemirror/lib/codemirror.js"></script>
-    <script src="bower_components/codemirror/addon/mode/overlay.js"></script>
-    <script src="bower_components/codemirror/mode/gfm/gfm.js"></script>
-    <script src="bower_components/codemirror/mode/markdown/markdown.js"></script>
-    <script src="bower_components/angular-markdown-editor/dist/angular-markdown-editor.js"></script>
-    <script src="bower_components/showdown/compressed/showdown.js"></script>
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-formly/dist/formly.bootstrap.min.js"></script>
+<script src="bower_components/angular-toasty/js/ng-toasty.js"></script>
+<script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
+<script src="bower_components/showdown/compressed/showdown.js"></script>
+<script src="bower_components/codemirror/lib/codemirror.js"></script>
+<script src="bower_components/codemirror/addon/mode/overlay.js"></script>
+<script src="bower_components/codemirror/mode/gfm/gfm.js"></script>
+<script src="bower_components/codemirror/mode/markdown/markdown.js"></script>
+<script src="bower_components/angular-markdown-editor/dist/angular-markdown-editor.js"></script>
+<!-- endbower -->
 
-    <!-- endbuild -->
+<!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/lb-services.js"></script>
-        <script src="scripts/config.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/controllers/home.js"></script>
-        <script src="scripts/directives/navbar.js"></script>
-        <script src="scripts/directives/login.js"></script>
-        <script src="scripts/directives/register.js"></script>
-        <script src="scripts/services/appauth.js"></script>
-        <script src="scripts/directives/home.js"></script>
-        <script src="scripts/controllers/pages.js"></script>
-        <script src="scripts/controllers/users.js"></script>
-        <script src="scripts/controllers/sandbox.js"></script>
-        <script src="scripts/controllers/notes.js"></script>
-        <script src="scripts/controllers/posts.js"></script>
-        <script src="scripts/controllers/settings.js"></script>
-        <script src="scripts/controllers/products.js"></script>
-        <script src="scripts/controllers/categories.js"></script>
-        <script src="scripts/controllers/files.js"></script>
-        <script src="scripts/controllers/events.js"></script>
-        <!-- endbuild -->
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/lb-services.js"></script>
+<script src="scripts/config.js"></script>
+<script src="scripts/controllers/main.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<script src="scripts/controllers/home.js"></script>
+<script src="scripts/directives/navbar.js"></script>
+<script src="scripts/directives/login.js"></script>
+<script src="scripts/directives/register.js"></script>
+<script src="scripts/services/appauth.js"></script>
+<script src="scripts/directives/home.js"></script>
+<script src="scripts/controllers/pages.js"></script>
+<script src="scripts/controllers/users.js"></script>
+<script src="scripts/controllers/sandbox.js"></script>
+<script src="scripts/controllers/notes.js"></script>
+<script src="scripts/controllers/posts.js"></script>
+<script src="scripts/controllers/settings.js"></script>
+<script src="scripts/controllers/products.js"></script>
+<script src="scripts/controllers/categories.js"></script>
+<script src="scripts/controllers/files.js"></script>
+<script src="scripts/controllers/events.js"></script>
+<!-- endbuild -->
 </body>
 </html>

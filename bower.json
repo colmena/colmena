@@ -24,8 +24,28 @@
   "overrides": {
     "angular-formly": {
       "main": [
-        "dist/formly.bootstrap.min.js",
-        "dist/formly.bootstrap.min.map"
+        "dist/formly.bootstrap.min.js"
+      ]
+    },
+    "codemirror": {
+      "main": [
+        "lib/codemirror.css",
+        "theme/solarized.css",
+        "lib/codemirror.js",
+        "addon/mode/overlay.js",
+        "mode/gfm/gfm.js",
+        "mode/markdown/markdown.js"
+      ]
+    },
+    "showdown": {
+      "main": [
+        "compressed/showdown.js"
+      ]
+    },
+    "angular-markdown-editor": {
+      "main": [
+        "dist/angular-markdown-editor.css",
+        "dist/angular-markdown-editor.js"
       ]
     }
   },
