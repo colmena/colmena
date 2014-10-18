@@ -37,18 +37,18 @@ angular.module('loopbackApp')
 
     var eventId = $stateParams.id;
 
-
-    var createDate = function (date, time) {
-      if (!date || !time) {
-        return date || time;
-      }
-
-      var out = angular.copy(time);
-      out.setFullYear(date.getFullYear());
-      out.setMonth(date.getMonth());
-      out.setDate(date.getDate());
-      return out;
-    };
+//
+//    var createDate = function (date, time) {
+//      if (!date || !time) {
+//        return date || time;
+//      }
+//
+//      var out = angular.copy(time);
+//      out.setFullYear(date.getFullYear());
+//      out.setMonth(date.getMonth());
+//      out.setDate(date.getDate());
+//      return out;
+//    };
 
     var splitDate = function () {
       var event = $scope.event;
@@ -94,13 +94,13 @@ angular.module('loopbackApp')
             sound: false});
       });
     };
-
-    var dateOpen = function ($event, options) {
-      $event.preventDefault();
-      $event.stopPropagation();
-
-      this.opened = true;
-    };
+//
+//    var dateOpen = function ($event, options) {
+//      $event.preventDefault();
+//      $event.stopPropagation();
+//
+//      this.opened = true;
+//    };
 
     $scope.formFields = [
       {
@@ -171,7 +171,7 @@ angular.module('loopbackApp')
     };
 
     $scope.onSubmit = function () {
-      var event = $scope.event;
+//      var event = $scope.event;
 //      event.start = createDate(event.start_date, event.start_time);
 //      event.start_date = null;
 //      event.start_time = null;
