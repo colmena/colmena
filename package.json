@@ -1,8 +1,8 @@
 {
   "name": "loopback-angular-admin",
   "description": "Quickly create admin interfaces on a Loopback 2.x API",
-  "version": "0.0.5",
-  "homepage": "https://github.com/beeman/express-pinger",
+  "version": "0.0.6",
+  "homepage": "https://github.com/beeman/loopback-angular-admin",
   "author": "Bram Borggreve <borggreve@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -10,7 +10,7 @@
     "url": "https://github.com/beeman/loopback-angular-admin"
   },
   "bugs": {
-    "url": "https://github.com/beeman/express-pinger/issues"
+    "url": "https://github.com/beeman/loopback-angular-admin/issues"
   },
   "scripts": {
     "pretest": "jshint .",
