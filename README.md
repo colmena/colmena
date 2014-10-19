@@ -17,10 +17,14 @@ The goal is to have a starter project which can be used to quickly build an API 
 
 ### TODO:
 
+- User management
+- Permissions user actions (non-admins cannot access advanced functions)
+- permissions on content items (non-admins can only edit own content, etc)
 - Social authentication based on Passport.
-- Detect if API is online
-- Change template to [Ehesp/Responsive-Dashboard](https://github.com/Ehesp/Responsive-Dashboard)
-- Loading indicators
+- Detect if API is online [HubSpot/offline](https://github.com/HubSpot/offline)?
+- Change template to [Ehesp/Responsive-Dashboard](https://github.com/Ehesp/Responsive-Dashboard) or [almasaeed2010/AdminLTE](https://github.com/almasaeed2010/AdminLTE)
+- Loading indicators [Urigo/angular-spinkit](https://github.com/Urigo/angular-spinkit)?
+- [Tell me more](https://github.com/beeman/loopback-angular-admin/issues/new)
 
 ## Installation
 
