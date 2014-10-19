@@ -5,12 +5,6 @@ The goal is to have a starter project which can be used to quickly build an API 
 [![NPM version](https://badge.fury.io/js/loopback-angular-admin.png)](http://badge.fury.io/js/loopback-angular-admin)
 [![Dependencies](https://david-dm.org/beeman/loopback-angular-admin.png)](http://badge.fury.io/js/loopback-angular-admin)
 
-[![Codeship Status for beeman/loopback-angular-admin](https://www.codeship.io/projects/63461bc0-396b-0132-3ad7-621226feddc2/status)](https://www.codeship.io/projects/42207)
-
-## Try it now!
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
 ## Features and implemented projects
 
 - A Loopback REST API with authentication enabled built on the [Loopback Generator](https://www.npmjs.org/package/generator-loopback)
@@ -22,6 +16,7 @@ The goal is to have a starter project which can be used to quickly build an API 
 - Admin template powered by [SB-Admin](http://startbootstrap.com/template-overviews/sb-admin/)
 - Markdown Editor with live preview with [angular-markdown-editor](https://github.com/JimLiu/angular-markdown-editor)
 - Bunch of useful filters for AngularJS: [a8m/angular-filter](https://github.com/a8m/angular-filter)
+- [t4t5/sweetalert](https://github.com/t4t5/sweetalert) provided by [oitozero/ngSweetAlert](https://github.com/oitozero/ngSweetAlert)
 
 ### TODO:
 
