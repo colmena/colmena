@@ -1,2 +1,1 @@
-serve: npm run dev
-grunt: grunt serve
+web: node server/server.js
