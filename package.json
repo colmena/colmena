@@ -16,7 +16,7 @@
     "pretest": "jshint .",
     "start": "node server/server.js",
     "dev": "nodemon server/server.js --watch server common",
-    "postinstall": "grunt build"
+    "postinstall": "grunt"
   },
   "main": "server/server.js",
   "dependencies": {
