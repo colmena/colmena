@@ -19,7 +19,7 @@ The goal is to have a starter project which can be used to quickly build an API 
 ### TODO:
 
 - User management
-- Permissions user actions (non-admins cannot access advanced functions)
+- Permissions on user actions (non-admins cannot access advanced functions)
 - permissions on content items (non-admins can only edit own content, etc)
 - Social authentication based on Passport.
 - Detect if API is online [HubSpot/offline](https://github.com/HubSpot/offline)?
