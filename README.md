@@ -4,6 +4,10 @@ The goal is to have a starter project which can be used to quickly build an API 
 
 [![NPM version](https://badge.fury.io/js/loopback-angular-admin.png)](http://badge.fury.io/js/loopback-angular-admin)
 
+## Try it now!
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 ## Features and implemented projects
 
 - A Loopback REST API with authentication enabled built on the [Loopback Generator](https://www.npmjs.org/package/generator-loopback)
@@ -26,6 +30,9 @@ The goal is to have a starter project which can be used to quickly build an API 
 - Change template to [Ehesp/Responsive-Dashboard](https://github.com/Ehesp/Responsive-Dashboard) or [almasaeed2010/AdminLTE](https://github.com/almasaeed2010/AdminLTE)
 - Loading indicators [Urigo/angular-spinkit](https://github.com/Urigo/angular-spinkit)?
 - [Tell me more](https://github.com/beeman/loopback-angular-admin/issues/new)
+- Add tests
+- Add Dockerfile
+- Add Vagrantfile
 
 ## Installation
 
