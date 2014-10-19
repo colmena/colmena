@@ -3,6 +3,7 @@
 The goal is to have a starter project which can be used to quickly build an API with a frontend that are easily extended.
 
 [![NPM version](https://badge.fury.io/js/loopback-angular-admin.png)](http://badge.fury.io/js/loopback-angular-admin)
+[![Dependencies](https://david-dm.org/beeman/loopback-angular-admin.png)](http://badge.fury.io/js/loopback-angular-admin)
 
 ## Try it now!
 
