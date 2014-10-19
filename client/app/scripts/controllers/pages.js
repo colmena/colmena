@@ -37,7 +37,7 @@ angular.module('loopbackApp')
       });
   })
 
-  .controller('PagesCtrl', function ($scope, $state, $stateParams, toasty, Page) {
+  .controller('PagesCtrl', function ($scope, $state, $stateParams, toasty, Page, $filter) {
 
     var pageId = $stateParams.id;
 
@@ -79,11 +79,6 @@ angular.module('loopbackApp')
         label: 'Name',
         type: 'text',
         required: true
-      },
-      {
-        key: 'slug',
-        label: 'Slug',
-        type: 'text'
       }
     ];
     $scope.editorOptions = {
@@ -104,7 +99,8 @@ angular.module('loopbackApp')
     };
 
     $scope.onSubmit = function () {
-
+      var cleanName = $scope.page.name.replace(/[^a-zA-Z0-9\-\s]/g, '');
+      $scope.page.slug = $filter('slugify')(cleanName);
       Page.upsert($scope.page, function () {
         toasty.pop.success({title: 'Page saved', msg: 'Your page is safe with us!', sound: false});
         $state.go('^.list');
