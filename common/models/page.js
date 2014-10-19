@@ -1,3 +1,5 @@
+'use strict';
+
 var Showdown = require('showdown');
 
 module.exports = function (Page) {
@@ -6,7 +8,9 @@ module.exports = function (Page) {
 
   Page.html = function (id, cb) {
     Page.findById(id, function (err, page) {
-      if (err) return cb(err);
+      if (err) {
+        return cb(err);
+      }
       var result = page;
       result.html = converter.makeHtml(page.content);
       cb(err, result);

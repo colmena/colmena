@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function mountLoopBackExplorer(server) {
   var explorer;
   try {
