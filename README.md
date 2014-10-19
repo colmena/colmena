@@ -5,6 +5,8 @@ The goal is to have a starter project which can be used to quickly build an API 
 [![NPM version](https://badge.fury.io/js/loopback-angular-admin.png)](http://badge.fury.io/js/loopback-angular-admin)
 [![Dependencies](https://david-dm.org/beeman/loopback-angular-admin.png)](http://badge.fury.io/js/loopback-angular-admin)
 
+[![Codeship Status for beeman/loopback-angular-admin](https://www.codeship.io/projects/63461bc0-396b-0132-3ad7-621226feddc2/status)](https://www.codeship.io/projects/42207)
+
 ## Try it now!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
