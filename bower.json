@@ -15,7 +15,8 @@
     "angular-formly": "~0.0.14",
     "angular-toasty": "~0.1.8",
     "angular-file-upload": "v0.4.0",
-    "angular-markdown-editor": "*"
+    "angular-markdown-editor": "*",
+    "angular-filter": "~0.4.9"
   },
   "devDependencies": {
     "angular-mocks": "1.2.21",
