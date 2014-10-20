@@ -60,6 +60,19 @@ angular.module('loopbackApp', [
     $scope.appLayout = layout;
   }
 
+  $scope.toggleSidebar = function() {
+    if ($(window).width() <= 992) {
+      $('.row-offcanvas').toggleClass('active');
+      $('.left-side').removeClass("collapse-left");
+      $(".right-side").removeClass("strech");
+      $('.row-offcanvas').toggleClass("relative");
+    } else {
+      //Else, enable content streching
+      $('.left-side').toggleClass("collapse-left");
+      $(".right-side").toggleClass("strech");
+    }
+  };
+
   $scope.settings = {};
 
   Setting.find(function(settings){
