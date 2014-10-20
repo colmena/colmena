@@ -73,7 +73,7 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
 ### Clone, install and run in a oneliner
 
-    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && bower install && grunt && npm start & grunt serve
+    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && bower install && API_URL=http://0.0.0.0:3000/api grunt && npm start & grunt serve
 
 ## Running
 
