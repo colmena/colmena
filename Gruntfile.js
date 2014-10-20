@@ -466,7 +466,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'newer:jshint',
-    'test',
+//    'test',
     'ngconstant:development',
     'loopback_angular',
     'docular',
