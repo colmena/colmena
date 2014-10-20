@@ -2394,7 +2394,7 @@ Component: timeline
 */
 .form-box {
   width: 360px;
-  padding-top: 90px;
+  padding-top: 5%;
   margin: 0px auto 0 auto;
 }
 .form-box .header {
