@@ -88,7 +88,7 @@ module.exports = function(app) {
 
   Setting.create({
     key: 'appName',
-    value: 'Loopback-Angular-Admin'
+    value: 'Loopback Admin'
   }, function(err, data) {
     if (err) {
       console.log('err', err);
