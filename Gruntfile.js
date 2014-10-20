@@ -41,7 +41,7 @@ module.exports = function (grunt) {
         }
       },
       jsTest: {
-      files: ['client/test/spec/{,*/}*.js'],
+        files: ['client/test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
@@ -158,7 +158,7 @@ module.exports = function (grunt) {
         options: {
           jshintrc: 'client/test/.jshintrc'
         },
-      src: ['client/test/spec/{,*/}*.js']
+        src: ['client/test/spec/{,*/}*.js']
       }
     },
 
@@ -373,7 +373,6 @@ module.exports = function (grunt) {
       ],
       dist: [
         'copy:styles',
-        'imagemin',
         'svgmin'
       ]
     },
@@ -449,6 +448,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'ngconstant:production',
+    'loopback_angular',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
