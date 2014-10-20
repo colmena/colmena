@@ -1,5 +1,6 @@
 {
   "name": "loopback-angular-admin",
+  "subdomain": "loopback-angular-admin",
   "description": "Quickly create admin interfaces on a Loopback 2.x API",
   "version": "0.0.7",
   "engines": {
