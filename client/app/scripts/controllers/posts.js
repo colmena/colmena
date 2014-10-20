@@ -38,7 +38,7 @@ angular.module('loopbackApp')
     });
   })
 
-  .controller('PostsCtrl', function($scope, $state, $stateParams, toasty, Post) {
+  .controller('PostsCtrl', function($scope, $state, $stateParams, toasty, Post, SweetAlert) {
 
   var postId = $stateParams.id;
 
@@ -59,18 +59,24 @@ angular.module('loopbackApp')
   loadItems();
 
   $scope.delete = function(id) {
-    // if (confirm('Are you sure?') === false) {
-    //   return false;
-    // }
-    Post.deleteById(id, function() {
-      toasty.pop.success({title: 'Post deleted', msg: 'Your post is deleted!', sound: false});
-      loadItems();
-      $state.go('app.posts.list');
-      console.log();
-    }, function(err) {
-      toasty.pop.error({title: 'Error deleting post', msg: 'Your post is not deleted: ' + err, sound: false});
+    SweetAlert.swal({
+      title: 'Are you sure?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DD6B55'
+    }, function(isConfirm){
+      if (isConfirm) {
+        Post.deleteById(id, function() {
+          toasty.pop.success({title: 'Post deleted', msg: 'Your post is deleted!', sound: false});
+          loadItems();
+          $state.go('app.posts.list');
+        }, function(err) {
+          toasty.pop.error({title: 'Error deleting post', msg: 'Your post is not deleted: ' + err, sound: false});
+        });
+      } else {
+        return false;
+      }
     });
-
   };
 
   $scope.formFields = [{

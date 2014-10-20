@@ -38,7 +38,7 @@ angular.module('loopbackApp')
     });
   })
 
-  .controller('SettingsCtrl', function($scope, $state, $stateParams, toasty, Setting) {
+  .controller('SettingsCtrl', function($scope, $state, $stateParams, toasty, Setting, SweetAlert) {
 
   var settingId = $stateParams.id;
 
@@ -59,18 +59,25 @@ angular.module('loopbackApp')
   loadItems();
 
   $scope.delete = function(id) {
-    // if (confirm('Are you sure?') === false) {
-    //   return false;
-    // }
-    Setting.deleteById(id, function() {
-      toasty.pop.success({title: 'Setting deleted', msg: 'Your setting is deleted!', sound: false});
-      loadItems();
-      $state.go('app.settings.list');
-      console.log();
-    }, function(err) {
-      toasty.pop.error({title: 'Error deleting setting', msg: 'Your setting is not deleted: ' + err, sound: false});
+    SweetAlert.swal({
+      title: 'Are you sure?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DD6B55'
+    }, function(isConfirm){
+      if (isConfirm) {
+        Setting.deleteById(id, function() {
+          toasty.pop.success({title: 'Setting deleted', msg: 'Your setting is deleted!', sound: false});
+          loadItems();
+          $state.go('app.settings.list');
+          console.log();
+        }, function(err) {
+          toasty.pop.error({title: 'Error deleting setting', msg: 'Your setting is not deleted: ' + err, sound: false});
+        });
+      } else {
+        return false;
+      }
     });
-
   };
 
   $scope.formFields = [{

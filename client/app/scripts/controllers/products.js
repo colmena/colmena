@@ -38,7 +38,7 @@ angular.module('loopbackApp')
     });
   })
 
-  .controller('ProductsCtrl', function($scope, $state, $stateParams, toasty, Product) {
+  .controller('ProductsCtrl', function($scope, $state, $stateParams, toasty, Product, SweetAlert) {
 
   var productId = $stateParams.id;
 
@@ -59,18 +59,25 @@ angular.module('loopbackApp')
   loadItems();
 
   $scope.delete = function(id) {
-    // if (confirm('Are you sure?') === false) {
-    //   return false;
-    // }
-    Product.deleteById(id, function() {
-      toasty.pop.success({title: 'Product deleted', msg: 'Your product is deleted!', sound: false});
-      loadItems();
-      $state.go('app.products.list');
-      console.log();
-    }, function(err) {
-      toasty.pop.error({title: 'Error deleting product', msg: 'Your product is not deleted: ' + err, sound: false});
+    SweetAlert.swal({
+      title: 'Are you sure?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DD6B55'
+    }, function(isConfirm){
+      if (isConfirm) {
+        Product.deleteById(id, function() {
+          toasty.pop.success({title: 'Product deleted', msg: 'Your product is deleted!', sound: false});
+          loadItems();
+          $state.go('app.products.list');
+          console.log();
+        }, function(err) {
+          toasty.pop.error({title: 'Error deleting product', msg: 'Your product is not deleted: ' + err, sound: false});
+        });
+      } else {
+        return false;
+      }
     });
-
   };
 
   $scope.formFields = [{
