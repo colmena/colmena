@@ -77,13 +77,8 @@ angular.module('loopbackApp', [
 
   Setting.find(function(settings){
     settings.forEach(function(item){
-      console.log('item');
-      console.log(item);
       $scope.settings[item.key] = item.value;
     });
-
-
-    console.log($scope.settings);
   });
 
 
@@ -96,11 +91,11 @@ angular.module('loopbackApp', [
     template: '<login></login>',
     controller: 'LoginCtrl'
   })
-    .state('register', {
-      url: '/register',
-      template: '<register></register>',
-      controller: 'LoginCtrl'
-    });
+  .state('register', {
+    url: '/register',
+    template: '<register></register>',
+    controller: 'LoginCtrl'
+  });
 
   $urlRouterProvider.otherwise('/app');
 
@@ -112,7 +107,6 @@ angular.module('loopbackApp', [
   $httpProvider.interceptors.push(function($q, $location, AppAuth, toasty) {
     return {
       responseError: function(rejection) {
-        console.log('intercepted rejection of ', rejection.config.url, rejection.status);
 
         if (rejection.status === 401) {
           AppAuth.currentUser = null;
