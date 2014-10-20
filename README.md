@@ -7,6 +7,8 @@ The goal is to have a starter project which can be used to quickly build an API 
 
 [![Codeship Status for beeman/loopback-angular-admin](https://www.codeship.io/projects/63461bc0-396b-0132-3ad7-621226feddc2/status)](https://www.codeship.io/projects/42207)		
 		
+[![Build Status](https://drone.io/github.com/beeman/loopback-angular-admin/status.png)](https://drone.io/github.com/beeman/loopback-angular-admin/latest)
+
 ## Try it now!
 
 Deploy an instance on your Heroku account to play around with it!
