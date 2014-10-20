@@ -33,6 +33,14 @@ The goal is to have a starter project which can be used to quickly build an API 
 
 - [Tell me more](https://github.com/beeman/loopback-angular-admin/issues/new)
 
+## Screenshots
+#### Dashboard
+![](screenshots/screenshot1.png?raw=true)
+#### Markdown Editor
+![](screenshots/screenshot2.png?raw=true)
+#### SweetAlert
+![](screenshots/screenshot3.png?raw=true)
+
 ## Installation
 
 ### Dependencies
