@@ -39,6 +39,11 @@ angular.module('loopbackApp')
       controller: 'AlertCtrl'
     })
 
+    .state('app.sandbox.bootstrap', {
+      url: '/bootstrap',
+      templateUrl: 'views/sandbox/bootstrap.html'
+    })
+
     .state('app.sandbox.users', {
       url: '/users',
       template: '<pre>{{users | json}}</pre>',
@@ -64,136 +69,152 @@ angular.module('loopbackApp')
     }, {
       name: 'Alerts',
       sref: '.alerts'
-    }];
+    }, {
+      name: 'Bootstrap',
+      sref: '.bootstrap'
+}];
 
-    $scope.toasty = {
-      title: 'Notify me!',
-      text: 'This is the body!'
-    };
+$scope.toasty = {
+  title: 'Notify me!',
+  text: 'This is the body!'
+};
 
-    $scope.toast = function() {
-      toasty.pop.success({
-        title: $scope.toasty.title,
-        msg: $scope.toasty.text,
-        sound: false
-      });
-      toasty.pop.warning({
-        title: $scope.toasty.title,
-        msg: $scope.toasty.text,
-        sound: false
-      });
-      toasty.pop.wait({
-        title: $scope.toasty.title,
-        msg: $scope.toasty.text,
-        sound: false
-      });
-      toasty.pop.error({
-        title: $scope.toasty.title,
-        msg: $scope.toasty.text,
-        sound: false
-      });
-      toasty.pop.info({
-        title: $scope.toasty.title,
-        msg: $scope.toasty.text,
-        sound: false
-      });
-    };
+$scope.toast = function() {
+  toasty.pop.success({
+    title: $scope.toasty.title,
+    msg: $scope.toasty.text,
+    sound: false
+  });
+  toasty.pop.warning({
+    title: $scope.toasty.title,
+    msg: $scope.toasty.text,
+    sound: false
+  });
+  toasty.pop.wait({
+    title: $scope.toasty.title,
+    msg: $scope.toasty.text,
+    sound: false
+  });
+  toasty.pop.error({
+    title: $scope.toasty.title,
+    msg: $scope.toasty.text,
+    sound: false
+  });
+  toasty.pop.info({
+    title: $scope.toasty.title,
+    msg: $scope.toasty.text,
+    sound: false
+  });
+};
 
 
-    $scope.formData = {};
-    $scope.formFields = [{
-        //the key to be used in the result values {... "username": "johndoe" ... }
-        key: 'username',
+$scope.formData = {};
+$scope.formFields = [{
+  //the key to be used in the result values {... "username": "johndoe" ... }
+  key: 'username',
 
-        //default value
-        default: 'uberuser',
-        type: 'text',
-        label: 'Username',
-        placeholder: 'johndoe',
-        required: true,
-        disabled: false //default: false
-      }, {
-        key: 'password',
-        type: 'password',
-        label: 'Password',
-        required: true,
-        disabled: false, //default: false
-        hideExpression: '!username' // hide when username is blank
+  //default value
+  default: 'uberuser',
+  type: 'text',
+  label: 'Username',
+  placeholder: 'johndoe',
+  required: true,
+  disabled: false //default: false
+}, {
+  key: 'password',
+  type: 'password',
+  label: 'Password',
+  required: true,
+  disabled: false, //default: false
+  hideExpression: '!username' // hide when username is blank
+}
+
+];
+
+$scope.formOptions = {
+
+  //Set the id of the form
+  uniqueFormId: 'myFormId',
+
+  //Hide the submit button that is added automaticaly
+  //default: false
+  hideSubmit: false,
+
+  //Set the text on the default submit button
+  //default: Submit
+  submitCopy: 'Login'
+};
+
+$scope.onSubmit = function() {
+  console.log('form submitted:', $scope.formData);
+};
+
+}).controller('AlertCtrl', ['$scope', 'SweetAlert', function($scope, SweetAlert) {
+
+  $scope.demo1 = function() {
+    SweetAlert.swal('Here\'s a message');
+  };
+
+  $scope.demo2 = function() {
+    SweetAlert.swal('Here\'s a message!', 'It\'s pretty, isn\'t it?');
+  };
+
+  $scope.demo3 = function() {
+    SweetAlert.swal('Good job!', 'You clicked the button!', 'success');
+  };
+
+  $scope.demo4 = function() {
+    SweetAlert.swal({
+      title: 'Are you sure?',
+      text: 'Your will not be able to recover this imaginary file!',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DD6B55',
+      confirmButtonText: 'Yes, delete it!'
+    },  function(){
+      SweetAlert.swal('Booyah!');
+    });
+  };
+
+  $scope.demo5 = function() {
+    SweetAlert.swal({
+      title: 'Are you sure?',
+      text: 'Your will not be able to recover this imaginary file!',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DD6B55',
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, cancel plx!',
+      closeOnConfirm: false,
+      closeOnCancel: false
+    }, function(isConfirm){
+      if (isConfirm) {
+        SweetAlert.swal('Deleted!', 'Your imaginary file has been deleted.', 'success');
+      } else {
+        SweetAlert.swal('Cancelled', 'Your imaginary file is safe :)', 'error');
       }
+    });
+  };
 
-    ];
+  $scope.demo6 = function() {
+    SweetAlert.swal({
+      title: 'Sweet!',
+      text: 'Here\'s a custom image.',
+      imageUrl: 'http://oitozero.com/img/avatar.jpg'
+    });
+  };
 
-    $scope.formOptions = {
+}]).controller('AlertDemoCtrl', function ($scope) {
+  $scope.alerts = [
+    { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
+    { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
+  ];
 
-      //Set the id of the form
-      uniqueFormId: 'myFormId',
+  $scope.addAlert = function() {
+    $scope.alerts.push({msg: 'Another alert!'});
+  };
 
-      //Hide the submit button that is added automaticaly
-      //default: false
-      hideSubmit: false,
-
-      //Set the text on the default submit button
-      //default: Submit
-      submitCopy: 'Login'
-    };
-
-    $scope.onSubmit = function() {
-      console.log('form submitted:', $scope.formData);
-    };
-
-  }).controller('AlertCtrl', ['$scope', 'SweetAlert', function($scope, SweetAlert) {
-
-    $scope.demo1 = function() {
-      SweetAlert.swal('Here\'s a message');
-    };
-
-    $scope.demo2 = function() {
-      SweetAlert.swal('Here\'s a message!', 'It\'s pretty, isn\'t it?');
-    };
-
-    $scope.demo3 = function() {
-      SweetAlert.swal('Good job!', 'You clicked the button!', 'success');
-    };
-
-    $scope.demo4 = function() {
-      SweetAlert.swal({
-        title: 'Are you sure?',
-        text: 'Your will not be able to recover this imaginary file!',
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#DD6B55',
-        confirmButtonText: 'Yes, delete it!'
-      },  function(){
-        SweetAlert.swal('Booyah!');
-      });
-    };
-
-    $scope.demo5 = function() {
-      SweetAlert.swal({
-        title: 'Are you sure?',
-        text: 'Your will not be able to recover this imaginary file!',
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#DD6B55',
-        confirmButtonText: 'Yes, delete it!',
-        cancelButtonText: 'No, cancel plx!',
-        closeOnConfirm: false,
-        closeOnCancel: false
-      }, function(isConfirm){
-        if (isConfirm) {
-          SweetAlert.swal('Deleted!', 'Your imaginary file has been deleted.', 'success');
-        } else {
-          SweetAlert.swal('Cancelled', 'Your imaginary file is safe :)', 'error');
-        }
-      });
-    };
-
-    $scope.demo6 = function() {
-      SweetAlert.swal({
-        title: 'Sweet!',
-        text: 'Here\'s a custom image.',
-        imageUrl: 'http://oitozero.com/img/avatar.jpg'
-      });
-    };
-
-  }]);
+  $scope.closeAlert = function(index) {
+    $scope.alerts.splice(index, 1);
+  };
+});

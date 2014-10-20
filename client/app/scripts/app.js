@@ -21,6 +21,7 @@ angular.module('loopbackApp', [
   'ngRoute',
   'ngSanitize',
   'ngTouch',
+  'ui.bootstrap',
   'ui.gravatar',
   'ui.markdown',
   'ui.router',
@@ -31,7 +32,7 @@ angular.module('loopbackApp', [
 
     $scope.appName = 'LB-NG-BS';
     $scope.apiUrl = ENV.apiUrl;
-    $scope.appTheme = 'skin-black';
+    $scope.appTheme = 'skin-blue';
     $scope.appThemes = [
       {
         'name': 'Black',
