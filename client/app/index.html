@@ -26,11 +26,7 @@
 </head>
 <body class="{{appTheme}} {{appLayout}} " ng-controller="MainCtrl">
 
-<header class="header">
-    <a class="logo" href="/">{{settings.appName}}</a>
-    <navbar></navbar>
-</header>
-<div ui-view></div>
+<div ui-view style="height: 100%"></div>
 
 <div ng-controller="toasty-controller">
     <toasty-container toasty-defaults='{"timeout": 3000, "close-button":true, "sound": false}'></toasty-container>

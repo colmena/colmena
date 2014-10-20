@@ -1,10 +1,11 @@
+<header class="header">
+    <a class="logo" href="/">{{settings.appName}}</a>
+    <navbar></navbar>
+</header>
 <div>
     <div class="wrapper row-offcanvas row-offcanvas-left">
-        <!-- Left side column. contains the logo and sidebar -->
         <aside class="left-side sidebar-offcanvas">
-            <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
-
                 <div class="user-panel">
                     <div class="pull-left image">
                         <img gravatar-src-once="currentUser.email" class="img-circle" alt="User Image">
@@ -13,22 +14,15 @@
                         <p>Hello, {{currentUser.firstName}}</p>
                     </div>
                 </div>
-
-                <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu">
                     <li ng-repeat="item in menuoptions" ui-sref-active="active">
                         <a class="" href="" ui-sref="{{item.sref}}"><i class="fa fa-fw {{item.icon}}"></i> {{item.name}}</a>
                     </li>
                 </ul>
             </section>
-            <!-- /.sidebar -->
         </aside>
-
-        <!-- Right side column. Contains the navbar and content of the page -->
         <aside ui-view class="right-side">
 
         </aside>
-        <!-- /.right-side -->
     </div>
-    <!-- ./wrapper -->
 </div>
