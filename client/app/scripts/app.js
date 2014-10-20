@@ -42,7 +42,7 @@ angular.module('loopbackApp', [
         'class': 'skin-blue'
       }
     ];
-    $scope.appLayout = 'fixed';
+    $scope.appLayout = '';
     $scope.appLayouts = [
       {
         'name': 'Fixed',
