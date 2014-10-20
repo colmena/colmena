@@ -1,82 +1,69 @@
+<section class="content-header">
+    <div class="pull-right">
+    </div>
+    <h1>
+        Home
+        <small>Welcome home, this is AngularJS!</small>
+    </h1>
+</section>
+<section class="content">
 
-<h2 class="page-header">
-  Home
-  <small>Welcome home, this is AngularJS!</small>
-</h2>
+    <div ui-view></div>
 
-<div ui-view></div>
-
-<div class="row">
-  <div class="col-lg-3 col-md-6">
-    <div class="panel panel-danger">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-edit fa-5x"></i>
-          </div>
-          <div class="col-xs-9 text-right">
-            <div class="huge">{{count.posts}}</div>
-            <div>Posts!</div>
-          </div>
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-red">
+                <div class="inner">
+                    <h3> {{count.posts}} &nbsp; </h3>
+                    <p> Posts </p>
+                </div>
+                <div class="icon"> <i class="ion ion-bag"></i> </div>
+                <a href="#" ui-sref="app.posts.list" class="small-box-footer">
+                    More info <i class="fa fa-arrow-circle-right"></i>
+                </a>
+            </div>
         </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>{{count.files}}</h3>
+                    <p>Files</p>
+                </div>
+                <div class="icon"><i class="ion ion-stats-bars"></i></div>
+                <a href="#" ui-sref="app.files.list" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>{{count.files}}</h3>
+                    <p>Pages</p>
+                </div>
+                <div class="icon"><i class="ion ion-person-add"></i></div>
+                <a href="#" ui-sref="app.pages.list" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>{{count.events}}</h3>
+                    <p>Events</p>
+                </div>
+                <div class="icon"><i class="fa fa-calendar"></i></div>
+                <a href="#" ui-sref="app.events.list" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Current user</h4>
+        <pre>{{currentUser | json}}</pre>
+      </div>
+
+      <div class="col-md-6">
+        <h4>Settings</h4>
+        <pre>{{settings | json}}</pre>
       </div>
     </div>
-  </div>
-  <div class="col-lg-3 col-md-6">
-    <div class="panel panel-success">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-file-o fa-5x"></i>
-          </div>
-          <div class="col-xs-9 text-right">
-            <div class="huge">{{count.files}}</div>
-            <div>Files!</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6">
-    <div class="panel panel-warning">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-shopping-cart fa-5x"></i>
-          </div>
-          <div class="col-xs-9 text-right">
-            <div class="huge">{{count.products}}</div>
-            <div>Products!</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-calendar fa-5x"></i>
-          </div>
-          <div class="col-xs-9 text-right">
-            <div class="huge">{{count.events}}</div>
-            <div>Events!</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6">
-    <h4>Current user</h4>
-    <pre>{{currentUser | json}}</pre>
-  </div>
-
-  <div class="col-md-6">
-    <h4>Settings</h4>
-    <pre>{{settings | json}}</pre>
-  </div>
-</div>
+</section>

@@ -23,7 +23,8 @@ angular.module('loopbackApp', [
   'config',
   'ui.markdown',
   'angular.filter',
-  'oitozero.ngSweetAlert'
+  'oitozero.ngSweetAlert',
+  'ui.gravatar'
 ])
 
 .controller('LayoutCtrl', function ($scope, Setting, ENV) {
