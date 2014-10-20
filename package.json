@@ -1,7 +1,7 @@
 {
   "name": "loopback-angular-admin",
   "description": "Quickly create admin interfaces on a Loopback 2.x API",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "engines": {
     "node": "0.10.x"
   },
