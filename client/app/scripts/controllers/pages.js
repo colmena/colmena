@@ -39,6 +39,8 @@ angular.module('loopbackApp')
 
   .controller('PagesCtrl', function ($scope, $state, $stateParams, toasty, Page, $filter, SweetAlert) {
 
+    $scope.loading = true;
+
     var pageId = $stateParams.id;
 
     if (pageId) {
@@ -53,7 +55,10 @@ angular.module('loopbackApp')
     }
 
     function loadPages() {
-      $scope.pages = Page.find();
+      $scope.pages = Page.find(function(){
+        console.log('after find');
+        $scope.loading = false;
+      });
     }
 
     loadPages();

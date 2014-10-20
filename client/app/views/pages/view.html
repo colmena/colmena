@@ -1,19 +1,28 @@
-
-<h4>
-  <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i> Pages</a>
-  {{page.name}}
-  <small>{{page.slug}}</small>
-  <span class="pull-right btn-group" style="margin-top: 7px;">
-    <a href="" class="btn btn-sm btn-default" ui-sref="^.edit({id: page.id})">
-      <i class="fa fa-pencil"></i>
-    </a>
-    <a href="" class="btn btn-sm btn-default" ng-click="delete({id: page.id})">
-      <i class="fa fa-trash-o"></i>
-    </a>
-  </span>
-</h4>
-<div class="row">
-    <div class="col-md-12">
-        <div ng-bind-markdown="page.content"></div>
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">
+            <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i> Pages</a>
+            {{page.name}}
+            <small>{{page.slug}}</small>
+        </h3>
+        <div class="box-tools pull-right">
+          <span class="pull-right btn-group">
+            <a href="" class="btn btn-sm btn-default" ui-sref="^.edit({id: page.id})">
+                <i class="fa fa-pencil"></i>
+            </a>
+            <a href="" class="btn btn-sm btn-default" ng-click="delete({id: page.id})">
+                <i class="fa fa-trash-o"></i>
+            </a>
+          </span>
+        </div>
     </div>
+    <div class="box-body" style="min-height: 150px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-bind-markdown="page.content"></div>
+            </div>
+        </div>
+    </div>
+    <div ng-if="loading" class="overlay"></div>
+    <div ng-if="loading" class="loading-img"></div>
 </div>
