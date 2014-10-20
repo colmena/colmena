@@ -13,6 +13,7 @@
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#dashboard" data-toggle="tab">Dashboard</a></li>
                     <li class=""><a href="#variables" data-toggle="tab">Variables</a></li>
+                    <li class=""><a href="#theme" data-toggle="tab">Theme</a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane active" id="dashboard">
@@ -71,6 +72,26 @@
                             <div class="col-md-6">
                                 <h4>Settings</h4>
                                 <pre>{{settings | json}}</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="theme">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Theme <small>{{appTheme}}</small></h4>
+                                <div class="btn-group" data-toggle="btn-toggle">
+                                    <button type="button" class="btn btn-default btn-xs" data-toggle="on"
+                                            ng-repeat="theme in appThemes" ng-click="setTheme(theme.class)">
+                                        {{theme.name}}
+                                    </button>
+                                </div>
+                                <h4>Layout <small>{{appLayout}}</small></h4>
+                                <div class="btn-group" data-toggle="btn-toggle">
+                                    <button type="button" class="btn btn-default btn-xs" data-toggle="on"
+                                            ng-repeat="layout in appLayouts" ng-click="setLayout(layout.class)">
+                                        {{layout.name}}
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

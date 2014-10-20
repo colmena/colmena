@@ -31,6 +31,34 @@ angular.module('loopbackApp', [
 
   $scope.appName = 'LB-NG-BS';
   $scope.apiUrl = ENV.apiUrl;
+  $scope.appTheme = 'skin-black';
+  $scope.appThemes = [
+    {
+      'name': 'Black',
+      'class': 'skin-black'
+    }, {
+      'name': 'Blue',
+      'class': 'skin-blue'
+    }
+  ];
+  $scope.appLayout = 'fixed';
+  $scope.appLayouts = [
+    {
+      'name': 'Fixed',
+      'class': 'fixed'
+    }, {
+      'name': 'Scrolling',
+      'class': 'not-fixed'
+    }
+  ];
+
+  $scope.setTheme = function(theme) {
+    $scope.appTheme = theme;
+  }
+
+  $scope.setLayout= function(layout) {
+    $scope.appLayout = layout;
+  }
 
   $scope.settings = {};
 
