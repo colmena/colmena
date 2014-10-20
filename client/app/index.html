@@ -26,7 +26,7 @@
 </head>
 <body class="{{appTheme}} {{appLayout}} " ng-controller="MainCtrl">
 
-<div ui-view style="height: 100%"></div>
+<div ui-view class="full-height"></div>
 
 <div ng-controller="toasty-controller">
     <toasty-container toasty-defaults='{"timeout": 3000, "close-button":true, "sound": false}'></toasty-container>
@@ -87,6 +87,5 @@
 <script src="scripts/controllers/events.js"></script>
 <!-- endbuild -->
 
-<script src="scripts/AdminLTE/app.js"></script>
 </body>
 </html>
