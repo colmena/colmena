@@ -9,22 +9,22 @@
  * Main module of the application.
  */
 angular.module('loopbackApp', [
-  'ngAnimate',
-  'ngCookies',
-  'ngResource',
-  'ngRoute',
-  'ngSanitize',
-  'ngTouch',
-  'ui.router',
-  'lbServices',
-  'formly',
-  'toasty',
-  'angularFileUpload',
-  'config',
-  'ui.markdown',
-  'angular.filter',
-  'oitozero.ngSweetAlert',
-  'ui.gravatar'
+  'angular.filter'
+  , 'angularFileUpload'
+  , 'oitozero.ngSweetAlert'
+  , 'config'
+  , 'formly'
+  , 'lbServices'
+  , 'ngAnimate'
+  , 'ngCookies'
+  , 'ngResource'
+  , 'ngRoute'
+  , 'ngSanitize'
+  , 'ngTouch'
+  , 'ui.gravatar'
+  , 'ui.markdown'
+  , 'ui.router'
+  , 'toasty'
 ])
 
   .controller('LayoutCtrl', function ($scope, Setting, ENV) {
@@ -63,8 +63,8 @@ angular.module('loopbackApp', [
     };
 
     $scope.toggleSidebar = function () {
-    var $ = angular.element;
-    if ($(window).width() <= 992) {
+      var $ = angular.element;
+      if ($(window).width() <= 992) {
         $('.row-offcanvas').toggleClass('active');
         $('.left-side').removeClass('collapse-left');
         $('.right-side').removeClass('strech');
@@ -92,8 +92,7 @@ angular.module('loopbackApp', [
       url: '/login',
       template: '<login></login>',
       controller: 'LoginCtrl'
-    })
-    .state('register', {
+    }).state('register', {
       url: '/register',
       template: '<register></register>',
       controller: 'LoginCtrl'
