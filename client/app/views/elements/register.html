@@ -1,20 +1,31 @@
-<div class="row">
-  <div class="col-md-4 col-md-offset-4">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Register or <a href='#/login'>sign in</a></h3>
-      </div>
-      <div class="panel-body">
+<div class="bg-black" style="height: 100%">
+    <div class="form-box" id="login-box">
+        <div class="header">Register New User</div>
         <form class="form-signin" role="form" ng-submit="register()">
-          <div class="alert alert-danger" ng-if="registerError">{{registerError.message}}</div>
-          <input type="text" class="form-control" placeholder="First Name" ng-model="registration.firstName" required>
-          <input type="text" class="form-control" placeholder="Last Name" ng-model="registration.lastName" required>
-          <input type="text" class="form-control" placeholder="Email" ng-model="registration.email" required>
-          <input type="password" class="form-control" placeholder="Password" ng-model="registration.password" required>
-          <input type="password" class="form-control" placeholder="Confrim Password" ng-model="confirmPassword" required>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+            <div class="body bg-gray">
+                <div class="callout callout-danger" ng-if="registerError">
+                    <p>{{registerError.message}}</p>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="firstname" class="form-control" placeholder="First Name" ng-model="registration.firstName" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="lastname" class="form-control" placeholder="First Name" ng-model="registration.lastName" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email" ng-model="registration.email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Password" ng-model="registration.password" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Retype Password" ng-model="confirmPassword" required>
+                </div>
+            </div>
+            <div class="footer">
+                <button type="submit" class="btn bg-olive btn-block">Register</button>
+                <a href='#/login' class="text-center">I already have a membership</a>
+            </div>
         </form>
-      </div>
     </div>
-  </div>
 </div>
