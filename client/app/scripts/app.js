@@ -9,22 +9,22 @@
  * Main module of the application.
  */
 angular.module('loopbackApp', [
-  'angular.filter'
-  , 'angularFileUpload'
-  , 'oitozero.ngSweetAlert'
-  , 'config'
-  , 'formly'
-  , 'lbServices'
-  , 'ngAnimate'
-  , 'ngCookies'
-  , 'ngResource'
-  , 'ngRoute'
-  , 'ngSanitize'
-  , 'ngTouch'
-  , 'ui.gravatar'
-  , 'ui.markdown'
-  , 'ui.router'
-  , 'toasty'
+  'angular.filter',
+  'angularFileUpload',
+  'oitozero.ngSweetAlert',
+  'config',
+  'formly',
+  'lbServices',
+  'ngAnimate',
+  'ngCookies',
+  'ngResource',
+  'ngRoute',
+  'ngSanitize',
+  'ngTouch',
+  'ui.gravatar',
+  'ui.markdown',
+  'ui.router',
+  'toasty'
 ])
 
   .controller('LayoutCtrl', function ($scope, Setting, ENV) {
