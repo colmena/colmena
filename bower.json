@@ -12,7 +12,7 @@
     "angular-touch": "1.2.21",
     "angular-ui-router": "~0.2.10",
     "font-awesome": "~4.1.0",
-    "angular-formly": "git@github.com:formly-js/angular-formly.git#master",
+    "angular-formly": "https://github.com/formly-js/angular-formly.git#master",
     "angular-toasty": "~0.1.8",
     "angular-file-upload": "v0.4.0",
     "angular-markdown-editor": "*",
