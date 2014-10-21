@@ -10,8 +10,8 @@
   "validations": [],
   "relations": {
     "products": {
-      "model": "Product",
       "type": "hasMany",
+      "model": "Product",
       "foreignKey": "categoryId"
     }
   },
