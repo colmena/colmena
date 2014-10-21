@@ -13,8 +13,9 @@
   "validations": [],
   "relations": {
     "category": {
+      "type": "belongsTo",
       "model": "Category",
-      "type": "belongsTo"
+      "foreignKey": "categoryId"
     }
   },
   "acls": [],

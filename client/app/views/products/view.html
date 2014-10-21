@@ -1,8 +1,7 @@
-
 <h4>
   <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
-  {{product.title}}
-
+  {{product.name}}
+  <small class="label label-default">{{product.price}}</small>
   <span class="pull-right btn-group" style="margin-top: 7px;">
     <a href="" class="btn btn-sm btn-default" ui-sref="^.edit({id: product.id})">
       <i class="fa fa-pencil"></i>
@@ -11,7 +10,5 @@
       <i class="fa fa-trash-o"></i>
     </a>
   </span>
-
 </h4>
-<hr>
 <pre>{{product | json}}</pre>
