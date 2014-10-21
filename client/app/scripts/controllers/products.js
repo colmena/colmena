@@ -51,7 +51,7 @@ app.controller('ProductsCtrl', function ($scope, $state, $stateParams, toasty, P
     $scope.product = Product.findById({
       id: productId
     }, function (product) {
-      product.category = Product.category({id: product.categoryId});
+      product.category = Product.category({id: product.id});
     }, function (err) {
       console.log(err);
     });
