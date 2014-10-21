@@ -7,8 +7,7 @@
                 </div>
             </div>
             <div class="box-body">
-                <formly-form result="formData" fields="formFields" options="formOptions"
-                             ng-submit="onSubmit()"></formly-form>
+                <formly-form result="formData" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
             </div>
             <div class="box-footer">
                 <div class="controls">
@@ -23,7 +22,20 @@
     <div class="col-md-6">
         <div class="box box-primary">
             <div class="box-header">
+                <h3 class="box-title">File upload button</h3>
+            </div>
+            <div class="box-body">
+                <span class="file-input btn btn-primary btn-file">
+                    Browse&hellip; <input type="file" multiple ng-bind="uploads">
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="box box-primary">
+            <div class="box-header">
                 <h3 class="box-title">Datepicker</h3>
+
                 <div class="box-tools pull-right">
                 </div>
             </div>
@@ -34,7 +46,8 @@
                     <h4>Inline</h4>
 
                     <div style="display:inline-block; min-height:290px;">
-                        <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+                        <datepicker ng-model="dt" min-date="minDate" show-weeks="true"
+                                    class="well well-sm"></datepicker>
                     </div>
 
                     <h4>Popup</h4>
