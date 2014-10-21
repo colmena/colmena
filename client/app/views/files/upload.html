@@ -2,16 +2,16 @@
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">
-                <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+                <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i> Files</a>
                 Upload files
                 <small>You can just drag them in this window!</small>
             </h3>
 
             <div class="box-tools">
-                <div class="input-group pull-right">
-                    <div style="margin-top: 15px;">
-                        <input ng-file-select type="file" multiple/>
-                    </div>
+                <div class="input-group pull-right" style="margin-top: 5px;">
+                    <span class="file-input btn btn-block btn-default btn-file">
+                        Browse&hellip; <input ng-file-select type="file" multiple/>
+                    </span>
                 </div>
             </div>
         </div>
@@ -80,16 +80,13 @@
                             <button type="button" class="btn btn-success btn-xs" ng-click="item.upload()"
                                     ng-disabled="item.isReady || item.isUploading || item.isSuccess">
                                 <span class="glyphicon glyphicon-upload"></span>
-                                Upload
                             </button>
                             <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()"
                                     ng-disabled="!item.isUploading">
                                 <span class="glyphicon glyphicon-ban-circle"></span>
-                                Cancel
                             </button>
                             <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
                                 <span class="glyphicon glyphicon-trash"></span>
-                                Remove
                             </button>
                         </div>
                     </td>
