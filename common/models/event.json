@@ -11,8 +11,7 @@
       "type": "string"
     },
     "start_time": {
-      "type": "date",
-      "required": true
+      "type": "date"
     },
     "end_time": {
       "type": "date"
