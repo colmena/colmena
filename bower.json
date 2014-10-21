@@ -20,7 +20,8 @@
     "angular-sweetalert": "~1.0.3",
     "angular-gravatar": "~0.2.2",
     "ionicons": "~1.5.2",
-    "angular-bootstrap": "~0.11.2"
+    "angular-bootstrap": "~0.11.2",
+    "angular-bootstrap-nav-tree": "*"
   },
   "devDependencies": {
     "angular-mocks": "1.2.21",

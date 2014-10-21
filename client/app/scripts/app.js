@@ -10,6 +10,7 @@
  */
 angular.module('loopbackApp', [
   'angular.filter',
+  'angularBootstrapNavTree',
   'angularFileUpload',
   'oitozero.ngSweetAlert',
   'config',
