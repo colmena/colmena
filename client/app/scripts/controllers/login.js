@@ -47,8 +47,7 @@ angular.module('loopbackApp')
 
     $scope.register = function() {
 
-      console.log('reg');
-
+      $scope.registration.username = $scope.registration.email;
       $scope.user = User.save($scope.registration,
         function() {
 
