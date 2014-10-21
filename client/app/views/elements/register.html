@@ -1,6 +1,11 @@
 <div class="bg-black" style="height: 100%">
     <div class="form-box" id="login-box">
-        <div class="header">Register New User</div>
+        <span class="pull-right image" style="margin: 15px 20px; float: left;">
+            <img gravatar-src="registration.email"  class="img-circle" alt="User Image" gravatar-size="50">
+        </span>
+        <div class="header" style="text-align: left; padding-left: 25px;">
+            Register
+        </div>
         <form class="form-signin" role="form" ng-submit="register()">
             <div class="body bg-gray">
                 <div class="callout callout-danger" ng-if="registerError">
@@ -24,7 +29,7 @@
             </div>
             <div class="footer">
                 <button type="submit" class="btn bg-olive btn-block">Register</button>
-                <a href='#/login' class="text-center">I already have a membership</a>
+                <a href='#/login' class="btn bg-olive btn-block">Or sign in </a>
             </div>
         </form>
     </div>
