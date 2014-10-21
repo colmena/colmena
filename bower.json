@@ -12,7 +12,7 @@
     "angular-touch": "1.2.21",
     "angular-ui-router": "~0.2.10",
     "font-awesome": "~4.1.0",
-    "angular-formly": "~0.0.14",
+    "angular-formly": "git@github.com:formly-js/angular-formly.git#master",
     "angular-toasty": "~0.1.8",
     "angular-file-upload": "v0.4.0",
     "angular-markdown-editor": "*",
@@ -27,11 +27,6 @@
     "angular-scenario": "1.2.21"
   },
   "overrides": {
-    "angular-formly": {
-      "main": [
-        "dist/formly.bootstrap.min.js"
-      ]
-    },
     "codemirror": {
       "main": [
         "lib/codemirror.css",
@@ -56,6 +51,7 @@
   },
   "appPath": "client/app/",
   "resolutions": {
-    "angular": "1.2.21"
+    "angular": "1.2.21",
+    "angular-formly": "master"
   }
 }
