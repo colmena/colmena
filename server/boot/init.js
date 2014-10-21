@@ -15,8 +15,8 @@ module.exports = function(app) {
 
   User.create({
     email: 'admin@admin.com',
-    firstName: 'System',
-    lastName: 'Admin',
+    firstName: 'Admin',
+    lastName: 'User',
     password: 'admin'
   }, function(err, user) {
 
@@ -38,7 +38,7 @@ module.exports = function(app) {
 
   User.create({
     email: 'user@user.com',
-    firstName: 'App',
+    firstName: 'Normal',
     lastName: 'User',
     password: 'user'
   }, function(err, user) {
