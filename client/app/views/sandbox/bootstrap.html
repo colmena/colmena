@@ -1,4 +1,24 @@
-<div ng-controller="AlertDemoCtrl">
-    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
-    <button class='btn btn-default' ng-click="addAlert()">Add Alert</button>
+<div class="row">
+    <div class="col-md-6">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">Alerts</h3>
+            </div>
+            <div class="box-body">
+                <div ng-controller="SandboxBootstrapAlertCtrl">
+                    <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+                    <button class='btn btn-default' ng-click="addAlert()">Add Alert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="col-md-6">-->
+        <!--<div class="box box-primary">-->
+            <!--<div class="box-header">-->
+                <!--<h3 class="box-title"></h3>-->
+            <!--</div>-->
+            <!--<div class="box-body">-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 </div>
