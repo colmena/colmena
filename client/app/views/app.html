@@ -11,7 +11,8 @@
                         <img gravatar-src-once="currentUser.email" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Hello, {{currentUser.firstName}}</p>
+                        <p><a href="" ui-sref="app.users.profile">Hello, {{currentUser.firstName}}</a></p>
+                        <p><small><a href="" ui-sref="app.users.profile">{{currentUser.username || currentUser.email }}</a></small></p>
                     </div>
                 </div>
                 <ul class="sidebar-menu">
