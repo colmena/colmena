@@ -42,7 +42,7 @@ app.config(function ($stateProvider) {
   });
 });
 
-app.controller('ProductsCtrl', function ($scope, $state, $stateParams, toasty, Product, Category) {
+app.controller('ProductsCtrl', function ($scope, $state, $stateParams, toasty, Product, Category, SweetAlert) {
 
   var productId = $stateParams.id;
   var categoryId = $stateParams.categoryId;
@@ -75,13 +75,13 @@ app.controller('ProductsCtrl', function ($scope, $state, $stateParams, toasty, P
 
   loadItems();
 
-  $scope.delete = function(id) {
+  $scope.delete = function (id) {
     SweetAlert.swal({
       title: 'Are you sure?',
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#DD6B55'
-    }, function(isConfirm){
+    }, function (isConfirm) {
       if (isConfirm) {
         Product.deleteById(id, function () {
           toasty.pop.success({title: 'Product deleted', msg: 'Your product is deleted!', sound: false});
@@ -96,12 +96,23 @@ app.controller('ProductsCtrl', function ($scope, $state, $stateParams, toasty, P
     });
   };
 
-  $scope.deletecategory = function(id) {
-    Category.deleteById(id, function() {
-      toasty.pop.success({title: 'Category deleted', msg: 'Your category is deleted!', sound: false});
-      loadItems();
-    }, function(err) {
-      toasty.pop.error({title: 'Error deleting category', msg: 'Your category is not deleted: ' + err, sound: false});
+  $scope.deletecategory = function (id) {
+    SweetAlert.swal({
+      title: 'Are you sure?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DD6B55'
+    }, function (isConfirm) {
+      if (isConfirm) {
+        Category.deleteById(id, function () {
+          toasty.pop.success({title: 'Category deleted', msg: 'Your category is deleted!', sound: false});
+          loadItems();
+        }, function (err) {
+          toasty.pop.error({title: 'Error deleting category', msg: 'Your category is not deleted: ' + err, sound: false});
+        });
+      } else {
+        return false;
+      }
     });
   };
 
@@ -119,8 +130,18 @@ app.controller('ProductsCtrl', function ($scope, $state, $stateParams, toasty, P
       required: true
     },
     {
+      key: 'description',
+      type: 'text',
+      label: 'Description'
+    },
+    {
+      key: 'percentage',
+      type: 'text',
+      label: 'Percentage'
+    },
+    {
       key: 'price',
-      type: 'number',
+      type: 'text',
       label: 'Price'
     }
   ];
@@ -142,14 +163,14 @@ app.controller('ProductsCtrl', function ($scope, $state, $stateParams, toasty, P
 
 });
 
-app.controller('CategoriesCtrl', function($scope, $state, $stateParams, toasty, Category) {
+app.controller('CategoriesCtrl', function ($scope, $state, $stateParams, toasty, Category) {
   var categoryId = $stateParams.categoryId;
   if (categoryId) {
     $scope.category = Category.findById({
       id: categoryId
-    }, function(category) {
+    }, function (category) {
       $scope.products = Category.products({id: category.id});
-    }, function(err) {
+    }, function (err) {
       console.log(err);
     });
   } else {
@@ -169,11 +190,11 @@ app.controller('CategoriesCtrl', function($scope, $state, $stateParams, toasty, 
     submitCopy: 'Save'
   };
 
-  $scope.onSubmit = function() {
-    Category.upsert($scope.category, function() {
+  $scope.onSubmit = function () {
+    Category.upsert($scope.category, function () {
       toasty.pop.success({title: 'Category saved', msg: 'Your category is safe with us!', sound: false});
       $state.go('^.list');
-    }, function(err) {
+    }, function (err) {
       console.log(err);
     });
   };
