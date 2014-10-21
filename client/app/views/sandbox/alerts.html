@@ -1,0 +1,74 @@
+<h4> <a href="https://github.com/t4t5/sweetalert">t4t5/sweetalert</a> provided by <a href="https://github.com/oitozero/ngSweetAlert">oitozero/ngSweetAlert</a></h4>
+
+
+<div class="row">
+    <div class="col-md-4">
+        A basic message
+    </div>
+    <div class="col-md-2">
+        <a href class="btn btn-primary" ng-click="demo1();">Try me!</a>
+    </div>
+    <div class="col-md-6">
+        <pre>SweetAlert.swal("Here's a message");</pre>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        A title with a text under
+    </div>
+    <div class="col-md-2">
+        <a href class="btn btn-primary" ng-click="demo2();">Try me!</a>
+    </div>
+    <div class="col-md-6">
+        <pre>SweetAlert.swal("Here's a message!", "It's pretty, isn't it?");</pre>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        A success message!
+    </div>
+    <div class="col-md-2">
+        <a href class="btn btn-primary" ng-click="demo3();">Try me!</a>
+    </div>
+    <div class="col-md-6">
+        <pre>SweetAlert.swal("Good job!", "You clicked the button!", "success");</pre>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        A warning message, with a function attached to the "Confirm"-button
+    </div>
+    <div class="col-md-2">
+        <a href class="btn btn-primary" ng-click="demo4();">Try me!</a>
+    </div>
+    <div class="col-md-6">
+        <pre>SweetAlert.swal({<br>&nbsp;&nbsp;&nbsp;title: "Are you sure?",<br>&nbsp;&nbsp;&nbsp;text: "Your will not be able to recover this imaginary file!",<br>&nbsp;&nbsp;&nbsp;type: "warning",<br>&nbsp;&nbsp;&nbsp;showCancelButton: true,<br>&nbsp;&nbsp;&nbsp;confirmButtonColor: "#DD6B55",<br>&nbsp;&nbsp;&nbsp;confirmButtonText: "Yes, delete it!"<br>}, <br>function(){ <br>&nbsp;&nbsp;&nbsp;SweetAlert.swal("Booyah!");<br>});</pre>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        ... and by passing a parameter, you can execute something else for "Cancel".
+    </div>
+    <div class="col-md-2">
+        <a href class="btn btn-primary" ng-click="demo5();">Try me!</a>
+    </div>
+    <div class="col-md-6">
+        <pre>SweetAlert.swal({<br>&nbsp;&nbsp;&nbsp;title: "Are you sure?",<br>&nbsp;&nbsp;&nbsp;text: "Your will not be able to recover this imaginary file!",<br>&nbsp;&nbsp;&nbsp;type: "warning",<br>&nbsp;&nbsp;&nbsp;showCancelButton: true,<br>&nbsp;&nbsp;&nbsp;confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!",<br>&nbsp;&nbsp;&nbsp;cancelButtonText: "No, cancel plx!",<br>&nbsp;&nbsp;&nbsp;closeOnConfirm: false,<br>&nbsp;&nbsp;&nbsp;closeOnCancel: false }, <br>function(isConfirm){ <br>&nbsp;&nbsp;&nbsp;if (isConfirm) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SweetAlert.swal("Deleted!", "Your imaginary file has been deleted.", "success");<br>&nbsp;&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SweetAlert.swal("Cancelled", "Your imaginary file is safe :)", "error");<br>&nbsp;&nbsp;&nbsp;}<br>});</pre>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        A message with a custom icon
+    </div>
+    <div class="col-md-2">
+        <a href class="btn btn-primary" ng-click="demo6();">Try me!</a>
+    </div>
+    <div class="col-md-6">
+        <pre>SweetAlert.swal({<br>&nbsp;&nbsp;&nbsp;title: "Sweet!",<br>&nbsp;&nbsp;&nbsp;text: "Here's a custom image.",<br>&nbsp;&nbsp;&nbsp;imageUrl: "http:://oitozero.com/avatar/avatar.jpg" });</pre>
+    </div>
+</div>

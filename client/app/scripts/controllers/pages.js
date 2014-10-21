@@ -37,7 +37,7 @@ angular.module('loopbackApp')
       });
   })
 
-  .controller('PagesCtrl', function ($scope, $state, $stateParams, toasty, Page, $filter) {
+  .controller('PagesCtrl', function ($scope, $state, $stateParams, toasty, Page, $filter, SweetAlert) {
 
     var pageId = $stateParams.id;
 
@@ -59,18 +59,24 @@ angular.module('loopbackApp')
     loadPages();
 
     $scope.delete = function (id) {
-      // if (confirm('Are you sure?') === false) {
-      // return false;
-      // }
-      Page.deleteById(id, function () {
-        toasty.pop.success({title: 'Page deleted', msg: 'Your page is deleted!', sound: false});
-        loadPages();
-        $state.go('app.pages.list');
-        console.log();
-      }, function (err) {
-        toasty.pop.error({title: 'Error deleting page', msg: 'Your page is not deleted: ' + err, sound: false});
+      SweetAlert.swal({
+        title: 'Are you sure?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#DD6B55'
+      }, function(isConfirm){
+        if (isConfirm) {
+          Page.deleteById(id, function () {
+            toasty.pop.success({title: 'Page deleted', msg: 'Your page is deleted!', sound: false});
+            loadPages();
+            $state.go('app.pages.list');
+          }, function (err) {
+            toasty.pop.error({title: 'Error deleting page', msg: 'Your page is not deleted: ' + err, sound: false});
+          });
+        } else {
+          return false;
+        }
       });
-
     };
 
     $scope.formFields = [

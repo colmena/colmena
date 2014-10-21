@@ -38,7 +38,7 @@ angular.module('loopbackApp')
     });
   })
 
-  .controller('NotesCtrl', function($scope, $state, $stateParams, toasty, Note) {
+  .controller('NotesCtrl', function($scope, $state, $stateParams, toasty, Note, SweetAlert) {
 
   var noteId = $stateParams.id;
 
@@ -59,18 +59,25 @@ angular.module('loopbackApp')
   loadItems();
 
   $scope.delete = function(id) {
-    // if (confirm('Are you sure?') === false) {
-    //   return false;
-    // }
-    Note.deleteById(id, function() {
-      toasty.pop.success({title: 'Note deleted', msg: 'Your note is deleted!', sound: false});
-      loadItems();
-      $state.go('app.notes.list');
-      console.log();
-    }, function(err) {
-      toasty.pop.error({title: 'Error deleting note', msg: 'Your note is not deleted: ' + err, sound: false});
+    SweetAlert.swal({
+      title: 'Are you sure?',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DD6B55'
+    }, function(isConfirm){
+      if (isConfirm) {
+        Note.deleteById(id, function() {
+          toasty.pop.success({title: 'Note deleted', msg: 'Your note is deleted!', sound: false});
+          loadItems();
+          $state.go('app.notes.list');
+          console.log();
+        }, function(err) {
+          toasty.pop.error({title: 'Error deleting note', msg: 'Your note is not deleted: ' + err, sound: false});
+        });
+      } else {
+        return false;
+      }
     });
-
   };
 
   $scope.formFields = [{

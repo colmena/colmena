@@ -33,7 +33,7 @@ angular.module('loopbackApp')
       controller: 'EventsCtrl'
     });
   })
-  .controller('EventsCtrl', function ($scope, $state, $stateParams, toasty, Event) {
+  .controller('EventsCtrl', function ($scope, $state, $stateParams, toasty, Event, SweetAlert) {
 
     var eventId = $stateParams.id;
 
@@ -76,22 +76,24 @@ angular.module('loopbackApp')
     loadItems();
 
     $scope.delete = function (id) {
-      // if (confirm('Are you sure?') === false) {
-      //   return false;
-      // }
-      Event.deleteById(id, function () {
-        toasty.pop.success(
-          {title: 'Event deleted',
-            msg: 'Your event is deleted!',
-            sound: false});
-        loadItems();
-        $state.go('app.events.list');
-        console.log();
-      }, function (err) {
-        toasty.pop.error(
-          {title: 'Error deleting event',
-            msg: 'Your event is not deleted: ' + err,
-            sound: false});
+      SweetAlert.swal({
+        title: 'Are you sure?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#DD6B55'
+      }, function (isConfirm) {
+        if (isConfirm) {
+          Event.deleteById(id, function () {
+            toasty.pop.success({title: 'Event deleted', msg: 'Your event is deleted!', sound: false});
+            loadItems();
+            $state.go('app.events.list');
+            console.log();
+          }, function (err) {
+            toasty.pop.error({title: 'Error deleting event', msg: 'Your event is not deleted: ' + err, sound: false});
+          });
+        } else {
+          return false;
+        }
       });
     };
 //

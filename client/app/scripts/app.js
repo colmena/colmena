@@ -22,7 +22,8 @@ angular.module('loopbackApp', [
   'angularFileUpload',
   'config',
   'ui.markdown',
-  'angular.filter'
+  'angular.filter',
+  'oitozero.ngSweetAlert'
 ])
 
 .controller('LayoutCtrl', function ($scope, Setting, ENV) {

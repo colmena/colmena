@@ -7,7 +7,13 @@ The goal is to have a starter project which can be used to quickly build an API 
 
 [![Codeship Status for beeman/loopback-angular-admin](https://www.codeship.io/projects/63461bc0-396b-0132-3ad7-621226feddc2/status)](https://www.codeship.io/projects/42207)
 
+[![wercker status](https://app.wercker.com/status/d5bf1a6b787b3c00633c02da0f9a48e5/s "wercker status")](https://app.wercker.com/project/bykey/d5bf1a6b787b3c00633c02da0f9a48e5)
+
+[![Build Status](https://drone.io/github.com/beeman/loopback-angular-admin/status.png)](https://drone.io/github.com/beeman/loopback-angular-admin/latest)
+
 ## Try it now!
+
+Deploy an instance on your Heroku account to play around with it!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
@@ -22,6 +28,7 @@ The goal is to have a starter project which can be used to quickly build an API 
 - Admin template powered by [SB-Admin](http://startbootstrap.com/template-overviews/sb-admin/)
 - Markdown Editor with live preview with [angular-markdown-editor](https://github.com/JimLiu/angular-markdown-editor)
 - Bunch of useful filters for AngularJS: [a8m/angular-filter](https://github.com/a8m/angular-filter)
+- [t4t5/sweetalert](https://github.com/t4t5/sweetalert) provided by [oitozero/ngSweetAlert](https://github.com/oitozero/ngSweetAlert)
 
 ### TODO:
 
@@ -37,6 +44,14 @@ The goal is to have a starter project which can be used to quickly build an API 
 - Add Vagrantfile
 
 - [Tell me more](https://github.com/beeman/loopback-angular-admin/issues/new)
+
+## Screenshots
+#### Dashboard
+![](screenshots/screenshot1.png?raw=true)
+#### Markdown Editor
+![](screenshots/screenshot2.png?raw=true)
+#### SweetAlert
+![](screenshots/screenshot3.png?raw=true)
 
 ## Installation
 
@@ -62,7 +77,7 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
 ### Clone, install and run in a oneliner
 
-    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && bower install && grunt && npm start & grunt serve
+    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && bower install && API_URL=http://0.0.0.0:3000/api grunt && npm start & grunt serve
 
 ## Running
 
