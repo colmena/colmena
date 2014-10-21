@@ -29,6 +29,16 @@ angular.module('loopbackApp', [
   'toasty'
 ])
 
+  .controller('RouteCtrl', function ($q, $scope, $state, $location, AppAuth) {
+    if(!AppAuth.currentUser) {
+      console.log('Redirect to login');
+      $location.path('/login');
+    } else {
+      console.log('Redirect to app');
+      $location.path('/app');
+    }
+  })
+
   .controller('LayoutCtrl', function ($scope, Setting, ENV) {
 
     $scope.appName = 'LB-NG-BS';
@@ -98,9 +108,13 @@ angular.module('loopbackApp', [
       url: '/register',
       template: '<register></register>',
       controller: 'LoginCtrl'
+    }).state('router', {
+      url: '/router',
+      template: '<div class="lockscreen" style="height: 100%"></div>',
+      controller: 'RouteCtrl'
     });
 
-    $urlRouterProvider.otherwise('/app');
+    $urlRouterProvider.otherwise('/router');
 
   })
 
@@ -116,11 +130,14 @@ angular.module('loopbackApp', [
             // save the current location so that login can redirect back
             $location.nextAfterLogin = $location.path();
 
-            if ($location.path() !== '/register') {
-              $location.path('/login');
+            if ($location.path() === '/router' || $location.path() === '/login' ) {
+              console.log('401 while on router on login path');
+            } else {
+              if ($location.path() !== '/register') {
+                $location.path('/login');
+              }
+              toasty.pop.warning({title: 'Error 401 received', msg: 'We received a 401 error from the API! Redirecting to login', sound: false});
             }
-
-            toasty.pop.warning({title: 'Error 401 received', msg: 'We received a 401 error from the API! Redirecting to login', sound: false});
           }
           if (rejection.status === 404) {
             console.log(rejection);
