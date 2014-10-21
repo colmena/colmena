@@ -103,37 +103,38 @@ app.controller('SandboxToastsCtrl', function ($scope, $http, toasty) {
 });
 
 app.controller('SandboxTreesCtrl', function ($scope, $timeout) {
-  var apple_selected, tree, treedata_avm, treedata_geography;
-  $scope.my_tree_handler = function (branch) {
+  var appleSelected, tree, treedataAvm, treedataGeography;
+  $scope.myTreeHandler = function (branch) {
     var _ref;
-    $scope.output = "You selected: " + branch.label;
-    if ((_ref = branch.data) != null ? _ref.description : void 0) {
+    $scope.output = 'You selected: ' + branch.label;
+    if ((_ref = branch.data) !== null ? _ref.description : void 0) {
       return $scope.output += '(' + branch.data.description + ')';
     }
   };
-  apple_selected = function (branch) {
-    return $scope.output = "APPLE! : " + branch.label;
+  appleSelected = function (branch) {
+    $scope.output = 'APPLE! : ' + branch.label;
+    return $scope.output;
   };
-  treedata_avm = [
+  treedataAvm = [
     {
       label: 'Animal',
       children: [
         {
           label: 'Dog',
           data: {
-            description: "man's best friend"
+            description: 'man\'s best friend'
           }
         },
         {
           label: 'Cat',
           data: {
-            description: "Felis catus"
+            description: 'Felis catus'
           }
         },
         {
           label: 'Hippopotamus',
           data: {
-            description: "hungry, hungry"
+            description: 'hungry, hungry'
           }
         },
         {
@@ -145,11 +146,12 @@ app.controller('SandboxTreesCtrl', function ($scope, $timeout) {
     {
       label: 'Vegetable',
       data: {
-        definition: "A plant or part of a plant used as food, typically as accompaniment to meat or fish, such as a cabbage, potato, carrot, or bean.",
-        data_can_contain_anything: true
+        definition: 'A plant or part of a plant used as food, typically as accompaniment to meat or fish, such as a cabbage, potato, carrot, or bean.',
+        dataCanContainAnything: true
       },
       onSelect: function (branch) {
-        return $scope.output = "Vegetable: " + branch.data.definition;
+        $scope.output = 'Vegetable: ' + branch.data.definition;
+        return $scope.output;
       },
       children: [
         {
@@ -160,15 +162,15 @@ app.controller('SandboxTreesCtrl', function ($scope, $timeout) {
           children: [
             {
               label: 'Granny Smith',
-              onSelect: apple_selected
+              onSelect: appleSelected
             },
             {
               label: 'Red Delicous',
-              onSelect: apple_selected
+              onSelect: appleSelected
             },
             {
               label: 'Fuji',
-              onSelect: apple_selected
+              onSelect: appleSelected
             }
           ]
         }
@@ -201,7 +203,7 @@ app.controller('SandboxTreesCtrl', function ($scope, $timeout) {
       ]
     }
   ];
-  treedata_geography = [
+  treedataGeography = [
     {
       label: 'North America',
       children: [
@@ -237,39 +239,42 @@ app.controller('SandboxTreesCtrl', function ($scope, $timeout) {
       ]
     }
   ];
-  $scope.my_data = treedata_avm;
-  $scope.try_changing_the_tree_data = function () {
-    if ($scope.my_data === treedata_avm) {
-      return $scope.my_data = treedata_geography;
+  $scope.myTreeData = treedataAvm;
+  $scope.tryChangingTheTreeData = function () {
+    if ($scope.myTreeData === treedataAvm) {
+      $scope.myTreeData = treedataGeography;
+      return $scope.myTreeData;
     } else {
-      return $scope.my_data = treedata_avm;
+      $scope.myTreeData = treedataAvm;
+      return $scope.myTreeData;
     }
   };
-  $scope.my_tree = tree = {};
-  $scope.try_async_load = function () {
-    $scope.my_data = [];
-    $scope.doing_async = true;
+  $scope.myTree = tree = {};
+  $scope.tryAsyncLoad = function () {
+    $scope.myTreeData = [];
+    $scope.doingAsync = true;
     return $timeout(function () {
       if (Math.random() < 0.5) {
-        $scope.my_data = treedata_avm;
+        $scope.myTreeData = treedataAvm;
       } else {
-        $scope.my_data = treedata_geography;
+        $scope.myTreeData = treedataGeography;
       }
-      $scope.doing_async = false;
-      return tree.expand_all();
+      $scope.doingAsync = false;
+      return tree.expandAll();
     }, 1000);
   };
-  return $scope.try_adding_a_branch = function () {
+  $scope.tryAddingABranch = function () {
     var b;
-    b = tree.get_selected_branch();
-    return tree.add_branch(b, {
+    b = tree.getSelectedBranch();
+    return tree.addBranch(b, {
       label: 'New Branch',
       data: {
         something: 42,
-        "else": 43
+        'else': 43
       }
     });
   };
+  return $scope.tryAddingABranch;
 });
 app.controller('SandboxFormsCtrl', function ($scope, $http, toasty, SweetAlert) {
 
