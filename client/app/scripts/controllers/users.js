@@ -15,7 +15,7 @@ angular.module('loopbackApp')
       templateUrl: 'views/users/main.html',
       controller: 'UsersCtrl'
     }).state('app.users.profile', {
-      url: '/users/profile',
+      url: '/profile',
       templateUrl: 'views/users/profile.html',
       controller: 'UsersCtrl'
     });
