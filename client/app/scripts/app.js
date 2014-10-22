@@ -24,7 +24,6 @@ angular.module('loopbackApp', [
   'ngTouch',
   'ui.bootstrap',
   'ui.gravatar',
-  'ui.markdown',
   'ui.router',
   'toasty'
 ])

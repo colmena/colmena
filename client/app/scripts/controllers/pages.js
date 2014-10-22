@@ -55,7 +55,7 @@ angular.module('loopbackApp')
     }
 
     function loadPages() {
-      $scope.pages = Page.find(function(){
+      $scope.pages = Page.find(function () {
         console.log('after find');
         $scope.loading = false;
       });
@@ -69,7 +69,7 @@ angular.module('loopbackApp')
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#DD6B55'
-      }, function(isConfirm){
+      }, function (isConfirm) {
         if (isConfirm) {
           Page.deleteById(id, function () {
             toasty.pop.success({title: 'Page deleted', msg: 'Your page is deleted!', sound: false});
@@ -90,6 +90,16 @@ angular.module('loopbackApp')
         label: 'Name',
         type: 'text',
         required: true
+      },
+      {
+        key: 'content',
+        label: 'Content',
+        type: 'textarea'
+      },
+      {
+        key: 'extended',
+        label: 'Extended content',
+        type: 'textarea'
       }
     ];
     $scope.editorOptions = {

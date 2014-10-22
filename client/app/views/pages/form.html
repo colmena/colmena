@@ -6,9 +6,6 @@
             <span ng-show="page.id">Edit page</span>
         </h3>
         <div class="box-tools pull-right">
-            <span class="pull-right btn-group-sm">
-                <button class="btn btn-sm btn-success" ng-click="onSubmit()">Save</button>
-            </span>
         </div>
     </div>
     <div class="box-body" style="min-height: 150px;">
@@ -16,14 +13,6 @@
             <div class="col-md-4">
                 <div class="alert alert-danger" ng-if="addError">Could not add page!</div>
                 <formly-form result="page" fields="formFields" options="formOptions"></formly-form>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-xs-12">
-                <textarea ui-markdown-editor="editorOptions" ng-model="page.content"></textarea>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div ng-bind-markdown="page.content"></div>
             </div>
         </div>
     </div>
