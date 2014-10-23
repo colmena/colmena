@@ -12,6 +12,7 @@ angular.module('loopbackApp', [
   'angular.filter',
   'angularBootstrapNavTree',
   'angularFileUpload',
+  'btford.markdown',
   'oitozero.ngSweetAlert',
   'config',
   'formly',
@@ -23,13 +24,14 @@ angular.module('loopbackApp', [
   'ngSanitize',
   'ngTouch',
   'ui.bootstrap',
+  'ui.codemirror',
   'ui.gravatar',
   'ui.router',
   'toasty'
 ])
 
   .controller('RouteCtrl', function ($q, $scope, $state, $location, AppAuth) {
-    if(!AppAuth.currentUser) {
+    if (!AppAuth.currentUser) {
       console.log('Redirect to login');
       $location.path('/login');
     } else {
@@ -129,7 +131,7 @@ angular.module('loopbackApp', [
             // save the current location so that login can redirect back
             $location.nextAfterLogin = $location.path();
 
-            if ($location.path() === '/router' || $location.path() === '/login' ) {
+            if ($location.path() === '/router' || $location.path() === '/login') {
               console.log('401 while on router on login path');
             } else {
               if ($location.path() !== '/register') {
@@ -150,13 +152,13 @@ angular.module('loopbackApp', [
         }
       };
     });
-  }).config(function(formlyConfigProvider){
+  }).config(function (formlyConfigProvider) {
     var templates = 'views/elements/fields/';
     var formly = templates + 'formly-field-';
     var fields = ['checkbox', 'email', 'hidden', 'number', 'password', 'radio', 'select', 'text', 'textarea'];
 
-    angular.forEach(fields, function(val){
-      formlyConfigProvider.setTemplateUrl(val, formly+val+'.html');
+    angular.forEach(fields, function (val) {
+      formlyConfigProvider.setTemplateUrl(val, formly + val + '.html');
     });
 
     formlyConfigProvider.setTemplateUrl('date', templates + 'date.html');

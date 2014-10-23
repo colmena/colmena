@@ -1,27 +1,49 @@
 <div class="box">
     <div class="box-header">
-        <h3 class="box-title">
-            <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
-            <span ng-show="!page.id">Add a new page</span>
-            <span ng-show="page.id">Edit page</span>
-        </h3>
-        <div class="box-tools pull-right">
-        </div>
-    </div>
-    <div class="box-body" style="min-height: 150px;">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="alert alert-danger" ng-if="addError">Could not add page!</div>
-                <formly-form result="page" fields="formFields" options="formOptions"></formly-form>
+        <span class="box-title">
+            <div class="input-group">
+                <a href="" ui-sref="^.list" class=" btn btn-default " style="float: left;"><i
+                        class="fa fa-arrow-left"></i> Pages</a>
+                <input ng-model="page.name" type="text" class="form-controls" placeholder="Name" required="required"
+                       style="margin-left: 2px; border: 0px;">
             </div>
+        </span>
+
+        <div class="box-tools pull-right">
+            <span class="pull-right btn-group">
+            <button class="btn btn-primary btn-success btn-sm" ng-click="onSubmit()"><i class="fa fa-save"></i>  Save
+            </button>
+            <a href="" class="btn btn-sm btn-default" ui-sref="^.view({id: page.id})">
+                <i class="fa fa-eye"></i>
+            </a>
+            <a href="" class="btn btn-sm btn-default" ng-click="delete({id: page.id})">
+                <i class="fa fa-trash-o"></i>
+            </a>
+          </span>
         </div>
     </div>
-    <div class="box-footer">
-        <div class="controls">
-            <button class="btn btn-primary btn-success" ng-click="onSubmit()">Submit</button>
-            <button class="btn btn-default" ng-click="reset()">Cancel</button>
-        </div>
+    <div class="box-body">
+        <div class="alert alert-danger" ng-if="addError">Could not add page!</div>
+        <tabset>
+            <tab heading="Editor">
+                <ui-codemirror ui-codemirror-opts="editorOptions" ng-model="page.content"></ui-codemirror>
+            </tab>
+            <tab heading="Preview">
+                <div btf-markdown="page.content"></div>
+            </tab>
+        </tabset>
     </div>
     <div ng-if="loading" class="overlay"></div>
     <div ng-if="loading" class="loading-img"></div>
 </div>
+<style>
+    .CodeMirror {
+        border: 1px solid #eee;
+        height: auto;
+    }
+
+    .CodeMirror-scroll {
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+</style>

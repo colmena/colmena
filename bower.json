@@ -20,13 +20,36 @@
     "angular-gravatar": "~0.2.2",
     "ionicons": "~1.5.2",
     "angular-bootstrap": "~0.11.2",
-    "angular-bootstrap-nav-tree": "*"
+    "angular-bootstrap-nav-tree": "*",
+    "angular-ui-codemirror": "bower",
+    "angular-markdown-directive": "~0.3.0"
   },
   "devDependencies": {
     "angular-mocks": "1.2.21",
     "angular-scenario": "1.2.21"
   },
-  "overrides": {},
+  "overrides": {
+    "angular-markdown-directive": {
+      "main": [
+        "markdown.js"
+      ]
+    },
+    "codemirror": {
+      "main": [
+        "lib/codemirror.css",
+        "theme/monokai.css",
+        "lib/codemirror.js",
+        "addon/mode/overlay.js",
+        "mode/gfm/gfm.js",
+        "mode/markdown/markdown.js"
+      ]
+    },
+    "showdown": {
+      "main": [
+        "compressed/showdown.js"
+      ]
+    }
+  },
   "appPath": "client/app/",
   "resolutions": {
     "angular": "1.2.21",
