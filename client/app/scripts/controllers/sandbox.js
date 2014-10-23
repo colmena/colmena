@@ -401,7 +401,7 @@ app.controller('SandboxBootstrapAlertCtrl', function ($scope) {
   };
 });
 
-app.controller('SandboxBootstrapTabsCtrl', function ($scope) {
+app.controller('SandboxBootstrapTabsCtrl', function ($scope, SweetAlert) {
   $scope.tabs = [
     { title: 'Dynamic Title 1', content: 'Dynamic content 1' },
     { title: 'Dynamic Title 2', content: 'Dynamic content 2', disabled: true }
@@ -409,7 +409,7 @@ app.controller('SandboxBootstrapTabsCtrl', function ($scope) {
 
   $scope.alertMe = function () {
     setTimeout(function () {
-      alert('You\'ve selected the alert tab!');
+      SweetAlert.swal({title: 'You\'ve selected the alert tab!'});
     });
   };
 });
