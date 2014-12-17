@@ -47,11 +47,15 @@ Deploy an instance on your Heroku account to play around with it!
 
 ## Screenshots
 #### Dashboard
-![](screenshots/screenshot1.png?raw=true)
+![](screenshots/dashboard.png?raw=true)
 #### Markdown Editor
-![](screenshots/screenshot2.png?raw=true)
+![](screenshots/pages.png?raw=true)
 #### SweetAlert
-![](screenshots/screenshot3.png?raw=true)
+![](screenshots/sweetalert.png?raw=true)
+#### File uploads
+![](screenshots/files.png?raw=true)
+#### Events
+![](screenshots/events.png?raw=true)
 
 ## Installation
 
