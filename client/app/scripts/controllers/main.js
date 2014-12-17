@@ -60,16 +60,12 @@ angular.module('loopbackApp')
       icon: 'fa-cog'
     }];
 
-    $scope.toplinks = [{
-      name: 'Logout',
-      icon: 'fa-power-off',
-      action: function() {
-        User.logout(function() {
-          $scope.currentUser = AppAuth.currentUser = null;
-          $state.go('login');
-          toasty.pop.success({title: 'Logged out', msg: 'You are logged out!', sound: false});
-        });
-      }
-    }];
+    $scope.logout = function() {
+      User.logout(function() {
+        $scope.currentUser = AppAuth.currentUser = null;
+        $state.go('login');
+        toasty.pop.success({title: 'Logged out', msg: 'You are logged out!', sound: false});
+      });
+    };
 
   });

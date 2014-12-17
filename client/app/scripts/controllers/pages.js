@@ -39,6 +39,8 @@ angular.module('loopbackApp')
 
   .controller('PagesCtrl', function ($scope, $state, $stateParams, toasty, Page, $filter, SweetAlert) {
 
+    $scope.loading = true;
+
     var pageId = $stateParams.id;
 
     if (pageId) {
@@ -49,11 +51,14 @@ angular.module('loopbackApp')
         console.log(err);
       });
     } else {
-      $scope.page = {'content': '# Start typing here!'};
+      $scope.page = {'name': 'New page','content': '# Hi!\n\n## You can preview the result\n\n[Here](https://daringfireball.net/projects/markdown/basics) *are the* `markdown` **basics**!\n\n    fine code goes here \n\n- lists \n- go \n- here '};
     }
 
     function loadPages() {
-      $scope.pages = Page.find();
+      $scope.pages = Page.find(function () {
+        console.log('after find');
+        $scope.loading = false;
+      });
     }
 
     loadPages();
@@ -64,7 +69,7 @@ angular.module('loopbackApp')
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#DD6B55'
-      }, function(isConfirm){
+      }, function (isConfirm) {
         if (isConfirm) {
           Page.deleteById(id, function () {
             toasty.pop.success({title: 'Page deleted', msg: 'Your page is deleted!', sound: false});
@@ -79,29 +84,11 @@ angular.module('loopbackApp')
       });
     };
 
-    $scope.formFields = [
-      {
-        key: 'name',
-        label: 'Name',
-        type: 'text',
-        required: true
-      }
-    ];
     $scope.editorOptions = {
-      theme: 'monokai'
-    };
-    $scope.formOptions = {
-
-      //Set the id of the form
-      uniqueFormId: true,
-
-      //Hide the submit button that is added automaticaly
-      //default: false
-      hideSubmit: true,
-
-      //Set the text on the default submit button
-      //default: Submit
-      submitCopy: 'Save'
+      theme:'monokai',
+      lineWrapping : true,
+      lineNumbers: true,
+      mode: 'markdown'
     };
 
     $scope.onSubmit = function () {
@@ -113,8 +100,6 @@ angular.module('loopbackApp')
       }, function (err) {
         console.log(err);
       });
-
     };
-
 
   });

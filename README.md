@@ -25,7 +25,7 @@ Deploy an instance on your Heroku account to play around with it!
 - JSON-based based forms by [angular-formly](https://github.com/nimbly/angular-formly)
 - Notifications by [angular-toasty](https://github.com/Salakar/angular-toasty)
 - File upload with [Loopback storage services](https://github.com/strongloop/loopback-component-storage/)
-- Admin template powered by [SB-Admin](http://startbootstrap.com/template-overviews/sb-admin/)
+- Admin template powered by [almasaeed2010/AdminLTE](https://github.com/almasaeed2010/AdminLTE)
 - Markdown Editor with live preview with [angular-markdown-editor](https://github.com/JimLiu/angular-markdown-editor)
 - Bunch of useful filters for AngularJS: [a8m/angular-filter](https://github.com/a8m/angular-filter)
 - [t4t5/sweetalert](https://github.com/t4t5/sweetalert) provided by [oitozero/ngSweetAlert](https://github.com/oitozero/ngSweetAlert)
@@ -37,7 +37,6 @@ Deploy an instance on your Heroku account to play around with it!
 - permissions on content items (non-admins can only edit own content, etc)
 - Social authentication based on Passport.
 - Detect if API is online [HubSpot/offline](https://github.com/HubSpot/offline)?
-- Change template to [Ehesp/Responsive-Dashboard](https://github.com/Ehesp/Responsive-Dashboard) or [almasaeed2010/AdminLTE](https://github.com/almasaeed2010/AdminLTE)
 - Loading indicators [Urigo/angular-spinkit](https://github.com/Urigo/angular-spinkit)?
 - Add tests
 - Add Dockerfile
@@ -47,11 +46,15 @@ Deploy an instance on your Heroku account to play around with it!
 
 ## Screenshots
 #### Dashboard
-![](screenshots/screenshot1.png?raw=true)
+![](screenshots/dashboard.png?raw=true)
 #### Markdown Editor
-![](screenshots/screenshot2.png?raw=true)
+![](screenshots/pages.png?raw=true)
 #### SweetAlert
-![](screenshots/screenshot3.png?raw=true)
+![](screenshots/sweetalert.png?raw=true)
+#### File uploads
+![](screenshots/files.png?raw=true)
+#### Events
+![](screenshots/events.png?raw=true)
 
 ## Installation
 

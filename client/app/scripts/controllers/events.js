@@ -1,5 +1,5 @@
 'use strict';
-
+/*jshint -W069 */
 /**
  * @ngdoc function
  * @name clientApp.controller:EventsCtrl
@@ -37,24 +37,26 @@ angular.module('loopbackApp')
 
     var eventId = $stateParams.id;
 
-//
-//    var createDate = function (date, time) {
-//      if (!date || !time) {
-//        return date || time;
-//      }
-//
-//      var out = angular.copy(time);
-//      out.setFullYear(date.getFullYear());
-//      out.setMonth(date.getMonth());
-//      out.setDate(date.getDate());
-//      return out;
-//    };
+    var createDate = function (date, time) {
+
+      console.log(date);
+      console.log(time);
+      if (!date || !time) {
+        return date || time;
+      }
+  
+      var out = angular.copy(time);
+      out.setFullYear(date.getFullYear());
+      out.setMonth(date.getMonth());
+      out.setDate(date.getDate());
+      return out;
+    };
 
     var splitDate = function () {
       var event = $scope.event;
-      event.startDate = event.startTime = event.start;
-      event.endDate = event.endTime = event.end;
-      event.start = event.end = null;
+      event.sDate = event.sTime = event['start_time'];
+      event.eDate = event.eTime = Date.parse(event['end_time']);
+//      event['start_time'] =  event['end_time'] = null;
     };
 
     if (eventId) {
@@ -96,74 +98,57 @@ angular.module('loopbackApp')
         }
       });
     };
-//
-//    var dateOpen = function ($event, options) {
-//      $event.preventDefault();
-//      $event.stopPropagation();
-//
-//      this.opened = true;
-//    };
 
-    $scope.formFields = [
-      {
-        key: 'name',
-        label: 'Name',
-        type: 'text',
-        required: true
-      },
-      {
-        key: 'description',
-        label: 'Description',
-        type: 'text',
-        required: true
-      },
-      {
-        key: 'location',
-        label: 'Location',
-        type: 'text'
-      },
-      {
-        key: 'timezone',
-        label: 'Timezone',
-        type: 'text'
-      },
-      {
-        key: 'url',
-        label: 'URL',
-        type: 'text'
-      },
-      {
-        key: 'tickets',
-        label: 'Ticket URL',
-        type: 'text'
-      },
-      {
-        key: 'image',
-        label: 'Image URL',
-        type: 'text'
-      },
-      {
-        key: 'start_date',
-        label: 'Start Date',
-        type: 'text',
-        required: true
-      },
-      {
-        key: 'start_time',
-        label: 'Start Time',
-        type: 'text',
-        required: true
-      },
-      {
-        key: 'end_date',
-        label: 'End Date',
-        type: 'text'
-      },
-      {
-        key: 'end_time',
-        label: 'End Time',
-        type: 'text'
-      }
+    var dateOpen = function ($event) {
+      $event.preventDefault();
+      $event.stopPropagation();
+
+      this.opened = true;
+    };
+
+    $scope.formFields = [{
+      key: 'name',
+      label: 'Name',
+      type: 'text',
+      required: true
+    },{
+      key: 'description',
+      type: 'text',
+      label: 'Description',
+      required: true
+    }, {
+      key: 'sDate',
+      required: true,
+      label: 'Start Date',
+      type: 'date',
+      format: 'dd/MM/yyyy',
+      opened: false,
+      switchOpen: dateOpen
+    }, {
+      key: 'sTime',
+      required: true,
+      label: 'Start Time',
+      type: 'time',
+      hstep: 1,
+      mstep: 5,
+      ismeridian: true
+    }, {
+      key: 'eDate',
+      label: 'End',
+      type: 'date',
+      format: 'dd/MM/yyyy',
+      opened: false,
+      switchOpen: dateOpen
+    }, {
+      key: 'eTime',
+      required: true,
+      label: 'End Time',
+      type: 'time',
+      hstep: 1,
+      mstep: 5,
+      ismeridian: true
+    }
+
     ];
 
     $scope.formOptions = {
@@ -171,18 +156,19 @@ angular.module('loopbackApp')
       hideSubmit: false,
       submitCopy: 'Save'
     };
+    $scope.alerts = [];
 
     $scope.onSubmit = function () {
-//      var event = $scope.event;
-//      event.start = createDate(event.start_date, event.start_time);
-//      event.start_date = null;
-//      event.start_time = null;
-//
-//      event.end = createDate(event.end_date, event.end_time);
-//      event.end_date = null;
-//      event.end_time = null;
+      var event = $scope.event;
 
-      console.log($scope.event);
+      event['start_time'] = createDate(event.sDate, event.sTime);
+      event.sDate = null;
+      event.sTime = null;
+
+      event['end_time'] = createDate(event.eDate, event.eTime);
+      event.eDate = null;
+      event.eTime = null;
+
       Event.upsert($scope.event, function () {
         toasty.pop.success(
           {title: 'Event saved',
@@ -190,6 +176,11 @@ angular.module('loopbackApp')
             sound: false});
         $state.go('^.list');
       }, function (err) {
+        $scope.alerts.push({type: 'danger', msg: err.data.error.message});
+        toasty.pop.error(
+          {title: 'Event not added',
+            msg: err.data.error.message,
+            sound: false});
         console.log(err);
       });
     };
