@@ -30,7 +30,7 @@ Deploy an instance on your Heroku account to play around with it!
 - Markdown Editor with live preview with [angular-markdown-editor](https://github.com/JimLiu/angular-markdown-editor)
 - Bunch of useful filters for AngularJS: [a8m/angular-filter](https://github.com/a8m/angular-filter)
 - [t4t5/sweetalert](https://github.com/t4t5/sweetalert) provided by [oitozero/ngSweetAlert](https://github.com/oitozero/ngSweetAlert)
-
+- Automatically growing textarea's by [monospaced/angular-elastic](https://github.com/monospaced/angular-elastic)
 ### TODO:
 
 - User management
@@ -43,7 +43,8 @@ Deploy an instance on your Heroku account to play around with it!
 - Add Dockerfile
 - Add Vagrantfile
 
-- [Tell me more](https://github.com/beeman/loopback-angular-admin/issues/new)
+
+[Tell me what we need more!](https://github.com/beeman/loopback-angular-admin/issues/new)
 
 ## Screenshots
 #### Dashboard
