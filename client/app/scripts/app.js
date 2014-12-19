@@ -144,6 +144,10 @@ angular.module('loopbackApp', [
             console.log(rejection);
             toasty.pop.error({title: 'Error 404 received', msg: rejection.data.error.message, sound: false});
           }
+          if (rejection.status === 422) {
+            console.log(rejection);
+            toasty.pop.error({title: 'Error 422 received', msg: rejection.data.error.message, sound: false});
+          }
           if (rejection.status === 0) {
             $location.path('/');
             toasty.pop.error({title: 'Connection Refused', msg: 'The connection to the API is refused. Please verify that the API is running!', sound: false});
