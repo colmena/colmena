@@ -29,13 +29,13 @@ angular.module ('com.module.core')
   };
 
   $scope.registration = {
-    firstName: 'me',
-    lastName: 'me',
-    email: 'me@me.me',
-    password: 'meme'
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: ''
   };
 
-  $scope.confirmPassword = 'meme';
+  $scope.confirmPassword = '';
 
   $scope.register = function () {
 

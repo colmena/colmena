@@ -33,7 +33,6 @@ angular.module('loopbackApp', [
   'com.module.core',
   'com.module.events',
   'com.module.files',
-  'com.module.home',
   'com.module.notes',
   'com.module.pages',
   'com.module.posts',
