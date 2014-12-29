@@ -1,6 +1,4 @@
-/**
- * Created by movibe on 29/12/14.
- */
+
 angular.module ('com.module.core')
   .factory ('AppAuth', function () {
     return {

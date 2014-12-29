@@ -1,6 +1,3 @@
-/**
- * Created by movibe on 29/12/14.
- */
 'use strict';
 angular.module ('com.module.pages')
   .controller ('PagesCtrl', function ($scope, $state, $stateParams, toasty, Page, $filter, SweetAlert) {

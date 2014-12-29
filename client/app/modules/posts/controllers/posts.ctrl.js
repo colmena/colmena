@@ -1,5 +1,4 @@
 'use strict';
-
 angular.module('com.module.posts')
  .controller('PostsCtrl', function($scope, $state, $stateParams, toasty, Post, SweetAlert) {
 

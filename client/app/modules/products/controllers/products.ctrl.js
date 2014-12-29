@@ -1,6 +1,3 @@
-/**
- * Created by movibe on 29/12/14.
- */
 'use strict';
 angular.module ('com.module.products')
   .controller ('ProductsCtrl', function ($scope, $state, $stateParams, toasty, Product, Category, SweetAlert) {
