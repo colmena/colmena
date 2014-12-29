@@ -12,79 +12,13 @@
       <tabset class="nav-tabs-custom">
         <tab heading="Dashboard">
           <div class="row">
-            <div class="col-lg-3 col-xs-6">
-              <div class="small-box bg-red">
-                <div class="inner">
-                  <h3> {{count.posts}} &nbsp; </h3>
+            <small-box title="Posts" color="bg-red" icon="ion-document-text" quantity="{{ count.posts }}" href="app.posts.list"></small-box>
+            <small-box title="Files" color="bg-green" icon="ion-paperclip" quantity="{{ count.files }}" href="app.files.list"></small-box>
+            <small-box title="Pages" color="bg-yellow" icon="ion-document" quantity="{{ count.pages }}" href="app.pages.list"></small-box>
+            <small-box title="Events" color="bg-aqua" icon="ion-calendar" quantity="{{ count.events }}" href="app.events.list"></small-box>
+            <small-box title="Products" color="bg-blue" icon="ion-bag" quantity="{{ count.products }}" href="app.products.list"></small-box>
+            <small-box title="Products Categories" color="bg-black" icon="ion-grid" quantity="{{ count.categories }}" href="app.products.list"></small-box>
 
-                  <p> Posts </p>
-                </div>
-                <div class="icon"><i class="ion-document-text"></i></div>
-                <a href="#" ui-sref="app.posts.list" class="small-box-footer">
-                  More info <i class="fa fa-arrow-circle-right"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-3 col-xs-6">
-              <div class="small-box bg-green">
-                <div class="inner">
-                  <h3>{{count.files}} &nbsp;</h3>
-
-                  <p>Files</p>
-                </div>
-                <div class="icon"><i class="ion ion-paperclip"></i></div>
-                <a href="#" ui-sref="app.files.list" class="small-box-footer">More info <i
-                  class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <div class="col-lg-3 col-xs-6">
-              <div class="small-box bg-yellow">
-                <div class="inner">
-                  <h3>{{count.pages}} &nbsp; </h3>
-
-                  <p>Pages</p>
-                </div>
-                <div class="icon"><i class="ion ion-document"></i></div>
-                <a href="#" ui-sref="app.pages.list" class="small-box-footer">More info <i
-                  class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <div class="col-lg-3 col-xs-6">
-              <div class="small-box bg-aqua">
-                <div class="inner">
-                  <h3>{{count.events}}</h3>
-
-                  <p>Events</p>
-                </div>
-                <div class="icon"><i class="ion ion-calendar"></i></div>
-                <a href="#" ui-sref="app.events.list" class="small-box-footer">More info <i
-                  class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <div class="col-lg-3 col-xs-6">
-              <div class="small-box bg-lime">
-                <div class="inner">
-                  <h3>{{count.products}}</h3>
-
-                  <p>Products</p>
-                </div>
-                <div class="icon"><i class="ion ion-bag"></i></div>
-                <a href="#" ui-sref="app.products.list" class="small-box-footer">More info <i
-                  class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
-            <div class="col-lg-3 col-xs-6">
-              <div class="small-box bg-aqua">
-                <div class="inner">
-                  <h3>{{count.categories}}</h3>
-
-                  <p>Products Categories</p>
-                </div>
-                <div class="icon"><i class="ion ion-grid"></i></div>
-                <a href="#" ui-sref="app.products.list" class="small-box-footer">More info <i
-                  class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div>
           </div>
         </tab>
         <tab heading="Variables">
