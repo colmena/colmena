@@ -8,4 +8,5 @@ client/app/scripts/config.js
 storage
 npm-debug.log
 .idea/
+docs
 docular_generated
