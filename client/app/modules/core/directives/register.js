@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name loopbackApp.directive:register
+ * @name com.module.core.directive:register
  * @description
  * # register
  */

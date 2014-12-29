@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name loopbackApp.directive:home
+ * @name com.module.core.directive:home
  * @description
  * # home
  */

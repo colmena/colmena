@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name loopbackApp.directive:navbar
+ * @name com.module.core.directive:navbar
  * @description
  * # navbar
  */

@@ -2,8 +2,10 @@
 
 /**
  * @ngdoc directive
- * @name loopbackApp.directive:adminHeader
+ * @name com.module.core.directive:adminHeader
  * @description
+ * @param {string} title Title
+ * @param {string} subTitle Subtitle
  * # adminHeader
  */
 angular.module('com.module.core')

@@ -2,7 +2,7 @@
 angular.module ('com.module.about')
 /**
  * @ngdoc function
- * @name clientApp.controller:AboutCtrl
+ * @name com.module.about.controller:AboutCtrl
  * @description
  * # AboutCtrl
  * Controller of the clientApp

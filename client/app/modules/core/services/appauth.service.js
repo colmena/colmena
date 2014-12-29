@@ -1,4 +1,5 @@
 
+'use strict';
 angular.module ('com.module.core')
   .factory ('AppAuth', function () {
     return {

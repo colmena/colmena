@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name loopbackApp.directive:adminForm
+ * @name com.module.core.directive:adminForm
  * @description
  * # adminForm
  */

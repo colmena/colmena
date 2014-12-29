@@ -1,4 +1,14 @@
 'use strict';
+/**
+  * @ngdoc function
+  * @name com.module.core.controller:RouteCtrl
+  * @description Redirect for acess
+  * @requires $q
+  * @requires $scope
+  * @requires $state
+  * @requires $location
+  * @requires AppAuth
+**/
 angular.module ('com.module.core')
   .controller ('RouteCtrl', function ($q, $scope, $state, $location, AppAuth) {
     if (!AppAuth.currentUser) {

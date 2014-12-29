@@ -2,7 +2,7 @@
 
 /**
  * @ngdoc directive
- * @name loopbackApp.directive:login
+ * @name com.module.core.directive:login
  * @description
  * # login
  */

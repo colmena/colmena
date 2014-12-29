@@ -1,5 +1,14 @@
 'use strict';
 angular.module ('com.module.core')
+/**
+  * @ngdoc function
+  * @name com.module.core.controller:LoginCtrl
+  * @description Login Controller
+  * @requires $scope
+  * @requires $routeParams
+  * @requires $location
+  * Contrller for Login Page
+**/
   .controller ('LoginCtrl', function ($scope, $routeParams, $location, toasty, User, AppAuth) {
   $scope.credentials = {
     email: 'admin@admin.com',

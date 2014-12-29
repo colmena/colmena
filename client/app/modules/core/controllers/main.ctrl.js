@@ -1,4 +1,15 @@
 'use strict';
+/**
+  * @ngdoc function
+  * @name com.module.core.controller:MainCtrl
+  * @description Login Controller
+  * @requires $scope
+  * @requires $state
+  * @requires $location
+  * @requires toasty
+  * @requires AppAuth
+  * @requires User
+**/
 angular.module ('com.module.core')
   .controller ('MainCtrl', function ($scope, $state, $location, toasty, AppAuth, User) {
 

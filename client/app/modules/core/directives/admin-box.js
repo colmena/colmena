@@ -1,8 +1,7 @@
 'use strict';
-
 /**
  * @ngdoc directive
- * @name loopbackApp.directive:adminBox
+ * @name com.module.core.directive:adminBox
  * @description
  * # adminBox
  */
