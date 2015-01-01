@@ -46,7 +46,7 @@ module.exports = function (config) {
       'bower_components/angular-markdown-directive/markdown.js',
       'bower_components/angular-elastic/elastic.js',
       'js/**.js',
-      'modules/**/*.module.js',
+      'modules/*/*.js',
       'modules/**/**/*.js'
     ],
 
@@ -93,14 +93,17 @@ module.exports = function (config) {
       // source files, that you wanna generate coverage for
       // do not include tests or libraries
       // (these files will be instrumented by Istanbul)
-      'js/*/*.js' : 'coverage',
-      'modules/*/*.js' : 'coverage'
+      'js/*.js' : 'coverage',
+      'modules/**/controllers/*.js' : 'coverage',
+      'modules/**/services/*.js' : 'coverage',
+      'modules/**/directives/*.js' : 'coverage',
+      '!modules/**/tests/*': 'coverage'
     },
 
     // optionally, configure the reporter
     coverageReporter: {
       type : 'html',
-      dir : 'coverage/'
+      dir : '../coverage/'
     }
 
     // Uncomment the following lines if you are using grunt's server to run the tests

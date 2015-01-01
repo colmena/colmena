@@ -9,48 +9,56 @@ angular.module ('com.module.core')
  * @requires $location
  * Contrller for Login Page
  **/
-  .controller ('RegisterCtrl', function ($scope, $routeParams, $location, toasty, User, AppAuth) {
-  
-  $scope.registration = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: ''
-  };
+  .controller ('RegisterCtrl', [
+  '$scope',
+  '$routeParams',
+  '$location',
+  'toasty',
+  'User',
+  'AppAuth',
+  function ($scope, $routeParams, $location, toasty, User, AppAuth) {
 
-  $scope.confirmPassword = '';
+    $scope.registration = {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: ''
+    };
 
-  $scope.register = function () {
+    $scope.confirmPassword = '';
 
-    $scope.registration.username = $scope.registration.email;
-    $scope.user = User.save ($scope.registration,
-      function () {
+    $scope.register = function () {
 
-        $scope.loginResult = User.login ({
-            include: 'user',
-            rememberMe: true
-          }, $scope.registration,
-          function () {
-            AppAuth.currentUser = $scope.loginResult.user;
-            toasty.pop.success ({title: 'Registered', msg: 'You are registered!', sound: false});
-            $location.path ('/');
-          },
-          function (res) {
-            toasty.pop.warning ({
-              title: 'Error signin in after registration!',
-              msg: res.data.error.message,
-              sound: false
-            });
-            $scope.loginError = res.data.error;
-          }
-        );
+      $scope.registration.username = $scope.registration.email;
+      $scope.user = User.save ($scope.registration,
+        function () {
 
-      },
-      function (res) {
-        toasty.pop.error ({title: 'Error registering!', msg: res.data.error.message, sound: false});
-        $scope.registerError = res.data.error;
-      }
-    );
-  };
+          $scope.loginResult = User.login ({
+              include: 'user',
+              rememberMe: true
+            }, $scope.registration,
+            function () {
+              AppAuth.currentUser = $scope.loginResult.user;
+              toasty.pop.success ({title: 'Registered', msg: 'You are registered!', sound: false});
+              $location.path ('/');
+            },
+            function (res) {
+              toasty.pop.warning ({
+                title: 'Error signin in after registration!',
+                msg: res.data.error.message,
+                sound: false
+              });
+              $scope.loginError = res.data.error;
+            }
+          );
 
-});
+        },
+        function (res) {
+          toasty.pop.error ({title: 'Error registering!', msg: res.data.error.message, sound: false});
+          $scope.registerError = res.data.error;
+        }
+      );
+    };
+
+  }
+]);

@@ -1,6 +1,6 @@
 'use strict';
 angular.module ('com.module.sandbox')
-  .controller ('SandboxCtrl', function ($scope) {
+  .controller ('SandboxCtrl', ['$scope', function ($scope) {
     $scope.items = [
       {
         name: 'Alerts',
@@ -19,4 +19,4 @@ angular.module ('com.module.sandbox')
         sref: '.trees'
       }
     ];
-  });
+  }]);

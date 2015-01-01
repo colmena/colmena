@@ -1,6 +1,9 @@
 'use strict';
 angular.module ('com.module.sandbox')
-  .controller ('SandboxTreesCtrl', function ($scope, $timeout) {
+  .controller ('SandboxTreesCtrl', [
+  '$scope',
+  '$timeout',
+  function ($scope, $timeout) {
     var appleSelected, tree, treedataAvm, treedataGeography;
     $scope.myTreeHandler = function (branch) {
       var _ref;
@@ -214,4 +217,5 @@ angular.module ('com.module.sandbox')
       });
     };
     return $scope.tryAddingABranch;
-  });
+  }
+]);

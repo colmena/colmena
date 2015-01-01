@@ -1,7 +1,7 @@
-
 'use strict';
 angular.module ('com.module.core')
-  .factory ('AppAuth', function () {
+  .factory ('AppAuth', [
+  function () {
     return {
       currentUser: null,
 
@@ -21,4 +21,5 @@ angular.module ('com.module.core')
         }
       }
     };
-  });
+  }
+]);

@@ -1,6 +1,10 @@
 'use strict';
 angular.module ('com.module.sandbox')
-  .controller ('SandboxToastsCtrl', function ($scope, $http, toasty) {
+  .controller ('SandboxToastsCtrl', [
+  '$scope',
+  '$http',
+  'toasty',
+  function ($scope, $http, toasty) {
     $scope.toasty = {
       title: 'Notify me!',
       text: 'This is the body!'
@@ -33,4 +37,5 @@ angular.module ('com.module.sandbox')
         sound: false
       });
     };
-  });
+  }
+]);

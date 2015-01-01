@@ -1,6 +1,8 @@
 'use strict';
 angular.module ('com.module.files')
-  .config (function ($stateProvider) {
+  .config ([
+  '$stateProvider',
+  function ($stateProvider) {
     $stateProvider.state ('app.files', {
       abstract: true,
       url: '/files',
@@ -8,13 +10,14 @@ angular.module ('com.module.files')
       controller: 'FilesCtrl'
     })
       .state ('app.files.list', {
-        url: '',
-        templateUrl: 'modules/files/views/list.html',
-        controller: 'FilesCtrl'
-      })
+      url: '',
+      templateUrl: 'modules/files/views/list.html',
+      controller: 'FilesCtrl'
+    })
       .state ('app.files.upload', {
-        url: '/upload',
-        templateUrl: 'modules/files/views/upload.html',
-        controller: 'FilesCtrl'
-      });
-  });
+      url: '/upload',
+      templateUrl: 'modules/files/views/upload.html',
+      controller: 'FilesCtrl'
+    });
+  }
+]);

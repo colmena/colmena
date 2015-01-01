@@ -8,15 +8,17 @@
  * @param {string} subTitle Subtitle
  * # adminHeader
  */
-angular.module('com.module.core')
-  .directive('adminHeader', function () {
-    return {
-      templateUrl: 'modules/core/views/elements/admin-header.html',
-      transclude: true,
-      scope: {
-        title: '@',
-        subTitle: '@'
-      },
-      restrict: 'A'
-    };
-  });
+angular.module ('com.module.core')
+  .directive ('adminHeader', [
+    function () {
+      return {
+        templateUrl: 'modules/core/views/elements/admin-header.html',
+        transclude: true,
+        scope: {
+          title: '@',
+          subTitle: '@'
+        },
+        restrict: 'A'
+      };
+    }
+  ]);

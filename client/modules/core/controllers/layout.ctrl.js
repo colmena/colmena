@@ -1,14 +1,18 @@
 'use strict';
 angular.module ('com.module.core')
 /**
-  * @ngdoc function
-  * @name com.module.core.controller:LayoutCtrl
-  * @description Layout controller
-  * @requires $scope
-  * @requires Setting
-  * @requires Env
-**/
-  .controller ('LayoutCtrl', function ($scope, Setting, ENV) {
+ * @ngdoc function
+ * @name com.module.core.controller:LayoutCtrl
+ * @description Layout controller
+ * @requires $scope
+ * @requires Setting
+ * @requires Env
+ **/
+  .controller ('LayoutCtrl', [
+  '$scope',
+  'Setting',
+  'ENV',
+  function ($scope, Setting, ENV) {
 
     $scope.appName = 'LB-NG-BS';
     $scope.apiUrl = ENV.apiUrl;
@@ -65,4 +69,5 @@ angular.module ('com.module.core')
       });
     });
 
-  });
+  }
+]);

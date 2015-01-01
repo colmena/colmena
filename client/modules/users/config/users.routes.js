@@ -1,6 +1,8 @@
 'use strict';
 angular.module ('com.module.users')
-  .config (function ($stateProvider) {
+  .config ([
+  '$stateProvider',
+  function ($stateProvider) {
     $stateProvider.state ('app.users', {
       abstract: true,
       url: '/users',
@@ -11,4 +13,5 @@ angular.module ('com.module.users')
       templateUrl: 'modules/users/views/profile.html',
       controller: 'UsersCtrl'
     });
-  })
+  }
+]);

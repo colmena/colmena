@@ -12,9 +12,5 @@ describe('Directive: home', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<home></home>');
-    element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the home directive');
-  }));
+
 });

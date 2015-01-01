@@ -1,7 +1,9 @@
-
 'use strict';
 angular.module ('com.module.sandbox')
-  .controller ('SandboxAlertsCtrl', function ($scope, SweetAlert) {
+  .controller ('SandboxAlertsCtrl', [
+  '$scope',
+  'SweetAlert',
+  function ($scope, SweetAlert) {
     $scope.demo1 = function () {
       SweetAlert.swal ('Here\'s a message');
     };
@@ -49,4 +51,5 @@ angular.module ('com.module.sandbox')
         imageUrl: 'http://oitozero.com/img/avatar.jpg'
       });
     };
-  });
+  }
+]);

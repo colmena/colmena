@@ -6,10 +6,12 @@
  * @description
  * # register
  */
-angular.module('com.module.core')
-  .directive('register', function () {
-    return {
-      templateUrl: 'modules/core/views/elements/register.html',
-      restrict: 'E'
-    };
-  });
+angular.module ('com.module.core')
+  .directive ('register', [
+    function () {
+      return {
+        templateUrl: 'modules/core/views/elements/register.html',
+        restrict: 'E'
+      };
+    }
+  ]);

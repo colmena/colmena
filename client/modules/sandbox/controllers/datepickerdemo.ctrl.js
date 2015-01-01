@@ -1,6 +1,8 @@
 'use strict';
 angular.module ('com.module.sandbox')
-  .controller ('DatepickerDemoCtrl', function ($scope) {
+  .controller ('DatepickerDemoCtrl', [
+  '$scope',
+  function ($scope) {
     $scope.today = function () {
       $scope.dt = new Date ();
     };
@@ -32,4 +34,5 @@ angular.module ('com.module.sandbox')
       'shortDate'
     ];
     $scope.format = $scope.formats[0];
-  });
+  }
+]);

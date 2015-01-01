@@ -1,71 +1,78 @@
 'use strict';
 angular.module ('com.module.core')
-  .config (function ($routeProvider, $httpProvider) {
+  .config ([
+  '$routeProvider',
+  '$httpProvider',
+  function ($routeProvider, $httpProvider) {
 
-  // Intercept 401 responses and redirect to login screen
-  $httpProvider.interceptors.push (function ($q, $location, AppAuth, toasty) {
-    return {
-      responseError: function (rejection) {
+    // Intercept 401 responses and redirect to login screen
+    $httpProvider.interceptors.push (function ($q, $location, AppAuth, toasty) {
+      return {
+        responseError: function (rejection) {
 
-        if (rejection.status === 401) {
-          AppAuth.currentUser = null;
-          // save the current location so that login can redirect back
-          $location.nextAfterLogin = $location.path ();
+          if (rejection.status === 401) {
+            AppAuth.currentUser = null;
+            // save the current location so that login can redirect back
+            $location.nextAfterLogin = $location.path ();
 
-          if ($location.path () === '/router' || $location.path () === '/login') {
-            console.log ('401 while on router on login path');
-          } else {
-            if ($location.path () !== '/register') {
-              $location.path ('/login');
+            if ($location.path () === '/router' || $location.path () === '/login') {
+              console.log ('401 while on router on login path');
+            } else {
+              if ($location.path () !== '/register') {
+                $location.path ('/login');
+              }
+              toasty.pop.warning ({
+                title: 'Error 401 received',
+                msg: 'We received a 401 error from the API! Redirecting to login',
+                sound: false
+              });
             }
-            toasty.pop.warning ({
-              title: 'Error 401 received',
-              msg: 'We received a 401 error from the API! Redirecting to login',
+          }
+          if (rejection.status === 404) {
+            console.log (rejection);
+            toasty.pop.error ({title: 'Error 404 received', msg: rejection.data.error.message, sound: false});
+          }
+          if (rejection.status === 422) {
+            console.log (rejection);
+            toasty.pop.error ({title: 'Error 422 received', msg: rejection.data.error.message, sound: false});
+          }
+          if (rejection.status === 0) {
+            $location.path ('/');
+            toasty.pop.error ({
+              title: 'Connection Refused',
+              msg: 'The connection to the API is refused. Please verify that the API is running!',
               sound: false
             });
           }
+          return $q.reject (rejection);
         }
-        if (rejection.status === 404) {
-          console.log (rejection);
-          toasty.pop.error ({title: 'Error 404 received', msg: rejection.data.error.message, sound: false});
-        }
-        if (rejection.status === 422) {
-          console.log (rejection);
-          toasty.pop.error ({title: 'Error 422 received', msg: rejection.data.error.message, sound: false});
-        }
-        if (rejection.status === 0) {
-          $location.path ('/');
-          toasty.pop.error ({
-            title: 'Connection Refused',
-            msg: 'The connection to the API is refused. Please verify that the API is running!',
-            sound: false
-          });
-        }
-        return $q.reject (rejection);
-      }
-    };
-  });
-})
-  .config (function (formlyConfigProvider) {
-  var templates = 'modules/core/views/elements/fields/';
-  var formly = templates + 'formly-field-';
-  var fields = [
-    'checkbox',
-    'email',
-    'hidden',
-    'number',
-    'password',
-    'radio',
-    'select',
-    'text',
-    'textarea'
-  ];
+      };
+    });
+  }
+])
+  .config ([
+  'formlyConfigProvider',
+  function (formlyConfigProvider) {
+    var templates = 'modules/core/views/elements/fields/';
+    var formly = templates + 'formly-field-';
+    var fields = [
+      'checkbox',
+      'email',
+      'hidden',
+      'number',
+      'password',
+      'radio',
+      'select',
+      'text',
+      'textarea'
+    ];
 
-  angular.forEach (fields, function (val) {
-    formlyConfigProvider.setTemplateUrl (val, formly + val + '.html');
-  });
+    angular.forEach (fields, function (val) {
+      formlyConfigProvider.setTemplateUrl (val, formly + val + '.html');
+    });
 
-  formlyConfigProvider.setTemplateUrl ('date', templates + 'date.html');
-  formlyConfigProvider.setTemplateUrl ('time', templates + 'time.html');
+    formlyConfigProvider.setTemplateUrl ('date', templates + 'date.html');
+    formlyConfigProvider.setTemplateUrl ('time', templates + 'time.html');
 
-});
+  }
+]);

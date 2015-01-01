@@ -1,6 +1,10 @@
 'use strict';
 angular.module ('com.module.users')
-  .controller ('UsersCtrl', function ($scope, User, SweetAlert) {
+  .controller ('UsersCtrl', [
+  '$scope',
+  'User',
+  'SweetAlert',
+  function ($scope, User, SweetAlert) {
 
     $scope.user = User.getCurrent (function (user) {
       console.log (user);
@@ -57,4 +61,5 @@ angular.module ('com.module.users')
       //        console.log(err);
       //      });
     };
-  });
+  }
+]);

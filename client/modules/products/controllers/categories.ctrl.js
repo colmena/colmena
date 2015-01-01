@@ -1,6 +1,12 @@
 'use strict';
 angular.module ('com.module.products')
-  .controller ('CategoriesCtrl', function ($scope, $state, $stateParams, toasty, Category) {
+  .controller ('CategoriesCtrl', [
+  '$scope',
+  '$state',
+  '$stateParams',
+  'toasty',
+  'Category',
+  function ($scope, $state, $stateParams, toasty, Category) {
     var categoryId = $stateParams.categoryId;
     if (categoryId) {
       $scope.category = Category.findById ({
@@ -38,4 +44,5 @@ angular.module ('com.module.products')
       });
     };
 
-  });
+  }
+]);

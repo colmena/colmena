@@ -1,6 +1,14 @@
 'use strict';
 angular.module ('com.module.pages')
-  .controller ('PagesCtrl', function ($scope, $state, $stateParams, toasty, Page, $filter, SweetAlert) {
+  .controller ('PagesCtrl', [
+  '$scope',
+  '$state',
+  '$stateParams',
+  'toasty',
+  'Page',
+  '$filter',
+  'SweetAlert',
+  function ($scope, $state, $stateParams, toasty, Page, $filter, SweetAlert) {
 
     $scope.loading = true;
 
@@ -68,4 +76,5 @@ angular.module ('com.module.pages')
       });
     };
 
-  });
+  }
+]);

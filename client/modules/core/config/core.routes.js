@@ -1,6 +1,6 @@
 'use strict';
 angular.module ('com.module.core')
-  .config (function ($stateProvider, $urlRouterProvider) {
+  .config (['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state ('login', {
     url: '/login',
@@ -27,4 +27,4 @@ angular.module ('com.module.core')
       controller: 'HomeCtrl'
     });
   $urlRouterProvider.otherwise ('/router');
-});
+}]);
