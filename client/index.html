@@ -1,0 +1,145 @@
+<!doctype html>
+<html ng-app="loopbackApp" ng-controller="LayoutCtrl">
+<head>
+    <meta charset="utf-8">
+    <title>{{settings.appName}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/angular-toasty/css/ng-toasty.css" />
+    <link rel="stylesheet" href="bower_components/sweetalert/lib/sweet-alert.css" />
+    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-nav-tree/dist/abn_tree.css" />
+    <link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="bower_components/codemirror/theme/monokai.css" />
+    <!-- endbower -->
+
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/AdminLTE.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+</head>
+<body class="{{appTheme}} {{appLayout}} " ng-controller="MainCtrl">
+
+<div ui-view class="full-height"></div>
+
+<div ng-controller="toasty-controller">
+    <toasty-container toasty-defaults='{"timeout": 3000, "close-button":true, "sound": false}'></toasty-container>
+</div>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-formly/dist/formly.min.js"></script>
+<script src="bower_components/angular-toasty/js/ng-toasty.js"></script>
+<script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
+<script src="bower_components/angular-filter/dist/angular-filter.js"></script>
+<script src="bower_components/sweetalert/lib/sweet-alert.js"></script>
+<script src="bower_components/angular-sweetalert/SweetAlert.js"></script>
+<script src="bower_components/angular-gravatar/build/md5.js"></script>
+<script src="bower_components/angular-gravatar/build/angular-gravatar.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-bootstrap-nav-tree/dist/abn_tree_directive.js"></script>
+<script src="bower_components/codemirror/lib/codemirror.js"></script>
+<script src="bower_components/codemirror/addon/mode/overlay.js"></script>
+<script src="bower_components/codemirror/mode/gfm/gfm.js"></script>
+<script src="bower_components/codemirror/mode/markdown/markdown.js"></script>
+<script src="bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
+<script src="bower_components/showdown/compressed/showdown.js"></script>
+<script src="bower_components/angular-markdown-directive/markdown.js"></script>
+<script src="bower_components/angular-elastic/elastic.js"></script>
+<!-- endbower -->
+
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script src="js/lb-services.js"></script>
+<!--CORE-->
+<script src="modules/core/core.module.js"></script>
+<script src="modules/core/config/core.routes.js"></script>
+<script src="modules/core/config/core.auth.js"></script>
+<script src="modules/core/controllers/home.ctrl.js"></script>
+<script src="modules/core/controllers/main.ctrl.js"></script>
+<script src="modules/core/controllers/layout.ctrl.js"></script>
+<script src="modules/core/controllers/login.ctrl.js"></script>
+<script src="modules/core/controllers/register.ctrl.js"></script>
+<script src="modules/core/controllers/router.ctrl.js"></script>
+<script src="modules/core/services/appauth.service.js"></script>
+<script src="modules/core/directives/admin-box.directive.js"></script>
+<script src="modules/core/directives/admin-form.directive.js"></script>
+<script src="modules/core/directives/admin-header.directive.js"></script>
+<script src="modules/core/directives/date.directive.js"></script>
+<script src="modules/core/directives/home.directive.js"></script>
+<script src="modules/core/directives/login.directive.js"></script>
+<script src="modules/core/directives/register.directive.js"></script>
+<script src="modules/core/directives/small-box.directive.js"></script>
+<script src="modules/core/directives/navbar.directive.js"></script>
+<!--About-->
+<script src="modules/about/about.module.js"></script>
+<script src="modules/about/controllers/about.ctrl.js"></script>
+<!--Events-->
+<script src="modules/events/events.module.js"></script>
+<script src="modules/events/config/events.routes.js"></script>
+<script src="modules/events/controllers/events.ctrl.js"></script>
+<!--Files-->
+<script src="modules/files/file.module.js"></script>
+<script src="modules/files/config/file.routes.js"></script>
+<script src="modules/files/controllers/upload.ctrl.js"></script>
+<script src="modules/files/controllers/files.ctrl.js"></script>
+<!--Notes-->
+<script src="modules/notes/notes.module.js"></script>
+<script src="modules/notes/config/notes.routes.js"></script>
+<script src="modules/notes/controllers/notes.ctrl.js"></script>
+<!--Pages-->
+<script src="modules/pages/pages.module.js"></script>
+<script src="modules/pages/config/pages.routes.js"></script>
+<script src="modules/pages/controllers/pages.ctrl.js"></script>
+<!-- Posts -->
+<script src="modules/posts/posts.module.js"></script>
+<script src="modules/posts/config/posts.routes.js"></script>
+<script src="modules/posts/controllers/posts.ctrl.js"></script>
+<!--Products-->
+<script src="modules/products/products.module.js"></script>
+<script src="modules/products/config/products.routes.js"></script>
+<script src="modules/products/controllers/products.ctrl.js"></script>
+<script src="modules/products/controllers/categories.ctrl.js"></script>
+<!--Sandbox-->
+<script src="modules/sandbox/sandbox.module.js"></script>
+<script src="modules/sandbox/config/sandbox.routes.js"></script>
+<script src="modules/sandbox/controllers/datepickerdemo.ctrl.js"></script>
+<script src="modules/sandbox/controllers/sandbox.ctrl.js"></script>
+<script src="modules/sandbox/controllers/sandboxalerts.ctrl.js"></script>
+<script src="modules/sandbox/controllers/sandboxbootstrapalert.ctrl.js"></script>
+<script src="modules/sandbox/controllers/sandboxbootstraptabs.ctrl.js"></script>
+<script src="modules/sandbox/controllers/sandboxforms.ctrl.js"></script>
+<script src="modules/sandbox/controllers/sandboxtoast.ctrl.js"></script>
+<script src="modules/sandbox/controllers/sandboxtress.ctrl.js"></script>
+<!--Settings-->
+<script src="modules/settings/settings.module.js"></script>
+<script src="modules/settings/config/settings.routes.js"></script>
+<script src="modules/settings/controllers/settings.ctrl.js"></script>
+<!--Users-->
+<script src="modules/users/user.module.js"></script>
+<script src="modules/users/config/users.routes.js"></script>
+<script src="modules/users/controllers/users.ctrl.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

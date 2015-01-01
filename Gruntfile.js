@@ -34,14 +34,14 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js', '<%= yeoman.app %>/modules/{,*/}*.js'],
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.js', '<%= yeoman.app %>/modules/{,*/}*.js','!<%= yeoman.app %>/modules/tests/**/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
       },
       jsTest: {
-        files: ['client/test/spec/{,*/}*.js'],
+        files: ['client/modules/**/tests/**/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
       styles: {
@@ -111,7 +111,7 @@ module.exports = function (grunt) {
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
-                connect.static('./client/app/bower_components')
+                connect.static('./client/bower_components')
               ),
               connect.static(appConfig.app)
             ];
@@ -127,7 +127,7 @@ module.exports = function (grunt) {
               connect.static('test'),
               connect().use(
                 '/bower_components',
-                connect.static('./client/app/bower_components')
+                connect.static('./client/bower_components')
               ),
               connect.static(appConfig.app)
             ];
@@ -156,9 +156,9 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          jshintrc: 'client/test/.jshintrc'
+          jshintrc: 'test/.jshintrc'
         },
-        src: ['client/test/spec/{,*/}*.js']
+        src: ['client/modules/**/tests/**/{,*/}*.js']
       }
     },
 
@@ -380,7 +380,7 @@ module.exports = function (grunt) {
     // Test settings
     karma: {
       unit: {
-        configFile: 'client/test/karma.conf.js',
+        configFile: 'test/karma.conf.js',
         singleRun: true
       }
     },
@@ -388,7 +388,7 @@ module.exports = function (grunt) {
       services: {
         options: {
           input: 'server/server.js',
-          output: 'client/app/scripts/lb-services.js',
+          output: 'client/scripts/lb-services.js',
           apiUrl: process.env.API_URL || '/api/'
         }
       }
@@ -411,7 +411,7 @@ module.exports = function (grunt) {
             {
               id: 'loopbackApp',
               title: 'LoopBack Services',
-              scripts: [ 'client/app/modules/**/{,*/}*.js' ]
+              scripts: [ 'client/modules/**/{,*/}*.js' ]
             }
           ]
         },
@@ -422,7 +422,7 @@ module.exports = function (grunt) {
             {
               id: 'lbServices',
               title: 'LoopBack Services',
-              scripts: [ 'client/app/scripts/lb-services.js' ]
+              scripts: [ 'client/scripts/lb-services.js' ]
             }
           ]
         }
