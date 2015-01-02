@@ -6,7 +6,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <!-- build:css(.) styles/vendor.css -->
+  <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
@@ -17,9 +17,9 @@
   <!-- endbower -->
 
   <!-- endbuild -->
-  <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="styles/AdminLTE.css">
-  <link rel="stylesheet" href="styles/main.css">
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="css/AdminLTE.css">
+  <link rel="stylesheet" href="css/main.css">
   <!-- endbuild -->
 </head>
 <body class="{{appTheme}} {{appLayout}} " ng-controller="MainCtrl">
@@ -51,7 +51,7 @@
   ga ('send', 'pageview');
 </script>
 
-<!-- build:js(.) scripts/oldieshim.js -->
+<!-- build:js scripts/oldieshim.js -->
 <!--[if lt IE 9]>
 <script src="bower_components/es5-shim/es5-shim.js"></script>
 <script src="bower_components/json3/lib/json3.js"></script>
@@ -59,7 +59,7 @@
 <!-- endbuild -->
 
 
-<!-- build:js(.) scripts/vendor.js -->
+<!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
@@ -89,7 +89,7 @@
 
 <!-- endbuild -->
 
-<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<!-- build:js scripts/scripts.js -->
 <script src="js/app.js"></script>
 <script src="js/lb-services.js"></script>
 <script src="js/config.js"></script>
