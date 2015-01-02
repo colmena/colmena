@@ -3,10 +3,10 @@
 // Generated on 2014-07-30 using
 // generator-karma 0.8.3
 
-module.exports = function(config) {
+module.exports = function (config) {
   'use strict';
 
-  config.set({
+  config.set ({
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
@@ -52,8 +52,25 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       'karma-phantomjs-launcher',
-      'karma-jasmine'
+      'karma-jasmine',
+      'karma-coverage'
     ],
+    preprocessors: {
+      'app/modules/**/controllers/*.js': 'coverage',
+      'app/modules/**/directives/*.js': 'coverage',
+      'app/modules/**/services/*.js': 'coverage'
+    }
+    ,
+    reporters: [
+      'progress',
+      'coverage'
+    ],
+    // tell karma how you want the coverage results
+    coverageReporter: {
+      type: 'html',
+      // where to store the report
+      dir: 'coverage/'
+    },
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit

@@ -6,10 +6,10 @@
  * @description
  * # login
  */
-angular.module('com.module.core')
+angular.module('com.module.users')
   .directive('login', function () {
     return {
-      templateUrl: 'modules/core/views/elements/login.html',
+      templateUrl: 'modules/users/views/login.html',
       restrict: 'E'
     };
   });

@@ -1,5 +1,5 @@
 'use strict';
-angular.module ('com.module.core')
+angular.module ('com.module.users')
   .config (function ($routeProvider, $httpProvider) {
 
   // Intercept 401 responses and redirect to login screen
