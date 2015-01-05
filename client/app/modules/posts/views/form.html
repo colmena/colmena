@@ -8,22 +8,11 @@
 
 
 <div class="row">
-
-  <div class="col-sm-6">
-    <form name="joinForm" ng-submit="join()">
-      <auto:fields fields="schema" data="user" options="options"></auto:fields>
-      <button type="submit" class="btn btn-default btn-lg btn-block" ng-class="{'btn-primary':joinForm.$valid}" tabindex="100">Join</button>
-    </form>
+  <div class="col-md-4">
+    <div class="alert alert-danger" ng-if="addError">Could not add post!</div>
+    <formly-form result="post" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
   </div>
-  <div class="col-sm-6">
-    <h4>Bound Data</h4>
-    <pre ng-bind="user | json"></pre    <textarea ng-model="options"></textarea>
->
-    <h4>Demo Functions</h4>
-    <button class="btn btn-default" ng-click="addField()">Add Field</button>
-    <button class="btn btn-default" ng-click="toggleValidation()">Toggle Validation</button>
-    <button class="btn btn-default" ng-click="togglePopovers()">Toggle Popovers</button>
-    <button class="btn btn-default" ng-click="toggleHorizontal()">Toggle Horizontal</button>
-  </div>
-
+</div>
+<div class="controls">
+    <button class="btn btn-primary btn-success" ng-click="onSubmit()">Submit</button>
 </div>
