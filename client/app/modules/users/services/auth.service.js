@@ -2,7 +2,7 @@
 angular.module ('com.module.users')
   .factory ('Auth', function ($location, $http, LoopBackAuth, User, ENV) {
 
-  var authUriBase = ENV.apiUrl + "auth/";
+  var authUriBase = ENV.apiUrl + 'auth/';
 
   // Inherit from LoopBackAuth so we don't need to keep modifying it.
   // Note that this method didn't work. I think because a new version of LoopBackAuth was used instead of the singleton.
@@ -36,10 +36,10 @@ angular.module ('com.module.users')
     else {
       // Fetch the actual user data.
       self.currentUser = User.getCurrent (function (userData) {
-          console.log ("Current User Fetch Success:", userData);
+          console.log ('Current User Fetch Success:', userData);
         },
         function (err) {
-          console.log ("Current User Fetch Failed:", err);
+          console.log ('Current User Fetch Failed:', err);
         });
     }
     return self.currentUser;

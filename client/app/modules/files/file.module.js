@@ -1,3 +1,3 @@
 
 'use strict';
-angular.module ('com.module.files',['loopbackApp']);
+angular.module ('com.module.files',[]);

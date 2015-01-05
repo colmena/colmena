@@ -1,0 +1,23 @@
+{
+  "name": "project",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "balance": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "ownerId": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}

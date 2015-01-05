@@ -2,6 +2,8 @@
   "name": "user",
   "plural": "users",
   "base": "User",
+  "properties": {},
+  "validations": [],
   "relations": {
     "accessTokens": {
       "type": "hasMany",
@@ -17,9 +19,18 @@
       "type": "hasMany",
       "model": "userCredential",
       "foreignKey": "userId"
+    },
+    "projects": {
+      "type": "hasMany",
+      "model": "project",
+      "foreignKey": "ownerId"
+    },
+    "teams": {
+      "type": "hasMany",
+      "model": "team",
+      "foreignKey": "ownerId"
     }
   },
-  "validations": [],
   "acls": [],
   "methods": []
 }

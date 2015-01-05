@@ -12,12 +12,8 @@
       <tabset class="nav-tabs-custom">
         <tab heading="Dashboard">
           <div class="row">
-            <small-box title="Posts" color="bg-red" icon="ion-document-text" quantity="{{ count.posts }}" href="app.posts.list"></small-box>
-            <small-box title="Files" color="bg-green" icon="ion-paperclip" quantity="{{ count.files }}" href="app.files.list"></small-box>
-            <small-box title="Pages" color="bg-yellow" icon="ion-document" quantity="{{ count.pages }}" href="app.pages.list"></small-box>
-            <small-box title="Events" color="bg-aqua" icon="ion-calendar" quantity="{{ count.events }}" href="app.events.list"></small-box>
-            <small-box title="Products" color="bg-blue" icon="ion-bag" quantity="{{ count.products }}" href="app.products.list"></small-box>
-            <small-box title="Products Categories" color="bg-black" icon="ion-grid" quantity="{{ count.categories }}" href="app.products.list"></small-box>
+
+            <small-box title="{{ box.name }}" color="{{ box.color }}" icon="{{ box.icon }}" quantity="{{ box.quantity }}" href="{{ box.href }}" ng-repeat="box in boxes"></small-box>
 
           </div>
         </tab>

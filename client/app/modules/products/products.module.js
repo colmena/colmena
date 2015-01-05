@@ -1,2 +1,2 @@
 'use strict';
-angular.module ('com.module.products',['loopbackApp']);
+angular.module ('com.module.products',[]);
