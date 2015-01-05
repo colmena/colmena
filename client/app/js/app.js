@@ -28,6 +28,7 @@ angular.module('loopbackApp', [
   'ui.gravatar',
   'ui.router',
   'toasty',
+  'autofields',
   'com.module.about',
   'com.module.core',
   'com.module.events',
@@ -37,6 +38,7 @@ angular.module('loopbackApp', [
   'com.module.posts',
   'com.module.products',
   'com.module.sandbox',
+  'com.module.components',
   'com.module.settings',
   'com.module.users'
 ]);
