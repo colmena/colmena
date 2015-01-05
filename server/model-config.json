@@ -61,17 +61,5 @@
   "Event": {
     "dataSource": "db",
     "public": true
-  },
-  "name": {
-    "dataSource": "db",
-    "public": true
-  },
-  "project": {
-    "dataSource": "db",
-    "public": true
-  },
-  "team": {
-    "dataSource": "db",
-    "public": true
   }
 }

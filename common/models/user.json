@@ -19,16 +19,6 @@
       "type": "hasMany",
       "model": "userCredential",
       "foreignKey": "userId"
-    },
-    "projects": {
-      "type": "hasMany",
-      "model": "project",
-      "foreignKey": "ownerId"
-    },
-    "teams": {
-      "type": "hasMany",
-      "model": "team",
-      "foreignKey": "ownerId"
     }
   },
   "acls": [],
