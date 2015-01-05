@@ -23,7 +23,7 @@ module.exports = function (app) {
     if (err) {
       console.log ('err', err);
     }
-    console.log (user);
+    //console.log (user);
 
     Role.create ({
       name: 'admin'
@@ -46,7 +46,7 @@ module.exports = function (app) {
     if (err) {
       console.log ('err', err);
     }
-    console.log (user);
+    //console.log (user);
 
     Role.create ({
       name: 'admin'
@@ -75,7 +75,7 @@ module.exports = function (app) {
       percentage: '5',
       categoryId: category.id
     }, function (err, data) {
-      console.log (data);
+      //console.log (data);
     });
     Product.create ({
       name: 'Bottled beer',
@@ -83,7 +83,7 @@ module.exports = function (app) {
       percentage: '5',
       categoryId: category.id
     }, function (err, data) {
-      console.log (data);
+      //console.log (data);
     });
   });
 
@@ -99,7 +99,7 @@ module.exports = function (app) {
       percentage: '12',
       categoryId: category.id
     }, function (err, data) {
-      console.log (data);
+      //console.log (data);
     });
     Product.create ({
       name: 'White wine',
@@ -107,7 +107,7 @@ module.exports = function (app) {
       percentage: '12',
       categoryId: category.id
     }, function (err, data) {
-      console.log (data);
+      //console.log (data);
     });
   });
 
@@ -120,7 +120,7 @@ module.exports = function (app) {
     if (err) {
       console.log ('err', err);
     }
-    console.log (data);
+    //console.log (data);
   });
 
 };

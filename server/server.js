@@ -94,7 +94,6 @@ for(var s in config) {
 
 var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 
-
 app.get('/auth/account', ensureLoggedIn('/login.html'), function (req, res, next) {
   res.render('pages/loginProfiles', {
     user: req.user,
@@ -104,34 +103,6 @@ app.get('/auth/account', ensureLoggedIn('/login.html'), function (req, res, next
 
 app.get('/link/account', ensureLoggedIn('/login.html'), function (req, res, next) {
   res.render('pages/linkedAccounts', {
-    user: req.user,
-    url: req.url
-  });
-});
-
-app.get('/local', function (req, res, next){
-  res.render('pages/local', {
-    user: req.user,
-    url: req.url
-  });
-});
-
-app.get('/signup', function (req, res, next){
-  res.render('pages/signup', {
-    user: req.user,
-    url: req.url
-  });
-});
-
-app.get('/login', function (req, res, next){
-  res.render('pages/login', {
-    user: req.user,
-    url: req.url
-  });
-});
-
-app.get('/link', function (req, res, next){
-  res.render('pages/link', {
     user: req.user,
     url: req.url
   });
