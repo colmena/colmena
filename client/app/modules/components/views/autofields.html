@@ -1,8 +1,7 @@
 <h4>
-  <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+  <a href="" ui-sref="^.dashboard" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
 
-  <span ng-show="!post.id">Add a new post</span>
-  <span ng-show="post.id">Edit post</span>
+  <span >AutoFields </span>
 
 </h4>
 
@@ -17,8 +16,7 @@
   </div>
   <div class="col-sm-6">
     <h4>Bound Data</h4>
-    <pre ng-bind="user | json"></pre    <textarea ng-model="options"></textarea>
->
+    <pre ng-bind="user | json"></pre>
     <h4>Demo Functions</h4>
     <button class="btn btn-default" ng-click="addField()">Add Field</button>
     <button class="btn btn-default" ng-click="toggleValidation()">Toggle Validation</button>
