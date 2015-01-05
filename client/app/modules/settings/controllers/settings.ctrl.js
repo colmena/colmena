@@ -1,6 +1,6 @@
 'use strict';
 angular.module ('com.module.settings')
-  .controller ('SettingsCtrl', function ($scope, $state, $stateParams, toasty, Setting, SweetAlert) {
+  .controller ('SettingsCtrl', function ($scope, $rootScope, $state, $stateParams, toasty, Setting, SweetAlert) {
 
   var settingId = $stateParams.id;
 
@@ -15,8 +15,11 @@ angular.module ('com.module.settings')
     $scope.setting = {};
   }
 
+  $scope.settings = $rootScope.settings;
+
+
   function loadItems () {
-    $scope.settings = Setting.find ();
+    $rootScope.loadSettings ();
   }
 
   loadItems ();

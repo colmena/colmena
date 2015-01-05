@@ -18,11 +18,11 @@ var loopbackPassport = require('loopback-component-passport');
 var PassportConfigurator = loopbackPassport.PassportConfigurator;
 var passportConfigurator = new PassportConfigurator(app);
 
-app.use(function(req, res, next) {
-  res.setHeader('X-Powered-By', 'Loopback Admin');
-  res.removeHeader('Vary');
-  next();
-});
+//app.use(function(req, res, next) {
+//  res.setHeader('X-Powered-By', 'Loopback Admin');
+//  res.removeHeader('Vary');
+//  next();
+//});
 
 // Set up the /favicon.ico
 app.use(loopback.favicon());
@@ -40,8 +40,6 @@ var ds = loopback.createDataSource({
 var container = ds.createModel('container');
 
 app.model(container);
-
-app.set('json spaces', 2); //pretty print json responses
 
 // boot scripts mount components like REST API
 boot(app, __dirname);

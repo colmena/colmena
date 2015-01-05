@@ -13,7 +13,8 @@
         <tab heading="Dashboard">
           <div class="row">
 
-            <small-box title="{{ box.name }}" color="{{ box.color }}" icon="{{ box.icon }}" quantity="{{ box.quantity }}" href="{{ box.href }}" ng-repeat="box in boxes"></small-box>
+            <small-box title="{{ box.name }}" color="{{ box.color }}" icon="{{ box.icon }}"
+                       quantity="{{ box.quantity }}" href="{{ box.href }}" ng-repeat="box in boxes"></small-box>
 
           </div>
         </tab>
@@ -37,7 +38,7 @@
               </h4>
               <div class="btn-group" data-toggle="btn-toggle">
                 <button type="button" class="btn btn-default btn-xs" data-toggle="on"
-                        ng-repeat="theme in appThemes" ng-click="setTheme(theme.class)">
+                        ng-repeat="theme in appThemes" ng-click="setSetting('appTheme', theme.class)">
                   {{theme.name}}
                 </button>
               </div>
@@ -46,7 +47,7 @@
               </h4>
               <div class="btn-group" data-toggle="btn-toggle">
                 <button type="button" class="btn btn-default btn-xs" data-toggle="on"
-                        ng-repeat="layout in appLayouts" ng-click="setLayout(layout.class)">
+                        ng-repeat="layout in appLayouts" ng-click="setSetting('appLayout', layout.class)">
                   {{layout.name}}
                 </button>
               </div>

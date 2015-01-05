@@ -120,7 +120,27 @@ module.exports = function (app) {
     if (err) {
       console.log ('err', err);
     }
-    //console.log (data);
+    console.log (data);
+  });
+
+  Setting.create ({
+    key: 'appTheme',
+    value: 'skin-blue'
+  }, function (err, data) {
+    if (err) {
+      console.log ('err', err);
+    }
+    console.log (data);
+  });
+
+  Setting.create ({
+    key: 'appLayout',
+    value: 'fixed'
+  }, function (err, data) {
+    if (err) {
+      console.log ('err', err);
+    }
+    console.log (data);
   });
 
 };

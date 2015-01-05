@@ -10,14 +10,14 @@
             <li class="dropdown user user-menu">
                 <a href="" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="glyphicon glyphicon-user"></i>
-                    <span>{{currentUser.firstName}} {{currentUser.lastName}} <i class="caret"></i></span>
+                    <span>{{currentUser.user.firstName}} {{currentUser.user.lastName}} <i class="caret"></i></span>
                 </a>
                 <ul class="dropdown-menu">
                     <li class="user-header bg-light-blue">
-                        <img gravatar-src-once="currentUser.email" class="img-circle" alt="User Image">
+                        <img gravatar-src-once="currentUser.user.email" class="img-circle" alt="User Image">
                         <p>
-                            {{currentUser.firstName}} {{currentUser.lastName}}
-                            <small>{{currentUser.email}}</small>
+                            {{currentUser.user.firstName}} {{currentUser.user.lastName}}
+                            <small>{{currentUser.user.email}}</small>
                         </p>
                     </li>
                     <li class="user-footer">

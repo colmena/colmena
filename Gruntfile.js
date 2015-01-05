@@ -37,7 +37,7 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= yeoman.app %>/modules/**/{,*/}*.js',],
+        files: ['!<%= yeoman.app %>/modules/**/tests/**', '<%= yeoman.app %>/modules/**/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -540,7 +540,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask ('default', [
-    'newer:jshint',
+    //'newer:jshint',
     'test',
     'ngconstant:development',
     'loopback_angular',

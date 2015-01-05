@@ -11,16 +11,15 @@
   * @requires User
 **/
 angular.module ('com.module.core')
-  .controller ('MainCtrl', function ($scope, $rootScope, $state, $location, toasty, AppAuth, User) {
+  .controller ('MainCtrl', function ($scope, $rootScope, $state, $location, toasty, Auth, User) {
 
-  AppAuth.ensureHasCurrentUser (User);
-  $scope.currentUser = AppAuth.currentUser;
-
+  Auth.ensureCurrentUser();
+  $scope.currentUser = Auth.currentUser;
   $scope.menuoptions = $rootScope.menu;
 
   $scope.logout = function () {
     User.logout (function () {
-      $scope.currentUser = AppAuth.currentUser = null;
+      $scope.currentUser = Auth.currentUser = null;
       $state.go ('login');
       toasty.pop.success ({title: 'Logged out', msg: 'You are logged out!', sound: false});
     });

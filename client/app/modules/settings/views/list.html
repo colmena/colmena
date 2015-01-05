@@ -1,5 +1,5 @@
 <div class='list-group'>
-  <div ng-repeat="item in settings" class="list-group-item">
+  <div ng-repeat="item in settings.data" class="list-group-item">
     <span class="pull-right btn-group" style="margin-top: 7px;">
       <a href="" class="btn btn-sm btn-default" ui-sref="^.edit({id: item.id})">
         <i class="fa fa-pencil"></i>
@@ -13,7 +13,7 @@
     </h4>
     <p class="list-group-item-text">{{item.value}}</p>
   </div>
-  <div ng-show="!settings.length" class="list-group-item">
+  <div ng-show="!settings.data.length" class="list-group-item">
     <h4 class="list-group-item-heading">
       There are no settings
     </h4>

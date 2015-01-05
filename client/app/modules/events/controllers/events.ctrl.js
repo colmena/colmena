@@ -21,7 +21,7 @@ angular.module ('com.module.events')
 
     var splitDate = function () {
       var event = $scope.event;
-      event.sDate = event.sTime = event['start_time'];
+      event.sDate = event.sTime = event.startTime;
       event.eDate = event.eTime = Date.parse(event['end_time']);
       //      event['start_time'] =  event['end_time'] = null;
     };
