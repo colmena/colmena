@@ -1,0 +1,61 @@
+{
+  "facebook-login": {
+    "provider": "facebook",
+    "module": "passport-facebook",
+    "clientID": "{facebook-client-id-1}",
+    "clientSecret": "{facebook-client-secret-1}",
+    "callbackURL": "http://localhost:3000/auth/facebook/callback",
+    "authPath": "/auth/facebook",
+    "callbackPath": "/auth/facebook/callback",
+    "successRedirect": "/auth/account",
+    "scope": ["email"]
+  },
+  "google-login": {
+    "provider": "google",
+    "module": "passport-google-oauth",
+    "strategy": "OAuth2Strategy",
+    "clientID": "194966235327-a48g6rm6kbokosiik0r7lq186ekt4vqn.apps.googleusercontent.com",
+    "clientSecret": "oy9izUUh3GnjCyLpa8xwg3E7",
+    "callbackURL": "http://localhost:3000/auth/google/callback",
+    "authPath": "/auth/google",
+    "callbackPath": "/auth/google/callback",
+    "successRedirect": "/auth/account",
+    "scope": ["email", "profile"]
+  },
+  "twitter-login": {
+    "provider": "twitter",
+    "authScheme": "oauth",
+    "module": "passport-twitter",
+    "callbackURL": "http://localhost:5000/auth/twitter/callback",
+    "authPath": "/auth/twitter",
+    "callbackPath": "/auth/twitter/callback",
+    "successRedirect": "/auth/account",
+    "consumerKey": "{twitter-consumer-key}",
+    "consumerSecret": "{twitter-consumer-secret}"
+  },
+  "facebook-link": {
+    "provider": "facebook",
+    "module": "passport-facebook",
+    "clientID": "{facebook-client-id-2}",
+    "clientSecret": "{facebook-client-secret-2}",
+    "callbackURL": "http://localhost:5000/link/facebook/callback",
+    "authPath": "/link/facebook",
+    "callbackPath": "/link/facebook/callback",
+    "successRedirect": "/link/account",
+    "scope": ["email", "user_likes"],
+    "link": true
+  },
+  "google-link": {
+    "provider": "google",
+    "module": "passport-google-oauth",
+    "strategy": "OAuth2Strategy",
+    "clientID": "{google-client-id-2}",
+    "clientSecret": "{google-client-secret-2}",
+    "callbackURL": "http://localhost:5000/link/google/callback",
+    "authPath": "/link/google",
+    "callbackPath": "/link/google/callback",
+    "successRedirect": "/link/account",
+    "scope": ["email", "profile"],
+    "link": true
+  }
+}
