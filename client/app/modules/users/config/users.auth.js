@@ -3,12 +3,12 @@ angular.module ('com.module.users')
   .config (function ($routeProvider, $httpProvider) {
 
   // Intercept 401 responses and redirect to login screen
-  $httpProvider.interceptors.push (function ($q, $location, AppAuth, toasty) {
+  $httpProvider.interceptors.push (function ($q, $location, Auth, toasty) {
     return {
       responseError: function (rejection) {
 
         if (rejection.status === 401) {
-          AppAuth.currentUser = null;
+          Auth.currentUser = null;
           // save the current location so that login can redirect back
           $location.nextAfterLogin = $location.path ();
 

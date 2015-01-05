@@ -9,7 +9,7 @@
  * Controller for Register Page
  **/
 angular.module ('com.module.users')
-  .controller ('RegisterCtrl', function ($scope, $routeParams, $location, toasty, User, AppAuth) {
+  .controller ('RegisterCtrl', function ($scope, $routeParams, $location, toasty, User, Auth) {
 
   $scope.registration = {
     firstName: '',
@@ -31,7 +31,7 @@ angular.module ('com.module.users')
             rememberMe: true
           }, $scope.registration,
           function () {
-            AppAuth.currentUser = $scope.loginResult.user;
+            Auth.currentUser = $scope.loginResult.user;
             toasty.pop.success ({title: 'Registered', msg: 'You are registered!', sound: false});
             $location.path ('/');
           },
