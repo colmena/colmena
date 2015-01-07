@@ -20,6 +20,45 @@ angular.module ('com.module.users')
     rememberMe: true
   };
 
+  $scope.schema = [
+    {
+      label: '',
+      property: 'email',
+      placeholder: 'email',
+      type: 'email',
+      attr: {required: true, ngMinlength: 4},
+      msgs: {
+        required: 'You need an email address',
+        email: 'Email address needs to be valid',
+        valid: 'Nice email address!'
+      }
+    },
+    {
+      label: '',
+      property: 'password',
+      placehodler: gettextCatalog.getString ('Password'),
+      type: 'password',
+      attr: {required: true}
+    },
+    {
+      property: 'rememberMe',
+      label: gettextCatalog.getString ('Stay signed in'),
+      type: 'checkbox'
+    }
+  ];
+
+  $scope.options = {
+    validation: {
+      enabled: true,
+      showMessages: false
+    },
+    layout: {
+      type: 'basic',
+      labelSize: 3,
+      inputSize: 9
+    }
+  };
+
   $scope.loginGoogle = function () {
     window.location = '/auth/google';
   };
@@ -45,7 +84,11 @@ angular.module ('com.module.users')
         var next = $location.nextAfterLogin || '/';
         $location.nextAfterLogin = null;
         AppAuth.currentUser = $scope.loginResult.user;
-        toasty.pop.success ({title: gettextCatalog.getString('Logged in'), msg: gettextCatalog.getString('You are logged in!'), sound: false});
+        toasty.pop.success ({
+          title: gettextCatalog.getString ('Logged in'),
+          msg: gettextCatalog.getString ('You are logged in!'),
+          sound: false
+        });
         if (next === '/login') {
           next = '/';
         }

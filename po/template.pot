@@ -23,6 +23,7 @@ msgstr ""
 
 #: client/app/modules/events/controllers/events.ctrl.js:49
 #: client/app/modules/files/controllers/files.ctrl.js:15
+#: client/app/modules/settings/controllers/settings.ctrl.js:29
 msgid "Are you sure?"
 msgstr ""
 
@@ -63,6 +64,10 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
+#: client/app/modules/users/controllers/register.ctrl.js:43
+msgid "Don't worry we won't spam your inbox"
+msgstr ""
+
 #: client/app/modules/events/views/form.html:6
 msgid "Edit event"
 msgstr ""
@@ -71,8 +76,16 @@ msgstr ""
 msgid "Edit setting"
 msgstr ""
 
+#: client/app/modules/users/controllers/register.ctrl.js:47
+msgid "Email address needs to be valid"
+msgstr ""
+
 #: client/app/modules/events/controllers/events.ctrl.js:61
 msgid "Error deleting event"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:46
+msgid "Error deleting setting"
 msgstr ""
 
 #: client/app/modules/users/controllers/register.ctrl.js:120
@@ -109,11 +122,15 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
+#: client/app/modules/settings/controllers/settings.ctrl.js:61
+msgid "Key"
+msgstr ""
+
 #: client/app/modules/users/controllers/register.ctrl.js:33
 msgid "Last Name"
 msgstr ""
 
-#: client/app/modules/users/controllers/login.ctrl.js:48
+#: client/app/modules/users/controllers/login.ctrl.js:88
 msgid "Logged in"
 msgstr ""
 
@@ -145,16 +162,25 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: client/app/modules/users/views/login.html:24
+#: client/app/modules/settings/controllers/settings.ctrl.js:64
+#: client/app/modules/settings/controllers/settings.ctrl.js:72
+msgid "Needs to have at least 4 characters"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:48
+msgid "Nice email address!"
+msgstr ""
+
+#: client/app/modules/users/views/login.html:17
 msgid "Or register"
 msgstr ""
 
-#: client/app/modules/users/views/register.html:18
+#: client/app/modules/users/views/register.html:20
 msgid "Or sign in"
 msgstr ""
 
+#: client/app/modules/users/controllers/login.ctrl.js:39
 #: client/app/modules/users/controllers/register.ctrl.js:57
-#: client/app/modules/users/views/login.html:16
 msgid "Password"
 msgstr ""
 
@@ -179,16 +205,24 @@ msgstr ""
 msgid "Remove all"
 msgstr ""
 
+#: client/app/modules/settings/controllers/settings.ctrl.js:37
+msgid "Setting deleted"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:92
+msgid "Setting saved"
+msgstr ""
+
 #: client/app/modules/core/views/home.html:28
 #: client/app/modules/settings/views/main.html:1
 msgid "Settings"
 msgstr ""
 
-#: client/app/modules/users/views/login.html:6
+#: client/app/modules/users/views/login.html:7
 msgid "Sign In"
 msgstr ""
 
-#: client/app/modules/users/views/login.html:23
+#: client/app/modules/users/views/login.html:16
 msgid "Sign in"
 msgstr ""
 
@@ -208,9 +242,13 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
+#: client/app/modules/users/controllers/login.ctrl.js:45
+msgid "Stay signed in"
+msgstr ""
+
 #: client/app/modules/events/views/form.html:20
 #: client/app/modules/events/views/form.html:28
-#: client/app/modules/settings/views/form.html:17
+#: client/app/modules/settings/views/form.html:21
 msgid "Submit"
 msgstr ""
 
@@ -263,6 +301,10 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
+#: client/app/modules/settings/controllers/settings.ctrl.js:69
+msgid "Value"
+msgstr ""
+
 #: client/app/modules/core/views/home.html:21
 msgid "Variables"
 msgstr ""
@@ -271,7 +313,7 @@ msgstr ""
 msgid "Welcome!"
 msgstr ""
 
-#: client/app/modules/users/controllers/login.ctrl.js:48
+#: client/app/modules/users/controllers/login.ctrl.js:89
 msgid "You are logged in!"
 msgstr ""
 
@@ -285,6 +327,10 @@ msgstr ""
 
 #: client/app/modules/files/views/upload.html:8
 msgid "You can just drag them in this window!"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:46
+msgid "You need an email address"
 msgstr ""
 
 #: client/app/modules/users/views/profile.html:20
@@ -305,6 +351,18 @@ msgstr ""
 
 #: client/app/modules/users/views/profile.html:5
 msgid "Your profile"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:38
+msgid "Your setting is deleted!"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:47
+msgid "Your setting is not deleted:"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:93
+msgid "Your setting is safe with us!"
 msgstr ""
 
 #: client/app/modules/files/views/list.html:23

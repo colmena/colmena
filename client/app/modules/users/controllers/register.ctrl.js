@@ -40,12 +40,12 @@ angular.module ('com.module.users')
       property: 'email',
       placeholder: 'email',
       type: 'email',
-      help: 'Don\'t worry we won\'t spam your inbox',
+      help: gettextCatalog.getString ('Don\'t worry we won\'t spam your inbox'),
       attr: {required: true, ngMinlength: 4},
       msgs: {
-        required: 'You need an email address',
-        email: 'Email address needs to be valid',
-        valid: 'Nice email address!'
+        required: gettextCatalog.getString ('You need an email address'),
+        email: gettextCatalog.getString ('Email address needs to be valid'),
+        valid: gettextCatalog.getString ('Nice email address!')
       }
     },
 

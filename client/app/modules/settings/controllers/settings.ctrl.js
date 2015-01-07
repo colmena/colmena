@@ -1,6 +1,6 @@
 'use strict';
 angular.module ('com.module.settings')
-  .controller ('SettingsCtrl', function ($scope, $rootScope, $state, $stateParams, toasty, Setting, SweetAlert) {
+  .controller ('SettingsCtrl', function ($scope, $rootScope, $state, $stateParams, toasty, Setting, SweetAlert, gettextCatalog) {
 
   var settingId = $stateParams.id;
 
@@ -26,21 +26,25 @@ angular.module ('com.module.settings')
 
   $scope.delete = function (id) {
     SweetAlert.swal ({
-      title: 'Are you sure?',
+      title: gettextCatalog.getString ('Are you sure?'),
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#DD6B55'
     }, function (isConfirm) {
       if (isConfirm) {
         Setting.deleteById (id, function () {
-          toasty.pop.success ({title: 'Setting deleted', msg: 'Your setting is deleted!', sound: false});
+          toasty.pop.success ({
+            title: gettextCatalog.getString ('Setting deleted'),
+            msg: gettextCatalog.getString ('Your setting is deleted!'),
+            sound: false
+          });
           loadItems ();
           $state.go ('app.settings.list');
           console.log ();
         }, function (err) {
           toasty.pop.error ({
-            title: 'Error deleting setting',
-            msg: 'Your setting is not deleted: ' + err,
+            title: gettextCatalog.getString ('Error deleting setting'),
+            msg: gettextCatalog.getString ('Your setting is not deleted: ') + err,
             sound: false
           });
         });
@@ -50,30 +54,45 @@ angular.module ('com.module.settings')
     });
   };
 
-  $scope.formFields = [
+  $scope.schema = [
     {
-      key: 'key',
+      label: '',
+      property: 'key',
+      placeholder: gettextCatalog.getString ('Key'),
       type: 'text',
-      label: 'Value',
-      required: true
+      attr: {ngMinlength: 4, required: true},
+      msgs: {minlength: gettextCatalog.getString ('Needs to have at least 4 characters')}
     },
     {
-      key: 'value',
+      label: '',
+      property: 'value',
+      placeholder: gettextCatalog.getString ('Value'),
       type: 'text',
-      label: 'Value',
-      required: true
-    }
+      attr: {ngMinlength: 4, required: true},
+      msgs: {minlength: gettextCatalog.getString ('Needs to have at least 4 characters')}
+    },
   ];
 
-  $scope.formOptions = {
-    uniqueFormId: true,
-    hideSubmit: false,
-    submitCopy: 'Save'
+  $scope.options = {
+    validation: {
+      enabled: true,
+      showMessages: false
+    },
+    layout: {
+      type: 'basic',
+      labelSize: 3,
+      inputSize: 9
+    }
   };
+
 
   $scope.onSubmit = function () {
     Setting.upsert ($scope.setting, function () {
-      toasty.pop.success ({title: 'Setting saved', msg: 'Your setting is safe with us!', sound: false});
+      toasty.pop.success ({
+        title: gettextCatalog.getString ('Setting saved'),
+        msg: gettextCatalog.getString ('Your setting is safe with us!'),
+        sound: false
+      });
       $state.go ('^.list');
     }, function (err) {
       console.log (err);

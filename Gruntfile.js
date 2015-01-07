@@ -566,10 +566,10 @@ module.exports = function (grunt) {
     'test',
     'ngconstant:development',
     'loopback_angular',
-    'docular',
+    //'docular',
     'nggettext_extract',
     'nggettext_compile',
-    'build'
+    //'build'
   ]);
 
   grunt.registerTask ('loopback', [

@@ -113,6 +113,7 @@ module.exports = function (app) {
 
   var Setting = app.models.Setting;
 
+  // App Name
   Setting.create ({
     key: 'appName',
     value: 'Loopback Admin'
@@ -123,6 +124,7 @@ module.exports = function (app) {
     console.log (data);
   });
 
+  // Template Theme
   Setting.create ({
     key: 'appTheme',
     value: 'skin-blue'
@@ -133,9 +135,43 @@ module.exports = function (app) {
     console.log (data);
   });
 
+  // Layout
   Setting.create ({
     key: 'appLayout',
     value: 'fixed'
+  }, function (err, data) {
+    if (err) {
+      console.log ('err', err);
+    }
+    console.log (data);
+  });
+
+  // Form Layout
+  Setting.create ({
+    key: 'formLayout',
+    value: 'horizontal'
+  }, function (err, data) {
+    if (err) {
+      console.log ('err', err);
+    }
+    console.log (data);
+  });
+
+  // Form Layout
+  Setting.create ({
+    key: 'formLabelSize',
+    value: 3
+  }, function (err, data) {
+    if (err) {
+      console.log ('err', err);
+    }
+    console.log (data);
+  });
+
+  // Form Layout
+  Setting.create ({
+    key: 'formInputSize',
+    value: 9
   }, function (err, data) {
     if (err) {
       console.log ('err', err);
