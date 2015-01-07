@@ -29,6 +29,7 @@ angular.module('loopbackApp', [
   'ui.router',
   'toasty',
   'autofields',
+  'gettext',
   'com.module.about',
   'com.module.core',
   'com.module.events',
@@ -41,4 +42,11 @@ angular.module('loopbackApp', [
   'com.module.components',
   'com.module.settings',
   'com.module.users'
-]);
+])
+  .run(function (gettextCatalog) {
+    var LangVar = navigator.language || navigator.userLanguage;
+    var userLangVar = LangVar.substring (0, 2);
+    gettextCatalog
+      .setCurrentLanguage(userLangVar);
+
+  });

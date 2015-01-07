@@ -1,6 +1,6 @@
 'use strict';
 angular.module ('com.module.events')
-  .controller('EventsCtrl', function ($scope, $state, $stateParams, toasty, Event, SweetAlert) {
+  .controller('EventsCtrl', function ($scope, $state, $stateParams, toasty, Event, SweetAlert, gettextCatalog) {
 
     var eventId = $stateParams.id;
 
@@ -46,19 +46,19 @@ angular.module ('com.module.events')
 
     $scope.delete = function (id) {
       SweetAlert.swal({
-        title: 'Are you sure?',
+        title: gettextCatalog.getString ('Are you sure?'),
         type: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#DD6B55'
       }, function (isConfirm) {
         if (isConfirm) {
           Event.deleteById(id, function () {
-            toasty.pop.success({title: 'Event deleted', msg: 'Your event is deleted!', sound: false});
+            toasty.pop.success({title: gettextCatalog.getString ('Event deleted'), msg: gettextCatalog.getString ('Your event is deleted!'), sound: false});
             loadItems();
             $state.go('app.events.list');
             console.log();
           }, function (err) {
-            toasty.pop.error({title: 'Error deleting event', msg: 'Your event is not deleted: ' + err, sound: false});
+            toasty.pop.error({title: gettextCatalog.getString ('Error deleting event'), msg: gettextCatalog.getString ('Your event is not deleted: ') + err, sound: false});
           });
         } else {
           return false;

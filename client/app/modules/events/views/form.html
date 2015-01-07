@@ -2,28 +2,28 @@
     <div class="box-header">
         <h3 class="box-title">
             <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
-            <span ng-show="!category.id">Add a new event</span>
-            <span ng-show="category.id">Edit event</span>
+            <span ng-show="!category.id" translate>Add a new event</span>
+            <span ng-show="category.id" translate>Edit event</span>
         </h3>
         <div class="box-tools pull-right">
         </div>
     </div>
     <div class="box-body">
         <div class="row">
-            <div class="alert alert-danger" ng-if="addError">Could not add event!</div>
+            <div class="alert alert-danger" ng-if="addError" translate>Could not add event!</div>
         </div>
         <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
         <formly-form result="event" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
     </div>
     <div class="box-footer">
         <div class="controls">
-            <button class="btn btn-primary btn-success" ng-click="onSubmit()">Submit</button>
-            <button class="btn btn-default" ng-click="reset()">Cancel</button>
+            <button class="btn btn-primary btn-success" ng-click="onSubmit()" translate>Submit</button>
+            <button class="btn btn-default" ng-click="reset()" translate>Cancel</button>
         </div>
     </div>
     <div ng-if="loading" class="overlay"></div>
     <div ng-if="loading" class="loading-img"></div>
 </div>
 <div class="controls">
-    <button class="btn btn-primary btn-success" ng-click="onSubmit()">Submit</button>
+    <button class="btn btn-primary btn-success" ng-click="onSubmit()" translate>Submit</button>
 </div>

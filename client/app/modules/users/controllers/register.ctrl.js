@@ -9,7 +9,7 @@
  * Controller for Register Page
  **/
 angular.module ('com.module.users')
-  .controller ('RegisterCtrl', function ($scope, $routeParams, $location, toasty, User, Auth) {
+  .controller ('RegisterCtrl', function ($scope, $routeParams, $location, $filter, toasty, User, AppAuth, gettextCatalog) {
 
   $scope.registration = {
     firstName: '',
@@ -17,6 +17,71 @@ angular.module ('com.module.users')
     email: '',
     password: ''
   };
+
+  $scope.schema = [
+    {
+      label: '',
+      property: 'firstName',
+      placeholder: gettextCatalog.getString('First Name'),
+      type: 'text',
+      attr: {ngMinlength: 4, required: true},
+      msgs: {minlength: 'Needs to have at least 4 characters'}
+    },
+    {
+      label: '',
+      property: 'lastName',
+      placeholder: gettextCatalog.getString('Last Name'),
+      type: 'text',
+      attr: {ngMinlength: 4, required: true},
+      msgs: {minlength: 'Needs to have at least 4 characters'}
+    },
+    {
+      label: '',
+      property: 'email',
+      placeholder: 'email',
+      type: 'email',
+      help: 'Don\'t worry we won\'t spam your inbox',
+      attr: {required: true, ngMinlength: 4},
+      msgs: {
+        required: 'You need an email address',
+        email: 'Email address needs to be valid',
+        valid: 'Nice email address!'
+      }
+    },
+
+    {
+      type: 'multiple', fields: [
+      {
+        label: '',
+        property: 'password',
+        placehodler: gettextCatalog.getString('Password'),
+        type: 'password',
+        attr: {required: true, ngMinlength: 6}
+      },
+      {
+        label: '',
+        property: 'confirmPassword',
+        placeholder: gettextCatalog.getString('Confirm Password'),
+        type: 'password',
+        attr: {confirmPassword: 'user.password', required: true, ngMinlength: 6},
+        msgs: {match: 'Your passwords need to match'}
+      }
+    ], columns: 6
+    }
+  ];
+
+  $scope.options = {
+    validation: {
+      enabled: true,
+      showMessages: false
+    },
+    layout: {
+      type: 'basic',
+      labelSize: 3,
+      inputSize: 9
+    }
+  };
+
 
   $scope.confirmPassword = '';
 
@@ -31,13 +96,17 @@ angular.module ('com.module.users')
             rememberMe: true
           }, $scope.registration,
           function () {
-            Auth.currentUser = $scope.loginResult.user;
-            toasty.pop.success ({title: 'Registered', msg: 'You are registered!', sound: false});
+            AppAuth.currentUser = $scope.loginResult.user;
+            toasty.pop.success ({
+              title: gettextCatalog.getString ('Registered'),
+              msg: gettextCatalog.getString ('You are registered!'),
+              sound: false
+            });
             $location.path ('/');
           },
           function (res) {
             toasty.pop.warning ({
-              title: 'Error signin in after registration!',
+              title: gettextCatalog.getString ('Error signin in after registration!'),
               msg: res.data.error.message,
               sound: false
             });
@@ -47,10 +116,31 @@ angular.module ('com.module.users')
 
       },
       function (res) {
-        toasty.pop.error ({title: 'Error registering!', msg: res.data.error.message, sound: false});
+        toasty.pop.error ({
+          title: gettextCatalog.getString ('Error registering!'), msg: res.data.error.message, sound: false
+        });
         $scope.registerError = res.data.error;
       }
     );
   };
 
-});
+})
+  .directive ('confirmPassword', [
+  function () {
+    return {
+      restrict: 'A',
+      require: 'ngModel',
+      link: function (scope, element, attrs, ngModel) {
+        var validate = function (viewValue) {
+          var password = scope.$eval (attrs.confirmPassword);
+          ngModel.$setValidity ('match', ngModel.$isEmpty (viewValue) || viewValue == password);
+          return viewValue;
+        }
+        ngModel.$parsers.push (validate);
+        scope.$watch (attrs.confirmPassword, function (value) {
+          validate (ngModel.$viewValue);
+        })
+      }
+    }
+  }
+]);

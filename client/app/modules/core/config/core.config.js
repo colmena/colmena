@@ -1,6 +1,6 @@
 'use strict';
 angular.module ('com.module.core')
-  .run (function ($rootScope) {
+  .run (function ($rootScope, gettextCatalog) {
 
   $rootScope.menu = [];
 
@@ -12,7 +12,7 @@ angular.module ('com.module.core')
     });
   };
 
-  $rootScope.addMenu ('Dashboard', 'app.home', 'fa-dashboard');
+  $rootScope.addMenu (gettextCatalog.getString('Dashboard'), 'app.home', 'fa-dashboard');
 
   $rootScope.dashboardBox = [];
 

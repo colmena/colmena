@@ -31,6 +31,27 @@ module.exports = function (grunt) {
     yeoman: appConfig,
 
     // Watches files for changes and runs tasks based on the changed files
+    nggettext_extract: {
+      pot: {
+        files: {
+          'po/template.pot': [
+            '<%= yeoman.app %>/modules/**/*.js',
+            '<%= yeoman.app %>/modules/*/views/*.html',
+            '<%= yeoman.app %>/modules/*/views/**/*.html'
+          ]
+        }
+      }
+    },
+    nggettext_compile: {
+      all: {
+        options: {
+          module: 'loopbackApp'
+        },
+        files: {
+          '<%= yeoman.app %>/js/translations.js': ['po/*.po']
+        }
+      }
+    },
     watch: {
       bower: {
         files: ['bower.json'],
@@ -485,6 +506,7 @@ module.exports = function (grunt) {
   // Load the plugin that provides the "loopback-angular" and "grunt-docular" tasks.
   grunt.loadNpmTasks ('grunt-loopback-angular');
   grunt.loadNpmTasks ('grunt-docular');
+  grunt.loadNpmTasks('grunt-angular-gettext');
 
 
   grunt.registerTask ('serve', 'Compile then start a connect web server', function (target) {
@@ -540,12 +562,14 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask ('default', [
-    //'newer:jshint',
+    'newer:jshint',
     'test',
     'ngconstant:development',
     'loopback_angular',
-    'docular',
-    'build'
+    // 'docular',
+    'nggettext_extract',
+    'nggettext_compile',
+    //'build'
   ]);
 
   grunt.registerTask ('loopback', [

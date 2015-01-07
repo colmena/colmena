@@ -1,6 +1,6 @@
 'use strict';
 angular.module ('com.module.files')
-  .controller ('FilesCtrl', function ($scope, $http, ENV, toasty, SweetAlert) {
+  .controller ('FilesCtrl', function ($scope, $http, ENV, toasty, SweetAlert, gettextCatalog) {
 
   $scope.load = function () {
     $http.get (ENV.apiUrl + '/containers/files/files').success (function (data) {
@@ -12,7 +12,7 @@ angular.module ('com.module.files')
   $scope.delete = function (index, id) {
 
     SweetAlert.swal ({
-      title: 'Are you sure?',
+      title: gettextCatalog.getString ('Are you sure?'),
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#DD6B55'
@@ -23,7 +23,11 @@ angular.module ('com.module.files')
           console.log (status);
           console.log (headers);
           $scope.files.splice (index, 1);
-          toasty.pop.success ({title: 'File deleted', msg: 'Your file is deleted!', sound: false});
+          toasty.pop.success ({
+            title: gettextCatalog.getString ('File deleted'),
+            msg: gettextCatalog.getString ('Your file is deleted!'),
+            sound: false
+          });
         });
       } else {
         return false;
