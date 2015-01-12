@@ -9,3 +9,4 @@ storage
 npm-debug.log
 .idea/
 docular_generated
+.strong-pm/
