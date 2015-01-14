@@ -2,6 +2,14 @@
 angular.module ('com.module.sandbox')
   .controller ('SandboxCtrl', function ($scope) {
     $scope.items = [
+    {
+        name: 'Dashboard',
+        sref: '.dashboard'
+      },
+      {
+        name: 'Autofields',
+        sref: '.autofields'
+      },
       {
         name: 'Alerts',
         sref: '.alerts'

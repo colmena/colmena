@@ -1,5 +1,5 @@
 'use strict';
-angular.module ('com.module.components')
+angular.module ('com.module.sandbox')
   .controller ('AutoFieldsCtrl', function ($scope, $state, toasty, $log) {
 
   $scope.user = {
