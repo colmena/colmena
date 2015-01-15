@@ -25,7 +25,10 @@
     "angular-markdown-directive": "~0.3.0",
     "angular-elastic": "~2.4.2",
     "angular-autoFields-bootstrap": "~2.1.6",
-    "angular-gettext": "~2.0.0"
+    "angular-gettext": "~2.0.0",
+    "angular-translate-loader-static-files": "~2.5.2",
+    "angular-translate": "~2.5.2",
+    "angular-translate-loader-url": "~2.5.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.3",
