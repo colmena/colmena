@@ -34,7 +34,7 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+        files: ['<%= yeoman.app %>/scripts/{,*/}*.js', '<%= yeoman.app %>/modules/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -393,8 +393,28 @@ module.exports = function (grunt) {
         }
       }
     },
+    docularserver: {
+      targetDir: "docs",
+      livereload: true,
+      port: 8000
+    },
     docular: {
+      useHtml5Mode: true, //Use angular's html5 mode? true/false.
+      docular_webapp_target: 'docs', //The place where the docs will be generated
+      showAngularDocs: true,
+      showDocularDocs: true,
       groups: [
+        {
+          groupTitle: 'Admin',
+          groupId: 'loopbackApp',
+          sections: [
+            {
+              id: 'loopbackApp',
+              title: 'LoopBack Services',
+              scripts: [ 'client/app/modules/**/{,*/}*.js' ]
+            }
+          ]
+        },
         {
           groupTitle: 'LoopBack',
           groupId: 'loopback',
