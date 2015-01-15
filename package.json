@@ -49,6 +49,7 @@
     "grunt-docular": "^0.2.4",
     "grunt-filerev": "^2.1.2",
     "grunt-google-cdn": "^0.4.3",
+    "grunt-include-source": "^0.4.5",
     "grunt-karma": "^0.10.1",
     "grunt-loopback-angular": "^1.1.0",
     "grunt-newer": "^1.1.0",
