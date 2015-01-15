@@ -1,0 +1,375 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: client/app/modules/files/views/upload.html:60
+msgid "Actions"
+msgstr ""
+
+#: client/app/modules/events/views/main.html:2
+#: client/app/modules/settings/views/main.html:2
+msgid "Add"
+msgstr ""
+
+#: client/app/modules/events/views/form.html:5
+msgid "Add a new event"
+msgstr ""
+
+#: client/app/modules/settings/views/form.html:4
+msgid "Add a new setting"
+msgstr ""
+
+#: client/app/modules/events/controllers/events.ctrl.js:49
+#: client/app/modules/files/controllers/files.ctrl.js:15
+#: client/app/modules/settings/controllers/settings.ctrl.js:29
+msgid "Are you sure?"
+msgstr ""
+
+#: client/app/modules/files/views/upload.html:14
+msgid "Browse"
+msgstr ""
+
+#: client/app/modules/events/views/form.html:21
+msgid "Cancel"
+msgstr ""
+
+#: client/app/modules/files/views/upload.html:42
+msgid "Cancel all"
+msgstr ""
+
+#: client/app/modules/users/views/profile.html:21
+msgid "Change it here!"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:64
+msgid "Confirm Password"
+msgstr ""
+
+#: client/app/modules/events/views/form.html:13
+msgid "Could not add event!"
+msgstr ""
+
+#: client/app/modules/settings/views/form.html:12
+msgid "Could not add setting!"
+msgstr ""
+
+#: client/app/modules/core/views/home.html:24
+msgid "Current user"
+msgstr ""
+
+#: client/app/modules/core/config/core.config.js:15
+#: client/app/modules/core/views/home.html:13
+msgid "Dashboard"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:43
+msgid "Don't worry we won't spam your inbox"
+msgstr ""
+
+#: client/app/modules/events/views/form.html:6
+msgid "Edit event"
+msgstr ""
+
+#: client/app/modules/settings/views/form.html:5
+msgid "Edit setting"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:47
+msgid "Email address needs to be valid"
+msgstr ""
+
+#: client/app/modules/events/controllers/events.ctrl.js:61
+msgid "Error deleting event"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:46
+msgid "Error deleting setting"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:120
+msgid "Error registering!"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:109
+msgid "Error signin in after registration!"
+msgstr ""
+
+#: client/app/modules/events/controllers/events.ctrl.js:56
+msgid "Event deleted"
+msgstr ""
+
+#: client/app/modules/events/views/main.html:1
+msgid "Events"
+msgstr ""
+
+#: client/app/modules/files/controllers/files.ctrl.js:27
+msgid "File deleted"
+msgstr ""
+
+#: client/app/modules/files/config/file.config.js:7
+#: client/app/modules/files/views/main.html:1
+#: client/app/modules/files/views/upload.html:5
+msgid "Files"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:25
+msgid "First Name"
+msgstr ""
+
+#: client/app/modules/core/views/home.html:5
+msgid "Home"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:61
+msgid "Key"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:33
+msgid "Last Name"
+msgstr ""
+
+#: client/app/modules/users/controllers/login.ctrl.js:88
+msgid "Logged in"
+msgstr ""
+
+#: client/app/modules/core/controllers/main.ctrl.js:25
+msgid "Logged out"
+msgstr ""
+
+#: client/app/modules/events/views/main.html:1
+msgid "Manage your events here!"
+msgstr ""
+
+#: client/app/modules/files/views/main.html:1
+msgid "Manage your files here!"
+msgstr ""
+
+#: client/app/modules/settings/views/main.html:1
+msgid "Manage your settings here!"
+msgstr ""
+
+#: client/app/modules/users/views/main.html:1
+msgid "Manager your users here!"
+msgstr ""
+
+#: client/app/modules/core/views/elements/small-box.html:8
+msgid "More info"
+msgstr ""
+
+#: client/app/modules/files/views/upload.html:56
+msgid "Name"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:64
+#: client/app/modules/settings/controllers/settings.ctrl.js:72
+msgid "Needs to have at least 4 characters"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:48
+msgid "Nice email address!"
+msgstr ""
+
+#: client/app/modules/users/views/login.html:17
+msgid "Or register"
+msgstr ""
+
+#: client/app/modules/users/views/register.html:20
+msgid "Or sign in"
+msgstr ""
+
+#: client/app/modules/users/controllers/login.ctrl.js:39
+#: client/app/modules/users/controllers/register.ctrl.js:57
+msgid "Password"
+msgstr ""
+
+#: client/app/modules/core/views/elements/navbar.html:25
+msgid "Profile"
+msgstr ""
+
+#: client/app/modules/files/views/upload.html:58
+msgid "Progress"
+msgstr ""
+
+#: client/app/modules/users/views/register.html:17
+#: client/app/modules/users/views/register.html:7
+msgid "Register"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:101
+msgid "Registered"
+msgstr ""
+
+#: client/app/modules/files/views/upload.html:46
+msgid "Remove all"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:37
+msgid "Setting deleted"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:92
+msgid "Setting saved"
+msgstr ""
+
+#: client/app/modules/core/views/home.html:28
+#: client/app/modules/settings/views/main.html:1
+msgid "Settings"
+msgstr ""
+
+#: client/app/modules/users/views/login.html:7
+msgid "Sign In"
+msgstr ""
+
+#: client/app/modules/users/views/login.html:16
+msgid "Sign in"
+msgstr ""
+
+#: client/app/modules/core/views/elements/navbar.html:28
+msgid "Sign out"
+msgstr ""
+
+#: client/app/modules/files/views/upload.html:57
+msgid "Size"
+msgstr ""
+
+#: client/app/modules/users/controllers/users.ctrl.js:46
+msgid "Sorry!"
+msgstr ""
+
+#: client/app/modules/files/views/upload.html:59
+msgid "Status"
+msgstr ""
+
+#: client/app/modules/users/controllers/login.ctrl.js:45
+msgid "Stay signed in"
+msgstr ""
+
+#: client/app/modules/events/views/form.html:20
+#: client/app/modules/events/views/form.html:28
+#: client/app/modules/settings/views/form.html:21
+msgid "Submit"
+msgstr ""
+
+#: client/app/modules/core/views/home.html:33
+#: client/app/modules/core/views/home.html:36
+msgid "Theme"
+msgstr ""
+
+#: client/app/modules/events/views/list.html:23
+msgid "There are no events"
+msgstr ""
+
+#: client/app/modules/files/views/list.html:19
+msgid "There are no files"
+msgstr ""
+
+#: client/app/modules/settings/views/list.html:17
+msgid "There are no settings"
+msgstr ""
+
+#: client/app/modules/core/views/elements/navbar.html:3
+msgid "Toggle navigation"
+msgstr ""
+
+#: client/app/modules/users/views/profile.html:36
+msgid "Update profile"
+msgstr ""
+
+#: client/app/modules/users/controllers/users.ctrl.js:47
+msgid "Updating your profile is not yet implemented :("
+msgstr ""
+
+#: client/app/modules/files/views/main.html:2
+msgid "Upload"
+msgstr ""
+
+#: client/app/modules/files/views/upload.html:38
+msgid "Upload all"
+msgstr ""
+
+#: client/app/modules/files/views/upload.html:7
+msgid "Upload files"
+msgstr ""
+
+#: client/app/modules/files/views/upload.html:31
+msgid "Upload queue"
+msgstr ""
+
+#: client/app/modules/users/views/main.html:1
+msgid "Users"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:69
+msgid "Value"
+msgstr ""
+
+#: client/app/modules/core/views/home.html:21
+msgid "Variables"
+msgstr ""
+
+#: client/app/modules/core/views/home.html:6
+msgid "Welcome!"
+msgstr ""
+
+#: client/app/modules/users/controllers/login.ctrl.js:89
+msgid "You are logged in!"
+msgstr ""
+
+#: client/app/modules/core/controllers/main.ctrl.js:25
+msgid "You are logged out!"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:102
+msgid "You are registered!"
+msgstr ""
+
+#: client/app/modules/files/views/upload.html:8
+msgid "You can just drag them in this window!"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:46
+msgid "You need an email address"
+msgstr ""
+
+#: client/app/modules/users/views/profile.html:20
+msgid "Your Gravatar"
+msgstr ""
+
+#: client/app/modules/events/controllers/events.ctrl.js:56
+msgid "Your event is deleted!"
+msgstr ""
+
+#: client/app/modules/events/controllers/events.ctrl.js:61
+msgid "Your event is not deleted:"
+msgstr ""
+
+#: client/app/modules/files/controllers/files.ctrl.js:28
+msgid "Your file is deleted!"
+msgstr ""
+
+#: client/app/modules/users/views/profile.html:5
+msgid "Your profile"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:38
+msgid "Your setting is deleted!"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:47
+msgid "Your setting is not deleted:"
+msgstr ""
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:93
+msgid "Your setting is safe with us!"
+msgstr ""
+
+#: client/app/modules/files/views/list.html:23
+#: client/app/modules/settings/views/list.html:20
+msgid "here"
+msgstr ""
+
+#: client/app/modules/files/views/upload.html:32
+msgid "in queue"
+msgstr ""

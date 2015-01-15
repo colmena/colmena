@@ -2,16 +2,25 @@
   "_meta": {
     "sources": [
       "../common/models",
-      "./models"
+      "./models",
+      "../node_modules/loopback-component-passport/lib/models"
     ]
   },
-  "User": {
+  "user": {
     "dataSource": "db",
     "public": true
   },
-  "AccessToken": {
+  "accessToken": {
     "dataSource": "db",
-    "public": false
+    "public": true
+  },
+  "userCredential": {
+    "dataSource": "db",
+    "public": true
+  },
+  "userIdentity": {
+    "dataSource": "db",
+    "public": true
   },
   "ACL": {
     "dataSource": "db",

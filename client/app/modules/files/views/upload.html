@@ -2,15 +2,16 @@
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">
-                <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i> Files</a>
-                Upload files
-                <small>You can just drag them in this window!</small>
+                <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i> {{ 'Files' | translate
+                  }}</a>
+              {{ 'Upload files' | translate }}
+                <small translate>You can just drag them in this window!</small>
             </h3>
 
             <div class="box-tools">
                 <div class="input-group pull-right" style="margin-top: 5px;">
                     <span class="file-input btn btn-block btn-default btn-file">
-                        Browse&hellip; <input ng-file-select type="file" multiple/>
+                        {{ 'Browse' | translate }}&hellip; <input ng-file-select type="file" multiple/>
                     </span>
                 </div>
             </div>
@@ -27,22 +28,22 @@
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">
-                Upload queue
-                <small> {{ uploader.queue.length }} in queue</small>
+              {{ 'Upload queue' | translate }}
+                <small> {{ uploader.queue.length }} {{ 'in queue' | translate }}</small>
             </h3>
             <div class="box-tools">
                 <div class="pull-right btn-group btn-group-xs">
                     <button type="button" class="btn btn-success btn-xs" ng-click="uploader.uploadAll()"
                             ng-disabled="!uploader.getNotUploadedItems().length">
-                        <span class="glyphicon glyphicon-upload"></span> Upload all
+                        <span class="glyphicon glyphicon-upload"></span> {{ 'Upload all' | translate }}
                     </button>
                     <button type="button" class="btn btn-warning btn-xs" ng-click="uploader.cancelAll()"
                             ng-disabled="!uploader.isUploading">
-                        <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+                        <span class="glyphicon glyphicon-ban-circle"></span> {{ 'Cancel all' | translate }}
                     </button>
                     <button type="button" class="btn btn-danger btn-xs" ng-click="uploader.clearQueue()"
                             ng-disabled="!uploader.queue.length">
-                        <span class="glyphicon glyphicon-trash"></span> Remove all
+                        <span class="glyphicon glyphicon-trash"></span> {{ 'Remove all' | translate }}
                     </button>
                 </div>
             </div>
@@ -52,11 +53,11 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th width="50%">Name</th>
-                    <th ng-show="uploader.isHTML5">Size</th>
-                    <th ng-show="uploader.isHTML5">Progress</th>
-                    <th>Status</th>
-                    <th>Actions</th>
+                    <th width="50%" translate>Name</th>
+                    <th ng-show="uploader.isHTML5" translate>Size</th>
+                    <th ng-show="uploader.isHTML5" translate>Progress</th>
+                    <th translate>Status</th>
+                    <th translate>Actions</th>
                 </tr>
                 </thead>
                 <tbody>

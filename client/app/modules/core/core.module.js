@@ -1,4 +1,3 @@
-
 'use strict';
 /**
  * @ngdoc overview
@@ -11,4 +10,4 @@
  * the models exposed by the LoopBack server via the REST API.
  *
  */
-angular.module ('com.module.core',['loopbackApp']);
+angular.module ('com.module.core',['gettext']);

@@ -2,46 +2,43 @@
   <div class="pull-right">
   </div>
   <h1>
-    Home
-    <small>Welcome home, this is AngularJS!</small>
+    {{ 'Home' | translate }}
+    <small translate>Welcome!</small>
   </h1>
 </section>
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
       <tabset class="nav-tabs-custom">
-        <tab heading="Dashboard">
+        <tab heading="{{ 'Dashboard' | translate }}">
           <div class="row">
-            <small-box title="Posts" color="bg-red" icon="ion-document-text" quantity="{{ count.posts }}" href="app.posts.list"></small-box>
-            <small-box title="Files" color="bg-green" icon="ion-paperclip" quantity="{{ count.files }}" href="app.files.list"></small-box>
-            <small-box title="Pages" color="bg-yellow" icon="ion-document" quantity="{{ count.pages }}" href="app.pages.list"></small-box>
-            <small-box title="Events" color="bg-aqua" icon="ion-calendar" quantity="{{ count.events }}" href="app.events.list"></small-box>
-            <small-box title="Products" color="bg-blue" icon="ion-bag" quantity="{{ count.products }}" href="app.products.list"></small-box>
-            <small-box title="Products Categories" color="bg-black" icon="ion-grid" quantity="{{ count.categories }}" href="app.products.list"></small-box>
+
+            <small-box title="{{ box.name }}" color="{{ box.color }}" icon="{{ box.icon }}"
+                       quantity="{{ box.quantity }}" href="{{ box.href }}" ng-repeat="box in boxes"></small-box>
 
           </div>
         </tab>
-        <tab heading="Variables">
+        <tab heading="{{ 'Variables' | translate }}">
           <div class="row">
             <div class="col-md-6">
-              <h4>Current user</h4>
+              <h4 translate>Current user</h4>
               <pre>{{currentUser | json}}</pre>
             </div>
             <div class="col-md-6">
-              <h4>Settings</h4>
+              <h4 translate>Settings</h4>
               <pre>{{settings | json}}</pre>
             </div>
           </div>
         </tab>
-        <tab heading="Theme">
+        <tab heading="{{ 'Theme' | translate }}">
           <div class="row">
             <div class="col-md-6">
-              <h4>Theme
+              <h4> {{ 'Theme' | translate }}
                 <small>{{appTheme}}</small>
               </h4>
               <div class="btn-group" data-toggle="btn-toggle">
                 <button type="button" class="btn btn-default btn-xs" data-toggle="on"
-                        ng-repeat="theme in appThemes" ng-click="setTheme(theme.class)">
+                        ng-repeat="theme in appThemes" ng-click="setSetting('appTheme', theme.class)">
                   {{theme.name}}
                 </button>
               </div>
@@ -50,7 +47,7 @@
               </h4>
               <div class="btn-group" data-toggle="btn-toggle">
                 <button type="button" class="btn btn-default btn-xs" data-toggle="on"
-                        ng-repeat="layout in appLayouts" ng-click="setLayout(layout.class)">
+                        ng-repeat="layout in appLayouts" ng-click="setSetting('appLayout', layout.class)">
                   {{layout.name}}
                 </button>
               </div>
