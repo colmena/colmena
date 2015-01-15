@@ -1,6 +1,6 @@
 'use strict';
 angular.module ('com.module.users')
-  .controller ('UsersCtrl', function ($scope, User, SweetAlert) {
+  .controller ('UsersCtrl', function ($scope, User, SweetAlert, gettextCatalog) {
 
     $scope.user = User.getCurrent (function (user) {
       console.log (user);
@@ -43,8 +43,8 @@ angular.module ('com.module.users')
 
     $scope.onSubmit = function () {
       SweetAlert.swal ({
-        title: 'Sorry!',
-        text: 'Updating your profile is not yet implemented :(',
+        title: gettextCatalog.getString('Sorry!'),
+        text: gettextCatalog.getString('Updating your profile is not yet implemented :('),
         type: 'warning',
         showCancelButton: false,
         confirmButtonColor: '#DD6B55'
