@@ -1,6 +1,6 @@
 'use strict';
-angular.module ('com.module.components')
-  .controller ('ComponentCtrl', function ($scope) {
+angular.module ('com.module.sandbox')
+  .controller ('DashboardCtrl', function ($scope) {
 
   $scope.boxes = [];
 
