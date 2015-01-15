@@ -33,6 +33,7 @@
     "errorhandler": "^1.3.2",
     "express-session": "^1.9.3",
     "grunt": "^0.4.5",
+    "grunt-angular-gettext": "^2.0.1",
     "grunt-autoprefixer": "^2.1.0",
     "grunt-cli": "^0.1.13",
     "grunt-concurrent": "^1.0.0",
