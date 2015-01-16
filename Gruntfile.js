@@ -276,6 +276,7 @@ module.exports = function (grunt) {
       html: '<%= yeoman.dist %>/index.html',
       options: {
         dest: '<%= yeoman.dist %>',
+        root: '<%= yeoman.app %>',
         flow: {
           html: {
             steps: {
@@ -283,7 +284,9 @@ module.exports = function (grunt) {
                 'concat',
                 'uglifyjs'
               ],
-              css: ['cssmin']
+              css: [
+                'cssmin'
+              ]
             },
             post: {}
           }
@@ -362,7 +365,13 @@ module.exports = function (grunt) {
           conservativeCollapse: true,
           collapseBooleanAttributes: true,
           removeCommentsFromCDATA: true,
-          removeOptionalTags: true
+          removeOptionalTags: true,
+          removeAttributeQuotes: true,
+          removeComments: true,
+          removeEmptyAttributes: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true
         },
         files: [
           {
@@ -418,7 +427,9 @@ module.exports = function (grunt) {
               '.htaccess',
               //'*.html',
               'modules/**/{,*/}*.html',
+              'modules/**/{,*/}*.js',
               'images/{,*/}*.*',
+              'css/{,*/}*.*',
               'fonts/{,*/}*.*'
             ]
           },
@@ -426,6 +437,12 @@ module.exports = function (grunt) {
             expand: true,
             cwd: '<%= yeoman.app %>/images',
             dest: '<%= yeoman.dist %>/images',
+            src: ['generated/*']
+          },
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/css',
+            dest: '<%= yeoman.dist %>/css',
             src: ['generated/*']
           },
           {
@@ -573,12 +590,12 @@ module.exports = function (grunt) {
     'wiredep',
     'includeSource:dist',
     'useminPrepare',
-    'concurrent:dist',
-    'autoprefixer',
+    //'concurrent:dist',
+    //'autoprefixer',
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'cdnify',
+    //'cdnify',
     'cssmin',
     'uglify',
     'filerev',
@@ -587,17 +604,18 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    //'newer:jshint',
+    'newer:jshint',
     'test',
     'ngconstant:development',
     'loopback_angular',
-    //'docular',
+    'docular',
     'nggettext_extract',
     'nggettext_compile',
-    //'build'
+    'build'
   ]);
 
   grunt.registerTask('loopback', [
+    'ngconstant:development',
     'loopback_angular',
     'docular'
   ]);
