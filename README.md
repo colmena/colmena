@@ -44,6 +44,7 @@ Deploy an instance on your Heroku account to play around with it!
 - permissions on content items (non-admins can only edit own content, etc)
 - Detect if API is online [HubSpot/offline](https://github.com/HubSpot/offline)?
 - Loading indicators [Urigo/angular-spinkit](https://github.com/Urigo/angular-spinkit)?
+- Map API roles to [Narzerus/angular-permission](https://github.com/Narzerus/angular-permission)
 - Add tests
 - Add Dockerfile
 - Add Vagrantfile
