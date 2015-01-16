@@ -1,7 +1,10 @@
 # loopback-angular-admin
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/beeman/loopback-angular-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+**This software is not ready for production! It is still being developed and it will change in the future.**
 
 The goal is to have a starter project which can be used to quickly build an API with a frontend that are easily extended.
+
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/beeman/loopback-angular-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![NPM version](https://badge.fury.io/js/loopback-angular-admin.png)](http://badge.fury.io/js/loopback-angular-admin)
 [![Dependencies](https://david-dm.org/beeman/loopback-angular-admin.png)](https://david-dm.org/beeman/loopback-angular-admin)
@@ -31,12 +34,14 @@ Deploy an instance on your Heroku account to play around with it!
 - Bunch of useful filters for AngularJS: [a8m/angular-filter](https://github.com/a8m/angular-filter)
 - [t4t5/sweetalert](https://github.com/t4t5/sweetalert) provided by [oitozero/ngSweetAlert](https://github.com/oitozero/ngSweetAlert)
 - Automatically growing textarea's by [monospaced/angular-elastic](https://github.com/monospaced/angular-elastic)
-### TODO:
+- Social authentication with [Loopback passport](https://github.com/strongloop/loopback-component-passport/)
+
+
+## TODO:
 
 - User management
 - Permissions on user actions (non-admins cannot access advanced functions)
 - permissions on content items (non-admins can only edit own content, etc)
-- Social authentication based on Passport.
 - Detect if API is online [HubSpot/offline](https://github.com/HubSpot/offline)?
 - Loading indicators [Urigo/angular-spinkit](https://github.com/Urigo/angular-spinkit)?
 - Add tests
