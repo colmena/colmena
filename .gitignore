@@ -4,13 +4,14 @@ npm-debug.log
 node_modules
 downloaded
 docular_generated
-client/app/scripts/lb-services.js
-client/app/scripts/config.js
+client/app/js/lb-services.js
+client/app/js/config.js
 .idea/
-storage
+storage/
 .strong-pm
 .sass-cache
 providers.json
 bower_components
 docs
 client/coverage
+.vagrant

@@ -26,6 +26,7 @@ angular.module('loopbackApp', [
   'ui.bootstrap',
   'ui.codemirror',
   'ui.gravatar',
+  'ui.grid',
   'ui.router',
   'toasty',
   'autofields',
