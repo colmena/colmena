@@ -10,15 +10,15 @@
 module.exports = function (grunt) {
 
   // Load grunt tasks automatically
-  require ('load-grunt-tasks') (grunt);
+  require('load-grunt-tasks')(grunt);
 
   // Time how long tasks take. Can help when optimizing build times
-  require ('time-grunt') (grunt);
+  require('time-grunt')(grunt);
 
   // Configurable paths for the application
   var appConfig = {
-    app:  require ('./bower.json').appPath || 'client/app',
-    test: require ('./bower.json').appPath || 'client/test',
+    app: require('./bower.json').appPath || 'client/app',
+    test: require('./bower.json').appPath || 'client/test',
     dist: 'dist',
     api: {
       development: 'http://0.0.0.0:3000/api/',
@@ -28,7 +28,7 @@ module.exports = function (grunt) {
   };
 
   // Define the configuration for all the tasks
-  grunt.initConfig ({
+  grunt.initConfig({
 
     // Project settings
     yeoman: appConfig,
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
     watch: {
       bower: {
         files: ['bower.json'],
-        tasks: ['wiredep']
+        tasks: ['wiredep:server']
       },
       js: {
         files: [
@@ -98,7 +98,7 @@ module.exports = function (grunt) {
         ]
       },
       includeSource: {
-        files: ['<%= yeoman.app %>/index.html'],
+        files: ['<%= yeoman.app %>/index.tpl.html'],
         tasks: ['includeSource:server']
       }
     },
@@ -149,12 +149,12 @@ module.exports = function (grunt) {
           open: true,
           middleware: function (connect) {
             return [
-              connect.static ('.tmp'),
-              connect ().use (
+              connect.static('.tmp'),
+              connect().use(
                 '/bower_components',
-                connect.static ('./bower_components')
+                connect.static('./bower_components')
               ),
-              connect.static (appConfig.app)
+              connect.static(appConfig.app)
             ];
           }
         }
@@ -164,13 +164,13 @@ module.exports = function (grunt) {
           port: 9001,
           middleware: function (connect) {
             return [
-              connect.static ('.tmp'),
-              connect.static ('test'),
-              connect ().use (
+              connect.static('.tmp'),
+              connect.static('test'),
+              connect().use(
                 '/bower_components',
-                connect.static ('./bower_components')
+                connect.static('./bower_components')
               ),
-              connect.static (appConfig.app)
+              connect.static(appConfig.app)
             ];
           }
         }
@@ -187,7 +187,7 @@ module.exports = function (grunt) {
     jshint: {
       options: {
         jshintrc: '.jshintrc',
-        reporter: require ('jshint-stylish')
+        reporter: require('jshint-stylish')
       },
       all: {
         src: [
@@ -240,7 +240,7 @@ module.exports = function (grunt) {
     includeSource: {
       options: {
         basePath: 'client/app',
-        baseUrl: '',
+        baseUrl: '/',
         templates: {
           html: {
             js: '<script src="{filePath}"></script>',
@@ -250,27 +250,25 @@ module.exports = function (grunt) {
       },
       server: {
         files: {
-          '<%= yeoman.app %>/index.html': '<%= yeoman.app %>/index.html'
-          //'.tmp/index.html': '<%= yeoman.app %>/index.html'
+          '<%= yeoman.app %>/index.html': '<%= yeoman.app %>/index.tpl.html'
         }
       },
       dist: {
         files: {
-          '<%= yeoman.dist %>/index.html': '<%= yeoman.app %>/index.html'
+          '<%= yeoman.dist %>/index.html': '<%= yeoman.app %>/index.tpl.html'
         }
       }
-      //myTarget: {
-      //  files: {
-      //    'client/app/index.html': 'client/app/index.tpl.html'
-      //  }
-      //}
 
     },
     // Automatically inject Bower components into the app
     wiredep: {
-      app: {
+      server: {
         src: ['<%= yeoman.app %>/index.html'],
         ignorePath: /\.\.\//
+      },
+      dist: {
+        src: ['<%= yeoman.dist %>/index.html'],
+        ignorePath: '../client/app/'
       }
     },
 
@@ -278,10 +276,10 @@ module.exports = function (grunt) {
     filerev: {
       dist: {
         src: [
-          '<%= yeoman.dist %>/js/{,*/}*.js',
-          '<%= yeoman.dist %>/css/{,*/}*.css',
+          '<%= yeoman.dist %>/scripts/{,*/}*.js',
+          '<%= yeoman.dist %>/styles/{,*/}*.css',
           '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-          '<%= yeoman.dist %>/css/fonts/*'
+          '<%= yeoman.dist %>/fonts/*'
         ]
       }
     },
@@ -314,7 +312,7 @@ module.exports = function (grunt) {
     // Performs rewrites based on filerev and the useminPrepare configuration
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/css/{,*/}*.css'],
+      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
       options: {
         assetsDirs: [
           '<%= yeoman.dist %>',
@@ -388,7 +386,8 @@ module.exports = function (grunt) {
           removeEmptyAttributes: true,
           removeRedundantAttributes: true,
           removeScriptTypeAttributes: true,
-          removeStyleLinkTypeAttributes: true
+          removeStyleLinkTypeAttributes: true,
+          minifyJS: true
         },
         files: [
           {
@@ -446,7 +445,7 @@ module.exports = function (grunt) {
               'modules/**/{,*/}*.html',
               'modules/**/{,*/}*.js',
               'images/{,*/}*.*',
-              'css/{,*/}*.*',
+              //'css/{,*/}*.*',
               'fonts/{,*/}*.*'
             ]
           },
@@ -575,20 +574,20 @@ module.exports = function (grunt) {
 
   // Load the plugin that provides the "loopback-angular" and "grunt-docular" tasks.
 
-  grunt.registerTask ('serve', 'Compile then start a connect web server', function (target) {
+  grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
-      return grunt.task.run ([
+      return grunt.task.run([
         'build',
         'connect:dist:keepalive'
       ]);
     }
 
-    grunt.task.run ([
+    grunt.task.run([
       'clean:server',
       'includeSource:server',
       'ngconstant:development',
       'loopback_sdk_angular:development',
-      'wiredep',
+      'wiredep:server',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -596,25 +595,26 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask ('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-    grunt.log.warn ('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run (['serve:' + target]);
+  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
+    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
+    grunt.task.run(['serve:' + target]);
   });
 
-  grunt.registerTask ('test', [
+  grunt.registerTask('test', [
     'clean:server',
     'includeSource:server',
+    'wiredep:server',
     'concurrent:test',
     'autoprefixer',
     'connect:test'
   ]);
 
-  grunt.registerTask ('build', [
+  grunt.registerTask('build', [
     'clean:dist',
     'ngconstant:production',
     'loopback_sdk_angular:production',
-    'wiredep',
     'includeSource:dist',
+    'wiredep:dist',
     'useminPrepare',
     //'concurrent:dist',
     //'autoprefixer',
@@ -629,7 +629,7 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
-  grunt.registerTask ('default', [
+  grunt.registerTask('default', [
     'newer:jshint',
     'test',
     'ngconstant:development',
@@ -640,7 +640,7 @@ module.exports = function (grunt) {
     'build'
   ]);
 
-  grunt.registerTask ('loopback', [
+  grunt.registerTask('loopback', [
     'ngconstant:development',
     'loopback_sdk_angular:development',
     'docular'
