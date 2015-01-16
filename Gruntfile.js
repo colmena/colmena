@@ -141,7 +141,7 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name: 'production',
-            apiUrl: '<%= yeoman.api %>'
+            apiUrl: '/api/'
           }
         }
       }
