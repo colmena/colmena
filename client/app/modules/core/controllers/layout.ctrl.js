@@ -35,9 +35,6 @@ angular.module ('com.module.core')
     }
   ];
 
-
-
-
   $scope.toggleSidebar = function () {
     var $ = angular.element;
     if ($ (window).width () <= 992) {

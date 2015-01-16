@@ -27,8 +27,8 @@ module.exports = function (config) {
       'app/bower_components/angular-sanitize/angular-sanitize.js',
       'app/bower_components/angular-touch/angular-touch.js',
       'app/js/*.js',
-      'app/modules/**/*.module.js',
-      'app/modules/**/*.js'
+      'app/modules/**/*.js',
+      'test/**/*.js'
     ],
 
     // list of files / patterns to exclude

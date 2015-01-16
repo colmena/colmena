@@ -6,6 +6,7 @@ downloaded
 docular_generated
 client/app/js/lb-services.js
 client/app/js/config.js
+client/app/index.html
 .idea/
 storage/
 .strong-pm
@@ -14,3 +15,4 @@ providers.json
 bower_components
 docs
 client/coverage
+.vagrant
