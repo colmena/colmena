@@ -121,7 +121,7 @@ app.get('/auth/logout', function (req, res, next) {
 var staticPath = null;
 
 if (env !== 'prod') {
-  staticPath = path.resolve(__dirname, '../client/app');
+  staticPath = path.resolve(__dirname, '../client/app/');
   console.log("Running app in development mode");
 } else {
   staticPath = path.resolve(__dirname, '../dist/');
