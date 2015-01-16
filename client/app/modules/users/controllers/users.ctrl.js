@@ -1,11 +1,11 @@
 'use strict';
-angular.module ('com.module.users')
-  .controller ('UsersCtrl', function ($scope, User, SweetAlert, gettextCatalog) {
+angular.module('com.module.users')
+  .controller('UsersCtrl', function ($scope, User, toasty, gettextCatalog) {
 
-    $scope.user = User.getCurrent (function (user) {
-      console.log (user);
+    $scope.user = User.getCurrent(function (user) {
+      console.log(user);
     }, function (err) {
-      console.log (err);
+      console.log(err);
     });
 
     $scope.formFields = [
@@ -32,7 +32,7 @@ angular.module ('com.module.users')
         type: 'text',
         label: 'Last name',
         required: true
-      },
+      }
     ];
 
     $scope.formOptions = {
@@ -42,19 +42,18 @@ angular.module ('com.module.users')
     };
 
     $scope.onSubmit = function () {
-      SweetAlert.swal ({
-        title: gettextCatalog.getString('Sorry!'),
-        text: gettextCatalog.getString('Updating your profile is not yet implemented :('),
-        type: 'warning',
-        showCancelButton: false,
-        confirmButtonColor: '#DD6B55'
+      User.upsert($scope.user, function () {
+        toasty.pop.success({
+          title: gettextCatalog.getString('Profile saved'),
+          msg: gettextCatalog.getString('Enjoy the new you!'),
+          sound: false
+        });
+      }, function (err) {
+        toasty.pop.error({
+          title: gettextCatalog.getString('Error deleting note'),
+          msg: gettextCatalog.getString('Your note is not deleted: ') + err,
+          sound: false
+        });
       });
-
-      //      User.upsert($scope.user, function () {
-      //        toasty.pop.success({title: 'Profile saved', msg: 'Enjoy the new you!', sound: false});
-      ////        $state.go('^.list');
-      //      }, function (err) {
-      //        console.log(err);
-      //      });
     };
   });
