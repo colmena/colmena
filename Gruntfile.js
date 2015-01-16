@@ -20,7 +20,10 @@ module.exports = function (grunt) {
     app: require('./bower.json').appPath || 'client/app',
     test: require('./bower.json').appPath || 'client/test',
     dist: 'dist',
-    api: 'http://0.0.0.0:3000/api/',
+    api: {
+      development: 'http://0.0.0.0:3000/api/',
+      production: '/api/'
+    },
     host: '0.0.0.0'
   };
 
@@ -130,18 +133,18 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name: 'development',
-            apiUrl: '<%= yeoman.api %>'
+            apiUrl: '<%= yeoman.api.development %>'
           }
         }
       },
       production: {
         options: {
-          dest: '<%= yeoman.app %>/js/config.js'
+          dest: '<%= yeoman.dist %>/js/config.js'
         },
         constants: {
           ENV: {
             name: 'production',
-            apiUrl: '/api/'
+            apiUrl: '<%= yeoman.api.production %>'
           }
         }
       }
@@ -495,12 +498,26 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
-    loopback_angular: {
+    loopback_sdk_angular: {
       services: {
         options: {
           input: 'server/server.js',
           output: '<%= yeoman.app %>/js/lb-services.js',
-          apiUrl: '<%= yeoman.api %>'
+          apiUrl: '<%= yeoman.api.development %>'
+        }
+      },
+      development: {
+        options: {
+          input: 'server/server.js',
+          output: '<%= yeoman.app %>/js/lb-services.js',
+          apiUrl: '<%= yeoman.api.development %>'
+        }
+      },
+      production: {
+        options: {
+          input: 'server/server.js',
+          output: '<%= yeoman.app %>/js/lb-services.js',
+          apiUrl: '<%= yeoman.api.production %>'
         }
       }
     },
@@ -543,7 +560,7 @@ module.exports = function (grunt) {
   });
 
   // Load the plugin that provides the "loopback-angular" and "grunt-docular" tasks.
-  grunt.loadNpmTasks('grunt-loopback-angular');
+  grunt.loadNpmTasks('grunt-loopback-sdk-angular');
   grunt.loadNpmTasks('grunt-docular');
   grunt.loadNpmTasks('grunt-angular-gettext');
   grunt.loadNpmTasks('grunt-include-source');
@@ -560,7 +577,7 @@ module.exports = function (grunt) {
       'clean:server',
       'includeSource:server',
       'ngconstant:development',
-      'loopback_angular',
+      'loopback_sdk_angular:development',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -580,13 +597,12 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test'
-
   ]);
 
   grunt.registerTask('build', [
     'clean:dist',
     'ngconstant:production',
-    'loopback_angular',
+    'loopback_sdk_angular:production',
     'wiredep',
     'includeSource:dist',
     'useminPrepare',
@@ -607,7 +623,7 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'ngconstant:development',
-    'loopback_angular',
+    'loopback_sdk_angular:development',
     'docular',
     'nggettext_extract',
     'nggettext_compile',
@@ -616,7 +632,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('loopback', [
     'ngconstant:development',
-    'loopback_angular',
+    'loopback_sdk_angular:development',
     'docular'
   ]);
 
