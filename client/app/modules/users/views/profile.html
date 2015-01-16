@@ -1,0 +1,41 @@
+
+
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title" translate>
+            Your profile
+        </h3>
+    </div>
+    <div class="box-body">
+
+        <div class="row">
+            <div class="col-md-8">
+                <formly-form result="user" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
+            </div>
+            <div class="col-md-4">
+
+                <div class="box box-solid bg-light-blue">
+                    <div class="box-header">
+                        <h3 class="box-title" >
+                            {{ 'Your Gravatar' | translate }}
+                            <small><a href="http://gravatar.com" translate>Change it here!</a></small>
+                        </h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="text-center">
+                            <img gravatar-src="user.email" class="img-circle" alt="User Image" gravatar-size="150">
+                        </div>
+                    </div>
+                    <div class="box-header">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-footer">
+        <div class="controls">
+            <button class="btn btn-primary btn-success" ng-click="onSubmit()" translate>Update profile</button>
+        </div>
+    </div>
+    <div ng-if="loading" class="overlay"></div>
+    <div ng-if="loading" class="loading-img"></div>
+</div>

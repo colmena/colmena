@@ -1,0 +1,355 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: client/app/modules/files/views/upload.html:60
+msgid "Actions"
+msgstr "Opções"
+
+#: client/app/modules/events/views/main.html:2
+#: client/app/modules/settings/views/main.html:2
+msgid "Add"
+msgstr "Novo"
+
+#: client/app/modules/events/views/form.html:5
+msgid "Add a new event"
+msgstr "Novo evento"
+
+#: client/app/modules/settings/views/form.html:4
+msgid "Add a new setting"
+msgstr "Adicionar nova configuração"
+
+#: client/app/modules/events/controllers/events.ctrl.js:49
+#: client/app/modules/files/controllers/files.ctrl.js:15
+msgid "Are you sure?"
+msgstr "Tem certeza?"
+
+#: client/app/modules/files/views/upload.html:14
+msgid "Browse"
+msgstr "Navegar"
+
+#: client/app/modules/events/views/form.html:21
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: client/app/modules/files/views/upload.html:42
+msgid "Cancel all"
+msgstr "Cancelar todos"
+
+#: client/app/modules/users/views/profile.html:21
+msgid "Change it here!"
+msgstr "Mude Aqui!"
+
+#: client/app/modules/users/controllers/register.ctrl.js:64
+msgid "Confirm Password"
+msgstr "Confirmar Senha"
+
+#: client/app/modules/users/config/users.auth.js:47
+msgid "Connection Refused"
+msgstr "Conexão com problema"
+
+#: client/app/modules/events/views/form.html:13
+msgid "Could not add event!"
+msgstr "Nenhum evento"
+
+#: client/app/modules/settings/views/form.html:12
+msgid "Could not add setting!"
+msgstr "Não pode ser adicionada!"
+
+#: client/app/modules/core/views/home.html:24
+msgid "Current user"
+msgstr "Usuário atual"
+
+#: client/app/modules/core/config/core.config.js:15
+#: client/app/modules/core/views/home.html:13
+msgid "Dashboard"
+msgstr "Painel"
+
+#: client/app/modules/events/views/form.html:6
+msgid "Edit event"
+msgstr "Editar Evento"
+
+#: client/app/modules/settings/views/form.html:5
+msgid "Edit setting"
+msgstr "Editar configurações"
+
+#: client/app/modules/users/config/users.auth.js:22
+msgid "Error 401 received"
+msgstr "Erro 401 sem autorização"
+
+#: client/app/modules/users/config/users.auth.js:31
+msgid "Error 404 received"
+msgstr ""
+
+#: client/app/modules/users/config/users.auth.js:39
+msgid "Error 422 received"
+msgstr ""
+
+#: client/app/modules/events/controllers/events.ctrl.js:61
+msgid "Error deleting event"
+msgstr "Erro ao deletar o evento"
+
+#: client/app/modules/users/controllers/register.ctrl.js:120
+msgid "Error registering!"
+msgstr "Erro no cadastro!"
+
+#: client/app/modules/users/controllers/register.ctrl.js:109
+msgid "Error signin in after registration!"
+msgstr "Erro depois de se cadastrar!"
+
+#: client/app/modules/events/controllers/events.ctrl.js:56
+msgid "Event deleted"
+msgstr "Evento deletado"
+
+#: client/app/modules/events/views/main.html:1
+msgid "Events"
+msgstr "Eventos"
+
+#: client/app/modules/files/controllers/files.ctrl.js:27
+msgid "File deleted"
+msgstr "Arquivo deletado"
+
+#: client/app/modules/files/config/file.config.js:7
+#: client/app/modules/files/views/main.html:1
+#: client/app/modules/files/views/upload.html:5
+msgid "Files"
+msgstr "Arquivos"
+
+#: client/app/modules/users/controllers/register.ctrl.js:25
+msgid "First Name"
+msgstr "Nome"
+
+#: client/app/modules/core/views/home.html:5
+msgid "Home"
+msgstr "Inicial"
+
+#: client/app/modules/users/controllers/register.ctrl.js:33
+msgid "Last Name"
+msgstr "Sobrenome"
+
+#: client/app/modules/users/controllers/login.ctrl.js:48
+msgid "Logged in"
+msgstr "Bem vindo!"
+
+#: client/app/modules/core/controllers/main.ctrl.js:25
+msgid "Logged out"
+msgstr "Você saiu"
+
+#: client/app/modules/events/views/main.html:1
+msgid "Manage your events here!"
+msgstr "Administrar seus eventos"
+
+#: client/app/modules/files/views/main.html:1
+msgid "Manage your files here!"
+msgstr "Administrar seus arquivos"
+
+#: client/app/modules/settings/views/main.html:1
+msgid "Manage your settings here!"
+msgstr "Administrar configurações do sistema!"
+
+#: client/app/modules/users/views/main.html:1
+msgid "Manager your users here!"
+msgstr "Administrar sua conta"
+
+#: client/app/modules/core/views/elements/small-box.html:8
+msgid "More info"
+msgstr "Mais informações"
+
+#: client/app/modules/files/views/upload.html:56
+msgid "Name"
+msgstr "Nome"
+
+#: client/app/modules/users/views/login.html:24
+msgid "Or register"
+msgstr "Ou cadastre-se"
+
+#: client/app/modules/users/views/register.html:18
+msgid "Or sign in"
+msgstr "Já tem uma conta?"
+
+#: client/app/modules/users/controllers/register.ctrl.js:57
+#: client/app/modules/users/views/login.html:16
+msgid "Password"
+msgstr "Senha"
+
+#: client/app/modules/core/views/elements/navbar.html:25
+msgid "Profile"
+msgstr "Meu Perfil"
+
+#: client/app/modules/files/views/upload.html:58
+msgid "Progress"
+msgstr "Progresso"
+
+#: client/app/modules/users/views/register.html:17
+#: client/app/modules/users/views/register.html:7
+msgid "Register"
+msgstr "Cadastre-se"
+
+#: client/app/modules/users/controllers/register.ctrl.js:101
+msgid "Registered"
+msgstr "Cadastrado"
+
+#: client/app/modules/files/views/upload.html:46
+msgid "Remove all"
+msgstr "Remover todos"
+
+#: client/app/modules/core/views/home.html:28
+#: client/app/modules/settings/views/main.html:1
+msgid "Settings"
+msgstr "Configurações"
+
+#: client/app/modules/users/views/login.html:6
+msgid "Sign In"
+msgstr "Fazer Login"
+
+#: client/app/modules/users/views/login.html:23
+msgid "Sign in"
+msgstr "Login"
+
+#: client/app/modules/core/views/elements/navbar.html:28
+msgid "Sign out"
+msgstr "Sair"
+
+#: client/app/modules/files/views/upload.html:57
+msgid "Size"
+msgstr "Tamanho"
+
+#: client/app/modules/users/controllers/users.ctrl.js:46
+msgid "Sorry!"
+msgstr "Desculpe!"
+
+#: client/app/modules/files/views/upload.html:59
+msgid "Status"
+msgstr "Status"
+
+#: client/app/modules/events/views/form.html:20
+#: client/app/modules/events/views/form.html:28
+#: client/app/modules/settings/views/form.html:17
+msgid "Submit"
+msgstr "Enviar"
+
+#: client/app/modules/users/config/users.auth.js:48
+msgid "The connection to the API is refused. Please verify that the API is running!"
+msgstr "Conexão com a API perdida, verifique a sua conexão!"
+
+#: client/app/modules/core/views/home.html:33
+#: client/app/modules/core/views/home.html:36
+msgid "Theme"
+msgstr "Tema"
+
+#: client/app/modules/events/views/list.html:23
+msgid "There are no events"
+msgstr "Nenhum evento"
+
+#: client/app/modules/files/views/list.html:19
+msgid "There are no files"
+msgstr "Nenhum arquivo"
+
+#: client/app/modules/settings/views/list.html:17
+msgid "There are no settings"
+msgstr "Nenhuma configuração"
+
+#: client/app/modules/core/views/elements/navbar.html:3
+msgid "Toggle navigation"
+msgstr "Mudar navegação"
+
+#: client/app/modules/users/views/profile.html:36
+msgid "Update profile"
+msgstr "Atualizar Perfil"
+
+#: client/app/modules/users/controllers/users.ctrl.js:47
+msgid "Updating your profile is not yet implemented :("
+msgstr "Você não pode atualizar seu perfil :("
+
+#: client/app/modules/files/views/main.html:2
+msgid "Upload"
+msgstr "Enviar"
+
+#: client/app/modules/files/views/upload.html:38
+msgid "Upload all"
+msgstr "Enviar todos"
+
+#: client/app/modules/files/views/upload.html:7
+msgid "Upload files"
+msgstr "Arquivos enviados"
+
+#: client/app/modules/files/views/upload.html:31
+msgid "Upload queue"
+msgstr "Arquivos na fila"
+
+#: client/app/modules/users/views/main.html:1
+msgid "Users"
+msgstr "Usuários"
+
+#: client/app/modules/core/views/home.html:21
+msgid "Variables"
+msgstr "Sessão"
+
+#: client/app/modules/users/config/users.auth.js:23
+msgid "We received a 401 error from the API! Redirecting to login"
+msgstr "Erro ao conectar com a API"
+
+#: client/app/modules/core/views/home.html:6
+msgid "Welcome!"
+msgstr "Seja bem vindo!"
+
+#: client/app/modules/users/controllers/login.ctrl.js:48
+msgid "You are logged in!"
+msgstr "Você está logado!"
+
+#: client/app/modules/core/controllers/main.ctrl.js:25
+msgid "You are logged out!"
+msgstr "Você não está mais logado!"
+
+#: client/app/modules/users/controllers/register.ctrl.js:102
+msgid "You are registered!"
+msgstr "Você está cadastrado!"
+
+#: client/app/modules/files/views/upload.html:8
+msgid "You can just drag them in this window!"
+msgstr "Você pode mover essa janela!"
+
+#: client/app/modules/users/views/profile.html:20
+msgid "Your Gravatar"
+msgstr "Seu gravatar"
+
+#: client/app/modules/events/controllers/events.ctrl.js:56
+msgid "Your event is deleted!"
+msgstr "Evento deletado"
+
+#: client/app/modules/events/controllers/events.ctrl.js:61
+msgid "Your event is not deleted:"
+msgstr "Evento não foi deletado"
+
+#: client/app/modules/files/controllers/files.ctrl.js:28
+msgid "Your file is deleted!"
+msgstr "Arquivo deletado"
+
+#: client/app/modules/users/views/profile.html:5
+msgid "Your profile"
+msgstr "Seu Perfil"
+
+#: client/app/modules/files/views/list.html:23
+#: client/app/modules/settings/views/list.html:20
+msgid "here"
+msgstr "aqui"
+
+#: client/app/modules/files/views/upload.html:32
+msgid "in queue"
+msgstr "na fila"
+
+#~ msgid "Layout"
+#~ msgstr "Layout"
+
+#~ msgid "Remember me"
+#~ msgstr "Lembrar dados"

@@ -1,40 +1,69 @@
 <!doctype html>
 <html ng-app="loopbackApp" ng-controller="LayoutCtrl">
 <head>
-    <meta charset="utf-8">
-    <title>{{settings.appName}}</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="bower_components/angular-toasty/css/ng-toasty.css" />
-    <link rel="stylesheet" href="bower_components/sweetalert/lib/sweet-alert.css" />
-    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
-    <link rel="stylesheet" href="bower_components/angular-bootstrap-nav-tree/dist/abn_tree.css" />
-    <link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css" />
-    <link rel="stylesheet" href="bower_components/codemirror/theme/monokai.css" />
-    <!-- endbower -->
+  <meta charset="utf-8">
+  <title>Admin: {{ getSetting('appName') }}</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css css/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="bower_components/angular-toasty/css/ng-toasty.css" />
+  <link rel="stylesheet" href="bower_components/sweetalert/lib/sweet-alert.css" />
+  <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
+  <link rel="stylesheet" href="bower_components/angular-bootstrap-nav-tree/dist/abn_tree.css" />
+  <link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css" />
+  <link rel="stylesheet" href="bower_components/codemirror/theme/monokai.css" />
+  <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+  <!-- endbower -->
 
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/AdminLTE.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+  <!-- endbuild -->
+  <!-- build:css css/main.css -->
+  <link rel="stylesheet" href="css/AdminLTE.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- endbuild -->
 </head>
-<body class="{{appTheme}} {{appLayout}} " ng-controller="MainCtrl">
-
+<body class="{{getSetting('appTheme') }} {{ getSetting('appLayout') }} " ng-controller="MainCtrl">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
 <div ui-view class="full-height"></div>
 
 <div ng-controller="toasty-controller">
-    <toasty-container toasty-defaults='{"timeout": 3000, "close-button":true, "sound": false}'></toasty-container>
+  <toasty-container toasty-defaults='{"timeout": 3000, "close-button":true, "sound": false}'></toasty-container>
 </div>
 
-<!-- build:js(.) scripts/vendor.js -->
-<!-- bower:js -->
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push (arguments)
+    }, i[r].l = 1 * new Date ();
+    a = s.createElement (o),
+      m = s.getElementsByTagName (o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore (a, m)
+  }) (window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga ('create', 'UA-XXXXX-X');
+  ga ('send', 'pageview');
+</script>
+
+<!-- build:js scripts/oldieshim.js -->
+<!--[if lt IE 9]>
 <script src="bower_components/es5-shim/es5-shim.js"></script>
+<script src="bower_components/json3/lib/json3.js"></script>
+<![endif]-->
+<!-- endbuild -->
+
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -63,35 +92,26 @@
 <script src="bower_components/showdown/compressed/showdown.js"></script>
 <script src="bower_components/angular-markdown-directive/markdown.js"></script>
 <script src="bower_components/angular-elastic/elastic.js"></script>
+<script src="bower_components/angular-autoFields-bootstrap/autofields.min.js"></script>
+<script src="bower_components/angular-autoFields-bootstrap/autofields-bootstrap.min.js"></script>
+<script src="bower_components/angular-gettext/dist/angular-gettext.js"></script>
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+<script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+<script src="bower_components/angular-translate-loader-url/angular-translate-loader-url.js"></script>
+<script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 <!-- endbower -->
 
 <!-- endbuild -->
 
-<!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="scripts/app.js"></script>
-<script src="scripts/lb-services.js"></script>
-<script src="scripts/config.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/login.js"></script>
-<script src="scripts/controllers/home.js"></script>
-<script src="scripts/directives/date.js"></script>
-<script src="scripts/directives/navbar.js"></script>
-<script src="scripts/directives/login.js"></script>
-<script src="scripts/directives/register.js"></script>
-<script src="scripts/services/appauth.js"></script>
-<script src="scripts/directives/home.js"></script>
-<script src="scripts/controllers/pages.js"></script>
-<script src="scripts/controllers/users.js"></script>
-<script src="scripts/controllers/sandbox.js"></script>
-<script src="scripts/controllers/notes.js"></script>
-<script src="scripts/controllers/posts.js"></script>
-<script src="scripts/controllers/settings.js"></script>
-<script src="scripts/controllers/products.js"></script>
-<script src="scripts/controllers/files.js"></script>
-<script src="scripts/controllers/events.js"></script>
-<script src="scripts/directives/admin-form.js"></script>
-<script src="scripts/directives/admin-box.js"></script>
-<script src="scripts/directives/admin-header.js"></script>
+<!-- build:js scripts/scripts.js -->
+<script src="js/app.js"></script>
+<script src="js/lb-services.js"></script>
+<script src="js/config.js"></script>
+<script src="js/translations.js"></script>
+<!-- endbuild -->
+
+<!--include the modules -->
+<!-- include: "type": "js", "files": ["modules/*/*.js", "modules/*/config/*.js", "modules/*/controllers/*.js", "modules/*/directives/*.js", "modules/*/services/*.js" ] -->
 <!-- endbuild -->
 
 </body>

@@ -23,7 +23,7 @@ module.exports = function(app) {
     if (err) {
       console.log('err', err);
     }
-    console.log(user);
+    //console.log (user);
 
     Role.create({
       name: 'admin'
@@ -46,7 +46,7 @@ module.exports = function(app) {
     if (err) {
       console.log('err', err);
     }
-    console.log(user);
+    //console.log (user);
 
     Role.create({
       name: 'admin'
@@ -58,7 +58,6 @@ module.exports = function(app) {
     });
 
   });
-
 
 
   var Category = app.models.Category;
@@ -76,7 +75,7 @@ module.exports = function(app) {
       percentage: '5',
       categoryId: category.id
     }, function(err, data) {
-      console.log(data);
+      //console.log (data);
     });
     Product.create({
       name: 'Bottled beer',
@@ -84,7 +83,7 @@ module.exports = function(app) {
       percentage: '5',
       categoryId: category.id
     }, function(err, data) {
-      console.log(data);
+      //console.log (data);
     });
   });
 
@@ -100,7 +99,7 @@ module.exports = function(app) {
       percentage: '12',
       categoryId: category.id
     }, function(err, data) {
-      console.log(data);
+      //console.log (data);
     });
     Product.create({
       name: 'White wine',
@@ -108,20 +107,36 @@ module.exports = function(app) {
       percentage: '12',
       categoryId: category.id
     }, function(err, data) {
-      console.log(data);
+      //console.log (data);
     });
   });
 
+  // Sample Settings
   var Setting = app.models.Setting;
-
-  Setting.create({
+  var settings = [{
     key: 'appName',
     value: 'Loopback Admin'
-  }, function(err, data) {
-    if (err) {
-      console.log('err', err);
-    }
-    console.log(data);
+  }, {
+    key: 'appTheme',
+    value: 'skin-blue'
+  }, {
+    key: 'appLayout',
+    value: 'fixed'
+  }, {
+    key: 'formLayout',
+    value: 'horizontal'
+  }, {
+    key: 'formLabelSize',
+    value: 3
+  }, {
+    key: 'formInputSize',
+    value: 9
+  }];
+
+  settings.forEach(function(setting) {
+    Setting.create(setting, function(err, resp) {
+console.log(resp);
+    });
   });
 
 };
