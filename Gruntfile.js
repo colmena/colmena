@@ -630,7 +630,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask ('default', [
-    //'newer:jshint',
+    'newer:jshint',
     'test',
     'ngconstant:development',
     'loopback_sdk_angular:development',
