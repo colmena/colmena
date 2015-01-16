@@ -4,6 +4,8 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 var path = require('path');
 var app = module.exports = loopback();
+var argv = require('minimist')(process.argv.slice(2));
+
 /*
  * body-parser is a piece of express middleware that
  *   reads a form's input and stores it as a javascript
@@ -115,7 +117,21 @@ app.get('/auth/logout', function (req, res, next) {
 // All static middleware should be registered at the end, as all requests
 // passing the static middleware are hitting the file system
 // Example:
-app.use(loopback.static(path.resolve(__dirname, '../client/app')));
+//app.use(loopback.static(path.resolve(__dirname, '../client/app')));
+
+var dist = false;
+
+var Static = null;
+
+if (argv['dist'] === true) {
+  Static = path.resolve(__dirname, '../dist/');
+}
+else {
+  Static = path.resolve(__dirname, '../client/app');
+}
+
+console.log("Static", Static);
+app.use(loopback.static(Static));
 
 // Requests that get this far won't be handled
 // by any middleware. Convert them into a 404 error

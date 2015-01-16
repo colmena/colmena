@@ -67,6 +67,7 @@
     "loopback-component-passport": "^1.1.2",
     "loopback-component-storage": "^1.0.6",
     "loopback-connector-mongodb": "^1.4.5",
+    "minimist": "^1.1.0",
     "passport": "^0.2.0",
     "passport-facebook": "^1.0.3",
     "passport-google-oauth": "~0.1.5",
