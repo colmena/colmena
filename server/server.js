@@ -4,7 +4,7 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 var path = require('path');
 var app = module.exports = loopback();
-var argv = require('minimist')(process.argv.slice(2));
+var env = require('get-env')();
 
 /*
  * body-parser is a piece of express middleware that
@@ -120,7 +120,7 @@ app.get('/auth/logout', function (req, res, next) {
 
 var staticPath = null;
 
-if (process.env.NODE_ENV === 'production') {
+if (env === 'prod') {
   staticPath = path.resolve(__dirname, '../dist/');
 }
 else {
