@@ -137,7 +137,7 @@ angular.module ('com.module.users')
           return viewValue;
         };
         ngModel.$parsers.push (validate);
-        scope.$watch (attrs.confirmPassword, function (value) {
+        scope.$watch (attrs.confirmPassword, function () {
           validate (ngModel.$viewValue);
         });
       }

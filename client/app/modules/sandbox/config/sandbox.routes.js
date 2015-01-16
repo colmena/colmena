@@ -48,6 +48,11 @@ angular.module('com.module.sandbox')
         templateUrl: 'modules/sandbox/views/dashboard.html',
         controller: 'DashboardCtrl'
       })
+      .state('app.sandbox.grid', {
+        url: '/grid',
+        templateUrl: 'modules/sandbox/views/grid.html',
+        controller: 'SandboxGridCtrl'
+      })
       .state('app.sandbox.autofields', {
         url: '/autofields',
         templateUrl: 'modules/sandbox/views/autofields.html',

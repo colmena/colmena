@@ -1,15 +1,15 @@
 'use strict';
-angular.module ('com.module.pages')
-  .run (function ($rootScope, Product, Category) {
-  $rootScope.addMenu ('Products', 'app.products.list', 'fa-file');
+angular.module('com.module.pages')
+  .run(function ($rootScope, Product, Category, gettextCatalog) {
+    $rootScope.addMenu('Products', 'app.products.list', 'fa-file');
 
-  Product.find (function (data) {
-    $rootScope.addDashboardBox ('Products', 'bg-blue', 'ion-document-text', data.length, 'app.products.list');
+    Product.find(function (data) {
+      $rootScope.addDashboardBox(gettextCatalog.getString('Products'), 'bg-yellow', 'ion-ios7-cart-outline', data.length, 'app.products.list');
+    });
+
+    Category.find(function (data) {
+      $rootScope.addDashboardBox(gettextCatalog.getString('Categories'), 'bg-aqua', 'ion-ios7-pricetag-outline', data.length, 'app.products.list');
+    });
+
   });
-
-  Category.find (function (data) {
-    $rootScope.addDashboardBox ('Category Products', 'bg-blue', 'ion-document-text', data.length, 'app.products.list');
-  });
-
-});
 

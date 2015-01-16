@@ -17,10 +17,13 @@ module.exports = function (grunt) {
 
   // Configurable paths for the application
   var appConfig = {
-    app: require ('./bower.json').appPath || 'client/app',
+    app:  require ('./bower.json').appPath || 'client/app',
     test: require ('./bower.json').appPath || 'client/test',
     dist: 'dist',
-    api: 'http://0.0.0.0:3000/api/',
+    api: {
+      development: 'http://0.0.0.0:3000/api/',
+      production: '/api/'
+    },
     host: '0.0.0.0'
   };
 
@@ -93,6 +96,10 @@ module.exports = function (grunt) {
           '.tmp/css/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+      },
+      includeSource: {
+        files: ['<%= yeoman.app %>/index.html'],
+        tasks: ['includeSource:server']
       }
     },
 
@@ -111,7 +118,7 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name: 'development',
-            apiUrl: '<%= yeoman.api %>'
+            apiUrl: '<%= yeoman.api.development %>'
           }
         }
       },
@@ -122,7 +129,7 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name: 'production',
-            apiUrl: '<%= yeoman.api %>'
+            apiUrl: '<%= yeoman.api.production %>'
           }
         }
       }
@@ -228,6 +235,7 @@ module.exports = function (grunt) {
           }
         ]
       }
+
     },
     includeSource: {
       options: {
@@ -237,30 +245,26 @@ module.exports = function (grunt) {
           html: {
             js: '<script src="{filePath}"></script>',
             css: '<link rel="stylesheet" href="{filePath}" />'
-          },
-          haml: {
-            js: '%script{src: "{filePath}"}/',
-            css: '%link{href: "{filePath}", rel: "stylesheet"}/'
-          },
-          jade: {
-            js: 'script(src="{filePath}", type="text/javascript")',
-            css: 'link(href="{filePath}", rel="stylesheet", type="text/css")'
-          },
-          scss: {
-            scss: '@import "{filePath}";',
-            css: '@import "{filePath}";'
-          },
-          less: {
-            less: '@import "{filePath}";',
-            css: '@import "{filePath}";'
           }
         }
       },
-      myTarget: {
+      server: {
         files: {
-          'client/app/index.html': 'client/app/index.tpl.html'
+          '<%= yeoman.app %>/index.html': '<%= yeoman.app %>/index.html'
+          //'.tmp/index.html': '<%= yeoman.app %>/index.html'
+        }
+      },
+      dist: {
+        files: {
+          '<%= yeoman.dist %>/index.html': '<%= yeoman.app %>/index.html'
         }
       }
+      //myTarget: {
+      //  files: {
+      //    'client/app/index.html': 'client/app/index.tpl.html'
+      //  }
+      //}
+
     },
     // Automatically inject Bower components into the app
     wiredep: {
@@ -286,9 +290,10 @@ module.exports = function (grunt) {
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
     useminPrepare: {
-      html: '<%= yeoman.app %>/index.html',
+      html: '<%= yeoman.dist %>/index.html',
       options: {
         dest: '<%= yeoman.dist %>',
+        root: '<%= yeoman.app %>',
         flow: {
           html: {
             steps: {
@@ -296,7 +301,9 @@ module.exports = function (grunt) {
                 'concat',
                 'uglifyjs'
               ],
-              css: ['cssmin']
+              css: [
+                'cssmin'
+              ]
             },
             post: {}
           }
@@ -375,7 +382,13 @@ module.exports = function (grunt) {
           conservativeCollapse: true,
           collapseBooleanAttributes: true,
           removeCommentsFromCDATA: true,
-          removeOptionalTags: true
+          removeOptionalTags: true,
+          removeAttributeQuotes: true,
+          removeComments: true,
+          removeEmptyAttributes: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true
         },
         files: [
           {
@@ -402,6 +415,7 @@ module.exports = function (grunt) {
             src: [
               '*.js',
               '!lb-services.js',
+              '!config.js',
               '!oldieshim.js'
             ],
             dest: '.tmp/concat/scripts'
@@ -429,9 +443,10 @@ module.exports = function (grunt) {
             src: [
               '*.{ico,png,txt}',
               '.htaccess',
-              '*.html',
               'modules/**/{,*/}*.html',
+              'modules/**/{,*/}*.js',
               'images/{,*/}*.*',
+              'css/{,*/}*.*',
               'fonts/{,*/}*.*'
             ]
           },
@@ -439,6 +454,12 @@ module.exports = function (grunt) {
             expand: true,
             cwd: '<%= yeoman.app %>/images',
             dest: '<%= yeoman.dist %>/images',
+            src: ['generated/*']
+          },
+          {
+            expand: true,
+            cwd: '<%= yeoman.app %>/css',
+            dest: '<%= yeoman.dist %>/css',
             src: ['generated/*']
           },
           {
@@ -479,8 +500,8 @@ module.exports = function (grunt) {
       ],
       dist: [
         'copy:styles',
-        //'imagemin',
-        //'svgmin'
+        'imagemin',
+        'svgmin'
       ]
     },
 
@@ -491,12 +512,26 @@ module.exports = function (grunt) {
         singleRun: true
       }
     },
-    loopback_angular: {
+    loopback_sdk_angular: {
       services: {
         options: {
           input: 'server/server.js',
           output: '<%= yeoman.app %>/js/lb-services.js',
-          apiUrl: '<%= yeoman.api %>'
+          apiUrl: '<%= yeoman.api.development %>'
+        }
+      },
+      development: {
+        options: {
+          input: 'server/server.js',
+          output: '<%= yeoman.app %>/js/lb-services.js',
+          apiUrl: '<%= yeoman.api.development %>'
+        }
+      },
+      production: {
+        options: {
+          input: 'server/server.js',
+          output: '<%= yeoman.app %>/js/lb-services.js',
+          apiUrl: '<%= yeoman.api.production %>'
         }
       }
     },
@@ -539,10 +574,6 @@ module.exports = function (grunt) {
   });
 
   // Load the plugin that provides the "loopback-angular" and "grunt-docular" tasks.
-  grunt.loadNpmTasks ('grunt-loopback-angular');
-  grunt.loadNpmTasks ('grunt-docular');
-  grunt.loadNpmTasks ('grunt-angular-gettext');
-
 
   grunt.registerTask ('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -554,8 +585,9 @@ module.exports = function (grunt) {
 
     grunt.task.run ([
       'clean:server',
+      'includeSource:server',
       'ngconstant:development',
-      'loopback_angular',
+      'loopback_sdk_angular:development',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
@@ -571,24 +603,25 @@ module.exports = function (grunt) {
 
   grunt.registerTask ('test', [
     'clean:server',
+    'includeSource:server',
     'concurrent:test',
     'autoprefixer',
     'connect:test'
-
   ]);
 
   grunt.registerTask ('build', [
     'clean:dist',
     'ngconstant:production',
-    'loopback_angular',
+    'loopback_sdk_angular:production',
     'wiredep',
+    'includeSource:dist',
     'useminPrepare',
-    'concurrent:dist',
-    'autoprefixer',
+    //'concurrent:dist',
+    //'autoprefixer',
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'cdnify',
+    //'cdnify',
     'cssmin',
     'uglify',
     'filerev',
@@ -597,20 +630,19 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask ('default', [
-    'includeSource',
-    'wiredep',
     //'newer:jshint',
     'test',
     'ngconstant:development',
-    'loopback_angular',
-    //'docular',
+    'loopback_sdk_angular:development',
+    'docular',
     'nggettext_extract',
     'nggettext_compile',
-    //'build'
+    'build'
   ]);
 
   grunt.registerTask ('loopback', [
-    'loopback_angular',
+    'ngconstant:development',
+    'loopback_sdk_angular:development',
     'docular'
   ]);
 

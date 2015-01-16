@@ -1,3 +1,4 @@
+/*jshint sub:true*/
 'use strict';
 angular.module ('com.module.events')
   .controller('EventsCtrl', function ($scope, $state, $stateParams, toasty, Event, SweetAlert, gettextCatalog) {

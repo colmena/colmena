@@ -21,7 +21,7 @@ msgstr ""
 msgid "Add a new setting"
 msgstr ""
 
-#: client/app/modules/events/controllers/events.ctrl.js:49
+#: client/app/modules/events/controllers/events.ctrl.js:50
 #: client/app/modules/files/controllers/files.ctrl.js:15
 #: client/app/modules/settings/controllers/settings.ctrl.js:29
 msgid "Are you sure?"
@@ -37,6 +37,10 @@ msgstr ""
 
 #: client/app/modules/files/views/upload.html:42
 msgid "Cancel all"
+msgstr ""
+
+#: client/app/modules/products/config/products.config.js:11
+msgid "Categories"
 msgstr ""
 
 #: client/app/modules/users/views/profile.html:21
@@ -59,7 +63,7 @@ msgstr ""
 msgid "Current user"
 msgstr ""
 
-#: client/app/modules/core/config/core.config.js:15
+#: client/app/modules/core/config/core.config.js:18
 #: client/app/modules/core/views/home.html:13
 msgid "Dashboard"
 msgstr ""
@@ -80,7 +84,7 @@ msgstr ""
 msgid "Email address needs to be valid"
 msgstr ""
 
-#: client/app/modules/events/controllers/events.ctrl.js:61
+#: client/app/modules/events/controllers/events.ctrl.js:62
 msgid "Error deleting event"
 msgstr ""
 
@@ -96,10 +100,11 @@ msgstr ""
 msgid "Error signin in after registration!"
 msgstr ""
 
-#: client/app/modules/events/controllers/events.ctrl.js:56
+#: client/app/modules/events/controllers/events.ctrl.js:57
 msgid "Event deleted"
 msgstr ""
 
+#: client/app/modules/events/config/events.config.js:7
 #: client/app/modules/events/views/main.html:1
 msgid "Events"
 msgstr ""
@@ -171,6 +176,10 @@ msgstr ""
 msgid "Nice email address!"
 msgstr ""
 
+#: client/app/modules/notes/config/notes.config.js:7
+msgid "Notes"
+msgstr ""
+
 #: client/app/modules/users/views/login.html:17
 msgid "Or register"
 msgstr ""
@@ -179,9 +188,21 @@ msgstr ""
 msgid "Or sign in"
 msgstr ""
 
+#: client/app/modules/pages/config/pages.config.js:7
+msgid "Pages"
+msgstr ""
+
 #: client/app/modules/users/controllers/login.ctrl.js:39
 #: client/app/modules/users/controllers/register.ctrl.js:57
 msgid "Password"
+msgstr ""
+
+#: client/app/modules/posts/config/posts.config.js:7
+msgid "Posts"
+msgstr ""
+
+#: client/app/modules/products/config/products.config.js:7
+msgid "Products"
 msgstr ""
 
 #: client/app/modules/core/views/elements/navbar.html:25
@@ -337,11 +358,11 @@ msgstr ""
 msgid "Your Gravatar"
 msgstr ""
 
-#: client/app/modules/events/controllers/events.ctrl.js:56
+#: client/app/modules/events/controllers/events.ctrl.js:57
 msgid "Your event is deleted!"
 msgstr ""
 
-#: client/app/modules/events/controllers/events.ctrl.js:61
+#: client/app/modules/events/controllers/events.ctrl.js:62
 msgid "Your event is not deleted:"
 msgstr ""
 

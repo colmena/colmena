@@ -4,6 +4,8 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 var path = require('path');
 var app = module.exports = loopback();
+var env = require('get-env')();
+
 /*
  * body-parser is a piece of express middleware that
  *   reads a form's input and stores it as a javascript
@@ -33,9 +35,9 @@ app.use(loopback.compress());
 // -- Add your pre-processing middleware here --
 
 var ds = loopback.createDataSource({
-    connector: require('loopback-component-storage'),
-    provider: 'filesystem',
-    root: path.join(__dirname, '../', 'storage')
+  connector: require('loopback-component-storage'),
+  provider: 'filesystem',
+  root: path.join(__dirname, '../', 'storage')
 });
 var container = ds.createModel('container');
 
@@ -68,7 +70,7 @@ app.use(loopback.session({
 var config = {};
 try {
   config = require('../providers.json');
-} catch(err) {
+} catch (err) {
   console.error('Please configure your passport strategy in `providers.json`.');
   console.error('Copy `providers.json.template` to `providers.json` and replace the clientID/clientSecret values with your own.');
   process.exit(1);
@@ -83,7 +85,7 @@ passportConfigurator.setupModels({
   userCredentialModel: app.models.userCredential
 });
 // Configure passport strategies for third party auth providers
-for(var s in config) {
+for (var s in config) {
   var c = config[s];
   c.session = c.session !== false;
   passportConfigurator.configureProvider(s, c);
@@ -115,7 +117,18 @@ app.get('/auth/logout', function (req, res, next) {
 // All static middleware should be registered at the end, as all requests
 // passing the static middleware are hitting the file system
 // Example:
-app.use(loopback.static(path.resolve(__dirname, '../client/app')));
+
+var staticPath = null;
+
+if (env !== 'prod') {
+  staticPath = path.resolve(__dirname, '../client/app/');
+  console.log("Running app in development mode");
+} else {
+  staticPath = path.resolve(__dirname, '../dist/');
+  console.log("Running app in prodction mode");
+}
+
+app.use(loopback.static(staticPath));
 
 // Requests that get this far won't be handled
 // by any middleware. Convert them into a 404 error
@@ -125,9 +138,9 @@ app.use(loopback.urlNotFound());
 // The ultimate error handler.
 app.use(loopback.errorHandler());
 
-app.start = function() {
+app.start = function () {
   // start the web server
-  return app.listen(function() {
+  return app.listen(function () {
     app.emit('started');
     console.log('Web server listening at: %s', app.get('url'));
   });

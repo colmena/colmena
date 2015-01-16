@@ -98,20 +98,24 @@ angular.module ('com.module.sandbox')
     $scope.options.validation.showMessages = !$scope.options.validation.showMessages;
   };
 
+
+
   $scope.toggleHorizontal = function () {
-    $scope.options.layout.type = $scope.options.layout.type == 'horizontal' ? 'basic' : 'horizontal';
-  }
+    $scope.options.layout.type = $scope.options.layout.type === 'horizontal' ? 'basic' : 'horizontal';
+  };
 
   $scope.addField = function () {
     $scope.schema.push ({property: 'new' + (new Date ().getTime ()), label: 'New Field'});
   };
 
   $scope.join = function () {
-    if (!$scope.joinForm.$valid) return;
+    if (!$scope.joinForm.$valid) {
+      return;
+    }
     //join stuff....
     $log.info ($scope.user);
-    alert ('You\'ve joined!\n\nSee console for additional info.');
-  }
+    console.log('You\'ve joined!\n\nSee console for additional info.');
+  };
 })
 .directive ('confirmPassword', [
   function () {
@@ -121,15 +125,15 @@ angular.module ('com.module.sandbox')
       link: function (scope, element, attrs, ngModel) {
         var validate = function (viewValue) {
           var password = scope.$eval (attrs.confirmPassword);
-          ngModel.$setValidity ('match', ngModel.$isEmpty (viewValue) || viewValue == password);
+          ngModel.$setValidity ('match', ngModel.$isEmpty (viewValue) || viewValue === password);
           return viewValue;
-        }
+        };
         ngModel.$parsers.push (validate);
-        scope.$watch (attrs.confirmPassword, function (value) {
+        scope.$watch (attrs.confirmPassword, function () {
           validate (ngModel.$viewValue);
-        })
+        });
       }
-    }
+    };
   }
 ]);
 
