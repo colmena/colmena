@@ -122,11 +122,12 @@ var staticPath = null;
 
 if (env !== 'prod') {
   staticPath = path.resolve(__dirname, '../client/app');
+  console.log("Running app in development mode");
 } else {
   staticPath = path.resolve(__dirname, '../dist/');
+  console.log("Running app in prodction mode");
 }
 
-console.log("staticPath", staticPath);
 app.use(loopback.static(staticPath));
 
 // Requests that get this far won't be handled
