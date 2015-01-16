@@ -17,7 +17,7 @@ module.exports = function (grunt) {
 
   // Configurable paths for the application
   var appConfig = {
-    app:  require ('./bower.json').appPath || 'client/app',
+    app: require ('./bower.json').appPath || 'client/app',
     test: require ('./bower.json').appPath || 'client/test',
     dist: 'dist',
     api: 'http://0.0.0.0:3000/api/',
@@ -58,7 +58,10 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
       js: {
-        files: ['!<%= yeoman.app %>/modules/**/tests/**', '<%= yeoman.app %>/modules/**/{,*/}*.js'],
+        files: [
+          '!<%= yeoman.app %>/modules/**/tests/**',
+          '<%= yeoman.app %>/modules/**/{,*/}*.js'
+        ],
         tasks: ['newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -226,7 +229,39 @@ module.exports = function (grunt) {
         ]
       }
     },
-
+    includeSource: {
+      options: {
+        basePath: 'client/app',
+        baseUrl: '',
+        templates: {
+          html: {
+            js: '<script src="{filePath}"></script>',
+            css: '<link rel="stylesheet" href="{filePath}" />'
+          },
+          haml: {
+            js: '%script{src: "{filePath}"}/',
+            css: '%link{href: "{filePath}", rel: "stylesheet"}/'
+          },
+          jade: {
+            js: 'script(src="{filePath}", type="text/javascript")',
+            css: 'link(href="{filePath}", rel="stylesheet", type="text/css")'
+          },
+          scss: {
+            scss: '@import "{filePath}";',
+            css: '@import "{filePath}";'
+          },
+          less: {
+            less: '@import "{filePath}";',
+            css: '@import "{filePath}";'
+          }
+        }
+      },
+      myTarget: {
+        files: {
+          'client/app/index.html': 'client/app/index.tpl.html'
+        }
+      }
+    },
     // Automatically inject Bower components into the app
     wiredep: {
       app: {
@@ -506,7 +541,7 @@ module.exports = function (grunt) {
   // Load the plugin that provides the "loopback-angular" and "grunt-docular" tasks.
   grunt.loadNpmTasks ('grunt-loopback-angular');
   grunt.loadNpmTasks ('grunt-docular');
-  grunt.loadNpmTasks('grunt-angular-gettext');
+  grunt.loadNpmTasks ('grunt-angular-gettext');
 
 
   grunt.registerTask ('serve', 'Compile then start a connect web server', function (target) {
@@ -562,6 +597,8 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask ('default', [
+    'includeSource',
+    'wiredep',
     //'newer:jshint',
     'test',
     'ngconstant:development',
