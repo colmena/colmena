@@ -226,7 +226,25 @@ module.exports = function (grunt) {
         ]
       }
     },
-
+    // Automatically inject JS into the app
+    injector: {
+      options: {
+        min: true,
+        destFile: 'client/app/index.html',
+        ignorePath: 'client/app/',
+        prefixPath: ''
+      },
+      modules: {
+        files: {
+          '<%= yeoman.app %>/index.html': [
+            '!<%= yeoman.app %>/modules/**/tests/**',
+            '<%= yeoman.app %>/js/*.js',
+            '<%= yeoman.app %>/modules/**/*.module.js',
+            '<%= yeoman.app %>/modules/**/{,*/}*.js'
+          ]
+        }
+      }
+    },
     // Automatically inject Bower components into the app
     wiredep: {
       app: {
@@ -562,6 +580,8 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask ('default', [
+    'wiredp',
+    'injector',
     //'newer:jshint',
     'test',
     'ngconstant:development',
