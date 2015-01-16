@@ -104,7 +104,7 @@ module.exports = function (grunt) {
     includeSource: {
       options: {
         basePath: 'client/app',
-        baseUrl: '/',
+        baseUrl: '/'
       },
       server: {
         files: {
@@ -139,7 +139,7 @@ module.exports = function (grunt) {
       },
       production: {
         options: {
-          dest: '<%= yeoman.dist %>/js/config.js'
+          dest: '<%= yeoman.app %>/js/config.js'
         },
         constants: {
           ENV: {
@@ -401,6 +401,7 @@ module.exports = function (grunt) {
             src: [
               '*.js',
               '!lb-services.js',
+              '!config.js',
               '!oldieshim.js'
             ],
             dest: '.tmp/concat/scripts'
