@@ -14,3 +14,4 @@ providers.json
 bower_components
 docs
 client/coverage
+.vagrant
