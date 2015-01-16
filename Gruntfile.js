@@ -443,7 +443,6 @@ module.exports = function (grunt) {
               '*.{ico,png,txt}',
               '.htaccess',
               'modules/**/{,*/}*.html',
-              'modules/**/{,*/}*.js',
               'images/{,*/}*.*',
               //'css/{,*/}*.*',
               'fonts/{,*/}*.*'
