@@ -40,6 +40,7 @@ module.exports = function (app) {
       key: 'formInputSize',
       value: 9
     }, {
+      type: 'boolean',
       key: 'com.module.users.enable_registration',
       value: true
     }];
