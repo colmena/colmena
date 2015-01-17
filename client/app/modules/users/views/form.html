@@ -1,27 +1,33 @@
-<section>
-  <form name="form" ng-submit="submitForm()">
-    <fieldset>
-      <legend>{{action}} user form</legend>
+<div class="box">
+  <div class="box-header">
+        <span class="box-title">
+            <div class="input-group">
+              <a href="" ui-sref="^.list" class=" btn btn-default " style="float: left;"><i
+                class="fa fa-arrow-left"></i> Users</a>
+            </div>
+        </span>
 
-      <div class="form-group">
-        <label>Email</label>
-        <input type="text" class="form-control" ng-model="user.email" required/>
-      </div>
+    <div class="box-tools pull-right">
+            <span class="pull-right btn-group">
+            <button class="btn btn-primary btn-success btn-sm" ng-click="onSubmit()"><i class="fa fa-save"></i> Save
+            </button>
+            <a href="" class="btn btn-sm btn-default" ng-click="delete({id: page.id})">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </span>
+    </div>
+  </div>
+  <div class="box-body">
+    <div class="alert alert-danger" ng-if="addError">Could not add user!</div>
 
-      <div class="form-group">
-        <label>Username</label>
-        <input type="text" class="form-control" ng-model="user.username" required/>
-      </div>
+    <formly-form result="user" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
+    
+    <div ng-if="!user.id" class="form-group">
+      <label>Password</label>
+      <input type="text" class="form-control" ng-model="user.password" required/>
+    </div>
 
-      <div class="form-group" ng-if="action == 'Add'">
-        <label>Password</label>
-        <input type="password" class="form-control" ng-model="user.password" required/>
-      </div>
-
-      <div class="actions">
-        <label></label>
-        <button class="btn btn-default">Save</button>
-      </div>
-    </fieldset>
-  </form>
-</section>
+  </div>
+  <div ng-if="loading" class="overlay"></div>
+  <div ng-if="loading" class="loading-img"></div>
+</div>

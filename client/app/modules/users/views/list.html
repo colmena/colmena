@@ -10,7 +10,7 @@
             <div class="btn-group">
               <button class="btn btn-xs btn-default" ui-sref="app.users.password({ id: user.id })"><i class="fa fa-key"></i></button>
               <button class="btn btn-xs btn-default" ui-sref="app.users.edit({ id: user.id })"><i class="fa fa-pencil"></i></button>
-              <button class="btn btn-xs btn-danger" ui-sref="app.users.delete({ id: user.id })"><i class="fa fa-trash-o"></i></button>
+              <button class="btn btn-xs btn-danger" ng-click="delete({ id: user.id })"><i class="fa fa-trash-o"></i></button>
             </div>
           </span>
         </td>

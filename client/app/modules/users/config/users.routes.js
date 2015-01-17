@@ -15,13 +15,12 @@ angular.module('com.module.users')
       .state('app.users', {
         abstract: true,
         url: '/users',
-        templateUrl: 'modules/users/views/main.html',
-        controller: 'UsersCtrl'
+        templateUrl: 'modules/users/views/main.html'
       })
       .state('app.users.profile', {
         url: '/profile',
         templateUrl: 'modules/users/views/profile.html',
-        controller: 'UsersCtrl'
+        controller: 'ProfileCtrl'
       })
       .state('app.users.list', {
         url: '',

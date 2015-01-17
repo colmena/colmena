@@ -4,47 +4,20 @@
       <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i> Users</a>
       {{user.username}}
     </h3>
-    <div class="box-tools pull-right">
-
-    </div>
   </div>
-  <div class="box-body" style="min-height: 120px;">
-
-    <div ng-hide="user.id">
-      <h2>Loading...</h2>
-
-    </div>
-
-
-    <div ng-show="user.id">
-
+  <div class="box-body">
+    <div>
       <h2>{{user.username}}
         <small>{{user.email}}</small>
       </h2>
-
       <h3>Roles</h3>
       <ul>
         <li ng-repeat="role in user.roles">{{role.name}}</li>
       </ul>
-
-      <h3>Notes</h3>
-      <ul>
-        <li ng-repeat="note in user.notes"><a href="" ui-sref="notes.view({id: note.id})">{{note.title}}</a></li>
-      </ul>
-
-      <h3>Reviews</h3>
-      <ul>
-        <li ng-repeat="review in user.reviews">{{review.comments}}</li>
-      </ul>
-
       <h3>Raw</h3>
       <pre>{{user|json}}</pre>
-
     </div>
-
   </div>
-  <div ng-if="loading" class="overlay"></div>
-  <div ng-if="loading" class="loading-img"></div>
 </div>
 
 
