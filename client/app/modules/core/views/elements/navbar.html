@@ -5,24 +5,18 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
   </a>
+
   <div class="navbar-right">
     <ul class="nav navbar-nav">
       <li class="dropdown tasks-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <i class="fa fa-microphone"></i>
-          <!-- <span class="label label-danger">9</span> -->
+          <i class="fa fa-flag"></i>
         </a>
         <ul class="dropdown-menu">
-          <!-- <li class="header">You have {{ langs.length }} languages</li> -->
-          <li>
-            <!-- inner menu: contains the actual data -->
-            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
-              <li ng-repeat="(index, lang) in langs"><!-- Task item -->
-                <a ng-click="setLang(index)">
-                  <h3> {{lang }}</h3>
-                </a>
-              </li><!-- end task item -->
-            </ul>
+          <li ng-repeat="(index, lang) in langs">
+            <a href="" ng-click="setLang(index)">
+              <span class="flag-icon flag-icon-{{index}}"></span> {{lang}}
+            </a>
           </li>
         </ul>
       </li>
@@ -34,6 +28,7 @@
         <ul class="dropdown-menu">
           <li class="user-header bg-light-blue">
             <img gravatar-src-once="currentUser.email" class="img-circle" alt="User Image">
+
             <p>
               {{currentUser.firstName}} {{currentUser.lastName}}
               <small>{{currentUser.email}}</small>

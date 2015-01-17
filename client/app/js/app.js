@@ -47,7 +47,7 @@ angular.module('loopbackApp', [
 
     $rootScope.langs = {
       pt: gettextCatalog.getString('Portuguese'),
-      en: gettextCatalog.getString('English'),
+      us: gettextCatalog.getString('English'),
       nl: gettextCatalog.getString('Dutch'),
       de: gettextCatalog.getString('German')
     };

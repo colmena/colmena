@@ -13,7 +13,6 @@ angular.module('com.module.core')
   $scope.langs = $rootScope.langs;
 
   $scope.setLang = function(lang) {
-    console.log(lang);
     gettextCatalog.setCurrentLanguage(lang);
   };
 
