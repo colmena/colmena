@@ -35,6 +35,8 @@ module.exports = function (app) {
   if (config) {
     console.log('Configuring passport');
 
+    var AuthProvider = app.models.AuthProvider;
+
     var loopbackPassport = require('loopback-component-passport');
 
     var PassportConfigurator = loopbackPassport.PassportConfigurator;
@@ -51,11 +53,35 @@ module.exports = function (app) {
       userCredentialModel: app.models.userCredential
     });
 
-    // Configure passport strategies for third party auth providers
+    // Configure passport strategies for third party auth providers and add them to the API
     for (var s in config) {
       var c = config[s];
-      c.session = c.session !== false;
-      passportConfigurator.configureProvider(s, c);
+
+      if (c.provider != 'local') {
+
+        var providerClass = c.provider;
+        if (c.provider === 'google') {
+          var providerClass = 'google-plus';
+        }
+
+        var entry = {
+          name: s,
+          link: c.link,
+          authPath: c.authPath,
+          provider: c.provider,
+          class: providerClass
+        };
+
+        AuthProvider.create(entry, function (err, data) {
+          if (err) {
+            console.log(err);
+          }
+        });
+
+        c.session = c.session !== false;
+        passportConfigurator.configureProvider(s, c);
+      }
+
     }
 
   }
@@ -82,4 +108,5 @@ module.exports = function (app) {
   });
 
 
-};
+}
+;
