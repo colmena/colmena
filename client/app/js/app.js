@@ -54,6 +54,7 @@ angular.module('loopbackApp', [
 
     var LangVar = navigator.language || navigator.userLanguage;
     var userLangVar = LangVar.substring(0, 2);
+    $rootScope.lang = LangVar.substring (0, 2);
     gettextCatalog.setCurrentLanguage(userLangVar);
 
   });
