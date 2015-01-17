@@ -9,7 +9,7 @@
  * Contrller for Login Page
  **/
 angular.module('com.module.users')
-  .controller('LoginCtrl', function ($scope, $routeParams, $location, toasty, User, AppAuth, AuthProvider, gettextCatalog) {
+  .controller('LoginCtrl', function ($scope, $routeParams, $location, toasty, User, AppAuth, AuthProvider, ENV, gettextCatalog) {
 
     var TWO_WEEKS = 1000 * 60 * 60 * 24 * 7 * 2;
 
@@ -60,7 +60,7 @@ angular.module('com.module.users')
     };
 
     $scope.socialLogin = function (provider) {
-      window.location = provider.authPath;
+      window.location = ENV.siteUrl + provider.authPath;
     };
 
     AuthProvider.count(function (result) {
