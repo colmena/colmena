@@ -6,9 +6,9 @@
       "../node_modules/loopback-component-passport/lib/models"
     ]
   },
-  "user": {
+  "User": {
     "dataSource": "db",
-    "public": true
+    "public": false
   },
   "accessToken": {
     "dataSource": "db",
@@ -28,11 +28,11 @@
   },
   "RoleMapping": {
     "dataSource": "db",
-    "public": false
+    "public": true
   },
   "Role": {
     "dataSource": "db",
-    "public": false
+    "public": true
   },
   "Page": {
     "dataSource": "db",
@@ -59,6 +59,14 @@
     "public": true
   },
   "Event": {
+    "dataSource": "db",
+    "public": true
+  },
+  "AuthProvider": {
+    "dataSource": "db",
+    "public": true
+  },
+  "user": {
     "dataSource": "db",
     "public": true
   }
