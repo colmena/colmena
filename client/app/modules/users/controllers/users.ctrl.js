@@ -56,4 +56,13 @@ angular.module('com.module.users')
         });
       });
     };
+
+    $scope.loading = true;
+    $scope.users = User.find({
+      filter: {
+        include: ['roles']
+      }
+    }, function () {
+      $scope.loading = false;
+    });
   });
