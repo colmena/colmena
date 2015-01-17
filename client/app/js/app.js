@@ -43,10 +43,17 @@ angular.module('loopbackApp', [
   'com.module.settings',
   'com.module.users'
 ])
-  .run(function (gettextCatalog) {
+  .run(function($rootScope, gettextCatalog) {
+
+    $rootScope.langs = {
+      pt: gettextCatalog.getString('Portuguese'),
+      us: gettextCatalog.getString('English'),
+      nl: gettextCatalog.getString('Dutch'),
+      de: gettextCatalog.getString('German')
+    };
+
     var LangVar = navigator.language || navigator.userLanguage;
-    var userLangVar = LangVar.substring (0, 2);
-    gettextCatalog
-      .setCurrentLanguage(userLangVar);
+    var userLangVar = LangVar.substring(0, 2);
+    gettextCatalog.setCurrentLanguage(userLangVar);
 
   });

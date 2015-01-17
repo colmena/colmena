@@ -1,35 +1,49 @@
 <nav class="navbar navbar-static-top" role="navigation">
-    <a href="" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" ng-click="toggleSidebar()" role="button">
-        <span class="sr-only" translate>Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </a>
-    <div class="navbar-right">
-        <ul class="nav navbar-nav">
-            <li class="dropdown user user-menu">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i>
-                    <span>{{currentUser.firstName}} {{currentUser.lastName}} <i class="caret"></i></span>
-                </a>
-                <ul class="dropdown-menu">
-                    <li class="user-header bg-light-blue">
-                        <img gravatar-src-once="currentUser.email" class="img-circle" alt="User Image">
-                        <p>
-                            {{currentUser.firstName}} {{currentUser.lastName}}
-                            <small>{{currentUser.email}}</small>
-                        </p>
-                    </li>
-                    <li class="user-footer">
-                        <div class="pull-left">
-                            <a ui-sref="app.users.profile" href="#" class="btn btn-default btn-flat" translate>Profile</a>
-                        </div>
-                        <div class="pull-right">
-                            <a ng-click="logout()" href="#" class="btn btn-default btn-flat" translate>Sign out</a>
-                        </div>
-                    </li>
-                </ul>
-            </li>
+  <a href="" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" ng-click="toggleSidebar()" role="button">
+    <span class="sr-only" translate>Toggle navigation</span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </a>
+
+  <div class="navbar-right">
+    <ul class="nav navbar-nav">
+      <li class="dropdown tasks-menu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <i class="fa fa-flag"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li ng-repeat="(index, lang) in langs">
+            <a href="" ng-click="setLang(index)">
+              <span class="flag-icon flag-icon-{{index}}"></span> {{lang}}
+            </a>
+          </li>
         </ul>
-    </div>
+      </li>
+      <li class="dropdown user user-menu">
+        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+          <i class="glyphicon glyphicon-user"></i>
+          <span>{{currentUser.firstName}} {{currentUser.lastName}} <i class="caret"></i></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li class="user-header bg-light-blue">
+            <img gravatar-src-once="currentUser.email" class="img-circle" alt="User Image">
+
+            <p>
+              {{currentUser.firstName}} {{currentUser.lastName}}
+              <small>{{currentUser.email}}</small>
+            </p>
+          </li>
+          <li class="user-footer">
+            <div class="pull-left">
+              <a ui-sref="app.users.profile" href="#" class="btn btn-default btn-flat" translate>Profile</a>
+            </div>
+            <div class="pull-right">
+              <a ng-click="logout()" href="#" class="btn btn-default btn-flat" translate>Sign out</a>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </nav>
