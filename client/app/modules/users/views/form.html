@@ -1,0 +1,27 @@
+<section>
+  <form name="form" ng-submit="submitForm()">
+    <fieldset>
+      <legend>{{action}} user form</legend>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" ng-model="user.email" required/>
+      </div>
+
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" ng-model="user.username" required/>
+      </div>
+
+      <div class="form-group" ng-if="action == 'Add'">
+        <label>Password</label>
+        <input type="password" class="form-control" ng-model="user.password" required/>
+      </div>
+
+      <div class="actions">
+        <label></label>
+        <button class="btn btn-default">Save</button>
+      </div>
+    </fieldset>
+  </form>
+</section>
