@@ -1,7 +1,7 @@
 /*jshint sub:true*/
 'use strict';
 angular.module('com.module.events')
-  .controller('EventsCtrl', function ($scope, $state, $stateParams, CoreService, Event, gettextCatalog, toasty) {
+  .controller('EventsCtrl', function ($scope, $state, $stateParams, CoreService, Event, gettextCatalog) {
 
     var eventId = $stateParams.id;
 
@@ -48,20 +48,12 @@ angular.module('com.module.events')
     $scope.delete = function (id) {
       CoreService.confirm(gettextCatalog.getString('Are you sure?'), gettextCatalog.getString('Deleting this cannot be undone'), function () {
         Event.deleteById(id, function () {
-          toasty.pop.success({
-            title: gettextCatalog.getString('Event deleted'),
-            msg: gettextCatalog.getString('Your event is deleted!'),
-            sound: false
-          });
+          CoreService.toastSuccess(gettextCatalog.getString('Event deleted'), gettextCatalog.getString('Your event is deleted!'));
           loadItems();
           $state.go('app.events.list');
           console.log();
         }, function (err) {
-          toasty.pop.error({
-            title: gettextCatalog.getString('Error deleting event'),
-            msg: gettextCatalog.getString('Your event is not deleted: ') + err,
-            sound: false
-          });
+          CoreService.toastError(gettextCatalog.getString('Error deleting event'), gettextCatalog.getString('Your event is not deleted: ') + err);
         });
       }, function () {
         return false;
@@ -139,21 +131,11 @@ angular.module('com.module.events')
       event.eTime = null;
 
       Event.upsert($scope.event, function () {
-        toasty.pop.success(
-          {
-            title: 'Event saved',
-            msg: 'Your event is safe with us!',
-            sound: false
-          });
+        CoreService.toastSuccess(gettextCatalog.getString('Event saved'), gettextCatalog.getString('Your event is safe with us!'));
         $state.go('^.list');
       }, function (err) {
         $scope.alerts.push({type: 'danger', msg: err.data.error.message});
-        toasty.pop.error(
-          {
-            title: 'Event not added',
-            msg: err.data.error.message,
-            sound: false
-          });
+        CoreService.toastError(gettextCatalog.getString('Event not added'), err.data.error.message);
         console.log(err);
       });
     };

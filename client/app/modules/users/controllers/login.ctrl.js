@@ -9,7 +9,7 @@
  * Contrller for Login Page
  **/
 angular.module('com.module.users')
-  .controller('LoginCtrl', function ($scope, $routeParams, $location, toasty, User, AppAuth, AuthProvider, ENV, gettextCatalog) {
+  .controller('LoginCtrl', function ($scope, $routeParams, $location, CoreService, User, AppAuth, AuthProvider, ENV, gettextCatalog) {
 
     var TWO_WEEKS = 1000 * 60 * 60 * 24 * 7 * 2;
 
@@ -88,11 +88,7 @@ angular.module('com.module.users')
           var next = $location.nextAfterLogin || '/';
           $location.nextAfterLogin = null;
           AppAuth.currentUser = $scope.loginResult.user;
-          toasty.pop.success({
-            title: gettextCatalog.getString('Logged in'),
-            msg: gettextCatalog.getString('You are logged in!'),
-            sound: false
-          });
+          CoreService.toastSuccess(gettextCatalog.getString('Logged in'), gettextCatalog.getString('You are logged in!'));
           if (next === '/login') {
             next = '/';
           }

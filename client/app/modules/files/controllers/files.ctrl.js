@@ -1,6 +1,6 @@
 'use strict';
 angular.module('com.module.files')
-  .controller('FilesCtrl', function ($scope, $http, CoreService, ENV, toasty, gettextCatalog) {
+  .controller('FilesCtrl', function ($scope, $http, CoreService, ENV, gettextCatalog) {
 
     $scope.load = function () {
       $http.get(ENV.apiUrl + '/containers/files/files').success(function (data) {
@@ -16,11 +16,7 @@ angular.module('com.module.files')
           console.log(status);
           console.log(headers);
           $scope.files.splice(index, 1);
-          toasty.pop.success({
-            title: gettextCatalog.getString('File deleted'),
-            msg: gettextCatalog.getString('Your file is deleted!'),
-            sound: false
-          });
+          CoreService.toastSuccess(gettextCatalog.getString('File deleted'), gettextCatalog.getString('Your file is deleted!'));
         });
       }, function () {
         return false;

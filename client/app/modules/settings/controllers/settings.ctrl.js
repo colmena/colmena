@@ -1,6 +1,6 @@
 'use strict';
 angular.module('com.module.settings')
-  .controller('SettingsCtrl', function ($scope, $rootScope, $state, $stateParams, CoreService, toasty, Setting, gettextCatalog) {
+  .controller('SettingsCtrl', function ($scope, $rootScope, $state, $stateParams, CoreService, Setting, gettextCatalog) {
 
     var settingId = $stateParams.id;
 
@@ -27,19 +27,11 @@ angular.module('com.module.settings')
     $scope.delete = function (id) {
       CoreService.confirm(gettextCatalog.getString('Are you sure?'), gettextCatalog.getString('Deleting this cannot be undone'), function () {
         Setting.deleteById(id, function () {
-          toasty.pop.success({
-            title: gettextCatalog.getString('Setting deleted'),
-            msg: gettextCatalog.getString('Your setting is deleted!'),
-            sound: false
-          });
+          CoreService.toastSuccess(gettextCatalog.getString('Setting deleted'), gettextCatalog.getString('Your setting is deleted!'));
           loadItems();
           $state.go('app.settings.list');
         }, function (err) {
-          toasty.pop.error({
-            title: gettextCatalog.getString('Error deleting setting'),
-            msg: gettextCatalog.getString('Your setting is not deleted: ') + err,
-            sound: false
-          });
+          CoreService.toastError(gettextCatalog.getString('Error deleting setting'), gettextCatalog.getString('Your setting is not deleted: ') + err);
         });
       }, function () {
         return false;
@@ -80,11 +72,7 @@ angular.module('com.module.settings')
 
     $scope.onSubmit = function () {
       Setting.upsert($scope.setting, function () {
-        toasty.pop.success({
-          title: gettextCatalog.getString('Setting saved'),
-          msg: gettextCatalog.getString('Your setting is safe with us!'),
-          sound: false
-        });
+        CoreService.toastSuccess(gettextCatalog.getString('Setting saved'), gettextCatalog.getString('Your setting is safe with us!'));
         $state.go('^.list');
       }, function (err) {
         console.log(err);

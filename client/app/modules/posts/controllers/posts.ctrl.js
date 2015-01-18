@@ -1,6 +1,6 @@
 'use strict';
 angular.module('com.module.posts')
-  .controller('PostsCtrl', function ($scope, $state, $stateParams, CoreService, toasty, Post) {
+  .controller('PostsCtrl', function ($scope, $state, $stateParams, CoreService, gettextCatalog, Post) {
 
     var postId = $stateParams.id;
 
@@ -24,11 +24,11 @@ angular.module('com.module.posts')
     $scope.delete = function (id) {
       CoreService.confirm(gettextCatalog.getString('Are you sure?'), gettextCatalog.getString('Deleting this cannot be undone'), function () {
         Post.deleteById(id, function () {
-          toasty.pop.success({title: 'Post deleted', msg: 'Your post is deleted!', sound: false});
+          CoreService.toastSuccess(gettextCatalog.getString('Post deleted'), gettextCatalog.getString('Your post is deleted!'));
           loadItems();
           $state.go('app.posts.list');
         }, function (err) {
-          toasty.pop.error({title: 'Error deleting post', msg: 'Your post is not deleted: ' + err, sound: false});
+          CoreService.toastError(gettextCatalog.getString('Error deleting post'), gettextCatalog.getString('Your post is not deleted: ') + err);
         });
       }, function () {
         return false;
@@ -64,7 +64,7 @@ angular.module('com.module.posts')
 
     $scope.onSubmit = function () {
       Post.upsert($scope.post, function () {
-        toasty.pop.success({title: 'Post saved', msg: 'Your post is safe with us!', sound: false});
+        CoreService.toastSuccess(gettextCatalog.getString('Post saved'), gettextCatalog.getString('Your post is safe with us!'));
         $state.go('^.list');
       }, function (err) {
         console.log(err);

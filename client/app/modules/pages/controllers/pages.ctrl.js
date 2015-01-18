@@ -1,6 +1,6 @@
 'use strict';
 angular.module('com.module.pages')
-  .controller('PagesCtrl', function ($scope, $state, $stateParams, CoreService, toasty, Page, $filter) {
+  .controller('PagesCtrl', function ($scope, $state, $stateParams, $filter, CoreService, gettextCatalog, Page) {
 
     $scope.loading = true;
 
@@ -32,11 +32,11 @@ angular.module('com.module.pages')
     $scope.delete = function (id) {
       CoreService.confirm(gettextCatalog.getString('Are you sure?'), gettextCatalog.getString('Deleting this cannot be undone'), function () {
         Page.deleteById(id, function () {
-          toasty.pop.success({title: 'Page deleted', msg: 'Your page is deleted!', sound: false});
+          CoreService.toastSuccess(gettextCatalog.getString('Page deleted'), gettextCatalog.getString('Your page is deleted!'));
           loadPages();
           $state.go('app.pages.list');
         }, function (err) {
-          toasty.pop.error({title: 'Error deleting page', msg: 'Your page is not deleted: ' + err, sound: false});
+          CoreService.toastError(gettextCatalog.getString('Error deleting page'), gettextCatalog.getString('Your page is not deleted: ') + err);
         });
       }, function () {
         return false;
@@ -54,7 +54,7 @@ angular.module('com.module.pages')
       var cleanName = $scope.page.name.replace(/[^a-zA-Z0-9\-\s]/g, '');
       $scope.page.slug = $filter('slugify')(cleanName);
       Page.upsert($scope.page, function () {
-        toasty.pop.success({title: 'Page saved', msg: 'Your page is safe with us!', sound: false});
+        CoreService.toastSuccess(gettextCatalog.getString('Page saved'), gettextCatalog.getString('Your page is safe with us!'));
         $state.go('^.list');
       }, function (err) {
         console.log(err);
