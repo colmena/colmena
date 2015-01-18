@@ -35,6 +35,7 @@ Deploy an instance on your Heroku account to play around with it!
 - [t4t5/sweetalert](https://github.com/t4t5/sweetalert) provided by [oitozero/ngSweetAlert](https://github.com/oitozero/ngSweetAlert)
 - Automatically growing textarea's by [monospaced/angular-elastic](https://github.com/monospaced/angular-elastic)
 - Social authentication with [Loopback passport](https://github.com/strongloop/loopback-component-passport/)
+- Multi-language support by [rubenv/angular-gettext](https://github.com/rubenv/angular-gettext)
 - User management
 
 
