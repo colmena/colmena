@@ -88,18 +88,19 @@ module.exports = function (app) {
 
   var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn;
 
-  app.get('/auth/account', ensureLoggedIn('/login.html'), function (req, res, next) {
-    res.render('pages/loginProfiles', {
-      user: req.user,
-      url: req.url
-    });
+  app.get('/auth/account', ensureLoggedIn('/'), function(req, res, next) {
+    console.log('Logged in', req.user)
+    res.redirect('/#/app');
   });
 
-  app.get('/link/account', ensureLoggedIn('/login.html'), function (req, res, next) {
-    res.render('pages/linkedAccounts', {
-      user: req.user,
-      url: req.url
-    });
+  app.get('/auth/current', function(req, res, next) {
+    if (!req.isAuthenticated || !req.isAuthenticated()) {
+      return res.status(200).json({});
+    }
+    //poor man's copy
+    var ret = JSON.parse(JSON.stringify(req.user));
+    delete ret.password;
+    res.status(200).json(ret);
   });
 
   app.get('/auth/logout', function (req, res, next) {

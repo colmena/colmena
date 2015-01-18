@@ -24,6 +24,10 @@ module.exports = function (grunt) {
       development: 'http://0.0.0.0:3000/api/',
       production: '/api/'
     },
+    site: {
+      development: 'http://0.0.0.0:3000',
+      production: ''
+    },
     host: '0.0.0.0'
   };
 
@@ -118,7 +122,8 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name: 'development',
-            apiUrl: '<%= yeoman.api.development %>'
+            apiUrl: '<%= yeoman.api.development %>',
+            siteUrl: '<%= yeoman.site.development %>'
           }
         }
       },
@@ -129,7 +134,8 @@ module.exports = function (grunt) {
         constants: {
           ENV: {
             name: 'production',
-            apiUrl: '<%= yeoman.api.production %>'
+            apiUrl: '<%= yeoman.api.production %>',
+            siteUrl: '<%= yeoman.site.production %>'
           }
         }
       }
