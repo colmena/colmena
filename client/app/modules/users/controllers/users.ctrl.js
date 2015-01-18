@@ -10,7 +10,7 @@ app.controller('UsersCtrl', function ($scope, $stateParams, $state, User, toasty
         where: {
           id: $stateParams.id
         },
-        include: ['roles']
+        include: ['roles', 'identities', 'credentials', 'accessTokens']
       }
     }, function (result) {
       $scope.user = result;

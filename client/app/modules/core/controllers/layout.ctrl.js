@@ -10,10 +10,20 @@ angular.module('com.module.core')
  **/
 .controller('LayoutCtrl', function($scope, $rootScope, gettextCatalog, Setting, ENV) {
 
+  // angular translate
+  $scope.lang = {
+    isopen: false
+  };
   $scope.langs = $rootScope.langs;
+  $scope.selectLang = $scope.langs[$rootScope.lang];
 
-  $scope.setLang = function(lang) {
-    gettextCatalog.setCurrentLanguage(lang);
+  $scope.setLang = function (langKey, $event) {
+    // set the current lang
+    $scope.selectLang = $scope.langs[langKey];
+    // You can change the language during runtime
+    $scope.lang.isopen = !$scope.lang.isopen;
+    gettextCatalog
+      .setCurrentLanguage (langKey);
   };
 
   $scope.appName = 'LB-NG-BS';
