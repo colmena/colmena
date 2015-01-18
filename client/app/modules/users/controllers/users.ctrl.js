@@ -1,7 +1,7 @@
 'use strict';
 var app = angular.module('com.module.users');
 
-app.controller('UsersCtrl', function ($scope, $stateParams, $state, User, toasty, SweetAlert, gettextCatalog) {
+app.controller('UsersCtrl', function ($scope, $stateParams, $state, CoreService, User, gettextCatalog) {
 
 
   if ($stateParams.id) {
@@ -10,7 +10,7 @@ app.controller('UsersCtrl', function ($scope, $stateParams, $state, User, toasty
         where: {
           id: $stateParams.id
         },
-        include: ['roles']
+        include: ['roles', 'identities', 'credentials', 'accessTokens']
       }
     }, function (result) {
       $scope.user = result;
@@ -21,31 +21,17 @@ app.controller('UsersCtrl', function ($scope, $stateParams, $state, User, toasty
     $scope.user = {};
   }
 
-
   $scope.delete = function (id) {
-    SweetAlert.swal({
-      title: 'Are you sure?',
-      type: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#DD6B55'
-    }, function (isConfirm) {
-      if (isConfirm) {
-        User.deleteById(id, function () {
-            toasty.pop.success({
-              title: gettextCatalog.getString('User deleted'),
-              msg: gettextCatalog.getString('Your user is deleted!'), sound: false
-            });
-            $state.go('app.users.list');
-          },
-          function (err) {
-            toasty.pop.error({
-              title: gettextCatalog.getString('Error deleting user'),
-              msg: gettextCatalog.getString('Your user is not deleted:') + err, sound: false
-            });
-          });
-      } else {
-        return false;
-      }
+    CoreService.confirm(gettextCatalog.getString('Are you sure?'), gettextCatalog.getString('Deleting this cannot be undone'), function () {
+      User.deleteById(id, function () {
+          CoreService.toastSuccess(gettextCatalog.getString('User deleted'), gettextCatalog.getString('Your user is deleted!'));
+          $state.go('app.users.list');
+        },
+        function (err) {
+          CoreService.toastError(gettextCatalog.getString('Error deleting user'), gettextCatalog.getString('Your user is not deleted:' + err));
+        });
+    }, function () {
+      return false;
     });
   };
 
@@ -60,18 +46,10 @@ app.controller('UsersCtrl', function ($scope, $stateParams, $state, User, toasty
 
   $scope.onSubmit = function () {
     User.upsert($scope.user, function () {
-      toasty.pop.success({
-        title: gettextCatalog.getString('User saved'),
-        msg: gettextCatalog.getString('This user is save!'),
-        sound: false
-      });
+      CoreService.toastSuccess(gettextCatalog.getString('User saved'), gettextCatalog.getString('This user is save!'));
       $state.go('^.list');
     }, function (err) {
-      toasty.pop.error({
-        title: gettextCatalog.getString('Error saving user'),
-        msg: err,
-        sound: false
-      });
+      CoreService.toastError(gettextCatalog.getString('Error saving user: ', + err));
     });
   };
 

@@ -1,5 +1,5 @@
 'use strict';
-angular.module ('com.module.about')
+angular.module('com.module.about')
 /**
  * @ngdoc function
  * @name com.module.about.controller:AboutCtrl
@@ -7,10 +7,6 @@ angular.module ('com.module.about')
  * # AboutCtrl
  * Controller of the clientApp
  */
-  .controller ('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('AboutCtrl', function ($scope) {
+    $scope.angular = angular;
   });
