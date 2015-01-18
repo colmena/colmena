@@ -27,7 +27,7 @@ msgid "Add a new setting"
 msgstr ""
 
 #: client/app/modules/events/controllers/events.ctrl.js:49
-#: client/app/modules/files/controllers/files.ctrl.js:13
+#: client/app/modules/files/controllers/files.ctrl.js:15
 #: client/app/modules/pages/controllers/pages.ctrl.js:33
 #: client/app/modules/posts/controllers/posts.ctrl.js:25
 #: client/app/modules/products/controllers/products.ctrl.js:37
@@ -76,17 +76,17 @@ msgstr ""
 msgid "Could not add setting!"
 msgstr ""
 
-#: client/app/modules/core/views/home.html:24
+#: client/app/modules/core/views/home.html:27
 msgid "Current user"
 msgstr ""
 
 #: client/app/modules/core/config/core.config.js:18
-#: client/app/modules/core/views/home.html:13
+#: client/app/modules/core/views/home.html:16
 msgid "Dashboard"
 msgstr ""
 
 #: client/app/modules/events/controllers/events.ctrl.js:49
-#: client/app/modules/files/controllers/files.ctrl.js:13
+#: client/app/modules/files/controllers/files.ctrl.js:15
 #: client/app/modules/pages/controllers/pages.ctrl.js:33
 #: client/app/modules/posts/controllers/posts.ctrl.js:25
 #: client/app/modules/products/controllers/products.ctrl.js:37
@@ -176,7 +176,7 @@ msgstr ""
 msgid "Events"
 msgstr ""
 
-#: client/app/modules/files/controllers/files.ctrl.js:19
+#: client/app/modules/files/controllers/files.ctrl.js:21
 msgid "File deleted"
 msgstr ""
 
@@ -329,7 +329,7 @@ msgstr ""
 msgid "Setting saved"
 msgstr ""
 
-#: client/app/modules/core/views/home.html:28
+#: client/app/modules/core/views/home.html:31
 #: client/app/modules/settings/views/main.html:1
 msgid "Settings"
 msgstr ""
@@ -364,8 +364,8 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: client/app/modules/core/views/home.html:33
 #: client/app/modules/core/views/home.html:36
+#: client/app/modules/core/views/home.html:39
 msgid "Theme"
 msgstr ""
 
@@ -426,7 +426,7 @@ msgstr ""
 msgid "Value"
 msgstr ""
 
-#: client/app/modules/core/views/home.html:21
+#: client/app/modules/core/views/home.html:24
 msgid "Variables"
 msgstr ""
 
@@ -482,7 +482,7 @@ msgstr ""
 msgid "Your event is safe with us!"
 msgstr ""
 
-#: client/app/modules/files/controllers/files.ctrl.js:19
+#: client/app/modules/files/controllers/files.ctrl.js:21
 msgid "Your file is deleted!"
 msgstr ""
 
