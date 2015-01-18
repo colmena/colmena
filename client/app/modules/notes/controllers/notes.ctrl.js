@@ -1,68 +1,48 @@
 'use strict';
-angular.module('com.module.notes')
-  .controller('NotesCtrl', function ($scope, $state, $stateParams, CoreService, Note) {
+var app = angular.module('com.module.notes');
 
-    var noteId = $stateParams.id;
+app.controller('NotesCtrl', function ($scope, $state, $stateParams, NotesService) {
 
-    if (noteId) {
-      $scope.note = Note.findById({
-        id: noteId
-      }, function () {
-      }, function (err) {
-        console.log(err);
-      });
-    } else {
-      $scope.note = {};
+  $scope.formFields = [
+    {
+      key: 'title',
+      type: 'text',
+      label: 'Title',
+      required: true
+    },
+    {
+      key: 'body',
+      type: 'textarea',
+      label: 'Body',
+      required: true
     }
+  ];
 
-    function loadItems() {
-      $scope.notes = Note.find();
-    }
+  $scope.formOptions = {
+    uniqueFormId: true,
+    hideSubmit: false,
+    submitCopy: 'Save'
+  };
 
-    loadItems();
+  $scope.delete = function (id) {
+    NotesService.deleteNote(id, function () {
+      $scope.notes = NotesService.getNotes();
+    });
+  };
 
-    $scope.delete = function (id) {
-      CoreService.confirm('Are you sure?', 'Deleting this cannot be undone', function () {
-        Note.deleteById(id, function () {
-          CoreService.toastSuccess('Note deleted', 'Your note is deleted!');
-          loadItems();
-          $state.go('app.notes.list');
-        }, function (err) {
-          CoreService.toastError('Error deleting note', 'Your note is not deleted! ' + err);
-        });
-      }, function () {
-        return false;
-      });
-    };
+  $scope.onSubmit = function () {
+    NotesService.upsertNote($scope.note, function () {
+      $scope.notes = NotesService.getNotes();
+      $state.go('^.list');
+    });
+  };
 
-    $scope.formFields = [
-      {
-        key: 'title',
-        type: 'text',
-        label: 'Title',
-        required: true
-      },
-      {
-        key: 'body',
-        type: 'textarea',
-        label: 'Body',
-        required: true
-      }
-    ];
+  $scope.notes = NotesService.getNotes();
 
-    $scope.formOptions = {
-      uniqueFormId: true,
-      hideSubmit: false,
-      submitCopy: 'Save'
-    };
+  if ($stateParams.id) {
+    $scope.note = NotesService.getNote($stateParams.id);
+  } else {
+    $scope.note = {};
+  }
 
-    $scope.onSubmit = function () {
-      Note.upsert($scope.note, function () {
-        CoreService.toastSuccess('Note saved', 'Your note is safe with us!');
-        $state.go('^.list');
-      }, function (err) {
-        console.log(err);
-      });
-    };
-
-  });
+});
