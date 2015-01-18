@@ -49,7 +49,7 @@ app.controller('UsersCtrl', function ($scope, $stateParams, $state, CoreService,
       CoreService.toastSuccess(gettextCatalog.getString('User saved'), gettextCatalog.getString('This user is save!'));
       $state.go('^.list');
     }, function (err) {
-      CoreService.toastError(gettextCatalog.getString('Error saving user'));
+      CoreService.toastError(gettextCatalog.getString('Error saving user: ', + err));
     });
   };
 
