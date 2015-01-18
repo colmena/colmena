@@ -1,7 +1,9 @@
 'use strict';
 var app = angular.module('com.module.core');
 
-app.service('CoreService', ['SweetAlert', 'toasty', function (SweetAlert, toasty) {
+app.service('CoreService', ['ENV', 'SweetAlert', 'toasty', function (ENV, SweetAlert, toasty) {
+
+  this.env = ENV;
 
   this.alert = function (title, text) {
     SweetAlert.swal(title, text);
