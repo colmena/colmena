@@ -1,5 +1,5 @@
 'use strict';
-angular.module('com.module.pages')
+angular.module('com.module.products')
   .run(function ($rootScope, Product, Category, gettextCatalog) {
     $rootScope.addMenu('Products', 'app.products.list', 'fa-file');
 
