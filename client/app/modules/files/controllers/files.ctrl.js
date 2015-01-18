@@ -1,9 +1,9 @@
 'use strict';
 angular.module('com.module.files')
-  .controller('FilesCtrl', function ($scope, $http, CoreService, ENV, gettextCatalog) {
+  .controller('FilesCtrl', function ($scope, $http, CoreService, gettextCatalog) {
 
     $scope.load = function () {
-      $http.get(ENV.apiUrl + '/containers/files/files').success(function (data) {
+      $http.get(CoreService.env.apiUrl + '/containers/files/files').success(function (data) {
         console.log(data);
         $scope.files = data;
       });
@@ -11,7 +11,7 @@ angular.module('com.module.files')
 
     $scope.delete = function (index, id) {
       CoreService.confirm(gettextCatalog.getString('Are you sure?'), gettextCatalog.getString('Deleting this cannot be undone'), function () {
-        $http.delete(ENV.apiUrl + '/containers/files/files/' + encodeURIComponent(id)).success(function (data, status, headers) {
+        $http.delete(CoreService.env.apiUrl + '/containers/files/files/' + encodeURIComponent(id)).success(function (data, status, headers) {
           console.log(data);
           console.log(status);
           console.log(headers);
