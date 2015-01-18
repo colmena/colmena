@@ -1,7 +1,7 @@
 /*jshint sub:true*/
 'use strict';
-angular.module ('com.module.events')
-  .controller('EventsCtrl', function ($scope, $state, $stateParams, toasty, Event, SweetAlert, gettextCatalog) {
+angular.module('com.module.events')
+  .controller('EventsCtrl', function ($scope, $state, $stateParams, CoreService, Event, gettextCatalog) {
 
     var eventId = $stateParams.id;
 
@@ -46,24 +46,17 @@ angular.module ('com.module.events')
     loadItems();
 
     $scope.delete = function (id) {
-      SweetAlert.swal({
-        title: gettextCatalog.getString ('Are you sure?'),
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#DD6B55'
-      }, function (isConfirm) {
-        if (isConfirm) {
-          Event.deleteById(id, function () {
-            toasty.pop.success({title: gettextCatalog.getString ('Event deleted'), msg: gettextCatalog.getString ('Your event is deleted!'), sound: false});
-            loadItems();
-            $state.go('app.events.list');
-            console.log();
-          }, function (err) {
-            toasty.pop.error({title: gettextCatalog.getString ('Error deleting event'), msg: gettextCatalog.getString ('Your event is not deleted: ') + err, sound: false});
-          });
-        } else {
-          return false;
-        }
+      CoreService.confirm(gettextCatalog.getString('Are you sure?'), gettextCatalog.getString('Deleting this cannot be undone'), function () {
+        Event.deleteById(id, function () {
+          CoreService.toastSuccess(gettextCatalog.getString('Event deleted'), gettextCatalog.getString('Your event is deleted!'));
+          loadItems();
+          $state.go('app.events.list');
+          console.log();
+        }, function (err) {
+          CoreService.toastError(gettextCatalog.getString('Error deleting event'), gettextCatalog.getString('Your event is not deleted: ') + err);
+        });
+      }, function () {
+        return false;
       });
     };
 
@@ -75,47 +68,47 @@ angular.module ('com.module.events')
     };
 
     $scope.formFields = [{
-                           key: 'name',
-                           label: 'Name',
-                           type: 'text',
-                           required: true
-                         },{
-                           key: 'description',
-                           type: 'text',
-                           label: 'Description',
-                           required: true
-                         }, {
-                           key: 'sDate',
-                           required: true,
-                           label: 'Start Date',
-                           type: 'date',
-                           format: 'dd/MM/yyyy',
-                           opened: false,
-                           switchOpen: dateOpen
-                         }, {
-                           key: 'sTime',
-                           required: true,
-                           label: 'Start Time',
-                           type: 'time',
-                           hstep: 1,
-                           mstep: 5,
-                           ismeridian: true
-                         }, {
-                           key: 'eDate',
-                           label: 'End',
-                           type: 'date',
-                           format: 'dd/MM/yyyy',
-                           opened: false,
-                           switchOpen: dateOpen
-                         }, {
-                           key: 'eTime',
-                           required: true,
-                           label: 'End Time',
-                           type: 'time',
-                           hstep: 1,
-                           mstep: 5,
-                           ismeridian: true
-                         }
+      key: 'name',
+      label: 'Name',
+      type: 'text',
+      required: true
+    }, {
+      key: 'description',
+      type: 'text',
+      label: 'Description',
+      required: true
+    }, {
+      key: 'sDate',
+      required: true,
+      label: 'Start Date',
+      type: 'date',
+      format: 'dd/MM/yyyy',
+      opened: false,
+      switchOpen: dateOpen
+    }, {
+      key: 'sTime',
+      required: true,
+      label: 'Start Time',
+      type: 'time',
+      hstep: 1,
+      mstep: 5,
+      ismeridian: true
+    }, {
+      key: 'eDate',
+      label: 'End',
+      type: 'date',
+      format: 'dd/MM/yyyy',
+      opened: false,
+      switchOpen: dateOpen
+    }, {
+      key: 'eTime',
+      required: true,
+      label: 'End Time',
+      type: 'time',
+      hstep: 1,
+      mstep: 5,
+      ismeridian: true
+    }
 
     ];
 
@@ -138,17 +131,11 @@ angular.module ('com.module.events')
       event.eTime = null;
 
       Event.upsert($scope.event, function () {
-        toasty.pop.success(
-          {title: 'Event saved',
-            msg: 'Your event is safe with us!',
-            sound: false});
+        CoreService.toastSuccess(gettextCatalog.getString('Event saved'), gettextCatalog.getString('Your event is safe with us!'));
         $state.go('^.list');
       }, function (err) {
         $scope.alerts.push({type: 'danger', msg: err.data.error.message});
-        toasty.pop.error(
-          {title: 'Event not added',
-            msg: err.data.error.message,
-            sound: false});
+        CoreService.toastError(gettextCatalog.getString('Event not added'), err.data.error.message);
         console.log(err);
       });
     };
