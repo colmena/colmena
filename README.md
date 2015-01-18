@@ -35,15 +35,16 @@ Deploy an instance on your Heroku account to play around with it!
 - [t4t5/sweetalert](https://github.com/t4t5/sweetalert) provided by [oitozero/ngSweetAlert](https://github.com/oitozero/ngSweetAlert)
 - Automatically growing textarea's by [monospaced/angular-elastic](https://github.com/monospaced/angular-elastic)
 - Social authentication with [Loopback passport](https://github.com/strongloop/loopback-component-passport/)
+- User management
 
 
 ## TODO:
 
-- User management
 - Permissions on user actions (non-admins cannot access advanced functions)
 - permissions on content items (non-admins can only edit own content, etc)
 - Detect if API is online [HubSpot/offline](https://github.com/HubSpot/offline)?
 - Loading indicators [Urigo/angular-spinkit](https://github.com/Urigo/angular-spinkit)?
+- Map API roles to [Narzerus/angular-permission](https://github.com/Narzerus/angular-permission)
 - Add tests
 - Add Dockerfile
 - Add Vagrantfile

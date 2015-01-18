@@ -22,6 +22,8 @@ module.exports = function (app) {
         name: 'admin',
         users: [
           {
+            firstName: 'Administrator',
+            lastName: 'User',
             email: 'admin@admin.com',
             username: 'admin',
             password: 'admin'
@@ -31,6 +33,8 @@ module.exports = function (app) {
         name: 'users',
         users: [
           {
+            firstName: 'Guest',
+            lastName: 'User',
             email: 'user@user.com',
             username: 'user',
             password: 'user'
