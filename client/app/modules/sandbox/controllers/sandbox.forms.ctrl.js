@@ -1,6 +1,6 @@
 'use strict';
-angular.module ('com.module.sandbox')
-  .controller ('SandboxFormsCtrl', function ($scope, $http, toasty, SweetAlert) {
+angular.module('com.module.sandbox')
+  .controller('SandboxFormsCtrl', function ($scope, CoreService) {
 
     $scope.formData = {};
 
@@ -56,6 +56,6 @@ angular.module ('com.module.sandbox')
     };
 
     $scope.onSubmit = function () {
-      SweetAlert.swal ('Good job!', 'Well done, ' + $scope.formData.name, 'success');
+      CoreService.alertSuccess('Good job!', 'Well done, ' + $scope.formData.name);
     };
   });
