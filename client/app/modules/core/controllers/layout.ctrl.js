@@ -18,13 +18,12 @@ angular.module('com.module.core')
     $scope.langs = $rootScope.langs;
     $scope.selectLang = $scope.langs[$rootScope.lang];
 
-    $scope.setLang = function (langKey, $event) {
+    $scope.setLang = function (langKey) {
       // set the current lang
       $scope.selectLang = $scope.langs[langKey];
       // You can change the language during runtime
       $scope.lang.isopen = !$scope.lang.isopen;
-      gettextCatalog
-        .setCurrentLanguage(langKey);
+      gettextCatalog.setCurrentLanguage(langKey);
     };
 
     $scope.appName = 'LB-NG-BS';
