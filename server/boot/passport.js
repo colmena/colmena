@@ -3,6 +3,7 @@
 module.exports = function (app) {
 
   var bodyParser = require('body-parser');
+  var loopback = require('loopback');
 
   // to support JSON-encoded bodies
   app.use(bodyParser.json());
@@ -11,14 +12,14 @@ module.exports = function (app) {
     extended: true
   }));
 
-  // The access token is only available after boot
+  //// The access token is only available after boot
   app.use(app.loopback.token({
     model: app.models.accessToken
   }));
 
-  // Enable http session
-  app.use(app.loopback.session({
-    secret: 'kitty',
+  app.use(loopback.cookieParser(app.get('cookieSecret')));
+  app.use(loopback.session({
+    secret: app.get('cookieSecret'),
     saveUninitialized: true,
     resave: true
   }));
@@ -36,9 +37,7 @@ module.exports = function (app) {
     console.log('Configuring passport');
 
     var AuthProvider = app.models.AuthProvider;
-
     var loopbackPassport = require('loopback-component-passport');
-
     var PassportConfigurator = loopbackPassport.PassportConfigurator;
     var passportConfigurator = new PassportConfigurator(app);
 

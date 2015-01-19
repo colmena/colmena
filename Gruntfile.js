@@ -43,6 +43,7 @@ module.exports = function (grunt) {
         files: {
           'po/template.pot': [
             '<%= yeoman.app %>/modules/**/*.js',
+            '<%= yeoman.app %>/modules/**/**/*.js',
             '<%= yeoman.app %>/modules/*/views/*.html',
             '<%= yeoman.app %>/modules/*/views/**/*.html'
           ]
@@ -649,6 +650,11 @@ module.exports = function (grunt) {
     'ngconstant:development',
     'loopback_sdk_angular:development',
     'docular'
+  ]);
+
+  grunt.registerTask('gettext', [
+    'nggettext_extract',
+    'nggettext_compile',
   ]);
 
 };

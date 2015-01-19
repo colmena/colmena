@@ -3,17 +3,11 @@
  * @ngdoc function
  * @name com.module.core.controller:HomeCtrl
  * @description Dashboard
- * @requires $scopoe
- * @requires $http
- * @requires Post
- * @requires Page
- * @requires Event
- * @requires Category
- * @requires Product
- * @requires ENV
+ * @requires $scope
+ * @requires $rootScope
  **/
-angular.module ('com.module.core')
-  .controller ('HomeCtrl', function ($scope, $rootScope) {
+angular.module('com.module.core')
+  .controller('HomeCtrl', function ($scope, $rootScope) {
 
   $scope.count = {};
 
