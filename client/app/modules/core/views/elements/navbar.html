@@ -16,7 +16,7 @@
         <ul class="dropdown-menu">
           <li ng-repeat="(index, lang) in langs" ng-show="lang != selectLang">
             <a ng-click="setLang(index)">
-              <span class="flag-icon flag-icon-{{index}}"></span> {{lang | translate }}
+              <span class="flag-icon flag-icon-{{index.slice(-2).toLowerCase() }}"></span> {{lang | translate }}
             </a>
           </li>
         </ul>
