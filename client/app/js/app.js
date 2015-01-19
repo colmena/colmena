@@ -46,15 +46,15 @@ angular.module('loopbackApp', [
   .run(function($rootScope, gettextCatalog) {
 
     $rootScope.langs = {
-      pt: gettextCatalog.getString('Portuguese'),
-      us: gettextCatalog.getString('English'),
-      nl: gettextCatalog.getString('Dutch'),
-      de: gettextCatalog.getString('German')
+      'pt-BR': gettextCatalog.getString('Portuguese Brazil'),
+      'us': gettextCatalog.getString('English'),
+      'nl': gettextCatalog.getString('Dutch'),
+      'de': gettextCatalog.getString('German')
     };
 
     var LangVar = navigator.language || navigator.userLanguage;
-    var userLangVar = LangVar.substring(0, 2);
-    $rootScope.lang = LangVar.substring (0, 2);
+    var userLangVar = LangVar.substring(0, 2) + '-' + LangVar.substring(3, 5).toUpperCase();
+    $rootScope.lang = userLangVar;
     gettextCatalog.setCurrentLanguage(userLangVar);
 
   });
