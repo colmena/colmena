@@ -1,13 +1,13 @@
 'use strict';
-angular.module ('com.module.core')
-  .run (function ($rootScope, Setting, gettextCatalog) {
+var app = angular.module('com.module.core');
+app.run(function ($rootScope, Setting, gettextCatalog) {
 
   // Left Sidemenu
   $rootScope.menu = [];
 
   // Add Sidebar Menu
   $rootScope.addMenu = function (name, uisref, icon) {
-    $rootScope.menu.push ({
+    $rootScope.menu.push({
       name: name,
       sref: uisref,
       icon: icon
@@ -15,14 +15,14 @@ angular.module ('com.module.core')
   };
 
   // Add Menu Dashboard
-  $rootScope.addMenu (gettextCatalog.getString ('Dashboard'), 'app.home', 'fa-dashboard');
+  $rootScope.addMenu(gettextCatalog.getString('Dashboard'), 'app.home', 'fa-dashboard');
 
   // Dashboard
   $rootScope.dashboardBox = [];
 
   // Add Dashboard Box
   $rootScope.addDashboardBox = function (name, color, icon, quantity, href) {
-    $rootScope.dashboardBox.push ({
+    $rootScope.dashboardBox.push({
       name: name,
       color: color,
       icon: icon,
@@ -34,7 +34,7 @@ angular.module ('com.module.core')
   // Get Settings for Database
   $rootScope.setSetting = function (key, value) {
 
-    Setting.find ({
+    Setting.find({
       filter: {
         where: {
           key: key
@@ -44,16 +44,16 @@ angular.module ('com.module.core')
 
       if (data.length) {
         data[0].value = value;
-        data[0].$save ();
+        data[0].$save();
       } else {
-        Setting.create ({
+        Setting.create({
           key: key,
           value: value
         }, function (data) {
-          console.log (data);
+          console.log(data);
         });
       }
-      $rootScope.loadSettings ();
+      $rootScope.loadSettings();
     });
   };
 
@@ -62,13 +62,14 @@ angular.module ('com.module.core')
 
   // Get Settings for Loopback Service
   $rootScope.loadSettings = function () {
-    Setting.find (function (settings) {
+    Setting.find(function (settings) {
       $rootScope.settings.data = settings;
     });
   };
 
-})
-  .config (function (formlyConfigProvider) {
+});
+
+app.config(function (formlyConfigProvider) {
   var templates = 'modules/core/views/elements/fields/';
   var formly = templates + 'formly-field-';
   var fields = [
@@ -83,11 +84,15 @@ angular.module ('com.module.core')
     'textarea'
   ];
 
-  angular.forEach (fields, function (val) {
-    formlyConfigProvider.setTemplateUrl (val, formly + val + '.html');
+  angular.forEach(fields, function (val) {
+    formlyConfigProvider.setTemplateUrl(val, formly + val + '.html');
   });
 
-  formlyConfigProvider.setTemplateUrl ('date', templates + 'date.html');
-  formlyConfigProvider.setTemplateUrl ('time', templates + 'time.html');
+  formlyConfigProvider.setTemplateUrl('date', templates + 'date.html');
+  formlyConfigProvider.setTemplateUrl('time', templates + 'time.html');
 
 });
+
+app.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
+  cfpLoadingBarProvider.includeSpinner = false;
+}]);

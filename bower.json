@@ -30,7 +30,8 @@
     "angular-translate": "~2.5.2",
     "angular-translate-loader-url": "~2.5.2",
     "angular-ui-grid": "~3.0.0-rc.16",
-    "flag-icon-css": "~0.6.4"
+    "flag-icon-css": "~0.6.4",
+    "angular-loading-bar": "~0.6.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.3",
