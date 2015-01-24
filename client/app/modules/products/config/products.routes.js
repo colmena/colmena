@@ -5,8 +5,7 @@ angular.module ('com.module.products')
     .state ('app.products', {
     abstract: true,
     url: '/products',
-    templateUrl: 'modules/products/views/main.html',
-    controller: 'ProductsCtrl'
+    templateUrl: 'modules/products/views/main.html'
   })
     .state ('app.products.list', {
     url: '',

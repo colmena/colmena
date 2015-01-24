@@ -5,8 +5,7 @@ app.config(function ($stateProvider) {
   $stateProvider.state('app.notes', {
       abstract: true,
       url: '/notes',
-      templateUrl: 'modules/notes/views/main.html',
-      controller: 'NotesCtrl'
+      templateUrl: 'modules/notes/views/main.html'
     }
   ).state('app.notes.list', {
       url: '',

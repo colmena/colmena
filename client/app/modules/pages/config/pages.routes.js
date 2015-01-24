@@ -4,8 +4,7 @@ angular.module ('com.module.pages')
     $stateProvider.state('app.pages', {
       abstract: true,
       url: '/pages',
-      templateUrl: 'modules/pages/views/main.html',
-      controller: 'PagesCtrl'
+      templateUrl: 'modules/pages/views/main.html'
     })
       .state('app.pages.list', {
         url: '',
