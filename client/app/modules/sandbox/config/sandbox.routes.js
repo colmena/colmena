@@ -5,8 +5,7 @@ angular.module('com.module.sandbox')
       .state('app.sandbox', {
         abstract: true,
         url: '/sandbox',
-        templateUrl: 'modules/sandbox/views/main.html',
-        controller: 'SandboxCtrl'
+        templateUrl: 'modules/sandbox/views/main.html'
       })
       .state('app.sandbox.index', {
         url: '',
