@@ -8,6 +8,7 @@
  * Main module of the application.
  */
 angular.module('loopbackApp', [
+  'angular-loading-bar',
   'angular.filter',
   'angularBootstrapNavTree',
   'angularFileUpload',
@@ -43,7 +44,7 @@ angular.module('loopbackApp', [
   'com.module.settings',
   'com.module.users'
 ])
-  .run(function($rootScope, gettextCatalog) {
+  .run(function ($rootScope, gettextCatalog) {
 
     $rootScope.langs = {
       'pt-BR': gettextCatalog.getString('Portuguese Brazil'),

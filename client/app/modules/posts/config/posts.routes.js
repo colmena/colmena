@@ -4,8 +4,7 @@ angular.module('com.module.posts')
     $stateProvider.state('app.posts', {
       abstract: true,
       url: '/posts',
-      templateUrl: 'modules/posts/views/main.html',
-      controller: 'PostsCtrl'
+      templateUrl: 'modules/posts/views/main.html'
     })
     .state('app.posts.list', {
       url: '',

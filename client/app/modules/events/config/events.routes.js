@@ -4,8 +4,7 @@ angular.module ('com.module.events')
     $stateProvider.state('app.events', {
       abstract: true,
       url: '/events',
-      templateUrl: 'modules/events/views/main.html',
-      controller: 'EventsCtrl'
+      templateUrl: 'modules/events/views/main.html'
     }).state('app.events.list', {
       url: '',
       templateUrl: 'modules/events/views/list.html',
