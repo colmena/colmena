@@ -1,7 +1,7 @@
 'use strict';
 var app = angular.module('com.module.notes');
 
-app.service('NotesService', ['$state', 'CoreService', 'Note', function ($state, CoreService, Note) {
+app.service('NotesService', ['$state', 'CoreService', 'Note', function ($state, CoreService, Note, gettextCatalog) {
 
   this.getNotes = function () {
     return Note.find();
@@ -15,20 +15,20 @@ app.service('NotesService', ['$state', 'CoreService', 'Note', function ($state, 
 
   this.upsertNote = function (note, cb) {
     Note.upsert(note, function () {
-      CoreService.toastSuccess('Note saved', 'Your note is safe with us!');
+      CoreService.toastSuccess(gettextCatalog.getString('Note saved'), gettextCatalog.getString('Your note is safe with us!'));
       cb();
     }, function (err) {
-      CoreService.toastSuccess('Error saving note ', 'This note could no be saved: ' + err);
+      CoreService.toastSuccess(gettextCatalog.getString('Error saving note '), gettextCatalog.getString('This note could no be saved: ') + err);
     });
   };
 
   this.deleteNote = function (id, cb) {
-    CoreService.confirm('Are you sure?', 'Deleting this cannot be undone', function () {
+    CoreService.confirm(gettextCatalog.getString('Are you sure?'), gettextCatalog.getString('Deleting this cannot be undone'), function () {
       Note.deleteById(id, function () {
-        CoreService.toastSuccess('Note deleted', 'Your note is deleted!');
+        CoreService.toastSuccess(gettextCatalog.getString('Note deleted'), gettextCatalog.getString('Your note is deleted!'));
         cb();
       }, function (err) {
-        CoreService.toastError('Error deleting note', 'Your note is not deleted! ' + err);
+        CoreService.toastError(gettextCatalog.getString('Error deleting note'), gettextCatalog.getString('Your note is not deleted! ') + err);
       });
     }, function () {
       return false;

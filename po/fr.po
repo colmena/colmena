@@ -1,35 +1,44 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Brian McIntyre <bmcintyre@videotron.ca>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: \n"
+"X-Generator: Poedit 1.7.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-Basepath: template.pot\n"
 
 #: client/app/modules/pages/views/form.html:5
 #: client/app/modules/pages/views/view.html:4
 msgid "<i class=\"fa fa-arrow-left\"></i> Pages"
-msgstr ""
+msgstr "<i class=\"fa fa-arrow-left\"></i> Pages"
 
 #: client/app/modules/users/views/form.html:5
 #: client/app/modules/users/views/view.html:4
 msgid "<i class=\"fa fa-arrow-left\"></i> Users"
-msgstr ""
+msgstr "<i class=\"fa fa-arrow-left\"></i> Utilisateurs"
 
 #: client/app/modules/pages/views/form.html:14
 msgid "<i class=\"fa fa-save\"></i>  Save"
-msgstr ""
+msgstr "<i class=\"fa fa-save\"></i>  Enregistrer"
 
 #: client/app/modules/users/views/form.html:12
 msgid "<i class=\"fa fa-save\"></i> Save"
-msgstr ""
+msgstr "<i class=\"fa fa-save\"></i>  Enregistrer"
 
 #: client/app/modules/about/controllers/about.config.js:5
 #: client/app/modules/about/views/main.html:1
 msgid "About"
-msgstr ""
+msgstr "A propos"
 
 #: client/app/modules/files/views/upload.html:60
 msgid "Actions"
-msgstr ""
+msgstr "Actions"
 
 #: client/app/modules/events/views/main.html:2
 #: client/app/modules/notes/views/main.html:2
@@ -38,39 +47,39 @@ msgstr ""
 #: client/app/modules/settings/views/main.html:2
 #: client/app/modules/users/views/main.html:3
 msgid "Add"
-msgstr ""
+msgstr "Ajouter"
 
 #: client/app/modules/products/views/main.html:2
 msgid "Add Category"
-msgstr ""
+msgstr "Ajoutez une catégorie"
 
 #: client/app/modules/products/views/categoryform.html:3
 msgid "Add a new category"
-msgstr ""
+msgstr "Ajoutez une catégorie"
 
 #: client/app/modules/events/views/form.html:5
 msgid "Add a new event"
-msgstr ""
+msgstr "Ajoutez un évènement"
 
 #: client/app/modules/notes/views/form.html:4
 msgid "Add a new note"
-msgstr ""
+msgstr "Ajoutez une note"
 
 #: client/app/modules/posts/views/form.html:4
 msgid "Add a new post"
-msgstr ""
+msgstr "Ajoutez un post"
 
 #: client/app/modules/products/views/form.html:4
 msgid "Add a new product"
-msgstr ""
+msgstr "Ajoutez un produit"
 
 #: client/app/modules/settings/views/form.html:4
 msgid "Add a new setting"
-msgstr ""
+msgstr "Ajoutez un paramètre"
 
 #: client/app/modules/products/views/list.html:5
 msgid "Add product to category"
-msgstr ""
+msgstr "Ajoutez une produit à la catégorie"
 
 #: client/app/modules/events/controllers/events.ctrl.js:49
 #: client/app/modules/files/controllers/files.ctrl.js:13
@@ -81,128 +90,138 @@ msgstr ""
 #: client/app/modules/settings/controllers/settings.ctrl.js:28
 #: client/app/modules/users/controllers/users.ctrl.js:25
 msgid "Are you sure?"
-msgstr ""
+msgstr "Êtes vous sûr ?"
 
 #: client/app/modules/notes/controllers/notes.ctrl.js:16
 msgid "Body"
-msgstr ""
+msgstr "Corp"
 
 #: client/app/modules/files/views/upload.html:14
 msgid "Browse"
-msgstr ""
+msgstr "Ouvrir"
 
 #: client/app/modules/events/views/form.html:21
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: client/app/modules/files/views/upload.html:42
 msgid "Cancel all"
-msgstr ""
+msgstr "Tout annuler"
 
 #: client/app/modules/products/config/products.config.js:11
 msgid "Categories"
-msgstr ""
+msgstr "Catégories"
 
 #: client/app/modules/products/controllers/products.ctrl.js:73
 msgid "Category"
-msgstr ""
+msgstr "Catégorie"
 
 #: client/app/modules/products/controllers/products.ctrl.js:54
 msgid "Category deleted"
-msgstr ""
+msgstr "Catégorie effacée"
 
 #: client/app/modules/products/controllers/categories.ctrl.js:34
 msgid "Category saved"
-msgstr ""
+msgstr "Catégorie enregistrée"
 
 #: client/app/modules/users/views/profile.html:21
 msgid "Change it here!"
-msgstr ""
+msgstr "Modifiez ici!"
 
 #: client/app/modules/events/views/list.html:27
 msgid "Click <a href=\"\" ui-sref=\"^.add\">here</a> to add a event!"
 msgstr ""
+"Cliquer <a href=\"\" ui-sref=\"^.add\">ici</a> pour ajouter un évènement!"
 
 #: client/app/modules/notes/views/list.html:20
 msgid "Click <a href=\"\" ui-sref=\"^.add\">here</a> to add a note!"
-msgstr ""
+msgstr "Cliquer <a href=\"\" ui-sref=\"^.add\">ici</a> pour ajouter une note!"
 
 #: client/app/modules/pages/views/list.html:29
 msgid "Click <a href=\"\" ui-sref=\"^.add\">here</a> to add a page!"
-msgstr ""
+msgstr "Cliquer <a href=\"\" ui-sref=\"^.add\">ici</a> pour ajouter une page!"
 
 #: client/app/modules/posts/views/list.html:26
 msgid "Click <a href=\"\" ui-sref=\"^.add\">here</a> to add a post!"
-msgstr ""
+msgstr "Cliquer <a href=\"\" ui-sref=\"^.add\">ici</a> pour ajouter un post!"
 
 #: client/app/modules/settings/views/list.html:20
 msgid "Click <a href=\"\" ui-sref=\"^.add\">here</a> to add a setting!"
 msgstr ""
+"Cliquer <a href=\"\" ui-sref=\"^.add\">ici</a> pour ajouter un paramètre!"
 
 #: client/app/modules/products/views/list.html:36
-msgid "Click <a href=\"\" ui-sref=\"^.add({ categoryId: category.id })\">here</a> to add a product!"
+msgid ""
+"Click <a href=\"\" ui-sref=\"^.add({ categoryId: category.id })\">here</a> "
+"to add a product!"
 msgstr ""
+"Cliquer <a href=\"\" ui-sref=\"^.add({ categoryId: category.id })\">ici</a> "
+"pour ajouter un produit!"
 
 #: client/app/modules/files/views/list.html:23
-msgid "Click <a href=\"\" ui-sref=\"^.upload\" translate=\"\">here</a> to upload some!"
+msgid ""
+"Click <a href=\"\" ui-sref=\"^.upload\" translate=\"\">here</a> to upload "
+"some!"
 msgstr ""
+"Cliquer <a href=\"\" ui-sref=\"^.upload\" translate=\"\">ici</a> pour en "
+"télécharger!"
 
 #: client/app/modules/users/controllers/register.ctrl.js:64
 msgid "Confirm Password"
-msgstr ""
+msgstr "Confirmez le mot de passe"
 
 #: client/app/modules/posts/controllers/posts.ctrl.js:48
 msgid "Content"
-msgstr ""
+msgstr "Contenu"
 
 #: client/app/modules/products/views/categoryform.html:8
 msgid "Could not add category!"
-msgstr ""
+msgstr "La catégorie n'a pu être ajoutée"
 
 #: client/app/modules/events/views/form.html:13
 msgid "Could not add event!"
-msgstr ""
+msgstr "L'évènement n'a pu être ajouté"
 
 #: client/app/modules/notes/views/form.html:12
 msgid "Could not add note!"
-msgstr ""
+msgstr "La note n'a pu être ajoutée"
 
 #: client/app/modules/pages/views/form.html:26
 msgid "Could not add page!"
-msgstr ""
+msgstr "La page n'a pu être ajoutée"
 
 #: client/app/modules/posts/views/form.html:12
 msgid "Could not add post!"
-msgstr ""
+msgstr "Le post n'a pu être ajouté"
 
 #: client/app/modules/products/views/form.html:12
 msgid "Could not add product!"
-msgstr ""
+msgstr "Le produit n'a pu être ajouté"
 
 #: client/app/modules/settings/views/form.html:12
 msgid "Could not add setting!"
-msgstr ""
+msgstr "Le paramètre n'a pu être ajouté"
 
 #: client/app/modules/users/views/form.html:21
 msgid "Could not add user!"
-msgstr ""
+msgstr "L'utilisateur n'a pu être ajouté"
 
 #: client/app/modules/pages/views/main.html:1
 msgid "Create pages with rich content!"
-msgstr ""
+msgstr "Créez une page avec du contenu riche!"
 
 #: client/app/modules/core/views/home.html:24
 msgid "Current user"
-msgstr ""
+msgstr "Utilisateur courant"
 
 #: client/app/modules/core/config/core.config.js:18
 #: client/app/modules/core/views/home.html:13
 msgid "Dashboard"
-msgstr ""
+msgstr "Tableau de bord"
 
 #: client/app/modules/products/views/list.html:9
 msgid "Delete category"
-msgstr ""
+msgstr "Détruire la catégorie"
 
 #: client/app/modules/events/controllers/events.ctrl.js:49
 #: client/app/modules/files/controllers/files.ctrl.js:13
@@ -213,353 +232,353 @@ msgstr ""
 #: client/app/modules/settings/controllers/settings.ctrl.js:28
 #: client/app/modules/users/controllers/users.ctrl.js:25
 msgid "Deleting this cannot be undone"
-msgstr ""
+msgstr "Cette opération ne peux être annulée"
 
 #: client/app/modules/events/controllers/events.ctrl.js:78
 #: client/app/modules/products/controllers/products.ctrl.js:79
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: client/app/modules/users/controllers/register.ctrl.js:43
 msgid "Don't worry we won't spam your inbox"
-msgstr ""
+msgstr "Pas de soucis, vous ne recevrez pas de pourriels de notre part."
 
 #: client/app/modules/users/controllers/profile.ctrl.js:19
 #: client/app/modules/users/controllers/users.ctrl.js:64
 msgid "E-mail"
-msgstr ""
+msgstr "Adresse courriel"
 
 #: client/app/modules/products/views/categoryform.html:4
 #: client/app/modules/products/views/list.html:7
 msgid "Edit category"
-msgstr ""
+msgstr "Modifier la catégorie"
 
 #: client/app/modules/events/views/form.html:6
 msgid "Edit event"
-msgstr ""
+msgstr "Modifier l'évènement"
 
 #: client/app/modules/notes/views/form.html:5
 msgid "Edit note"
-msgstr ""
+msgstr "Modifier la note"
 
 #: client/app/modules/posts/views/form.html:5
 msgid "Edit post"
-msgstr ""
+msgstr "Modifier le post"
 
 #: client/app/modules/products/views/form.html:5
 msgid "Edit product"
-msgstr ""
+msgstr "Modifier le produit"
 
 #: client/app/modules/settings/views/form.html:5
 msgid "Edit setting"
-msgstr ""
+msgstr "Modifier le paramètre"
 
 #: client/app/modules/users/controllers/login.ctrl.js:32
 #: client/app/modules/users/controllers/register.ctrl.js:47
 msgid "Email address needs to be valid"
-msgstr ""
+msgstr "Votre adresse courriel doit être validé"
 
 #: client/app/modules/events/controllers/events.ctrl.js:98
 msgid "End"
-msgstr ""
+msgstr "Fin"
 
 #: client/app/modules/events/controllers/events.ctrl.js:106
 msgid "End Time"
-msgstr ""
+msgstr "Heure de fin"
 
 #: client/app/modules/users/controllers/profile.ctrl.js:41
 msgid "Enjoy the new you!"
-msgstr ""
+msgstr "Votre nouveau compte!"
 
 #: client/app/modules/products/controllers/products.ctrl.js:57
 msgid "Error deleting category"
-msgstr ""
+msgstr "La catégorie ne peux être effacée"
 
 #: client/app/modules/events/controllers/events.ctrl.js:56
 msgid "Error deleting event"
-msgstr ""
+msgstr "L'évènement ne peux être effacé"
 
 #: client/app/modules/notes/services/notes.service.js:31
 msgid "Error deleting note"
-msgstr ""
+msgstr "La note n'a pu être effacée"
 
 #: client/app/modules/pages/controllers/pages.ctrl.js:39
 msgid "Error deleting page"
-msgstr ""
+msgstr "La page ne peux être effacée"
 
 #: client/app/modules/posts/controllers/posts.ctrl.js:31
 msgid "Error deleting post"
-msgstr ""
+msgstr "Le post ne peux être effacé"
 
 #: client/app/modules/products/controllers/products.ctrl.js:43
 msgid "Error deleting product"
-msgstr ""
+msgstr "Le produit ne peux être éffacé"
 
 #: client/app/modules/settings/controllers/settings.ctrl.js:34
 msgid "Error deleting setting"
-msgstr ""
+msgstr "Le paramètre ne peut être effacé"
 
 #: client/app/modules/users/controllers/users.ctrl.js:31
 msgid "Error deleting user"
-msgstr ""
+msgstr "L'utilisateur ne peux être effacé"
 
 #: client/app/modules/users/controllers/register.ctrl.js:111
 msgid "Error registering!"
-msgstr ""
+msgstr "Erreur lors de l'enregistrement du compte"
 
 #: client/app/modules/notes/services/notes.service.js:21
 msgid "Error saving note"
-msgstr ""
+msgstr "Erreur lors de l'enregistrement de la note"
 
 #: client/app/modules/users/controllers/profile.ctrl.js:43
 msgid "Error saving profile"
-msgstr ""
+msgstr "Erreur lors de l'enregistrement du profil"
 
 #: client/app/modules/users/controllers/users.ctrl.js:52
 msgid "Error saving user:"
-msgstr ""
+msgstr "Erreur lors de l'enregistrement de l'utilisateur:"
 
 #: client/app/modules/users/controllers/register.ctrl.js:104
 msgid "Error signin in after registration!"
-msgstr ""
+msgstr "Erreur de connexion après l'enregistrement!"
 
 #: client/app/modules/events/controllers/events.ctrl.js:51
 msgid "Event deleted"
-msgstr ""
+msgstr "Évènement effacé"
 
 #: client/app/modules/events/controllers/events.ctrl.js:138
 msgid "Event not added"
-msgstr ""
+msgstr "L'évènement n'a pu être ajouté"
 
 #: client/app/modules/events/controllers/events.ctrl.js:134
 msgid "Event saved"
-msgstr ""
+msgstr "Évènement ajouté"
 
 #: client/app/modules/events/config/events.config.js:10
 #: client/app/modules/events/config/events.config.js:5
 #: client/app/modules/events/config/events.config.js:7
 #: client/app/modules/events/views/main.html:1
 msgid "Events"
-msgstr ""
+msgstr "Évènements"
 
 #: client/app/modules/files/controllers/files.ctrl.js:19
 msgid "File deleted"
-msgstr ""
+msgstr "Ficher effacé"
 
 #: client/app/modules/files/config/file.config.js:4
 #: client/app/modules/files/config/file.config.js:7
 #: client/app/modules/files/views/main.html:1
 #: client/app/modules/files/views/upload.html:5
 msgid "Files"
-msgstr ""
+msgstr "Fichiers"
 
 #: client/app/modules/users/controllers/register.ctrl.js:25
 msgid "First Name"
-msgstr ""
+msgstr "Prénom"
 
 #: client/app/modules/users/controllers/profile.ctrl.js:24
 #: client/app/modules/users/controllers/users.ctrl.js:69
 msgid "First name"
-msgstr ""
+msgstr "Prénom"
 
 #: client/app/modules/core/views/app.html:14
 msgid "Hello,"
-msgstr ""
+msgstr "Bonjour,"
 
 #: client/app/modules/core/views/home.html:5
 msgid "Home"
-msgstr ""
+msgstr "Accueil"
 
 #: client/app/modules/settings/controllers/settings.ctrl.js:45
 msgid "Key"
-msgstr ""
+msgstr "Clé"
 
 #: client/app/modules/users/controllers/register.ctrl.js:33
 msgid "Last Name"
-msgstr ""
+msgstr "Nom"
 
 #: client/app/modules/users/controllers/profile.ctrl.js:29
 #: client/app/modules/users/controllers/users.ctrl.js:74
 msgid "Last name"
-msgstr ""
+msgstr "Nom"
 
 #: client/app/modules/users/controllers/login.ctrl.js:91
 msgid "Logged in"
-msgstr ""
+msgstr "Connecté"
 
 #: client/app/modules/core/controllers/main.ctrl.js:25
 msgid "Logged out"
-msgstr ""
+msgstr "Déconnecté"
 
 #: client/app/modules/events/views/main.html:1
 msgid "Manage your events here!"
-msgstr ""
+msgstr "Gérez vos évènements ici!"
 
 #: client/app/modules/files/views/main.html:1
 msgid "Manage your files here!"
-msgstr ""
+msgstr "Gérez vos fichiers ici!"
 
 #: client/app/modules/notes/views/main.html:1
 msgid "Manage your notes here!"
-msgstr ""
+msgstr "Gérez vos notes ici!"
 
 #: client/app/modules/posts/views/main.html:1
 msgid "Manage your posts here!"
-msgstr ""
+msgstr "Gérez vos posts ici!"
 
 #: client/app/modules/products/views/main.html:1
 msgid "Manage your products here!"
-msgstr ""
+msgstr "Gérez vos produits ici!"
 
 #: client/app/modules/settings/views/main.html:1
 msgid "Manage your settings here!"
-msgstr ""
+msgstr "Gérez vos paramètres ici!"
 
 #: client/app/modules/users/views/main.html:2
 msgid "Manager your users here!"
-msgstr ""
+msgstr "Gérez vos utilisateurs ici!"
 
 #: client/app/modules/core/views/elements/small-box.html:8
 msgid "More info"
-msgstr ""
+msgstr "Plus d'infos"
 
 #: client/app/modules/events/controllers/events.ctrl.js:72
 #: client/app/modules/files/views/upload.html:56
 #: client/app/modules/products/controllers/categories.ctrl.js:21
 #: client/app/modules/products/controllers/products.ctrl.js:67
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: client/app/modules/settings/controllers/settings.ctrl.js:48
 #: client/app/modules/settings/controllers/settings.ctrl.js:56
 #: client/app/modules/users/controllers/register.ctrl.js:28
 #: client/app/modules/users/controllers/register.ctrl.js:36
 msgid "Needs to have at least 4 characters"
-msgstr ""
+msgstr "Doit avoir au moins 4 caractères"
 
 #: client/app/modules/pages/controllers/pages.ctrl.js:18
 msgid "New page"
-msgstr ""
+msgstr "Nouvelle page"
 
 #: client/app/modules/users/controllers/login.ctrl.js:33
 #: client/app/modules/users/controllers/register.ctrl.js:48
 msgid "Nice email address!"
-msgstr ""
+msgstr "Bonne adresse courriel!"
 
 #: client/app/modules/notes/services/notes.service.js:28
 msgid "Note deleted"
-msgstr ""
+msgstr "Note effacée"
 
 #: client/app/modules/notes/services/notes.service.js:18
 msgid "Note saved"
-msgstr ""
+msgstr "Note enregistrée"
 
 #: client/app/modules/notes/config/notes.config.js:5
 #: client/app/modules/notes/config/notes.config.js:8
 #: client/app/modules/notes/views/main.html:1
 msgid "Notes"
-msgstr ""
+msgstr "Notes"
 
 #: client/app/modules/users/views/login.html:17
 msgid "Or register"
-msgstr ""
+msgstr "Ou créez un compte"
 
 #: client/app/modules/users/views/register.html:20
 msgid "Or sign in"
-msgstr ""
+msgstr "Ou connectez-vous"
 
 #: client/app/modules/pages/controllers/pages.ctrl.js:35
 msgid "Page deleted"
-msgstr ""
+msgstr "Page effacée"
 
 #: client/app/modules/pages/controllers/pages.ctrl.js:57
 msgid "Page saved"
-msgstr ""
+msgstr "Page enregistrée"
 
 #: client/app/modules/pages/config/pages.config.js:4
 #: client/app/modules/pages/config/pages.config.js:7
 #: client/app/modules/pages/views/list.html:3
 #: client/app/modules/pages/views/main.html:1
 msgid "Pages"
-msgstr ""
+msgstr "Pages"
 
 #: client/app/modules/users/controllers/login.ctrl.js:39
 #: client/app/modules/users/controllers/register.ctrl.js:57
 #: client/app/modules/users/views/form.html:26
 msgid "Password"
-msgstr ""
+msgstr "Mot de passe"
 
 #: client/app/modules/products/controllers/products.ctrl.js:84
 msgid "Percentage"
-msgstr ""
+msgstr "Pourcentage"
 
 #: client/app/modules/posts/controllers/posts.ctrl.js:27
 msgid "Post deleted"
-msgstr ""
+msgstr "Post effacé"
 
 #: client/app/modules/posts/controllers/posts.ctrl.js:67
 msgid "Post saved"
-msgstr ""
+msgstr "Post enregistré"
 
 #: client/app/modules/posts/config/posts.config.js:4
 #: client/app/modules/posts/config/posts.config.js:7
 #: client/app/modules/posts/views/main.html:1
 msgid "Posts"
-msgstr ""
+msgstr "Post"
 
 #: client/app/modules/products/controllers/products.ctrl.js:89
 msgid "Price"
-msgstr ""
+msgstr "Prix"
 
 #: client/app/modules/products/views/main.html:1
 msgid "Product"
-msgstr ""
+msgstr "Produit"
 
 #: client/app/modules/products/controllers/products.ctrl.js:39
 msgid "Product deleted"
-msgstr ""
+msgstr "Produit effacé"
 
 #: client/app/modules/products/controllers/products.ctrl.js:101
 msgid "Product saved"
-msgstr ""
+msgstr "Produit enregistré"
 
 #: client/app/modules/products/config/products.config.js:4
 #: client/app/modules/products/config/products.config.js:7
 msgid "Products"
-msgstr ""
+msgstr "Produits"
 
 #: client/app/modules/core/views/elements/navbar.html:40
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 #: client/app/modules/users/controllers/profile.ctrl.js:41
 msgid "Profile saved"
-msgstr ""
+msgstr "Profil enregistré"
 
 #: client/app/modules/files/views/upload.html:58
 msgid "Progress"
-msgstr ""
+msgstr "Progrès"
 
 #: client/app/modules/users/views/view.html:17
 msgid "Raw"
-msgstr ""
+msgstr "Source"
 
 #: client/app/modules/users/views/register.html:17
 #: client/app/modules/users/views/register.html:7
 msgid "Register"
-msgstr ""
+msgstr "Créez un compte"
 
 #: client/app/modules/users/controllers/register.ctrl.js:100
 msgid "Registered"
-msgstr ""
+msgstr "Compte créé"
 
 #: client/app/modules/files/views/upload.html:46
 msgid "Remove all"
-msgstr ""
+msgstr "Tout retirer"
 
 #: client/app/modules/users/views/view.html:13
 msgid "Roles"
-msgstr ""
+msgstr "Rôles"
 
 #: client/app/modules/events/controllers/events.ctrl.js:118
 #: client/app/modules/posts/controllers/posts.ctrl.js:62
@@ -568,53 +587,53 @@ msgstr ""
 #: client/app/modules/users/controllers/profile.ctrl.js:36
 #: client/app/modules/users/controllers/users.ctrl.js:81
 msgid "Save"
-msgstr ""
+msgstr "Enregistrer"
 
 #: client/app/modules/settings/controllers/settings.ctrl.js:30
 msgid "Setting deleted"
-msgstr ""
+msgstr "Paramètre effacé"
 
 #: client/app/modules/settings/controllers/settings.ctrl.js:75
 msgid "Setting saved"
-msgstr ""
+msgstr "Paramètre enregistré"
 
 #: client/app/modules/core/views/home.html:28
 #: client/app/modules/settings/config/settings.config.js:4
 #: client/app/modules/settings/views/main.html:1
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 #: client/app/modules/users/views/login.html:7
 msgid "Sign In"
-msgstr ""
+msgstr "Connexion"
 
 #: client/app/modules/users/views/login.html:16
 msgid "Sign in"
-msgstr ""
+msgstr "Connexion"
 
 #: client/app/modules/core/views/elements/navbar.html:43
 msgid "Sign out"
-msgstr ""
+msgstr "Déconnexion"
 
 #: client/app/modules/files/views/upload.html:57
 msgid "Size"
-msgstr ""
+msgstr "Grandeur"
 
 #: client/app/modules/events/controllers/events.ctrl.js:83
 msgid "Start Date"
-msgstr ""
+msgstr "Date de début"
 
 #: client/app/modules/events/controllers/events.ctrl.js:91
 msgid "Start Time"
-msgstr ""
+msgstr "Heure de début"
 
 #: client/app/modules/files/views/upload.html:59
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: client/app/modules/users/controllers/login.ctrl.js:45
 msgid "Stay signed in"
-msgstr ""
+msgstr "Rester connecté"
 
 #: client/app/modules/events/views/form.html:20
 #: client/app/modules/events/views/form.html:28
@@ -624,259 +643,305 @@ msgstr ""
 #: client/app/modules/products/views/form.html:17
 #: client/app/modules/settings/views/form.html:21
 msgid "Submit"
-msgstr ""
+msgstr "Soumettre"
 
 #: client/app/modules/core/views/home.html:33
 #: client/app/modules/core/views/home.html:36
 msgid "Theme"
-msgstr ""
+msgstr "Thème"
 
 #: client/app/modules/events/views/list.html:23
 msgid "There are no events"
-msgstr ""
+msgstr "Il n'y a pas d'évènements"
 
 #: client/app/modules/files/views/list.html:19
 msgid "There are no files"
-msgstr ""
+msgstr "Il n'y a pas de fichiers"
 
 #: client/app/modules/notes/views/list.html:17
 msgid "There are no notes"
-msgstr ""
+msgstr "Il n'y a pas de notes"
 
 #: client/app/modules/pages/views/list.html:26
 msgid "There are no pages"
-msgstr ""
+msgstr "Il n'y a pas de pages"
 
 #: client/app/modules/posts/views/list.html:23
 msgid "There are no posts"
-msgstr ""
+msgstr "Il n'y a pas de posts"
 
 #: client/app/modules/products/views/list.html:33
 msgid "There are no products in this category!"
-msgstr ""
+msgstr "Il n'y a pas de produits dans cette catégorie!"
 
 #: client/app/modules/settings/views/list.html:17
 msgid "There are no settings"
-msgstr ""
+msgstr "Il n'y a aucun paramètres"
 
 #: client/app/modules/notes/services/notes.service.js:21
 msgid "This note could no be saved:"
-msgstr ""
+msgstr "La note n'a pu être enregistrée"
 
 #: client/app/modules/users/controllers/users.ctrl.js:49
 msgid "This user is save!"
-msgstr ""
+msgstr "L'utilisateur est enregistré"
 
 #: client/app/modules/notes/controllers/notes.ctrl.js:10
 #: client/app/modules/posts/controllers/posts.ctrl.js:42
 msgid "Title"
-msgstr ""
+msgstr "Titre"
 
 #: client/app/modules/core/views/elements/navbar.html:3
 msgid "Toggle navigation"
-msgstr ""
+msgstr "Basculer la navigation"
 
 #: client/app/modules/users/views/profile.html:36
 msgid "Update profile"
-msgstr ""
+msgstr "Mise à jour du profil"
 
 #: client/app/modules/files/views/main.html:2
 msgid "Upload"
-msgstr ""
+msgstr "Télécharger"
 
 #: client/app/modules/files/views/upload.html:38
 msgid "Upload all"
-msgstr ""
+msgstr "Tout télécharger"
 
 #: client/app/modules/files/views/upload.html:7
 msgid "Upload files"
-msgstr ""
+msgstr "Télécharger les fichiers"
 
 #: client/app/modules/files/views/upload.html:31
 msgid "Upload queue"
-msgstr ""
+msgstr "File d'attente de téléchargement"
 
 #: client/app/modules/users/controllers/users.ctrl.js:27
 msgid "User deleted"
-msgstr ""
+msgstr "L'utilisateur est effacé"
 
 #: client/app/modules/users/controllers/users.ctrl.js:49
 msgid "User saved"
-msgstr ""
+msgstr "Utilisateur enregistré"
 
 #: client/app/modules/users/controllers/profile.ctrl.js:14
 #: client/app/modules/users/controllers/users.ctrl.js:59
 msgid "Username"
-msgstr ""
+msgstr "Code utilisateur"
 
 #: client/app/modules/users/config/users.config.js:4
 #: client/app/modules/users/views/main.html:1
 msgid "Users"
-msgstr ""
+msgstr "Utilisateurs"
 
 #: client/app/modules/settings/controllers/settings.ctrl.js:53
 msgid "Value"
-msgstr ""
+msgstr "Valeur"
 
 #: client/app/modules/core/views/home.html:21
 msgid "Variables"
-msgstr ""
+msgstr "Variables"
 
 #: client/app/modules/core/views/home.html:6
 msgid "Welcome!"
-msgstr ""
+msgstr "Bienvenu!"
 
 #: client/app/modules/users/controllers/login.ctrl.js:91
 msgid "You are logged in!"
-msgstr ""
+msgstr "Vous êtes connecté"
 
 #: client/app/modules/core/controllers/main.ctrl.js:25
 msgid "You are logged out!"
-msgstr ""
+msgstr "Vous êtes déconnecté"
 
 #: client/app/modules/users/controllers/register.ctrl.js:100
 msgid "You are registered!"
-msgstr ""
+msgstr "Vous êtes enregistré"
 
 #: client/app/modules/files/views/upload.html:8
 msgid "You can just drag them in this window!"
-msgstr ""
+msgstr "Vous pouvez les glisser sur cette fenêtre"
 
 #: client/app/modules/users/controllers/login.ctrl.js:31
 #: client/app/modules/users/controllers/register.ctrl.js:46
 msgid "You need an email address"
-msgstr ""
+msgstr "Une adresse courriel est requise"
 
 #: client/app/modules/users/views/profile.html:20
 msgid "Your Gravatar"
-msgstr ""
+msgstr "Votre Gravatar"
 
 #: client/app/modules/products/controllers/products.ctrl.js:54
 msgid "Your category is deleted!"
-msgstr ""
+msgstr "La catégorie est effacée!"
 
 #: client/app/modules/products/controllers/products.ctrl.js:57
 msgid "Your category is not deleted:"
-msgstr ""
+msgstr "La catégorie n'a pu être effacée:"
 
 #: client/app/modules/products/controllers/categories.ctrl.js:34
 msgid "Your category is safe with us!"
-msgstr ""
+msgstr "La catégorie est enregistrée!"
 
 #: client/app/modules/events/controllers/events.ctrl.js:51
 msgid "Your event is deleted!"
-msgstr ""
+msgstr "L'évènement est effacé!"
 
 #: client/app/modules/events/controllers/events.ctrl.js:56
 msgid "Your event is not deleted:"
-msgstr ""
+msgstr "L'évènement n'a pu être effacé:"
 
 #: client/app/modules/events/controllers/events.ctrl.js:134
 msgid "Your event is safe with us!"
-msgstr ""
+msgstr "L'évènement est enregistré!"
 
 #: client/app/modules/files/controllers/files.ctrl.js:19
 msgid "Your file is deleted!"
-msgstr ""
+msgstr "Le fichier est effacé!"
 
 #: client/app/modules/notes/services/notes.service.js:28
 msgid "Your note is deleted!"
-msgstr ""
+msgstr "La note est effacée!"
 
 #: client/app/modules/notes/services/notes.service.js:31
 msgid "Your note is not deleted!"
-msgstr ""
+msgstr "La note n'a pu être effacée!"
 
 #: client/app/modules/notes/services/notes.service.js:18
 msgid "Your note is safe with us!"
-msgstr ""
+msgstr "La note est enregistrée!"
 
 #: client/app/modules/pages/controllers/pages.ctrl.js:35
 msgid "Your page is deleted!"
-msgstr ""
+msgstr "La page est effacée!"
 
 #: client/app/modules/pages/controllers/pages.ctrl.js:39
 msgid "Your page is not deleted:"
-msgstr ""
+msgstr "La page n'a pu être effacée:"
 
 #: client/app/modules/pages/controllers/pages.ctrl.js:57
 msgid "Your page is safe with us!"
-msgstr ""
+msgstr "La page est enregistrée!"
 
 #: client/app/modules/users/controllers/register.ctrl.js:67
 msgid "Your passwords need to match"
-msgstr ""
+msgstr "Les mots de passe ne sont pas identiques"
 
 #: client/app/modules/posts/controllers/posts.ctrl.js:27
 msgid "Your post is deleted!"
-msgstr ""
+msgstr "Le post est effacé!"
 
 #: client/app/modules/posts/controllers/posts.ctrl.js:31
 msgid "Your post is not deleted:"
-msgstr ""
+msgstr "Le post n'a pu être effacé:"
 
 #: client/app/modules/posts/controllers/posts.ctrl.js:67
 msgid "Your post is safe with us!"
-msgstr ""
+msgstr "Le post est enregistré!"
 
 #: client/app/modules/products/controllers/products.ctrl.js:39
 msgid "Your product is deleted!"
-msgstr ""
+msgstr "Le produit est effacé!"
 
 #: client/app/modules/products/controllers/products.ctrl.js:43
 msgid "Your product is not deleted:"
-msgstr ""
+msgstr "Le produit n'a pu être effacé:"
 
 #: client/app/modules/products/controllers/products.ctrl.js:101
 msgid "Your product is safe with us!"
-msgstr ""
+msgstr "Le produit est enregistré!"
 
 #: client/app/modules/users/views/profile.html:5
 msgid "Your profile"
-msgstr ""
+msgstr "Votre profil"
 
 #: client/app/modules/users/controllers/profile.ctrl.js:43
 msgid "Your profile is not saved:"
-msgstr ""
+msgstr "Votre profil n'est pas enregistré:"
 
 #: client/app/modules/settings/controllers/settings.ctrl.js:30
 msgid "Your setting is deleted!"
-msgstr ""
+msgstr "Le paramètre est effacé!"
 
 #: client/app/modules/settings/controllers/settings.ctrl.js:34
 msgid "Your setting is not deleted:"
-msgstr ""
+msgstr "Le paramètre n'a pu être effacé:"
 
 #: client/app/modules/settings/controllers/settings.ctrl.js:75
 msgid "Your setting is safe with us!"
-msgstr ""
+msgstr "Le paramètre est effacé!"
 
 #: client/app/modules/users/controllers/users.ctrl.js:27
 msgid "Your user is deleted!"
-msgstr ""
+msgstr "L'utilisateur est effacé!"
 
 #: client/app/modules/users/controllers/users.ctrl.js:31
 msgid "Your user is not deleted:"
-msgstr ""
+msgstr "L'utilisateur n'a pu être effacé:"
 
 #: client/app/modules/events/controllers/events.ctrl.js:100
 #: client/app/modules/events/controllers/events.ctrl.js:85
 msgid "dd/MM/yyyy"
-msgstr ""
+msgstr "dd/MM/yyyy"
 
 #: client/app/modules/users/controllers/login.ctrl.js:27
 #: client/app/modules/users/controllers/register.ctrl.js:41
 msgid "email"
-msgstr ""
+msgstr "adresse courriel"
 
 #: client/app/modules/files/views/list.html:23
 msgid "here"
-msgstr ""
+msgstr "ici"
 
 #: client/app/modules/posts/controllers/posts.ctrl.js:54
 msgid "image"
-msgstr ""
+msgstr "image"
 
 #: client/app/modules/files/views/upload.html:32
 msgid "in queue"
-msgstr ""
+msgstr "en file"
+
+#~ msgid "Connection Refused"
+#~ msgstr "Connexion refusée"
+
+#~ msgid "Error 401 received"
+#~ msgstr "Erreur 401 reçue"
+
+#~ msgid "Error 404 received"
+#~ msgstr "Erreur 404 reçue"
+
+#~ msgid "Error 422 received"
+#~ msgstr "Erreur 422 reçue"
+
+#~ msgid ""
+#~ "The connection to the API is refused. Please verify that the API is "
+#~ "running!"
+#~ msgstr ""
+#~ "La connexion à l'API a été refusée. S.v.p. vérifier que l'API fonctionne."
+
+#~ msgid "We received a 401 error from the API! Redirecting to login"
+#~ msgstr "Erreur 401 reçue de l'API! redirection à la page de connexion"
+
+#~ msgid "Click <a href=\"\" ui-sref=\"^.add\">here</a> to add one!"
+#~ msgstr "Cliquer <a href=\"\" ui-sref=\"^.add\">ici</a> pour en ajouter un!"
+
+#~ msgid ""
+#~ "Click <a href=\"\" ui-sref=\"^.add({ categoryId: category.id })\">here</"
+#~ "a> to add one!"
+#~ msgstr ""
+#~ "Cliquer <a href=\"\" ui-sref=\"^.add({ categoryId: category.id })\">ici</"
+#~ "a> pour en ajouter un!"
+
+#~ msgid ""
+#~ "There are no products in this category!\n"
+#~ "            <small>Click <a href=\"\" ui-sref=\"^.add({ categoryId: "
+#~ "category.id })\">here</a> to add one!</small>"
+#~ msgstr ""
+#~ "Il n'y a pas de produit dans cette catégorie!\n"
+#~ "            <small>Cliquer <a href=\"\" ui-sref=\"^.add({ categoryId: "
+#~ "category.id })\">ici</a> pour en ajouter un!</small>"
+
+#~ msgid "Practitioners"
+#~ msgstr "Praticiens"
+
+#~ msgid "iOS Content"
+#~ msgstr "Contenus iOS"

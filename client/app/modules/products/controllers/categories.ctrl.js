@@ -18,7 +18,7 @@ angular.module('com.module.products')
       {
         key: 'name',
         type: 'text',
-        label: 'Name',
+        label: gettextCatalog.getString('Name'),
         required: true
       }
     ];
@@ -26,7 +26,7 @@ angular.module('com.module.products')
     $scope.formOptions = {
       uniqueFormId: true,
       hideSubmit: false,
-      submitCopy: 'Save'
+      submitCopy: gettextCatalog.getString('Save')
     };
 
     $scope.onSubmit = function () {

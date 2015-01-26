@@ -25,7 +25,7 @@ angular.module('com.module.users')
         placeholder: gettextCatalog.getString('First Name'),
         type: 'text',
         attr: {ngMinlength: 4, required: true},
-        msgs: {minlength: 'Needs to have at least 4 characters'}
+        msgs: {minlength: gettextCatalog.getString('Needs to have at least 4 characters')}
       },
       {
         label: '',
@@ -33,12 +33,12 @@ angular.module('com.module.users')
         placeholder: gettextCatalog.getString('Last Name'),
         type: 'text',
         attr: {ngMinlength: 4, required: true},
-        msgs: {minlength: 'Needs to have at least 4 characters'}
+        msgs: {minlength: gettextCatalog.getString('Needs to have at least 4 characters')}
       },
       {
         label: '',
         property: 'email',
-        placeholder: 'email',
+        placeholder: gettextCatalog.getString('email'),
         type: 'email',
         help: gettextCatalog.getString('Don\'t worry we won\'t spam your inbox'),
         attr: {required: true, ngMinlength: 4},
@@ -64,7 +64,7 @@ angular.module('com.module.users')
           placeholder: gettextCatalog.getString('Confirm Password'),
           type: 'password',
           attr: {confirmPassword: 'user.password', required: true, ngMinlength: 6},
-          msgs: {match: 'Your passwords need to match'}
+          msgs: {match: gettextCatalog.getString('Your passwords need to match')}
         }
       ], columns: 6
       }

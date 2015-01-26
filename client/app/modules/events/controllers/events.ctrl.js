@@ -69,41 +69,41 @@ angular.module('com.module.events')
 
     $scope.formFields = [{
       key: 'name',
-      label: 'Name',
+      label: gettextCatalog.getString('Name'),
       type: 'text',
       required: true
     }, {
       key: 'description',
       type: 'text',
-      label: 'Description',
+      label: gettextCatalog.getString('Description'),
       required: true
     }, {
       key: 'sDate',
       required: true,
-      label: 'Start Date',
+      label: gettextCatalog.getString('Start Date'),
       type: 'date',
-      format: 'dd/MM/yyyy',
+      format: gettextCatalog.getString('dd/MM/yyyy'),
       opened: false,
       switchOpen: dateOpen
     }, {
       key: 'sTime',
       required: true,
-      label: 'Start Time',
+      label: gettextCatalog.getString('Start Time'),
       type: 'time',
       hstep: 1,
       mstep: 5,
       ismeridian: true
     }, {
       key: 'eDate',
-      label: 'End',
+      label: gettextCatalog.getString('End'),
       type: 'date',
-      format: 'dd/MM/yyyy',
+      format: gettextCatalog.getString('dd/MM/yyyy'),
       opened: false,
       switchOpen: dateOpen
     }, {
       key: 'eTime',
       required: true,
-      label: 'End Time',
+      label: gettextCatalog.getString('End Time'),
       type: 'time',
       hstep: 1,
       mstep: 5,
@@ -115,7 +115,7 @@ angular.module('com.module.events')
     $scope.formOptions = {
       uniqueFormId: true,
       hideSubmit: false,
-      submitCopy: 'Save'
+      submitCopy: gettextCatalog.getString('Save')
     };
     $scope.alerts = [];
 
