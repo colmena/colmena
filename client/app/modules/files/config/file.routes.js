@@ -4,8 +4,7 @@ angular.module ('com.module.files')
     $stateProvider.state ('app.files', {
       abstract: true,
       url: '/files',
-      templateUrl: 'modules/files/views/main.html',
-      controller: 'FilesCtrl'
+      templateUrl: 'modules/files/views/main.html'
     })
       .state ('app.files.list', {
         url: '',
