@@ -56,29 +56,29 @@ app.controller('UsersCtrl', function ($scope, $stateParams, $state, CoreService,
   $scope.formFields = [{
     key: 'username',
     type: 'text',
-    label: 'Username',
+    label: gettextCatalog.getString('Username'),
     required: true
   }, {
     key: 'email',
     type: 'email',
-    label: 'E-mail',
+    label: gettextCatalog.getString('E-mail'),
     required: true
   }, {
     key: 'firstName',
     type: 'text',
-    label: 'First name',
+    label: gettextCatalog.getString('First name'),
     required: true
   }, {
     key: 'lastName',
     type: 'text',
-    label: 'Last name',
+    label: gettextCatalog.getString('Last name'),
     required: true
   }];
 
   $scope.formOptions = {
     uniqueFormId: true,
     hideSubmit: false,
-    submitCopy: 'Save'
+    submitCopy: gettextCatalog.getString('Save')
   };
 
 });

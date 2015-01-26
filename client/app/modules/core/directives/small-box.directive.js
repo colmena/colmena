@@ -4,7 +4,7 @@
 * @name com.module.core.directive:smallbBox
 * @restrict E
 * @description Dashboard Box
-* @param {string} title Box Title
+* @param {string} name Box Title
 * @param {string} color Admin-Lte bg-color
 * @param {string} icon Ionic-icon class
 * @param {string} quantity Title
@@ -16,7 +16,7 @@ angular.module ('com.module.core')
       restrict: 'E',
       templateUrl: 'modules/core/views/elements/small-box.html',
       scope: {
-        title: '@',
+        name: '@',
         color: '@',
         icon: '@',
         quantity: '@',

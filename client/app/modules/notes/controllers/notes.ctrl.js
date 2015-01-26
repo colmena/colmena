@@ -1,19 +1,19 @@
 'use strict';
 var app = angular.module('com.module.notes');
 
-app.controller('NotesCtrl', function ($scope, $state, $stateParams, NotesService) {
+app.controller('NotesCtrl', function ($scope, $state, $stateParams, NotesService, gettextCatalog) {
 
   $scope.formFields = [
     {
       key: 'title',
       type: 'text',
-      label: 'Title',
+      label: gettextCatalog.getString('Title'),
       required: true
     },
     {
       key: 'body',
       type: 'textarea',
-      label: 'Body',
+      label: gettextCatalog.getString('Body'),
       required: true
     }
   ];

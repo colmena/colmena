@@ -15,7 +15,7 @@ angular.module('com.module.pages')
       });
     } else {
       $scope.page = {
-        'name': 'New page',
+        'name': gettextCatalog.getString('New page'),
         'content': '# Hi!\n\n## You can preview the result\n\n[Here](https://daringfireball.net/projects/markdown/basics) *are the* `markdown` **basics**!\n\n    fine code goes here \n\n- lists \n- go \n- here '
       };
     }

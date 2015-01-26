@@ -64,36 +64,36 @@ angular.module('com.module.products')
       {
         key: 'name',
         type: 'text',
-        label: 'Name',
+        label: gettextCatalog.getString('Name'),
         required: true
       },
       {
         key: 'categoryId',
         type: 'text',
-        label: 'Category',
+        label: gettextCatalog.getString('Category'),
         required: true
       },
       {
         key: 'description',
         type: 'text',
-        label: 'Description'
+        label: gettextCatalog.getString('Description')
       },
       {
         key: 'percentage',
         type: 'text',
-        label: 'Percentage'
+        label: gettextCatalog.getString('Percentage')
       },
       {
         key: 'price',
         type: 'text',
-        label: 'Price'
+        label: gettextCatalog.getString('Price')
       }
     ];
 
     $scope.formOptions = {
       uniqueFormId: true,
       hideSubmit: false,
-      submitCopy: 'Save'
+      submitCopy: gettextCatalog.getString('Save')
     };
 
     $scope.onSubmit = function () {

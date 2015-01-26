@@ -5,12 +5,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 "MIME-Version: 1.0\n"
-"PO-Revision-Date: 2015-01-18 04:22-0500\n"
+"PO-Revision-Date: 2015-01-25 17:24-0500\n"
 "Last-Translator: Marc Manthey <marc@let.de>\n"
 "Language-Team: German\n"
 "Language: de\n"
-"X-Generator: Zanata 3.5.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Poedit 1.7.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: \n"
 
 #: client/app/modules/about/controllers/about.config.js:5
 msgid "About"
@@ -566,4 +567,3 @@ msgstr "Hier"
 #: client/app/modules/files/views/upload.html:32
 msgid "in queue"
 msgstr "In der Ereigniskette"
-

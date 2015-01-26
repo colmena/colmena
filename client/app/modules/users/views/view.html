@@ -1,7 +1,7 @@
 <div class="box">
   <div class="box-header">
     <h3 class="box-title">
-      <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i> Users</a>
+      <a href="" ui-sref="^.list" class="btn btn-default" translate><i class="fa fa-arrow-left"></i> Users</a>
       {{user.username}}
     </h3>
   </div>
@@ -10,11 +10,11 @@
       <h2>{{user.username}}
         <small>{{user.email}}</small>
       </h2>
-      <h3>Roles</h3>
+      <h3 translate>Roles</h3>
       <ul>
         <li ng-repeat="role in user.roles">{{role.name}}</li>
       </ul>
-      <h3>Raw</h3>
+      <h3 translate>Raw</h3>
       <pre>{{user|json}}</pre>
     </div>
   </div>

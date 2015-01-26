@@ -39,19 +39,19 @@ angular.module('com.module.posts')
       {
         key: 'title',
         type: 'text',
-        label: 'Title',
+        label: gettextCatalog.getString('Title'),
         required: true
       },
       {
         key: 'content',
         type: 'textarea',
-        label: 'Content',
+        label: gettextCatalog.getString('Content'),
         required: true
       },
       {
         key: 'image',
         type: 'text',
-        label: 'image',
+        label: gettextCatalog.getString('image'),
         required: true
       }
     ];
@@ -59,7 +59,7 @@ angular.module('com.module.posts')
     $scope.formOptions = {
       uniqueFormId: true,
       hideSubmit: false,
-      submitCopy: 'Save'
+      submitCopy: gettextCatalog.getString('Save')
     };
 
     $scope.onSubmit = function () {
