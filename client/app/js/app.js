@@ -50,7 +50,8 @@ angular.module('loopbackApp', [
       'pt-BR': gettextCatalog.getString('Portuguese Brazil'),
       'us': gettextCatalog.getString('English'),
       'nl': gettextCatalog.getString('Dutch'),
-      'de': gettextCatalog.getString('German')
+      'de': gettextCatalog.getString('German'),
+      'fr': gettextCatalog.getString('Français')
     };
 
     var LangVar = navigator.language || navigator.userLanguage;

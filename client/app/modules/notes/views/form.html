@@ -1,18 +1,18 @@
 <h4>
   <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
 
-  <span ng-show="!note.id">Add a new note</span>
-  <span ng-show="note.id">Edit note</span>
+  <span ng-show="!note.id" translate>Add a new note</span>
+  <span ng-show="note.id" translate>Edit note</span>
 
 </h4>
 
 
 <div class="row">
   <div class="col-md-4">
-    <div class="alert alert-danger" ng-if="addError">Could not add note!</div>
+    <div class="alert alert-danger" ng-if="addError" translate>Could not add note!</div>
     <formly-form result="note" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
   </div>
 </div>
 <div class="controls">
-    <button class="btn btn-primary btn-success" ng-click="onSubmit()">Submit</button>
+    <button class="btn btn-primary btn-success" ng-click="onSubmit()" translate>Submit</button>
 </div>
