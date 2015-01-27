@@ -1,68 +1,36 @@
-<div class="row">
-  <div class="col-sm-10">
+<div class="list-group">
+  <div class="row">
+    <div class="message-wrap col-md-12">
 
-    <!-- Chat box -->
-    <div class="box" ng-class="{'box-success': connected, 'box-warning': !connected }">
-      <div class="box-header">
-        <i class="fa fa-comments-o"></i>
+      <div class="media msg" ng-repeat="message in messages">
+        <a class="pull-left" href="#">
+          <img gravatar-src="message.email" class="img-circle media-object" alt="User Image"
+               style="width: 32px; height: 32px;">
+        </a>
 
-        <h3 class="box-title">Chatroom</h3>
+        <div class="media-body">
+          <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>
+          <h5 class="media-heading">{{ message.firstName }}</h5>
 
-        <div title="Status" data-toggle="tooltip" class="box-tools pull-right">
-          <div data-toggle="btn-toggle" class="btn-group">
-              <!--<button ng-click="toggleConnection()" ng-show="connected" class="btn btn-default btn-sm active" type="button"><i class="fa fa-square text-green"></i></button>-->
-              <!--<button ng-click="toggleConnection()" ng-show="!connected" class="btn btn-default btn-sm" type="button"><i class="fa fa-square text-red"></i></button>-->
-          </div>
-        </div>
-      </div>
-      <div>
-        <div id="chat-box" class="box-body chat" style="overflow: auto; width: auto; height: 400px;">
-          <div ng-repeat="message in messages">
-            <div class="item">
-              <img gravatar-src="message.user.email" class="online" alt="user image">
-
-              <p class="message">
-                <a class="name" href="#">
-                  <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{message.timestamp| date : 'HH:mm'
-                    }}
-                  </small>
-                  {{ message.user.firstName }}
-                </a>
-                <span btf-markdown="message.msg"></span>
-              </p>
-            </div>
-          </div>
-          <a id="bottom"></a>
+          <small class="col-lg-10">{{ message.msg }}</small>
         </div>
       </div>
 
-      <div class="box-footer">
-        <div class="input-group">
-          <textarea autofocus class="msd-elastic form-control send-message" id="message" ng-model="inputMessage"
-                    placeholder="{{ 'Enter your message' | translate }}..." rows="1"
-                    ui-keyup="{'enter':'keypressCallback($event)'}">
-          </textarea>
-
-          <div class="input-group-btn">
-            <button ng-click="sendMessage(inputMessage)" class="btn btn-success"><i class="fa fa-plus"></i></button>
-          </div>
-        </div>
-      </div>
     </div>
 
-  </div>
-  <div class="col-sm-2">
-    <div class="box">
-      <div class="box-body">
-        <ul class="nav nav-pills nav-stacked">
-          <li class="header">Users</li>
-          <li ng-repeat="user in users | orderBy: 'username'">
-            <a href=""> <img gravatar-src="user.email" class="smallavatar" alt="user image"
-              > {{user.username}}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <div class="send-wrap ">
 
+      <textarea class="form-control send-message" id="message" ng-model="inputMessage" rows="3"
+                placeholder="{{ 'Write a reply' | translate }}..."></textarea>
+
+
+    </div>
+    <div class="btn-panel">
+      <a href="" class="btn  btn-success  send-message-btn pull-right"
+         ng-click="sendMessage(inputMessage)" role="button"><i class="fa fa-plus"></i> {{ 'Send Message' | translate }}</a>
+    </div>
   </div>
+</div>
+</div>
+
 </div>

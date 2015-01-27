@@ -1,10 +1,99 @@
-#bottom {
-  display: block;
-  margin-bottom: 60px;
+.conversation-wrap {
+  box-shadow: -2px 0 3px #ddd;
+  padding: 0;
+  max-height: 400px;
+  overflow: auto;
 }
 
-.smallavatar {
-  height: 20px;
-  margin-left: -5px;
-  margin-right: 5px;
+.conversation {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+
+}
+
+.message-wrap {
+  box-shadow: 0 0 3px #ddd;
+  padding: 0;
+
+}
+
+.msg {
+  padding: 5px;
+  /*border-bottom:1px solid #ddd;*/
+  margin: 0;
+}
+
+.msg-wrap {
+  padding: 10px;
+  max-height: 400px;
+  overflow: auto;
+
+}
+
+.time {
+  color: #bfbfbf;
+}
+
+.send-wrap {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  /*background: #f8f8f8;*/
+}
+
+.send-message {
+  resize: none;
+}
+
+.highlight {
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
+
+
+.btn-panel {
+  background: #f7f7f9;
+}
+
+.msg-wrap .media-heading {
+  color: #003bb3;
+  font-weight: 700;
+}
+
+.msg-date {
+  background: none;
+  text-align: center;
+  color: #aaa;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid #ddd;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  /*        -webkit-border-radius: 10px;
+          border-radius: 10px;*/
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /*        -webkit-border-radius: 10px;
+          border-radius: 10px;*/
+  background: #ddd;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: #ddd;
 }
