@@ -44,19 +44,28 @@ angular.module('loopbackApp', [
   'com.module.settings',
   'com.module.users'
 ])
-  .run(function ($rootScope, gettextCatalog) {
+  .run(function ($rootScope, $cookies, gettextCatalog) {
 
-    $rootScope.langs = {
-      'pt-BR': gettextCatalog.getString('Portuguese Brazil'),
-      'us': gettextCatalog.getString('English'),
-      'nl': gettextCatalog.getString('Dutch'),
-      'de': gettextCatalog.getString('German'),
-      'fr': gettextCatalog.getString('Français')
-    };
+    $rootScope.locales = {
 
-    var LangVar = navigator.language || navigator.userLanguage;
-    var userLangVar = LangVar.substring(0, 2) + '-' + LangVar.substring(3, 5).toUpperCase();
-    $rootScope.lang = userLangVar;
-    gettextCatalog.setCurrentLanguage(userLangVar);
+      'en': {lang: 'en', country: 'US', name: gettextCatalog.getString('English')},
+      'pt-BR': {lang: 'pt-BR', country: 'BR', name: gettextCatalog.getString('Portuguese Brazil')},
+      'nl': {lang: 'nl', country: 'NL', name: gettextCatalog.getString('Dutch')},
+      'de': {lang: 'de', country: 'DE', name: gettextCatalog.getString('German')},
+      'fr': {lang: 'fr', country: 'FR', name: gettextCatalog.getString('Français')}
+    }
+
+    var lang = $cookies.lang || navigator.language || navigator.userLanguage;
+
+    $rootScope.locale = $rootScope.locales[lang];
+
+    if ($rootScope.locale === undefined) {
+      $rootScope.locale = $rootScope.locales[lang.substring(0, 2)];
+      if ($rootScope.locale === undefined) {
+        $rootScope.locale = $rootScope.locales['en'];
+      }
+    }
+    
+    gettextCatalog.setCurrentLanguage($rootScope.locale.lang);
 
   });
