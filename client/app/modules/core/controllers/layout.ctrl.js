@@ -9,21 +9,27 @@ angular.module('com.module.core')
  * @requires CoreService
  * @requires gettextCatalog
  **/
-  .controller('LayoutCtrl', function ($scope, $rootScope, CoreService, gettextCatalog) {
+  .controller('LayoutCtrl', function ($scope, $rootScope, $cookies, CoreService, gettextCatalog) {
 
     // angular translate
-    $scope.lang = {
+    $scope.locale = {
       isopen: false
     };
-    $scope.langs = $rootScope.langs;
-    $scope.selectLang = $scope.langs[$rootScope.lang];
 
-    $scope.setLang = function (langKey) {
+    $scope.locales = $rootScope.locales;
+    $scope.selectLocale = $rootScope.locale;
+
+    $scope.setLocale = function (locale) {
       // set the current lang
-      $scope.selectLang = $scope.langs[langKey];
+      $scope.locale = $scope.locales[locale];
+      $scope.selectLocale = $scope.locale;
+      $rootScope.locale = $scope.locale;
+      $cookies.lang = $scope.locale.lang;
+
       // You can change the language during runtime
-      $scope.lang.isopen = !$scope.lang.isopen;
-      gettextCatalog.setCurrentLanguage(langKey);
+      $scope.locale.isopen = !$scope.locale.isopen;
+
+      gettextCatalog.setCurrentLanguage($scope.locale.lang);
     };
 
     $scope.appName = 'LB-NG-BS';
