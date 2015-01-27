@@ -335,9 +335,7 @@ msgstr ""
 msgid "Event saved"
 msgstr ""
 
-#: client/app/modules/events/config/events.config.js:10
-#: client/app/modules/events/config/events.config.js:5
-#: client/app/modules/events/config/events.config.js:7
+#: client/app/modules/events/config/events.config.js:4
 #: client/app/modules/events/views/main.html:1
 msgid "Events"
 msgstr ""
