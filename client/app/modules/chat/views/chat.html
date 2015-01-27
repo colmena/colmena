@@ -1,0 +1,36 @@
+<div class="list-group">
+  <div class="row">
+    <div class="message-wrap col-md-12">
+
+      <div class="media msg" ng-repeat="message in messages">
+        <a class="pull-left" href="#">
+          <img gravatar-src="message.email" class="img-circle media-object" alt="User Image"
+               style="width: 32px; height: 32px;">
+        </a>
+
+        <div class="media-body">
+          <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>
+          <h5 class="media-heading">{{ message.firstName }}</h5>
+
+          <small class="col-lg-10">{{ message.msg }}</small>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="send-wrap ">
+
+      <textarea autofocus class="form-control send-message" id="message" ng-model="inputMessage" rows="3"
+                placeholder="{{ 'Write a reply' | translate }}..."></textarea>
+
+
+    </div>
+    <div class="btn-panel">
+      <a href="" class="btn  btn-success  send-message-btn pull-right"
+         ng-click="sendMessage(inputMessage)" role="button"><i class="fa fa-plus"></i> {{ 'Send Message' | translate }}</a>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>

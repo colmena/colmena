@@ -76,7 +76,8 @@
     "passport-twitter": "~1.0.2",
     "serve-favicon": "^2.2.0",
     "showdown": "^0.3.1",
-    "time-grunt": "^1.0.0"
+    "time-grunt": "^1.0.0",
+    "socket.io": "^1.2.1"
   },
   "optionalDependencies": {
     "loopback-explorer": "^1.6.4"
