@@ -33,8 +33,7 @@
     "flag-icon-css": "~0.6.4",
     "angular-loading-bar": "~0.6.0",
     "angular-socket-io": "~0.7.0",
-    "socket.io-client": "~1.3.2",
-    "angular-ui-utils": "bower"
+    "socket.io-client": "~1.3.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.3",
@@ -60,9 +59,6 @@
       "main": [
         "compressed/showdown.js"
       ]
-    },
-    "socket.io-client": {
-      "main": "socket.io.js"
     }
   },
   "appPath": "client/app/",
