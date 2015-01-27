@@ -49,7 +49,7 @@ angular.module('loopbackApp', [
     $rootScope.locales = {
 
       'en': {lang: 'en', country: 'US', name: gettextCatalog.getString('English')},
-      'pt-BR': {lang: 'pt-BR', country: 'BR', name: gettextCatalog.getString('Portuguese Brazil')},
+      'pt-BR': {lang: 'pt_BR', country: 'BR', name: gettextCatalog.getString('Portuguese Brazil')},
       'nl': {lang: 'nl', country: 'NL', name: gettextCatalog.getString('Dutch')},
       'de': {lang: 'de', country: 'DE', name: gettextCatalog.getString('German')},
       'fr': {lang: 'fr', country: 'FR', name: gettextCatalog.getString('Français')}
@@ -60,12 +60,12 @@ angular.module('loopbackApp', [
     $rootScope.locale = $rootScope.locales[lang];
 
     if ($rootScope.locale === undefined) {
-      $rootScope.locale = $rootScope.locales[lang.substring(0, 2)];
+      $rootScope.locale = $rootScope.locales[lang];
       if ($rootScope.locale === undefined) {
         $rootScope.locale = $rootScope.locales['en'];
       }
     }
-    
+
     gettextCatalog.setCurrentLanguage($rootScope.locale.lang);
 
   });
