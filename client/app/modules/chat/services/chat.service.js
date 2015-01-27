@@ -1,9 +1,14 @@
 'use strict';
-var app = angular.module('com.module.chat');
+angular.module ('com.module.chat')
+  .factory ('Chat',
+  function (socketFactory) {
+    var mySocket = io.connect('');
 
-app.factory('Chat', function ($window, socketFactory) {
+    mySocket = socketFactory({
+      ioSocket: mySocket
+    });
 
-    var socket = socketFactory();
-    return socket;
+
+    return mySocket;
   }
 );
