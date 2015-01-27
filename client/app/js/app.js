@@ -35,6 +35,7 @@ angular.module('loopbackApp', [
   'com.module.core',
   'com.module.about',
   'com.module.events',
+  'com.module.chat',
   'com.module.files',
   'com.module.notes',
   'com.module.pages',
