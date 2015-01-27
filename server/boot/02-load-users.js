@@ -22,7 +22,7 @@ module.exports = function (app) {
         name: 'admin',
         users: [
           {
-            firstName: 'Administrator',
+            firstName: 'Admin',
             lastName: 'User',
             email: 'admin@admin.com',
             username: 'admin',
