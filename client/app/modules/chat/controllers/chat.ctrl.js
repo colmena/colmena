@@ -1,33 +1,46 @@
 'use strict';
-angular.module ('com.module.chat')
-  .controller ('ChatCtrl', function ($scope, User, Chat) {
+var app = angular.module('com.module.chat');
+
+app.controller('ChatCtrl', function ($scope, $location, $anchorScroll, User, Chat) {
 
   // Get current User
-  $scope.user = User.getCurrent ();
+  $scope.user = User.getCurrent();
   $scope.chat = {};
   $scope.messages = [];
 
   // Connect Socket.io
-  Chat.on ('chat message', function (msg) {
-    $scope.messages.push (msg);
+  Chat.on('chat message', function (msg) {
+    $scope.messages.push(msg);
   });
 
   // Send Button
   $scope.sendMessage = function (inputMessage) {
-    var data = new Date();
+
     // Format object before send socket.io
     $scope.chat = {
-      firstName: $scope.user.fistName ,
-      email: $scope.user.email,
-      msg: inputMessage
+      user: $scope.user,
+      msg: inputMessage,
+      timestamp: Date.now()
     };
 
     // Send to Server
-    Chat.emit ('chat message', $scope.chat);
+    Chat.emit('chat message', $scope.chat);
     //Clean Input
     $scope.inputMessage = '';
     // Focus Input
-    document.getElementById("message").focus();
+    document.getElementById('message').focus();
+
+    // Scroll to bottom
+    $location.hash('bottom');
+    $anchorScroll();
+  };
+
+  // Triggerd on pressing return
+  $scope.keypressCallback = function ($event) {
+    $event.preventDefault();
+    if ($scope.inputMessage !== '') {
+      $scope.sendMessage($scope.inputMessage);
+    }
   };
 
 });
