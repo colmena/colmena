@@ -1,52 +1,68 @@
-<!-- Chat box -->
-<div class="box box-success">
-  <div class="box-header">
-    <i class="fa fa-comments-o"></i>
+<div class="row">
+  <div class="col-sm-10">
 
-    <h3 class="box-title">Chatroom <small>x users online</small></h3>
+    <!-- Chat box -->
+    <div class="box" ng-class="{'box-success': connected, 'box-warning': !connected }">
+      <div class="box-header">
+        <i class="fa fa-comments-o"></i>
 
-    <div title="Status" data-toggle="tooltip" class="box-tools pull-right">
-      <div data-toggle="btn-toggle" class="btn-group">
-        <!--
-          <button class="btn btn-default btn-sm active" type="button"><i class="fa fa-square text-green"></i></button>
-          <button class="btn btn-default btn-sm" type="button"><i class="fa fa-square text-red"></i></button>
-        -->
-      </div>
-    </div>
-  </div>
-  <!--<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 250px;">-->
-  <div>
-    <div id="chat-box" class="box-body chat" style="overflow: auto; width: auto; height: 250px;">
-      <div ng-repeat="message in messages">
-        <div class="item">
-          <img gravatar-src="message.user.email" class="online" alt="user image">
+        <h3 class="box-title">Chatroom</h3>
 
-          <p class="message">
-            <a class="name" href="#">
-              <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{message.timestamp| date : 'HH:mm' }}
-              </small>
-              {{ message.user.firstName }}
-            </a>
-            {{ message.msg }}
-          </p>
+        <div title="Status" data-toggle="tooltip" class="box-tools pull-right">
+          <div data-toggle="btn-toggle" class="btn-group">
+              <!--<button ng-click="toggleConnection()" ng-show="connected" class="btn btn-default btn-sm active" type="button"><i class="fa fa-square text-green"></i></button>-->
+              <!--<button ng-click="toggleConnection()" ng-show="!connected" class="btn btn-default btn-sm" type="button"><i class="fa fa-square text-red"></i></button>-->
+          </div>
         </div>
       </div>
-      <a id="bottom"></a>
-    </div>
-  </div>
+      <div>
+        <div id="chat-box" class="box-body chat" style="overflow: auto; width: auto; height: 400px;">
+          <div ng-repeat="message in messages">
+            <div class="item">
+              <img gravatar-src="message.user.email" class="online" alt="user image">
 
-  <!-- /.chat -->
-  <div class="box-footer">
-    <div class="input-group">
-      <textarea autofocus class="msd-elastic form-control send-message" id="message" ng-model="inputMessage"
-                placeholder="{{ 'Enter your message' | translate }}..." rows="1"
-                ui-keyup="{'enter':'keypressCallback($event)'}">
-      </textarea>
+              <p class="message">
+                <a class="name" href="#">
+                  <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> {{message.timestamp| date : 'HH:mm'
+                    }}
+                  </small>
+                  {{ message.user.firstName }}
+                </a>
+                <span btf-markdown="message.msg"></span>
+              </p>
+            </div>
+          </div>
+          <a id="bottom"></a>
+        </div>
+      </div>
 
-      <div class="input-group-btn">
-        <button ng-click="sendMessage(inputMessage)" class="btn btn-success"><i class="fa fa-plus"></i></button>
+      <div class="box-footer">
+        <div class="input-group">
+          <textarea autofocus class="msd-elastic form-control send-message" id="message" ng-model="inputMessage"
+                    placeholder="{{ 'Enter your message' | translate }}..." rows="1"
+                    ui-keyup="{'enter':'keypressCallback($event)'}">
+          </textarea>
+
+          <div class="input-group-btn">
+            <button ng-click="sendMessage(inputMessage)" class="btn btn-success"><i class="fa fa-plus"></i></button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div><!-- /.box (chat box) -->
 
+  </div>
+  <div class="col-sm-2">
+    <div class="box">
+      <div class="box-body">
+        <ul class="nav nav-pills nav-stacked">
+          <li class="header">Users</li>
+          <li ng-repeat="user in users | orderBy: 'username'">
+            <a href=""> <img gravatar-src="user.email" class="smallavatar" alt="user image"
+              > {{user.username}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>

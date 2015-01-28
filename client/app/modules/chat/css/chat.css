@@ -2,3 +2,9 @@
   display: block;
   margin-bottom: 60px;
 }
+
+.smallavatar {
+  height: 20px;
+  margin-left: -5px;
+  margin-right: 5px;
+}
