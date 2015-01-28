@@ -23,6 +23,10 @@ angular.module('com.module.sandbox')
       sref: '.forms'
     },
     {
+      name: 'Icons',
+      sref: '.icons'
+    },
+    {
       name: 'Grid',
       sref: '.grid'
     },
