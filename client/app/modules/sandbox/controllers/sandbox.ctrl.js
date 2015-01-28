@@ -23,6 +23,10 @@ angular.module('com.module.sandbox')
       sref: '.forms'
     },
     {
+      name: 'Faker',
+      sref: '.faker'
+    },
+    {
       name: 'Icons',
       sref: '.icons'
     },

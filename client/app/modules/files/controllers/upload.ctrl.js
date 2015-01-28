@@ -18,7 +18,7 @@ app.controller('UploadCtrl', function ($scope, FileUploader, CoreService) {
 
   uploader.filters.push({
     name: 'customFilter',
-    fn: function (item /*{File|FileLikeObject}*/, options) {
+    fn: function () {
       return this.queue.length < 10;
     }
   });

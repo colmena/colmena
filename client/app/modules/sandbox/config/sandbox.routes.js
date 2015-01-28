@@ -24,6 +24,11 @@ angular.module('com.module.sandbox')
         templateUrl: 'modules/sandbox/views/icons.html',
         controller: 'SandboxIconsCtrl'
       })
+      .state('app.sandbox.faker', {
+        url: '/faker',
+        templateUrl: 'modules/sandbox/views/faker.html',
+        controller: 'SandboxFakerCtrl'
+      })
       .state('app.sandbox.coreservice', {
         url: '/coreservice',
         templateUrl: 'modules/sandbox/views/coreservice.html',
