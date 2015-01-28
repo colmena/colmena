@@ -1,12 +1,21 @@
 'use strict';
 var app = angular.module('com.module.chat');
 
-app.controller('ChatCtrl', function ($scope, $location, $anchorScroll, User, Chat) {
+app.controller('ChatCtrl', function ($scope, $location, $timeout, $anchorScroll, User, Chat) {
 
-  // Get current User
   $scope.user = User.getCurrent();
+  $scope.users = User.find();
   $scope.chat = {};
   $scope.messages = [];
+
+  $scope.connected = false;
+
+  $timeout(function () {
+    $scope.connected = Chat.socket.connected;
+  }, 1000);
+
+
+  console.log(Chat);
 
   // Connect Socket.io
   Chat.on('chat message', function (msg) {
