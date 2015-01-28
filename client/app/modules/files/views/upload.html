@@ -1,4 +1,4 @@
-<div ng-controller="UploadCtrl" ng-file-drop>
+<div ng-controller="UploadCtrl" nv-file-drop uploader="uploader">
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">
@@ -11,7 +11,7 @@
             <div class="box-tools">
                 <div class="input-group pull-right" style="margin-top: 5px;">
                     <span class="file-input btn btn-block btn-default btn-file">
-                        {{ 'Browse' | translate }}&hellip; <input ng-file-select type="file" multiple/>
+                        {{ 'Browse' | translate }}&hellip; <input nv-file-select type="file" uploader="uploader" multiple/>
                     </span>
                 </div>
             </div>

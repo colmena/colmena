@@ -657,4 +657,8 @@ module.exports = function (grunt) {
     'nggettext_compile',
   ]);
 
+  grunt.registerTask('includesource', [
+    'includeSource:server'
+  ]);
+
 };
