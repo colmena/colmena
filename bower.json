@@ -18,7 +18,7 @@
     "angular-filter": "~0.5.2",
     "angular-sweetalert": "~1.0.3",
     "angular-gravatar": "~0.2.2",
-    "ionicons": "~1.5.2",
+    "ionicons": "~2.0.0",
     "angular-bootstrap": "~0.12.0",
     "angular-bootstrap-nav-tree": "*",
     "angular-ui-codemirror": "bower",
