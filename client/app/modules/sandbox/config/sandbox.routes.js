@@ -19,6 +19,11 @@ angular.module('com.module.sandbox')
         templateUrl: 'modules/sandbox/views/forms.html',
         controller: 'SandboxFormsCtrl'
       })
+      .state('app.sandbox.icons', {
+        url: '/icons',
+        templateUrl: 'modules/sandbox/views/icons.html',
+        controller: 'SandboxIconsCtrl'
+      })
       .state('app.sandbox.coreservice', {
         url: '/coreservice',
         templateUrl: 'modules/sandbox/views/coreservice.html',
