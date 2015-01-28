@@ -14,7 +14,7 @@
     "font-awesome": "~4.1.0",
     "angular-formly": "~1.0.0",
     "angular-toasty": "~0.1.8",
-    "angular-file-upload": "v0.4.0",
+    "angular-file-upload": "v1.1.5",
     "angular-filter": "~0.4.9",
     "angular-sweetalert": "~1.0.3",
     "angular-gravatar": "~0.2.2",
