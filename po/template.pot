@@ -119,6 +119,15 @@ msgstr ""
 msgid "Change it here!"
 msgstr ""
 
+#: client/app/modules/chat/config/chat.config.js:4
+#: client/app/modules/chat/views/main.html:1
+msgid "Chat"
+msgstr ""
+
+#: client/app/modules/chat/views/main.html:1
+msgid "Chat with your friends!"
+msgstr ""
+
 #: client/app/modules/events/views/list.html:27
 msgid "Click <a href=\"\" ui-sref=\"^.add\">here</a> to add a event!"
 msgstr ""
@@ -269,6 +278,10 @@ msgstr ""
 
 #: client/app/modules/users/controllers/profile.ctrl.js:41
 msgid "Enjoy the new you!"
+msgstr ""
+
+#: client/app/modules/chat/views/chat.html:42
+msgid "Enter your message"
 msgstr ""
 
 #: client/app/modules/products/controllers/products.ctrl.js:57
