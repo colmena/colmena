@@ -38,10 +38,11 @@ app.controller('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeS
     CoreService.toastSuccess('Created ' + $scope.records + ' posts');
   };
 
+  /*jshint camelcase: false */
   $scope.fakeEvents = function () {
     $scope.faker = [];
     for (var i = 0; i < $scope.records; i++) {
-      var name = FakeService.faker.name.findName();
+      //var name = FakeService.faker.name.findName();
       var fake = {
         name: FakeService.faker.lorem.sentence(),
         description: FakeService.faker.lorem.paragraph(),
@@ -52,6 +53,7 @@ app.controller('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeS
       Event.create(fake);
     }
   };
+  /*jshint camelcase: true */
 
 });
 
