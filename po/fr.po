@@ -9,27 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Poedit 1.7.4\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-Basepath: template.pot\n"
-
-#: client/app/modules/pages/views/form.html:5
-#: client/app/modules/pages/views/view.html:4
-msgid "<i class=\"fa fa-arrow-left\"></i> Pages"
-msgstr "<i class=\"fa fa-arrow-left\"></i> Pages"
-
-#: client/app/modules/users/views/form.html:5
-#: client/app/modules/users/views/view.html:4
-msgid "<i class=\"fa fa-arrow-left\"></i> Users"
-msgstr "<i class=\"fa fa-arrow-left\"></i> Utilisateurs"
-
-#: client/app/modules/pages/views/form.html:14
-msgid "<i class=\"fa fa-save\"></i>  Save"
-msgstr "<i class=\"fa fa-save\"></i>  Enregistrer"
-
-#: client/app/modules/users/views/form.html:12
-msgid "<i class=\"fa fa-save\"></i> Save"
-msgstr "<i class=\"fa fa-save\"></i>  Enregistrer"
 
 #: client/app/modules/about/controllers/about.config.js:5
 #: client/app/modules/about/views/main.html:1
@@ -127,6 +109,15 @@ msgstr "Catégorie enregistrée"
 #: client/app/modules/users/views/profile.html:21
 msgid "Change it here!"
 msgstr "Modifiez ici!"
+
+#: client/app/modules/chat/config/chat.config.js:4
+#: client/app/modules/chat/views/main.html:1
+msgid "Chat"
+msgstr "Clavardage"
+
+#: client/app/modules/chat/views/main.html:1
+msgid "Chat with your friends!"
+msgstr "Clavardez avec vos amis"
 
 #: client/app/modules/events/views/list.html:27
 msgid "Click <a href=\"\" ui-sref=\"^.add\">here</a> to add a event!"
@@ -290,6 +281,10 @@ msgstr "Heure de fin"
 msgid "Enjoy the new you!"
 msgstr "Votre nouveau compte!"
 
+#: client/app/modules/chat/views/chat.html:42
+msgid "Enter your message"
+msgstr "Entrez votre message"
+
 #: client/app/modules/products/controllers/products.ctrl.js:57
 msgid "Error deleting category"
 msgstr "La catégorie ne peux être effacée"
@@ -354,9 +349,7 @@ msgstr "L'évènement n'a pu être ajouté"
 msgid "Event saved"
 msgstr "Évènement ajouté"
 
-#: client/app/modules/events/config/events.config.js:10
-#: client/app/modules/events/config/events.config.js:5
-#: client/app/modules/events/config/events.config.js:7
+#: client/app/modules/events/config/events.config.js:4
 #: client/app/modules/events/views/main.html:1
 msgid "Events"
 msgstr "Évènements"
@@ -497,8 +490,10 @@ msgstr "Page enregistrée"
 
 #: client/app/modules/pages/config/pages.config.js:4
 #: client/app/modules/pages/config/pages.config.js:7
+#: client/app/modules/pages/views/form.html:6
 #: client/app/modules/pages/views/list.html:3
 #: client/app/modules/pages/views/main.html:1
+#: client/app/modules/pages/views/view.html:4
 msgid "Pages"
 msgstr "Pages"
 
@@ -581,11 +576,13 @@ msgid "Roles"
 msgstr "Rôles"
 
 #: client/app/modules/events/controllers/events.ctrl.js:118
+#: client/app/modules/pages/views/form.html:14
 #: client/app/modules/posts/controllers/posts.ctrl.js:62
 #: client/app/modules/products/controllers/categories.ctrl.js:29
 #: client/app/modules/products/controllers/products.ctrl.js:96
 #: client/app/modules/users/controllers/profile.ctrl.js:36
 #: client/app/modules/users/controllers/users.ctrl.js:81
+#: client/app/modules/users/views/form.html:12
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -729,7 +726,9 @@ msgid "Username"
 msgstr "Code utilisateur"
 
 #: client/app/modules/users/config/users.config.js:4
+#: client/app/modules/users/views/form.html:6
 #: client/app/modules/users/views/main.html:1
+#: client/app/modules/users/views/view.html:4
 msgid "Users"
 msgstr "Utilisateurs"
 
@@ -899,6 +898,18 @@ msgstr "image"
 #: client/app/modules/files/views/upload.html:32
 msgid "in queue"
 msgstr "en file"
+
+#~ msgid "<i class=\"fa fa-arrow-left\"></i> Pages"
+#~ msgstr "<i class=\"fa fa-arrow-left\"></i> Pages"
+
+#~ msgid "<i class=\"fa fa-arrow-left\"></i> Users"
+#~ msgstr "<i class=\"fa fa-arrow-left\"></i> Utilisateurs"
+
+#~ msgid "<i class=\"fa fa-save\"></i>  Save"
+#~ msgstr "<i class=\"fa fa-save\"></i>  Enregistrer"
+
+#~ msgid "<i class=\"fa fa-save\"></i> Save"
+#~ msgstr "<i class=\"fa fa-save\"></i>  Enregistrer"
 
 #~ msgid "Connection Refused"
 #~ msgstr "Connexion refusée"
