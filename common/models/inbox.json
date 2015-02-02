@@ -1,0 +1,34 @@
+{
+  "name": "Inbox",
+  "plural": "inbox",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "message": {
+      "type": "string",
+      "required": true
+    },
+    "unread": {
+      "type": "boolean",
+      "required": true
+    },
+    "sent": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "from"
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "to"
+    }
+  },
+  "acls": [],
+  "methods": []
+}
