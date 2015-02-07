@@ -1,12 +1,12 @@
-<div class="lockscreen" style="height: 100%">
-  <div class="form-box" id="login-box">
-        <span class="pull-right image" style="margin: 15px 20px; float: left;">
-            <img gravatar-src="credentials.email" class="img-circle" alt="User Image" gravatar-size="50">
-        </span>
 
-    <div class="header" style="text-align: left; padding-left: 25px;" translate>Sign In</div>
+<div class="login-box">
+  <div class="login-logo">
+    <a href="./">{{ getSetting('appName') }}</a>
+  </div><!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg" translate>Sign in to start your session</p>
     <form role="form" ng-submit="login()" method="post">
-      <div class="body bg-gray">
+      <div class="body ">
         <div class="callout callout-danger" ng-if="loginError">
           <p>{{loginError.message | translate}}</p>
         </div>
@@ -15,11 +15,23 @@
       <div class="footer">
         <button type="submit" class="btn bg-olive btn-block" translate>Sign in</button>
         <a href='#/register' class="btn bg-yellow btn-block" translate>Or register</a>
-        <a ng-repeat="provider in authProviders" ng-hide="provider.link" ng-click="socialLogin(provider)"
-           class="btn btn-block btn-{{provider.class}}">
-          {{provider.provider | ucfirst}}
-        </a>
+
+
       </div>
     </form>
-  </div>
+
+    <div class="social-auth-links text-center" ng-show="authProviders.length">
+      <p>- or -</p>
+      <a ng-repeat="provider in authProviders" ng-hide="provider.link" ng-click="socialLogin(provider)"
+         class="btn btn-block btn-{{provider.class}}">
+        {{provider.provider | ucfirst}}
+      </a>
+    </div><!-- /.social-auth-links -->
+
+    <a href="#">I forgot my password</a><br>
+    <a href="register.html" class="text-center">Register a new membership</a>
+
+  </div><!-- /.login-box-body -->
 </div>
+
+
