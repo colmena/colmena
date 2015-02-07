@@ -30,7 +30,7 @@ if (env !== 'prod') {
   staticPath = path.resolve(__dirname, '../client/app/');
   console.log("Running app in development mode");
 } else {
-  staticPath = path.resolve(__dirname, '../dist/');
+  staticPath = path.resolve(__dirname, '../client/dist/');
   console.log("Running app in prodction mode");
 }
 
