@@ -37,8 +37,7 @@
                 <small>{{appTheme}}</small>
               </h4>
               <div class="btn-group" data-toggle="btn-toggle">
-                <button type="button" class="btn btn-default btn-xs" data-toggle="on"
-                        ng-repeat="theme in appThemes" ng-click="setSetting('appTheme', theme.class)">
+                <button type="button" class="btn btn-default btn-xs" data-toggle="on" ng-repeat="theme in appThemes" ng-click="setSetting('appTheme', theme.class)">
                   {{theme.name}}
                 </button>
               </div>
@@ -46,8 +45,7 @@
                 <small>{{appLayout}}</small>
               </h4>
               <div class="btn-group" data-toggle="btn-toggle">
-                <button type="button" class="btn btn-default btn-xs" data-toggle="on"
-                        ng-repeat="layout in appLayouts" ng-click="setSetting('appLayout', layout.class)">
+                <button type="button" class="btn btn-default btn-xs" data-toggle="on" ng-repeat="layout in appLayouts" ng-click="setSetting('appLayout', layout.class)">
                   {{layout.name}}
                 </button>
               </div>

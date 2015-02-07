@@ -33,7 +33,7 @@ angular.module('loopbackApp', [
   'autofields',
   'gettext',
   'translate',
-  'templatescache',
+  //'templatescache',
   'com.module.core',
   'com.module.about',
   'com.module.events',
