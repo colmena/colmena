@@ -1,17 +1,18 @@
 'use strict';
-angular.module('com.module.posts')
-  .service('PostsService', ['$http', 'Post', function ($http, Post) {
-    this.savePost = function (goat) {
-      return $http.post('/goats', goat);
-    };
+var app = angular.module('com.module.posts');
 
-    this.getPosts = function () {
-      return Post.find();
-    };
+app.service('PostsService', ['$http', 'Post', function ($http, Post) {
+  this.savePost = function (goat) {
+    return $http.post('/goats', goat);
+  };
 
-    this.getPost = function (postId) {
-      return Post.findById({
-        id: postId
-      });
-    };
-  }]);
+  this.getPosts = function () {
+    return Post.find().$promise;
+  };
+
+  this.getPost = function (postId) {
+    return Post.findById({
+      id: postId
+    });
+  };
+}]);
