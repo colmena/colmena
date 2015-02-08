@@ -6,6 +6,7 @@ downloaded
 docular_generated
 client/app/js/lb-services.js
 client/app/js/config.js
+client/app/js/templatescache.js
 client/app/index.html
 .idea/
 storage/
