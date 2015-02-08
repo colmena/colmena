@@ -75,7 +75,6 @@
     "gulp-wrap": "^0.10.1",
     "jshint": "^2.6.0",
     "jshint-stylish": "^1.0.0",
-    "lodash.assign": "^3.0.0",
     "loopback": "^2.10.2",
     "loopback-boot": "^2.6.3",
     "loopback-component-passport": "^1.1.2",
