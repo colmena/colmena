@@ -11,6 +11,14 @@ angular.module ('com.module.core')
  **/
   .controller ('LayoutCtrl', function ($scope, $rootScope, $cookies, CoreService, gettextCatalog) {
 
+
+  // Toasty
+  $scope.toasty = {
+    'timeout': 3000,
+    'close-button': true,
+    'sound': false
+  };
+
   // angular translate
   $scope.locale = {
     isopen: false

@@ -82,14 +82,7 @@ gulp.task ('images', function () {
     .pipe (notify ({message: 'Images task complete'}));
 });
 
-//// Copy fonts from a module outside of our project (like Bower)
-gulp.task ('copyfiles', function () {
-  gulp.src ('app/partials/**/*')
-    .pipe (gulp.dest ('dist/app/partials'));
 
-  gulp.src ('Data/**/*')
-    .pipe (gulp.dest ('dist/Data'));
-});
 
 // Docs
 gulp.task ('docs', [], function () {
@@ -132,6 +125,30 @@ gulp.task ('server', function () {
   });
 })
 
+// Copy Fonts
+gulp.task ('sourcefonts', function () {
+
+  // Ionic
+  gulp.src (paths.source + '/bower_components/bootstrap/fonts/*')
+    .pipe (gulp.dest (paths.dist + '/fonts'));
+
+  // Bootstrap
+  gulp.src (paths.source + '/bower_components/ionic/fonts/*')
+    .pipe (gulp.dest (paths.dist + '/fonts'));
+
+  // Flags
+  gulp.src (paths.source + '/bower_components/flag-icon-css/flags/**/*')
+    .pipe (gulp.dest (paths.dist + '/flags'));
+
+  // Ionicons
+  gulp.src (paths.source + '/bower_components/ionicons/fonts/*')
+    .pipe (gulp.dest (paths.dist + '/fonts'));
+
+  // Font Awesome
+  gulp.src (paths.source + '/bower_components/font-awesome/fonts/*')
+    .pipe (gulp.dest (paths.dist + '/fonts'));
+
+});
 
 // Start Build
 gulp.task ('usemin', function () {
