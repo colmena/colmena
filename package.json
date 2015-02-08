@@ -20,7 +20,7 @@
   "scripts": {
     "start": "node server/server.js",
     "dev": "nodemon server/server.js --watch server common",
-    "postinstall": "bower install && gulp build"
+    "postinstall": "bower install && gulp && gulp build"
   },
   "main": "server/server.js",
   "dependencies": {},
