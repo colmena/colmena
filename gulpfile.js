@@ -244,7 +244,8 @@ gulp.task ('build', [
   'default',
   'usemin',
   'images',
-  'templates'
+  'templates',
+  'sourcefonts'
 ], function () {
   console.log ('Build success!');
 });
