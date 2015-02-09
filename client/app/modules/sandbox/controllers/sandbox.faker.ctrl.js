@@ -29,7 +29,7 @@ app.controller('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeS
     for (var i = 1; i <= $scope.records; i++) {
       var fake = {
         title: FakeService.faker.lorem.sentence(),
-        body: FakeService.faker.lorem.paragraph(),
+        content: FakeService.faker.lorem.paragraph(),
         image: FakeService.faker.image.imageUrl()
       };
       $scope.faker.push(fake);
