@@ -38,7 +38,7 @@ angular.module('com.module.users')
       {
         label: '',
         property: 'email',
-        placeholder: gettextCatalog.getString('email'),
+        placeholder: gettextCatalog.getString('Email'),
         type: 'email',
         help: gettextCatalog.getString('Don\'t worry we won\'t spam your inbox'),
         attr: {required: true, ngMinlength: 4},

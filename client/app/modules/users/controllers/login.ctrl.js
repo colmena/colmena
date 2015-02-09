@@ -14,17 +14,20 @@ angular.module('com.module.users')
     var TWO_WEEKS = 1000 * 60 * 60 * 24 * 7 * 2;
 
     $scope.credentials = {
-      email: 'admin@admin.com',
-      password: 'admin',
       ttl: TWO_WEEKS,
       rememberMe: true
     };
+
+    if (CoreService.env.name == 'development') {
+      $scope.credentials.email = 'admin@admin.com';
+      $scope.credentials.password = 'admin';
+    }
 
     $scope.schema = [
       {
         label: '',
         property: 'email',
-        placeholder: gettextCatalog.getString('email'),
+        placeholder: gettextCatalog.getString('Email'),
         type: 'email',
         attr: {required: true, ngMinlength: 4},
         msgs: {
