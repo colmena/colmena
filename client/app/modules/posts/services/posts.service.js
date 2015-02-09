@@ -27,6 +27,6 @@ app.service('PostsService', ['CoreService', 'gettextCatalog', 'Post', function (
     }, function () {
       return false;
     });
-  }
+  };
 
 }]);

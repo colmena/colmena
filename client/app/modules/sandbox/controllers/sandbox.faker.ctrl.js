@@ -41,12 +41,11 @@ app.controller('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeS
   $scope.fakeEvents = function () {
     $scope.faker = [];
     for (var i = 0; i < $scope.records; i++) {
-      var name = FakeService.faker.name.findName();
       var fake = {
         name: FakeService.faker.lorem.sentence(),
         description: FakeService.faker.lorem.paragraph(),
-        start_time: FakeService.faker.date.future(),
-        end_time: FakeService.faker.date.future()
+        startTime: FakeService.faker.date.future(),
+        endTime: FakeService.faker.date.future()
       };
       $scope.faker.push(fake);
       Event.create(fake);
