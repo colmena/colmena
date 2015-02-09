@@ -14,6 +14,8 @@ app.controller('UploadCtrl', function ($scope, FileUploader, CoreService) {
     ]
   });
 
+  console.log('Add filters and callbacks to the uploader object:', uploader);
+
   // FILTERS AND CALLBACKS
 
   //uploader.filters.push({

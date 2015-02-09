@@ -18,7 +18,7 @@ angular.module('com.module.users')
       rememberMe: true
     };
 
-    if (CoreService.env.name == 'development') {
+    if (CoreService.env.name === 'development') {
       $scope.credentials.email = 'admin@admin.com';
       $scope.credentials.password = 'admin';
     }
