@@ -1,5 +1,5 @@
 'use strict';
-angular.module('com.module.core')
+angular.module ('com.module.core')
 /**
  * @ngdoc function
  * @name com.module.core.controller:LayoutCtrl
@@ -9,64 +9,94 @@ angular.module('com.module.core')
  * @requires CoreService
  * @requires gettextCatalog
  **/
-  .controller('LayoutCtrl', function ($scope, $rootScope, $cookies, CoreService, gettextCatalog) {
+  .controller ('LayoutCtrl', function ($scope, $rootScope, $cookies, CoreService, gettextCatalog) {
 
-    // angular translate
-    $scope.locale = {
-      isopen: false
-    };
 
-    $scope.locales = $rootScope.locales;
-    $scope.selectLocale = $rootScope.locale;
+  // Toasty
+  $scope.toasty = {
+    'timeout': 3000,
+    'close-button': true,
+    'sound': false
+  };
 
-    $scope.setLocale = function (locale) {
-      // set the current lang
-      $scope.locale = $scope.locales[locale];
-      $scope.selectLocale = $scope.locale;
-      $rootScope.locale = $scope.locale;
-      $cookies.lang = $scope.locale.lang;
+  // angular translate
+  $scope.locale = {
+    isopen: false
+  };
 
-      // You can change the language during runtime
-      $scope.locale.isopen = !$scope.locale.isopen;
+  $scope.locales = $rootScope.locales;
+  $scope.selectLocale = $rootScope.locale;
 
-      gettextCatalog.setCurrentLanguage($scope.locale.lang);
-    };
+  $scope.setLocale = function (locale) {
+    // set the current lang
+    $scope.locale = $scope.locales[locale];
+    $scope.selectLocale = $scope.locale;
+    $rootScope.locale = $scope.locale;
+    $cookies.lang = $scope.locale.lang;
 
-    $scope.appName = 'LB-NG-BS';
-    $scope.apiUrl = CoreService.env.apiUrl;
-    $scope.appTheme = 'skin-blue';
-    $scope.appThemes = [{
+    // You can change the language during runtime
+    $scope.locale.isopen = !$scope.locale.isopen;
+
+    gettextCatalog.setCurrentLanguage ($scope.locale.lang);
+  };
+
+  $scope.appName = 'LB-NG-BS';
+  $scope.apiUrl = CoreService.env.apiUrl;
+  $scope.appTheme = 'skin-blue';
+  $scope.appThemes = [
+    {
       'name': 'Black',
       'class': 'skin-black'
-    }, {
+    },
+    {
       'name': 'Blue',
       'class': 'skin-blue'
-    }];
-    $scope.appLayout = '';
-    $scope.appLayouts = [{
+    },
+    {
+      'name': 'Red',
+      'class': 'skin-red'
+    },
+    {
+      'name': 'Green',
+      'class': 'skin-green'
+    },
+    {
+      'name': 'Purple',
+      'class': 'skin-purple'
+    },
+    {
+      'name': 'Yellow',
+      'class': 'skin-yellow'
+    }
+  ];
+  $scope.appLayout = '';
+  $scope.appLayouts = [
+    {
       'name': 'Fixed',
       'class': 'fixed'
-    }, {
+    },
+    {
       'name': 'Scrolling',
       'class': 'not-fixed'
-    }];
+    }
+  ];
 
-    $scope.toggleSidebar = function () {
-      var $ = angular.element;
-      if ($(window).width() <= 992) {
-        $('.row-offcanvas').toggleClass('active');
-        $('.left-side').removeClass('collapse-left');
-        $('.right-side').removeClass('strech');
-        $('.row-offcanvas').toggleClass('relative');
-      } else {
-        // Else, enable content streching
-        $('.left-side').toggleClass('collapse-left');
-        $('.right-side').toggleClass('strech');
-      }
-    };
+  $scope.toggleSidebar = function () {
+    var $ = angular.element;
+    if ($ (window).width () <= 992) {
+      $ ('.row-offcanvas').toggleClass ('active');
+      $ ('.left-side').removeClass ('collapse-left');
+      $ ('.right-side').removeClass ('strech');
+      $ ('.row-offcanvas').toggleClass ('relative');
+    } else {
+      // Else, enable content streching
+      $ ('.left-side').toggleClass ('collapse-left');
+      $ ('.right-side').toggleClass ('strech');
+    }
+  };
 
-    $scope.settings = $rootScope.settings;
+  $scope.settings = $rootScope.settings;
 
-    $rootScope.loadSettings();
+  $rootScope.loadSettings ();
 
-  });
+});

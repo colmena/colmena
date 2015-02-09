@@ -4,11 +4,11 @@ angular.module('com.module.products')
     $rootScope.addMenu(gettextCatalog.getString('Products'), 'app.products.list', 'fa-file');
 
     Product.find(function (data) {
-      $rootScope.addDashboardBox(gettextCatalog.getString('Products'), 'bg-yellow', 'ion-ios7-cart-outline', data.length, 'app.products.list');
+      $rootScope.addDashboardBox(gettextCatalog.getString('Products'), 'bg-yellow', 'ion-bag', data.length, 'app.products.list');
     });
 
     Category.find(function (data) {
-      $rootScope.addDashboardBox(gettextCatalog.getString('Categories'), 'bg-aqua', 'ion-ios7-pricetag-outline', data.length, 'app.products.list');
+      $rootScope.addDashboardBox(gettextCatalog.getString('Categories'), 'bg-aqua', 'ion-bag', data.length, 'app.products.list');
     });
 
   });

@@ -32,6 +32,8 @@ angular.module('loopbackApp', [
   'toasty',
   'autofields',
   'gettext',
+  'translate',
+  'templatescache',
   'com.module.core',
   'com.module.about',
   'com.module.events',
