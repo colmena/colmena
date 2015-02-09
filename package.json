@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "node server/server.js",
-    "dev": "nodemon server/server.js --watch server common",
+    "dev": "nodemon server/server.js --watch server --watch common --ext js,json ",
     "postinstall": "bower install && grunt build"
   },
   "main": "server/server.js",
