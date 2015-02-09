@@ -7,7 +7,8 @@ app.config(function ($stateProvider) {
     abstract: true,
     url: '/posts',
     templateUrl: 'modules/posts/views/main.html',
-    controller: 'PostsCtrl'
+    controller: 'PostsCtrl',
+    controllerAs: 'ctrl'
   }).state('app.posts.list', {
     url: '',
     templateUrl: 'modules/posts/views/list.html',
@@ -30,6 +31,13 @@ app.config(function ($stateProvider) {
   }).state('app.posts.view', {
     url: '/:id',
     templateUrl: 'modules/posts/views/view.html',
-    controller: 'PostsCtrl'
+    resolve: {
+      post: ['$stateParams', 'PostsService', function ($stateParams, PostsService) {
+        return PostsService.getPost($stateParams.id);
+      }]
+    },
+    controller: function ($scope, post) {
+      $scope.post = post;
+    }
   });
 });
