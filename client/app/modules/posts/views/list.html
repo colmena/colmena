@@ -1,7 +1,7 @@
 
 
 <div class='list-group'>
-  <div ng-repeat="item in ctrl.posts" class="list-group-item">
+  <div ng-repeat="item in posts" class="list-group-item">
 
     <span class="pull-right btn-group" style="margin-top: 7px;">
       <a href="" class="btn btn-sm btn-default" ui-sref="^.edit({id: item.id})">
@@ -19,7 +19,7 @@
 
   </div>
 
-  <div ng-show="!ctrl.posts.length" class="list-group-item">
+  <div ng-show="!posts.length" class="list-group-item">
     <h4 class="list-group-item-heading" translate>
       There are no posts
     </h4>

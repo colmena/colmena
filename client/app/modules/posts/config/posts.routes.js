@@ -6,16 +6,18 @@ app.config(function ($stateProvider) {
   $stateProvider.state('app.posts', {
     abstract: true,
     url: '/posts',
-    templateUrl: 'modules/posts/views/main.html'
+    templateUrl: 'modules/posts/views/main.html',
+    controller: 'PostsCtrl'
   }).state('app.posts.list', {
     url: '',
     templateUrl: 'modules/posts/views/list.html',
-    controller: 'PostsCtrl',
-    controllerAs: 'ctrl',
     resolve: {
       posts: ['PostsService', function (PostsService) {
         return PostsService.getPosts();
       }]
+    },
+    controller: function ($scope, posts) {
+      $scope.posts = posts;
     }
   }).state('app.posts.add', {
     url: '/add',

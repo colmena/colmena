@@ -19,7 +19,7 @@ angular.module('com.module.posts')
       CoreService.confirm(gettextCatalog.getString('Are you sure?'), gettextCatalog.getString('Deleting this cannot be undone'), function () {
         Post.deleteById(id, function () {
           CoreService.toastSuccess(gettextCatalog.getString('Post deleted'), gettextCatalog.getString('Your post is deleted!'));
-          $state.go('app.posts.list');
+          $state.reload();
         }, function (err) {
           CoreService.toastError(gettextCatalog.getString('Error deleting post'), gettextCatalog.getString('Your post is not deleted: ') + err);
         });
