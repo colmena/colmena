@@ -574,6 +574,26 @@ module.exports = function (grunt) {
           ]
         }
       ]
+    },
+
+    "jsbeautifier" : {
+      "default": {
+        src: [
+          "client/app/js/app.js",
+          "client/app/modules/**/*.js",
+          "common/**/*.js",
+          "server/**/*.js"
+        ],
+        options: {
+          config: '.jsbeautifyrc'
+        }
+      },
+      "git-pre-commit": {
+        src : ["src/**/*.js"],
+        options : {
+          mode:"VERIFY_ONLY"
+        }
+      }
     }
 
   });
@@ -605,6 +625,10 @@ module.exports = function (grunt) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run(['serve:' + target]);
   });
+
+  grunt.registerTask('format', [
+    'jsbeautifier:default'
+  ]);
 
   grunt.registerTask('test', [
     'clean:server',
