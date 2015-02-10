@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (app) {
+module.exports = function(app) {
 
   if (app.dataSources.db.name !== 'Memory' && !process.env.INITDB) {
     return;
@@ -13,7 +13,7 @@ module.exports = function (app) {
 
   Category.create({
     name: 'Beer'
-  }, function (err, category) {
+  }, function(err, category) {
     if (err) {
       console.log('err', err);
     }
@@ -22,7 +22,7 @@ module.exports = function (app) {
       price: '250',
       percentage: '5',
       categoryId: category.id
-    }, function (err, data) {
+    }, function(err, data) {
       //console.log (data);
     });
     Product.create({
@@ -30,14 +30,14 @@ module.exports = function (app) {
       price: '350',
       percentage: '5',
       categoryId: category.id
-    }, function (err, data) {
+    }, function(err, data) {
       //console.log (data);
     });
   });
 
   Category.create({
     name: 'Wine'
-  }, function (err, category) {
+  }, function(err, category) {
     if (err) {
       console.log('err', err);
     }
@@ -46,7 +46,7 @@ module.exports = function (app) {
       price: '350',
       percentage: '12',
       categoryId: category.id
-    }, function (err, data) {
+    }, function(err, data) {
       //console.log (data);
     });
     Product.create({
@@ -54,7 +54,7 @@ module.exports = function (app) {
       price: '350',
       percentage: '12',
       categoryId: category.id
-    }, function (err, data) {
+    }, function(err, data) {
       //console.log (data);
     });
   });

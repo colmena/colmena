@@ -4,7 +4,7 @@ module.exports = function mountLoopBackExplorer(server) {
   var explorer;
   try {
     explorer = require('loopback-explorer');
-  } catch(err) {
+  } catch (err) {
     console.log(
       'Run `npm install loopback-explorer` to enable the LoopBack explorer'
     );
@@ -13,7 +13,9 @@ module.exports = function mountLoopBackExplorer(server) {
 
   var restApiRoot = server.get('restApiRoot');
 
-  var explorerApp = explorer(server, { basePath: restApiRoot });
+  var explorerApp = explorer(server, {
+    basePath: restApiRoot
+  });
   server.use('/explorer', explorerApp);
   server.once('started', function() {
     var baseUrl = server.get('url').replace(/\/$/, '');
