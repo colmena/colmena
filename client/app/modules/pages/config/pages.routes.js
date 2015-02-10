@@ -1,11 +1,11 @@
 'use strict';
-angular.module ('com.module.pages')
-  .config(function ($stateProvider) {
+angular.module('com.module.pages')
+  .config(function($stateProvider) {
     $stateProvider.state('app.pages', {
-      abstract: true,
-      url: '/pages',
-      templateUrl: 'modules/pages/views/main.html'
-    })
+        abstract: true,
+        url: '/pages',
+        templateUrl: 'modules/pages/views/main.html'
+      })
       .state('app.pages.list', {
         url: '',
         templateUrl: 'modules/pages/views/list.html',

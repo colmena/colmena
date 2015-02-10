@@ -7,7 +7,7 @@
  * # home
  */
 angular.module('com.module.core')
-  .directive('home', function () {
+  .directive('home', function() {
     return {
       template: '<div></div>',
       restrict: 'E',

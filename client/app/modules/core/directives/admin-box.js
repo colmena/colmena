@@ -6,7 +6,7 @@
  * # adminBox
  */
 angular.module('com.module.core')
-  .directive('adminBox', function () {
+  .directive('adminBox', function() {
     return {
       template: '<div></div>',
       restrict: 'E',

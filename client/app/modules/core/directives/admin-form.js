@@ -7,7 +7,7 @@
  * # adminForm
  */
 angular.module('com.module.core')
-  .directive('adminForm', function () {
+  .directive('adminForm', function() {
     return {
       template: '<div></div>',
       restrict: 'E',

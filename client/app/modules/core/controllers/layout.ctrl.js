@@ -1,15 +1,16 @@
 'use strict';
 angular.module('com.module.core')
-/**
- * @ngdoc function
- * @name com.module.core.controller:LayoutCtrl
- * @description Layout controller
- * @requires $scope
- * @requires $rootScope
- * @requires CoreService
- * @requires gettextCatalog
- **/
-  .controller('LayoutCtrl', function ($scope, $rootScope, $cookies, CoreService, gettextCatalog) {
+  /**
+   * @ngdoc function
+   * @name com.module.core.controller:LayoutCtrl
+   * @description Layout controller
+   * @requires $scope
+   * @requires $rootScope
+   * @requires CoreService
+   * @requires gettextCatalog
+   **/
+  .controller('LayoutCtrl', function($scope, $rootScope, $cookies, CoreService,
+    gettextCatalog) {
 
     // angular translate
     $scope.locale = {
@@ -19,7 +20,7 @@ angular.module('com.module.core')
     $scope.locales = $rootScope.locales;
     $scope.selectLocale = $rootScope.locale;
 
-    $scope.setLocale = function (locale) {
+    $scope.setLocale = function(locale) {
       // set the current lang
       $scope.locale = $scope.locales[locale];
       $scope.selectLocale = $scope.locale;
@@ -51,7 +52,7 @@ angular.module('com.module.core')
       'class': 'not-fixed'
     }];
 
-    $scope.toggleSidebar = function () {
+    $scope.toggleSidebar = function() {
       var $ = angular.element;
       if ($(window).width() <= 992) {
         $('.row-offcanvas').toggleClass('active');
