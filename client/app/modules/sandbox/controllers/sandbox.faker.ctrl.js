@@ -29,7 +29,7 @@ app.controller('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeS
     for (var i = 1; i <= $scope.records; i++) {
       var fake = {
         title: FakeService.faker.lorem.sentence(),
-        body: FakeService.faker.lorem.paragraph(),
+        content: FakeService.faker.lorem.paragraph(),
         image: FakeService.faker.image.imageUrl()
       };
       $scope.faker.push(fake);
@@ -38,22 +38,19 @@ app.controller('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeS
     CoreService.toastSuccess('Created ' + $scope.records + ' posts');
   };
 
-  /*jshint camelcase: false */
   $scope.fakeEvents = function () {
     $scope.faker = [];
     for (var i = 0; i < $scope.records; i++) {
-      //var name = FakeService.faker.name.findName();
       var fake = {
         name: FakeService.faker.lorem.sentence(),
         description: FakeService.faker.lorem.paragraph(),
-        start_time: FakeService.faker.date.future(),
-        end_time: FakeService.faker.date.future()
+        startTime: FakeService.faker.date.future(),
+        endTime: FakeService.faker.date.future()
       };
       $scope.faker.push(fake);
       Event.create(fake);
     }
   };
-  /*jshint camelcase: true */
 
 });
 

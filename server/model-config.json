@@ -34,6 +34,10 @@
     "dataSource": "db",
     "public": true
   },
+  "AppModel": {
+    "dataSource": "db",
+    "public": false
+  },
   "Page": {
     "dataSource": "db",
     "public": true

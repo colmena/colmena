@@ -1,7 +1,7 @@
 {
   "name": "Post",
   "plural": "posts",
-  "base": "PersistedModel",
+  "base": "AppModel",
   "properties": {
     "title": {
       "type": "string",
@@ -12,9 +12,6 @@
     },
     "image": {
       "type": "string"
-    },
-    "created": {
-      "type": "date"
     }
   },
   "validations": [],
