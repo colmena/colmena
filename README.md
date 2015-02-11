@@ -21,6 +21,9 @@ Deploy an instance on your Heroku account to play around with it!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+- **Guest Sign-In**: Email ```user@user.com``` Password ```user```
+- **Admin Sign-In**: Email ```admin@admin.com``` Password ```admin```
+
 ## Features and implemented projects
 
 - A Loopback REST API with authentication enabled built on the [Loopback Generator](https://www.npmjs.org/package/generator-loopback)
