@@ -4,24 +4,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: client/app/modules/pages/views/form.html:5
-#: client/app/modules/pages/views/view.html:4
-msgid "<i class=\"fa fa-arrow-left\"></i> Pages"
-msgstr ""
-
-#: client/app/modules/users/views/form.html:5
-#: client/app/modules/users/views/view.html:4
-msgid "<i class=\"fa fa-arrow-left\"></i> Users"
-msgstr ""
-
-#: client/app/modules/pages/views/form.html:14
-msgid "<i class=\"fa fa-save\"></i>  Save"
-msgstr ""
-
-#: client/app/modules/users/views/form.html:12
-msgid "<i class=\"fa fa-save\"></i> Save"
-msgstr ""
-
 #: client/app/modules/about/controllers/about.config.js:5
 #: client/app/modules/about/views/main.html:1
 msgid "About"
@@ -117,6 +99,15 @@ msgstr ""
 
 #: client/app/modules/users/views/profile.html:21
 msgid "Change it here!"
+msgstr ""
+
+#: client/app/modules/chat/config/chat.config.js:4
+#: client/app/modules/chat/views/main.html:1
+msgid "Chat"
+msgstr ""
+
+#: client/app/modules/chat/views/main.html:1
+msgid "Chat with your friends!"
 msgstr ""
 
 #: client/app/modules/events/views/list.html:27
@@ -269,6 +260,10 @@ msgstr ""
 
 #: client/app/modules/users/controllers/profile.ctrl.js:41
 msgid "Enjoy the new you!"
+msgstr ""
+
+#: client/app/modules/chat/views/chat.html:42
+msgid "Enter your message"
 msgstr ""
 
 #: client/app/modules/products/controllers/products.ctrl.js:57
@@ -476,8 +471,10 @@ msgstr ""
 
 #: client/app/modules/pages/config/pages.config.js:4
 #: client/app/modules/pages/config/pages.config.js:7
+#: client/app/modules/pages/views/form.html:6
 #: client/app/modules/pages/views/list.html:3
 #: client/app/modules/pages/views/main.html:1
+#: client/app/modules/pages/views/view.html:4
 msgid "Pages"
 msgstr ""
 
@@ -560,11 +557,13 @@ msgid "Roles"
 msgstr ""
 
 #: client/app/modules/events/controllers/events.ctrl.js:118
+#: client/app/modules/pages/views/form.html:14
 #: client/app/modules/posts/controllers/posts.ctrl.js:62
 #: client/app/modules/products/controllers/categories.ctrl.js:29
 #: client/app/modules/products/controllers/products.ctrl.js:96
 #: client/app/modules/users/controllers/profile.ctrl.js:36
 #: client/app/modules/users/controllers/users.ctrl.js:81
+#: client/app/modules/users/views/form.html:12
 msgid "Save"
 msgstr ""
 
@@ -708,7 +707,9 @@ msgid "Username"
 msgstr ""
 
 #: client/app/modules/users/config/users.config.js:4
+#: client/app/modules/users/views/form.html:6
 #: client/app/modules/users/views/main.html:1
+#: client/app/modules/users/views/view.html:4
 msgid "Users"
 msgstr ""
 
