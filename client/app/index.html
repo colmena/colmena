@@ -11,17 +11,17 @@
 
   <!-- build:cssvendor styles/vendor.css -->
   <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="bower_components/angular-toasty/css/ng-toasty.css">
   <link rel="stylesheet" href="bower_components/sweetalert/lib/sweet-alert.css">
   <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css">
+  <link rel="stylesheet" href="bower_components/angular-bootstrap-nav-tree/dist/abn_tree.css">
   <link rel="stylesheet" href="bower_components/codemirror/lib/codemirror.css">
   <link rel="stylesheet" href="bower_components/codemirror/theme/monokai.css">
   <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css">
   <link rel="stylesheet" href="bower_components/flag-icon-css/css/flag-icon.min.css">
   <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="bower_components/angular-bootstrap-nav-tree/dist/abn_tree.css">
   <!-- endinject -->
   <!-- endbuild -->
 
@@ -46,8 +46,9 @@
 
 <!-- build:jsvendor scripts/vendor.js -->
 <!-- bower:js -->
-<script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
@@ -63,6 +64,7 @@
 <script src="bower_components/angular-gravatar/build/md5.js"></script>
 <script src="bower_components/angular-gravatar/build/angular-gravatar.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/angular-bootstrap-nav-tree/dist/abn_tree_directive.js"></script>
 <script src="bower_components/codemirror/lib/codemirror.js"></script>
 <script src="bower_components/codemirror/addon/mode/overlay.js"></script>
 <script src="bower_components/codemirror/mode/gfm/gfm.js"></script>
@@ -75,12 +77,8 @@
 <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
 <script src="bower_components/Faker/build/build/faker.js"></script>
-<script src="bower_components/angular-mocks/angular-mocks.js"></script>
-<script src="bower_components/angular-scenario/angular-scenario.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular-file-upload/angular-file-upload.js"></script>
 <script src="bower_components/angular-sweetalert/SweetAlert.js"></script>
-<script src="bower_components/angular-bootstrap-nav-tree/dist/abn_tree_directive.js"></script>
 <script src="bower_components/angular-ui-codemirror/ui-codemirror.js"></script>
 <script src="bower_components/angular-markdown-directive/markdown.js"></script>
 <script src="bower_components/angular-autoFields-bootstrap/autofields.min.js"></script>
@@ -94,6 +92,7 @@
 <script src="js/app.js"></script>
 <script src="js/config.js"></script>
 <script src="js/lb-services.js"></script>
+<script src="js/templatescache.js"></script>
 <script src="js/translations.js"></script>
 <script src="modules/about/app.about.js"></script>
 <script src="modules/core/app.core.js"></script>

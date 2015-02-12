@@ -184,7 +184,7 @@ gulp.task('gettext:compile', function () {
         }));
 });
 gulp.task('translate', ['gettext:po', 'gettext:compile']);
-gulp.task('default', ['bower', 'less', 'index', 'translate']);
+gulp.task('default', ['bower', 'index', 'translate']);
 gulp.task('build', ['default', 'usemin', 'images', 'templates', 'sourcefonts'], function () {
     console.log('Build success!');
 });

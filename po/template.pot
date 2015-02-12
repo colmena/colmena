@@ -228,7 +228,7 @@ msgstr ""
 msgid "Don't worry we won't spam your inbox"
 msgstr ""
 
-#: app.js:53
+#: app.js:55
 msgid "Dutch"
 msgstr ""
 
@@ -280,7 +280,7 @@ msgstr ""
 msgid "End Time"
 msgstr ""
 
-#: app.js:51
+#: app.js:53
 msgid "English"
 msgstr ""
 
@@ -378,11 +378,11 @@ msgstr ""
 msgid "First name"
 msgstr ""
 
-#: app.js:55
+#: app.js:57
 msgid "Français"
 msgstr ""
 
-#: app.js:54
+#: app.js:56
 msgid "German"
 msgstr ""
 
@@ -527,7 +527,7 @@ msgstr ""
 msgid "Percentage"
 msgstr ""
 
-#: app.js:52
+#: app.js:54
 msgid "Portuguese Brazil"
 msgstr ""
 

@@ -32,6 +32,8 @@ angular.module('loopbackApp', [
   'toasty',
   'autofields',
   'gettext',
+  'translate',
+  'templatescache',
   'com.module.core',
   'com.module.about',
   'com.module.events',
@@ -53,7 +55,7 @@ angular.module('loopbackApp', [
       'nl': {lang: 'nl', country: 'NL', name: gettextCatalog.getString('Dutch')},
       'de': {lang: 'de', country: 'DE', name: gettextCatalog.getString('German')},
       'fr': {lang: 'fr', country: 'FR', name: gettextCatalog.getString('Français')}
-    }
+    };
 
     var lang = $cookies.lang || navigator.language || navigator.userLanguage;
 
@@ -62,9 +64,11 @@ angular.module('loopbackApp', [
     if ($rootScope.locale === undefined) {
       $rootScope.locale = $rootScope.locales[lang];
       if ($rootScope.locale === undefined) {
-        $rootScope.locale = $rootScope.locales['en'];
+        $rootScope.locale = $rootScope.locales["en"];
       }
     }
+
+    faker.locale = $rootScope.locale.lang;
 
     gettextCatalog.setCurrentLanguage($rootScope.locale.lang);
 
