@@ -33,8 +33,6 @@ var gulp = require ('gulp'),
   gulpDocs = require ('gulp-ngdocs'),
   node;
 
-require ('shelljs/global');
-
 var paths = {
   js: [
     './client/app/js/*.js',
@@ -51,6 +49,7 @@ var paths = {
   libs: ['./client/app/lib'],
   dist: './client/dist/',
   source: './client/app',
+  docs: './docs',
   bower: [
     'bower.json',
     '.bowerrc'
@@ -97,7 +96,7 @@ gulp.task ('docs', [], function () {
     api: {
       glob: [paths.source + '/js/lb-services.js'],
       api: true,
-      title: 'API'
+      title: 'LoopBack Services'
     }
   })
     .pipe (gulpDocs.process (options))
@@ -325,7 +324,7 @@ gulp.task ('less', function (done) {
 });
 
 gulp.task ('watch', function () {
-  gulp.watch (paths.sass, ['sass']);
+  gulp.watch (paths.less, ['less']);
   gulp.watch (paths.html, ['html']);
   gulp.watch (paths.js, ['js']);
 });
