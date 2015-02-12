@@ -2,7 +2,7 @@
 /client/app/scripts/lb-services.js
 /client/app/bower_components/
 /node_modules/
-/Gruntfile.js
+/gulpfile.js
 /docular_generated/
 /test/
 /dist/
