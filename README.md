@@ -29,7 +29,7 @@ Deploy an instance on your Heroku account to play around with it!
 - A Loopback REST API with authentication enabled built on the [Loopback Generator](https://www.npmjs.org/package/generator-loopback)
 - A GUI built with AngularJS based on the [Angular Generator](https://github.com/yeoman/generator-angular)
 - Angular UI-Router
-- JSON-based based forms by [angular-formly](https://github.com/nimbly/angular-formly)
+- JSON-based based forms by [angular-formly](https://formly-js.github.io/angular-formly/)
 - Notifications by [angular-toasty](https://github.com/Salakar/angular-toasty)
 - File upload with [Loopback storage services](https://github.com/strongloop/loopback-component-storage/)
 - Admin template powered by [almasaeed2010/AdminLTE](https://github.com/almasaeed2010/AdminLTE)
