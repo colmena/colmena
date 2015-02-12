@@ -4,7 +4,9 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 var path = require('path');
 var app = module.exports = loopback();
-var env = require('get-env')({test: 'test'});
+var env = require('get-env')({
+  test: 'test'
+});
 
 // Set up the /favicon.ico
 app.use(loopback.favicon());
@@ -44,9 +46,9 @@ app.use(loopback.urlNotFound());
 // The ultimate error handler.
 app.use(loopback.errorHandler());
 
-app.start = function () {
+app.start = function() {
   // start the web server
-  return app.listen(function () {
+  return app.listen(function() {
     app.emit('started');
     console.log('Web server listening at: %s', app.get('url'));
   });

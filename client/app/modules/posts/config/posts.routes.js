@@ -2,7 +2,7 @@
 
 var app = angular.module('com.module.posts');
 
-app.config(function ($stateProvider) {
+app.config(function($stateProvider) {
   $stateProvider.state('app.posts', {
     abstract: true,
     url: '/posts',
@@ -13,11 +13,11 @@ app.config(function ($stateProvider) {
     url: '',
     templateUrl: 'modules/posts/views/list.html',
     resolve: {
-      posts: ['PostsService', function (PostsService) {
+      posts: ['PostsService', function(PostsService) {
         return PostsService.getPosts();
       }]
     },
-    controller: function ($scope, posts) {
+    controller: function($scope, posts) {
       $scope.posts = posts;
     }
   }).state('app.posts.add', {
@@ -32,11 +32,12 @@ app.config(function ($stateProvider) {
     url: '/:id',
     templateUrl: 'modules/posts/views/view.html',
     resolve: {
-      post: ['$stateParams', 'PostsService', function ($stateParams, PostsService) {
+      post: ['$stateParams', 'PostsService', function($stateParams,
+        PostsService) {
         return PostsService.getPost($stateParams.id);
       }]
     },
-    controller: function ($scope, post) {
+    controller: function($scope, post) {
       $scope.post = post;
     }
   });

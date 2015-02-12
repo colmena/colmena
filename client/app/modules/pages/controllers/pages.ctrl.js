@@ -1,6 +1,7 @@
 'use strict';
 angular.module('com.module.pages')
-  .controller('PagesCtrl', function ($scope, $state, $stateParams, $filter, CoreService, gettextCatalog, Page) {
+  .controller('PagesCtrl', function($scope, $state, $stateParams, $filter,
+    CoreService, gettextCatalog, Page) {
 
     $scope.loading = true;
 
@@ -9,8 +10,7 @@ angular.module('com.module.pages')
     if (pageId) {
       $scope.page = Page.findById({
         id: pageId
-      }, function () {
-      }, function (err) {
+      }, function() {}, function(err) {
         console.log(err);
       });
     } else {
@@ -21,7 +21,7 @@ angular.module('com.module.pages')
     }
 
     function loadPages() {
-      $scope.pages = Page.find(function () {
+      $scope.pages = Page.find(function() {
         console.log('after find');
         $scope.loading = false;
       });
@@ -29,18 +29,25 @@ angular.module('com.module.pages')
 
     loadPages();
 
-    $scope.delete = function (id) {
-      CoreService.confirm(gettextCatalog.getString('Are you sure?'), gettextCatalog.getString('Deleting this cannot be undone'), function () {
-        Page.deleteById(id, function () {
-          CoreService.toastSuccess(gettextCatalog.getString('Page deleted'), gettextCatalog.getString('Your page is deleted!'));
-          loadPages();
-          $state.go('app.pages.list');
-        }, function (err) {
-          CoreService.toastError(gettextCatalog.getString('Error deleting page'), gettextCatalog.getString('Your page is not deleted: ') + err);
+    $scope.delete = function(id) {
+      CoreService.confirm(gettextCatalog.getString('Are you sure?'),
+        gettextCatalog.getString('Deleting this cannot be undone'),
+        function() {
+          Page.deleteById(id, function() {
+            CoreService.toastSuccess(gettextCatalog.getString(
+              'Page deleted'), gettextCatalog.getString(
+              'Your page is deleted!'));
+            loadPages();
+            $state.go('app.pages.list');
+          }, function(err) {
+            CoreService.toastError(gettextCatalog.getString(
+              'Error deleting page'), gettextCatalog.getString(
+              'Your page is not deleted: ') + err);
+          });
+        },
+        function() {
+          return false;
         });
-      }, function () {
-        return false;
-      });
     };
 
     $scope.editorOptions = {
@@ -50,13 +57,14 @@ angular.module('com.module.pages')
       mode: 'markdown'
     };
 
-    $scope.onSubmit = function () {
+    $scope.onSubmit = function() {
       var cleanName = $scope.page.name.replace(/[^a-zA-Z0-9\-\s]/g, '');
       $scope.page.slug = $filter('slugify')(cleanName);
-      Page.upsert($scope.page, function () {
-        CoreService.toastSuccess(gettextCatalog.getString('Page saved'), gettextCatalog.getString('Your page is safe with us!'));
+      Page.upsert($scope.page, function() {
+        CoreService.toastSuccess(gettextCatalog.getString('Page saved'),
+          gettextCatalog.getString('Your page is safe with us!'));
         $state.go('^.list');
-      }, function (err) {
+      }, function(err) {
         console.log(err);
       });
     };

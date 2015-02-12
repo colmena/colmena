@@ -7,7 +7,7 @@
  * # login
  */
 angular.module('com.module.users')
-  .directive('login', function () {
+  .directive('login', function() {
     return {
       templateUrl: 'modules/users/views/login.html',
       restrict: 'E'

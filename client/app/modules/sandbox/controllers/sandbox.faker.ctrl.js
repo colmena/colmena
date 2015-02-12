@@ -1,6 +1,7 @@
 'use strict';
 var app = angular.module('com.module.sandbox');
-app.controller('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeService, Event, Post, User) {
+app.controller('SandboxFakerCtrl', function($scope, $window, CoreService,
+  FakeService, Event, Post, User) {
 
   $scope.faker = [];
 
@@ -8,7 +9,7 @@ app.controller('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeS
 
   console.log(FakeService);
 
-  $scope.fakeUsers = function () {
+  $scope.fakeUsers = function() {
     $scope.faker = [];
     for (var i = 0; i < $scope.records; i++) {
       var fake = {
@@ -24,7 +25,7 @@ app.controller('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeS
     CoreService.toastSuccess('Created ' + $scope.records + ' users');
   };
 
-  $scope.fakePosts = function () {
+  $scope.fakePosts = function() {
     $scope.faker = [];
     for (var i = 1; i <= $scope.records; i++) {
       var fake = {
@@ -38,7 +39,7 @@ app.controller('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeS
     CoreService.toastSuccess('Created ' + $scope.records + ' posts');
   };
 
-  $scope.fakeEvents = function () {
+  $scope.fakeEvents = function() {
     $scope.faker = [];
     for (var i = 0; i < $scope.records; i++) {
       var fake = {
@@ -55,6 +56,6 @@ app.controller('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeS
 });
 
 
-app.service('FakeService', function ($window) {
+app.service('FakeService', function($window) {
   this.faker = $window.faker;
 });

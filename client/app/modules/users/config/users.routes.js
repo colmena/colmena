@@ -1,6 +1,6 @@
 'use strict';
 angular.module('com.module.users')
-  .config(function ($stateProvider) {
+  .config(function($stateProvider) {
     $stateProvider
       .state('login', {
         url: '/login',

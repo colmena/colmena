@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (app) {
+module.exports = function(app) {
 
   var Setting = app.models.Setting;
 
@@ -45,8 +45,8 @@ module.exports = function (app) {
       value: true
     }];
 
-    settings.forEach(function (setting) {
-      Setting.create(setting, function (err) {
+    settings.forEach(function(setting) {
+      Setting.create(setting, function(err) {
         if (err) {
           console.log(err);
         }
@@ -57,13 +57,13 @@ module.exports = function (app) {
   function loadExistingSettings() {
     console.error('Loading existing settings');
 
-    Setting.find(function (data) {
+    Setting.find(function(data) {
       console.log(data);
     });
   }
 
 
-  Setting.count(function (err, result) {
+  Setting.count(function(err, result) {
     if (err) {
       console.log(err);
     }
