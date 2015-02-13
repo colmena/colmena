@@ -16,3 +16,4 @@ bower_components
 docs
 client/coverage
 .vagrant
+.Ds_Store
