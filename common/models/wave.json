@@ -1,0 +1,21 @@
+{
+  "name": "Wave",
+  "plural": "waves",
+  "base": "AppModel",
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
