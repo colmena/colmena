@@ -2,7 +2,7 @@
 
 var path = require('path');
 
-module.exports = function (app) {
+module.exports = function(app) {
 
   var ds = app.loopback.createDataSource({
     connector: require('loopback-component-storage'),

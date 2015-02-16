@@ -1,7 +1,8 @@
 'use strict';
 var app = angular.module('com.module.users');
 
-app.controller('UsersCtrl', function ($scope, $stateParams, $state, CoreService, User, gettextCatalog) {
+app.controller('UsersCtrl', function($scope, $stateParams, $state, CoreService,
+  User, gettextCatalog) {
 
 
   if ($stateParams.id) {
@@ -12,27 +13,34 @@ app.controller('UsersCtrl', function ($scope, $stateParams, $state, CoreService,
         },
         include: ['roles', 'identities', 'credentials', 'accessTokens']
       }
-    }, function (result) {
+    }, function(result) {
       $scope.user = result;
-    }, function (err) {
+    }, function(err) {
       console.log(err);
     });
   } else {
     $scope.user = {};
   }
 
-  $scope.delete = function (id) {
-    CoreService.confirm(gettextCatalog.getString('Are you sure?'), gettextCatalog.getString('Deleting this cannot be undone'), function () {
-      User.deleteById(id, function () {
-          CoreService.toastSuccess(gettextCatalog.getString('User deleted'), gettextCatalog.getString('Your user is deleted!'));
-          $state.go('app.users.list');
-        },
-        function (err) {
-          CoreService.toastError(gettextCatalog.getString('Error deleting user'), gettextCatalog.getString('Your user is not deleted:' + err));
-        });
-    }, function () {
-      return false;
-    });
+  $scope.delete = function(id) {
+    CoreService.confirm(gettextCatalog.getString('Are you sure?'),
+      gettextCatalog.getString('Deleting this cannot be undone'),
+      function() {
+        User.deleteById(id, function() {
+            CoreService.toastSuccess(gettextCatalog.getString(
+              'User deleted'), gettextCatalog.getString(
+              'Your user is deleted!'));
+            $state.go('app.users.list');
+          },
+          function(err) {
+            CoreService.toastError(gettextCatalog.getString(
+              'Error deleting user'), gettextCatalog.getString(
+              'Your user is not deleted:' + err));
+          });
+      },
+      function() {
+        return false;
+      });
   };
 
   $scope.loading = true;
@@ -40,16 +48,18 @@ app.controller('UsersCtrl', function ($scope, $stateParams, $state, CoreService,
     filter: {
       include: ['roles']
     }
-  }, function () {
+  }, function() {
     $scope.loading = false;
   });
 
-  $scope.onSubmit = function () {
-    User.upsert($scope.user, function () {
-      CoreService.toastSuccess(gettextCatalog.getString('User saved'), gettextCatalog.getString('This user is save!'));
+  $scope.onSubmit = function() {
+    User.upsert($scope.user, function() {
+      CoreService.toastSuccess(gettextCatalog.getString('User saved'),
+        gettextCatalog.getString('This user is save!'));
       $state.go('^.list');
-    }, function (err) {
-      CoreService.toastError(gettextCatalog.getString('Error saving user: ', + err));
+    }, function(err) {
+      CoreService.toastError(gettextCatalog.getString(
+        'Error saving user: ', +err));
     });
   };
 

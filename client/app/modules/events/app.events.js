@@ -1,2 +1,2 @@
 'use strict';
-angular.module ('com.module.events',[]);
+angular.module('com.module.events', []);

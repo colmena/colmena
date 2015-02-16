@@ -7,10 +7,10 @@
  * @requires $rootScope
  **/
 angular.module('com.module.core')
-  .controller('HomeCtrl', function ($scope, $rootScope) {
+  .controller('HomeCtrl', function($scope, $rootScope) {
 
-  $scope.count = {};
+    $scope.count = {};
 
-  $scope.boxes = $rootScope.dashboardBox;
+    $scope.boxes = $rootScope.dashboardBox;
 
-});
+  });

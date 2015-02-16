@@ -1,3 +1,2 @@
-
 'use strict';
-angular.module ('com.module.files',[]);
+angular.module('com.module.files', []);

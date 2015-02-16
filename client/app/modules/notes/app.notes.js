@@ -1,2 +1,2 @@
 'use strict';
-angular.module ('com.module.notes',[]);
+angular.module('com.module.notes', []);

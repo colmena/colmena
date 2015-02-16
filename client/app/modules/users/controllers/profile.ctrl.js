@@ -1,10 +1,10 @@
 'use strict';
 angular.module('com.module.users')
-  .controller('ProfileCtrl', function ($scope, CoreService, User, gettextCatalog) {
+  .controller('ProfileCtrl', function($scope, CoreService, User, gettextCatalog) {
 
-    $scope.user = User.getCurrent(function (user) {
+    $scope.user = User.getCurrent(function(user) {
       console.log(user);
-    }, function (err) {
+    }, function(err) {
       console.log(err);
     });
 
@@ -36,11 +36,15 @@ angular.module('com.module.users')
       submitCopy: gettextCatalog.getString('Save')
     };
 
-    $scope.onSubmit = function () {
-      User.upsert($scope.user, function () {
-        CoreService.toastSuccess(gettextCatalog.getString('Profile saved'), gettextCatalog.getString('Enjoy the new you!'));
-      }, function (err) {
-        CoreService.toastError(gettextCatalog.getString('Error saving profile'), gettextCatalog.getString('Your profile is not saved: ') + err);
+    $scope.onSubmit = function() {
+      User.upsert($scope.user, function() {
+        CoreService.toastSuccess(gettextCatalog.getString(
+          'Profile saved'), gettextCatalog.getString(
+          'Enjoy the new you!'));
+      }, function(err) {
+        CoreService.toastError(gettextCatalog.getString(
+          'Error saving profile'), gettextCatalog.getString(
+          'Your profile is not saved: ') + err);
       });
     };
 

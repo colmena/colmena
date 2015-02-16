@@ -1,6 +1,6 @@
-module.exports = function (user) {
+module.exports = function(user) {
 
-  user.beforeCreate = function (next, user) {
+  user.beforeCreate = function(next, user) {
     if (user.username == undefined) {
       user.username = user.email;
     }

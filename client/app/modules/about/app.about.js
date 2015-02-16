@@ -10,4 +10,4 @@
  * the models exposed by the LoopBack server via the REST API.
  *
  */
-angular.module ('com.module.about',[]);
+angular.module('com.module.about', []);

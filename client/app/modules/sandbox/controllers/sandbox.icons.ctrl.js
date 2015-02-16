@@ -1,6 +1,6 @@
 'use strict';
 var app = angular.module('com.module.sandbox');
-app.controller('SandboxIconsCtrl', function ($scope) {
+app.controller('SandboxIconsCtrl', function($scope) {
 
   $scope.filter = '';
 

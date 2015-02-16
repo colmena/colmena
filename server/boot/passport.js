@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (app) {
+module.exports = function(app) {
 
   var bodyParser = require('body-parser');
   var loopback = require('loopback');
@@ -28,8 +28,11 @@ module.exports = function (app) {
   try {
     config = require('../../providers.json');
   } catch (err) {
-    console.error('Please configure your passport strategy in `providers.json`.');
-    console.error('Copy `providers.json.template` to `providers.json` and replace the clientID/clientSecret values with your own.');
+    console.error(
+      'Please configure your passport strategy in `providers.json`.');
+    console.error(
+      'Copy `providers.json.template` to `providers.json` and replace the clientID/clientSecret values with your own.'
+    );
   }
 
 
@@ -71,7 +74,7 @@ module.exports = function (app) {
           class: providerClass
         };
 
-        AuthProvider.create(entry, function (err, data) {
+        AuthProvider.create(entry, function(err, data) {
           if (err) {
             console.log(err);
           }
@@ -102,11 +105,10 @@ module.exports = function (app) {
     res.status(200).json(ret);
   });
 
-  app.get('/auth/logout', function (req, res, next) {
+  app.get('/auth/logout', function(req, res, next) {
     req.logout();
     res.redirect('/');
   });
 
 
-}
-;
+};

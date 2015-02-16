@@ -1,6 +1,6 @@
 'use strict';
-angular.module ('com.module.events')
-  .config(function ($stateProvider) {
+angular.module('com.module.events')
+  .config(function($stateProvider) {
     $stateProvider.state('app.events', {
       abstract: true,
       url: '/events',

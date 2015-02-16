@@ -1,12 +1,12 @@
 'use strict';
 var app = angular.module('com.module.core');
-app.run(function ($rootScope, Setting, gettextCatalog) {
+app.run(function($rootScope, Setting, gettextCatalog) {
 
   // Left Sidemenu
   $rootScope.menu = [];
 
   // Add Sidebar Menu
-  $rootScope.addMenu = function (name, uisref, icon) {
+  $rootScope.addMenu = function(name, uisref, icon) {
     $rootScope.menu.push({
       name: name,
       sref: uisref,
@@ -15,13 +15,14 @@ app.run(function ($rootScope, Setting, gettextCatalog) {
   };
 
   // Add Menu Dashboard
-  $rootScope.addMenu(gettextCatalog.getString('Dashboard'), 'app.home', 'fa-dashboard');
+  $rootScope.addMenu(gettextCatalog.getString('Dashboard'), 'app.home',
+    'fa-dashboard');
 
   // Dashboard
   $rootScope.dashboardBox = [];
 
   // Add Dashboard Box
-  $rootScope.addDashboardBox = function (name, color, icon, quantity, href) {
+  $rootScope.addDashboardBox = function(name, color, icon, quantity, href) {
     $rootScope.dashboardBox.push({
       name: name,
       color: color,
@@ -32,7 +33,7 @@ app.run(function ($rootScope, Setting, gettextCatalog) {
   };
 
   // Get Settings for Database
-  $rootScope.setSetting = function (key, value) {
+  $rootScope.setSetting = function(key, value) {
 
     Setting.find({
       filter: {
@@ -40,7 +41,7 @@ app.run(function ($rootScope, Setting, gettextCatalog) {
           key: key
         }
       }
-    }, function (data) {
+    }, function(data) {
 
       if (data.length) {
         data[0].value = value;
@@ -49,7 +50,7 @@ app.run(function ($rootScope, Setting, gettextCatalog) {
         Setting.create({
           key: key,
           value: value
-        }, function (data) {
+        }, function(data) {
           console.log(data);
         });
       }
@@ -61,15 +62,15 @@ app.run(function ($rootScope, Setting, gettextCatalog) {
   $rootScope.settings = {};
 
   // Get Settings for Loopback Service
-  $rootScope.loadSettings = function () {
-    Setting.find(function (settings) {
+  $rootScope.loadSettings = function() {
+    Setting.find(function(settings) {
       $rootScope.settings.data = settings;
     });
   };
 
 });
 
-app.config(function (formlyConfigProvider) {
+app.config(function(formlyConfigProvider) {
   var templates = 'modules/core/views/elements/fields/';
   var formly = templates + 'formly-field-';
   var fields = [
@@ -84,7 +85,7 @@ app.config(function (formlyConfigProvider) {
     'textarea'
   ];
 
-  angular.forEach(fields, function (val) {
+  angular.forEach(fields, function(val) {
     formlyConfigProvider.setTemplateUrl(val, formly + val + '.html');
   });
 
@@ -93,6 +94,6 @@ app.config(function (formlyConfigProvider) {
 
 });
 
-app.config(['cfpLoadingBarProvider', function (cfpLoadingBarProvider) {
+app.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
   cfpLoadingBarProvider.includeSpinner = false;
 }]);
