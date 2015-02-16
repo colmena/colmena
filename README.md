@@ -21,8 +21,14 @@ Deploy an instance on your Heroku account to play around with it!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-- **Guest Sign-In**: Email ```user@user.com``` Password ```user```
-- **Admin Sign-In**: Email ```admin@admin.com``` Password ```admin```
+## Users
+
+After an installation the following users are created:
+
+- **Admin user**: Email: ```admin@admin.com```, password: ```admin```
+- **Regular user**: Email: ```user@user.com```:, password ```user```
+
+Please note, at this moment there is no difference in permissions for admin users or regular users. This needs to change in the future!
 
 ## Features and implemented projects
 
@@ -40,6 +46,7 @@ Deploy an instance on your Heroku account to play around with it!
 - Social authentication with [Loopback passport](https://github.com/strongloop/loopback-component-passport/)
 - Multi-language support by [rubenv/angular-gettext](https://github.com/rubenv/angular-gettext)
 - User management
+- Loading indicators [chieffancypants/angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar)?
 
 
 ## TODO:
@@ -47,7 +54,6 @@ Deploy an instance on your Heroku account to play around with it!
 - Permissions on user actions (non-admins cannot access advanced functions)
 - permissions on content items (non-admins can only edit own content, etc)
 - Detect if API is online [HubSpot/offline](https://github.com/HubSpot/offline)?
-- Loading indicators [Urigo/angular-spinkit](https://github.com/Urigo/angular-spinkit)?
 - Map API roles to [Narzerus/angular-permission](https://github.com/Narzerus/angular-permission)
 - Add tests
 - Add Dockerfile
@@ -74,7 +80,9 @@ Deploy an instance on your Heroku account to play around with it!
 
 Installation depends on `node`/`npm` with `grunt` and `bower` installed globally.
 
-### Checkout this project:
+    $ npm install -g bower grunt-cli
+
+### Checkout the project:
 
     git clone https://github.com/beeman/loopback-angular-admin.git
 
@@ -82,17 +90,9 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
     npm install
 
-### Install the Bower packages:
-
-    bower install
-
-### Run a test to see if all is well:
-
-    grunt
-
 ### Clone, install and run in a oneliner
 
-    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && bower install && API_URL=http://0.0.0.0:3000/api grunt && npm start & grunt serve
+    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && npm start & grunt serve
 
 ## Running
 
@@ -136,11 +136,13 @@ This also works with the free hosted MongoDB instances at [compose.io](https://w
 
 ## Development
 
-For development you'd want to look into [yeoman](http://yeoman.io).
+If you want to share your work through a Pull Request, be sure to make it a clean branch (one functionality per PR) and base it off master.
+
+If you plan on making a big change or replace a core function with something else it is probably best to first open an issue to discuss it with me. This will enhance the change of the eventual changes getting merged a lot :)  
 
 The API is built with [generator-loopback](https://www.npmjs.org/package/generator-loopback).
 
-The GUI is built with [generator-angular](https://www.npmjs.org/package/generator-angular).
+The GUI is built with [generator-angular](https://www.npmjs.org/package/generator-angular) but is no longer compatible due to refactoring the project into modules.
 
 These should help you quickly add code to your project. Further details tailored to this project might follow in the future.
 
@@ -150,7 +152,6 @@ These commits might be useful when extending the functionality.
 
 - [Add support for MongoDB databases](https://github.com/beeman/loopback-angular-admin/commit/6b884e601d535ed64b4ef4f6f07e0f55d357a5b6)
 - [Add custom method to the API](https://github.com/beeman/loopback-angular-admin/commit/eedbd03f755ddf2234872886ee390ac4f6753c64)
-- [Add a complete model in the API and client](https://github.com/beeman/loopback-angular-admin/commit/16b1015554a41e45ca670d25fd258340908c4dbf)
 - [Rename a model](https://github.com/beeman/loopback-angular-admin/commit/88254ce59af29818aec900514693e3fe6c94acea)
 
 # Issues
