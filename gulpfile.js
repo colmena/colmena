@@ -201,7 +201,9 @@ gulp.task ('default', [
     'translate'
 ]);
 gulp.task ('build', [
-    'default',
+    'bower',
+    'index',
+    'translate',
     'usemin',
     'images',
     'templates',
