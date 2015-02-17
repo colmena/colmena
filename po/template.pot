@@ -72,19 +72,19 @@ msgstr ""
 msgid "Add product to category"
 msgstr ""
 
-#: core/helpers/FormHelper.js:22
-#: events/controllers/events.ctrl.js:49
-#: files/controllers/files.ctrl.js:13
-#: notes/services/notes.service.js:26
+#: core/helpers/FormHelper.js:23
+#: events/controllers/events.ctrl.js:50
+#: files/controllers/files.ctrl.js:14
+#: notes/services/notes.service.js:31
 #: pages/controllers/pages.ctrl.js:33
-#: posts/services/posts.service.js:19
-#: products/controllers/products.ctrl.js:37
+#: posts/services/posts.service.js:22
+#: products/controllers/products.ctrl.js:42
 #: settings/controllers/settings.ctrl.js:28
-#: users/controllers/users.ctrl.js:25
+#: users/controllers/users.ctrl.js:26
 msgid "Are you sure?"
 msgstr ""
 
-#: notes/controllers/notes.ctrl.js:16
+#: notes/controllers/notes.ctrl.js:15
 msgid "Body"
 msgstr ""
 
@@ -100,19 +100,19 @@ msgstr ""
 msgid "Cancel all"
 msgstr ""
 
-#: products/config/products.config.js:11
+#: products/config/products.config.js:14
 msgid "Categories"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:73
+#: products/controllers/products.ctrl.js:87
 msgid "Category"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:54
+#: products/controllers/products.ctrl.js:66
 msgid "Category deleted"
 msgstr ""
 
-#: products/controllers/categories.ctrl.js:34
+#: products/controllers/categories.ctrl.js:35
 msgid "Category saved"
 msgstr ""
 
@@ -150,11 +150,11 @@ msgstr ""
 msgid "Click <a href=\"\" ui-sref=\"^.upload\" translate=\"\">here</a> to upload some!"
 msgstr ""
 
-#: users/controllers/register.ctrl.js:64
+#: users/controllers/register.ctrl.js:80
 msgid "Confirm Password"
 msgstr ""
 
-#: posts/controllers/posts.ctrl.js:41
+#: posts/controllers/posts.ctrl.js:39
 msgid "Content"
 msgstr ""
 
@@ -207,24 +207,24 @@ msgstr ""
 msgid "Delete category"
 msgstr ""
 
-#: core/helpers/FormHelper.js:22
-#: events/controllers/events.ctrl.js:49
-#: files/controllers/files.ctrl.js:13
-#: notes/services/notes.service.js:26
-#: pages/controllers/pages.ctrl.js:33
-#: posts/services/posts.service.js:19
-#: products/controllers/products.ctrl.js:37
-#: settings/controllers/settings.ctrl.js:28
-#: users/controllers/users.ctrl.js:25
+#: core/helpers/FormHelper.js:24
+#: events/controllers/events.ctrl.js:51
+#: files/controllers/files.ctrl.js:15
+#: notes/services/notes.service.js:32
+#: pages/controllers/pages.ctrl.js:34
+#: posts/services/posts.service.js:23
+#: products/controllers/products.ctrl.js:43
+#: settings/controllers/settings.ctrl.js:29
+#: users/controllers/users.ctrl.js:27
 msgid "Deleting this cannot be undone"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:78
-#: products/controllers/products.ctrl.js:79
+#: events/controllers/events.ctrl.js:86
+#: products/controllers/products.ctrl.js:92
 msgid "Description"
 msgstr ""
 
-#: users/controllers/register.ctrl.js:43
+#: users/controllers/register.ctrl.js:53
 msgid "Don't worry we won't spam your inbox"
 msgstr ""
 
@@ -233,7 +233,7 @@ msgid "Dutch"
 msgstr ""
 
 #: users/controllers/profile.ctrl.js:19
-#: users/controllers/users.ctrl.js:64
+#: users/controllers/users.ctrl.js:74
 msgid "E-mail"
 msgstr ""
 
@@ -263,20 +263,20 @@ msgid "Edit setting"
 msgstr ""
 
 #: users/controllers/login.ctrl.js:30
-#: users/controllers/register.ctrl.js:41
+#: users/controllers/register.ctrl.js:51
 msgid "Email"
 msgstr ""
 
-#: users/controllers/login.ctrl.js:35
-#: users/controllers/register.ctrl.js:47
+#: users/controllers/login.ctrl.js:38
+#: users/controllers/register.ctrl.js:61
 msgid "Email address needs to be valid"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:98
+#: events/controllers/events.ctrl.js:106
 msgid "End"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:106
+#: events/controllers/events.ctrl.js:114
 msgid "End Time"
 msgstr ""
 
@@ -284,72 +284,72 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: users/controllers/profile.ctrl.js:41
+#: users/controllers/profile.ctrl.js:42
 msgid "Enjoy the new you!"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:57
+#: products/controllers/products.ctrl.js:71
 msgid "Error deleting category"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:56
+#: events/controllers/events.ctrl.js:61
 msgid "Error deleting event"
 msgstr ""
 
-#: core/helpers/FormHelper.js:27
-#: posts/services/posts.service.js:24
+#: core/helpers/FormHelper.js:33
+#: posts/services/posts.service.js:32
 msgid "Error deleting item:"
 msgstr ""
 
-#: notes/services/notes.service.js:31
+#: notes/services/notes.service.js:40
 msgid "Error deleting note"
 msgstr ""
 
-#: pages/controllers/pages.ctrl.js:39
+#: pages/controllers/pages.ctrl.js:43
 msgid "Error deleting page"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:43
+#: products/controllers/products.ctrl.js:52
 msgid "Error deleting product"
 msgstr ""
 
-#: settings/controllers/settings.ctrl.js:34
+#: settings/controllers/settings.ctrl.js:38
 msgid "Error deleting setting"
 msgstr ""
 
-#: users/controllers/users.ctrl.js:31
+#: users/controllers/users.ctrl.js:36
 msgid "Error deleting user"
 msgstr ""
 
-#: users/controllers/register.ctrl.js:111
+#: users/controllers/register.ctrl.js:138
 msgid "Error registering!"
 msgstr ""
 
-#: notes/services/notes.service.js:21
+#: notes/services/notes.service.js:24
 msgid "Error saving note"
 msgstr ""
 
-#: users/controllers/profile.ctrl.js:43
+#: users/controllers/profile.ctrl.js:45
 msgid "Error saving profile"
 msgstr ""
 
-#: users/controllers/users.ctrl.js:52
+#: users/controllers/users.ctrl.js:61
 msgid "Error saving user:"
 msgstr ""
 
-#: users/controllers/register.ctrl.js:104
+#: users/controllers/register.ctrl.js:129
 msgid "Error signin in after registration!"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:51
+#: events/controllers/events.ctrl.js:54
 msgid "Event deleted"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:138
+#: events/controllers/events.ctrl.js:150
 msgid "Event not added"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:134
+#: events/controllers/events.ctrl.js:142
 msgid "Event saved"
 msgstr ""
 
@@ -358,12 +358,12 @@ msgstr ""
 msgid "Events"
 msgstr ""
 
-#: files/controllers/files.ctrl.js:19
+#: files/controllers/files.ctrl.js:24
 msgid "File deleted"
 msgstr ""
 
 #: files/config/file.config.js:4
-#: files/config/file.config.js:7
+#: files/config/file.config.js:9
 #: files/views/main.html:1
 #: files/views/upload.html:5
 msgid "Files"
@@ -374,7 +374,7 @@ msgid "First Name"
 msgstr ""
 
 #: users/controllers/profile.ctrl.js:24
-#: users/controllers/users.ctrl.js:69
+#: users/controllers/users.ctrl.js:79
 msgid "First name"
 msgstr ""
 
@@ -394,29 +394,29 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: core/helpers/FormHelper.js:24
-#: posts/services/posts.service.js:21
+#: core/helpers/FormHelper.js:27
+#: posts/services/posts.service.js:26
 msgid "Item deleted"
 msgstr ""
 
-#: settings/controllers/settings.ctrl.js:45
+#: settings/controllers/settings.ctrl.js:51
 msgid "Key"
 msgstr ""
 
-#: users/controllers/register.ctrl.js:33
+#: users/controllers/register.ctrl.js:38
 msgid "Last Name"
 msgstr ""
 
 #: users/controllers/profile.ctrl.js:29
-#: users/controllers/users.ctrl.js:74
+#: users/controllers/users.ctrl.js:84
 msgid "Last name"
 msgstr ""
 
-#: users/controllers/login.ctrl.js:94
+#: users/controllers/login.ctrl.js:96
 msgid "Logged in"
 msgstr ""
 
-#: core/controllers/main.ctrl.js:25
+#: core/controllers/main.ctrl.js:26
 msgid "Logged out"
 msgstr ""
 
@@ -452,17 +452,17 @@ msgstr ""
 msgid "More info"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:72
+#: events/controllers/events.ctrl.js:80
 #: files/views/upload.html:56
-#: products/controllers/categories.ctrl.js:21
-#: products/controllers/products.ctrl.js:67
+#: products/controllers/categories.ctrl.js:23
+#: products/controllers/products.ctrl.js:82
 msgid "Name"
 msgstr ""
 
-#: settings/controllers/settings.ctrl.js:48
-#: settings/controllers/settings.ctrl.js:56
-#: users/controllers/register.ctrl.js:28
-#: users/controllers/register.ctrl.js:36
+#: settings/controllers/settings.ctrl.js:58
+#: settings/controllers/settings.ctrl.js:71
+#: users/controllers/register.ctrl.js:32
+#: users/controllers/register.ctrl.js:45
 msgid "Needs to have at least 4 characters"
 msgstr ""
 
@@ -470,27 +470,27 @@ msgstr ""
 msgid "New page"
 msgstr ""
 
-#: users/controllers/login.ctrl.js:36
-#: users/controllers/register.ctrl.js:48
+#: users/controllers/login.ctrl.js:39
+#: users/controllers/register.ctrl.js:62
 msgid "Nice email address!"
 msgstr ""
 
-#: notes/services/notes.service.js:28
+#: notes/services/notes.service.js:35
 msgid "Note deleted"
 msgstr ""
 
-#: notes/services/notes.service.js:18
+#: notes/services/notes.service.js:19
 msgid "Note saved"
 msgstr ""
 
 #: notes/config/notes.config.js:5
-#: notes/config/notes.config.js:8
+#: notes/config/notes.config.js:9
 #: notes/views/main.html:1
 msgid "Notes"
 msgstr ""
 
-#: core/helpers/FormHelper.js:27
-#: posts/services/posts.service.js:24
+#: core/helpers/FormHelper.js:32
+#: posts/services/posts.service.js:31
 msgid "Oops"
 msgstr ""
 
@@ -502,28 +502,28 @@ msgstr ""
 msgid "Or sign in"
 msgstr ""
 
-#: pages/controllers/pages.ctrl.js:35
+#: pages/controllers/pages.ctrl.js:37
 msgid "Page deleted"
 msgstr ""
 
-#: pages/controllers/pages.ctrl.js:57
+#: pages/controllers/pages.ctrl.js:64
 msgid "Page saved"
 msgstr ""
 
 #: pages/config/pages.config.js:4
-#: pages/config/pages.config.js:7
+#: pages/config/pages.config.js:8
 #: pages/views/list.html:3
 #: pages/views/main.html:1
 msgid "Pages"
 msgstr ""
 
-#: users/controllers/login.ctrl.js:42
-#: users/controllers/register.ctrl.js:57
+#: users/controllers/login.ctrl.js:44
+#: users/controllers/register.ctrl.js:71
 #: users/views/form.html:26
 msgid "Password"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:84
+#: products/controllers/products.ctrl.js:96
 msgid "Percentage"
 msgstr ""
 
@@ -531,17 +531,17 @@ msgstr ""
 msgid "Portuguese Brazil"
 msgstr ""
 
-#: posts/controllers/posts.ctrl.js:60
+#: posts/controllers/posts.ctrl.js:56
 msgid "Post saved"
 msgstr ""
 
 #: posts/config/posts.config.js:4
-#: posts/config/posts.config.js:7
+#: posts/config/posts.config.js:8
 #: posts/views/main.html:1
 msgid "Posts"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:89
+#: products/controllers/products.ctrl.js:100
 msgid "Price"
 msgstr ""
 
@@ -549,16 +549,16 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:39
+#: products/controllers/products.ctrl.js:46
 msgid "Product deleted"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:101
+#: products/controllers/products.ctrl.js:111
 msgid "Product saved"
 msgstr ""
 
 #: products/config/products.config.js:4
-#: products/config/products.config.js:7
+#: products/config/products.config.js:8
 msgid "Products"
 msgstr ""
 
@@ -583,7 +583,7 @@ msgstr ""
 msgid "Register"
 msgstr ""
 
-#: users/controllers/register.ctrl.js:100
+#: users/controllers/register.ctrl.js:123
 msgid "Registered"
 msgstr ""
 
@@ -595,20 +595,20 @@ msgstr ""
 msgid "Roles"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:118
-#: posts/controllers/posts.ctrl.js:55
-#: products/controllers/categories.ctrl.js:29
-#: products/controllers/products.ctrl.js:96
+#: events/controllers/events.ctrl.js:126
+#: posts/controllers/posts.ctrl.js:51
+#: products/controllers/categories.ctrl.js:30
+#: products/controllers/products.ctrl.js:106
 #: users/controllers/profile.ctrl.js:36
-#: users/controllers/users.ctrl.js:81
+#: users/controllers/users.ctrl.js:91
 msgid "Save"
 msgstr ""
 
-#: settings/controllers/settings.ctrl.js:30
+#: settings/controllers/settings.ctrl.js:32
 msgid "Setting deleted"
 msgstr ""
 
-#: settings/controllers/settings.ctrl.js:75
+#: settings/controllers/settings.ctrl.js:91
 msgid "Setting saved"
 msgstr ""
 
@@ -634,11 +634,11 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:83
+#: events/controllers/events.ctrl.js:91
 msgid "Start Date"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:91
+#: events/controllers/events.ctrl.js:99
 msgid "Start Time"
 msgstr ""
 
@@ -646,7 +646,7 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: users/controllers/login.ctrl.js:48
+#: users/controllers/login.ctrl.js:51
 msgid "Stay signed in"
 msgstr ""
 
@@ -689,16 +689,16 @@ msgstr ""
 msgid "There are no settings"
 msgstr ""
 
-#: notes/services/notes.service.js:21
+#: notes/services/notes.service.js:25
 msgid "This note could no be saved:"
 msgstr ""
 
-#: users/controllers/users.ctrl.js:49
+#: users/controllers/users.ctrl.js:58
 msgid "This user is save!"
 msgstr ""
 
 #: notes/controllers/notes.ctrl.js:10
-#: posts/controllers/posts.ctrl.js:35
+#: posts/controllers/posts.ctrl.js:34
 msgid "Title"
 msgstr ""
 
@@ -726,16 +726,16 @@ msgstr ""
 msgid "Upload queue"
 msgstr ""
 
-#: users/controllers/users.ctrl.js:27
+#: users/controllers/users.ctrl.js:30
 msgid "User deleted"
 msgstr ""
 
-#: users/controllers/users.ctrl.js:49
+#: users/controllers/users.ctrl.js:57
 msgid "User saved"
 msgstr ""
 
 #: users/controllers/profile.ctrl.js:14
-#: users/controllers/users.ctrl.js:59
+#: users/controllers/users.ctrl.js:69
 msgid "Username"
 msgstr ""
 
@@ -744,7 +744,7 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
-#: settings/controllers/settings.ctrl.js:53
+#: settings/controllers/settings.ctrl.js:64
 msgid "Value"
 msgstr ""
 
@@ -756,15 +756,15 @@ msgstr ""
 msgid "Welcome!"
 msgstr ""
 
-#: users/controllers/login.ctrl.js:94
+#: users/controllers/login.ctrl.js:97
 msgid "You are logged in!"
 msgstr ""
 
-#: core/controllers/main.ctrl.js:25
+#: core/controllers/main.ctrl.js:27
 msgid "You are logged out!"
 msgstr ""
 
-#: users/controllers/register.ctrl.js:100
+#: users/controllers/register.ctrl.js:124
 msgid "You are registered!"
 msgstr ""
 
@@ -772,8 +772,8 @@ msgstr ""
 msgid "You can just drag them in this window!"
 msgstr ""
 
-#: users/controllers/login.ctrl.js:34
-#: users/controllers/register.ctrl.js:46
+#: users/controllers/login.ctrl.js:37
+#: users/controllers/register.ctrl.js:60
 msgid "You need an email address"
 msgstr ""
 
@@ -781,80 +781,80 @@ msgstr ""
 msgid "Your Gravatar"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:54
+#: products/controllers/products.ctrl.js:67
 msgid "Your category is deleted!"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:57
+#: products/controllers/products.ctrl.js:72
 msgid "Your category is not deleted:"
 msgstr ""
 
-#: products/controllers/categories.ctrl.js:34
+#: products/controllers/categories.ctrl.js:36
 msgid "Your category is safe with us!"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:51
+#: events/controllers/events.ctrl.js:55
 msgid "Your event is deleted!"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:56
+#: events/controllers/events.ctrl.js:62
 msgid "Your event is not deleted:"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:134
+#: events/controllers/events.ctrl.js:143
 msgid "Your event is safe with us!"
 msgstr ""
 
-#: files/controllers/files.ctrl.js:19
+#: files/controllers/files.ctrl.js:25
 msgid "Your file is deleted!"
 msgstr ""
 
-#: core/helpers/FormHelper.js:24
-#: posts/services/posts.service.js:21
+#: core/helpers/FormHelper.js:28
+#: posts/services/posts.service.js:27
 msgid "Your item has been deleted!"
 msgstr ""
 
-#: notes/services/notes.service.js:28
+#: notes/services/notes.service.js:36
 msgid "Your note is deleted!"
 msgstr ""
 
-#: notes/services/notes.service.js:31
+#: notes/services/notes.service.js:41
 msgid "Your note is not deleted!"
 msgstr ""
 
-#: notes/services/notes.service.js:18
+#: notes/services/notes.service.js:20
 msgid "Your note is safe with us!"
 msgstr ""
 
-#: pages/controllers/pages.ctrl.js:35
+#: pages/controllers/pages.ctrl.js:38
 msgid "Your page is deleted!"
 msgstr ""
 
-#: pages/controllers/pages.ctrl.js:39
+#: pages/controllers/pages.ctrl.js:44
 msgid "Your page is not deleted:"
 msgstr ""
 
-#: pages/controllers/pages.ctrl.js:57
+#: pages/controllers/pages.ctrl.js:65
 msgid "Your page is safe with us!"
 msgstr ""
 
-#: users/controllers/register.ctrl.js:67
+#: users/controllers/register.ctrl.js:88
 msgid "Your passwords need to match"
 msgstr ""
 
-#: posts/controllers/posts.ctrl.js:60
+#: posts/controllers/posts.ctrl.js:57
 msgid "Your post is safe with us!"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:39
+#: products/controllers/products.ctrl.js:47
 msgid "Your product is deleted!"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:43
+#: products/controllers/products.ctrl.js:53
 msgid "Your product is not deleted:"
 msgstr ""
 
-#: products/controllers/products.ctrl.js:101
+#: products/controllers/products.ctrl.js:112
 msgid "Your product is safe with us!"
 msgstr ""
 
@@ -862,32 +862,32 @@ msgstr ""
 msgid "Your profile"
 msgstr ""
 
-#: users/controllers/profile.ctrl.js:43
+#: users/controllers/profile.ctrl.js:46
 msgid "Your profile is not saved:"
 msgstr ""
 
-#: settings/controllers/settings.ctrl.js:30
+#: settings/controllers/settings.ctrl.js:33
 msgid "Your setting is deleted!"
 msgstr ""
 
-#: settings/controllers/settings.ctrl.js:34
+#: settings/controllers/settings.ctrl.js:39
 msgid "Your setting is not deleted:"
 msgstr ""
 
-#: settings/controllers/settings.ctrl.js:75
+#: settings/controllers/settings.ctrl.js:92
 msgid "Your setting is safe with us!"
 msgstr ""
 
-#: users/controllers/users.ctrl.js:27
+#: users/controllers/users.ctrl.js:31
 msgid "Your user is deleted!"
 msgstr ""
 
-#: users/controllers/users.ctrl.js:31
+#: users/controllers/users.ctrl.js:37
 msgid "Your user is not deleted:"
 msgstr ""
 
-#: events/controllers/events.ctrl.js:100
-#: events/controllers/events.ctrl.js:85
+#: events/controllers/events.ctrl.js:108
+#: events/controllers/events.ctrl.js:93
 msgid "dd/MM/yyyy"
 msgstr ""
 
@@ -895,7 +895,7 @@ msgstr ""
 msgid "here"
 msgstr ""
 
-#: posts/controllers/posts.ctrl.js:47
+#: posts/controllers/posts.ctrl.js:44
 msgid "image"
 msgstr ""
 
