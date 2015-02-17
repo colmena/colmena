@@ -138,7 +138,7 @@ This also works with the free hosted MongoDB instances at [compose.io](https://w
 
 If you want to share your work through a Pull Request, be sure to make it a clean branch (one functionality per PR) and base it off master.
 
-If you plan on making a big change or replace a core function with something else it is probably best to first open an issue to discuss it with me. This will enhance the change of the eventual changes getting merged a lot :)  
+If you plan on making a big change or replace a core function with something else it is probably best to first open an issue to discuss it with me. This will enhance the chance of the eventual changes getting merged a lot :)  
 
 The API is built with [generator-loopback](https://www.npmjs.org/package/generator-loopback).
 
