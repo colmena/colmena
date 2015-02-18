@@ -1,8 +1,8 @@
 /client/app/scripts/config.js
 /client/app/scripts/lb-services.js
 /client/app/bower_components/
+/client/dist/
 /node_modules/
 /gulpfile.js
 /docular_generated/
 /test/
-/dist/
