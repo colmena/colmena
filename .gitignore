@@ -1,12 +1,14 @@
 .tmp
-dist
+.idea
 npm-debug.log
 node_modules
 downloaded
 docular_generated
+client/dist
 client/app/js/lb-services.js
 client/app/js/config.js
-client/app/index.html
+client/app/js/translations.js
+client/app/js/templatescache.js
 .idea/
 storage/
 .strong-pm
