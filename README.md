@@ -32,18 +32,18 @@ Please note, at this moment there is no difference in permissions for admin user
 
 ## Features and implemented projects
 
-- A Loopback REST API with authentication enabled built on the [Loopback Generator](https://www.npmjs.org/package/generator-loopback)
+- A LoopBack REST API with authentication enabled built on the [LoopBack Generator](https://www.npmjs.org/package/generator-loopback)
 - A GUI built with AngularJS based on the [Angular Generator](https://github.com/yeoman/generator-angular)
 - Angular UI-Router
 - JSON-based based forms by [angular-formly](https://formly-js.github.io/angular-formly/)
 - Notifications by [angular-toasty](https://github.com/Salakar/angular-toasty)
-- File upload with [Loopback storage services](https://github.com/strongloop/loopback-component-storage/)
+- File upload with [LoopBack storage services](https://github.com/strongloop/loopback-component-storage/)
 - Admin template powered by [almasaeed2010/AdminLTE](https://github.com/almasaeed2010/AdminLTE)
 - Markdown Editor with live preview with [angular-markdown-editor](https://github.com/JimLiu/angular-markdown-editor)
 - Bunch of useful filters for AngularJS: [a8m/angular-filter](https://github.com/a8m/angular-filter)
 - [t4t5/sweetalert](https://github.com/t4t5/sweetalert) provided by [oitozero/ngSweetAlert](https://github.com/oitozero/ngSweetAlert)
 - Automatically growing textarea's by [monospaced/angular-elastic](https://github.com/monospaced/angular-elastic)
-- Social authentication with [Loopback passport](https://github.com/strongloop/loopback-component-passport/)
+- Social authentication with [LoopBack passport](https://github.com/strongloop/loopback-component-passport/)
 - Multi-language support by [rubenv/angular-gettext](https://github.com/rubenv/angular-gettext)
 - User management
 - Loading indicators [chieffancypants/angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar)?
@@ -153,6 +153,12 @@ These commits might be useful when extending the functionality.
 - [Add support for MongoDB databases](https://github.com/beeman/loopback-angular-admin/commit/6b884e601d535ed64b4ef4f6f07e0f55d357a5b6)
 - [Add custom method to the API](https://github.com/beeman/loopback-angular-admin/commit/eedbd03f755ddf2234872886ee390ac4f6753c64)
 - [Rename a model](https://github.com/beeman/loopback-angular-admin/commit/88254ce59af29818aec900514693e3fe6c94acea)
+
+### WebSockets / socket.io
+
+At this moment there is no integration for socket.io or websockets, nor will there be in the near future. Once LoopBack has integrated support for it we will leverage from that.
+
+Having that said, it's certainly possible to integrate socket.io, check [this](https://github.com/beeman/loopback-angular-admin/pull/44) pull request by [@movibe](https://github.com/movibe).
 
 # Issues
 
