@@ -1,5 +1,8 @@
 'use strict';
 
+// to enable these logs set `DEBUG=boot:01-load-settings` or `DEBUG=boot:*`
+var log = require('debug')('boot:01-load-settings');
+
 module.exports = function(app) {
 
   var Setting = app.models.Setting;
@@ -48,7 +51,7 @@ module.exports = function(app) {
     settings.forEach(function(setting) {
       Setting.create(setting, function(err) {
         if (err) {
-          console.log(err);
+          console.error(err);
         }
       });
     });
@@ -58,14 +61,14 @@ module.exports = function(app) {
     console.error('Loading existing settings');
 
     Setting.find(function(data) {
-      console.log(data);
+      log(data);
     });
   }
 
 
   Setting.count(function(err, result) {
     if (err) {
-      console.log(err);
+      console.error(err);
     }
     if (result < 1) {
       loadDefaultSettings();
