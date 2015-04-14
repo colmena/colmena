@@ -1,7 +1,7 @@
 'use strict';
 var app = angular.module('com.module.notes');
 
-app.service('NotesService', ['$state', 'CoreService', 'Note', function($state,
+app.service('NotesService', ['$state', 'CoreService', 'Note', 'gettextCatalog', function($state,
   CoreService, Note, gettextCatalog) {
 
   this.getNotes = function() {
