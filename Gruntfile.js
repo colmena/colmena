@@ -25,7 +25,7 @@ module.exports = function (grunt) {
       production: '/api/'
     },
     site: {
-      development: 'http://0.0.0.0:3000',
+      development: 'http://0.0.0.0:9000',
       production: ''
     },
     host: '0.0.0.0'

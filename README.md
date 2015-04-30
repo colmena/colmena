@@ -21,6 +21,19 @@ Deploy an instance on your Heroku account to play around with it!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+## Using Docker Compose
+
+After install [Docker Compose](https://docs.docker.com/compose/), start up the container using:
+
+    docker-compose up
+
+Browse your app by going to:  [http://localhost:9000](http://localhost:9000)
+
+Features:
+
+* Live Reload of your angular application if changes made in client/
+* Automatic restarting of the server application if changes made in common/ or server/ files.
+
 ## Users
 
 After an installation the following users are created:
@@ -48,7 +61,9 @@ Please note, at this moment there is no difference in permissions for admin user
 - User management
 - Loading indicators [chieffancypants/angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar)?
 
-## Unit Testing using Karma/Jasmine
+## Unit Testing using [Karma](http://karma-runner.github.io/0.12/index.html)/[Jasmine](http://jasmine.github.io/)
+
+Initial unit tests are located in client/test, and may be executed via:
 
 $ ```node_modules/.bin/karma start client/test/karma.conf.js```
 

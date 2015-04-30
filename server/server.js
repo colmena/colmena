@@ -15,6 +15,12 @@ app.use(loopback.favicon());
 app.use(loopback.compress());
 
 // -- Add your pre-processing middleware here --
+var livereload = app.get('livereload');
+if (livereload) {
+  app.use(require('connect-livereload')({
+    port: livereload
+  }));
+}
 
 
 // boot scripts mount components like REST API
