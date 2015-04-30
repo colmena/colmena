@@ -1,12 +1,19 @@
 'use strict';
 
 describe('Controller: AboutCtrl', function () {
-
-  // load the controller's module
-  beforeEach(module('com.module.about'));
-
   var AboutCtrl,
     scope;
+
+  // load the controller's module
+  beforeEach(module('ui.router'));
+  beforeEach(module('gettext'));
+  beforeEach(module('formly'));
+  beforeEach(module('angular-loading-bar'));
+  beforeEach(module('lbServices'));
+  beforeEach(module('com.module.core'));
+  beforeEach(module('com.module.settings'));
+  beforeEach(module('com.module.about'));
+
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
@@ -17,7 +24,7 @@ describe('Controller: AboutCtrl', function () {
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+    expect(scope.angular).toBeDefined();
   });
 
 });
