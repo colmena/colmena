@@ -16,3 +16,7 @@ bower_components
 docs
 client/coverage
 .vagrant
+/.project
+.cache
+.config
+.npm

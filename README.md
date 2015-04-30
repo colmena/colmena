@@ -48,6 +48,15 @@ Please note, at this moment there is no difference in permissions for admin user
 - User management
 - Loading indicators [chieffancypants/angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar)?
 
+## Unit Testing using Karma/Jasmine
+
+$ ```node_modules/.bin/karma start client/test/karma.conf.js```
+
+    INFO [karma]: Karma v0.12.31 server started at http://localhost:8080/
+    INFO [launcher]: Starting browser PhantomJS
+    INFO [PhantomJS 1.9.8 (Linux)]: Connected on socket aLJmRuSNUH2rPfpWgS3l with id 89641972
+    PhantomJS 1.9.8 (Linux): Executed 1 of 1 SUCCESS (0.007 secs / 0.029 secs)
+
 
 ## TODO:
 
@@ -138,7 +147,7 @@ This also works with the free hosted MongoDB instances at [compose.io](https://w
 
 If you want to share your work through a Pull Request, be sure to make it a clean branch (one functionality per PR) and base it off master.
 
-If you plan on making a big change or replace a core function with something else it is probably best to first open an issue to discuss it with me. This will enhance the chance of the eventual changes getting merged a lot :)  
+If you plan on making a big change or replace a core function with something else it is probably best to first open an issue to discuss it with me. This will enhance the chance of the eventual changes getting merged a lot :)
 
 The API is built with [generator-loopback](https://www.npmjs.org/package/generator-loopback).
 
