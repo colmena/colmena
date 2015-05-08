@@ -92,7 +92,9 @@ module.exports = function(app) {
 
   app.get('/auth/account', ensureLoggedIn('/'), function(req, res, next) {
     console.log('Logged in', req.user)
-    res.redirect('/#/app');
+    res.cookie('accessToken', req.signedCookies['access_token']);
+    res.cookie('userId', req.user.id);
+    res.redirect('/#/router');
   });
 
   app.get('/auth/current', function(req, res, next) {
