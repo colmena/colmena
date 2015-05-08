@@ -19,7 +19,7 @@ angular.module('com.module.users')
               LoopBackAuth.accessTokenId = response.data.id;
             }
             if (LoopBackAuth.currentUserId === null) {
-              delete $cookies['access_token'];
+              delete $cookies['accessToken'];
               LoopBackAuth.accessTokenId = null;
             }
             LoopBackAuth.save();
@@ -46,35 +46,33 @@ angular.module('com.module.users')
         window.location = '/auth/logout';
       },
 
+      currentUser: null,
+
       ensureHasCurrentUser: function(cb) {
         var self = this;
-        if ((!this.currentUser || this.currentUser.id === 'social') &&
-          $cookies.access_token) {
+        if ((!this.currentUser || this.currentUser.id === 'social') && $cookies.accessToken) {
           LoopBackAuth.currentUserId = LoopBackAuth.accessTokenId = null;
           $http.get('/auth/current')
             .then(function(response) {
               if (response.data.id) {
                 LoopBackAuth.currentUserId = response.data.id;
-                LoopBackAuth.accessTokenId = $cookies.access_token.substring(
-                  2, 66);
+                LoopBackAuth.accessTokenId = $cookies.accessToken
               }
               if (LoopBackAuth.currentUserId === null) {
-                delete $cookies['access_token'];
+                delete $cookies['accessToken'];
                 LoopBackAuth.accessTokenId = null;
               }
               LoopBackAuth.save();
               self.currentUser = response.data;
               var profile = self.currentUser && self.currentUser.profiles &&
-                self.currentUser.profiles.length && self.currentUser.profiles[
-                  0];
+                self.currentUser.profiles.length && self.currentUser.profiles[0];
               if (profile) {
                 self.currentUser.name = profile.profile.name;
               }
               cb(self.currentUser);
             }, function() {
               console.log('User.getCurrent() err', arguments);
-              LoopBackAuth.currentUserId = LoopBackAuth.accessTokenId =
-                null;
+              LoopBackAuth.currentUserId = LoopBackAuth.accessTokenId = null;
               LoopBackAuth.save();
               cb({});
             });
