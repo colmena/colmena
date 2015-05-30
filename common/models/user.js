@@ -8,7 +8,6 @@ module.exports = function (user) {
       }
       ctx.instance.status = 'created';
       ctx.instance.created = Date.now();
-      ctx.instance.confirmPassword = null;
     }
     next();
   });

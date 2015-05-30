@@ -111,6 +111,7 @@ angular.module('com.module.users')
     $scope.register = function() {
 
       $scope.registration.username = $scope.registration.email;
+      delete $scope.registration.confirmPassword;
       $scope.user = User.save($scope.registration,
         function() {
 
