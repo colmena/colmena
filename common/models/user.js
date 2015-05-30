@@ -1,13 +1,15 @@
-module.exports = function(user) {
+module.exports = function (user) {
 
-  user.beforeCreate = function(next, user) {
-    if (user.username == undefined) {
-      user.username = user.email;
+  // Set the username to the users email address by default.
+  user.observe('before save', function setDefaultUsername(ctx, next) {
+    if (ctx.instance) {
+      if (ctx.instance.username === undefined) {
+        ctx.instance.username = ctx.instance.email;
+      }
+      ctx.instance.status = 'created';
+      ctx.instance.created = Date.now();
     }
-    user.status = 'created';
-    user.created = Date.now();
     next();
-  };
-
+  });
 
 };
