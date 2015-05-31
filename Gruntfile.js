@@ -25,7 +25,7 @@ module.exports = function (grunt) {
       production: '/api/'
     },
     site: {
-      development: 'http://0.0.0.0:3000',
+      development: 'http://0.0.0.0:9000',
       production: ''
     },
     host: '0.0.0.0'
@@ -98,6 +98,7 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
+          '<%= yeoman.app %>/**/{,*/}*.html',
           '.tmp/css/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]

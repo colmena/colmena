@@ -1,0 +1,46 @@
+api:
+  image: strongloop/node
+  ports:
+    - "3000:3000"
+  links:
+    - mongodb
+  command: npm run dev
+  volumes:
+    - .:/home/strongloop
+  user: 1000
+  environment:
+    - NODE_ENV=development
+    - DEBUG=boot*
+#    - DEBUG=strong-remoting:*
+    - PATH=/home/strongloop/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    - MONGODB_URL=mongodb://mongodb:27017/lbangadmin
+    - INITDB=1
+  restart: always
+
+angular:
+  image: strongloop/node
+  ports:
+    - "9000:9000"
+    - "35729:35729"
+  links:
+    - mongodb
+    - api
+  user: 1000
+  command: grunt serve
+  environment:
+    - NODE_ENV=development
+    - PATH=/home/strongloop/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+    - API_URL=http://0.0.0.0:3000/api
+  volumes:
+    - .:/home/strongloop
+  restart: always
+
+mongodb:
+  image: mongo:2.6.9
+  ports:
+    - "27017:27017"
+  volumes:
+# Swap these two lines to have mongodb write to your /var/lib/mongodb (and comment out user: 1000)
+#    - /var/lib/mongodb:/data
+     - .db:/data/db
+  restart: always
