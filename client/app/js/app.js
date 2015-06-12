@@ -7,15 +7,16 @@
  *
  * Main module of the application.
  */
-angular.module('loopbackApp', [
+angular
+  .module('loopbackApp', [
     'angular-loading-bar',
     'angular.filter',
     'angularBootstrapNavTree',
     'angularFileUpload',
     'btford.markdown',
     'oitozero.ngSweetAlert',
-    'config',
     'formly',
+    'config',
     'lbServices',
     'monospaced.elastic',
     'ngAnimate',
