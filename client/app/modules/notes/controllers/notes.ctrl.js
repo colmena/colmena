@@ -1,46 +1,45 @@
 'use strict';
-var app = angular.module('com.module.notes');
+angular
+    .module ('com.module.notes')
+    .controller ('NotesCtrl', function ($scope, $state, $stateParams, NotesService, gettextCatalog) {
 
-app.controller('NotesCtrl', function($scope, $state, $stateParams, NotesService,
-  gettextCatalog) {
+    $scope.formFields = [{
+        key     : 'title',
+        type    : 'text',
+        label   : gettextCatalog.getString ('Title'),
+        required: true
+    }, {
+        key     : 'body',
+        type    : 'textarea',
+        label   : gettextCatalog.getString ('Body'),
+        required: true
+    }];
 
-  $scope.formFields = [{
-    key: 'title',
-    type: 'text',
-    label: gettextCatalog.getString('Title'),
-    required: true
-  }, {
-    key: 'body',
-    type: 'textarea',
-    label: gettextCatalog.getString('Body'),
-    required: true
-  }];
+    $scope.formOptions = {
+        uniqueFormId: true,
+        hideSubmit  : false,
+        submitCopy  : 'Save'
+    };
 
-  $scope.formOptions = {
-    uniqueFormId: true,
-    hideSubmit: false,
-    submitCopy: 'Save'
-  };
+    $scope.delete = function (id) {
+        NotesService.deleteNote (id, function () {
+            $scope.notes = NotesService.getNotes ();
+        });
+    };
 
-  $scope.delete = function(id) {
-    NotesService.deleteNote(id, function() {
-      $scope.notes = NotesService.getNotes();
-    });
-  };
+    $scope.onSubmit = function () {
+        NotesService.upsertNote ($scope.note, function () {
+            $scope.notes = NotesService.getNotes ();
+            $state.go ('^.list');
+        });
+    };
 
-  $scope.onSubmit = function() {
-    NotesService.upsertNote($scope.note, function() {
-      $scope.notes = NotesService.getNotes();
-      $state.go('^.list');
-    });
-  };
+    $scope.notes = NotesService.getNotes ();
 
-  $scope.notes = NotesService.getNotes();
-
-  if ($stateParams.id) {
-    $scope.note = NotesService.getNote($stateParams.id);
-  } else {
-    $scope.note = {};
-  }
+    if ($stateParams.id) {
+        $scope.note = NotesService.getNote ($stateParams.id);
+    } else {
+        $scope.note = {};
+    }
 
 });
