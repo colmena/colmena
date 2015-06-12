@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.sandbox')
+    .module ('module.sandbox')
     .controller ('DatepickerDemoCtrl', function ($scope) {
         $scope.today     = function () {
             $scope.dt = new Date ();

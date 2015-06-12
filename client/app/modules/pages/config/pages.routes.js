@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.pages')
+    .module ('module.pages')
     .config (function ($stateProvider) {
         $stateProvider.state ('app.pages', {
             abstract   : true,

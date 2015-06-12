@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.sandbox')
+    .module ('module.sandbox')
     .controller ('SandboxFormsCtrl', function ($scope, CoreService) {
         $scope.formData = {};
 

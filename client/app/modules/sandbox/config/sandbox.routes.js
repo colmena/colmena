@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.sandbox')
+    .module ('module.sandbox')
     .config (function ($stateProvider) {
         $stateProvider
             .state ('app.sandbox', {

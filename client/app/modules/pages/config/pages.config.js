@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.pages')
+    .module ('module.pages')
     .run (function ($rootScope, Page, gettextCatalog) {
     $rootScope.addMenu (gettextCatalog.getString ('Pages'), 'app.pages.list', 'fa-file-o');
 

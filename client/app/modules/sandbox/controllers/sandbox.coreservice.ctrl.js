@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.sandbox')
+    .module ('module.sandbox')
     .controller ('SandboxCoreServiceCtrl', function ($scope, $timeout, CoreService) {
         $scope.basicAlert = function () {
             CoreService.alert ('This is the most basic alert!');

@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .service ('CoreService', function (ENV, SweetAlert, toasty) {
 
     this.env = ENV;

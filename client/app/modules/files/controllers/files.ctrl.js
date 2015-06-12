@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.files')
+    .module ('module.files')
     .controller ('FilesCtrl', function ($scope, $http, CoreService, gettextCatalog) {
         $scope.load = function () {
             $http.get (CoreService.env.apiUrl + '/containers/files/files').success (

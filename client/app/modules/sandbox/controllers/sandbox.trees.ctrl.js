@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.sandbox')
+    .module ('module.sandbox')
     .controller ('SandboxTreesCtrl', function ($scope, $timeout) {
         var appleSelected, tree, treedataAvm, treedataGeography;
         $scope.myTreeHandler          = function (branch) {

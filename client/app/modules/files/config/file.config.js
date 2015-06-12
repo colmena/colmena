@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.files')
+    .module ('module.files')
     .run (function ($rootScope, $http, CoreService, gettextCatalog) {
         $rootScope.addMenu (gettextCatalog.getString ('Files'), 'app.files.list',
             'fa-file');

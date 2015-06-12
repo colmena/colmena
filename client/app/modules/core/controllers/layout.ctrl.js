@@ -1,6 +1,6 @@
 /**
  * @ngdoc function
- * @name com.module.core.controller:LayoutCtrl
+ * @name module.core.controller:LayoutCtrl
  * @description Layout controller
  * @requires $scope
  * @requires $rootScope
@@ -9,7 +9,7 @@
  **/
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .controller ('LayoutCtrl', function ($scope, $rootScope, $cookies, CoreService,
     gettextCatalog) {
 

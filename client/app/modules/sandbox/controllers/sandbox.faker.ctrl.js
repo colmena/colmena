@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.sandbox')
+    .module ('module.sandbox')
     .controller ('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeService, Event, Post, User) {
 
     $scope.faker = [];
@@ -53,9 +53,7 @@ angular
         }
     };
 
-});
-
-
-app.service ('FakeService', function ($window) {
+})
+.service ('FakeService', function ($window) {
     this.faker = $window.faker;
 });

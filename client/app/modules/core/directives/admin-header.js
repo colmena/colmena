@@ -1,6 +1,6 @@
 /**
  * @ngdoc directive
- * @name com.module.core.directive:adminHeader
+ * @name module.core.directive:adminHeader
  * @description
  * @param {string} title Title
  * @param {string} subTitle Subtitle
@@ -8,7 +8,7 @@
  */
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .directive ('adminHeader', function () {
     return {
         templateUrl: 'modules/core/views/elements/admin-header.html',

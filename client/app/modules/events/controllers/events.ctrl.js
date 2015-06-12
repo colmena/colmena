@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.events')
+    .module ('module.events')
     .controller ('EventsCtrl', function ($scope, $state, $stateParams, CoreService,
         Event, gettextCatalog) {
 

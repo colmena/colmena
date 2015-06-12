@@ -1,6 +1,6 @@
 /**
  * @ngdoc function
- * @name com.module.core.controller:RouteCtrl
+ * @name module.core.controller:RouteCtrl
  * @description Redirect for acess
  * @requires $q
  * @requires $scope
@@ -10,7 +10,7 @@
  **/
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .controller ('RouteCtrl', function ($q, $scope, $state, $location, AppAuth) {
     if (!AppAuth.currentUser) {
         console.log ('Redirect to login');

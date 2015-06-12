@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .factory ('FormHelper', function ($state, CoreService, gettextCatalog) {
 
     return function (model) {

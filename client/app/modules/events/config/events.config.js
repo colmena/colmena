@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.events')
+    .module ('module.events')
     .run (function ($rootScope, Event, gettextCatalog) {
         $rootScope.addMenu (gettextCatalog.getString ('Events'), 'app.events.list',
             'fa-calendar-o');

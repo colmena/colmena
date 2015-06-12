@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.notes')
+    .module ('module.notes')
     .config (function ($stateProvider) {
         $stateProvider.state ('app.notes', {
             abstract   : true,

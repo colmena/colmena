@@ -1,12 +1,12 @@
 /**
  * @ngdoc directive
- * @name com.module.core.directive:adminBox
+ * @name module.core.directive:adminBox
  * @description
  * # adminBox
  */
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .directive ('adminBox', function () {
         return {
             template: '<div></div>',

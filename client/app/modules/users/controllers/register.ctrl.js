@@ -1,6 +1,6 @@
 /**
  * @ngdoc function
- * @name com.module.users.controller:RegisterCtrl
+ * @name module.users.controller:RegisterCtrl
  * @description Login Controller
  * @requires $scope
  * @requires $routeParams
@@ -9,7 +9,7 @@
  **/
 'use strict';
 angular
-    .module ('com.module.users')
+    .module ('module.users')
     .controller ('RegisterCtrl', function ($scope, $routeParams, $location, $filter, CoreService, User, AppAuth, gettextCatalog) {
 
     $scope.registration = {

@@ -1,13 +1,13 @@
 /**
  * @ngdoc function
- * @name com.module.core.controller:HomeCtrl
+ * @name module.core.controller:HomeCtrl
  * @description Dashboard
  * @requires $scope
  * @requires $rootScope
  **/
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .controller ('HomeCtrl', function ($scope, $rootScope) {
 
     $scope.count = {};

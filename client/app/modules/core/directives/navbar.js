@@ -1,12 +1,12 @@
 /**
  * @ngdoc directive
- * @name com.module.core.directive:navbar
+ * @name module.core.directive:navbar
  * @description
  * # navbar
  */
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .directive ('navbar', function () {
     return {
         templateUrl: 'modules/core/views/elements/navbar.html',

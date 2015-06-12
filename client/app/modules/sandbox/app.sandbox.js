@@ -1,2 +1,2 @@
 'use strict';
-angular.module('com.module.sandbox', []);
+angular.module('module.sandbox', []);

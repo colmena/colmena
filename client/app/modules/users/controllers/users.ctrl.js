@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.users')
+    .module ('module.users')
     .controller ('UsersCtrl', function ($scope, $stateParams, $state, CoreService,
         User, gettextCatalog) {
 

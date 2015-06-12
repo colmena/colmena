@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.sandbox')
+    .module ('module.sandbox')
     .controller ('SandboxBootstrapTabsCtrl', function ($scope, CoreService) {
         $scope.tabs = [{
             title  : 'Dynamic Title 1',

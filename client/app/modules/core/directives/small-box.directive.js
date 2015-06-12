@@ -1,6 +1,6 @@
 /**
  * @ngdoc directive
- * @name com.module.core.directive:smallbBox
+ * @name module.core.directive:smallbBox
  * @restrict E
  * @description Dashboard Box
  * @param {string} name Box Title
@@ -11,7 +11,7 @@
  */
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .directive ('smallBox', function () {
     return {
         restrict   : 'E',

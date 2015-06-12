@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.posts')
+    .module ('module.posts')
     .config (function ($stateProvider) {
     $stateProvider
         .state ('app.posts', {

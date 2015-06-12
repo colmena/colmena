@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.events')
+    .module ('module.events')
     .config (function ($stateProvider) {
         $stateProvider.state ('app.events', {
             abstract   : true,

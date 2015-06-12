@@ -1,12 +1,12 @@
 /**
  * @ngdoc directive
- * @name com.module.core.directive:adminForm
+ * @name module.core.directive:adminForm
  * @description
  * # adminForm
  */
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .directive ('adminForm', function () {
     return {
         template: '<div></div>',

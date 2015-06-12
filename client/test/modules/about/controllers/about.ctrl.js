@@ -10,9 +10,9 @@ describe('Controller: AboutCtrl', function () {
   beforeEach(module('formly'));
   beforeEach(module('angular-loading-bar'));
   beforeEach(module('lbServices'));
-  beforeEach(module('com.module.core'));
-  beforeEach(module('com.module.settings'));
-  beforeEach(module('com.module.about'));
+  beforeEach(module('module.core'));
+  beforeEach(module('module.settings'));
+  beforeEach(module('module.about'));
 
 
   // Initialize the controller and a mock scope
@@ -26,5 +26,6 @@ describe('Controller: AboutCtrl', function () {
   it('should attach a list of awesomeThings to the scope', function () {
     expect(scope.angular).toBeDefined();
   });
+  
 
 });

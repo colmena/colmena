@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.notes')
+    .module ('module.notes')
     .controller ('NotesCtrl', function ($scope, $state, $stateParams, NotesService, gettextCatalog) {
 
     $scope.formFields = [{

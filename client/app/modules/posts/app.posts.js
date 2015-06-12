@@ -1,2 +1,2 @@
 'use strict';
-angular.module('com.module.posts', []);
+angular.module('module.posts', []);

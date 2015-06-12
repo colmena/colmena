@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.sandbox')
+    .module ('module.sandbox')
     .controller ('SandboxCtrl', function ($scope) {
         $scope.items = [{
             name: 'CoreService',

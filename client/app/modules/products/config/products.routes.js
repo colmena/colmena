@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.products')
+    .module ('module.products')
     .config (function ($stateProvider) {
         $stateProvider
             .state ('app.products', {

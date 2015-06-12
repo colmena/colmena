@@ -33,17 +33,17 @@ angular
         'toasty',
         'autofields',
         'gettext',
-        'com.module.core',
-        'com.module.about',
-        'com.module.events',
-        'com.module.files',
-        'com.module.notes',
-        'com.module.pages',
-        'com.module.posts',
-        'com.module.products',
-        'com.module.sandbox',
-        'com.module.settings',
-        'com.module.users'
+        'module.core',
+        'module.about',
+        'module.events',
+        'module.files',
+        'module.notes',
+        'module.pages',
+        'module.posts',
+        'module.products',
+        'module.sandbox',
+        'module.settings',
+        'module.users'
     ])
     .run (function ($rootScope, $cookies, gettextCatalog) {
 

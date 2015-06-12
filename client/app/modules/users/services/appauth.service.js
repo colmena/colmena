@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.users')
+    .module ('module.users')
     .factory ('AppAuth', function ($cookies, User, LoopBackAuth, $http) {
     return {
         login: function (data, cb) {

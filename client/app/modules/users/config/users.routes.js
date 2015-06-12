@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.users')
+    .module ('module.users')
     .config (function ($stateProvider) {
         $stateProvider
             .state ('login', {

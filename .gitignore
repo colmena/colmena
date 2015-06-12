@@ -12,7 +12,7 @@ storage/
 .sass-cache
 providers.json
 docs
-client/coverage
+coverage/
 .vagrant
 /.project
 .cache

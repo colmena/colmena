@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .directive ('dateButton', function () {
 
     var linkFn = function link (scope) {

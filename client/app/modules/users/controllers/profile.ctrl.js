@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.users')
+    .module ('module.users')
     .controller ('ProfileCtrl', function ($scope, CoreService, User, gettextCatalog) {
         $scope.user = User.getCurrent (function (user) {
             console.log (user);

@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.files')
+    .module ('module.files')
     .controller ('UploadCtrl', function ($scope, FileUploader, CoreService) {
 
         // create a uploader with options

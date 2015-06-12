@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.pages')
+    .module ('module.pages')
     .controller ('PagesCtrl', function ($scope, $state, $stateParams, $filter,
         CoreService, gettextCatalog, Page) {
 

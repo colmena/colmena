@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.posts')
+    .module ('module.posts')
     .service ('PostsService', function (CoreService, gettextCatalog, Post) {
 
     this.getPosts = function () {

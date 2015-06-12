@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .config (function ($stateProvider, $urlRouterProvider) {
         $stateProvider
             .state ('router', {

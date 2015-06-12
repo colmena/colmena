@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.about')
+    .module ('module.about')
     .run (function ($rootScope, gettextCatalog) {
 
         $rootScope.addDashboardBox (gettextCatalog.getString ('About'), 'bg-maroon',

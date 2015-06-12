@@ -1,12 +1,12 @@
 /**
  * @ngdoc directive
- * @name com.module.core.directive:home
+ * @name module.core.directive:home
  * @description
  * # home
  */
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .directive ('home', function () {
     return {
         template: '<div></div>',

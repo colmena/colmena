@@ -1,12 +1,12 @@
 /**
  * @ngdoc directive
- * @name com.module.core.directive:register
+ * @name module.core.directive:register
  * @description
  * # register
  */
 'use strict';
 angular
-    .module ('com.module.users')
+    .module ('module.users')
     .directive ('register', function () {
     return {
         templateUrl: 'modules/users/views/register.html',

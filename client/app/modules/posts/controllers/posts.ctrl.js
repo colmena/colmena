@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.posts')
+    .module ('module.posts')
     .controller ('PostsCtrl', function ($scope, $state, $stateParams, CoreService, FormHelper, gettextCatalog, Post, PostsService) {
 
     $scope.delete = function (id) {

@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.sandbox')
+    .module ('module.sandbox')
     .controller ('SandboxBootstrapAlertCtrl', function ($scope) {
         $scope.alerts = [{
             type: 'danger',

@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.sandbox')
+    .module ('module.sandbox')
     .controller ('AutoFieldsCtrl', function ($scope, $state, $log) {
         $scope.user = {
             username       : '',

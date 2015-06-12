@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.files')
+    .module ('module.files')
     .config (function ($stateProvider) {
         $stateProvider.state ('app.files', {
             abstract   : true,

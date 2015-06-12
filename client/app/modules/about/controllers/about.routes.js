@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.about')
+    .module ('module.about')
     .config (function ($stateProvider) {
         $stateProvider
             .state ('app.about', {

@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.settings')
+    .module ('module.settings')
     .controller ('SettingsCtrl', function ($scope, $rootScope, $state, $stateParams, CoreService, Setting, gettextCatalog) {
     var settingId = $stateParams.id;
 

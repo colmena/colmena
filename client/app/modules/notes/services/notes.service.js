@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.notes')
+    .module ('module.notes')
     .service ('NotesService', function ($state, CoreService, Note, gettextCatalog) {
 
     this.getNotes = function () {

@@ -1,6 +1,6 @@
 'use strict';
 angular
-    .module ('com.module.products')
+    .module ('module.products')
     .controller ('ProductsCtrl', function ($scope, $state, $stateParams,
         CoreService, gettextCatalog, Product, Category) {
 

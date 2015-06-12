@@ -1,6 +1,6 @@
 /**
  * @ngdoc function
- * @name com.module.core.controller:MainCtrl
+ * @name module.core.controller:MainCtrl
  * @description Login Controller
  * @requires $scope
  * @requires $state
@@ -12,7 +12,7 @@
  **/
 'use strict';
 angular
-    .module ('com.module.core')
+    .module ('module.core')
     .controller ('MainCtrl', function ($scope, $rootScope, $state, $location,
         CoreService, User, gettextCatalog) {
         $scope.currentUser = User.getCurrent ();
