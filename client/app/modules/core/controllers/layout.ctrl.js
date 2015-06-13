@@ -10,7 +10,7 @@
 'use strict';
 angular
     .module ('module.core')
-    .controller ('LayoutCtrl', function ($scope, $rootScope, $cookies, CoreService,
+    .controller ('LayoutCtrl', function ($scope, $rootScope, $window, CoreService,
     gettextCatalog) {
 
     // angular translate
@@ -23,10 +23,10 @@ angular
 
     $scope.setLocale = function (locale) {
         // set the current lang
-        $scope.locale       = $scope.locales[locale];
-        $scope.selectLocale = $scope.locale;
-        $rootScope.locale   = $scope.locale;
-        $cookies.lang       = $scope.locale.lang;
+        $window.localStorage.lang = locale;
+        $scope.locale             = $scope.locales[locale];
+        $scope.selectLocale       = $scope.locale;
+        $rootScope.locale         = $scope.locale;
 
         // You can change the language during runtime
         $scope.locale.isopen = !$scope.locale.isopen;
