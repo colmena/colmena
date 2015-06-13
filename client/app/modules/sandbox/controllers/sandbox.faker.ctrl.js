@@ -4,7 +4,6 @@ angular
     .controller ('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeService, Event, Post, User) {
 
     $scope.faker = [];
-
     $scope.records = 10;
 
     console.log (FakeService);
@@ -53,7 +52,4 @@ angular
         }
     };
 
-})
-.service ('FakeService', function ($window) {
-    this.faker = $window.faker;
 });
