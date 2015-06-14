@@ -32,9 +32,9 @@ gulp.task ('usemin', function () {
         .pipe (gulp.dest (paths.dist));
 });
 
-gulp.task('anote', function () {
-    return gulp.src(paths.src.js)
-        .pipe(plugins.jshint.reporter ())
-        .pipe(plugins.ngAnnotate())
-        .pipe(gulp.dest('dist'));
+gulp.task ('anote', function () {
+    return gulp.src (paths.src.js)
+        .pipe (plugins.jshint.reporter ())
+        .pipe (plugins.ngAnnotate ())
+        .pipe (gulp.dest ('dist'));
 });

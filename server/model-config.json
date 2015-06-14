@@ -1,7 +1,7 @@
 {
   "_meta": {
     "sources": [
-      "../common/models",
+      "./common",
       "./models",
       "../node_modules/loopback-component-passport/lib/models"
     ]

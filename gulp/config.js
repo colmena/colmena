@@ -7,29 +7,31 @@ module.exports = {
         prod: 'http://sistema.dev'
     },
     src       : {
-        index: 'client/app/index.html',
-        fonts: 'client/app/lib/ionic/fonts/**.*',
-        imgs : 'client/app/images/**/**.*',
-        path : 'client/app/',
+        index: 'public/index.html',
+        fonts: 'public/lib/ionic/fonts/**.*',
+        imgs : 'public/images/**/**.*',
+        path : 'public/',
         css  : [
-            'client/app/css/*.css',
-            'client/app/css/**/*.css'
+            'public/css/*.css',
+            'public/css/**/*.css'
         ],
         sass : ['scss/**/*.scss'],
         js   : [
-            'client/app/js/*.js',
-            'client/app/modules/*.js',
-            'client/app/modules/**/*.js'
+            'public/js/*.js',
+            'public/modules/*.js',
+            '!public/modules/*.spec.js',
+            'public/modules/**/*.js',
+            '!public/modules/**/*.spec.js'
         ],
         html : [
-            'client/app/modules/**/*.html'
+            'public/modules/**/*.html'
         ]
     },
     libs      : [
-        'client/app/lib/ionicons/fonts'
+        'public/lib/ionicons/fonts'
     ],
-    source    : 'client/app/',
-    dist      : 'beta',
+    source    : 'public/',
+    dist      : 'dist',
     docs      : 'docs',
     scss      : 'scss/style.scss',
     bower     : [

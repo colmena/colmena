@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <title>Toasty Samples, Yum!</title>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./../css/ng-toasty.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.20/angular-animate.min.js" ></script>
+    <script src="./../js/ng-toasty.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+    <body>
+    <div ng-controller="myController">
+        <div>
+            <button class="btn btn-primary" style="margin: 150px 0 0 150px;" ng-click="pop()">Show toasts</button>
+            <br />
+            <button class="btn btn-primary" style="margin: 10px 0 0 150px;" ng-click="silent()">Silent toast</button>
+            <br />
+            <button class="btn btn-danger" style="margin: 10px 0 0 150px;" ng-click="clear()">Clear toasts</button>
+        </div>
+    </div>
+
+    <!-- Toasty controller, add this to your index page / default template -->
+    <div ng-controller="toasty-controller">
+     <toasty-container toasty-defaults='{"timeout": 3000, "close-button": true, "pushTo": "top", "limit": 10}'></toasty-container>
+
+    </div>
+
+    </body>
+</html>

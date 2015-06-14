@@ -1,0 +1,38 @@
+<div class="panel panel-default" ng-repeat="item in ProductList.data">
+    <div class="panel-heading">
+        <div class="pull-right">
+            <a  class="btn btn-default btn-xs" ui-sref="^.add({ itemId: item.id })"
+               title="{{ 'Add product to item' | translate }}"><i class="fa fa-plus-circle"></i></a>
+            <a  class="btn btn-default btn-xs" ui-sref="^.edititem({ itemId: item.id })"
+               title="{{ 'Edit item' | translate }}"><i class="fa fa-pencil"></i></a>
+            <a  class="btn btn-default btn-xs" ng-click="deleteitem({ id: item.id })"
+               title="{{ 'Delete item' | translate }}"><i class="fa fa-trash-o"></i></a>
+        </div>
+        <h3 class="panel-title">{{ item.name }}</h3>
+    </div>
+    <table class="table table-bordered" ng-show="item.products.length">
+        <tbody>
+        <tr ng-repeat="item in item.products">
+            <th>
+                <a  ui-sref="^.view({id: item.id})">{{item.name}}</a>
+                <small>{{item.description}}</small>
+                <div class="pull-right">
+                    <span class="label label-default">{{item.price}}</span>
+                    <a  class="btn btn-xs btn-default" ui-sref="^.edit({id: item.id})">
+                        <i class="fa fa-pencil"></i>
+                    </a>
+                    <a  class="btn btn-xs btn-default" ng-click="ProductList.delete({id: item.id})">
+                        <i class="fa fa-trash-o"></i>
+                    </a>
+                </div>
+            </th>
+        </tr>
+        </tbody>
+    </table>
+    <div class="panel-body" ng-show="!item.products.length">
+        <h4 class="list-group-item-heading" translate>
+          There are no products in this item!
+        </h4>
+        <p class="list-group-item-text" translate>Click <a ui-sref="^.add({ itemId: item.id })">here</a> to add a product!</p>
+    </div>
+</div>

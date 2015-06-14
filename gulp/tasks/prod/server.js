@@ -1,7 +1,7 @@
 var gulp         = require ('gulp'),
     replace      = require ('replace'),
     paths        = require ('../../config'),
-    replaceFiles = ['./www/js/config.js'];
+    replaceFiles = [paths.source + 'js/config.js'];
 
 
 // Cache Modules

@@ -3,7 +3,7 @@ var gulp  = require ('gulp'),
 
 gulp.task ('fonts', function () {
 
-    gulp.src (paths.source + '/img/**').pipe (gulp.dest (paths.dist + '/img'));
+    gulp.src (paths.source + '/images/**').pipe (gulp.dest (paths.dist + '/images'));
 
     // Ionic
     gulp.src (paths.source + '/lib/ionic/fonts/**').pipe (gulp.dest (paths.dist + '/fonts'));

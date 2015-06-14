@@ -4,36 +4,36 @@ var gulp          = require ('gulp'),
     notify        = require ('gulp-notify'),
     paths         = require ('../../config'),
     replace       = require ('replace'),
-    replaceFiles  = ['./www/js/app.js'];
+    replaceFiles  = [paths.source + '/js/app.js'];
 
 gulp.task ('templates', function () {
-    gulp.src (['./www/modules/**/*.html'])
+    gulp.src ([paths.source + '/modules/**/*.html'])
         .pipe (minifyHTML ({quotes: true}))
         .pipe (templateCache ({
-        module    : 'cachemodules',
-        filename  : 'cachemodules.js',
+        module    : 'cacheviews',
+        filename  : 'cacheviews.js',
         root      : 'modules',
         standalone: true
     }))
-        .pipe (gulp.dest ('./www/js/'))
+        .pipe (gulp.dest (paths.source + '/js/'))
         .pipe (notify ({message: 'Templates Cache complete'}));
 });
 
 // Cache Modules
-gulp.task ('cachemodules:add', function () {
+gulp.task ('cacheviews:add', function () {
     return replace ({
-        regex      : "//'cachemodules'",
-        replacement: "'cachemodules'",
+        regex      : "//'cacheviews'",
+        replacement: "'cacheviews'",
         paths      : replaceFiles,
         recursive  : false,
         silent     : false
     });
 });
 
-gulp.task ('cachemodules:remove', function () {
+gulp.task ('cacheviews:remove', function () {
     return replace ({
-        regex      : "'cachemodules'",
-        replacement: "//'cachemodules'",
+        regex      : "'cacheviews'",
+        replacement: "//'cacheviews'",
         paths      : replaceFiles,
         recursive  : false,
         silent     : false

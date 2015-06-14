@@ -1,0 +1,17 @@
+{
+    "name": "angular-toasty",
+    "version": "0.1.8",
+    "main": [
+        "js/ng-toasty.js",
+        "css/ng-toasty.css"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "components"
+    ],
+    "dependencies": {
+        "angular": "~1.2.20",
+        "angular-animate": "~1.2.20"
+    }
+}

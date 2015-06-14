@@ -1,0 +1,24 @@
+<div class="box">
+  <div class="box-body no-padding" style="min-height: 120px;">
+    <table class="table table-bordered table-striped">
+      <tr ng-repeat="user in UserList.data">
+        <td>
+          <a  ui-sref="app.users.view({id: user.id})">{{user.username}}</a>
+          <span class="text-muted">{{user.email}}</span>
+          <span ng-repeat="role in user.roles" class="label label-default">{{role.name}}</span>
+          <span class="pull-right">
+            <div class="btn-group">
+              <button class="btn btn-xs btn-default" ui-sref="app.users.password({ id: user.id })"><i class="fa fa-key"></i></button>
+              <button class="btn btn-xs btn-default" ui-sref="app.users.edit({ id: user.id })"><i class="fa fa-pencil"></i></button>
+              <button class="btn btn-xs btn-danger" ng-click="UserList.delete({ id: user.id })"><i class="fa fa-trash-o"></i></button>
+            </div>
+          </span>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div ng-if="UserList.loading" class="overlay"></div>
+  <div ng-if="UserList.loading" class="loading-img"></div>
+</div>
+
+

@@ -1,0 +1,12 @@
+{
+  "name": "flag-icon-css",
+  "main": "css/flag-icon.min.css",
+  "ignore": [
+      "**/.*",
+      "assets",
+      "Gruntfile.coffee",
+      "index.html",
+      "LICENSE",
+      "package.json"
+  ]
+}

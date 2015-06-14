@@ -1,5 +1,4 @@
 'use strict';
-
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 var path = require('path');
@@ -29,7 +28,7 @@ boot(app, __dirname);
 var staticPath = null;
 
 if (env !== 'prod') {
-  staticPath = path.resolve(__dirname, '../client/app/');
+  staticPath = path.resolve(__dirname, '../public/');
   console.log("Running app in development mode");
 } else {
   staticPath = path.resolve(__dirname, '../dist/');

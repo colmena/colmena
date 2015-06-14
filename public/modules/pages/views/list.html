@@ -1,0 +1,35 @@
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title" translate>Pages</h3>
+
+        <div class="box-tools pull-right">
+
+        </div>
+    </div>
+    <div class="box-body">
+        <div class='list-group'>
+            <div ng-repeat="page in pages" class="list-group-item">
+                <span class="pull-right btn-group" style="margin-top: 7px;">
+                  <a  class="btn btn-sm btn-default" ui-sref="^.edit({id: page.id})">
+                      <i class="fa fa-pencil"></i>
+                  </a>
+                  <a  class="btn btn-sm btn-default" ng-click="delete({id: page.id})">
+                      <i class="fa fa-trash-o"></i>
+                  </a>
+                </span>
+                <h4 class="list-group-item-heading">
+                    <a  ui-sref="^.view({id: page.id})">{{page.name}}</a>
+                </h4>
+                <p class="list-group-item-text">{{page.slug}}</p>
+            </div>
+            <div ng-show="!pages.length" class="list-group-item">
+                <h4 class="list-group-item-heading" translate>
+                    There are no pages
+                </h4>
+                <p class="list-group-item-text" translate>Click <a  ui-sref="^.add">here</a> to add a page!</p>
+            </div>
+        </div>
+    </div>
+    <div ng-if="loading" class="overlay"></div>
+    <div ng-if="loading" class="loading-img"></div>
+</div>

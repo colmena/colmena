@@ -4,8 +4,8 @@ var gulp        = require ('gulp'),
 
 gulp.task ('dev', function (cb) {
     runSequence (
+        //'sass',
         // 'bower',
-        'sass',
         'translate',
         'index',
         cb);

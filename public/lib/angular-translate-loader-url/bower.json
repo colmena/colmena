@@ -1,0 +1,17 @@
+{
+  "name": "angular-translate-loader-url",
+  "description": "A plugin for Angular Translate",
+  "version": "2.6.1",
+  "main": "./angular-translate-loader-url.js",
+  "dependencies": {
+    "angular-translate": "~2.6.1"
+  },
+  "ignore": [],
+  "author": "Pascal Precht",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ]
+}

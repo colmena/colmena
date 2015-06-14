@@ -1,0 +1,17 @@
+
+<h4>
+  <a  ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+  {{setting.title}}
+
+  <span class="pull-right btn-group" style="margin-top: 7px;">
+    <a  class="btn btn-sm btn-default" ui-sref="^.edit({id: setting.id})">
+      <i class="fa fa-pencil"></i>
+    </a>
+    <a  class="btn btn-sm btn-default" ng-click="delete({id: setting.id})">
+      <i class="fa fa-trash-o"></i>
+    </a>
+  </span>
+
+</h4>
+<hr>
+<pre>{{setting | json}}</pre>

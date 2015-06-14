@@ -1,0 +1,27 @@
+{
+  "name": "angular-toasty",
+  "version": "0.1.8",
+  "main": [
+    "js/ng-toasty.js",
+    "css/ng-toasty.css"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "angular": "~1.2.20",
+    "angular-animate": "~1.2.20"
+  },
+  "homepage": "https://github.com/Salakar/angular-toasty",
+  "_release": "0.1.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.8",
+    "commit": "e86917d3e101c9b84ebe4c94f8aef1c4cb06176c"
+  },
+  "_source": "git://github.com/Salakar/angular-toasty.git",
+  "_target": "~0.1.8",
+  "_originalSource": "angular-toasty"
+}

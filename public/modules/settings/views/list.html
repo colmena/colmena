@@ -1,0 +1,22 @@
+<div class='list-group'>
+  <div ng-repeat="item in settings.data" class="list-group-item">
+    <span class="pull-right btn-group" style="margin-top: 7px;">
+      <a  class="btn btn-sm btn-default" ui-sref="^.edit({id: item.id})">
+        <i class="fa fa-pencil"></i>
+      </a>
+      <a  class="btn btn-sm btn-default" ng-click="delete({id: item.id})">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </span>
+    <h4 class="list-group-item-heading">
+      <a  ui-sref="^.view({id: item.id})">{{item.key}}</a>
+    </h4>
+    <p class="list-group-item-text">{{item.value}}</p>
+  </div>
+  <div ng-show="!settings.data.length" class="list-group-item">
+    <h4 class="list-group-item-heading" translate>
+      There are no settings
+    </h4>
+    <p class="list-group-item-text" translate>Click <a  ui-sref="^.add">here</a> to add a setting!</p>
+  </div>
+</div>

@@ -9,10 +9,10 @@ gulp.task ('prod', function (cb) {
         'dev',
         'clean',
         'fonts',
-        'cachemodules:add',
+        'cacheviews:add',
         'server:prod',
         'usemin',
-        'cachemodules:remove',
+        'cacheviews:remove',
         'server:dev',
         cb
     );
