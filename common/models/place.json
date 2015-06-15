@@ -1,0 +1,70 @@
+{
+  "name": "Place",
+  "plural": "Place",
+  "base": "User",
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "cnpj": {
+      "type": "string",
+      "required": false
+    },
+    "inscricao": {
+      "type": "string",
+      "required": false
+    },
+    "website": {
+      "type": "string",
+      "required": false
+    },
+    "atividade": {
+      "type": "string",
+      "required": false
+    },
+    "funcionarios": {
+      "type": "string",
+      "required": false
+    },
+    "fundacao": {
+      "type": "date"
+    },
+    "descricao": {
+      "type": "string"
+    },
+    "street": {
+      "type": "string"
+    },
+    "streetDesc": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "zipcode": {
+      "type": "string"
+    },
+    "district": {
+      "type": "string"
+    },
+    "geo": {
+      "type": "geopoint"
+    },
+    "created": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}

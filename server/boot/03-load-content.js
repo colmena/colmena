@@ -1,92 +1,90 @@
 'use strict';
-
 // to enable these logs set `DEBUG=boot:03-load-content` or `DEBUG=boot:*`
-var log = require('debug')('boot:03-load-content');
+var log = require ('debug') ('boot:03-load-content');
+module.exports = function (app) {
 
-module.exports = function(app) {
-
-  if (app.dataSources.db.name !== 'Memory' && !process.env.INITDB) {
-    return;
-  }
-
-  log('Creating categories and products');
-
-  var Category = app.models.Category;
-  var Product = app.models.Product;
-
-  Category.findOrCreate(
-    {where:{name: 'Beer'}}, // find
-    {name: 'Beer'}, // create
-    function(err, category, created) {
-      if (err) {
-        console.error('err', err);
-      }
-      (created) ? log('created Category', category.name)
-                : log('found Category', category.name);
-      Product.findOrCreate(
-        {where:{name: 'Draft beer'}}, // find
-        {
-          name: 'Draft beer',
-          price: '250',
-          percentage: '5',
-          categoryId: category.id
-        }, // create
-        function(err, data, created) {
-          if (err) {
-            console.error('err', err);
-          }
-          (created) ? log('created Product', data.name)
-                    : log('found Product', data.name);
-        });
-      Product.findOrCreate(
-        {where:{name: 'Bottled beer'}}, // find
-        {
-          name: 'Bottled beer',
-          price: '350',
-          percentage: '5',
-          categoryId: category.id
-        }, //create
-        function(err, data, created) {
-          if (err) {
-            console.error('err', err);
-          }
-          (created) ? log('created Product', data.name)
-                    : log('found Product', data.name);
-        });
-    });
-
-  Category.findOrCreate({where:{name: 'Wine'}},{
-    name: 'Wine'
-  }, function(err, category, created) {
-    if (err) {
-      console.error('err', err);
+    if (app.dataSources.db.name !== 'Memory' && !process.env.INITDB) {
+        return;
     }
-    (created) ? log('created Category', category.name)
-              : log('found Category', category.name);
-    Product.findOrCreate({where:{name: 'Red wine'}},{
-      name: 'Red wine',
-      price: '350',
-      percentage: '12',
-      categoryId: category.id
-    }, function(err, data, created) {
-      if (err) {
-        console.error('err', err);
-      }
-      (created) ? log('created Product', data.name)
-                : log('found Product', data.name);
+
+    log ('Creating categories and products');
+
+    var Category = app.models.Category;
+    var Product  = app.models.Product;
+
+    Category.findOrCreate (
+        {where: {name: 'Beer'}}, // find
+        {name: 'Beer'}, // create
+        function (err, category, created) {
+            if (err) {
+                console.error ('err', err);
+            }
+            (created) ? log ('created Category', category.name)
+                : log ('found Category', category.name);
+            Product.findOrCreate (
+                {where: {name: 'Draft beer'}}, // find
+                {
+                    name      : 'Draft beer',
+                    price     : '250',
+                    percentage: '5',
+                    categoryId: category.id
+                }, // create
+                function (err, data, created) {
+                    if (err) {
+                        console.error ('err', err);
+                    }
+                    (created) ? log ('created Product', data.name)
+                        : log ('found Product', data.name);
+                });
+            Product.findOrCreate (
+                {where: {name: 'Bottled beer'}}, // find
+                {
+                    name      : 'Bottled beer',
+                    price     : '350',
+                    percentage: '5',
+                    categoryId: category.id
+                }, //create
+                function (err, data, created) {
+                    if (err) {
+                        console.error ('err', err);
+                    }
+                    (created) ? log ('created Product', data.name)
+                        : log ('found Product', data.name);
+                });
+        });
+
+    Category.findOrCreate ({where: {name: 'Wine'}}, {
+        name: 'Wine'
+    }, function (err, category, created) {
+        if (err) {
+            console.error ('err', err);
+        }
+        (created) ? log ('created Category', category.name)
+            : log ('found Category', category.name);
+        Product.findOrCreate ({where: {name: 'Red wine'}}, {
+            name      : 'Red wine',
+            price     : '350',
+            percentage: '12',
+            categoryId: category.id
+        }, function (err, data, created) {
+            if (err) {
+                console.error ('err', err);
+            }
+            (created) ? log ('created Product', data.name)
+                : log ('found Product', data.name);
+        });
+        Product.findOrCreate ({where: {name: 'White wine'}}, {
+            name      : 'White wine',
+            price     : '350',
+            percentage: '12',
+            categoryId: category.id
+        }, function (err, data, created) {
+            if (err) {
+                console.error ('err', err);
+            }
+            (created) ? log ('created Product', data.name)
+                : log ('found Product', data.name);
+        });
     });
-    Product.findOrCreate({where:{name: 'White wine'}},{
-      name: 'White wine',
-      price: '350',
-      percentage: '12',
-      categoryId: category.id
-    }, function(err, data, created) {
-      if (err) {
-        console.error('err', err);
-      }
-      (created) ? log('created Product', data.name)
-                : log('found Product', data.name);
-    });
-  });
 
 };

@@ -37,6 +37,7 @@ angular
     'module.core',
     'module.about',
     'module.events',
+    'module.subscriber',
     'module.files',
     'module.notes',
     'module.pages',
@@ -79,7 +80,7 @@ angular
 
     var lang = $window.localStorage.lang || navigator.language || navigator.userLanguage;
 
-    $rootScope.locale = $rootScope.locales[lang];
+    $rootScope.locale = $rootScope.locales[lang.replace('-','_')];
 
     if ($rootScope.locale === undefined) {
         $rootScope.locale = $rootScope.locales[lang];
@@ -88,6 +89,6 @@ angular
         }
     }
 
-    gettextCatalog.setCurrentLanguage ($rootScope.locale.lang);
+    gettextCatalog.setCurrentLanguage ($rootScope.locale);
 
 });

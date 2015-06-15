@@ -1,0 +1,31 @@
+<h2 class="page-title">Home</h2>
+
+<div class="row-fluid">
+
+  <div class="col-lg-6">
+    <div class="jumbotron">
+      <h1>Hello, {{currentUser.username}}!</h1>
+      <p>To view the weather in your area, go to: <a href="#/preferences"
+                                                     data-toggle="tab">Preferences</a> and specify a valid address.</p>
+    </div>
+
+  </div>
+
+  <div class="col-lg-6">
+    <div>
+      <table class="table table-striped table-hover"
+             ng-show="Subscriber.weatherData">
+
+        <tbody>
+        <tr ng-repeat="dayWeather in Subscriber.weatherData">
+          <td>{{dayWeather.dt*1000 | date:"EEEE"}}</td>
+          <td><img ng-src="http://openweathermap.org/img/w/{{dayWeather.weather[0].icon}}.png"></td>
+          <td>{{dayWeather.temp.min | number:0}}°{{Subscriber.temperatureSymbol}}/{{dayWeather.temp.max | number:0}}°{{Subscriber.temperatureSymbol}}</td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

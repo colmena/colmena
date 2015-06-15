@@ -2,5 +2,148 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mongoDBDS": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "SelfRegistration",
+    "username": "",
+    "password": "",
+    "name": "mongoDBDS",
+    "connector": "mongodb"
+  },
+  "geo": {
+    "name": "geo",
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://maps.googleapis.com/maps/api/geocode/{format=json}",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "address": "{street},{city},{zipcode}",
+            "sensor": "{sensor=false}"
+          },
+          "responsePath": "$.results[0].geometry.location"
+        },
+        "functions": {
+          "geocode": [
+            "street",
+            "city",
+            "zipcode"
+          ]
+        }
+      }
+    ]
+  },
+  "openweathermap": {
+    "name": "openweathermap",
+    "connector": "rest",
+    "debug": true,
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://api.openweathermap.org/data/2.5/forecast/daily",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "lat": "{lat}",
+            "lon": "{lon}",
+            "units": "{units}"
+          },
+          "responsePath": "$.list"
+        },
+        "functions": {
+          "getweather": [
+            "lat",
+            "lon",
+            "units"
+          ]
+        }
+      }
+    ]
+  },
+  "google": {
+    "name": "google",
+    "connector": "rest",
+    "debug": true,
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "https://maps.googleapis.com/maps/api/place/search/json{query}",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "location": "{location}",
+            "radius": "{radius}",
+            "name": "{name}",
+            "types": "{types}",
+            "sensor": "{sensor=false}",
+            "key": "AIzaSyAfzlYO8qpr4AOUQfIPzmbt7dfgzeNrDms"
+          },
+          "responsePath": ""
+        },
+        "functions": {
+          "places": [
+            "location",
+            "name",
+            "types",
+            "radius"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://maps.googleapis.com/maps/api/geocode/{format=json}",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "address": "{street},{city},{zipcode}",
+            "sensor": "{sensor=false}"
+          },
+          "responsePath": "$.results[0].geometry.location"
+        },
+        "functions": {
+          "geocode": [
+            "street",
+            "city",
+            "zipcode"
+          ]
+        }
+      },
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://cep.republicavirtual.com.br/web_cep.php{query}",
+          "headers": {
+            "accepts": "application/json",
+            "content-type": "application/json"
+          },
+          "query": {
+            "cep": "{zipcode}",
+            "formato": "{formato=json}"
+          },
+          "responsePath": ""
+        },
+        "functions": {
+          "zipcode": [
+            "zipcode"
+          ]
+        }
+      }
+    ]
   }
 }

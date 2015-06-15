@@ -1,7 +1,7 @@
 {
   "_meta": {
     "sources": [
-      "./common",
+      "../common/models",
       "./models",
       "../node_modules/loopback-component-passport/lib/models"
     ]
@@ -72,6 +72,14 @@
   },
   "user": {
     "dataSource": "db",
+    "public": true
+  },
+  "Subscriber": {
+    "dataSource": "mongoDBDS",
+    "public": true
+  },
+  "Place": {
+    "dataSource": "mongoDBDS",
     "public": true
   }
 }
