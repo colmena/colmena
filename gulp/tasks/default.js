@@ -7,14 +7,12 @@ var gulp        = require ('gulp'),
 gulp.task ('default', function (cb) {
     return runSequence (
         'bower',
-        'sass',
+        // 'sass',
         //'fonts',
-        //'translate',
+        'translate',
         'templates',
         'index',
-        ['watch',
-            //'server'
-        ],
+        'server',
         cb
     );
 });

@@ -32,7 +32,7 @@ module.exports = function (config) {
       'lib/angular-toasty/js/ng-toasty.js',
       'lib/angular-file-upload/angular-file-upload.js',
       'lib/angular-filter/dist/angular-filter.js',
-      'lib/sweetalert/lib/sweet-alert.js',
+      'lib/sweetalert/dist/sweetalert-dev.js',
       'lib/angular-sweetalert/SweetAlert.js',
       'lib/angular-gravatar/build/md5.js',
       'lib/angular-gravatar/build/angular-gravatar.js',
@@ -56,6 +56,7 @@ module.exports = function (config) {
       'lib/Faker/build/build/faker.js',
       'lib/angular-mocks/angular-mocks.js',
       'js/*.js',
+      'modules/*/*.js',
       'modules/**/*.js'
     ],
 

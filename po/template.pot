@@ -44,6 +44,10 @@ msgstr ""
 msgid "Add Category"
 msgstr ""
 
+#: subscriber/views/main.html:5
+msgid "Add Subscriber"
+msgstr ""
+
 #: products/views/categoryform.html:3
 msgid "Add a new category"
 msgstr ""
@@ -232,7 +236,7 @@ msgstr ""
 msgid "Don't worry we won't spam your inbox"
 msgstr ""
 
-#: app.js:66
+#: app.js:67
 msgid "Dutch"
 msgstr ""
 
@@ -287,7 +291,7 @@ msgstr ""
 msgid "End Time"
 msgstr ""
 
-#: app.js:56
+#: app.js:57
 msgid "English"
 msgstr ""
 
@@ -385,11 +389,11 @@ msgstr ""
 msgid "First name"
 msgstr ""
 
-#: app.js:76
+#: app.js:77
 msgid "Français"
 msgstr ""
 
-#: app.js:71
+#: app.js:72
 msgid "German"
 msgstr ""
 
@@ -444,6 +448,7 @@ msgid "Manage your posts here!"
 msgstr ""
 
 #: products/views/main.html:1
+#: subscriber/views/main.html:4
 msgid "Manage your products here!"
 msgstr ""
 
@@ -534,7 +539,7 @@ msgstr ""
 msgid "Percentage"
 msgstr ""
 
-#: app.js:61
+#: app.js:62
 msgid "Portuguese Brazil"
 msgstr ""
 
@@ -665,6 +670,11 @@ msgstr ""
 #: products/views/form.html:16
 #: settings/views/form.html:21
 msgid "Submit"
+msgstr ""
+
+#: subscriber/config/subscriber.config.js:5
+#: subscriber/views/main.html:3
+msgid "Subscriber"
 msgstr ""
 
 #: core/views/home.html:33

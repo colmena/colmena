@@ -3,6 +3,7 @@ var gulp  = require ('gulp'),
 
 var testFiles = [
     'client/js/*.js',
+    'client/js/modules/*.js',
     'client/js/modules/*/*.spec.js',
 ];
 
