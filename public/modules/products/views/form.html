@@ -1,0 +1,17 @@
+<h4>
+  <a  ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+  <span ng-show="!ProductForm.product.id" translate>Add a new product</span>
+  <span ng-show="ProductForm.product.id" translate>Edit product</span>
+
+</h4>
+
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="alert alert-danger" ng-if="ProductForm.addError" translate>Could not add product!</div>
+    <formly-form result="ProductForm.product" fields="ProductForm.formFields" options="ProductForm.formOptions" ng-submit="ProductForm.onSubmit()"></formly-form>
+  </div>
+</div>
+<div class="controls">
+    <button class="btn btn-primary btn-success" ng-click="ProductForm.onSubmit()" translate>Submit</button>
+</div>

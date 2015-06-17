@@ -87,9 +87,9 @@ $ ```node_modules/.bin/karma start client/test/karma.conf.js```
 
 ### Dependencies
 
-Installation depends on `node`/`npm` with `grunt` and `bower` installed globally.
+Installation depends on `node`/`npm` with `gulp` and `bower` installed globally.
 
-    $ npm install -g bower grunt-cli
+    $ npm install -g bower gulp
 
 ### Checkout the project:
 
@@ -101,7 +101,7 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
 ### Clone, install and run in a oneliner
 
-    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && npm start & grunt serve
+    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && npm start & gulp
 
 ## Running
 
@@ -122,11 +122,11 @@ automatically restart the server when you change its code:
 
 Rebuild the lb-services.js file with the correct `API_URL` for development.
 
-    API_URL=http://0.0.0.0:3000/api grunt
+    API_URL=http://0.0.0.0:3000/api gulp
 
 To run the client you issue the command:
 
-    grunt serve
+    gulp server
 
 It will open the project in your default browser with livereload enabled.
 This will take care of reloading the page when you change your code.

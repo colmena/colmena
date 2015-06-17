@@ -1,0 +1,62 @@
+<div class="box" ng-repeat="item in posts">
+  <div class="box-header">
+    <h3 class="box-title">
+      <a  ui-sref="^.view({id: item.id})">{{item.title}}</a>
+      <br/>
+      <small>
+        Created:
+        {{item.created | date:'medium'}}
+        <span ng-if="item.created !== item.modified">
+          &middot; modified:
+          {{item.modified | date:'medium'}}
+        </span>
+      </small>
+    </h3>
+
+    <div class="box-tools pull-right">
+
+      <span class="pull-right btn-group" style="margin-top: 7px;">
+        <a  class="btn btn-xs btn-default"
+           ui-sref="^.edit({id: item.id})">
+          <i class="fa fa-pencil"></i>
+        </a>
+        <a  class="btn btn-xs btn-default"
+           ng-click="delete({id: item.id})">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </span>
+
+    </div>
+  </div>
+  <div class="box-body">
+    <div class="row">
+      <div class="col-sm-9" style="white-space: pre;">{{item.content}}</div>
+      <div class="col-sm-3">
+        <img ng-if="item.image" ng-src="{{item.image}}?id={{item.id}}"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-footer">
+    <span class="text-muted">
+      {{item.created | date:'medium'}}
+      &middot;
+      0 comments
+      &middot;
+      0 likes
+    </span>
+  </div>
+</div>
+
+
+<div class="box" ng-show="!posts.length">
+  <div class="box-header">
+    <h3 class="box-title">
+      There are no posts
+    </h3>
+  </div>
+  <div class="box-body">
+    <p class="list-group-item-text" translate>Click <a  ui-sref="^.add">here</a>
+      to add a post!</p>
+  </div>
+</div>
