@@ -48,16 +48,6 @@ Please note, at this moment there is no difference in permissions for admin user
 - User management
 - Loading indicators [chieffancypants/angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar)?
 
-## Unit Testing using Karma/Jasmine
-
-$ ```node_modules/.bin/karma start client/test/karma.conf.js```
-
-    INFO [karma]: Karma v0.12.31 server started at http://localhost:8080/
-    INFO [launcher]: Starting browser PhantomJS
-    INFO [PhantomJS 1.9.8 (Linux)]: Connected on socket aLJmRuSNUH2rPfpWgS3l with id 89641972
-    PhantomJS 1.9.8 (Linux): Executed 1 of 1 SUCCESS (0.007 secs / 0.029 secs)
-
-
 ## TODO:
 
 - Permissions on user actions (non-admins cannot access advanced functions)
@@ -91,6 +81,12 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
     $ npm install -g bower grunt-cli
 
+### The one-liner install (please create an [issue](https://github.com/beeman/loopback-angular-admin/issues/new) if this one does not work!)
+
+    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && grunt build && npm start & grunt serve
+
+### The steps above: 
+
 ### Checkout the project:
 
     git clone https://github.com/beeman/loopback-angular-admin.git
@@ -99,9 +95,18 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
     npm install
 
-### Clone, install and run in a oneliner
+### Run grunt build:
 
-    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && npm start & grunt serve
+    grunt build
+    
+### Run npm start to start the API:
+
+    npm start
+    
+### Run gulp sreve to start the frontend:
+
+    gulp server
+    
 
 ## Running
 
@@ -154,6 +159,18 @@ The API is built with [generator-loopback](https://www.npmjs.org/package/generat
 The GUI is built with [generator-angular](https://www.npmjs.org/package/generator-angular) but is no longer compatible due to refactoring the project into modules.
 
 These should help you quickly add code to your project. Further details tailored to this project might follow in the future.
+
+
+## Unit Testing using Karma/Jasmine
+
+    $ node_modules/.bin/karma start client/test/karma.conf.js
+
+    INFO [karma]: Karma v0.12.31 server started at http://localhost:8080/
+    INFO [launcher]: Starting browser PhantomJS
+    INFO [PhantomJS 1.9.8 (Linux)]: Connected on socket aLJmRuSNUH2rPfpWgS3l with id 89641972
+    PhantomJS 1.9.8 (Linux): Executed 1 of 1 SUCCESS (0.007 secs / 0.029 secs)
+
+
 
 ### Useful commits
 
