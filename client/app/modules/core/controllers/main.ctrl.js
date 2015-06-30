@@ -13,10 +13,12 @@
  **/
 angular.module('com.module.core')
   .controller('MainCtrl', function($scope, $rootScope, $state, $location,
-    CoreService, User, gettextCatalog) {
+    CoreService, User, gettextCatalog, AppAuth) {
 
-
-    $scope.currentUser = User.getCurrent();
+	AppAuth.ensureHasCurrentUser(function(user)
+    {
+      $scope.currentUser = user;
+	});
 
     $scope.menuoptions = $rootScope.menu;
 
