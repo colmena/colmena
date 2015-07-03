@@ -1,18 +1,38 @@
 <h4>
-  <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
-
-  <span ng-show="!product.id" translate>Add a new product</span>
-  <span ng-show="product.id" translate>Edit product</span>
-
+    <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
+    <span ng-show="!ctrl.product.id" translate>Add a new product</span>
+    <span ng-show="ctrl.product.id" translate>Edit product</span>
 </h4>
 
 
 <div class="row">
-  <div class="col-md-4">
-    <div class="alert alert-danger" ng-if="addError" translate>Could not add product!</div>
-    <formly-form result="product" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
-  </div>
+    <div class="col-md-6">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title"></h3>
+            </div>
+            <div class="box-body">
+                <form id="productForm"
+                      sf-schema="ctrl.schema"
+                      sf-form="ctrl.form"
+                      sf-model="ctrl.product"
+                      ng-submit="ctrl.onSubmit(productForm)">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6">
+        <div class="box box-primary">
+            <div class="box-header">
+                <h3 class="box-title">Product</h3>
+            </div>
+            <div class="box-body">
+                <pre>{{ctrl.product|json}}</pre>
+            </div>
+        </div>
+    </div>
+
 </div>
-<div class="controls">
-    <button class="btn btn-primary btn-success" ng-click="onSubmit()" translate>Submit</button>
-</div>
+
