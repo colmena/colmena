@@ -14,6 +14,9 @@ angular.module('com.module.sandbox')
       name: 'Dashboard',
       sref: '.dashboard'
     }, {
+      name: 'Schemaform',
+      sref: '.schemaform'
+    }, {
       name: 'Forms',
       sref: '.forms'
     }, {
