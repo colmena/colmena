@@ -83,7 +83,7 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
 ### The one-liner install (please create an [issue](https://github.com/beeman/loopback-angular-admin/issues/new) if this one does not work!)
 
-    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && grunt build && npm start & grunt serve
+    git clone https://github.com/beeman/loopback-angular-admin.git && cd loopback-angular-admin && npm install && grunt build && grunt serve
 
 ### The steps above: 
 
@@ -99,11 +99,7 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
     grunt build
     
-### Run npm start to start the API:
-
-    npm start
-    
-### Run gulp sreve to start the frontend:
+### Run gulp sreve to start the API and frontend:
 
     gulp server
     
@@ -123,13 +119,15 @@ automatically restart the server when you change its code:
 
     npm run dev
 
+The command `grunt serve` explained below wil automatically start the API.
+
 ### Client
 
 Rebuild the lb-services.js file with the correct `API_URL` for development.
 
     API_URL=http://0.0.0.0:3000/api grunt
 
-To run the client you issue the command:
+To run the client you issue the command. This will also start the API.
 
     grunt serve
 
