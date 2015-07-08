@@ -16,20 +16,20 @@ msgstr ""
 #: client/app/modules/pages/views/form.html:5
 #: client/app/modules/pages/views/view.html:4
 msgid "<i class=\"fa fa-arrow-left\"></i> Pages"
-msgstr "<i class=\"fa fa-arrow-left\"></i>Страницы"
+msgstr "<i class=\"fa fa-arrow-left\"></i> Страницы"
 
 #: client/app/modules/users/views/form.html:5
 #: client/app/modules/users/views/view.html:4
 msgid "<i class=\"fa fa-arrow-left\"></i> Users"
-msgstr "<i class=\"fa fa-arrow-left\"></i>Пользователи"
+msgstr "<i class=\"fa fa-arrow-left\"></i> Пользователи"
 
 #: client/app/modules/pages/views/form.html:14
 msgid "<i class=\"fa fa-save\"></i>  Save"
-msgstr "<i class=\"fa fa-save\"></i>Сохранить"
+msgstr "<i class=\"fa fa-save\"></i> Сохранить"
 
 #: client/app/modules/users/views/form.html:12
 msgid "<i class=\"fa fa-save\"></i> Save"
-msgstr "<i class=\"fa fa-save\"></i>Сохранить"
+msgstr "<i class=\"fa fa-save\"></i> Сохранить"
 
 #: client/app/modules/about/controllers/about.config.js:5
 #: client/app/modules/about/views/main.html:1
