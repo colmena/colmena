@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/beeman/loopback-angular-admin.png?label=ready&title=Ready)](https://waffle.io/beeman/loopback-angular-admin)
 # loopback-angular-admin
 
 **This software is not ready for production! It is still being developed and it will change in the future.**
