@@ -2,8 +2,9 @@
 
 The goal is to have a starter project which can be used to quickly build an API with a frontend that are easily extended.
 
-[![Stories in Ready](https://badge.waffle.io/beeman/loopback-angular-admin.png?label=ready&title=Ready)](https://waffle.io/beeman/loopback-angular-admin)
 # loopback-angular-admin
+
+[![Stories in Ready](https://badge.waffle.io/beeman/loopback-angular-admin.png?label=ready&title=Ready)](https://waffle.io/beeman/loopback-angular-admin)
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/beeman/loopback-angular-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
