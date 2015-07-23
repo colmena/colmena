@@ -68,7 +68,7 @@ angular.module('com.module.users')
         fields: [{
           label: '',
           property: 'password',
-          placehodler: gettextCatalog.getString('Password'),
+          placeholder: gettextCatalog.getString('Password'),
           type: 'password',
           attr: {
             required: true,

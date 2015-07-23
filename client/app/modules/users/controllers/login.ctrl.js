@@ -41,7 +41,7 @@ angular.module('com.module.users')
     }, {
       label: '',
       property: 'password',
-      placehodler: gettextCatalog.getString('Password'),
+      placeholder: gettextCatalog.getString('Password'),
       type: 'password',
       attr: {
         required: true
