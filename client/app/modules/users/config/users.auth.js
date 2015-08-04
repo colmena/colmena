@@ -15,7 +15,7 @@ angular.module('com.module.users')
               '/login') {
               console.log('401 while on router on login path');
             } else {
-              if ($location.path() !== '/register') {
+              if ($location.path() !== '/register' && $location.path() !== '/login') {
                 $location.path('/login');
               }
               CoreService.toastWarning('Error 401 received',
