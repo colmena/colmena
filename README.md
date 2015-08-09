@@ -101,9 +101,9 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
     grunt build
     
-### Run gulp sreve to start the API and frontend:
+### Run gulp serve to start the API and frontend:
 
-    gulp server
+    gulp serve
     
 
 ## Running
