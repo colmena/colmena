@@ -34,7 +34,7 @@ angular.module('loopbackApp', [
     'gettext',
     'angular-underscore/filters',
     'schemaForm',
-    'schemaForm-uiselect',
+    'ui.select',
     'com.module.core',
     'com.module.about',
     'com.module.events',

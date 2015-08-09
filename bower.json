@@ -35,8 +35,8 @@
     "Faker": "2.1.2",
     "angular-mocks": "1.3.12",
     "angular-scenario": "1.3.12",
-    "angular-schema-form": "~0.8.3",
-    "angular-schema-form-ui-select": "~0.1.1"
+    "angular-schema-form": "0.8.3",
+    "angular-schema-form-ui-select": "0.1.1"
   },
   "devDependencies": {
     "angular-mocks": "1.3",

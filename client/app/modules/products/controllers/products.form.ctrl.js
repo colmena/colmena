@@ -18,14 +18,15 @@ function ProductsFormCtrl($state, CoreService, Product, gettextCatalog,
       },
       categoryId: {
         title: gettextCatalog.getString('Category'),
-        type: 'string',
+        type: 'number',
         format: 'uiselect',
-        items: categories.map(function (category) {
+        items: categories.map(function(category) {
           return {
-            value: category.id.toString(),
-            name: category.name
+            value: category.id,
+            label: category.name
           };
-        })
+        }),
+        placeholder: 'Select category'
       },
       description: {
         title: gettextCatalog.getString('Description'),
@@ -50,14 +51,14 @@ function ProductsFormCtrl($state, CoreService, Product, gettextCatalog,
     }
   ];
 
-  this.onSubmit = function () {
+  this.onSubmit = function() {
 
-    Product.upsert(self.product, function () {
+    Product.upsert(self.product, function() {
       CoreService.toastSuccess(gettextCatalog.getString(
         'Product saved'), gettextCatalog.getString(
         'Your product is safe with us!'));
       $state.go('^.list');
-    }, function (err) {
+    }, function(err) {
       console.log(err);
     });
   };
