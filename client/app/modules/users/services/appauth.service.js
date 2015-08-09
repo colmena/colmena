@@ -5,9 +5,8 @@
 
 angular.module('com.module.users')
   .factory('AppAuth', function($cookies, User, LoopBackAuth, $http) {
-    return {
+    var self = {
       login: function(data, cb) {
-        var self = this;
         LoopBackAuth.currentUserId = LoopBackAuth.accessTokenId = null;
         $http.post('/api/users/login?include=user', {
             email: data.email,
@@ -19,7 +18,7 @@ angular.module('com.module.users')
               LoopBackAuth.accessTokenId = response.data.id;
             }
             if (LoopBackAuth.currentUserId === null) {
-              delete $cookies['access_token'];
+              delete $cookies['accessToken'];
               LoopBackAuth.accessTokenId = null;
             }
             LoopBackAuth.save();
@@ -47,19 +46,17 @@ angular.module('com.module.users')
       },
 
       ensureHasCurrentUser: function(cb) {
-        var self = this;
-        if ((!this.currentUser || this.currentUser.id === 'social') &&
-          $cookies.access_token) {
+        if ((!this.currentUser || this.currentUser.id === 'social') && $cookies.accessToken) {
           LoopBackAuth.currentUserId = LoopBackAuth.accessTokenId = null;
           $http.get('/auth/current')
             .then(function(response) {
               if (response.data.id) {
                 LoopBackAuth.currentUserId = response.data.id;
-                LoopBackAuth.accessTokenId = $cookies.access_token.substring(
+                LoopBackAuth.accessTokenId = $cookies.accessToken.substring(
                   2, 66);
               }
               if (LoopBackAuth.currentUserId === null) {
-                delete $cookies['access_token'];
+                delete $cookies['accessToken'];
                 LoopBackAuth.accessTokenId = null;
               }
               LoopBackAuth.save();
@@ -84,4 +81,5 @@ angular.module('com.module.users')
         }
       }
     };
+    return self;
   });
