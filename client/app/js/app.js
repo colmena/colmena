@@ -77,11 +77,6 @@ angular.module('loopbackApp', [
         lang: 'ru_RU',
         country: 'RU',
         name: gettextCatalog.getString('Russian')
-      },
-      'zh_CN': {
-        lang: 'zh_CN',
-        country: 'CN',
-        name: gettextCatalog.getString('简体中文')
       }
     }
 
