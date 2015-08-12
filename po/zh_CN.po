@@ -390,7 +390,7 @@ msgstr "项目已删除"
 
 #: client/app/modules/settings/controllers/settings.ctrl.js:51
 msgid "Key"
-msgstr ""
+msgstr "设置项"
 
 #: client/app/modules/users/controllers/register.ctrl.js:38
 msgid "Last Name"
