@@ -1,0 +1,889 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: client/app/modules/pages/views/form.html:5
+#: client/app/modules/pages/views/view.html:4
+msgid "<i class=\"fa fa-arrow-left\"></i> Pages"
+msgstr "<i class=\"fa fa-arrow-left\"></i> 页面"
+
+#: client/app/modules/users/views/form.html:5
+#: client/app/modules/users/views/view.html:4
+msgid "<i class=\"fa fa-arrow-left\"></i> Users"
+msgstr "<i class=\"fa fa-arrow-left\"></i> 用户"
+
+#: client/app/modules/pages/views/form.html:14
+msgid "<i class=\"fa fa-save\"></i>  Save"
+msgstr "<i class=\"fa fa-save\"></i>  保存"
+
+#: client/app/modules/users/views/form.html:12
+msgid "<i class=\"fa fa-save\"></i> Save"
+msgstr "<i class=\"fa fa-save\"></i> 保存"
+
+#: client/app/modules/about/controllers/about.config.js:5
+#: client/app/modules/about/views/main.html:1
+msgid "About"
+msgstr "关于"
+
+#: client/app/modules/files/views/upload.html:60
+msgid "Actions"
+msgstr "操作管理"
+
+#: client/app/modules/events/views/main.html:2
+#: client/app/modules/notes/views/main.html:2
+#: client/app/modules/pages/views/main.html:2
+#: client/app/modules/posts/views/main.html:2
+#: client/app/modules/settings/views/main.html:2
+#: client/app/modules/users/views/main.html:3
+msgid "Add"
+msgstr "添加"
+
+#: client/app/modules/products/views/main.html:2
+msgid "Add Category"
+msgstr "添加分类"
+
+#: client/app/modules/products/views/categoryform.html:3
+msgid "Add a new category"
+msgstr "添加分类"
+
+#: client/app/modules/events/views/form.html:5
+msgid "Add a new event"
+msgstr "添加事件"
+
+#: client/app/modules/notes/views/form.html:4
+msgid "Add a new note"
+msgstr "添加记事"
+
+#: client/app/modules/posts/views/form.html:4
+msgid "Add a new post"
+msgstr "添加帖子"
+
+#: client/app/modules/products/views/form.html:4
+msgid "Add a new product"
+msgstr "添加产品"
+
+#: client/app/modules/settings/views/form.html:4
+msgid "Add a new setting"
+msgstr "添加设置"
+
+#: client/app/modules/products/views/list.html:5
+msgid "Add product to category"
+msgstr "添加产品分类"
+
+#: client/app/modules/about/views/main.html:1
+msgid "All about this application!"
+msgstr "关于本应用"
+
+#: client/app/modules/core/helpers/FormHelper.js:23
+#: client/app/modules/events/controllers/events.ctrl.js:50
+#: client/app/modules/files/controllers/files.ctrl.js:14
+#: client/app/modules/notes/services/notes.service.js:31
+#: client/app/modules/pages/controllers/pages.ctrl.js:33
+#: client/app/modules/posts/services/posts.service.js:22
+#: client/app/modules/products/controllers/products.ctrl.js:42
+#: client/app/modules/settings/controllers/settings.ctrl.js:28
+#: client/app/modules/users/controllers/users.ctrl.js:26
+msgid "Are you sure?"
+msgstr "你确定操作？"
+
+#: client/app/modules/notes/controllers/notes.ctrl.js:15
+msgid "Body"
+msgstr "主要部分"
+
+#: client/app/modules/files/views/upload.html:14
+msgid "Browse"
+msgstr "浏览"
+
+#: client/app/modules/events/views/form.html:21
+msgid "Cancel"
+msgstr "取消"
+
+#: client/app/modules/files/views/upload.html:42
+msgid "Cancel all"
+msgstr "全部取消"
+
+#: client/app/modules/products/config/products.config.js:14
+msgid "Categories"
+msgstr "分类管理"
+
+#: client/app/modules/products/controllers/products.ctrl.js:87
+msgid "Category"
+msgstr "分类"
+
+#: client/app/modules/products/controllers/products.ctrl.js:66
+msgid "Category deleted"
+msgstr "分类已删除"
+
+#: client/app/modules/products/controllers/categories.ctrl.js:35
+msgid "Category saved"
+msgstr "分类已保存"
+
+#: client/app/modules/users/views/profile.html:21
+msgid "Change it here!"
+msgstr "点这修改"
+
+#: client/app/modules/posts/views/list.html:59
+msgid ""
+"Click <a href=\"\" ui-sref=\"^.add\">here</a>\n"
+"      to add a post!"
+msgstr "点击 <a href=\"\" ui-sref=\"^.add\">这里</a>\n"
+"      添加帖子!"
+
+#: client/app/modules/events/views/list.html:27
+msgid "Click <a href=\"\" ui-sref=\"^.add\">here</a> to add a event!"
+msgstr "点击 <a href=\"\" ui-sref=\"^.add\">这里</a> 添加事件!"
+
+#: client/app/modules/notes/views/list.html:20
+msgid "Click <a href=\"\" ui-sref=\"^.add\">here</a> to add a note!"
+msgstr "点击 <a href=\"\" ui-sref=\"^.add\">这里</a> 添加记事!"
+
+#: client/app/modules/pages/views/list.html:29
+msgid "Click <a href=\"\" ui-sref=\"^.add\">here</a> to add a page!"
+msgstr "点击 <a href=\"\" ui-sref=\"^.add\">这里</a> 添加页面!"
+
+#: client/app/modules/settings/views/list.html:20
+msgid "Click <a href=\"\" ui-sref=\"^.add\">here</a> to add a setting!"
+msgstr "点击 <a href=\"\" ui-sref=\"^.add\">这里</a> 添加设置!"
+
+#: client/app/modules/products/views/list.html:36
+msgid "Click <a href=\"\" ui-sref=\"^.add({ categoryId: category.id })\">here</a> to add a product!"
+msgstr "点击 <a href=\"\" ui-sref=\"^.add({ categoryId: category.id })\">这里</a> 添加产品!"
+
+#: client/app/modules/files/views/list.html:23
+msgid "Click <a href=\"\" ui-sref=\"^.upload\" translate=\"\">here</a> to upload some!"
+msgstr "点击 <a href=\"\" ui-sref=\"^.upload\" translate=\"\">这里</a> 上传内容!"
+
+#: client/app/modules/users/controllers/register.ctrl.js:80
+msgid "Confirm Password"
+msgstr "确认密码"
+
+#: client/app/modules/posts/controllers/posts.ctrl.js:39
+msgid "Content"
+msgstr "内容"
+
+#: client/app/modules/products/views/categoryform.html:8
+msgid "Could not add category!"
+msgstr "未能添加分类!"
+
+#: client/app/modules/events/views/form.html:13
+msgid "Could not add event!"
+msgstr "未能添加事件!"
+
+#: client/app/modules/notes/views/form.html:12
+msgid "Could not add note!"
+msgstr "未能添加记事!"
+
+#: client/app/modules/pages/views/form.html:26
+msgid "Could not add page!"
+msgstr "未能添加页面!"
+
+#: client/app/modules/posts/views/form.html:12
+msgid "Could not add post!"
+msgstr "未能添加帖子!"
+
+#: client/app/modules/products/views/form.html:12
+msgid "Could not add product!"
+msgstr "未能添加产品!"
+
+#: client/app/modules/settings/views/form.html:12
+msgid "Could not add setting!"
+msgstr "未能添加设置!"
+
+#: client/app/modules/users/views/form.html:21
+msgid "Could not add user!"
+msgstr "未能添加用户!"
+
+#: client/app/modules/pages/views/main.html:1
+msgid "Create pages with rich content!"
+msgstr "创建丰富内容的页面"
+
+#: client/app/modules/core/views/home.html:24
+msgid "Current user"
+msgstr "当前用户"
+
+#: client/app/modules/core/config/core.config.js:18
+#: client/app/modules/core/views/home.html:13
+msgid "Dashboard"
+msgstr "工作台"
+
+#: client/app/modules/products/views/list.html:9
+msgid "Delete category"
+msgstr "删除分类"
+
+#: client/app/modules/core/helpers/FormHelper.js:24
+#: client/app/modules/events/controllers/events.ctrl.js:51
+#: client/app/modules/files/controllers/files.ctrl.js:15
+#: client/app/modules/notes/services/notes.service.js:32
+#: client/app/modules/pages/controllers/pages.ctrl.js:34
+#: client/app/modules/posts/services/posts.service.js:23
+#: client/app/modules/products/controllers/products.ctrl.js:43
+#: client/app/modules/settings/controllers/settings.ctrl.js:29
+#: client/app/modules/users/controllers/users.ctrl.js:27
+msgid "Deleting this cannot be undone"
+msgstr "删除该项,将不可恢复!"
+
+#: client/app/modules/events/controllers/events.ctrl.js:86
+#: client/app/modules/products/controllers/products.ctrl.js:92
+msgid "Description"
+msgstr "描述"
+
+#: client/app/modules/users/controllers/register.ctrl.js:53
+msgid "Don't worry we won't spam your inbox"
+msgstr "不用担心,我们不会给你发送垃圾邮件"
+
+#: client/app/modules/users/controllers/profile.ctrl.js:19
+#: client/app/modules/users/controllers/users.ctrl.js:74
+msgid "E-mail"
+msgstr "邮件"
+
+#: client/app/modules/products/views/categoryform.html:4
+#: client/app/modules/products/views/list.html:7
+msgid "Edit category"
+msgstr "编辑分类"
+
+#: client/app/modules/events/views/form.html:6
+msgid "Edit event"
+msgstr "编辑事件"
+
+#: client/app/modules/notes/views/form.html:5
+msgid "Edit note"
+msgstr "编辑记事"
+
+#: client/app/modules/posts/views/form.html:5
+msgid "Edit post"
+msgstr "编辑帖子"
+
+#: client/app/modules/products/views/form.html:5
+msgid "Edit product"
+msgstr "编辑产品"
+
+#: client/app/modules/settings/views/form.html:5
+msgid "Edit setting"
+msgstr "编辑设置"
+
+#: client/app/modules/users/controllers/login.ctrl.js:30
+#: client/app/modules/users/controllers/register.ctrl.js:51
+msgid "Email"
+msgstr "邮件"
+
+#: client/app/modules/users/controllers/login.ctrl.js:38
+#: client/app/modules/users/controllers/register.ctrl.js:61
+msgid "Email address needs to be valid"
+msgstr "邮件地址必须有效"
+
+#: client/app/modules/events/controllers/events.ctrl.js:106
+msgid "End"
+msgstr "结束"
+
+#: client/app/modules/events/controllers/events.ctrl.js:114
+msgid "End Time"
+msgstr "结束时间"
+
+#: client/app/modules/users/controllers/profile.ctrl.js:42
+msgid "Enjoy the new you!"
+msgstr "感受全新的你！"
+
+#: client/app/modules/products/controllers/products.ctrl.js:71
+msgid "Error deleting category"
+msgstr "删除分类出错"
+
+#: client/app/modules/events/controllers/events.ctrl.js:61
+msgid "Error deleting event"
+msgstr "删除时间出错"
+
+#: client/app/modules/core/helpers/FormHelper.js:33
+#: client/app/modules/posts/services/posts.service.js:32
+msgid "Error deleting item:"
+msgstr "删除项目出错"
+
+#: client/app/modules/notes/services/notes.service.js:40
+msgid "Error deleting note"
+msgstr "删除记事出错"
+
+#: client/app/modules/pages/controllers/pages.ctrl.js:43
+msgid "Error deleting page"
+msgstr "删除页面出错"
+
+#: client/app/modules/products/controllers/products.ctrl.js:52
+msgid "Error deleting product"
+msgstr "删除商品出错"
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:38
+msgid "Error deleting setting"
+msgstr "删除设置出错"
+
+#: client/app/modules/users/controllers/users.ctrl.js:36
+msgid "Error deleting user"
+msgstr "删除用户出错"
+
+#: client/app/modules/users/controllers/register.ctrl.js:139
+msgid "Error registering!"
+msgstr "注册时出错"
+
+#: client/app/modules/notes/services/notes.service.js:24
+msgid "Error saving note"
+msgstr "保存记事时出错"
+
+#: client/app/modules/users/controllers/profile.ctrl.js:45
+msgid "Error saving profile"
+msgstr "保存个人资料时出错"
+
+#: client/app/modules/users/controllers/users.ctrl.js:61
+msgid "Error saving user:"
+msgstr "保存用户时出错"
+
+#: client/app/modules/users/controllers/register.ctrl.js:130
+msgid "Error signin in after registration!"
+msgstr "注册后登录时出错"
+
+#: client/app/modules/events/controllers/events.ctrl.js:54
+msgid "Event deleted"
+msgstr "事件已删除"
+
+#: client/app/modules/events/controllers/events.ctrl.js:150
+msgid "Event not added"
+msgstr "事件没有添加"
+
+#: client/app/modules/events/controllers/events.ctrl.js:142
+msgid "Event saved"
+msgstr "事件已保存"
+
+#: client/app/modules/events/config/events.config.js:4
+#: client/app/modules/events/views/main.html:1
+msgid "Events"
+msgstr "事件管理"
+
+#: client/app/modules/files/controllers/files.ctrl.js:24
+msgid "File deleted"
+msgstr "文件已删除"
+
+#: client/app/modules/files/config/file.config.js:4
+#: client/app/modules/files/config/file.config.js:9
+#: client/app/modules/files/views/main.html:1
+#: client/app/modules/files/views/upload.html:5
+msgid "Files"
+msgstr "文件管理"
+
+#: client/app/modules/users/controllers/register.ctrl.js:25
+msgid "First Name"
+msgstr "姓氏"
+
+#: client/app/modules/users/controllers/profile.ctrl.js:24
+#: client/app/modules/users/controllers/users.ctrl.js:79
+msgid "First name"
+msgstr "姓氏"
+
+#: client/app/modules/core/views/app.html:14
+msgid "Hello,"
+msgstr "你好，"
+
+#: client/app/modules/core/views/home.html:5
+msgid "Home"
+msgstr "首页"
+
+#: client/app/modules/core/helpers/FormHelper.js:27
+#: client/app/modules/posts/services/posts.service.js:26
+msgid "Item deleted"
+msgstr "项目已删除"
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:51
+msgid "Key"
+msgstr ""
+
+#: client/app/modules/users/controllers/register.ctrl.js:38
+msgid "Last Name"
+msgstr "名字"
+
+#: client/app/modules/users/controllers/profile.ctrl.js:29
+#: client/app/modules/users/controllers/users.ctrl.js:84
+msgid "Last name"
+msgstr "名字"
+
+#: client/app/modules/users/controllers/login.ctrl.js:96
+msgid "Logged in"
+msgstr "登入"
+
+#: client/app/modules/core/controllers/main.ctrl.js:28
+msgid "Logged out"
+msgstr "退出"
+
+#: client/app/modules/events/views/main.html:1
+msgid "Manage your events here!"
+msgstr "在这管理你的事件！"
+
+#: client/app/modules/files/views/main.html:1
+msgid "Manage your files here!"
+msgstr "在这管理你的文件！"
+
+#: client/app/modules/notes/views/main.html:1
+msgid "Manage your notes here!"
+msgstr "在这管理你的记事！"
+
+#: client/app/modules/posts/views/main.html:1
+msgid "Manage your posts here!"
+msgstr "在这管理你的帖子！"
+
+#: client/app/modules/products/views/main.html:1
+msgid "Manage your products here!"
+msgstr "在这管理你的产品！"
+
+#: client/app/modules/settings/views/main.html:1
+msgid "Manage your settings here!"
+msgstr "在这管理你的设置！"
+
+#: client/app/modules/users/views/main.html:2
+msgid "Manager your users here!"
+msgstr "在这管理你的用户！"
+
+#: client/app/modules/core/views/elements/small-box.html:8
+msgid "More info"
+msgstr "更多信息"
+
+#: client/app/modules/events/controllers/events.ctrl.js:80
+#: client/app/modules/files/views/upload.html:56
+#: client/app/modules/products/controllers/categories.ctrl.js:23
+#: client/app/modules/products/controllers/products.ctrl.js:82
+msgid "Name"
+msgstr "名称"
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:58
+#: client/app/modules/settings/controllers/settings.ctrl.js:71
+#: client/app/modules/users/controllers/register.ctrl.js:32
+#: client/app/modules/users/controllers/register.ctrl.js:45
+msgid "Needs to have at least 4 characters"
+msgstr "必须大于4个字符"
+
+#: client/app/modules/pages/controllers/pages.ctrl.js:18
+msgid "New page"
+msgstr "新页面"
+
+#: client/app/modules/users/controllers/login.ctrl.js:39
+#: client/app/modules/users/controllers/register.ctrl.js:62
+msgid "Nice email address!"
+msgstr "很帅的邮件地址！"
+
+#: client/app/modules/notes/services/notes.service.js:35
+msgid "Note deleted"
+msgstr "记事已删除"
+
+#: client/app/modules/notes/services/notes.service.js:19
+msgid "Note saved"
+msgstr "记事已保存"
+
+#: client/app/modules/notes/config/notes.config.js:5
+#: client/app/modules/notes/config/notes.config.js:9
+#: client/app/modules/notes/views/main.html:1
+msgid "Notes"
+msgstr "记事管理"
+
+#: client/app/modules/core/helpers/FormHelper.js:32
+#: client/app/modules/posts/services/posts.service.js:31
+msgid "Oops"
+msgstr "哎呦"
+
+#: client/app/modules/users/views/login.html:17
+msgid "Or register"
+msgstr "注册"
+
+#: client/app/modules/users/views/register.html:20
+msgid "Or sign in"
+msgstr "登录"
+
+#: client/app/modules/pages/controllers/pages.ctrl.js:37
+msgid "Page deleted"
+msgstr "页面已删除"
+
+#: client/app/modules/pages/controllers/pages.ctrl.js:64
+msgid "Page saved"
+msgstr "页面已保存"
+
+#: client/app/modules/pages/config/pages.config.js:4
+#: client/app/modules/pages/config/pages.config.js:8
+#: client/app/modules/pages/views/list.html:3
+#: client/app/modules/pages/views/main.html:1
+msgid "Pages"
+msgstr "页面管理"
+
+#: client/app/modules/users/controllers/login.ctrl.js:44
+#: client/app/modules/users/controllers/register.ctrl.js:71
+#: client/app/modules/users/views/form.html:26
+msgid "Password"
+msgstr "密码"
+
+#: client/app/modules/products/controllers/products.ctrl.js:96
+msgid "Percentage"
+msgstr "百分比"
+
+#: client/app/modules/posts/controllers/posts.ctrl.js:56
+msgid "Post saved"
+msgstr "帖子已保存"
+
+#: client/app/modules/posts/config/posts.config.js:4
+#: client/app/modules/posts/config/posts.config.js:8
+#: client/app/modules/posts/views/main.html:1
+msgid "Posts"
+msgstr "帖子管理"
+
+#: client/app/modules/products/controllers/products.ctrl.js:100
+msgid "Price"
+msgstr "价格"
+
+#: client/app/modules/products/views/main.html:1
+msgid "Product"
+msgstr "产品"
+
+#: client/app/modules/products/controllers/products.ctrl.js:46
+msgid "Product deleted"
+msgstr "产品已删除"
+
+#: client/app/modules/products/controllers/products.ctrl.js:111
+msgid "Product saved"
+msgstr "产品已保存"
+
+#: client/app/modules/products/config/products.config.js:4
+#: client/app/modules/products/config/products.config.js:8
+msgid "Products"
+msgstr "产品管理"
+
+#: client/app/modules/core/views/elements/navbar.html:40
+msgid "Profile"
+msgstr "个人资料"
+
+#: client/app/modules/users/controllers/profile.ctrl.js:41
+msgid "Profile saved"
+msgstr "个人资料已保存"
+
+#: client/app/modules/files/views/upload.html:58
+msgid "Progress"
+msgstr "进度"
+
+#: client/app/modules/users/views/view.html:17
+msgid "Raw"
+msgstr "对象"
+
+#: client/app/modules/users/views/register.html:17
+#: client/app/modules/users/views/register.html:7
+msgid "Register"
+msgstr "注册"
+
+#: client/app/modules/users/controllers/register.ctrl.js:124
+msgid "Registered"
+msgstr "注册成功"
+
+#: client/app/modules/files/views/upload.html:46
+msgid "Remove all"
+msgstr "删除全部"
+
+#: client/app/modules/users/views/view.html:13
+msgid "Roles"
+msgstr "角色"
+
+#: client/app/modules/events/controllers/events.ctrl.js:126
+#: client/app/modules/posts/controllers/posts.ctrl.js:51
+#: client/app/modules/products/controllers/categories.ctrl.js:30
+#: client/app/modules/products/controllers/products.ctrl.js:106
+#: client/app/modules/users/controllers/profile.ctrl.js:36
+#: client/app/modules/users/controllers/users.ctrl.js:91
+msgid "Save"
+msgstr "保存"
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:32
+msgid "Setting deleted"
+msgstr "设置已删除"
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:91
+msgid "Setting saved"
+msgstr "设置已保存"
+
+#: client/app/modules/core/views/home.html:28
+#: client/app/modules/settings/config/settings.config.js:4
+#: client/app/modules/settings/views/main.html:1
+msgid "Settings"
+msgstr "设置管理"
+
+#: client/app/modules/users/views/login.html:7
+msgid "Sign In"
+msgstr "登录"
+
+#: client/app/modules/users/views/login.html:16
+msgid "Sign in"
+msgstr "登录"
+
+#: client/app/modules/core/views/elements/navbar.html:43
+msgid "Sign out"
+msgstr "退出"
+
+#: client/app/modules/files/views/upload.html:57
+msgid "Size"
+msgstr "大小"
+
+#: client/app/modules/events/controllers/events.ctrl.js:91
+msgid "Start Date"
+msgstr "开始日期"
+
+#: client/app/modules/events/controllers/events.ctrl.js:99
+msgid "Start Time"
+msgstr "开始时间
+
+#: client/app/modules/files/views/upload.html:59
+msgid "Status"
+msgstr "状态"
+
+#: client/app/modules/users/controllers/login.ctrl.js:51
+msgid "Stay signed in"
+msgstr "保持登录"
+
+#: client/app/modules/events/views/form.html:20
+#: client/app/modules/events/views/form.html:28
+#: client/app/modules/notes/views/form.html:17
+#: client/app/modules/posts/views/form.html:17
+#: client/app/modules/products/views/categoryform.html:13
+#: client/app/modules/products/views/form.html:17
+#: client/app/modules/settings/views/form.html:21
+msgid "Submit"
+msgstr "提交"
+
+#: client/app/modules/core/views/home.html:33
+#: client/app/modules/core/views/home.html:36
+msgid "Theme"
+msgstr "主题"
+
+#: client/app/modules/events/views/list.html:23
+msgid "There are no events"
+msgstr "暂无事件"
+
+#: client/app/modules/files/views/list.html:19
+msgid "There are no files"
+msgstr "暂无文件"
+
+#: client/app/modules/notes/views/list.html:17
+msgid "There are no notes"
+msgstr "暂无记事"
+
+#: client/app/modules/pages/views/list.html:26
+msgid "There are no pages"
+msgstr "暂无页面"
+
+#: client/app/modules/products/views/list.html:33
+msgid "There are no products in this category!"
+msgstr "该分类暂无产品"
+
+#: client/app/modules/settings/views/list.html:17
+msgid "There are no settings"
+msgstr "暂无设置"
+
+#: client/app/modules/notes/services/notes.service.js:25
+msgid "This note could no be saved:"
+msgstr "该记录未能保存："
+
+#: client/app/modules/users/controllers/users.ctrl.js:58
+msgid "This user is save!"
+msgstr "该用户已保存！"
+
+#: client/app/modules/notes/controllers/notes.ctrl.js:10
+#: client/app/modules/posts/controllers/posts.ctrl.js:34
+msgid "Title"
+msgstr "标题"
+
+#: client/app/modules/core/views/elements/navbar.html:3
+msgid "Toggle navigation"
+msgstr "切换导航"
+
+#: client/app/modules/users/views/profile.html:36
+msgid "Update profile"
+msgstr "更新个人资料"
+
+#: client/app/modules/files/views/main.html:2
+msgid "Upload"
+msgstr "上传"
+
+#: client/app/modules/files/views/upload.html:38
+msgid "Upload all"
+msgstr "全部上传"
+
+#: client/app/modules/files/views/upload.html:7
+msgid "Upload files"
+msgstr "上传文件"
+
+#: client/app/modules/files/views/upload.html:31
+msgid "Upload queue"
+msgstr "上传队列"
+
+#: client/app/modules/users/controllers/users.ctrl.js:30
+msgid "User deleted"
+msgstr "用户已删除"
+
+#: client/app/modules/users/controllers/users.ctrl.js:57
+msgid "User saved"
+msgstr "用户已保存"
+
+#: client/app/modules/users/controllers/profile.ctrl.js:14
+#: client/app/modules/users/controllers/users.ctrl.js:69
+msgid "Username"
+msgstr "用户名称"
+
+#: client/app/modules/users/config/users.config.js:4
+#: client/app/modules/users/views/main.html:1
+msgid "Users"
+msgstr "用户管理"
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:64
+msgid "Value"
+msgstr "赋值"
+
+#: client/app/modules/core/views/home.html:21
+msgid "Variables"
+msgstr "变量"
+
+#: client/app/modules/core/views/home.html:6
+msgid "Welcome!"
+msgstr "欢迎！"
+
+#: client/app/modules/users/controllers/login.ctrl.js:97
+msgid "You are logged in!"
+msgstr "你已登录！"
+
+#: client/app/modules/core/controllers/main.ctrl.js:29
+msgid "You are logged out!"
+msgstr "你已退出！"
+
+#: client/app/modules/users/controllers/register.ctrl.js:125
+msgid "You are registered!"
+msgstr "你已注册！"
+
+#: client/app/modules/files/views/upload.html:8
+msgid "You can just drag them in this window!"
+msgstr "你可以把它们拖到这个窗口！"
+
+#: client/app/modules/users/controllers/login.ctrl.js:37
+#: client/app/modules/users/controllers/register.ctrl.js:60
+msgid "You need an email address"
+msgstr "你需要一个邮件地址"
+
+#: client/app/modules/users/views/profile.html:20
+msgid "Your Gravatar"
+msgstr "你的头像"
+
+#: client/app/modules/products/controllers/products.ctrl.js:67
+msgid "Your category is deleted!"
+msgstr "该分类已删除！"
+
+#: client/app/modules/products/controllers/products.ctrl.js:72
+msgid "Your category is not deleted:"
+msgstr "该分类未被删除："
+
+#: client/app/modules/products/controllers/categories.ctrl.js:36
+msgid "Your category is safe with us!"
+msgstr "该类别没问题！"
+
+#: client/app/modules/events/controllers/events.ctrl.js:55
+msgid "Your event is deleted!"
+msgstr "该事件已删除！"
+
+#: client/app/modules/events/controllers/events.ctrl.js:62
+msgid "Your event is not deleted:"
+msgstr "该事件未被删除："
+
+#: client/app/modules/events/controllers/events.ctrl.js:143
+msgid "Your event is safe with us!"
+msgstr "该事件没问题！"
+
+#: client/app/modules/files/controllers/files.ctrl.js:25
+msgid "Your file is deleted!"
+msgstr "该文件已被删除！"
+
+#: client/app/modules/core/helpers/FormHelper.js:28
+#: client/app/modules/posts/services/posts.service.js:27
+msgid "Your item has been deleted!"
+msgstr "该项目已被删除！"
+
+#: client/app/modules/notes/services/notes.service.js:36
+msgid "Your note is deleted!"
+msgstr "该记录已被删除！"
+
+#: client/app/modules/notes/services/notes.service.js:41
+msgid "Your note is not deleted!"
+msgstr "该记录未被删除："
+
+#: client/app/modules/notes/services/notes.service.js:20
+msgid "Your note is safe with us!"
+msgstr "该记录没问题！"
+
+#: client/app/modules/pages/controllers/pages.ctrl.js:38
+msgid "Your page is deleted!"
+msgstr "该页面已被删除！"
+
+#: client/app/modules/pages/controllers/pages.ctrl.js:44
+msgid "Your page is not deleted:"
+msgstr "该页面未被删除："
+
+#: client/app/modules/pages/controllers/pages.ctrl.js:65
+msgid "Your page is safe with us!"
+msgstr "该页面没问题！"
+
+#: client/app/modules/users/controllers/register.ctrl.js:88
+msgid "Your passwords need to match"
+msgstr "两次输入密码必须匹配"
+
+#: client/app/modules/posts/controllers/posts.ctrl.js:57
+msgid "Your post is safe with us!"
+msgstr "该帖子没问题！"
+
+#: client/app/modules/products/controllers/products.ctrl.js:47
+msgid "Your product is deleted!"
+msgstr "该产品已删除！"
+
+#: client/app/modules/products/controllers/products.ctrl.js:53
+msgid "Your product is not deleted:"
+msgstr "该产品未被删除："
+
+#: client/app/modules/products/controllers/products.ctrl.js:112
+msgid "Your product is safe with us!"
+msgstr "该产品没问题！"
+
+#: client/app/modules/users/views/profile.html:5
+msgid "Your profile"
+msgstr "你的个人资料"
+
+#: client/app/modules/users/controllers/profile.ctrl.js:46
+msgid "Your profile is not saved:"
+msgstr "你的个人资料未被保存："
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:33
+msgid "Your setting is deleted!"
+msgstr "该设置已删除！"
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:39
+msgid "Your setting is not deleted:"
+msgstr "该设置未被删除："
+
+#: client/app/modules/settings/controllers/settings.ctrl.js:92
+msgid "Your setting is safe with us!"
+msgstr "该设置没问题！"
+
+#: client/app/modules/users/controllers/users.ctrl.js:31
+msgid "Your user is deleted!"
+msgstr "该用户已删除！"
+
+#: client/app/modules/users/controllers/users.ctrl.js:37
+msgid "Your user is not deleted:"
+msgstr "该用户未被删除："
+
+#: client/app/modules/events/controllers/events.ctrl.js:108
+#: client/app/modules/events/controllers/events.ctrl.js:93
+msgid "dd/MM/yyyy"
+msgstr "yyyy/MM/dd"
+
+#: client/app/modules/files/views/list.html:23
+msgid "here"
+msgstr "这里"
+
+#: client/app/modules/posts/controllers/posts.ctrl.js:44
+msgid "image"
+msgstr "图片"
+
+#: client/app/modules/files/views/upload.html:32
+msgid "in queue"
+msgstr "队列中"
