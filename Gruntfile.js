@@ -628,7 +628,11 @@ module.exports = function (grunt) {
   grunt.registerTask('api', function () {
     nodemon({
       script: 'server/server.js',
-      ext: 'js json'
+      ext: 'js json',
+      watch: [
+        'common',
+        'server'
+      ]
     })
   });
 

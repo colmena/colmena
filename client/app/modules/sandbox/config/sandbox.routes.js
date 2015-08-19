@@ -14,6 +14,12 @@ angular.module('com.module.sandbox')
           $state.go('app.sandbox.autofields');
         }
       })
+      .state('app.sandbox.schemaform', {
+        url: '/schemaform',
+        templateUrl: 'modules/sandbox/views/schemaform.html',
+        controller: 'SandboxSchemaformCtrl',
+        controllerAs: 'ctrl'
+      })
       .state('app.sandbox.forms', {
         url: '/forms',
         templateUrl: 'modules/sandbox/views/forms.html',

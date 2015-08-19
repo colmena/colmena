@@ -1,6 +1,6 @@
 'use strict';
 angular.module('com.module.products')
-  .config(function($stateProvider) {
+  .config(function ($stateProvider) {
     $stateProvider
       .state('app.products', {
         abstract: true,
@@ -15,12 +15,32 @@ angular.module('com.module.products')
       .state('app.products.add', {
         url: '/add/:categoryId',
         templateUrl: 'modules/products/views/form.html',
-        controller: 'ProductsCtrl'
+        controller: 'ProductsFormCtrl',
+        controllerAs: 'ctrl',
+        resolve: {
+          categories: function (Category) {
+            return Category.find().$promise;
+          },
+          product: function ($stateParams) {
+            return {
+              categoryId: $stateParams.categoryId
+            };
+          }
+        }
       })
       .state('app.products.edit', {
-        url: '/:id/edit',
+        url: '/:productId/edit',
         templateUrl: 'modules/products/views/form.html',
-        controller: 'ProductsCtrl'
+        controller: 'ProductsFormCtrl',
+        controllerAs: 'ctrl',
+        resolve: {
+          categories: function (Category) {
+            return Category.find().$promise;
+          },
+          product: function ($stateParams, Product) {
+            return Product.findById({id: $stateParams.productId}).$promise;
+          }
+        }
       })
       .state('app.products.addcategory', {
         url: '/addcategory',
@@ -28,9 +48,17 @@ angular.module('com.module.products')
         controller: 'CategoriesCtrl'
       })
       .state('app.products.view', {
-        url: '/:id',
+        url: '/:productId',
         templateUrl: 'modules/products/views/view.html',
-        controller: 'ProductsCtrl'
+        resolve: {
+          product: function ($stateParams, Product) {
+            return Product.findById({id: $stateParams.productId}).$promise;
+          }
+        },
+        controller: function (product) {
+          this.product = product;
+        },
+        controllerAs: 'ctrl'
       })
       .state('app.products.editcategory', {
         url: '/editcategory/:categoryId',

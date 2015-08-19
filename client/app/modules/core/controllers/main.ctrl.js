@@ -7,18 +7,14 @@
  * @requires $state
  * @requires $location
  * @requires CoreService
- * @requires AppAuth
  * @requires User
  * @requires gettextCatalog
  **/
 angular.module('com.module.core')
   .controller('MainCtrl', function($scope, $rootScope, $state, $location,
-    CoreService, User, gettextCatalog, AppAuth) {
+    CoreService, User, gettextCatalog) {
 
-	AppAuth.ensureHasCurrentUser(function(user)
-    {
-      $scope.currentUser = user;
-	});
+    $scope.currentUser = User.getCurrent();
 
     $scope.menuoptions = $rootScope.menu;
 

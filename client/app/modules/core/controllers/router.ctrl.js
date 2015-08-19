@@ -10,12 +10,20 @@
  * @requires AppAuth
  **/
 angular.module('com.module.core')
-  .controller('RouteCtrl', function($q, $scope, $state, $location, AppAuth) {
-    if (!AppAuth.currentUser) {
-      console.log('Redirect to login');
-      $location.path('/login');
-    } else {
-      console.log('Redirect to app');
-      $location.path('/app');
-    }
+  .controller('RouteCtrl', function(ApiService, AppAuth, $location) {
+
+    ApiService.checkConnection()
+      .then(function() {
+        console.log('ApiService.checkConnection success');
+        if (!AppAuth.currentUser) {
+          $location.path('/login');
+        } else {
+          $location.path('/app');
+        }
+      })
+      .catch(function(err) {
+        console.log('ApiService.checkConnection err: ' + err);
+        $location.path('/error');
+      });
+
   });

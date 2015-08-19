@@ -28,7 +28,6 @@ module.exports = function(app) {
         {
           name: 'Draft beer',
           price: '250',
-          percentage: '5',
           categoryId: category.id
         }, // create
         function(err, data, created) {
@@ -43,7 +42,6 @@ module.exports = function(app) {
         {
           name: 'Bottled beer',
           price: '350',
-          percentage: '5',
           categoryId: category.id
         }, //create
         function(err, data, created) {
@@ -66,7 +64,6 @@ module.exports = function(app) {
     Product.findOrCreate({where:{name: 'Red wine'}},{
       name: 'Red wine',
       price: '350',
-      percentage: '12',
       categoryId: category.id
     }, function(err, data, created) {
       if (err) {
@@ -78,7 +75,6 @@ module.exports = function(app) {
     Product.findOrCreate({where:{name: 'White wine'}},{
       name: 'White wine',
       price: '350',
-      percentage: '12',
       categoryId: category.id
     }, function(err, data, created) {
       if (err) {

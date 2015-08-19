@@ -32,6 +32,9 @@ angular.module('loopbackApp', [
     'toasty',
     'autofields',
     'gettext',
+    'angular-underscore/filters',
+    'schemaForm',
+    'ui.select',
     'com.module.core',
     'com.module.about',
     'com.module.events',
@@ -48,30 +51,35 @@ angular.module('loopbackApp', [
 
     $rootScope.locales = {
 
+      'de': {
+        lang: 'de',
+        country: 'DE',
+        name: gettextCatalog.getString('German')
+      },
       'en': {
         lang: 'en',
         country: 'US',
         name: gettextCatalog.getString('English')
       },
-      'pt-BR': {
-        lang: 'pt_BR',
-        country: 'BR',
-        name: gettextCatalog.getString('Portuguese Brazil')
+      'fr': {
+        lang: 'fr',
+        country: 'FR',
+        name: gettextCatalog.getString('Français')
       },
       'nl': {
         lang: 'nl',
         country: 'NL',
         name: gettextCatalog.getString('Dutch')
       },
-      'de': {
-        lang: 'de',
-        country: 'DE',
-        name: gettextCatalog.getString('German')
+      'pt-BR': {
+        lang: 'pt_BR',
+        country: 'BR',
+        name: gettextCatalog.getString('Portuguese Brazil')
       },
-      'fr': {
-        lang: 'fr',
-        country: 'FR',
-        name: gettextCatalog.getString('Français')
+      'ru_RU': {
+        lang: 'ru_RU',
+        country: 'RU',
+        name: gettextCatalog.getString('Russian')
       }
     }
 

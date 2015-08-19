@@ -1,8 +1,10 @@
-# loopback-angular-admin
-
 **This software is not ready for production! It is still being developed and it will change in the future.**
 
 The goal is to have a starter project which can be used to quickly build an API with a frontend that are easily extended.
+
+# loopback-angular-admin
+
+[![Stories in Ready](https://badge.waffle.io/beeman/loopback-angular-admin.png?label=ready&title=Ready)](https://waffle.io/beeman/loopback-angular-admin)
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/beeman/loopback-angular-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -99,9 +101,9 @@ Installation depends on `node`/`npm` with `grunt` and `bower` installed globally
 
     grunt build
     
-### Run gulp sreve to start the API and frontend:
+### Run grunt serve to start the API and frontend:
 
-    gulp server
+    grunt serve
     
 
 ## Running

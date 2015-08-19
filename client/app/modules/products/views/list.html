@@ -14,14 +14,14 @@
         <tbody>
         <tr ng-repeat="item in category.products">
             <th>
-                <a href="" ui-sref="^.view({id: item.id})">{{item.name}}</a>
+                <a href="" ui-sref="^.view({productId: item.id})">{{item.name}}</a>
                 <small>{{item.description}}</small>
                 <div class="pull-right">
                     <span class="label label-default">{{item.price}}</span>
-                    <a href="" class="btn btn-xs btn-default" ui-sref="^.edit({id: item.id})">
+                    <a href="" class="btn btn-xs btn-default" ui-sref="^.edit({productId: item.id})">
                         <i class="fa fa-pencil"></i>
                     </a>
-                    <a href="" class="btn btn-xs btn-default" ng-click="delete({id: item.id})">
+                    <a href="" class="btn btn-xs btn-default" ng-click="delete({productId: item.id})">
                         <i class="fa fa-trash-o"></i>
                     </a>
                 </div>
