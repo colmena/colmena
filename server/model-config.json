@@ -73,5 +73,9 @@
   "user": {
     "dataSource": "db",
     "public": true
+  },
+  "Meta": {
+    "dataSource": "db",
+    "public": true
   }
 }
