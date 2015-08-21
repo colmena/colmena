@@ -148,6 +148,16 @@ Set `INITDB` to true if you want to load the initial dataset, which creates the 
 
 This also works with the free hosted MongoDB instances at [compose.io](https://www.compose.io) and [mongolab.com](https://mongolab.com)!
 
+## API Security
+
+**WARNING: Most models don't have an ACL configured. This means that anyone with access to the API can edit most of it's content.**
+
+To access models with access control enable you need an AccessToken. You can get an access token by logging in to the API.
+
+To ease development you can create an AccessToken while starting the server by setting the DEV_ACCESS_TOKEN environment variable. 
+
+    DEV_ACCESS_TOKEN=MySecretToken npm run dev
+
 ## Development
 
 If you want to share your work through a Pull Request, be sure to make it a clean branch (one functionality per PR) and base it off master.
