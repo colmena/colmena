@@ -56,8 +56,8 @@ module.exports = function (Meta) {
       for(var key in model.definition.properties) {
         var type=model.definition.properties[key].type.toString().toLowerCase().substr('function '.length);
         type=type.substr(0, type.indexOf('('));
-        model.definition.properties[key].type=type;
-      }      
+        model.definition.properties[key].stringType=type;
+      } 
       
       result[modelName] = model.definition.properties;
     });
