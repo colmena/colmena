@@ -51,6 +51,14 @@ module.exports = function (Meta) {
     var result = {};
     modelNames.forEach(function (modelName) {
       var model = models[modelName];
+            
+      //add type transformation until ES6 
+      for(var key in model.definition.properties) {
+        var type=model.definition.properties[key].type.toString().toLowerCase().substr('function '.length);
+        type=type.substr(0, type.indexOf('('));
+        model.definition.properties[key].stringType=type;
+      } 
+      
       result[modelName] = model.definition.properties;
     });
     process.nextTick(function () {
