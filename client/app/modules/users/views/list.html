@@ -8,29 +8,26 @@
     </span>
   </div>
 
-  <table class="table table-bordered table-striped">
-    <tr ng-repeat="user in ctrl.users">
-      <td>
-        <h4>
-          <a href="" ui-sref="app.users.view({id: user.id})">{{user.firstName}} {{user.lastName}}</a>
-          <span class="pull-right">
-            <span class="pull-right btn-group">
-              <a class="btn btn-xs btn-default" ui-sref="app.users.password({ id: user.id })">
-                <i class="fa fa-key"></i>
-              </a>
-              <a class="btn btn-xs btn-default" ui-sref="app.users.edit({ id: user.id })">
-                <i class="fa fa-pencil"></i>
-              </a>
-              <a class="btn btn-xs btn-danger" ui-sref="app.users.delete({ id: user.id })">
-                <i class="fa fa-trash-o"></i>
-              </a>
-            </span>
-          </span>
-        </h4>
-        {{user.username}}
-        <span class="text-muted">{{user.email}}</span>
-        <span ng-repeat="role in user.roles" class="label label-default">{{role.name}}</span>
-      </td>
-    </tr>
-  </table>
+  <div class='list-group'>
+    <div ng-repeat="user in ctrl.users" class="list-group-item">
+      <span class="pull-right btn-group">
+        <a class="btn btn-xs btn-default" ui-sref="app.users.password({ id: user.id })">
+          <i class="fa fa-key"></i>
+        </a>
+        <a class="btn btn-xs btn-default" ui-sref="app.users.edit({ id: user.id })">
+          <i class="fa fa-pencil"></i>
+        </a>
+        <a class="btn btn-xs btn-danger" ui-sref="app.users.delete({ id: user.id })">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </span>
+      <h4>
+        <a href="" ui-sref="app.users.view({id: user.id})">{{user.firstName}} {{user.lastName}}</a>
+      </h4>
+      {{user.username}}
+      <span class="text-muted">{{user.email}}</span>
+      <span ng-repeat="role in user.roles" class="label label-default">{{role.name}}</span>
+
+    </div>
+  </div>
 </div>
