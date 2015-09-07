@@ -1,19 +1,17 @@
-
-<h4>
-  <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
-  {{event.name}}
-
-  <span class="pull-right btn-group" style="margin-top: 7px;">
-    <a href="" class="btn btn-sm btn-default" ui-sref="^.edit({id: event.id})">
-      <i class="fa fa-pencil"></i>
-    </a>
-    <a href="" class="btn btn-sm btn-default" ng-click="delete({id: event.id})">
-      <i class="fa fa-trash-o"></i>
-    </a>
-  </span>
-
-</h4>
-<hr>
-<div style="white-space: pre-wrap;">{{event.description}}</div>
-<hr>
-<pre>{{event | json}}</pre>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a href="" ui-sref="^.list" class="btn btn-xs btn-default"><i class="fa fa-arrow-left"></i></a>
+    {{ctrl.event.title}}
+    <span class="pull-right btn-group">
+      <a href="" class="btn btn-xs btn-default" ui-sref="^.edit({id: ctrl.event.id})">
+        <i class="fa fa-pencil"></i>
+      </a>
+      <a href="" class="btn btn-xs btn-danger" ui-sref="^.delete({id: ctrl.event.id})">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </span>
+  </div>
+  <div class="panel-body">
+    <pre>{{ctrl.event | json}}</pre>
+  </div>
+</div>

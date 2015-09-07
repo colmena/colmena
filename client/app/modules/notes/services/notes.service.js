@@ -16,7 +16,7 @@ app.service('NotesService', ['$state', 'CoreService', 'Note', 'gettextCatalog',
 
     this.upsertNote = function (note) {
       return Note.upsert(note).$promise
-        .then(function (res) {
+        .then(function () {
           CoreService.toastSuccess(
             gettextCatalog.getString('Note saved'),
             gettextCatalog.getString('Your note is safe with us!')
@@ -45,11 +45,11 @@ app.service('NotesService', ['$state', 'CoreService', 'Note', 'gettextCatalog',
             CoreService.toastError(
               gettextCatalog.getString('Error deleting note'),
               gettextCatalog.getString('Your note is not deleted! ') + err);
-            cancelCb()
+            cancelCb();
           });
         },
         function () {
-          cancelCb()
+          cancelCb();
         }
       );
     };
@@ -70,7 +70,7 @@ app.service('NotesService', ['$state', 'CoreService', 'Note', 'gettextCatalog',
           required: true
         }
       }];
-    }
+    };
 
   }
 ]);

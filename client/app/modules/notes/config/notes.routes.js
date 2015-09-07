@@ -30,7 +30,7 @@ app.config(function ($stateProvider) {
         NotesService.upsertNote(this.note).then(function () {
           $state.go('^.list');
         });
-      }
+      };
     },
     resolve: {
       note: function () {
@@ -49,7 +49,7 @@ app.config(function ($stateProvider) {
         NotesService.upsertNote(this.note).then(function () {
           $state.go('^.list');
         });
-      }
+      };
     },
     resolve: {
       note: function ($stateParams, NotesService) {
@@ -73,11 +73,9 @@ app.config(function ($stateProvider) {
     template: '',
     controllerAs: 'ctrl',
     controller: function ($state, NotesService, note) {
-      NotesService.deleteNote(note.id, function(){
-        console.log('Yep!');
+      NotesService.deleteNote(note.id, function () {
         $state.go('^.list');
-      }, function(){
-        console.log('Nope!');
+      }, function () {
         $state.go('^.list');
       });
     },

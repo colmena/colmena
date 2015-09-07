@@ -45,8 +45,8 @@ app.controller('SandboxFakerCtrl', function($scope, $window, CoreService,
       var fake = {
         name: FakeService.faker.lorem.sentence(),
         description: FakeService.faker.lorem.paragraph(),
-        startTime: FakeService.faker.date.future(),
-        endTime: FakeService.faker.date.future()
+        startDate: FakeService.faker.date.future(),
+        endDate: FakeService.faker.date.future()
       };
       $scope.faker.push(fake);
       Event.create(fake);

@@ -1,29 +1,22 @@
-<div class="box">
-    <div class="box-header">
-        <h3 class="box-title">
-            <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
-            <span ng-show="!category.id" translate>Add a new event</span>
-            <span ng-show="category.id" translate>Edit event</span>
-        </h3>
-        <div class="box-tools pull-right">
-        </div>
+<form name="form">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <a href="" ui-sref="^.list" class="btn btn-xs btn-default"><i class="fa fa-arrow-left"></i></a>
+      <span ng-show="!ctrl.event.id" translate>Add a new event</span>
+      <span ng-show="ctrl.event.id" translate>Edit event</span>
     </div>
-    <div class="box-body">
-        <div class="row">
-            <div class="alert alert-danger" ng-if="addError" translate>Could not add event!</div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-4">
+          <formly-form model="ctrl.event" fields="ctrl.formFields" options="ctrl.formOptions"></formly-form>
         </div>
-        <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
-        <formly-form result="event" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
+      </div>
+      <div class="controls">
+        <button type="submit" class="btn btn-primary btn-success" ng-click="ctrl.submit()" ng-disabled="form.$invalid">
+          Submit
+        </button>
+        <button type="button" class="btn btn-default" ng-click="ctrl.formOptions.resetModel()">Reset</button>
+      </div>
     </div>
-    <div class="box-footer">
-        <div class="controls">
-            <button class="btn btn-primary btn-success" ng-click="onSubmit()" translate>Submit</button>
-            <button class="btn btn-default" ng-click="reset()" translate>Cancel</button>
-        </div>
-    </div>
-    <div ng-if="loading" class="overlay"></div>
-    <div ng-if="loading" class="loading-img"></div>
-</div>
-<div class="controls">
-    <button class="btn btn-primary btn-success" ng-click="onSubmit()" translate>Submit</button>
-</div>
+  </div>
+</form>
