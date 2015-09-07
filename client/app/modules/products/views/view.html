@@ -1,14 +1,19 @@
-<h4>
-  <a href="" ui-sref="^.list" class="btn btn-default"><i class="fa fa-arrow-left"></i></a>
-  {{ctrl.product.name}}
-  <small class="label label-default">{{ctrl.product.price}}</small>
-  <span class="pull-right btn-group" style="margin-top: 7px;">
-    <a href="" class="btn btn-sm btn-default" ui-sref="^.edit({productId: ctrl.product.id})">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a href="" ui-sref="^.list" class="btn btn-xs btn-default"><i class="fa fa-arrow-left"></i></a>
+    {{ctrl.product.name}}
+    <small class="label label-default">{{ctrl.product.price}}</small>
+
+    <span class="pull-right btn-group">
+    <a href="" class="btn btn-xs btn-default" ui-sref="^.edit({productId: ctrl.product.id})">
       <i class="fa fa-pencil"></i>
     </a>
-    <a href="" class="btn btn-sm btn-default" ng-click="delete({productId: ctrl.product.id})">
+    <a href="" class="btn btn-xs btn-default" ui-sref="^.delete({productId: ctrl.product.id})">
       <i class="fa fa-trash-o"></i>
     </a>
   </span>
-</h4>
-<pre>{{ctrl.product | json}}</pre>
+  </div>
+  <div class="panel-body">
+    <pre>{{ctrl.product | json}}</pre>
+  </div>
+</div>
