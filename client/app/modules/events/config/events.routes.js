@@ -85,4 +85,5 @@ angular.module('com.module.events')
         }
       }
     });
-  });
+  }
+);
