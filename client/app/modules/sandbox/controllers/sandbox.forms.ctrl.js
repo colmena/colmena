@@ -53,8 +53,6 @@ angular.module('com.module.sandbox')
       }
     }];
 
-    $scope.formOptions = {};
-
     $scope.onSubmit = function (data) {
       CoreService.alertSuccess('Good job!', JSON.stringify(data, null, 2));
     };
