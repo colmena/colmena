@@ -1,49 +1,41 @@
-<div class="box">
-    <div class="box-header">
-        <span class="box-title">
-            <div class="input-group">
-                <a href="" ui-sref="^.list" class=" btn btn-default " style="float: left;" translate><i
-                        class="fa fa-arrow-left"></i> Pages</a>
-                <input ng-model="page.name" type="text" class="form-controls" placeholder="Name" required="required"
-                       style="margin-left: 2px; border: 0px;">
-            </div>
-        </span>
+<form name="form">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <a href="" ui-sref="^.list" class="btn btn-xs btn-default"><i class="fa fa-arrow-left"></i></a>
+      <span ng-show="!ctrl.page.id" translate>Add a new page</span>
+      <span ng-show="ctrl.page.id" translate>Edit page</span>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <formly-form model="ctrl.page" fields="ctrl.formFields" options="ctrl.formOptions"></formly-form>
 
-        <div class="box-tools pull-right">
-            <span class="pull-right btn-group">
-            <button class="btn btn-primary btn-success btn-sm" ng-click="onSubmit()" translate><i class="fa fa-save"></i>  Save
-            </button>
-            <a href="" class="btn btn-sm btn-default" ui-sref="^.view({id: page.id})">
-                <i class="fa fa-eye"></i>
-            </a>
-            <a href="" class="btn btn-sm btn-default" ng-click="delete({id: page.id})">
-                <i class="fa fa-trash-o"></i>
-            </a>
-          </span>
+          <ui-codemirror ui-codemirror-opts="ctrl.editorOptions" ng-model="ctrl.page.content"></ui-codemirror>
+
+          <br/>
         </div>
-    </div>
-    <div class="box-body">
-        <div class="alert alert-danger" ng-if="addError" translate>Could not add page!</div>
-        <tabset class="nav-tabs-custom">
-            <tab heading="Editor">
-                <ui-codemirror ui-codemirror-opts="editorOptions" ng-model="page.content"></ui-codemirror>
-            </tab>
-            <tab heading="Preview">
-                <div btf-markdown="page.content"></div>
-            </tab>
-        </tabset>
-    </div>
-    <div ng-if="loading" class="overlay"></div>
-    <div ng-if="loading" class="loading-img"></div>
-</div>
-<style>
-    .CodeMirror {
-        border: 1px solid #eee;
-        height: auto;
-    }
 
-    .CodeMirror-scroll {
-        overflow-y: hidden;
-        overflow-x: auto;
-    }
+        <div class="col-md-6">
+          <div btf-markdown="ctrl.page.content"></div>
+        </div>
+      </div>
+      <div class="controls">
+        <button type="submit" class="btn btn-primary btn-success" ng-click="ctrl.submit()" ng-disabled="form.$invalid">
+          Submit
+        </button>
+        <button type="button" class="btn btn-default" ng-click="ctrl.formOptions.resetModel()">Reset</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<style>
+  .CodeMirror {
+    border: 1px solid #eee;
+    height: auto;
+  }
+  .CodeMirror-scroll {
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
 </style>
