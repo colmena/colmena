@@ -1,41 +1,34 @@
-
-
-<div class="box">
-    <div class="box-header">
-        <h3 class="box-title" translate>
-            Your profile
-        </h3>
-    </div>
-    <div class="box-body">
-
-        <div class="row">
-            <div class="col-md-8">
-                <formly-form result="user" fields="formFields" options="formOptions" ng-submit="onSubmit()"></formly-form>
-            </div>
-            <div class="col-md-4">
-
-                <div class="box box-solid bg-light-blue">
-                    <div class="box-header">
-                        <h3 class="box-title" >
-                            {{ 'Your Gravatar' | translate }}
-                            <small><a href="http://gravatar.com" translate>Change it here!</a></small>
-                        </h3>
-                    </div>
-                    <div class="box-body">
-                        <div class="text-center">
-                            <img gravatar-src="user.email" class="img-circle" alt="User Image" gravatar-size="150">
-                        </div>
-                    </div>
-                    <div class="box-header">&nbsp;</div>
-                </div>
-            </div>
+<div class="row">
+  <div class="col-md-4">
+    <form name="form">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Your profile
         </div>
-    </div>
-    <div class="box-footer">
-        <div class="controls">
-            <button class="btn btn-primary btn-success" ng-click="onSubmit()" translate>Update profile</button>
+        <div class="panel-body">
+          <formly-form model="ctrl.user" fields="ctrl.formFields" options="ctrl.formOptions"></formly-form>
+          <div class="controls">
+            <button type="submit" class="btn btn-primary btn-success" ng-click="ctrl.submit()"
+                    ng-disabled="form.$invalid">
+              Submit
+            </button>
+            <button type="button" class="btn btn-default" ng-click="ctrl.formOptions.resetModel()">Reset</button>
+          </div>
         </div>
+      </div>
+    </form>
+
+
+  </div>
+  <div class="col-md-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        {{ 'Your Gravatar' | translate }}
+      </div>
+      <div class="panel-body">
+        <img gravatar-src="user.email" class="img-circle" alt="User Image" gravatar-size="150">
+        <h4><a href="http://gravatar.com" target="_blank" translate>Change it here!</a></h4>
+      </div>
     </div>
-    <div ng-if="loading" class="overlay"></div>
-    <div ng-if="loading" class="loading-img"></div>
+  </div>
 </div>

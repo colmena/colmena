@@ -1,24 +1,27 @@
-<div class="box">
-  <div class="box-header">
-    <h3 class="box-title">
-      <a href="" ui-sref="^.list" class="btn btn-default" translate><i class="fa fa-arrow-left"></i> Users</a>
-      {{user.username}}
-    </h3>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <a href="" ui-sref="^.list" class="btn btn-xs btn-default"><i class="fa fa-arrow-left"></i></a>
+    {{ctrl.user.username}} <small>{{ctrl.user.email}}</small>
+    <span class="pull-right btn-group">
+      <a href="" class="btn btn-xs btn-default" ui-sref="^.edit({id: ctrl.user.id})">
+        <i class="fa fa-pencil"></i>
+      </a>
+      <a href="" class="btn btn-xs btn-danger" ui-sref="^.delete({id: ctrl.user.id})">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </span>
   </div>
-  <div class="box-body">
-    <div>
-      <h2>{{user.username}}
-        <small>{{user.email}}</small>
-      </h2>
-      <h3 translate>Roles</h3>
+  <div class="panel-body">
+    <h3 translate>Roles</h3>
+    <div ng-if="ctrl.user.roles.length">
       <ul>
-        <li ng-repeat="role in user.roles">{{role.name}}</li>
+        <li ng-repeat="role in ctrl.user.roles">{{role.name}}</li>
       </ul>
-      <h3 translate>Raw</h3>
-      <pre>{{user|json}}</pre>
     </div>
+    <div ng-if="!ctrl.user.roles.length">
+      <h4>This user has no roles</h4>
+    </div>
+    <hr/>
+    <pre>{{ctrl.user | json}}</pre>
   </div>
 </div>
-
-
-
