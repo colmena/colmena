@@ -1,55 +1,61 @@
 'use strict';
 angular.module('com.module.sandbox')
-  .controller('SandboxFormsCtrl', function($scope, CoreService) {
+  .controller('SandboxFormsCtrl', function ($scope, CoreService) {
 
-    $scope.formData = {};
+    var now = new Date();
+
+    $scope.formOptions = {};
+
+    $scope.formData = {
+      name: null,
+      description: null,
+      startDate: now,
+      startTime: now,
+      endDate: now,
+      endTime: now
+    };
 
     $scope.formFields = [{
       key: 'name',
-      type: 'text',
-      label: 'Name',
-      required: true
+      type: 'input',
+      templateOptions: {
+        label: 'Name'
+      }
     }, {
       key: 'description',
-      type: 'text',
-      label: 'Description',
-      required: true
+      type: 'textarea',
+      templateOptions: {
+        label: 'Description'
+      }
     }, {
       key: 'startDate',
-      required: true,
-      label: 'Start Date',
-      type: 'date',
-      format: 'dd/MM/yyyy'
+      type: 'datepicker',
+      templateOptions: {
+        label: 'Start Date'
+      }
     }, {
       key: 'startTime',
-      required: true,
-      label: 'Start Time',
-      type: 'time',
-      hstep: 1,
-      mstep: 5,
-      ismeridian: true
+      type: 'timepicker',
+      templateOptions: {
+        label: 'Start Time'
+      }
     }, {
       key: 'endDate',
-      label: 'End',
-      type: 'date',
-      format: 'dd/MM/yyyy'
+      type: 'datepicker',
+      templateOptions: {
+        label: 'End Date'
+      }
     }, {
       key: 'endTime',
-      required: true,
-      label: 'End Time',
-      type: 'time',
-      hstep: 1,
-      mstep: 5,
-      ismeridian: true
+      type: 'timepicker',
+      templateOptions: {
+        label: 'End Time'
+      }
     }];
 
-    $scope.formOptions = {
-      hideSubmit: false,
-      submitCopy: 'Submit'
-    };
+    $scope.formOptions = {};
 
-    $scope.onSubmit = function() {
-      CoreService.alertSuccess('Good job!', 'Well done, ' + $scope.formData
-        .name);
+    $scope.onSubmit = function (data) {
+      CoreService.alertSuccess('Good job!', JSON.stringify(data, null, 2));
     };
   });
