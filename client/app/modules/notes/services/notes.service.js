@@ -1,50 +1,76 @@
 'use strict';
 var app = angular.module('com.module.notes');
 
-app.service('NotesService', ['$state', 'CoreService', 'Note', 'gettextCatalog', function($state,
-  CoreService, Note, gettextCatalog) {
+app.service('NotesService', ['$state', 'CoreService', 'Note', 'gettextCatalog',
+  function ($state, CoreService, Note, gettextCatalog) {
 
-  this.getNotes = function() {
-    return Note.find();
-  };
+    this.getNotes = function () {
+      return Note.find().$promise;
+    };
 
-  this.getNote = function(id) {
-    return Note.findById({
-      id: id
-    });
-  };
+    this.getNote = function (id) {
+      return Note.findById({
+        id: id
+      }).$promise;
+    };
 
-  this.upsertNote = function(note, cb) {
-    Note.upsert(note, function() {
-      CoreService.toastSuccess(gettextCatalog.getString(
-        'Note saved'), gettextCatalog.getString(
-        'Your note is safe with us!'));
-      cb();
-    }, function(err) {
-      CoreService.toastSuccess(gettextCatalog.getString(
-        'Error saving note '), gettextCatalog.getString(
-        'This note could no be saved: ') + err);
-    });
-  };
+    this.upsertNote = function (note) {
+      return Note.upsert(note).$promise
+        .then(function (res) {
+          CoreService.toastSuccess(
+            gettextCatalog.getString('Note saved'),
+            gettextCatalog.getString('Your note is safe with us!')
+          );
+        })
+        .catch(function (err) {
+          CoreService.toastSuccess(
+            gettextCatalog.getString('Error saving note '),
+            gettextCatalog.getString('This note could no be saved: ') + err
+          );
+        }
+      );
+    };
 
-  this.deleteNote = function(id, cb) {
-    CoreService.confirm(gettextCatalog.getString('Are you sure?'),
-      gettextCatalog.getString('Deleting this cannot be undone'),
-      function() {
-        Note.deleteById(id, function() {
-          CoreService.toastSuccess(gettextCatalog.getString(
-            'Note deleted'), gettextCatalog.getString(
-            'Your note is deleted!'));
-          cb();
-        }, function(err) {
-          CoreService.toastError(gettextCatalog.getString(
-            'Error deleting note'), gettextCatalog.getString(
-            'Your note is not deleted! ') + err);
-        });
-      },
-      function() {
-        return false;
-      });
-  };
+    this.deleteNote = function (id, successCb, cancelCb) {
+      CoreService.confirm(
+        gettextCatalog.getString('Are you sure?'),
+        gettextCatalog.getString('Deleting this cannot be undone'),
+        function () {
+          Note.deleteById({id: id}, function () {
+            CoreService.toastSuccess(
+              gettextCatalog.getString('Note deleted'),
+              gettextCatalog.getString('Your note is deleted!'));
+            successCb();
+          }, function (err) {
+            CoreService.toastError(
+              gettextCatalog.getString('Error deleting note'),
+              gettextCatalog.getString('Your note is not deleted! ') + err);
+            cancelCb()
+          });
+        },
+        function () {
+          cancelCb()
+        }
+      );
+    };
 
-}]);
+    this.getFormFields = function () {
+      return [{
+        key: 'title',
+        type: 'input',
+        templateOptions: {
+          label: gettextCatalog.getString('Title'),
+          required: true
+        }
+      }, {
+        key: 'body',
+        type: 'textarea',
+        templateOptions: {
+          label: gettextCatalog.getString('Body'),
+          required: true
+        }
+      }];
+    }
+
+  }
+]);
