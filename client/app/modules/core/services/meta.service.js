@@ -43,23 +43,33 @@ app.service('MetaService', ['$injector', 'CoreService', 'Meta', 'gettextCatalog'
 
   this.getModelFields = function (model) {
     var result = [];
-    angular.forEach(model.properties, function (value, property) {
-      if (property !== 'id') {
-        var itemField = {
-          key: property,
-          type: 'input',
-          templateOptions: {
-            label: property,
-            required: value.required !== undefined ? value.required : false,
-            description: value.description !== undefined ? value.description : false
-          }
-        };
-        console.log(value);
-        result.push(itemField);
+    angular.forEach(model.properties, function (property, propertyName) {
+      if (propertyName !== 'id') {
+        result.push(getModelField(propertyName, property));
       }
     });
     return result;
   };
+
+  function getModelField (propertyName, property) {
+    return {
+      key: propertyName,
+      type: getModelFieldType(property),
+      templateOptions: {
+        label: propertyName,
+        required: property.required !== undefined ? property.required : false,
+        description: property.description !== undefined ? property.description : false
+      }
+    };
+  }
+
+  function getModelFieldType (property) {
+    var result = 'input';
+    if (property.meta !== undefined && property.meta.formType !== undefined) {
+      result = property.meta.formType;
+    }
+    return result;
+  }
 
   this.upsert = function (modelName, item) {
     var Model = this.getModelInstance(modelName);
