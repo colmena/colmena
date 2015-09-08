@@ -17,7 +17,7 @@
       <h4 class="list-group-item-heading">
         {{item.container}} /
         <a href="{{apiUrl}}/containers/files/download/{{item.name}}" target="_blank"><strong>{{item.name}}</strong></a>
-        <small>{{item.size}}</small>
+        <small>{{item.size/1024/1024|number:2 }} MB </small>
       </h4>
 
     </div>

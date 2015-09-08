@@ -2,17 +2,17 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       {{items.model.name}}
-
       <span class="pull-right">
         <a ui-sref="app.browser.models.items.add({ modelName: items.model.name})" class="btn btn-xs btn-default">Add</a>
       </span>
-
     </div>
 
-    <alert ng-if="!items.items || !items.items.length" type="alert alert-info">
-      No items found
-      <span ng-if="items.model.name">for {{items.model.name}}</span>
-    </alert>
+    <div class="panel-body" ng-if="!items.items || !items.items.length">
+      <alert type="alert alert-info">
+        No items found
+        <span ng-if="items.model.name">for {{items.model.name}}</span>
+      </alert>
+    </div>
 
     <div class="table-responsive" ng-if="items.items && items.items.length" style="overflow: auto">
       <table class="table table-striped" ng-if="items.itemKeys">
