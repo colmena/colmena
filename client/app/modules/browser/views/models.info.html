@@ -1,0 +1,16 @@
+<div class="col-lg-8">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      {{info.model.name}}
+    </div>
+
+    <pre>{{info.model | json}}</pre>
+    <table class="table table-striped" ng-if="view.item">
+      <tr ng-repeat="itemKey in view.itemKeys">
+        <th>{{itemKey}}</th>
+        <td class="text-nowrap">{{view.item[itemKey]}}</td>
+      </tr>
+    </table>
+
+  </div>
+</div>

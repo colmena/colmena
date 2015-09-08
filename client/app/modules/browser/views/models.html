@@ -5,8 +5,11 @@
       <table class="table">
         <tr ng-repeat="model in ctrl.models">
           <td>
-            <a ui-sref="app.browser.models.items({ modelName: model.name })">{{model.name}}</a>
-            <span ng-if="model.base" class="pull-right text-muted"><small>{{model.base}}</small></span>
+            <div>
+              <a ui-sref="app.browser.models.info({ modelName: model.name })">{{model.name}}</a>
+              <a class="pull-right text-muted" ui-sref="app.browser.models.items({ modelName: model.name })">Browse</a>
+            </div>
+            <span ng-if="model.base" class="text-muted"><small>{{model.base}}</small></span>
           </td>
         </tr>
       </table>
