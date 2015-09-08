@@ -12,12 +12,12 @@
           <formly-form model="ctrl.note" fields="ctrl.formFields" options="ctrl.formOptions"></formly-form>
         </div>
       </div>
-      <div class="controls">
-        <button type="submit" class="btn btn-primary btn-success" ng-click="ctrl.submit()" ng-disabled="form.$invalid">
-          Submit
-        </button>
-        <button type="button" class="btn btn-default" ng-click="ctrl.formOptions.resetModel()">Reset</button>
-      </div>
+    </div>
+    <div class="panel-footer">
+      <button type="submit" class="btn btn-primary btn-success" ng-click="ctrl.submit()" ng-disabled="form.$invalid">
+        Submit
+      </button>
+      <button type="button" class="btn btn-default" ng-click="ctrl.formOptions.resetModel()">Reset</button>
     </div>
   </div>
 </form>
