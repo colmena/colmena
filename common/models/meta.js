@@ -7,34 +7,28 @@ module.exports = function (Meta) {
    * Helper method for format the type of the properties
    */
   function formatProperties (properties) {
-    //for (var key in properties) {
-    //  var type = properties[key].type.toString().toLowerCase().substr('function '.length);
-    //  type = type.substr(0, type.indexOf('('));
-    //  properties[key].type = type;
-    //}
+    for (var key in properties) {
+      var type = properties[key].type.toString().toLowerCase().substr('function '.length);
+      type = type.substr(0, type.indexOf('('));
+      properties[key].propertyType = type;
+    }
     return properties;
   }
 
-  /**
-   * Get the definition of the model
-   */
-  function getModelDefinition (modelName) {
-    return Meta.app.models[modelName].definition;
-  }
 
   /**
    * Get the definition of a model and format the result in a way that's similar to a LoopBack model definition file
    */
   function getModelInfo (modelName) {
 
-    // Get the model definition
-    var definition = getModelDefinition(modelName);
+    // Get the model
+    var model = Meta.app.models[modelName];
 
     // Create the base return object
     var result = {
-      id: definition.name,
-      name: definition.name,
-      properties: formatProperties(definition.properties)
+      id: model.definition.name,
+      name: model.definition.name,
+      properties: formatProperties(model.definition.properties)
     };
 
     // Get the following keys from the settings object, if they are set
@@ -42,7 +36,7 @@ module.exports = function (Meta) {
       'validations', 'relations', 'acls', 'methods', 'mixins'
     ];
     keys.forEach(function (key) {
-      result[key] = _.get(definition.settings, key);
+      result[key] = _.get(model.definition.settings, key);
     });
     return result;
   }
