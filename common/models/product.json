@@ -4,7 +4,8 @@
   "base": "PersistedModel",
   "properties": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "categoryId": {
       "type": "string"

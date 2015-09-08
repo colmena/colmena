@@ -8,7 +8,10 @@
       "required": true
     },
     "content": {
-      "type": "string"
+      "type": "string",
+      "meta": {
+        "formType": "textarea"
+      }
     },
     "image": {
       "type": "string"
