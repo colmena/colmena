@@ -9,9 +9,8 @@ module.exports = function (Meta) {
   function formatProperties (properties) {
     var result = {};
     for (var key in properties) {
-      result[key] = {
-        type: properties[key].type.name
-      };
+      result[key] = _.clone(properties[key]);
+      result[key].type = properties[key].type.name;
     }
     return result;
   }
