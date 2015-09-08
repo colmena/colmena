@@ -38,7 +38,7 @@ app.config(function ($stateProvider) {
           name: $stateParams.modelName
         }).$promise;
       }],
-      items: ['$stateParams', '$injector', 'Meta', function ($stateParams, $injector, Meta) {
+      items: ['$stateParams', '$injector', 'Meta', function ($stateParams, $injector) {
         var Model = $injector.get($stateParams.modelName);
         if (typeof Model.find !== 'function') {
           return false;
@@ -86,7 +86,7 @@ app.config(function ($stateProvider) {
               SweetAlert.swal('Saved!', 'The item is saved.', 'success');
               $state.go('app.browser.models.items.view', {modelName: model.name, modelId: res.id}, {reload: true});
             });
-          }
+          };
         }],
       resolve: {
         Model: ['$stateParams', '$injector',
@@ -139,7 +139,7 @@ app.config(function ($stateProvider) {
               SweetAlert.swal('Saved!', 'The item is saved.', 'success');
               $state.go('app.browser.models.items.view', {modelName: model.name, modelId: res.id}, {reload: true});
             });
-          }
+          };
         }],
       resolve: {
         Model: ['$stateParams', '$injector',
