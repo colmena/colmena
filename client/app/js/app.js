@@ -38,6 +38,7 @@ var app = angular.module('loopbackApp', [
   'ui.select',
   'com.module.core',
   'com.module.about',
+  'com.module.browser',
   'com.module.events',
   'com.module.files',
   'com.module.notes',

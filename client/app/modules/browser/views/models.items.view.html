@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Item
+    <span class="pull-right">
+      <a ui-sref="app.browser.models.items.edit({ modelName: items.model.name, modelId: view.item.id})" class="btn btn-xs btn-default">Edit</a>
+      <a ui-sref="app.browser.models.items({ modelName: items.model.name })" class="btn btn-xs btn-default">Close</a>
+    </span>
+  </div>
+  <div class="" style="overflow: auto">
+    <table class="table table-striped" ng-if="view.item">
+      <tr ng-repeat="itemKey in view.itemKeys">
+        <th>{{itemKey}}</th>
+        <td class="text-nowrap">{{view.item[itemKey]}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

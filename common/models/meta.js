@@ -3,171 +3,73 @@ var _ = require('lodash');
 
 module.exports = function (Meta) {
 
-  Meta.remoteMethod('getModelAcls', {
-    accepts: [],
-    returns: {
-      arg: 'result',
-      type: 'object',
-      root: true
-    },
-    http: {
-      path: '/getModelAcls',
-      verb: 'get'
-    }
-  });
+  /**
+   * Helper method for format the type of the properties
+   */
+  function formatProperties (properties) {
+    //for (var key in properties) {
+    //  var type = properties[key].type.toString().toLowerCase().substr('function '.length);
+    //  type = type.substr(0, type.indexOf('('));
+    //  properties[key].type = type;
+    //}
+    return properties;
+  }
 
-  Meta.getModelAcls = function (cb) {
-    cb = cb || utils.createPromiseCallback();
-    var models = Meta.app.models;
-    var modelNames = Object.keys(models);
-    var result = {};
-    modelNames.forEach(function (modelName) {
-      var model = models[modelName];
-      result[modelName] = model.settings.acls;
-    });
-    process.nextTick(function () {
-      cb(null, result);
-    });
-    return cb.promise;
-  };
+  /**
+   * Get the definition of the model
+   */
+  function getModelDefinition (modelName) {
+    return Meta.app.models[modelName].definition;
+  }
 
-  Meta.remoteMethod('getModelProperties', {
-    accepts: [],
-    returns: {
-      arg: 'result',
-      type: 'object',
-      root: true
-    },
-    http: {
-      path: '/getModelProperties',
-      verb: 'get'
-    }
-  });
+  /**
+   * Get the definition of a model and format the result in a way that's similar to a LoopBack model definition file
+   */
+  function getModelInfo (modelName) {
 
-  Meta.getModelProperties = function (cb) {
-    cb = cb || utils.createPromiseCallback();
-    var models = Meta.app.models;
-    var modelNames = Object.keys(models);
-    var result = {};
-    modelNames.forEach(function (modelName) {
-      var model = models[modelName];
-            
-      //add type transformation until ES6 
-      for(var key in model.definition.properties) {
-        var type=model.definition.properties[key].type.toString().toLowerCase().substr('function '.length);
-        type=type.substr(0, type.indexOf('('));
-        model.definition.properties[key].stringType=type;
-      } 
-      
-      result[modelName] = model.definition.properties;
-    });
-    process.nextTick(function () {
-      cb(null, result);
-    });
-    return cb.promise;
-  };
+    // Get the model definition
+    var definition = getModelDefinition(modelName);
 
-  Meta.remoteMethod('getModelRelations', {
-    accepts: [],
-    returns: {
-      arg: 'result',
-      type: 'object',
-      root: true
-    },
-    http: {
-      path: '/getModelRelations',
-      verb: 'get'
-    }
-  });
-
-  Meta.getModelRelations = function (cb) {
-    cb = cb || utils.createPromiseCallback();
-
-    var remotes = Object.keys(Meta.app.remoteObjects());
-    var models = {};
-
-    remotes.forEach(function (remote) {
-      models[remote] = Meta.app.models[remote].settings.relations;
-    });
-
+    // Create the base return object
     var result = {
-      nodes: [],
-      edges: []
+      id: definition.name,
+      name: definition.name,
+      properties: formatProperties(definition.properties)
     };
 
-    // Loop through models to fill node array
-    _.mapKeys(models, function (relations, model) {
-      result.nodes.push({
-        id: model,
-        label: model
-      });
-      // Loop through model relations to fill edge array
-      _.mapKeys(relations, function (relation) {
-        result.edges.push({
-          from: model,
-          to: relation.model,
-          label: relation.type
-        });
-      });
+    // Get the following keys from the settings object, if they are set
+    var keys = ['description', 'plural', 'base', 'idInjection', 'persistUndefinedAsNull', 'strict', 'hidden',
+      'validations', 'relations', 'acls', 'methods', 'mixins'
+    ];
+    keys.forEach(function (key) {
+      result[key] = _.get(definition.settings, key);
     });
+    return result;
+  }
 
+  /**
+   * Get all the models with its information
+   */
+  Meta.getModels = function (cb) {
+    cb = cb || utils.createPromiseCallback();
+    var modelNames = Object.keys(Meta.app.models);
     process.nextTick(function () {
-      cb(null, result);
+      cb(null, modelNames.sort().map(function (modelName) {
+        return getModelInfo(modelName);
+      }));
     });
     return cb.promise;
   };
 
-  Meta.remoteMethod('getModelRemotes', {
-    accepts: [],
-    returns: {
-      arg: 'result',
-      type: 'object',
-      root: true
-    },
-    http: {
-      path: '/getModelRemotes',
-      verb: 'get'
-    }
-  });
-
-  Meta.getModelRemotes = function (cb) {
+  /**
+   * Get one model with its information
+   */
+  Meta.getModelById = function (modelName, cb) {
     cb = cb || utils.createPromiseCallback();
     process.nextTick(function () {
-      cb(null, Object.keys(Meta.app.remoteObjects()));
+      cb(null, getModelInfo(modelName));
     });
     return cb.promise;
   };
 
-  Meta.remoteMethod('getModelSettings', {
-    accepts: [],
-    returns: {
-      arg: 'result',
-      type: 'object',
-      root: true
-    },
-    http: {
-      path: '/getModelSettings',
-      verb: 'get'
-    }
-  });
-
-  Meta.getModelSettings = function (cb) {
-    cb = cb || utils.createPromiseCallback();
-
-    var models = Meta.app.models;
-    var modelNames = Object.keys(models);
-
-    var result = {};
-    modelNames.forEach(function (modelName) {
-      var model = models[modelName];
-      result[modelName] = model.settings;
-    });
-
-    process.nextTick(function () {
-      cb(null, result);
-    });
-    return cb.promise;
-  };
-
-}
-;
+};

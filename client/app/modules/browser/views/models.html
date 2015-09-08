@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">Models</div>
+      <table class="table">
+        <tr ng-repeat="model in ctrl.models">
+          <td>
+            <a ui-sref="app.browser.models.items({ modelName: model.name })">{{model.name}}</a>
+            <span ng-if="model.base" class="pull-right text-muted"><small>{{model.base}}</small></span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <ui-view></ui-view>
+  </div>
+</div>

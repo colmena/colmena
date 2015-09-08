@@ -1,0 +1,18 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Edit Item
+    <span class="pull-right">
+      <a ui-sref="app.browser.models.items.view({ modelName: items.model.name, modelId: edit.item.id})" class="btn btn-xs btn-default">View</a>
+      <a ui-sref="app.browser.models.items({ modelName: items.model.name })" class="btn btn-xs btn-default">Close</a>
+    </span>
+  </div>
+  <div class="panel-body">
+    <form ng-submit="edit.submit()">
+      <formly-form model="edit.item" fields="edit.itemFields">
+        <button type="submit" class="btn btn-default">Submit</button>
+        <a ui-sref="app.browser.models.items.view({ modelName: items.model.name, modelId: edit.item.id})" class="btn btn-default">Cancel</a>
+
+      </formly-form>
+    </form>
+  </div>
+</div>

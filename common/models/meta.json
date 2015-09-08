@@ -14,8 +14,97 @@
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$unauthenticated",
-      "permission": "DENY"
+      "permission": "ALLOW"
     }
   ],
-  "methods": []
+  "methods": {
+    "getModels": {
+      "isStatic": true,
+      "accepts": [],
+      "returns": {
+        "arg": "result",
+        "type": "array",
+        "root": true
+      },
+      "description": "Get all Models",
+      "http": {
+        "path": "/",
+        "verb": "get"
+      }
+    },
+    "getModelById": {
+      "isStatic": true,
+      "accepts": {
+        "arg": "name",
+        "type": "any",
+        "description": "Model name",
+        "required": true
+      },
+      "returns": {
+        "arg": "result",
+        "type": "object",
+        "root": true
+      },
+      "description": "Get a Model by name",
+      "http": {
+        "path": "/:name",
+        "verb": "get"
+      }
+    },
+    "getModelItem": {
+      "isStatic": true,
+      "accepts": [
+        {
+          "arg": "modelName",
+          "type": "string",
+          "required": true
+        },
+        {
+          "arg": "modelId",
+          "type": "string",
+          "required": true
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "type": "object",
+        "root": true
+      },
+      "description": "Retrieve an instance of a model by model name and id",
+      "http": {
+        "path": "/getModelItem",
+        "verb": "get"
+      }
+    },
+    "getModelItems": {
+      "isStatic": true,
+      "accepts": [
+        {
+          "arg": "modelName",
+          "type": "string",
+          "required": true
+        },
+        {
+          "arg": "limit",
+          "type": "number",
+          "required": false
+        },
+        {
+          "arg": "offset",
+          "type": "number",
+          "required": false
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "type": "array",
+        "root": true
+      },
+      "description": "Retrieve instances of a model by model name",
+      "http": {
+        "path": "/getModelItems",
+        "verb": "get"
+      }
+    }
+  }
 }
