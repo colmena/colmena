@@ -7,12 +7,13 @@ module.exports = function (Meta) {
    * Helper method for format the type of the properties
    */
   function formatProperties (properties) {
+    var result = {};
     for (var key in properties) {
-      var type = properties[key].type.toString().toLowerCase().substr('function '.length);
-      type = type.substr(0, type.indexOf('('));
-      properties[key].propertyType = type;
+      result[key] = {
+        type: properties[key].type.name
+      };
     }
-    return properties;
+    return result;
   }
 
 
