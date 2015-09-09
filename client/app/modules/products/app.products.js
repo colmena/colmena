@@ -1,2 +1,4 @@
-'use strict';
-angular.module('com.module.products', []);
+(function(){
+  'use strict';
+  angular.module('com.module.products', []);
+})();

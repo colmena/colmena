@@ -1,2 +1,5 @@
-'use strict';
-angular.module('com.module.pages', []);
+(function(){
+  'use strict';
+  angular.module('com.module.pages', []);
+
+})();

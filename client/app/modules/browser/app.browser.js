@@ -1,2 +1,4 @@
-'use strict';
-angular.module('com.module.browser', []);
+(function(){
+  'use strict';
+  angular.module('com.module.browser', []);
+})();

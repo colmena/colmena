@@ -1,5 +1,7 @@
-'use strict';
-angular.module('com.module.about')
+(function () {
+  'use strict';
+  angular
+    .module('com.module.about')
   /**
    * @ngdoc function
    * @name com.module.about.controller:AboutCtrl
@@ -7,6 +9,8 @@ angular.module('com.module.about')
    * # AboutCtrl
    * Controller of the clientApp
    */
-  .controller('AboutCtrl', function($scope) {
-    $scope.angular = angular;
-  });
+    .controller('AboutCtrl', function ($scope) {
+      $scope.angular = angular;
+    });
+
+})();

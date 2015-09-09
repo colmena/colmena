@@ -1,14 +1,17 @@
-'use strict';
-var app = angular.module('com.module.core');
+(function () {
+  'use strict';
+  angular
+    .module('com.module.core')
+    .service('ApiService', function ($q, $http, ENV) {
 
-app.service('ApiService', function($q, $http, ENV) {
+      this.checkConnection = function () {
+        return $q(function (resolve, reject) {
+          $http.get(ENV.apiUrl + '/settings')
+            .success(resolve)
+            .error(reject);
+        });
+      };
 
-  this.checkConnection = function() {
-    return $q(function(resolve, reject) {
-      $http.get(ENV.apiUrl + '/settings')
-        .success(resolve)
-        .error(reject);
     });
-  };
 
-});
+})();

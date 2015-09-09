@@ -1,8 +1,8 @@
-'use strict';
-var app = angular.module('com.module.notes');
-
-app.service('NotesService', ['$state', 'CoreService', 'Note', 'gettextCatalog',
-  function ($state, CoreService, Note, gettextCatalog) {
+(function () {
+  'use strict';
+  angular
+    .module('com.module.notes')
+    .service('NotesService', function ($state, CoreService, Note, gettextCatalog) {
 
     this.getNotes = function () {
       return Note.find().$promise;
@@ -55,22 +55,26 @@ app.service('NotesService', ['$state', 'CoreService', 'Note', 'gettextCatalog',
     };
 
     this.getFormFields = function () {
-      return [{
-        key: 'title',
-        type: 'input',
-        templateOptions: {
-          label: gettextCatalog.getString('Title'),
-          required: true
+      return [
+        {
+          key            : 'title',
+          type           : 'input',
+          templateOptions: {
+            label   : gettextCatalog.getString('Title'),
+            required: true
+          }
+        },
+        {
+          key            : 'body',
+          type           : 'textarea',
+          templateOptions: {
+            label   : gettextCatalog.getString('Body'),
+            required: true
+          }
         }
-      }, {
-        key: 'body',
-        type: 'textarea',
-        templateOptions: {
-          label: gettextCatalog.getString('Body'),
-          required: true
-        }
-      }];
+      ];
     };
 
-  }
-]);
+  });
+
+})();
