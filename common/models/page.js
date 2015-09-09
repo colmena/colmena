@@ -4,6 +4,13 @@ var Showdown = require('showdown');
 
 module.exports = function(Page) {
 
+  Page.createFakeData = function (faker) {
+    return Page.create({
+      name: faker.lorem.sentence(),
+      content: ' > ' + faker.lorem.paragraph()
+    });
+  };
+
   var converter = new Showdown.converter();
 
   Page.html = function(id, cb) {

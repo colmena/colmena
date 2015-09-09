@@ -10,14 +10,12 @@
     "description": {
       "type": "string"
     },
-    "start_time": {
-      "type": "date"
+    "startDate": {
+      "type": "date",
+      "required": true
     },
-    "end_time": {
+    "endDate": {
       "type": "date"
-    },
-    "timezone": {
-      "type": "String"
     },
     "location": {
       "type": "String"
@@ -27,14 +25,6 @@
     },
     "image": {
       "type": "String"
-    },
-    "tickets": {
-      "type": "String"
-    },
-    "tags": {
-      "type": [
-        "string"
-      ]
     }
   },
   "validations": [],
