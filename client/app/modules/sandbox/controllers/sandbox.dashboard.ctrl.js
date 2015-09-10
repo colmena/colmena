@@ -8,11 +8,11 @@
 
       $scope.addComponent = function (name, color, icon, quantity, href) {
         $scope.boxes.push({
-          name    : name,
-          color   : color,
-          icon    : icon,
+          name: name,
+          color: color,
+          icon: icon,
           quantity: quantity,
-          href    : href
+          href: href
         });
       };
 

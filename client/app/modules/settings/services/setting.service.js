@@ -58,18 +58,18 @@
       this.getFormFields = function () {
         var form = [
           {
-            key            : 'key',
-            type           : 'input',
+            key: 'key',
+            type: 'input',
             templateOptions: {
-              label   : gettextCatalog.getString('Value'),
+              label: gettextCatalog.getString('Value'),
               required: true
             }
           },
           {
-            key            : 'value',
-            type           : 'input',
+            key: 'value',
+            type: 'input',
             templateOptions: {
-              label   : gettextCatalog.getString('Key'),
+              label: gettextCatalog.getString('Key'),
               required: true
             }
           }

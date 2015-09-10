@@ -61,38 +61,38 @@
       this.getFormFields = function (categories) {
         var catOptions = categories.map(function (category) {
           return {
-            name : category.name,
+            name: category.name,
             value: category.id
           };
         });
         return [
           {
-            key            : 'name',
-            type           : 'input',
+            key: 'name',
+            type: 'input',
             templateOptions: {
-              label   : gettextCatalog.getString('Name'),
+              label: gettextCatalog.getString('Name'),
               required: true
             }
           },
           {
-            key            : 'categoryId',
-            type           : 'select',
+            key: 'categoryId',
+            type: 'select',
             templateOptions: {
-              label   : gettextCatalog.getString('Category'),
+              label: gettextCatalog.getString('Category'),
               required: true,
-              options : catOptions
+              options: catOptions
             }
           },
           {
-            key            : 'description',
-            type           : 'input',
+            key: 'description',
+            type: 'input',
             templateOptions: {
               label: gettextCatalog.getString('Description')
             }
           },
           {
-            key            : 'price',
-            type           : 'input',
+            key: 'price',
+            type: 'input',
             templateOptions: {
               label: gettextCatalog.getString('Price')
             }

@@ -11,7 +11,7 @@
         login: function (data, cb) {
           LoopBackAuth.currentUserId = LoopBackAuth.accessTokenId = null;
           $http.post('/api/users/login?include=user', {
-            email   : data.email,
+            email: data.email,
             password: data.password
           })
             .then(function (response) {
@@ -63,7 +63,7 @@
                 }
                 LoopBackAuth.save();
                 self.currentUser = response.data;
-                var profile      = self.currentUser && self.currentUser.profiles &&
+                var profile = self.currentUser && self.currentUser.profiles &&
                   self.currentUser.profiles.length && self.currentUser.profiles[
                     0];
                 if (profile) {

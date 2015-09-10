@@ -54,40 +54,40 @@
     .run(function ($rootScope, $cookies, gettextCatalog) {
 
       $rootScope.locales = {
-        'de'   : {
-          lang   : 'de',
+        'de': {
+          lang: 'de',
           country: 'DE',
-          name   : gettextCatalog.getString('German')
+          name: gettextCatalog.getString('German')
         },
-        'en'   : {
-          lang   : 'en',
+        'en': {
+          lang: 'en',
           country: 'US',
-          name   : gettextCatalog.getString('English')
+          name: gettextCatalog.getString('English')
         },
         'es_MX': {
-          lang   : 'es_MX',
+          lang: 'es_MX',
           country: 'MX',
-          name   : gettextCatalog.getString('Spanish')
+          name: gettextCatalog.getString('Spanish')
         },
-        'fr'   : {
-          lang   : 'fr',
+        'fr': {
+          lang: 'fr',
           country: 'FR',
-          name   : gettextCatalog.getString('Français')
+          name: gettextCatalog.getString('Français')
         },
-        'nl'   : {
-          lang   : 'nl',
+        'nl': {
+          lang: 'nl',
           country: 'NL',
-          name   : gettextCatalog.getString('Dutch')
+          name: gettextCatalog.getString('Dutch')
         },
         'pt-BR': {
-          lang   : 'pt_BR',
+          lang: 'pt_BR',
           country: 'BR',
-          name   : gettextCatalog.getString('Portuguese Brazil')
+          name: gettextCatalog.getString('Portuguese Brazil')
         },
         'ru_RU': {
-          lang   : 'ru_RU',
+          lang: 'ru_RU',
           country: 'RU',
-          name   : gettextCatalog.getString('Russian')
+          name: gettextCatalog.getString('Russian')
         }
       };
 
@@ -111,7 +111,7 @@
        */
       var ngModelAttrs = {};
 
-      function camelize(string) {
+      function camelize (string) {
         string = string.replace(/[\-_\s]+(.)?/g, function (match, chr) {
           return chr ? chr.toUpperCase() : '';
         });
@@ -146,14 +146,14 @@
       });
 
       formlyConfig.setType({
-        name          : 'timepicker',
-        template      : '<timepicker ng-model="model[options.key]"></timepicker>',
-        wrapper       : [
+        name: 'timepicker',
+        template: '<timepicker ng-model="model[options.key]"></timepicker>',
+        wrapper: [
           'bootstrapLabel',
           'bootstrapHasError'
         ],
         defaultOptions: {
-          ngModelAttrs   : ngModelAttrs,
+          ngModelAttrs: ngModelAttrs,
           templateOptions: {
             timepickerOptions: {}
           }
@@ -161,14 +161,14 @@
       });
 
       formlyConfig.setType({
-        name          : 'datepicker',
-        template      : '<datepicker ng-model="model[options.key]" ></datepicker>',
-        wrapper       : [
+        name: 'datepicker',
+        template: '<datepicker ng-model="model[options.key]" ></datepicker>',
+        wrapper: [
           'bootstrapLabel',
           'bootstrapHasError'
         ],
         defaultOptions: {
-          ngModelAttrs   : ngModelAttrs,
+          ngModelAttrs: ngModelAttrs,
           templateOptions: {
             datepickerOptions: {}
           }

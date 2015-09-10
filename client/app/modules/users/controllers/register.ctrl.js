@@ -15,103 +15,93 @@
 
       $scope.registration = {
         firstName: '',
-        lastName : '',
-        email    : '',
-        password : ''
+        lastName: '',
+        email: '',
+        password: ''
       };
 
-      $scope.schema = [
-        {
-          label      : '',
-          property   : 'firstName',
-          placeholder: gettextCatalog.getString('First Name'),
-          type       : 'text',
-          attr       : {
-            ngMinlength: 4,
-            required   : true
-          },
-          msgs       : {
-            minlength: gettextCatalog.getString(
-              'Needs to have at least 4 characters')
-          }
+      $scope.schema = [{
+        label: '',
+        property: 'firstName',
+        placeholder: gettextCatalog.getString('First Name'),
+        type: 'text',
+        attr: {
+          ngMinlength: 4,
+          required: true
         },
-        {
-          label      : '',
-          property   : 'lastName',
-          placeholder: gettextCatalog.getString('Last Name'),
-          type       : 'text',
-          attr       : {
-            ngMinlength: 4,
-            required   : true
-          },
-          msgs       : {
-            minlength: gettextCatalog.getString(
-              'Needs to have at least 4 characters')
-          }
-        },
-        {
-          label      : '',
-          property   : 'email',
-          placeholder: gettextCatalog.getString('Email'),
-          type       : 'email',
-          help       : gettextCatalog.getString(
-            'Don\'t worry we won\'t spam your inbox'),
-          attr       : {
-            required   : true,
-            ngMinlength: 4
-          },
-          msgs       : {
-            required: gettextCatalog.getString('You need an email address'),
-            email   : gettextCatalog.getString('Email address needs to be valid'),
-            valid   : gettextCatalog.getString('Nice email address!')
-          }
-        },
-
-        {
-          type   : 'multiple',
-          fields : [
-            {
-              label      : '',
-              property   : 'password',
-              placeholder: gettextCatalog.getString('Password'),
-              type       : 'password',
-              attr       : {
-                required   : true,
-                ngMinlength: 6
-              }
-            },
-            {
-              label      : '',
-              property   : 'confirmPassword',
-              placeholder: gettextCatalog.getString('Confirm Password'),
-              type       : 'password',
-              attr       : {
-                confirmPassword: 'user.password',
-                required       : true,
-                ngMinlength    : 6
-              },
-              msgs       : {
-                match: gettextCatalog.getString(
-                  'Your passwords need to match')
-              }
-            }
-          ],
-          columns: 6
+        msgs: {
+          minlength: gettextCatalog.getString(
+            'Needs to have at least 4 characters')
         }
-      ];
+      }, {
+        label: '',
+        property: 'lastName',
+        placeholder: gettextCatalog.getString('Last Name'),
+        type: 'text',
+        attr: {
+          ngMinlength: 4,
+          required: true
+        },
+        msgs: {
+          minlength: gettextCatalog.getString(
+            'Needs to have at least 4 characters')
+        }
+      }, {
+        label: '',
+        property: 'email',
+        placeholder: gettextCatalog.getString('Email'),
+        type: 'email',
+        help: gettextCatalog.getString(
+          'Don\'t worry we won\'t spam your inbox'),
+        attr: {
+          required: true,
+          ngMinlength: 4
+        },
+        msgs: {
+          required: gettextCatalog.getString('You need an email address'),
+          email: gettextCatalog.getString('Email address needs to be valid'),
+          valid: gettextCatalog.getString('Nice email address!')
+        }
+      }, {
+        type: 'multiple',
+        fields: [{
+          label: '',
+          property: 'password',
+          placeholder: gettextCatalog.getString('Password'),
+          type: 'password',
+          attr: {
+            required: true,
+            ngMinlength: 6
+          }
+        }, {
+          label: '',
+          property: 'confirmPassword',
+          placeholder: gettextCatalog.getString('Confirm Password'),
+          type: 'password',
+          attr: {
+            confirmPassword: 'user.password',
+            required: true,
+            ngMinlength: 6
+          },
+          msgs: {
+            match: gettextCatalog.getString(
+              'Your passwords need to match')
+          }
+        }],
+        columns: 6
+      }];
 
       $scope.options = {
         validation: {
-          enabled     : true,
+          enabled: true,
           showMessages: false
         },
-        layout    : {
-          type     : 'basic',
+        layout: {
+          type: 'basic',
           labelSize: 3,
           inputSize: 9
         }
       };
-
 
       $scope.confirmPassword = '';
 
@@ -119,11 +109,11 @@
 
         $scope.registration.username = $scope.registration.email;
         delete $scope.registration.confirmPassword;
-        $scope.user                  = User.save($scope.registration,
+        $scope.user = User.save($scope.registration,
           function () {
 
             $scope.loginResult = User.login({
-                include   : 'user',
+                include: 'user',
                 rememberMe: true
               }, $scope.registration,
               function () {
@@ -149,14 +139,13 @@
           }
         );
       };
-
     })
     .directive('confirmPassword',
     function () {
       return {
         restrict: 'A',
-        require : 'ngModel',
-        link    : function (scope, element, attrs, ngModel) {
+        require: 'ngModel',
+        link: function (scope, element, attrs, ngModel) {
           var validate = function (viewValue) {
             var password = scope.$eval(attrs.confirmPassword);
             ngModel.$setValidity('match', ngModel.$isEmpty(viewValue) ||

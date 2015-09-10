@@ -1,13 +1,11 @@
-
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
-        <div class="row">
+      <div class="row">
+        <small-box title="{{ box.name }}" color="{{ box.color }}" icon="{{ box.icon }}"
+                   quantity="{{ box.quantity }}" href="{{ box.href }}" ng-repeat="box in boxes"></small-box>
 
-          <small-box title="{{ box.name }}" color="{{ box.color }}" icon="{{ box.icon }}"
-                     quantity="{{ box.quantity }}" href="{{ box.href }}" ng-repeat="box in boxes"></small-box>
-
-        </div>
+      </div>
     </div>
   </div>
 

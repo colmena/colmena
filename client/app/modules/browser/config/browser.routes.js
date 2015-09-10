@@ -5,20 +5,21 @@
     .config(function ($stateProvider) {
       $stateProvider
         .state('app.browser', {
-          abstract   : true,
-          url        : '/browser',
+          abstract: true,
+          url: '/browser',
           templateUrl: 'modules/browser/views/main.html'
-        }).state('app.browser.models', {
-          url         : '',
-          templateUrl : 'modules/browser/views/models.html',
+        })
+        .state('app.browser.models', {
+          url: '',
+          templateUrl: 'modules/browser/views/models.html',
           controllerAs: 'ctrl',
-          controller  : [
+          controller: [
             'models',
             function (models) {
               this.models = models;
             }
           ],
-          resolve     : {
+          resolve: {
             models: [
               'MetaService',
               function (MetaService) {
@@ -28,16 +29,16 @@
           }
         })
         .state('app.browser.models.info', {
-          url         : '/:modelName/info',
-          templateUrl : 'modules/browser/views/models.info.html',
+          url: '/:modelName/info',
+          templateUrl: 'modules/browser/views/models.info.html',
           controllerAs: 'info',
-          controller  : [
+          controller: [
             'model',
             function (model) {
               this.model = model;
             }
           ],
-          resolve     : {
+          resolve: {
             model: [
               '$stateParams',
               'MetaService',
@@ -48,22 +49,22 @@
           }
         })
         .state('app.browser.models.items', {
-          url         : '/:modelName',
-          templateUrl : 'modules/browser/views/models.items.html',
+          url: '/:modelName',
+          templateUrl: 'modules/browser/views/models.items.html',
           controllerAs: 'items',
-          controller  : [
+          controller: [
             'model',
             'items',
             function (model, items) {
-              this.model    = model;
-              this.items    = items;
+              this.model = model;
+              this.items = items;
               this.itemKeys = [];
               if (this.items[0] !== undefined) {
                 this.itemKeys = Object.keys(this.items[0]);
               }
             }
           ],
-          resolve     : {
+          resolve: {
             model: [
               '$stateParams',
               'MetaService',
@@ -81,17 +82,17 @@
           }
         })
         .state('app.browser.models.items.view', {
-          url         : '/:modelId/view',
-          templateUrl : 'modules/browser/views/models.items.view.html',
+          url: '/:modelId/view',
+          templateUrl: 'modules/browser/views/models.items.view.html',
           controllerAs: 'view',
-          controller  : [
+          controller: [
             'item',
             function (item) {
-              this.item     = item;
+              this.item = item;
               this.itemKeys = Object.keys(this.item);
             }
           ],
-          resolve     : {
+          resolve: {
             item: [
               '$stateParams',
               'MetaService',
@@ -102,27 +103,27 @@
           }
         })
         .state('app.browser.models.items.edit', {
-          url         : '/:modelId/edit',
-          templateUrl : 'modules/browser/views/models.items.edit.html',
+          url: '/:modelId/edit',
+          templateUrl: 'modules/browser/views/models.items.edit.html',
           controllerAs: 'edit',
-          controller  : [
+          controller: [
             '$state',
             'MetaService',
             'model',
             'item',
             'itemFields',
             function ($state, MetaService, model, item, itemFields) {
-              this.item       = item;
+              this.item = item;
               this.itemFields = itemFields;
-              this.submit     = function () {
+              this.submit = function () {
                 MetaService.upsert(model.name, this.item).then(function () {
                   $state.go('app.browser.models.items', {modelName: model.name}, {reload: true});
                 });
               };
             }
           ],
-          resolve     : {
-            item      : [
+          resolve: {
+            item: [
               '$stateParams',
               'MetaService',
               function ($stateParams, MetaService) {
@@ -140,25 +141,25 @@
           }
         })
         .state('app.browser.models.items.add', {
-          url         : '/add',
-          templateUrl : 'modules/browser/views/models.items.add.html',
+          url: '/add',
+          templateUrl: 'modules/browser/views/models.items.add.html',
           controllerAs: 'add',
-          controller  : [
+          controller: [
             '$state',
             'MetaService',
             'model',
             'itemFields',
             function ($state, MetaService, model, itemFields) {
-              this.item       = {};
+              this.item = {};
               this.itemFields = itemFields;
-              this.submit     = function () {
+              this.submit = function () {
                 MetaService.upsert(model.name, this.item).then(function () {
                   $state.go('app.browser.models.items', {modelName: model.name}, {reload: true});
                 });
               };
             }
           ],
-          resolve     : {
+          resolve: {
             itemFields: [
               '$stateParams',
               'MetaService',
@@ -170,8 +171,8 @@
           }
         })
         .state('app.browser.models.items.delete', {
-          url       : '/:modelId/delete',
-          template  : '',
+          url: '/:modelId/delete',
+          template: '',
           controller: [
             '$state',
             '$stateParams',

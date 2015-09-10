@@ -1,8 +1,8 @@
-(function(){
+(function () {
   'use strict';
   angular
     .module('com.module.sandbox')
-    .controller('SandboxCtrl', function($scope) {
+    .controller('SandboxCtrl', function ($scope) {
       $scope.items = [{
         name: 'CoreService',
         sref: '.coreservice'

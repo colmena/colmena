@@ -14,7 +14,8 @@
           <div class="row">
 
             <small-box name="{{ box.name }}" color="{{ box.color }}" icon="{{ box.icon }}"
-                       quantity="{{ box.quantity }}" href="{{ box.href }}" ng-repeat="box in boxes | orderBy:['-quantity', 'name']"></small-box>
+                       quantity="{{ box.quantity }}" href="{{ box.href }}"
+                       ng-repeat="box in boxes | orderBy:['-quantity', 'name']"></small-box>
 
           </div>
         </tab>

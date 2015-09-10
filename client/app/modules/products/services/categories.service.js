@@ -7,7 +7,7 @@
       this.getCategories = function () {
         return Category.find({
           filter: {
-            order  : 'created DESC',
+            order: 'created DESC',
             include: [
               'products'
             ]
@@ -66,10 +66,10 @@
       this.getFormFields = function () {
         return [
           {
-            key            : 'name',
-            type           : 'input',
+            key: 'name',
+            type: 'input',
             templateOptions: {
-              label   : gettextCatalog.getString('Name'),
+              label: gettextCatalog.getString('Name'),
               required: true
             }
           }

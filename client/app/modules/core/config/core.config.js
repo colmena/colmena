@@ -32,11 +32,11 @@
       // Add Dashboard Box
       $rootScope.addDashboardBox = function (name, color, icon, quantity, href) {
         $rootScope.dashboardBox.push({
-          name    : name,
-          color   : color,
-          icon    : icon,
+          name: name,
+          color: color,
+          icon: icon,
           quantity: quantity,
-          href    : href
+          href: href
         });
       };
 
@@ -56,7 +56,7 @@
             data[0].$save();
           } else {
             Setting.create({
-              key  : key,
+              key: key,
               value: value
             }, function (data) {
               console.log(data);

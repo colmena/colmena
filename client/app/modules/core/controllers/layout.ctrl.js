@@ -18,15 +18,15 @@
         isopen: false
       };
 
-      $scope.locales      = $rootScope.locales;
+      $scope.locales = $rootScope.locales;
       $scope.selectLocale = $rootScope.locale;
 
       $scope.setLocale = function (locale) {
         // set the current lang
-        $scope.locale       = $scope.locales[locale];
+        $scope.locale = $scope.locales[locale];
         $scope.selectLocale = $scope.locale;
-        $rootScope.locale   = $scope.locale;
-        $cookies.lang       = $scope.locale.lang;
+        $rootScope.locale = $scope.locale;
+        $cookies.lang = $scope.locale.lang;
 
         // You can change the language during runtime
         $scope.locale.isopen = !$scope.locale.isopen;
@@ -34,27 +34,27 @@
         gettextCatalog.setCurrentLanguage($scope.locale.lang);
       };
 
-      $scope.appName    = 'LB-NG-BS';
-      $scope.apiUrl     = CoreService.env.apiUrl;
-      $scope.appTheme   = 'skin-blue';
-      $scope.appThemes  = [
+      $scope.appName = 'LoopBack Admin';
+      $scope.apiUrl = CoreService.env.apiUrl;
+      $scope.appTheme = 'skin-blue';
+      $scope.appThemes = [
         {
-          'name' : 'Black',
+          'name': 'Black',
           'class': 'skin-black'
         },
         {
-          'name' : 'Blue',
+          'name': 'Blue',
           'class': 'skin-blue'
         }
       ];
-      $scope.appLayout  = '';
+      $scope.appLayout = '';
       $scope.appLayouts = [
         {
-          'name' : 'Fixed',
+          'name': 'Fixed',
           'class': 'fixed'
         },
         {
-          'name' : 'Scrolling',
+          'name': 'Scrolling',
           'class': 'not-fixed'
         }
       ];

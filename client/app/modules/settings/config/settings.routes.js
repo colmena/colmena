@@ -1,84 +1,85 @@
 (function () {
   'use strict';
-
   angular
     .module('com.module.settings')
     .config(function ($stateProvider) {
-      $stateProvider.state('app.settings', {
-        abstract   : true,
-        url        : '/settings',
-        templateUrl: 'modules/settings/views/main.html'
-      }).state('app.settings.list', {
-        url         : '',
-        templateUrl : 'modules/settings/views/list.html',
-        controllerAs: 'ctrl',
-        controller  : function (settings) {
-          this.settings = settings;
-        },
-        resolve     : {
-          settings: function (SettingService) {
-            return SettingService.find();
-          }
-        }
-      })
-        .state('app.settings.add', {
-          url         : '/add',
-          templateUrl : 'modules/settings/views/form.html',
+      $stateProvider
+        .state('app.settings', {
+          abstract: true,
+          url: '/settings',
+          templateUrl: 'modules/settings/views/main.html'
+        })
+        .state('app.settings.list', {
+          url: '',
+          templateUrl: 'modules/settings/views/list.html',
           controllerAs: 'ctrl',
-          controller  : function ($state, SettingService, setting) {
-            this.setting     = setting;
-            this.formFields  = SettingService.getFormFields();
+          controller: function (settings) {
+            this.settings = settings;
+          },
+          resolve: {
+            settings: function (SettingService) {
+              return SettingService.find();
+            }
+          }
+        })
+        .state('app.settings.add', {
+          url: '/add',
+          templateUrl: 'modules/settings/views/form.html',
+          controllerAs: 'ctrl',
+          controller: function ($state, SettingService, setting) {
+            this.setting = setting;
+            this.formFields = SettingService.getFormFields();
             this.formOptions = {};
-            this.submit      = function () {
+            this.submit = function () {
               SettingService.upsert(this.setting).then(function () {
                 $state.go('^.list');
               });
             };
           },
-          resolve     : {
+          resolve: {
             setting: function () {
               return {};
             }
           }
         })
         .state('app.settings.edit', {
-          url         : '/:id/edit',
-          templateUrl : 'modules/settings/views/form.html',
+          url: '/:id/edit',
+          templateUrl: 'modules/settings/views/form.html',
           controllerAs: 'ctrl',
-          controller  : function ($state, SettingService, setting) {
-            this.setting     = setting;
-            this.formFields  = SettingService.getFormFields();
+          controller: function ($state, SettingService, setting) {
+            this.setting = setting;
+            this.formFields = SettingService.getFormFields();
             this.formOptions = {};
-            this.submit      = function () {
+            this.submit = function () {
               SettingService.upsert(this.setting).then(function () {
                 $state.go('^.list');
               });
             };
           },
-          resolve     : {
+          resolve: {
             setting: function ($stateParams, SettingService) {
               return SettingService.findById($stateParams.id);
             }
           }
         })
         .state('app.settings.view', {
-          url         : '/:id',
-          templateUrl : 'modules/settings/views/view.html',
+          url: '/:id',
+          templateUrl: 'modules/settings/views/view.html',
           controllerAs: 'ctrl',
-          controller  : function (setting) {
+          controller: function (setting) {
             this.setting = setting;
           },
-          resolve     : {
+          resolve: {
             setting: function ($stateParams, SettingService) {
               return SettingService.findById($stateParams.id);
             }
           }
         })
         .state('app.settings.delete', {
-          url         : '/:id/delete',
-          template    : '',
+          url: '/:id/delete',
+          template: '',
           controllerAs: 'ctrl',
-          controller  : function ($stateParams, $state, SettingService) {
+          controller: function ($stateParams, $state, SettingService) {
             SettingService.delete($stateParams.id, function () {
               $state.go('^.list');
             }, function () {

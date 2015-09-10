@@ -4,41 +4,41 @@
     .module('com.module.sandbox')
     .controller('SandboxTreesCtrl', function ($scope, $timeout) {
       var appleSelected, tree, treedataAvm, treedataGeography;
-      $scope.myTreeHandler          = function (branch) {
+      $scope.myTreeHandler = function (branch) {
         var _ref;
         $scope.output = 'You selected: ' + branch.label;
         if ((_ref = branch.data) !== null ? _ref.description : void 0) {
           return $scope.output += '(' + branch.data.description + ')';
         }
       };
-      appleSelected                 = function (branch) {
+      appleSelected = function (branch) {
         $scope.output = 'APPLE! : ' + branch.label;
         return $scope.output;
       };
-      treedataAvm                   = [
+      treedataAvm = [
         {
-          label   : 'Animal',
+          label: 'Animal',
           children: [
             {
               label: 'Dog',
-              data : {
+              data: {
                 description: 'man\'s best friend'
               }
             },
             {
               label: 'Cat',
-              data : {
+              data: {
                 description: 'Felis catus'
               }
             },
             {
               label: 'Hippopotamus',
-              data : {
+              data: {
                 description: 'hungry, hungry'
               }
             },
             {
-              label   : 'Chicken',
+              label: 'Chicken',
               children: [
                 'White Leghorn',
                 'Rhode Island Red',
@@ -48,9 +48,9 @@
           ]
         },
         {
-          label   : 'Vegetable',
-          data    : {
-            definition            : 'A plant or part of a plant used as food, typically as accompaniment to meat or fish, such as a cabbage, potato, carrot, or bean.',
+          label: 'Vegetable',
+          data: {
+            definition: 'A plant or part of a plant used as food, typically as accompaniment to meat or fish, such as a cabbage, potato, carrot, or bean.',
             dataCanContainAnything: true
           },
           onSelect: function (branch) {
@@ -62,18 +62,18 @@
               label: 'Oranges'
             },
             {
-              label   : 'Apples',
+              label: 'Apples',
               children: [
                 {
-                  label   : 'Granny Smith',
+                  label: 'Granny Smith',
                   onSelect: appleSelected
                 },
                 {
-                  label   : 'Red Delicous',
+                  label: 'Red Delicous',
                   onSelect: appleSelected
                 },
                 {
-                  label   : 'Fuji',
+                  label: 'Fuji',
                   onSelect: appleSelected
                 }
               ]
@@ -81,10 +81,10 @@
           ]
         },
         {
-          label   : 'Mineral',
+          label: 'Mineral',
           children: [
             {
-              label   : 'Rock',
+              label: 'Rock',
               children: [
                 'Igneous',
                 'Sedimentary',
@@ -92,7 +92,7 @@
               ]
             },
             {
-              label   : 'Metal',
+              label: 'Metal',
               children: [
                 'Aluminum',
                 'Steel',
@@ -100,10 +100,10 @@
               ]
             },
             {
-              label   : 'Plastic',
+              label: 'Plastic',
               children: [
                 {
-                  label   : 'Thermoplastic',
+                  label: 'Thermoplastic',
                   children: [
                     'polyethylene',
                     'polypropylene',
@@ -112,7 +112,7 @@
                   ]
                 },
                 {
-                  label   : 'Thermosetting Polymer',
+                  label: 'Thermosetting Polymer',
                   children: [
                     'polyester',
                     'polyurethane',
@@ -126,26 +126,26 @@
           ]
         }
       ];
-      treedataGeography             = [
+      treedataGeography = [
         {
-          label   : 'North America',
+          label: 'North America',
           children: [
             {
-              label   : 'Canada',
+              label: 'Canada',
               children: [
                 'Toronto',
                 'Vancouver'
               ]
             },
             {
-              label   : 'USA',
+              label: 'USA',
               children: [
                 'New York',
                 'Los Angeles'
               ]
             },
             {
-              label   : 'Mexico',
+              label: 'Mexico',
               children: [
                 'Mexico City',
                 'Guadalajara'
@@ -154,24 +154,24 @@
           ]
         },
         {
-          label   : 'South America',
+          label: 'South America',
           children: [
             {
-              label   : 'Venezuela',
+              label: 'Venezuela',
               children: [
                 'Caracas',
                 'Maracaibo'
               ]
             },
             {
-              label   : 'Brazil',
+              label: 'Brazil',
               children: [
                 'Sao Paulo',
                 'Rio de Janeiro'
               ]
             },
             {
-              label   : 'Argentina',
+              label: 'Argentina',
               children: [
                 'Buenos Aires',
                 'Cordoba'
@@ -180,7 +180,7 @@
           ]
         }
       ];
-      $scope.myTreeData             = treedataAvm;
+      $scope.myTreeData = treedataAvm;
       $scope.tryChangingTheTreeData = function () {
         if ($scope.myTreeData === treedataAvm) {
           $scope.myTreeData = treedataGeography;
@@ -190,8 +190,8 @@
           return $scope.myTreeData;
         }
       };
-      $scope.myTree                 = tree = {};
-      $scope.tryAsyncLoad     = function () {
+      $scope.myTree = tree = {};
+      $scope.tryAsyncLoad = function () {
         $scope.myTreeData = [];
         $scope.doingAsync = true;
         return $timeout(function () {
@@ -209,9 +209,9 @@
         b = tree.getSelectedBranch();
         return tree.addBranch(b, {
           label: 'New Branch',
-          data : {
+          data: {
             something: 42,
-            'else'   : 43
+            'else': 43
           }
         });
       };

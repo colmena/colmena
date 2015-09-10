@@ -16,54 +16,54 @@
       var TWO_WEEKS = 1000 * 60 * 60 * 24 * 7 * 2;
 
       $scope.credentials = {
-        ttl       : TWO_WEEKS,
+        ttl: TWO_WEEKS,
         rememberMe: true
       };
 
       if (CoreService.env.name === 'development') {
-        $scope.credentials.email    = 'admin@admin.com';
+        $scope.credentials.email = 'admin@admin.com';
         $scope.credentials.password = 'admin';
       }
 
       $scope.schema = [
         {
-          label      : '',
-          property   : 'email',
+          label: '',
+          property: 'email',
           placeholder: gettextCatalog.getString('Email'),
-          type       : 'email',
-          attr       : {
-            required   : true,
+          type: 'email',
+          attr: {
+            required: true,
             ngMinlength: 4
           },
-          msgs       : {
+          msgs: {
             required: gettextCatalog.getString('You need an email address'),
-            email   : gettextCatalog.getString('Email address needs to be valid'),
-            valid   : gettextCatalog.getString('Nice email address!')
+            email: gettextCatalog.getString('Email address needs to be valid'),
+            valid: gettextCatalog.getString('Nice email address!')
           }
         },
         {
-          label      : '',
-          property   : 'password',
+          label: '',
+          property: 'password',
           placeholder: gettextCatalog.getString('Password'),
-          type       : 'password',
-          attr       : {
+          type: 'password',
+          attr: {
             required: true
           }
         },
         {
           property: 'rememberMe',
-          label   : gettextCatalog.getString('Stay signed in'),
-          type    : 'checkbox'
+          label: gettextCatalog.getString('Stay signed in'),
+          type: 'checkbox'
         }
       ];
 
       $scope.options = {
         validation: {
-          enabled     : true,
+          enabled: true,
           showMessages: false
         },
-        layout    : {
-          type     : 'basic',
+        layout: {
+          type: 'basic',
           labelSize: 3,
           inputSize: 9
         }
@@ -85,7 +85,7 @@
 
 
         $scope.loginResult = User.login({
-            include   : 'user',
+            include: 'user',
             rememberMe: $scope.credentials.rememberMe
           }, $scope.credentials,
           function (user) {
@@ -95,9 +95,9 @@
             console.log(user.created); // => 2013-12-20T21:10:20.377Z
             console.log(user.userId); // => 1
 
-            var next                 = $location.nextAfterLogin || '/';
+            var next = $location.nextAfterLogin || '/';
             $location.nextAfterLogin = null;
-            AppAuth.currentUser      = $scope.loginResult.user;
+            AppAuth.currentUser = $scope.loginResult.user;
             CoreService.toastSuccess(gettextCatalog.getString('Logged in'),
               gettextCatalog.getString('You are logged in!'));
             if (next === '/login') {
@@ -110,9 +110,7 @@
             $scope.loginError = res.data.error;
           });
 
-
       };
-
 
     });
 

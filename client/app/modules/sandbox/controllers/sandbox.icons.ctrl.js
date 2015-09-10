@@ -9,7 +9,7 @@
       $scope.iconSets = {
         fontAwesome: {
           baseClass: 'fa fa-fw fa-3x',
-          icons    : [
+          icons: [
             'fa-adjust',
             'fa-adn',
             'fa-align-center',
@@ -605,9 +605,9 @@
             'fa-youtube-square'
           ]
         },
-        ionicons   : {
+        ionicons: {
           baseClass: 'icon fa-fw fa-3x',
-          icons    : [
+          icons: [
             'ion-alert',
             'ion-alert-circled',
             'ion-android-add',

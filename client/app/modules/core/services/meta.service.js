@@ -52,19 +52,19 @@
         return result;
       };
 
-      function getModelField(propertyName, property) {
+      function getModelField (propertyName, property) {
         return {
-          key            : propertyName,
-          type           : getModelFieldType(property),
+          key: propertyName,
+          type: getModelFieldType(property),
           templateOptions: {
-            label      : propertyName,
-            required   : property.required !== undefined ? property.required : false,
+            label: propertyName,
+            required: property.required !== undefined ? property.required : false,
             description: property.description !== undefined ? property.description : false
           }
         };
       }
 
-      function getModelFieldType(property) {
+      function getModelFieldType (property) {
         var result = 'input';
         if (property.meta !== undefined && property.meta.formType !== undefined) {
           result = property.meta.formType;

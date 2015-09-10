@@ -1,6 +1,5 @@
 (function () {
   'use strict';
-
   /**
    * @ngdoc directive
    * @name com.module.core.directive:register
@@ -12,7 +11,7 @@
     .directive('register', function () {
       return {
         templateUrl: 'modules/users/views/register.html',
-        restrict   : 'E'
+        restrict: 'E'
       };
     });
 

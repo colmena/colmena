@@ -60,24 +60,24 @@
       this.getFormFields = function () {
         return [
           {
-            key            : 'title',
-            type           : 'input',
+            key: 'title',
+            type: 'input',
             templateOptions: {
-              label   : gettextCatalog.getString('Title'),
+              label: gettextCatalog.getString('Title'),
               required: true
             }
           },
           {
-            key            : 'content',
-            type           : 'textarea',
+            key: 'content',
+            type: 'textarea',
             templateOptions: {
-              label   : gettextCatalog.getString('Content'),
+              label: gettextCatalog.getString('Content'),
               required: true
             }
           },
           {
-            key            : 'image',
-            type           : 'input',
+            key: 'image',
+            type: 'input',
             templateOptions: {
               label: gettextCatalog.getString('Image')
             }

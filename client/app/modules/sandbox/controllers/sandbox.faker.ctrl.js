@@ -16,11 +16,11 @@
         $scope.faker = [];
         for (var i = 0; i < $scope.records; i++) {
           var fake = {
-            email    : FakeService.faker.internet.email(),
-            userName : FakeService.faker.internet.userName(),
+            email: FakeService.faker.internet.email(),
+            userName: FakeService.faker.internet.userName(),
             firstName: FakeService.faker.name.firstName(),
-            lastName : FakeService.faker.name.lastName(),
-            password : FakeService.faker.internet.password()
+            lastName: FakeService.faker.name.lastName(),
+            password: FakeService.faker.internet.password()
           };
           $scope.faker.push(fake);
           User.create(fake);
@@ -32,9 +32,9 @@
         $scope.faker = [];
         for (var i = 1; i <= $scope.records; i++) {
           var fake = {
-            title  : FakeService.faker.lorem.sentence(),
+            title: FakeService.faker.lorem.sentence(),
             content: FakeService.faker.lorem.paragraph(),
-            image  : FakeService.faker.image.imageUrl()
+            image: FakeService.faker.image.imageUrl()
           };
           $scope.faker.push(fake);
           Post.create(fake);
@@ -46,7 +46,7 @@
         $scope.faker = [];
         for (var i = 1; i <= $scope.records; i++) {
           var fake = {
-            name   : FakeService.faker.lorem.sentence(),
+            name: FakeService.faker.lorem.sentence(),
             content: FakeService.faker.lorem.paragraph()
           };
           $scope.faker.push(fake);
@@ -60,7 +60,7 @@
         for (var i = 1; i <= $scope.records; i++) {
           var fake = {
             title: FakeService.faker.lorem.sentence(),
-            body : FakeService.faker.lorem.paragraph()
+            body: FakeService.faker.lorem.paragraph()
           };
           $scope.faker.push(fake);
           Note.create(fake);
@@ -72,10 +72,10 @@
         $scope.faker = [];
         for (var i = 0; i < $scope.records; i++) {
           var fake = {
-            name       : FakeService.faker.lorem.sentence(),
+            name: FakeService.faker.lorem.sentence(),
             description: FakeService.faker.lorem.paragraph(),
-            startDate  : FakeService.faker.date.future(),
-            endDate    : FakeService.faker.date.future()
+            startDate: FakeService.faker.date.future(),
+            endDate: FakeService.faker.date.future()
           };
           $scope.faker.push(fake);
           Event.create(fake);

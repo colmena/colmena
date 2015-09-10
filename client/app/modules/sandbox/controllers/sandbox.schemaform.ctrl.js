@@ -6,24 +6,24 @@
       this.model = {};
 
       this.schema = {
-        type      : 'object',
-        title     : 'Comment',
+        type: 'object',
+        title: 'Comment',
         properties: {
-          name   : {
+          name: {
             title: 'Name',
-            type : 'string'
+            type: 'string'
           },
-          email  : {
-            title  : 'Email',
-            type   : 'string',
+          email: {
+            title: 'Email',
+            type: 'string',
             pattern: '^\\S+@\\S+$'
           },
           comment: {
             title: 'Comment',
-            type : 'string'
+            type: 'string'
           }
         },
-        required  : [
+        required: [
           'name',
           'email',
           'comment'
@@ -35,12 +35,12 @@
         'name',
         'email',
         {
-          key        : 'comment',
-          type       : 'textarea',
+          key: 'comment',
+          type: 'textarea',
           placeholder: 'Make a comment'
         },
         {
-          type : 'submit',
+          type: 'submit',
           title: 'OK'
         }
       ];

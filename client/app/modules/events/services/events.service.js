@@ -57,47 +57,47 @@
       this.getFormFields = function () {
         return [
           {
-            key            : 'name',
-            type           : 'input',
+            key: 'name',
+            type: 'input',
             templateOptions: {
-              label   : gettextCatalog.getString('Name'),
+              label: gettextCatalog.getString('Name'),
               required: true
             }
           },
           {
-            key            : 'description',
-            type           : 'textarea',
+            key: 'description',
+            type: 'textarea',
             templateOptions: {
-              label   : gettextCatalog.getString('Description'),
+              label: gettextCatalog.getString('Description'),
               required: true
             }
           },
           {
-            key            : 'startDate',
-            type           : 'datepicker',
+            key: 'startDate',
+            type: 'datepicker',
             templateOptions: {
-              label   : gettextCatalog.getString('Start Date'),
+              label: gettextCatalog.getString('Start Date'),
               required: true
             }
           },
           {
-            key            : 'startDate',
-            type           : 'timepicker',
+            key: 'startDate',
+            type: 'timepicker',
             templateOptions: {
               label: gettextCatalog.getString('Start Time')
             }
           },
           {
-            key            : 'endDate',
-            type           : 'datepicker',
+            key: 'endDate',
+            type: 'datepicker',
             templateOptions: {
-              label   : gettextCatalog.getString('End Date'),
+              label: gettextCatalog.getString('End Date'),
               required: true
             }
           },
           {
-            key            : 'endDate',
-            type           : 'timepicker',
+            key: 'endDate',
+            type: 'timepicker',
             templateOptions: {
               label: gettextCatalog.getString('End Time')
             }

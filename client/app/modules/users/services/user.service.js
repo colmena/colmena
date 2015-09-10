@@ -58,44 +58,44 @@
       this.getFormFields = function (formType) {
         var form = [
           {
-            key            : 'username',
-            type           : 'input',
+            key: 'username',
+            type: 'input',
             templateOptions: {
-              label   : gettextCatalog.getString('Username'),
+              label: gettextCatalog.getString('Username'),
               required: true
             }
           },
           {
-            key            : 'email',
-            type           : 'input',
+            key: 'email',
+            type: 'input',
             templateOptions: {
-              label   : gettextCatalog.getString('Email'),
+              label: gettextCatalog.getString('Email'),
               required: true
             }
           },
           {
-            key            : 'firstName',
-            type           : 'input',
+            key: 'firstName',
+            type: 'input',
             templateOptions: {
-              label   : gettextCatalog.getString('Last name'),
+              label: gettextCatalog.getString('Last name'),
               required: true
             }
           },
           {
-            key            : 'lastName',
-            type           : 'input',
+            key: 'lastName',
+            type: 'input',
             templateOptions: {
-              label   : gettextCatalog.getString('Last name'),
+              label: gettextCatalog.getString('Last name'),
               required: true
             }
           }
         ];
         if (formType === 'add') {
           form.push({
-            key            : 'password',
-            type           : 'input',
+            key: 'password',
+            type: 'input',
             templateOptions: {
-              label   : gettextCatalog.getString('Password'),
+              label: gettextCatalog.getString('Password'),
               required: true
             }
           });

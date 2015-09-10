@@ -44,7 +44,7 @@
 
       $scope.toasty = {
         title: 'Notify me!',
-        text : 'This is the body!'
+        text: 'This is the body!'
       };
 
       $scope.toastSuccess = function () {
