@@ -107,7 +107,7 @@
     "gulp-rev": "^5.1.0",
     "gulp-strip-debug": "^1.0.2",
     "gulp-usemin": "^0.3.11",
-    "gulp-util": "^2.2.14",
+    "gulp-util": "^3.0.6",
     "gulp-webserver": "^0.9.1",
     "jasmine-core": "2.2.0",
     "karma": "0.12.31",
