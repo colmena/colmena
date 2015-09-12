@@ -1,38 +1,41 @@
 module.exports = {
-  server: {
-    host: 'localhost',
-    port: 8081
+  server   : {
+    host: '0.0.0.0',
+    port: 3000,
+    live: 9000,
+    api : 'http://0.0.0.0:3000/api/',
+    site: 'http://0.0.0.0:3000'
   },
-  src   : {
-    index    : 'www/index.html',
-    imgs     : 'www/images/**/**.*',
-    path     : 'www/',
-    lib      : 'www/lib/*',
+  src      : {
+    index    : 'client/www/index.html',
+    imgs     : 'client/www/images/**/**.*',
+    path     : 'client/www/',
+    lib      : 'client/www/lib/*',
     css      : [
-      'www/css/*.css',
-      'www/css/**/*.css',
-      'www/fonts/***.css',
-      'www/module/**/*.css'
+      'client/www/css/*.css',
+      'client/www/css/**/*.css',
+      'client/www/fonts/***.css'
     ],
     js       : [
-      'www/module/*.js',
-      'www/module/**/*.js',
-      '!www/module/**/*.spec.js',
-      'www/js/*.js'
+      'client/www/modules/*.js',
+      'client/www/modules/**/*.js',
+      '!client/www/modules/**/*.spec.js',
+      'client/www/js/*.js'
     ],
     html     : [
-      'www/module/**/*.html'
+      'client/www/module/**/*.html'
     ],
     translate: [
-      'www/module/**/**/*.js',
-      '!www/module/**/*.spec.js',
-      'www/module/**/view/*.html'
+      'client/www/modules/**/**/*.js',
+      '!client/www/modules/**/*.spec.js',
+      'client/www/modules/**/view/*.html'
     ]
   },
-  source: 'www',
-  dist  : 'dist',
-  docs  : 'docs',
-  bower : [
+  source   : 'client/www',
+  dist     : 'client/dist',
+  translate: 'client/translate',
+  docs     : 'client/docs',
+  bower    : [
     'bower.json',
     '.bowerrc'
   ]

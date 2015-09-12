@@ -10,7 +10,7 @@ module.exports = function (config) {
     autoWatch: true,
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: 'www',
+    basePath: 'client/www',
 
 
     // frameworks to use
@@ -85,7 +85,7 @@ module.exports = function (config) {
     coverageReporter: {
       type: 'html',
       // where to store the report
-      dir : 'coverage/'
+      dir : 'client/coverage/'
     },
 
 
