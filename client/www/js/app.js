@@ -51,6 +51,10 @@
       'com.module.settings',
       'com.module.users'
     ])
+    .config(function(LoopBackResourceProvider, ENV) {
+      // Change the URL where to access the LoopBack REST API server
+      LoopBackResourceProvider.setUrlBase(ENV.apiUrl);
+    })
     .run(function($rootScope, $cookies, gettextCatalog) {
 
       $rootScope.locales = {
