@@ -1,2 +1,5 @@
-'use strict';
-angular.module('com.module.users', []);
+(function () {
+  'use strict';
+  angular.module('com.module.users', []);
+
+})();

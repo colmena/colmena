@@ -1,7 +1,8 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <a href="" ui-sref="^.list" class="btn btn-xs btn-default"><i class="fa fa-arrow-left"></i></a>
-    {{ctrl.user.username}} <small>{{ctrl.user.email}}</small>
+    {{ctrl.user.username}}
+    <small>{{ctrl.user.email}}</small>
     <span class="pull-right btn-group">
       <a href="" class="btn btn-xs btn-default" ui-sref="^.edit({id: ctrl.user.id})">
         <i class="fa fa-pencil"></i>
@@ -13,6 +14,7 @@
   </div>
   <div class="panel-body">
     <h3 translate>Roles</h3>
+
     <div ng-if="ctrl.user.roles.length">
       <ul>
         <li ng-repeat="role in ctrl.user.roles">{{role.name}}</li>
