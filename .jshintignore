@@ -1,9 +1,9 @@
-/www/config.js
-/www/lb-services.js
-/www/lib/
+/client/doc/
+/client/www/config.js
+/client/www/lb-services.js
+/client/www/lib/
+/client/dist/
 /node_modules/
 /gulp.config.js
 /gulpfile.js
-/docular_generated/
 /test/
-/dist/
