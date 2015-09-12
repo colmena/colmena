@@ -4,7 +4,7 @@ client/doc/
 client/coverage/
 client/www/lib/
 client/www/lb-services.js
-client/www/config.js
+client/www/js/config.js
 npm-debug.log
 node_modules/
 downloaded/
