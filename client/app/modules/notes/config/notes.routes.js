@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.notes')
-    .config(function ($stateProvider) {
+    .config(function($stateProvider) {
       $stateProvider
         .state('app.notes', {
           abstract: true,
@@ -13,11 +13,11 @@
           url: '',
           templateUrl: 'modules/notes/views/list.html',
           controllerAs: 'ctrl',
-          controller: function (notes) {
+          controller: function(notes) {
             this.notes = notes;
           },
           resolve: {
-            notes: function (NotesService) {
+            notes: function(NotesService) {
               return NotesService.getNotes();
             }
           }
@@ -26,18 +26,18 @@
           url: '/add',
           templateUrl: 'modules/notes/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, NotesService, note) {
+          controller: function($state, NotesService, note) {
             this.note = note;
             this.formFields = NotesService.getFormFields();
             this.formOptions = {};
-            this.submit = function () {
-              NotesService.upsertNote(this.note).then(function () {
+            this.submit = function() {
+              NotesService.upsertNote(this.note).then(function() {
                 $state.go('^.list');
               });
             };
           },
           resolve: {
-            note: function () {
+            note: function() {
               return {};
             }
           }
@@ -46,18 +46,18 @@
           url: '/:id/edit',
           templateUrl: 'modules/notes/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, NotesService, note) {
+          controller: function($state, NotesService, note) {
             this.note = note;
             this.formFields = NotesService.getFormFields();
             this.formOptions = {};
-            this.submit = function () {
-              NotesService.upsertNote(this.note).then(function () {
+            this.submit = function() {
+              NotesService.upsertNote(this.note).then(function() {
                 $state.go('^.list');
               });
             };
           },
           resolve: {
-            note: function ($stateParams, NotesService) {
+            note: function($stateParams, NotesService) {
               return NotesService.getNote($stateParams.id);
             }
           }
@@ -66,11 +66,11 @@
           url: '/:id',
           templateUrl: 'modules/notes/views/view.html',
           controllerAs: 'ctrl',
-          controller: function (note) {
+          controller: function(note) {
             this.note = note;
           },
           resolve: {
-            note: function ($stateParams, NotesService) {
+            note: function($stateParams, NotesService) {
               return NotesService.getNote($stateParams.id);
             }
           }
@@ -79,19 +79,19 @@
           url: '/:id/delete',
           template: '',
           controllerAs: 'ctrl',
-          controller: function ($state, NotesService, note) {
-            NotesService.deleteNote(note.id, function () {
+          controller: function($state, NotesService, note) {
+            NotesService.deleteNote(note.id, function() {
               $state.go('^.list');
-            }, function () {
+            }, function() {
               $state.go('^.list');
             });
           },
           resolve: {
-            note: function ($stateParams, NotesService) {
+            note: function($stateParams, NotesService) {
               return NotesService.getNote($stateParams.id);
             }
           }
         });
     });
 
-})();
+})(window, window.angular);

@@ -1,20 +1,20 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.core')
     .config([
       'cfpLoadingBarProvider',
-      function (cfpLoadingBarProvider) {
+      function(cfpLoadingBarProvider) {
         cfpLoadingBarProvider.includeSpinner = false;
       }
     ])
-    .run(function ($rootScope, Setting, gettextCatalog) {
+    .run(function($rootScope, Setting, gettextCatalog) {
 
       // Left Sidemenu
       $rootScope.menu = [];
 
       // Add Sidebar Menu
-      $rootScope.addMenu = function (name, uisref, icon) {
+      $rootScope.addMenu = function(name, uisref, icon) {
         $rootScope.menu.push({
           name: name,
           sref: uisref,
@@ -30,7 +30,7 @@
       $rootScope.dashboardBox = [];
 
       // Add Dashboard Box
-      $rootScope.addDashboardBox = function (name, color, icon, quantity, href) {
+      $rootScope.addDashboardBox = function(name, color, icon, quantity, href) {
         $rootScope.dashboardBox.push({
           name: name,
           color: color,
@@ -41,7 +41,7 @@
       };
 
       // Get Settings for Database
-      $rootScope.setSetting = function (key, value) {
+      $rootScope.setSetting = function(key, value) {
 
         Setting.find({
           filter: {
@@ -49,7 +49,7 @@
               key: key
             }
           }
-        }, function (data) {
+        }, function(data) {
 
           if (data.length) {
             data[0].value = value;
@@ -58,7 +58,7 @@
             Setting.create({
               key: key,
               value: value
-            }, function (data) {
+            }, function(data) {
               console.log(data);
             });
           }
@@ -70,12 +70,12 @@
       $rootScope.settings = {};
 
       // Get Settings for Loopback Service
-      $rootScope.loadSettings = function () {
-        Setting.find(function (settings) {
+      $rootScope.loadSettings = function() {
+        Setting.find(function(settings) {
           $rootScope.settings.data = settings;
         });
       };
 
     });
 
-})();
+})(window, window.angular);

@@ -1,4 +1,4 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   /**
    * @ngdoc overview
@@ -13,4 +13,4 @@
    */
   angular.module('com.module.about', []);
 
-})();
+})(window, window.angular);

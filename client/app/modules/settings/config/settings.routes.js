@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.settings')
-    .config(function ($stateProvider) {
+    .config(function($stateProvider) {
       $stateProvider
         .state('app.settings', {
           abstract: true,
@@ -13,11 +13,11 @@
           url: '',
           templateUrl: 'modules/settings/views/list.html',
           controllerAs: 'ctrl',
-          controller: function (settings) {
+          controller: function(settings) {
             this.settings = settings;
           },
           resolve: {
-            settings: function (SettingService) {
+            settings: function(SettingService) {
               return SettingService.find();
             }
           }
@@ -26,18 +26,18 @@
           url: '/add',
           templateUrl: 'modules/settings/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, SettingService, setting) {
+          controller: function($state, SettingService, setting) {
             this.setting = setting;
             this.formFields = SettingService.getFormFields();
             this.formOptions = {};
-            this.submit = function () {
-              SettingService.upsert(this.setting).then(function () {
+            this.submit = function() {
+              SettingService.upsert(this.setting).then(function() {
                 $state.go('^.list');
               });
             };
           },
           resolve: {
-            setting: function () {
+            setting: function() {
               return {};
             }
           }
@@ -46,18 +46,18 @@
           url: '/:id/edit',
           templateUrl: 'modules/settings/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, SettingService, setting) {
+          controller: function($state, SettingService, setting) {
             this.setting = setting;
             this.formFields = SettingService.getFormFields();
             this.formOptions = {};
-            this.submit = function () {
-              SettingService.upsert(this.setting).then(function () {
+            this.submit = function() {
+              SettingService.upsert(this.setting).then(function() {
                 $state.go('^.list');
               });
             };
           },
           resolve: {
-            setting: function ($stateParams, SettingService) {
+            setting: function($stateParams, SettingService) {
               return SettingService.findById($stateParams.id);
             }
           }
@@ -66,11 +66,11 @@
           url: '/:id',
           templateUrl: 'modules/settings/views/view.html',
           controllerAs: 'ctrl',
-          controller: function (setting) {
+          controller: function(setting) {
             this.setting = setting;
           },
           resolve: {
-            setting: function ($stateParams, SettingService) {
+            setting: function($stateParams, SettingService) {
               return SettingService.findById($stateParams.id);
             }
           }
@@ -79,14 +79,14 @@
           url: '/:id/delete',
           template: '',
           controllerAs: 'ctrl',
-          controller: function ($stateParams, $state, SettingService) {
-            SettingService.delete($stateParams.id, function () {
+          controller: function($stateParams, $state, SettingService) {
+            SettingService.delete($stateParams.id, function() {
               $state.go('^.list');
-            }, function () {
+            }, function() {
               $state.go('^.list');
             });
           }
         });
     });
 
-})();
+})(window, window.angular);

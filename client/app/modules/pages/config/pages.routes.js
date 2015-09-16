@@ -1,9 +1,9 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
 
   angular
     .module('com.module.pages')
-    .config(function ($stateProvider) {
+    .config(function($stateProvider) {
       $stateProvider
         .state('app.pages', {
           abstract: true,
@@ -14,11 +14,11 @@
           url: '',
           templateUrl: 'modules/pages/views/list.html',
           controllerAs: 'ctrl',
-          controller: function (pages) {
+          controller: function(pages) {
             this.pages = pages;
           },
           resolve: {
-            pages: function (PageService) {
+            pages: function(PageService) {
               return PageService.find();
             }
           }
@@ -27,7 +27,7 @@
           url: '/add',
           templateUrl: 'modules/pages/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, PageService, page) {
+          controller: function($state, PageService, page) {
             this.editorOptions = {
               theme: 'monokai',
               lineWrapping: true,
@@ -37,17 +37,17 @@
             this.page = page;
             this.formFields = PageService.getFormFields();
             this.formOptions = {};
-            this.submit = function () {
-              PageService.upsert(this.page).then(function () {
+            this.submit = function() {
+              PageService.upsert(this.page).then(function() {
                 $state.go('^.list');
               });
             };
           },
           resolve: {
-            page: function () {
+            page: function() {
               return {
                 content: '# Hi!\n\n## This is a markdown editor.\n\n    fine code goes here \n\n- lists \n- go \n- here ' +
-                '\n\n*Find* **more information** about `markdown` [Here](https://daringfireball.net/projects/markdown/basics)!'
+                  '\n\n*Find* **more information** about `markdown` [Here](https://daringfireball.net/projects/markdown/basics)!'
               };
             }
           }
@@ -56,7 +56,7 @@
           url: '/:id/edit',
           templateUrl: 'modules/pages/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, PageService, page) {
+          controller: function($state, PageService, page) {
             this.editorOptions = {
               theme: 'monokai',
               lineWrapping: true,
@@ -66,14 +66,14 @@
             this.page = page;
             this.formFields = PageService.getFormFields();
             this.formOptions = {};
-            this.submit = function () {
-              PageService.upsert(this.page).then(function () {
+            this.submit = function() {
+              PageService.upsert(this.page).then(function() {
                 $state.go('^.list');
               });
             };
           },
           resolve: {
-            page: function ($stateParams, PageService) {
+            page: function($stateParams, PageService) {
               return PageService.findById($stateParams.id);
             }
           }
@@ -82,11 +82,11 @@
           url: '/:id',
           templateUrl: 'modules/pages/views/view.html',
           controllerAs: 'ctrl',
-          controller: function (page) {
+          controller: function(page) {
             this.page = page;
           },
           resolve: {
-            page: function ($stateParams, PageService) {
+            page: function($stateParams, PageService) {
               return PageService.findById($stateParams.id);
             }
           }
@@ -95,14 +95,14 @@
           url: '/:id/delete',
           template: '',
           controllerAs: 'ctrl',
-          controller: function ($stateParams, $state, PageService) {
-            PageService.delete($stateParams.id, function () {
+          controller: function($stateParams, $state, PageService) {
+            PageService.delete($stateParams.id, function() {
               $state.go('^.list');
-            }, function () {
+            }, function() {
               $state.go('^.list');
             });
           }
         });
     });
 
-})();
+})(window, window.angular);

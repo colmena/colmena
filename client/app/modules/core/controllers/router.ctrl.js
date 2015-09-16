@@ -1,4 +1,4 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   /**
    * @ngdoc function
@@ -12,10 +12,10 @@
    **/
   angular
     .module('com.module.core')
-    .controller('RouteCtrl', function (ApiService, AppAuth, $location) {
+    .controller('RouteCtrl', function(ApiService, AppAuth, $location) {
 
       ApiService.checkConnection()
-        .then(function () {
+        .then(function() {
           console.log('ApiService.checkConnection success');
           if (!AppAuth.currentUser) {
             $location.path('/login');
@@ -23,11 +23,11 @@
             $location.path('/app');
           }
         })
-        .catch(function (err) {
+        .catch(function(err) {
           console.log('ApiService.checkConnection err: ' + err);
           $location.path('/error');
         });
 
     });
 
-})();
+})(window, window.angular);

@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.sandbox')
-    .controller('SandboxBootstrapAlertCtrl', function ($scope) {
+    .controller('SandboxBootstrapAlertCtrl', function($scope) {
       $scope.alerts = [{
         type: 'danger',
         msg: 'Oh snap! Change a few things up and try submitting again.'
@@ -11,15 +11,15 @@
         msg: 'Well done! You successfully read this important alert message.'
       }];
 
-      $scope.addAlert = function () {
+      $scope.addAlert = function() {
         $scope.alerts.push({
           msg: 'Another alert!'
         });
       };
 
-      $scope.closeAlert = function (index) {
+      $scope.closeAlert = function(index) {
         $scope.alerts.splice(index, 1);
       };
     });
 
-})();
+})(window, window.angular);

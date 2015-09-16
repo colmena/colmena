@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.users')
-    .config(function ($stateProvider) {
+    .config(function($stateProvider) {
       $stateProvider
         .state('login', {
           url: '/login',
@@ -23,12 +23,12 @@
           url: '',
           templateUrl: 'modules/users/views/list.html',
           controllerAs: 'ctrl',
-          controller: function (users) {
+          controller: function(users) {
             console.log('users', users);
             this.users = users;
           },
           resolve: {
-            users: function (UserService) {
+            users: function(UserService) {
               console.log('users');
               return UserService.find();
             }
@@ -38,20 +38,20 @@
           url: '/add',
           templateUrl: 'modules/users/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, UserService, user) {
+          controller: function($state, UserService, user) {
             this.user = user;
             this.formFields = UserService.getFormFields('add');
             this.formOptions = {};
-            this.submit = function () {
-              UserService.upsert(this.user).then(function () {
+            this.submit = function() {
+              UserService.upsert(this.user).then(function() {
                 $state.go('^.list');
-              }).catch(function (err) {
+              }).catch(function(err) {
                 console.log(err);
               });
             };
           },
           resolve: {
-            user: function () {
+            user: function() {
               return {};
             }
           }
@@ -60,18 +60,18 @@
           url: '/edit/:id',
           templateUrl: 'modules/users/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, UserService, user) {
+          controller: function($state, UserService, user) {
             this.user = user;
             this.formFields = UserService.getFormFields('edit');
             this.formOptions = {};
-            this.submit = function () {
-              UserService.upsert(this.user).then(function () {
+            this.submit = function() {
+              UserService.upsert(this.user).then(function() {
                 $state.go('^.list');
               });
             };
           },
           resolve: {
-            user: function ($stateParams, UserService) {
+            user: function($stateParams, UserService) {
               return UserService.findById($stateParams.id);
             }
           }
@@ -80,11 +80,11 @@
           url: '/view/:id',
           templateUrl: 'modules/users/views/view.html',
           controllerAs: 'ctrl',
-          controller: function (user) {
+          controller: function(user) {
             this.user = user;
           },
           resolve: {
-            user: function ($stateParams, UserService) {
+            user: function($stateParams, UserService) {
               return UserService.findById($stateParams.id);
             }
           }
@@ -92,10 +92,10 @@
         .state('app.users.delete', {
           url: '/:id/delete',
           template: '',
-          controller: function ($stateParams, $state, UserService) {
-            UserService.delete($stateParams.id, function () {
+          controller: function($stateParams, $state, UserService) {
+            UserService.delete($stateParams.id, function() {
               $state.go('^.list');
-            }, function () {
+            }, function() {
               $state.go('^.list');
             });
           }
@@ -104,21 +104,21 @@
           url: '/profile',
           templateUrl: 'modules/users/views/profile.html',
           controllerAs: 'ctrl',
-          controller: function ($state, UserService, user) {
+          controller: function($state, UserService, user) {
             this.user = user;
             this.formFields = UserService.getFormFields('edit');
             this.formOptions = {};
-            this.submit = function () {
-              UserService.upsert(this.user).then(function () {
+            this.submit = function() {
+              UserService.upsert(this.user).then(function() {
                 $state.go('^.profile');
               });
             };
           },
           resolve: {
-            user: function (User) {
-              return User.getCurrent(function (user) {
+            user: function(User) {
+              return User.getCurrent(function(user) {
                 return user;
-              }, function (err) {
+              }, function(err) {
                 console.log(err);
               });
             }
@@ -126,4 +126,4 @@
         });
     });
 
-})();
+})(window, window.angular);

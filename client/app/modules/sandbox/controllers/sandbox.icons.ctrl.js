@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.sandbox')
-    .controller('SandboxIconsCtrl', function ($scope) {
+    .controller('SandboxIconsCtrl', function($scope) {
 
       $scope.filter = '';
 
@@ -1347,4 +1347,4 @@
 
     });
 
-})();
+})(window, window.angular);

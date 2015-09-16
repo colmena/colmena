@@ -4,7 +4,7 @@ var log = require('debug')('boot:99-fake.data');
 var faker = require('faker');
 var Promise = require('bluebird');
 
-module.exports = function (app) {
+module.exports = function(app) {
 
   if (app.dataSources.db.name !== 'Memory' && !process.env.INITDB) {
     return;
@@ -37,7 +37,7 @@ module.exports = function (app) {
 
   log('Creating fake data!');
 
-  Promise.all(promises).then(function () {
+  Promise.all(promises).then(function() {
     log('Creating fake data done!');
   }).catch();
 

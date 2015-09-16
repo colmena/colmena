@@ -1,12 +1,12 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.sandbox')
-    .controller('DashboardCtrl', function ($scope) {
+    .controller('DashboardCtrl', function($scope) {
 
       $scope.boxes = [];
 
-      $scope.addComponent = function (name, color, icon, quantity, href) {
+      $scope.addComponent = function(name, color, icon, quantity, href) {
         $scope.boxes.push({
           name: name,
           color: color,
@@ -21,4 +21,4 @@
 
     });
 
-})();
+})(window, window.angular);

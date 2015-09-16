@@ -1,4 +1,4 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
 
   /**
@@ -9,11 +9,11 @@
    */
   angular
     .module('com.module.core')
-    .directive('navbar', function () {
+    .directive('navbar', function() {
       return {
         templateUrl: 'modules/core/views/elements/navbar.html',
         restrict: 'E'
       };
     });
 
-})();
+})(window, window.angular);

@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.sandbox')
-    .config(function ($stateProvider) {
+    .config(function($stateProvider) {
       $stateProvider
         .state('app.sandbox', {
           abstract: true,
@@ -12,7 +12,7 @@
         })
         .state('app.sandbox.index', {
           url: '',
-          controller: function ($state) {
+          controller: function($state) {
             $state.go('app.sandbox.autofields');
           }
         })
@@ -54,8 +54,8 @@
         .state('app.sandbox.users', {
           url: '/users',
           template: '<pre>{{users | json}}</pre>',
-          controller: function ($scope, User) {
-            $scope.users = User.find({}, function (err, data) {
+          controller: function($scope, User) {
+            $scope.users = User.find({}, function(err, data) {
               console.log(data);
               return;
             });
@@ -78,4 +78,4 @@
         });
     });
 
-})();
+})(window, window.angular);

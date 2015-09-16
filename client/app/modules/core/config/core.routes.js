@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.core')
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function($stateProvider, $urlRouterProvider) {
       $stateProvider
         .state('router', {
           url: '/router',
@@ -27,4 +27,4 @@
       $urlRouterProvider.otherwise('/router');
     });
 
-})();
+})(window, window.angular);

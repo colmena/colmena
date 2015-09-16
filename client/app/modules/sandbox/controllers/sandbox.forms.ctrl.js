@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.sandbox')
-    .controller('SandboxFormsCtrl', function ($scope, CoreService) {
+    .controller('SandboxFormsCtrl', function($scope, CoreService) {
 
       var now = new Date();
 
@@ -55,9 +55,9 @@
         }
       }];
 
-      $scope.onSubmit = function (data) {
+      $scope.onSubmit = function(data) {
         CoreService.alertSuccess('Good job!', JSON.stringify(data, null, 2));
       };
     });
 
-})();
+})(window, window.angular);

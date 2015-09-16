@@ -1,7 +1,7 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular.module('com.module.sandbox')
-    .controller('SandboxSchemaformCtrl', function (CoreService) {
+    .controller('SandboxSchemaformCtrl', function(CoreService) {
 
       this.model = {};
 
@@ -28,26 +28,23 @@
           'email',
           'comment'
         ]
-      }
-      ;
+      };
 
       this.form = [
         'name',
-        'email',
-        {
+        'email', {
           key: 'comment',
           type: 'textarea',
           placeholder: 'Make a comment'
-        },
-        {
+        }, {
           type: 'submit',
           title: 'OK'
         }
       ];
 
-      this.onSubmit = function () {
+      this.onSubmit = function() {
         CoreService.alertSuccess('Good job!', 'Well done, ' + this.model.name);
       };
     });
 
-})();
+})(window, window.angular);
