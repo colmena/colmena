@@ -1,4 +1,4 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   /**
    * @ngdoc overview
@@ -51,7 +51,7 @@
       'com.module.settings',
       'com.module.users'
     ])
-    .run(function ($rootScope, $cookies, gettextCatalog) {
+    .run(function($rootScope, $cookies, gettextCatalog) {
 
       $rootScope.locales = {
         'de': {
@@ -105,18 +105,18 @@
       gettextCatalog.setCurrentLanguage($rootScope.locale.lang);
 
     })
-    .run(function (formlyConfig) {
+    .run(function(formlyConfig) {
       /*
        ngModelAttrs stuff
        */
       var ngModelAttrs = {};
 
-      function camelize (string) {
-        string = string.replace(/[\-_\s]+(.)?/g, function (match, chr) {
+      function camelize(string) {
+        string = string.replace(/[\-_\s]+(.)?/g, function(match, chr) {
           return chr ? chr.toUpperCase() : '';
         });
         // Ensure 1st char is always lowercase
-        return string.replace(/^([A-Z])/, function (match, chr) {
+        return string.replace(/^([A-Z])/, function(match, chr) {
           return chr ? chr.toLowerCase() : '';
         });
       }
@@ -132,8 +132,10 @@
         'readonly-input',
         'mousewheel',
         'arrowkeys'
-      ], function (attr) {
-        ngModelAttrs[camelize(attr)] = {attribute: attr};
+      ], function(attr) {
+        ngModelAttrs[camelize(attr)] = {
+          attribute: attr
+        };
       });
 
       // bindings
@@ -141,8 +143,10 @@
         'hour-step',
         'minute-step',
         'show-meridian'
-      ], function (binding) {
-        ngModelAttrs[camelize(binding)] = {bound: binding};
+      ], function(binding) {
+        ngModelAttrs[camelize(binding)] = {
+          bound: binding
+        };
       });
 
       formlyConfig.setType({
@@ -176,4 +180,4 @@
       });
     });
 
-})();
+})(window, window.angular);

@@ -1,4 +1,4 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
 
   /**
@@ -9,14 +9,14 @@
    */
   angular
     .module('com.module.core')
-    .directive('adminForm', function () {
+    .directive('adminForm', function() {
       return {
         template: '<div></div>',
         restrict: 'E',
-        link: function postLink (scope, element) {
+        link: function postLink(scope, element) {
           element.text('this is the adminForm directive');
         }
       };
     });
 
-})();
+})(window, window.angular);

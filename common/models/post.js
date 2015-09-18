@@ -1,8 +1,8 @@
 'use strict';
 
-module.exports = function (Post) {
+module.exports = function(Post) {
 
-  Post.createFakeData = function (faker) {
+  Post.createFakeData = function(faker) {
     return Post.create({
       title: faker.lorem.sentence(),
       content: faker.lorem.paragraph(),

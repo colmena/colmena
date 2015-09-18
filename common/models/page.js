@@ -4,7 +4,7 @@ var Showdown = require('showdown');
 
 module.exports = function(Page) {
 
-  Page.createFakeData = function (faker) {
+  Page.createFakeData = function(faker) {
     return Page.create({
       name: faker.lorem.sentence(),
       content: ' > ' + faker.lorem.paragraph()

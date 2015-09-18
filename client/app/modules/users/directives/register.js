@@ -1,4 +1,4 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   /**
    * @ngdoc directive
@@ -8,11 +8,11 @@
    */
   angular
     .module('com.module.users')
-    .directive('register', function () {
+    .directive('register', function() {
       return {
         templateUrl: 'modules/users/views/register.html',
         restrict: 'E'
       };
     });
 
-})();
+})(window, window.angular);

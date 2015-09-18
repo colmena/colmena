@@ -1,4 +1,4 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   /**
    * @ngdoc directive
@@ -8,11 +8,11 @@
    */
   angular
     .module('com.module.users')
-    .directive('login', function () {
+    .directive('login', function() {
       return {
         templateUrl: 'modules/users/views/login.html',
         restrict: 'E'
       };
     });
 
-})();
+})(window, window.angular);

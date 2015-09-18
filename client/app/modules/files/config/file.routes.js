@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.files')
-    .config(function ($stateProvider) {
+    .config(function($stateProvider) {
       $stateProvider
         .state('app.files', {
           abstract: true,
@@ -13,11 +13,11 @@
           url: '',
           templateUrl: 'modules/files/views/list.html',
           controllerAs: 'ctrl',
-          controller: function (files) {
+          controller: function(files) {
             this.files = files.data;
           },
           resolve: {
-            files: function (FileService) {
+            files: function(FileService) {
               return FileService.find();
             }
           }
@@ -26,14 +26,12 @@
           url: '/upload',
           templateUrl: 'modules/files/views/upload.html',
           controllerAs: 'ctrl',
-          controller: function (FileUploader, CoreService) {
+          controller: function(FileUploader, CoreService) {
             this.uploader = new FileUploader({
               url: CoreService.env.apiUrl + '/containers/files/upload',
-              formData: [
-                {
-                  key: 'value'
-                }
-              ]
+              formData: [{
+                key: 'value'
+              }]
             });
           }
         })
@@ -41,14 +39,14 @@
           url: '/:fileName/delete',
           template: '',
           controllerAs: 'ctrl',
-          controller: function ($stateParams, $state, FileService) {
-            FileService.delete($stateParams.fileName, function () {
+          controller: function($stateParams, $state, FileService) {
+            FileService.delete($stateParams.fileName, function() {
               $state.go('^.list');
-            }, function () {
+            }, function() {
               $state.go('^.list');
             });
           }
         });
     });
 
-})();
+})(window, window.angular);

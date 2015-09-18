@@ -1,4 +1,4 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   /**
    * @ngdoc directive
@@ -13,7 +13,7 @@
    */
   angular
     .module('com.module.core')
-    .directive('smallBox', function () {
+    .directive('smallBox', function() {
       return {
         restrict: 'E',
         templateUrl: 'modules/core/views/elements/small-box.html',
@@ -27,4 +27,4 @@
       };
     });
 
-})();
+})(window, window.angular);

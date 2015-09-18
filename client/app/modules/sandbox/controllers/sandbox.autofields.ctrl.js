@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.sandbox')
-    .controller('AutoFieldsCtrl', function ($scope, $state, $log) {
+    .controller('AutoFieldsCtrl', function($scope, $state, $log) {
 
       $scope.user = {
         username: '',
@@ -141,28 +141,28 @@
         1: 'Yes'
       };
 
-      $scope.toggleValidation = function () {
+      $scope.toggleValidation = function() {
         $scope.options.validation.enabled = !$scope.options.validation.enabled;
       };
 
-      $scope.togglePopovers = function () {
+      $scope.togglePopovers = function() {
         $scope.options.validation.showMessages = !$scope.options.validation.showMessages;
       };
 
 
-      $scope.toggleHorizontal = function () {
+      $scope.toggleHorizontal = function() {
         $scope.options.layout.type = $scope.options.layout.type ===
-        'horizontal' ? 'basic' : 'horizontal';
+          'horizontal' ? 'basic' : 'horizontal';
       };
 
-      $scope.addField = function () {
+      $scope.addField = function() {
         $scope.schema.push({
           property: 'new' + (new Date().getTime()),
           label: 'New Field'
         });
       };
 
-      $scope.join = function () {
+      $scope.join = function() {
         if (!$scope.joinForm.$valid) {
           return;
         }
@@ -172,19 +172,19 @@
       };
     })
     .directive('confirmPassword', [
-      function () {
+      function() {
         return {
           restrict: 'A',
           require: 'ngModel',
-          link: function (scope, element, attrs, ngModel) {
-            var validate = function (viewValue) {
+          link: function(scope, element, attrs, ngModel) {
+            var validate = function(viewValue) {
               var password = scope.$eval(attrs.confirmPassword);
               ngModel.$setValidity('match', ngModel.$isEmpty(viewValue) ||
                 viewValue === password);
               return viewValue;
             };
             ngModel.$parsers.push(validate);
-            scope.$watch(attrs.confirmPassword, function () {
+            scope.$watch(attrs.confirmPassword, function() {
               validate(ngModel.$viewValue);
             });
           }
@@ -192,4 +192,4 @@
       }
     ]);
 
-})();
+})(window, window.angular);

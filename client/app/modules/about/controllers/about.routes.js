@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.about')
-    .config(function ($stateProvider) {
+    .config(function($stateProvider) {
       $stateProvider
         .state('app.about', {
           abstract: true,
@@ -16,4 +16,4 @@
         });
     });
 
-})();
+})(window, window.angular);

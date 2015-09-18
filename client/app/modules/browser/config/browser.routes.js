@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.browser')
-    .config(function ($stateProvider) {
+    .config(function($stateProvider) {
       $stateProvider
         .state('app.browser', {
           abstract: true,
@@ -15,14 +15,14 @@
           controllerAs: 'ctrl',
           controller: [
             'models',
-            function (models) {
+            function(models) {
               this.models = models;
             }
           ],
           resolve: {
             models: [
               'MetaService',
-              function (MetaService) {
+              function(MetaService) {
                 return MetaService.find();
               }
             ]
@@ -34,7 +34,7 @@
           controllerAs: 'info',
           controller: [
             'model',
-            function (model) {
+            function(model) {
               this.model = model;
             }
           ],
@@ -42,7 +42,7 @@
             model: [
               '$stateParams',
               'MetaService',
-              function ($stateParams, MetaService) {
+              function($stateParams, MetaService) {
                 return MetaService.findById($stateParams.modelName);
               }
             ]
@@ -55,7 +55,7 @@
           controller: [
             'model',
             'items',
-            function (model, items) {
+            function(model, items) {
               this.model = model;
               this.items = items;
               this.itemKeys = [];
@@ -68,14 +68,14 @@
             model: [
               '$stateParams',
               'MetaService',
-              function ($stateParams, MetaService) {
+              function($stateParams, MetaService) {
                 return MetaService.findById($stateParams.modelName);
               }
             ],
             items: [
               '$stateParams',
               'MetaService',
-              function ($stateParams, MetaService) {
+              function($stateParams, MetaService) {
                 return MetaService.getModelItems($stateParams.modelName);
               }
             ]
@@ -87,7 +87,7 @@
           controllerAs: 'view',
           controller: [
             'item',
-            function (item) {
+            function(item) {
               this.item = item;
               this.itemKeys = Object.keys(this.item);
             }
@@ -96,7 +96,7 @@
             item: [
               '$stateParams',
               'MetaService',
-              function ($stateParams, MetaService) {
+              function($stateParams, MetaService) {
                 return MetaService.getModelItem($stateParams.modelName, $stateParams.modelId);
               }
             ]
@@ -112,12 +112,16 @@
             'model',
             'item',
             'itemFields',
-            function ($state, MetaService, model, item, itemFields) {
+            function($state, MetaService, model, item, itemFields) {
               this.item = item;
               this.itemFields = itemFields;
-              this.submit = function () {
-                MetaService.upsert(model.name, this.item).then(function () {
-                  $state.go('app.browser.models.items', {modelName: model.name}, {reload: true});
+              this.submit = function() {
+                MetaService.upsert(model.name, this.item).then(function() {
+                  $state.go('app.browser.models.items', {
+                    modelName: model.name
+                  }, {
+                    reload: true
+                  });
                 });
               };
             }
@@ -126,7 +130,7 @@
             item: [
               '$stateParams',
               'MetaService',
-              function ($stateParams, MetaService) {
+              function($stateParams, MetaService) {
                 return MetaService.getModelItem($stateParams.modelName, $stateParams.modelId);
               }
             ],
@@ -134,7 +138,7 @@
               '$stateParams',
               'MetaService',
               'model',
-              function ($stateParams, MetaService, model) {
+              function($stateParams, MetaService, model) {
                 return MetaService.getModelFields(model);
               }
             ]
@@ -149,12 +153,16 @@
             'MetaService',
             'model',
             'itemFields',
-            function ($state, MetaService, model, itemFields) {
+            function($state, MetaService, model, itemFields) {
               this.item = {};
               this.itemFields = itemFields;
-              this.submit = function () {
-                MetaService.upsert(model.name, this.item).then(function () {
-                  $state.go('app.browser.models.items', {modelName: model.name}, {reload: true});
+              this.submit = function() {
+                MetaService.upsert(model.name, this.item).then(function() {
+                  $state.go('app.browser.models.items', {
+                    modelName: model.name
+                  }, {
+                    reload: true
+                  });
                 });
               };
             }
@@ -164,7 +172,7 @@
               '$stateParams',
               'MetaService',
               'model',
-              function ($stateParams, MetaService, model) {
+              function($stateParams, MetaService, model) {
                 return MetaService.getModelFields(model);
               }
             ]
@@ -178,15 +186,23 @@
             '$stateParams',
             'MetaService',
             'model',
-            function ($state, $stateParams, MetaService, model) {
-              MetaService.delete(model.name, $stateParams.modelId, function () {
-                $state.go('app.browser.models.items', {modelName: model.name}, {reload: true});
-              }, function () {
-                $state.go('app.browser.models.items', {modelName: model.name}, {reload: true});
+            function($state, $stateParams, MetaService, model) {
+              MetaService.delete(model.name, $stateParams.modelId, function() {
+                $state.go('app.browser.models.items', {
+                  modelName: model.name
+                }, {
+                  reload: true
+                });
+              }, function() {
+                $state.go('app.browser.models.items', {
+                  modelName: model.name
+                }, {
+                  reload: true
+                });
               });
             }
           ]
         });
     });
 
-})();
+})(window, window.angular);

@@ -1,17 +1,17 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.core')
-  /**
-   * @ngdoc function
-   * @name com.module.core.controller:LayoutCtrl
-   * @description Layout controller
-   * @requires $scope
-   * @requires $rootScope
-   * @requires CoreService
-   * @requires gettextCatalog
-   **/
-    .controller('LayoutCtrl', function ($scope, $rootScope, $cookies, CoreService, gettextCatalog) {
+    /**
+     * @ngdoc function
+     * @name com.module.core.controller:LayoutCtrl
+     * @description Layout controller
+     * @requires $scope
+     * @requires $rootScope
+     * @requires CoreService
+     * @requires gettextCatalog
+     **/
+    .controller('LayoutCtrl', function($scope, $rootScope, $cookies, CoreService, gettextCatalog) {
 
       // angular translate
       $scope.locale = {
@@ -21,7 +21,7 @@
       $scope.locales = $rootScope.locales;
       $scope.selectLocale = $rootScope.locale;
 
-      $scope.setLocale = function (locale) {
+      $scope.setLocale = function(locale) {
         // set the current lang
         $scope.locale = $scope.locales[locale];
         $scope.selectLocale = $scope.locale;
@@ -37,29 +37,23 @@
       $scope.appName = 'LoopBack Admin';
       $scope.apiUrl = CoreService.env.apiUrl;
       $scope.appTheme = 'skin-blue';
-      $scope.appThemes = [
-        {
-          'name': 'Black',
-          'class': 'skin-black'
-        },
-        {
-          'name': 'Blue',
-          'class': 'skin-blue'
-        }
-      ];
+      $scope.appThemes = [{
+        'name': 'Black',
+        'class': 'skin-black'
+      }, {
+        'name': 'Blue',
+        'class': 'skin-blue'
+      }];
       $scope.appLayout = '';
-      $scope.appLayouts = [
-        {
-          'name': 'Fixed',
-          'class': 'fixed'
-        },
-        {
-          'name': 'Scrolling',
-          'class': 'not-fixed'
-        }
-      ];
+      $scope.appLayouts = [{
+        'name': 'Fixed',
+        'class': 'fixed'
+      }, {
+        'name': 'Scrolling',
+        'class': 'not-fixed'
+      }];
 
-      $scope.toggleSidebar = function () {
+      $scope.toggleSidebar = function() {
         var $ = angular.element;
         if ($(window).width() <= 992) {
           $('.row-offcanvas').toggleClass('active');
@@ -79,4 +73,4 @@
 
     });
 
-})();
+})(window, window.angular);

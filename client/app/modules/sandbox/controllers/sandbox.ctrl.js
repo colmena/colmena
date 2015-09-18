@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.sandbox')
-    .controller('SandboxCtrl', function ($scope) {
+    .controller('SandboxCtrl', function($scope) {
       $scope.items = [{
         name: 'CoreService',
         sref: '.coreservice'
@@ -36,4 +36,4 @@
       }];
     });
 
-})();
+})(window, window.angular);

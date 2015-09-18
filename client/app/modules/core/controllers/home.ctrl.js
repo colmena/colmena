@@ -1,4 +1,4 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   /**
    * @ngdoc function
@@ -9,9 +9,9 @@
    **/
   angular
     .module('com.module.core')
-    .controller('HomeCtrl', function ($scope, $rootScope) {
+    .controller('HomeCtrl', function($scope, $rootScope) {
       $scope.count = {};
       $scope.boxes = $rootScope.dashboardBox;
     });
 
-})();
+})(window, window.angular);

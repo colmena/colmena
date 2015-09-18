@@ -1,4 +1,4 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   /**
    * @ngdoc function
@@ -11,7 +11,8 @@
    **/
   angular
     .module('com.module.users')
-    .controller('RegisterCtrl', function ($scope, $routeParams, $location, $filter, CoreService, User, AppAuth, gettextCatalog) {
+    .controller('RegisterCtrl', function($scope, $routeParams, $location, $filter, CoreService, User, AppAuth,
+      gettextCatalog) {
 
       $scope.registration = {
         firstName: '',
@@ -105,34 +106,34 @@
 
       $scope.confirmPassword = '';
 
-      $scope.register = function () {
+      $scope.register = function() {
 
         $scope.registration.username = $scope.registration.email;
         delete $scope.registration.confirmPassword;
         $scope.user = User.save($scope.registration,
-          function () {
+          function() {
 
             $scope.loginResult = User.login({
                 include: 'user',
                 rememberMe: true
               }, $scope.registration,
-              function () {
+              function() {
                 AppAuth.currentUser = $scope.loginResult.user;
                 CoreService.toastSuccess(gettextCatalog.getString(
                   'Registered'), gettextCatalog.getString(
                   'You are registered!'));
                 $location.path('/');
               },
-              function (res) {
+              function(res) {
                 CoreService.toastWarning(gettextCatalog.getString(
-                  'Error signin in after registration!'), res.data.error
+                    'Error signin in after registration!'), res.data.error
                   .message);
                 $scope.loginError = res.data.error;
               }
             );
 
           },
-          function (res) {
+          function(res) {
             CoreService.toastError(gettextCatalog.getString(
               'Error registering!'), res.data.error.message);
             $scope.registerError = res.data.error;
@@ -141,24 +142,24 @@
       };
     })
     .directive('confirmPassword',
-    function () {
-      return {
-        restrict: 'A',
-        require: 'ngModel',
-        link: function (scope, element, attrs, ngModel) {
-          var validate = function (viewValue) {
-            var password = scope.$eval(attrs.confirmPassword);
-            ngModel.$setValidity('match', ngModel.$isEmpty(viewValue) ||
-              viewValue === password);
-            return viewValue;
-          };
-          ngModel.$parsers.push(validate);
-          scope.$watch(attrs.confirmPassword, function () {
-            validate(ngModel.$viewValue);
-          });
-        }
-      };
-    }
-  );
+      function() {
+        return {
+          restrict: 'A',
+          require: 'ngModel',
+          link: function(scope, element, attrs, ngModel) {
+            var validate = function(viewValue) {
+              var password = scope.$eval(attrs.confirmPassword);
+              ngModel.$setValidity('match', ngModel.$isEmpty(viewValue) ||
+                viewValue === password);
+              return viewValue;
+            };
+            ngModel.$parsers.push(validate);
+            scope.$watch(attrs.confirmPassword, function() {
+              validate(ngModel.$viewValue);
+            });
+          }
+        };
+      }
+    );
 
-})();
+})(window, window.angular);

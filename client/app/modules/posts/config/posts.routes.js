@@ -1,8 +1,8 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.posts')
-    .config(function ($stateProvider) {
+    .config(function($stateProvider) {
       $stateProvider
         .state('app.posts', {
           abstract: true,
@@ -13,13 +13,13 @@
           url: '',
           templateUrl: 'modules/posts/views/list.html',
           controllerAs: 'ctrl',
-          controller: function (posts) {
+          controller: function(posts) {
             this.posts = posts;
           },
           resolve: {
             posts: [
               'PostsService',
-              function (PostsService) {
+              function(PostsService) {
                 return PostsService.getPosts();
               }
             ]
@@ -29,18 +29,18 @@
           url: '/add',
           templateUrl: 'modules/posts/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, PostsService, post) {
+          controller: function($state, PostsService, post) {
             this.post = post;
             this.formFields = PostsService.getFormFields();
             this.formOptions = {};
-            this.submit = function () {
-              PostsService.upsertPost(this.post).then(function () {
+            this.submit = function() {
+              PostsService.upsertPost(this.post).then(function() {
                 $state.go('^.list');
               });
             };
           },
           resolve: {
-            post: function () {
+            post: function() {
               return {};
             }
           }
@@ -49,19 +49,19 @@
           url: '/:id/edit',
           templateUrl: 'modules/posts/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, PostsService, post) {
+          controller: function($state, PostsService, post) {
             console.log(post);
             this.post = post;
             this.formFields = PostsService.getFormFields();
             this.formOptions = {};
-            this.submit = function () {
-              PostsService.upsertPost(this.post).then(function () {
+            this.submit = function() {
+              PostsService.upsertPost(this.post).then(function() {
                 $state.go('^.list');
               });
             };
           },
           resolve: {
-            post: function ($stateParams, PostsService) {
+            post: function($stateParams, PostsService) {
               return PostsService.getPost($stateParams.id);
             }
           }
@@ -70,11 +70,11 @@
           url: '/:id',
           templateUrl: 'modules/posts/views/view.html',
           controllerAs: 'ctrl',
-          controller: function (post) {
+          controller: function(post) {
             this.post = post;
           },
           resolve: {
-            post: function ($stateParams, PostsService) {
+            post: function($stateParams, PostsService) {
               return PostsService.getPost($stateParams.id);
             }
           }
@@ -83,20 +83,19 @@
           url: '/:id/delete',
           template: '',
           controllerAs: 'ctrl',
-          controller: function ($state, PostsService, post) {
-            PostsService.deletePost(post.id, function () {
+          controller: function($state, PostsService, post) {
+            PostsService.deletePost(post.id, function() {
               $state.go('^.list');
-            }, function () {
+            }, function() {
               $state.go('^.list');
             });
           },
           resolve: {
-            post: function ($stateParams, PostsService) {
+            post: function($stateParams, PostsService) {
               return PostsService.getPost($stateParams.id);
             }
           }
         });
-    }
-  );
+    });
 
-})();
+})(window, window.angular);

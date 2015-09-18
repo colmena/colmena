@@ -1,32 +1,32 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.core')
-    .service('CoreService', function (ENV, SweetAlert, toasty) {
+    .service('CoreService', function(ENV, SweetAlert, toasty) {
 
       this.env = ENV;
 
-      this.alert = function (title, text) {
+      this.alert = function(title, text) {
         SweetAlert.swal(title, text);
       };
 
-      this.alertSuccess = function (title, text) {
+      this.alertSuccess = function(title, text) {
         SweetAlert.swal(title, text, 'success');
       };
 
-      this.alertError = function (title, text) {
+      this.alertError = function(title, text) {
         SweetAlert.swal(title, text, 'error');
       };
 
-      this.alertWarning = function (title, text) {
+      this.alertWarning = function(title, text) {
         SweetAlert.swal(title, text, 'warning');
       };
 
-      this.alertInfo = function (title, text) {
+      this.alertInfo = function(title, text) {
         SweetAlert.swal(title, text, 'info');
       };
 
-      this.confirm = function (title, text, successCb, cancelCb) {
+      this.confirm = function(title, text, successCb, cancelCb) {
         var config = {
           title: title,
           text: text,
@@ -37,9 +37,9 @@
         this._swal(config, successCb, cancelCb);
       };
 
-      this._swal = function (config, successCb, cancelCb) {
+      this._swal = function(config, successCb, cancelCb) {
         SweetAlert.swal(config,
-          function (confirmed) {
+          function(confirmed) {
             if (confirmed) {
               successCb();
             } else {
@@ -48,7 +48,7 @@
           });
       };
 
-      this.toastSuccess = function (title, text) {
+      this.toastSuccess = function(title, text) {
         toasty.pop.success({
           title: title,
           msg: text,
@@ -56,7 +56,7 @@
         });
       };
 
-      this.toastError = function (title, text) {
+      this.toastError = function(title, text) {
         toasty.pop.error({
           title: title,
           msg: text,
@@ -64,7 +64,7 @@
         });
       };
 
-      this.toastWarning = function (title, text) {
+      this.toastWarning = function(title, text) {
         toasty.pop.warning({
           title: title,
           msg: text,
@@ -72,7 +72,7 @@
         });
       };
 
-      this.toastInfo = function (title, text) {
+      this.toastInfo = function(title, text) {
         toasty.pop.info({
           title: title,
           msg: text,
@@ -82,4 +82,4 @@
 
     });
 
-})();
+})(window, window.angular);

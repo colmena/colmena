@@ -1,18 +1,18 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.sandbox')
-    .service('FakeService', function ($window) {
+    .service('FakeService', function($window) {
       this.faker = $window.faker;
     })
-    .controller('SandboxFakerCtrl', function ($scope, $window, CoreService, FakeService, Event, Post, User, Page, Note) {
+    .controller('SandboxFakerCtrl', function($scope, $window, CoreService, FakeService, Event, Post, User, Page, Note) {
       $scope.faker = [];
 
       $scope.records = 10;
 
       console.log(FakeService);
 
-      $scope.fakeUsers = function () {
+      $scope.fakeUsers = function() {
         $scope.faker = [];
         for (var i = 0; i < $scope.records; i++) {
           var fake = {
@@ -28,7 +28,7 @@
         CoreService.toastSuccess('Created ' + $scope.records + ' users');
       };
 
-      $scope.fakePosts = function () {
+      $scope.fakePosts = function() {
         $scope.faker = [];
         for (var i = 1; i <= $scope.records; i++) {
           var fake = {
@@ -42,7 +42,7 @@
         CoreService.toastSuccess('Created ' + $scope.records + ' posts');
       };
 
-      $scope.fakePages = function () {
+      $scope.fakePages = function() {
         $scope.faker = [];
         for (var i = 1; i <= $scope.records; i++) {
           var fake = {
@@ -55,7 +55,7 @@
         CoreService.toastSuccess('Created ' + $scope.records + ' pages');
       };
 
-      $scope.fakeNotes = function () {
+      $scope.fakeNotes = function() {
         $scope.faker = [];
         for (var i = 1; i <= $scope.records; i++) {
           var fake = {
@@ -68,7 +68,7 @@
         CoreService.toastSuccess('Created ' + $scope.records + ' notes');
       };
 
-      $scope.fakeEvents = function () {
+      $scope.fakeEvents = function() {
         $scope.faker = [];
         for (var i = 0; i < $scope.records; i++) {
           var fake = {
@@ -84,4 +84,4 @@
 
     });
 
-})();
+})(window, window.angular);

@@ -1,13 +1,13 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
   angular
     .module('com.module.users')
-    .config(function ($routeProvider, $httpProvider) {
+    .config(function($routeProvider, $httpProvider) {
 
       // Intercept 401 responses and redirect to login screen
-      $httpProvider.interceptors.push(function ($q, $location, CoreService) {
+      $httpProvider.interceptors.push(function($q, $location, CoreService) {
         return {
-          responseError: function (rejection) {
+          responseError: function(rejection) {
             if (rejection.status === 401) {
               //$rootScope.currentUser = null;
               // save the current location so that login can redirect back
@@ -47,4 +47,4 @@
       });
     });
 
-})();
+})(window, window.angular);

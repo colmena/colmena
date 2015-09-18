@@ -1,4 +1,4 @@
-(function () {
+(function(window, angular, undefined) {
   'use strict';
 
   /**
@@ -11,7 +11,7 @@
    */
   angular
     .module('com.module.core')
-    .directive('adminHeader', function () {
+    .directive('adminHeader', function() {
       return {
         templateUrl: 'modules/core/views/elements/admin-header.html',
         transclude: true,
@@ -23,4 +23,4 @@
       };
     });
 
-})();
+})(window, window.angular);
