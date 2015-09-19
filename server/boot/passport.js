@@ -56,6 +56,7 @@ module.exports = function(app) {
     });
 
     // Configure passport strategies for third party auth providers and add them to the API
+    AuthProvider.destroyAll();
     for (var s in config) {
       var c = config[s];
 
@@ -92,6 +93,8 @@ module.exports = function(app) {
 
   app.get('/auth/account', ensureLoggedIn('/'), function(req, res, next) {
     console.log('Logged in', req.user)
+    //Copy the cookie over for our AppAuth service that looks for accessToken cookie
+    res.cookie('accessToken', req.signedCookies['access_token'],{signed: true});
     res.redirect('/#/app');
   });
 
@@ -105,10 +108,8 @@ module.exports = function(app) {
     res.status(200).json(ret);
   });
 
-  app.get('/auth/logout', function(req, res, next) {
+  app.post('/auth/logout', function(req, res, next) {
     req.logout();
     res.redirect('/');
   });
-
-
 };

@@ -41,10 +41,18 @@
             });
         },
 
-        logout: function () {
-          LoopBackAuth.clearUser();
-          LoopBackAuth.save();
-          window.location = '/auth/logout';
+        logout: function (cb) {
+          //Destroy the access token.
+          User.logout({"access_token": LoopBackAuth.accessTokenId}, function () {
+            //Destory both cookies that get created.
+            delete $cookies["access_token"];
+            delete $cookies["accessToken"];
+            //Perform the Passport Logout
+            $http.post('/auth/logout');
+
+          });
+          self.currentUser = null;
+          cb();
         },
 
         ensureHasCurrentUser: function (cb) {
@@ -78,7 +86,9 @@
                 cb({});
               });
           } else {
-            console.log('Using cached current user.');
+            if(self.currentUser){
+              console.log('Using cached current user.');
+            }
             cb(self.currentUser);
           }
         }
