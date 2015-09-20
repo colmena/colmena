@@ -11,6 +11,6 @@
 *.swp
 *.swo
 node_modules
-coverage
+client/coverage
 *.tgz
 *.xml

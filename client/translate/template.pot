@@ -1,0 +1,565 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: about/controllers/about.config.js:6
+msgid "About"
+msgstr ""
+
+#: core/helpers/FormHelper.js:23
+#: core/services/meta.service.js:96
+#: events/services/events.service.js:35
+#: files/services/file.service.js:15
+#: notes/services/notes.service.js:35
+#: pages/services/page.service.js:35
+#: posts/services/posts.service.js:38
+#: products/services/categories.service.js:44
+#: products/services/products.service.js:39
+#: settings/services/setting.service.js:35
+#: users/services/user.service.js:35
+msgid "Are you sure?"
+msgstr ""
+
+#: notes/services/notes.service.js:70
+msgid "Body"
+msgstr ""
+
+#: browser/config/browser.config.js:6
+msgid "Browser"
+msgstr ""
+
+#: products/config/products.config.js:14
+msgid "Categories"
+msgstr ""
+
+#: products/services/products.service.js:80
+msgid "Category"
+msgstr ""
+
+#: products/services/categories.service.js:51
+msgid "Category deleted"
+msgstr ""
+
+#: products/services/categories.service.js:30
+msgid "Category saved"
+msgstr ""
+
+#: users/controllers/register.ctrl.js:80
+msgid "Confirm Password"
+msgstr ""
+
+#: posts/services/posts.service.js:73
+msgid "Content"
+msgstr ""
+
+#: core/config/core.config.js:26
+msgid "Dashboard"
+msgstr ""
+
+#: core/helpers/FormHelper.js:24
+#: core/services/meta.service.js:97
+#: events/services/events.service.js:36
+#: files/services/file.service.js:16
+#: notes/services/notes.service.js:36
+#: pages/services/page.service.js:36
+#: posts/services/posts.service.js:39
+#: products/services/categories.service.js:45
+#: products/services/products.service.js:40
+#: settings/services/setting.service.js:36
+#: users/services/user.service.js:36
+msgid "Deleting this cannot be undone"
+msgstr ""
+
+#: events/services/events.service.js:70
+#: products/services/products.service.js:88
+msgid "Description"
+msgstr ""
+
+#: users/controllers/register.ctrl.js:55
+msgid "Don't worry we won't spam your inbox"
+msgstr ""
+
+#: users/controllers/login.ctrl.js:32
+#: users/controllers/register.ctrl.js:53
+#: users/services/user.service.js:71
+msgid "Email"
+msgstr ""
+
+#: users/controllers/login.ctrl.js:40
+#: users/controllers/register.ctrl.js:63
+msgid "Email address needs to be valid"
+msgstr ""
+
+#: events/services/events.service.js:90
+msgid "End Date"
+msgstr ""
+
+#: events/services/events.service.js:97
+msgid "End Time"
+msgstr ""
+
+#: products/services/categories.service.js:56
+msgid "Error deleting category"
+msgstr ""
+
+#: events/services/events.service.js:47
+msgid "Error deleting event"
+msgstr ""
+
+#: files/services/file.service.js:30
+msgid "Error deleting file"
+msgstr ""
+
+#: core/services/meta.service.js:108
+msgid "Error deleting item"
+msgstr ""
+
+#: core/helpers/FormHelper.js:33
+msgid "Error deleting item:"
+msgstr ""
+
+#: notes/services/notes.service.js:47
+msgid "Error deleting note"
+msgstr ""
+
+#: pages/services/page.service.js:47
+msgid "Error deleting page"
+msgstr ""
+
+#: posts/services/posts.service.js:50
+msgid "Error deleting post"
+msgstr ""
+
+#: products/services/products.service.js:51
+msgid "Error deleting product"
+msgstr ""
+
+#: settings/services/setting.service.js:47
+msgid "Error deleting setting"
+msgstr ""
+
+#: users/services/user.service.js:47
+msgid "Error deleting user"
+msgstr ""
+
+#: users/controllers/register.ctrl.js:137
+msgid "Error registering!"
+msgstr ""
+
+#: products/services/categories.service.js:36
+msgid "Error saving category"
+msgstr ""
+
+#: events/services/events.service.js:27
+msgid "Error saving event"
+msgstr ""
+
+#: core/services/meta.service.js:86
+msgid "Error saving item"
+msgstr ""
+
+#: notes/services/notes.service.js:27
+msgid "Error saving note"
+msgstr ""
+
+#: pages/services/page.service.js:27
+msgid "Error saving page"
+msgstr ""
+
+#: posts/services/posts.service.js:30
+msgid "Error saving post"
+msgstr ""
+
+#: products/services/products.service.js:31
+msgid "Error saving product"
+msgstr ""
+
+#: settings/services/setting.service.js:27
+msgid "Error saving setting"
+msgstr ""
+
+#: users/services/user.service.js:27
+msgid "Error saving user"
+msgstr ""
+
+#: users/controllers/register.ctrl.js:128
+msgid "Error signin in after registration!"
+msgstr ""
+
+#: events/services/events.service.js:42
+msgid "Event deleted"
+msgstr ""
+
+#: events/services/events.service.js:21
+msgid "Event saved"
+msgstr ""
+
+#: events/config/events.config.js:6
+msgid "Events"
+msgstr ""
+
+#: files/services/file.service.js:22
+msgid "File deleted"
+msgstr ""
+
+#: files/config/file.config.js:10
+#: files/config/file.config.js:6
+msgid "Files"
+msgstr ""
+
+#: users/controllers/register.ctrl.js:27
+msgid "First Name"
+msgstr ""
+
+#: posts/services/posts.service.js:80
+msgid "Image"
+msgstr ""
+
+#: core/helpers/FormHelper.js:27
+#: core/services/meta.service.js:103
+msgid "Item deleted"
+msgstr ""
+
+#: core/services/meta.service.js:80
+msgid "Item saved"
+msgstr ""
+
+#: settings/services/setting.service.js:71
+msgid "Key"
+msgstr ""
+
+#: users/controllers/register.ctrl.js:40
+msgid "Last Name"
+msgstr ""
+
+#: users/services/user.service.js:78
+#: users/services/user.service.js:85
+msgid "Last name"
+msgstr ""
+
+#: users/controllers/login.ctrl.js:98
+msgid "Logged in"
+msgstr ""
+
+#: core/controllers/main.ctrl.js:24
+msgid "Logged out"
+msgstr ""
+
+#: events/services/events.service.js:63
+#: pages/services/page.service.js:64
+#: products/services/categories.service.js:72
+#: products/services/products.service.js:73
+msgid "Name"
+msgstr ""
+
+#: users/controllers/register.ctrl.js:34
+#: users/controllers/register.ctrl.js:47
+msgid "Needs to have at least 4 characters"
+msgstr ""
+
+#: users/controllers/login.ctrl.js:41
+#: users/controllers/register.ctrl.js:64
+msgid "Nice email address!"
+msgstr ""
+
+#: notes/services/notes.service.js:42
+msgid "Note deleted"
+msgstr ""
+
+#: notes/services/notes.service.js:21
+msgid "Note saved"
+msgstr ""
+
+#: notes/config/notes.config.js:6
+#: notes/config/notes.config.js:9
+msgid "Notes"
+msgstr ""
+
+#: core/helpers/FormHelper.js:32
+msgid "Oops"
+msgstr ""
+
+#: pages/services/page.service.js:42
+msgid "Page deleted"
+msgstr ""
+
+#: pages/services/page.service.js:21
+msgid "Page saved"
+msgstr ""
+
+#: pages/config/pages.config.js:5
+#: pages/config/pages.config.js:8
+msgid "Pages"
+msgstr ""
+
+#: users/controllers/login.ctrl.js:46
+#: users/controllers/register.ctrl.js:71
+#: users/services/user.service.js:94
+msgid "Password"
+msgstr ""
+
+#: posts/services/posts.service.js:45
+msgid "Post deleted"
+msgstr ""
+
+#: posts/services/posts.service.js:24
+msgid "Post saved"
+msgstr ""
+
+#: posts/config/posts.config.js:6
+#: posts/config/posts.config.js:9
+msgid "Posts"
+msgstr ""
+
+#: products/services/products.service.js:94
+msgid "Price"
+msgstr ""
+
+#: products/services/products.service.js:46
+msgid "Product deleted"
+msgstr ""
+
+#: products/services/products.service.js:25
+msgid "Product saved"
+msgstr ""
+
+#: products/config/products.config.js:6
+#: products/config/products.config.js:9
+msgid "Products"
+msgstr ""
+
+#: users/controllers/register.ctrl.js:122
+msgid "Registered"
+msgstr ""
+
+#: settings/services/setting.service.js:42
+msgid "Setting deleted"
+msgstr ""
+
+#: settings/services/setting.service.js:21
+msgid "Setting saved"
+msgstr ""
+
+#: settings/config/settings.config.js:6
+msgid "Settings"
+msgstr ""
+
+#: pages/services/page.service.js:71
+msgid "Slug"
+msgstr ""
+
+#: events/services/events.service.js:77
+msgid "Start Date"
+msgstr ""
+
+#: events/services/events.service.js:84
+msgid "Start Time"
+msgstr ""
+
+#: users/controllers/login.ctrl.js:53
+msgid "Stay signed in"
+msgstr ""
+
+#: products/services/categories.service.js:37
+msgid "This category could no be saved:"
+msgstr ""
+
+#: events/services/events.service.js:28
+msgid "This event could no be saved:"
+msgstr ""
+
+#: core/services/meta.service.js:87
+msgid "This item could no be saved:"
+msgstr ""
+
+#: notes/services/notes.service.js:28
+msgid "This note could no be saved:"
+msgstr ""
+
+#: pages/services/page.service.js:28
+msgid "This page could no be saved:"
+msgstr ""
+
+#: posts/services/posts.service.js:31
+msgid "This post could no be saved:"
+msgstr ""
+
+#: products/services/products.service.js:32
+msgid "This product could no be saved:"
+msgstr ""
+
+#: settings/services/setting.service.js:28
+msgid "This setting could no be saved:"
+msgstr ""
+
+#: users/services/user.service.js:28
+msgid "This user could no be saved:"
+msgstr ""
+
+#: notes/services/notes.service.js:63
+#: posts/services/posts.service.js:66
+msgid "Title"
+msgstr ""
+
+#: users/services/user.service.js:42
+msgid "User deleted"
+msgstr ""
+
+#: users/services/user.service.js:21
+msgid "User saved"
+msgstr ""
+
+#: users/services/user.service.js:64
+msgid "Username"
+msgstr ""
+
+#: users/config/users.config.js:5
+msgid "Users"
+msgstr ""
+
+#: settings/services/setting.service.js:64
+msgid "Value"
+msgstr ""
+
+#: users/controllers/login.ctrl.js:99
+msgid "You are logged in!"
+msgstr ""
+
+#: core/controllers/main.ctrl.js:25
+msgid "You are logged out!"
+msgstr ""
+
+#: users/controllers/register.ctrl.js:123
+msgid "You are registered!"
+msgstr ""
+
+#: users/controllers/login.ctrl.js:39
+#: users/controllers/register.ctrl.js:62
+msgid "You need an email address"
+msgstr ""
+
+#: products/services/categories.service.js:52
+msgid "Your category is deleted!"
+msgstr ""
+
+#: products/services/categories.service.js:57
+msgid "Your category is not deleted!"
+msgstr ""
+
+#: products/services/categories.service.js:31
+msgid "Your category is safe with us!"
+msgstr ""
+
+#: events/services/events.service.js:43
+msgid "Your event is deleted!"
+msgstr ""
+
+#: events/services/events.service.js:48
+msgid "Your event is not deleted!"
+msgstr ""
+
+#: events/services/events.service.js:22
+msgid "Your event is safe with us!"
+msgstr ""
+
+#: files/services/file.service.js:23
+msgid "Your file is deleted!"
+msgstr ""
+
+#: files/services/file.service.js:31
+msgid "Your file is not deleted!"
+msgstr ""
+
+#: core/helpers/FormHelper.js:28
+msgid "Your item has been deleted!"
+msgstr ""
+
+#: core/services/meta.service.js:104
+msgid "Your item is deleted!"
+msgstr ""
+
+#: core/services/meta.service.js:109
+msgid "Your item is not deleted!"
+msgstr ""
+
+#: core/services/meta.service.js:81
+msgid "Your item is safe with us!"
+msgstr ""
+
+#: notes/services/notes.service.js:43
+msgid "Your note is deleted!"
+msgstr ""
+
+#: notes/services/notes.service.js:48
+msgid "Your note is not deleted!"
+msgstr ""
+
+#: notes/services/notes.service.js:22
+msgid "Your note is safe with us!"
+msgstr ""
+
+#: pages/services/page.service.js:43
+msgid "Your page is deleted!"
+msgstr ""
+
+#: pages/services/page.service.js:48
+msgid "Your page is not deleted!"
+msgstr ""
+
+#: pages/services/page.service.js:22
+msgid "Your page is safe with us!"
+msgstr ""
+
+#: users/controllers/register.ctrl.js:88
+msgid "Your passwords need to match"
+msgstr ""
+
+#: posts/services/posts.service.js:46
+msgid "Your post is deleted!"
+msgstr ""
+
+#: posts/services/posts.service.js:51
+msgid "Your post is not deleted!"
+msgstr ""
+
+#: posts/services/posts.service.js:25
+msgid "Your post is safe with us!"
+msgstr ""
+
+#: products/services/products.service.js:47
+msgid "Your product is deleted!"
+msgstr ""
+
+#: products/services/products.service.js:52
+msgid "Your product is not deleted!"
+msgstr ""
+
+#: products/services/products.service.js:26
+msgid "Your product is safe with us!"
+msgstr ""
+
+#: settings/services/setting.service.js:43
+msgid "Your setting is deleted!"
+msgstr ""
+
+#: settings/services/setting.service.js:48
+msgid "Your setting is not deleted!"
+msgstr ""
+
+#: settings/services/setting.service.js:22
+msgid "Your setting is safe with us!"
+msgstr ""
+
+#: users/services/user.service.js:43
+msgid "Your user is deleted!"
+msgstr ""
+
+#: users/services/user.service.js:48
+msgid "Your user is not deleted!"
+msgstr ""
+
+#: users/services/user.service.js:22
+msgid "Your user is safe with us!"
+msgstr ""
