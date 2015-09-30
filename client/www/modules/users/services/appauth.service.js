@@ -1,4 +1,4 @@
-(function(window, angular, undefined) {
+(function () {
   'use strict';
 
   /*jshint sub:true*/
@@ -6,15 +6,15 @@
 
   angular
     .module('com.module.users')
-    .factory('AppAuth', function($cookies, User, LoopBackAuth, $http) {
+    .factory('AppAuth', function ($cookies, User, LoopBackAuth, $http) {
       var self = {
-        login: function(data, cb) {
+        login: function (data, cb) {
           LoopBackAuth.currentUserId = LoopBackAuth.accessTokenId = null;
           $http.post('/api/users/login?include=user', {
-              email: data.email,
-              password: data.password
-            })
-            .then(function(response) {
+            email: data.email,
+            password: data.password
+          })
+            .then(function (response) {
               if (response.data && response.data.id) {
                 LoopBackAuth.currentUserId = response.data.userId;
                 LoopBackAuth.accessTokenId = response.data.id;
@@ -25,14 +25,14 @@
               }
               LoopBackAuth.save();
               if (LoopBackAuth.currentUserId && response.data && response.data
-                .user) {
+                  .user) {
                 self.currentUser = response.data.user;
                 cb(self.currentUser);
 
               } else {
                 cb({});
               }
-            }, function() {
+            }, function () {
               console.log('User.login() err', arguments);
               LoopBackAuth.currentUserId = LoopBackAuth.accessTokenId =
                 null;
@@ -41,17 +41,25 @@
             });
         },
 
-        logout: function() {
-          LoopBackAuth.clearUser();
-          LoopBackAuth.save();
-          window.location = '/auth/logout';
+        logout: function (cb) {
+          //Destroy the access token.
+          User.logout({"access_token": LoopBackAuth.accessTokenId}, function () {
+            //Destory both cookies that get created.
+            delete $cookies["access_token"];
+            delete $cookies["accessToken"];
+            //Perform the Passport Logout
+            $http.post('/auth/logout');
+
+          });
+          self.currentUser = null;
+          cb();
         },
 
-        ensureHasCurrentUser: function(cb) {
+        ensureHasCurrentUser: function (cb) {
           if ((!this.currentUser || this.currentUser.id === 'social') && $cookies.accessToken) {
             LoopBackAuth.currentUserId = LoopBackAuth.accessTokenId = null;
             $http.get('/auth/current')
-              .then(function(response) {
+              .then(function (response) {
                 if (response.data.id) {
                   LoopBackAuth.currentUserId = response.data.id;
                   LoopBackAuth.accessTokenId = $cookies.accessToken.substring(
@@ -70,7 +78,7 @@
                   self.currentUser.name = profile.profile.name;
                 }
                 cb(self.currentUser);
-              }, function() {
+              }, function () {
                 console.log('User.getCurrent() err', arguments);
                 LoopBackAuth.currentUserId = LoopBackAuth.accessTokenId =
                   null;
@@ -78,7 +86,9 @@
                 cb({});
               });
           } else {
-            console.log('Using cached current user.');
+            if(self.currentUser){
+              console.log('Using cached current user.');
+            }
             cb(self.currentUser);
           }
         }
@@ -86,4 +96,4 @@
       return self;
     });
 
-})(window, window.angular);
+})();
