@@ -230,20 +230,20 @@ msgstr ""
 msgid "Key"
 msgstr ""
 
-#: users/controllers/register.ctrl.js:40
-msgid "Last Name"
-msgstr ""
-
 #: users/services/user.service.js:78
 #: users/services/user.service.js:85
 msgid "Last name"
+msgstr ""
+
+#: users/controllers/register.ctrl.js:40
+msgid "Last Name"
 msgstr ""
 
 #: users/controllers/login.ctrl.js:98
 msgid "Logged in"
 msgstr ""
 
-#: core/controllers/main.ctrl.js:24
+#: core/controllers/main.ctrl.js:26
 msgid "Logged out"
 msgstr ""
 
@@ -427,7 +427,7 @@ msgstr ""
 msgid "You are logged in!"
 msgstr ""
 
-#: core/controllers/main.ctrl.js:25
+#: core/controllers/main.ctrl.js:27
 msgid "You are logged out!"
 msgstr ""
 

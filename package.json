@@ -21,7 +21,7 @@
     "test": "mocha",
     "start": "node server/server.js",
     "dev": "nodemon server/server.js --watch server --watch common --ext js,json ",
-    "postinstall": "bower install && gulp build"
+    "postinstall": "bower install && gulp"
   },
   "main": "server/server.js",
   "dependencies": {
@@ -119,7 +119,7 @@
     "karma-phantomjs-launcher": "0.1.4",
     "mocha": "2.3.3",
     "opn": "^3.0.2",
-    "run-sequence": "1.0.2",
+    "run-sequence": "^1.1.4",
     "shelljs": "^0.3.0",
     "tiny-lr": "0.1.5"
   }
