@@ -433,7 +433,7 @@ msgid "Manage your settings here!"
 msgstr ""
 
 #: client/app/modules/users/views/main.html:2
-msgid "Manager your users here!"
+msgid "Manage your users here!"
 msgstr ""
 
 #: client/app/modules/core/views/elements/small-box.html:8
