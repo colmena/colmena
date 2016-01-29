@@ -27,15 +27,22 @@ module.exports = function (app) {
     }
   };
 
-  for (var model in structure) {
-    var options = structure[model];
-    log('Creating %s items for model %s', options.count, model);
-    for (var i = 0; i < options.count; i++) {
-      promises.push(app.models[model].createFakeData(faker));
+  if(app.dataSources.db.connected) {
+    createFakeData();
+  } else {
+    app.dataSources.db.once('connected', createFakeData);
+  }
+
+  function createFakeData() {
+    for (var model in structure) {
+      var options = structure[model];
+      log('Creating %s items for model %s', options.count, model);
+      for (var i = 0; i < options.count; i++) {
+        promises.push(app.models[model].createFakeData(faker));
+      }
     }
   }
 
-  log('Creating fake data!');
 
   Promise.all(promises).then(function () {
     log('Creating fake data done!');
