@@ -5,8 +5,12 @@ var Showdown = require('showdown');
 module.exports = function(Page) {
 
   Page.createFakeData = function (faker) {
+    var name = faker.company.catchPhrase();
+    var slug = faker.helpers.slugify(name);
     return Page.create({
-      name: faker.lorem.sentence(),
+      id: slug,
+      name: name,
+      slug: slug,
       content: ' > ' + faker.lorem.paragraph()
     });
   };
@@ -34,7 +38,7 @@ module.exports = function(Page) {
       type: 'string'
     },
     http: {
-      path: '/html',
+      path: '/:id/html',
       verb: 'get'
     }
   });

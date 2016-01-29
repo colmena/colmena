@@ -8,7 +8,7 @@ module.exports = function (Event) {
       description: faker.lorem.paragraph(),
       startDate: faker.date.future(),
       endDate: faker.date.future(),
-      image: faker.image.imageUrl()
+      image: faker.image.imageUrl() + '/nightlife/' + (Math.random() * 9 | 0)
     });
   }
 

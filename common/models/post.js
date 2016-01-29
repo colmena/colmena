@@ -6,7 +6,7 @@ module.exports = function (Post) {
     return Post.create({
       title: faker.lorem.sentence(),
       content: faker.lorem.paragraph(),
-      image: faker.image.imageUrl()
+      image: faker.image.imageUrl() + '/nature/' + (Math.random() * 9 | 0)
     });
   };
 
