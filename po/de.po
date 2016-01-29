@@ -232,7 +232,7 @@ msgid "Manage your settings here!"
 msgstr "Verwalte deine Einstellungen hier"
 
 #: client/app/modules/users/views/main.html:2
-msgid "Manager your users here!"
+msgid "Manage your users here!"
 msgstr "Verwalte deine Nutzer hier"
 
 #: client/app/modules/core/views/elements/small-box.html:8

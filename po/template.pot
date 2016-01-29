@@ -350,6 +350,10 @@ msgstr ""
 msgid "Files"
 msgstr ""
 
+#: client/app/modules/users/services/user.service.js:80
+msgid "First name"
+msgstr ""
+
 #: client/app/modules/users/controllers/register.ctrl.js:26
 msgid "First Name"
 msgstr ""
@@ -383,7 +387,6 @@ msgstr ""
 msgid "Key"
 msgstr ""
 
-#: client/app/modules/users/services/user.service.js:80
 #: client/app/modules/users/services/user.service.js:88
 msgid "Last name"
 msgstr ""
@@ -425,7 +428,7 @@ msgid "Manage your settings here!"
 msgstr ""
 
 #: client/app/modules/users/views/main.html:3
-msgid "Manager your users here!"
+msgid "Manage your users here!"
 msgstr ""
 
 #: client/app/modules/core/views/elements/small-box.html:8
