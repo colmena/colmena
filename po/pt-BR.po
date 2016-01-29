@@ -231,7 +231,7 @@ msgid "Manage your settings here!"
 msgstr "Administrar configurações do sistema!"
 
 #: client/app/modules/users/views/main.html:2
-msgid "Manager your users here!"
+msgid "Manage your users here!"
 msgstr "Administrar sua conta"
 
 #: client/app/modules/core/views/elements/small-box.html:8

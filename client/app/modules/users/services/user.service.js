@@ -77,7 +77,7 @@
             key: 'firstName',
             type: 'input',
             templateOptions: {
-              label: gettextCatalog.getString('Last name'),
+              label: gettextCatalog.getString('First name'),
               required: true
             }
           },

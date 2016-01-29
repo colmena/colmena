@@ -456,7 +456,7 @@ msgid "Manage your settings here!"
 msgstr "¡Administre sus configuraciones aquí!"
 
 #: client/app/modules/users/views/main.html:2
-msgid "Manager your users here!"
+msgid "Manage your users here!"
 msgstr "¡Administre los usuarios aquí!"
 
 #: client/app/modules/core/views/elements/small-box.html:8
