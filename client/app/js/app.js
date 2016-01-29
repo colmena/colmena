@@ -100,9 +100,9 @@
 
       $rootScope.locale = $rootScope.locales[lang];
 
-      if ($rootScope.locale === undefined) {
+      if (angular.isUndefined($rootScope.locale)) {
         $rootScope.locale = $rootScope.locales[lang];
-        if ($rootScope.locale === undefined) {
+        if (angular.isUndefined($rootScope.locale)) {
           $rootScope.locale = $rootScope.locales['en'];
         }
       }
