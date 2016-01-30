@@ -1,0 +1,5 @@
+# circle.yml
+machine:
+  node:
+    version: 5.5.0
+
