@@ -2,5 +2,9 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "transient": {
+    "name": "transient",
+    "connector": "transient"
   }
 }
