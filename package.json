@@ -4,8 +4,8 @@
   "description": "Quickly create admin interfaces on a Loopback 2.x API",
   "version": "0.1.1",
   "engines": {
-    "node": "0.10.x",
-    "npm": "2.1.x"
+    "node": "5.5.0",
+    "npm": "3.3.12"
   },
   "homepage": "https://github.com/beeman/loopback-angular-admin",
   "author": "Bram Borggreve <borggreve@gmail.com>",
