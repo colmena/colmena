@@ -4,24 +4,22 @@ The goal is to have a starter project which can be used to quickly build an API 
 
 # loopback-angular-admin
 
-[![Stories in Ready](https://badge.waffle.io/beeman/loopback-angular-admin.png?label=ready&title=Ready)](https://waffle.io/beeman/loopback-angular-admin)
-
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/beeman/loopback-angular-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-[![NPM version](https://badge.fury.io/js/loopback-angular-admin.png)](http://badge.fury.io/js/loopback-angular-admin)
-[![Dependencies](https://david-dm.org/beeman/loopback-angular-admin.png)](https://david-dm.org/beeman/loopback-angular-admin)
-
-[![Codeship Status for beeman/loopback-angular-admin](https://www.codeship.io/projects/63461bc0-396b-0132-3ad7-621226feddc2/status)](https://www.codeship.io/projects/42207)
-
-[![wercker status](https://app.wercker.com/status/d5bf1a6b787b3c00633c02da0f9a48e5/s "wercker status")](https://app.wercker.com/project/bykey/d5bf1a6b787b3c00633c02da0f9a48e5)
-
-[![Build Status](https://drone.io/github.com/beeman/loopback-angular-admin/status.png)](https://drone.io/github.com/beeman/loopback-angular-admin/latest)
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/beeman/loopback-angular-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)        [![Dependencies](https://david-dm.org/beeman/loopback-angular-admin.png)](https://david-dm.org/beeman/loopback-angular-admin)        [![Codeship Status for beeman/loopback-angular-admin](https://www.codeship.io/projects/63461bc0-396b-0132-3ad7-621226feddc2/status)](https://www.codeship.io/projects/42207)        [![Build Status](https://drone.io/github.com/beeman/loopback-angular-admin/status.png)](https://drone.io/github.com/beeman/loopback-angular-admin/latest)        [![Stories in Ready](https://badge.waffle.io/beeman/loopback-angular-admin.png?label=ready&title=Ready)](https://waffle.io/beeman/loopback-angular-admin)
 
 ## Try it now!
 
 Deploy an instance on your Heroku account to play around with it!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+An alternative way to get it running at Heroku is to install the [Heroku Toolbelt](https://toolbelt.heroku.com) and follow these steps:
+
+```
+git clone https://github.com/beeman/loopback-angular-admin.git my-project
+cd my-project
+heroku apps:create my-project
+git push heroku master
+```
 
 ## Users
 
