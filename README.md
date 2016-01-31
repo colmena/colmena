@@ -1,8 +1,9 @@
-**This software is not ready for production! It is still being developed and it will change in the future.**
+
+# loopback-angular-admin
 
 The goal is to have a starter project which can be used to quickly build an API with a frontend that are easily extended.
 
-# loopback-angular-admin
+**This software is not ready for production! It is still being developed and it will change in the future.**
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/beeman/loopback-angular-admin?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)        [![Dependencies](https://david-dm.org/beeman/loopback-angular-admin.png)](https://david-dm.org/beeman/loopback-angular-admin)        [![Codeship Status for beeman/loopback-angular-admin](https://www.codeship.io/projects/63461bc0-396b-0132-3ad7-621226feddc2/status)](https://www.codeship.io/projects/42207)        [![Build Status](https://drone.io/github.com/beeman/loopback-angular-admin/status.png)](https://drone.io/github.com/beeman/loopback-angular-admin/latest)        [![Stories in Ready](https://badge.waffle.io/beeman/loopback-angular-admin.png?label=ready&title=Ready)](https://waffle.io/beeman/loopback-angular-admin)
 
