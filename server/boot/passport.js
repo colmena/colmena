@@ -109,7 +109,8 @@ module.exports = function(app) {
   });
 
   app.post('/auth/logout', function(req, res, next) {
-    req.logout();
-    res.redirect('/');
+    req.session.destroy(function(err){
+      res.redirect('/');
+    });
   });
 };
