@@ -18,7 +18,7 @@ module.exports = function(app) {
   }));
 
   app.use(loopback.cookieParser(app.get('cookieSecret')));
-  app.use(loopback.session({
+  app.middleware('session', loopback.session({
     secret: app.get('cookieSecret'),
     saveUninitialized: true,
     resave: true
