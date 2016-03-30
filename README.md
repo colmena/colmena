@@ -180,7 +180,6 @@ These should help you quickly add code to your project. Further details tailored
     PhantomJS 1.9.8 (Linux): Executed 1 of 1 SUCCESS (0.007 secs / 0.029 secs)
 
 
-
 ### Useful commits
 
 These commits might be useful when extending the functionality.
@@ -194,6 +193,13 @@ These commits might be useful when extending the functionality.
 At this moment there is no integration for socket.io or websockets, nor will there be in the near future. Once LoopBack has integrated support for it we will leverage from that.
 
 Having that said, it's certainly possible to integrate socket.io, check [this](https://github.com/beeman/loopback-angular-admin/pull/44) pull request by [@movibe](https://github.com/movibe).
+
+# Related Projects
+
+Here are some projects that are related to what this project does. Please send a PR or create an issue if you have any additions to this list.
+
+- [BoLaMN/loopback-component-admin](https://github.com/BoLaMN/loopback-component-admin) 
+- [johannesjo/generator-angular-auto-admin-loopback](https://github.com/johannesjo/generator-angular-auto-admin-loopback)
 
 # Issues
 
