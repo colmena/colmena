@@ -25,7 +25,7 @@
               }
               LoopBackAuth.save();
               if (LoopBackAuth.currentUserId && response.data && response.data
-                  .user) {
+                .user) {
                 self.currentUser = response.data.user;
                 cb(self.currentUser);
 
@@ -43,10 +43,10 @@
 
         logout: function (cb) {
           //Destroy the access token.
-          User.logout({"access_token": LoopBackAuth.accessTokenId}, function () {
+          User.logout({ 'access_token': LoopBackAuth.accessTokenId }, function () {
             //Destory both cookies that get created.
-            delete $cookies["access_token"];
-            delete $cookies["accessToken"];
+            delete $cookies['access_token'];
+            delete $cookies['accessToken'];
             //Perform the Passport Logout
             $http.post('/auth/logout');
 
@@ -73,7 +73,7 @@
                 self.currentUser = response.data;
                 var profile = self.currentUser && self.currentUser.profiles &&
                   self.currentUser.profiles.length && self.currentUser.profiles[
-                    0];
+                  0];
                 if (profile) {
                   self.currentUser.name = profile.profile.name;
                 }
@@ -86,7 +86,7 @@
                 cb({});
               });
           } else {
-            if(self.currentUser){
+            if (self.currentUser) {
               console.log('Using cached current user.');
             }
             cb(self.currentUser);

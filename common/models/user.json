@@ -22,9 +22,9 @@
     },
     "roles": {
       "type": "hasMany",
-      "model": "Role",
-      "through": "RoleMapping",
-      "foreignKey": "principalId"
+      "model": "role",
+      "foreignKey": "principalId",
+      "through": "roleMapping"
     }
   },
   "acls": [
@@ -53,5 +53,5 @@
       "permission": "ALLOW"
     }
   ],
-  "methods": []
+  "methods": {}
 }

@@ -17,7 +17,19 @@
         .state('app.users', {
           abstract: true,
           url: '/users',
-          templateUrl: 'modules/users/views/main.html'
+          templateUrl: 'modules/users/views/main.html',
+          data: {
+            permissions: {
+              only: ['admin'],
+              redirectTo: function () {
+                // I don't know how to use toasty here
+                // CoreService.toastWarning('Error 401 received',
+                //     'You don not have the requird permissions. Redirecting to dashboard'
+                //     );
+                return 'app.home';
+              }
+            }
+          }
         })
         .state('app.users.list', {
           url: '',
@@ -38,20 +50,24 @@
           url: '/add',
           templateUrl: 'modules/users/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, UserService, user) {
+          controller: function ($state, UserService, user, OldRoles) {
+            user.roles = OldRoles;
             this.user = user;
             this.formFields = UserService.getFormFields('add');
             this.formOptions = {};
             this.submit = function () {
-              UserService.upsert(this.user).then(function () {
+              UserService.upsert(this.user, OldRoles).then(function () {
                 $state.go('^.list');
-              }).catch(function (err) {
-                console.log(err);
-              });
+              }).catch(function (err) {		
+ -                console.log(err);		
+                });
             };
           },
           resolve: {
-            user: function () {
+            user: function ($stateParams, UserService) {
+              { };
+            },
+            OldRoles: function ($stateParams, UserService) {
               return {};
             }
           }
@@ -60,12 +76,13 @@
           url: '/edit/:id',
           templateUrl: 'modules/users/views/form.html',
           controllerAs: 'ctrl',
-          controller: function ($state, UserService, user) {
+          controller: function ($state, UserService, user, OldRoles) {
+            user.roles = OldRoles;
             this.user = user;
             this.formFields = UserService.getFormFields('edit');
             this.formOptions = {};
             this.submit = function () {
-              UserService.upsert(this.user).then(function () {
+              UserService.upsert(this.user, OldRoles).then(function () {
                 $state.go('^.list');
               });
             };
@@ -73,6 +90,11 @@
           resolve: {
             user: function ($stateParams, UserService) {
               return UserService.findById($stateParams.id);
+            },
+            OldRoles: function ($stateParams, UserService) {
+              return UserService.getRoles($stateParams.id).then(function (roles) {
+                return roles.map(function (role) { return role.id; })
+              });
             }
           }
         })

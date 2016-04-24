@@ -19,6 +19,7 @@
       'config',
       'formly',
       'formlyBootstrap',
+      'app.acl',
       'lbServices',
       'monospaced.elastic',
       'ngAnimate',
@@ -38,6 +39,7 @@
       'angular-underscore/filters',
       'schemaForm',
       'ui.select',
+      'selectize',
       'com.module.core',
       'com.module.about',
       'com.module.browser',
@@ -49,7 +51,8 @@
       'com.module.products',
       'com.module.sandbox',
       'com.module.settings',
-      'com.module.users'
+      'com.module.users',
+      'com.module.roles'
     ])
     .run(function ($rootScope, $cookies, gettextCatalog) {
 
@@ -116,7 +119,7 @@
        */
       var ngModelAttrs = {};
 
-      function camelize (string) {
+      function camelize(string) {
         string = string.replace(/[\-_\s]+(.)?/g, function (match, chr) {
           return chr ? chr.toUpperCase() : '';
         });
@@ -138,7 +141,7 @@
         'mousewheel',
         'arrowkeys'
       ], function (attr) {
-        ngModelAttrs[camelize(attr)] = {attribute: attr};
+        ngModelAttrs[camelize(attr)] = { attribute: attr };
       });
 
       // bindings
@@ -147,7 +150,7 @@
         'minute-step',
         'show-meridian'
       ], function (binding) {
-        ngModelAttrs[camelize(binding)] = {bound: binding};
+        ngModelAttrs[camelize(binding)] = { bound: binding };
       });
 
       formlyConfig.setType({
@@ -178,6 +181,12 @@
             datepickerOptions: {}
           }
         }
+      });
+
+      formlyConfig.setType({
+        name: 'selectize',
+        extends: 'select',
+        template: '<selectize ng-model="model[options.key]" config="to.config" options="to.options"></selectize>',
       });
     });
 

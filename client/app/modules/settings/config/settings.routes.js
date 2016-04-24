@@ -7,7 +7,19 @@
         .state('app.settings', {
           abstract: true,
           url: '/settings',
-          templateUrl: 'modules/settings/views/main.html'
+          templateUrl: 'modules/settings/views/main.html',
+          data: {
+            permissions: {
+              only: ['admin'],
+              redirectTo: function () {
+                // I don't know how to use toasty here
+                // CoreService.toastWarning('Error 401 received',
+                //     'You don not have the requird permissions. Redirecting to dashboard'
+                //     );
+                return 'app.home';
+              }
+            }
+          }
         })
         .state('app.settings.list', {
           url: '',
