@@ -58,7 +58,9 @@
             this.submit = function () {
               UserService.upsert(this.user, OldRoles).then(function () {
                 $state.go('^.list');
-              });
+              }).catch(function (err) {		
+ -                console.log(err);		
+                });
             };
           },
           resolve: {
