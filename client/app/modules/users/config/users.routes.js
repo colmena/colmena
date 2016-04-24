@@ -53,7 +53,7 @@
           controller: function ($state, UserService, user, OldRoles) {
             user.roles = OldRoles;
             this.user = user;
-            this.formFields = UserService.getFormFields('edit');
+            this.formFields = UserService.getFormFields('add');
             this.formOptions = {};
             this.submit = function () {
               UserService.upsert(this.user, OldRoles).then(function () {
