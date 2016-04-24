@@ -43,10 +43,10 @@
 
         logout: function (cb) {
           //Destroy the access token.
-          User.logout({"access_token": LoopBackAuth.accessTokenId}, function () {
+          User.logout({'access_token': LoopBackAuth.accessTokenId}, function () {
             //Destory both cookies that get created.
-            delete $cookies["access_token"];
-            delete $cookies["accessToken"];
+            delete $cookies['access_token'];
+            delete $cookies['accessToken'];
             //Perform the Passport Logout
             $http.post('/auth/logout');
 

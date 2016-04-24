@@ -2,9 +2,17 @@
   'use strict';
   angular
     .module('com.module.settings')
-    .run(function ($rootScope, gettextCatalog) {
-      $rootScope.addMenu(gettextCatalog.getString('Settings'),
+    .run(function ($rootScope, User, gettextCatalog, LoopBackAuth) {
+        User.roles.exists({
+                        id: LoopBackAuth.currentUserId,
+                        fk: 1
+                    }).$promise.then(
+                        function () {
+                             $rootScope.addMenu(gettextCatalog.getString('Settings'),
         'app.settings.list', 'fa-cog');
+                        }
+                    );
+      
 
       $rootScope.getSetting = function (key) {
         var valor = '';

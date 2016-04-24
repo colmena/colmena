@@ -48,13 +48,11 @@ Please note, at this moment there is no difference in permissions for admin user
 - Multi-language support by [rubenv/angular-gettext](https://github.com/rubenv/angular-gettext)
 - User management
 - Loading indicators [chieffancypants/angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar)?
-
-## TODO:
-
+- Map API roles to [Narzerus/angular-permission](https://github.com/Narzerus/angular-permission)
 - Permissions on user actions (non-admins cannot access advanced functions)
+## TODO:
 - permissions on content items (non-admins can only edit own content, etc)
 - Detect if API is online [HubSpot/offline](https://github.com/HubSpot/offline)?
-- Map API roles to [Narzerus/angular-permission](https://github.com/Narzerus/angular-permission)
 - Add tests
 - Add Dockerfile
 - Add Vagrantfile

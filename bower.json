@@ -38,7 +38,9 @@
     "angular-mocks": "1.5.2",
     "angular-scenario": "1.5.2",
     "angular-schema-form": "0.8.3",
-    "angular-schema-form-ui-select": "0.1.1"
+    "angular-schema-form-ui-select": "0.1.1",
+    "angular-permission": "^2.3.6",
+    "angular-selectize2": "^3.0.1"
   },
   "devDependencies": {
     "angular-mocks": "1.3",

@@ -36,11 +36,11 @@
   },
   "RoleMapping": {
     "dataSource": "db",
-    "public": true
+    "public": false
   },
   "Role": {
     "dataSource": "db",
-    "public": true
+    "public": false
   },
   "AppModel": {
     "dataSource": "db",
@@ -83,6 +83,14 @@
     "public": true
   },
   "Meta": {
+    "dataSource": "db",
+    "public": true
+  },
+  "role": {
+    "dataSource": "db",
+    "public": true
+  },
+  "roleMapping": {
     "dataSource": "db",
     "public": true
   }
