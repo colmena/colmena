@@ -50,6 +50,8 @@ Please note, at this moment there is no difference in permissions for admin user
 - Loading indicators [chieffancypants/angular-loading-bar](https://github.com/chieffancypants/angular-loading-bar)?
 - Map API roles to [Narzerus/angular-permission](https://github.com/Narzerus/angular-permission)
 - Permissions on user actions (non-admins cannot access advanced functions)
+
+
 ## TODO:
 - permissions on content items (non-admins can only edit own content, etc)
 - Detect if API is online [HubSpot/offline](https://github.com/HubSpot/offline)?
