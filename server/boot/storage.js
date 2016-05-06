@@ -1,16 +1,15 @@
-'use strict';
-
-var path = require('path');
+'use strict'
+import path from 'path'
 
 module.exports = function(app) {
 
-  var ds = app.loopback.createDataSource({
+  const ds = app.loopback.createDataSource({
     connector: require('loopback-component-storage'),
     provider: 'filesystem',
     root: path.join(__dirname, '../', '../', 'storage')
-  });
-  var container = ds.createModel('container');
+  })
+  const container = ds.createModel('container')
 
-  app.model(container);
+  app.model(container)
 
-};
+}

@@ -1,4 +1,4 @@
-var MONGODB_URL = process.env.MONGODB_URL || null;
+const MONGODB_URL = process.env.MONGODB_URL || null;
 
 if (MONGODB_URL) {
   module.exports = {
