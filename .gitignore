@@ -20,3 +20,4 @@ client/coverage
 .cache
 .config
 .npm
+.env
