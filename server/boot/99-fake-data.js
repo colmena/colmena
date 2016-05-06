@@ -43,7 +43,7 @@ module.exports = function (app) {
     }
   }
 
-  Promise.all(promises).then(function () {
+  Promise.all(promises).then(() => {
     log('Creating fake data done!')
   }).catch()
 

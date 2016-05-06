@@ -4,7 +4,7 @@ var Showdown = require('showdown')
 
 module.exports = function (Page) {
 
-  Page.createFakeData = function (faker) {
+  Page.createFakeData = (faker) => {
     var name = faker.company.catchPhrase()
     var slug = faker.helpers.slugify(name)
     return Page.create({
@@ -17,8 +17,8 @@ module.exports = function (Page) {
 
   var converter = new Showdown.converter() // eslint-disable-line new-cap
 
-  Page.html = function (id, cb) {
-    Page.findById(id, function (err, page) {
+  Page.html = (id, cb) => {
+    Page.findById(id, (err, page) => {
       if (err) {
         return cb(err)
       }

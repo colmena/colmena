@@ -40,21 +40,21 @@ module.exports = function (app) {
       }],
     }]
 
-    roles.forEach(function (role) {
+    roles.forEach((role) => {
       Role.findOrCreate(
         {where: {name: role.name}}, // find
         {name: role.name}, // create
-        function (err, createdRole, created) {
+        (err, createdRole, created) => {
           if (err) {
             console.error(`error running findOrCreate(${role.name})`, err)
           }
           (created) ? log('created role', createdRole.name)
                     : log('found role', createdRole.name)
-          role.users.forEach(function (roleUser) {
+          role.users.forEach((roleUser) => {
             User.findOrCreate(
               {where: {username: roleUser.username}}, // find
               roleUser, // create
-              function (err, createdUser, created) {
+              (err, createdUser, created) => {
                 if (err) {
                   console.error('error creating roleUser', err)
                 }
@@ -63,7 +63,7 @@ module.exports = function (app) {
                 createdRole.principals.create({
                   principalType: RoleMapping.USER,
                   principalId: createdUser.id,
-                }, function (err, rolePrincipal) {
+                }, (err, rolePrincipal) => {
                   if (err) {
                     console.error('error creating rolePrincipal', err)
                   }

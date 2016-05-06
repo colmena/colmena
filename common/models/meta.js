@@ -9,8 +9,8 @@ module.exports = function (Meta) {
   function formatProperties (properties) {
     var result = {}
     for (var key in properties) {
-      result[key] = _.clone(properties[key])
-      result[key].type = properties[key].type.name
+      result[ key ] = _.clone(properties[ key ])
+      result[ key ].type = properties[ key ].type.name
     }
     return result
   }
@@ -21,7 +21,7 @@ module.exports = function (Meta) {
   function getModelInfo (modelName) {
 
     // Get the model
-    var model = Meta.app.models[modelName]
+    var model = Meta.app.models[ modelName ]
 
     // Create the base return object
     var result = {
@@ -31,11 +31,11 @@ module.exports = function (Meta) {
     }
 
     // Get the following keys from the settings object, if they are set
-    var keys = ['description', 'plural', 'base', 'idInjection', 'persistUndefinedAsNull', 'strict', 'hidden',
+    var keys = [ 'description', 'plural', 'base', 'idInjection', 'persistUndefinedAsNull', 'strict', 'hidden',
       'validations', 'relations', 'acls', 'methods', 'mixins',
     ]
-    keys.forEach(function (key) {
-      result[key] = _.get(model.definition.settings, key)
+    keys.forEach((key) => {
+      result[ key ] = _.get(model.definition.settings, key)
     })
     return result
   }
@@ -46,10 +46,8 @@ module.exports = function (Meta) {
   Meta.getModels = function (cb) {
     cb = cb || utils.createPromiseCallback()
     var modelNames = Object.keys(Meta.app.models)
-    process.nextTick(function () {
-      cb(null, modelNames.sort().map(function (modelName) {
-        return getModelInfo(modelName)
-      }))
+    process.nextTick(() => {
+      cb(null, modelNames.sort().map((modelName) => getModelInfo(modelName)))
     })
     return cb.promise
   }
@@ -59,9 +57,7 @@ module.exports = function (Meta) {
    */
   Meta.getModelById = function (modelName, cb) {
     cb = cb || utils.createPromiseCallback()
-    process.nextTick(function () {
-      cb(null, getModelInfo(modelName))
-    })
+    process.nextTick(() => cb(null, getModelInfo(modelName)))
     return cb.promise
   }
 

@@ -5,11 +5,11 @@ module.exports = function (app) {
       id: process.env.DEV_ACCESS_TOKEN || new Date().getTime(),
       userId: 1,
     }
-    app.models.AccessToken.create(defaultToken).then(function (res) {
-      console.log('[DEV_ACCESS_TOKEN] Adding AccessToken: %s', res.id)
-    }).catch(function (err) {
-      console.log(err)
-    })
+    app.models.AccessToken.create(defaultToken)
+      .then((res) => {
+        console.log('[DEV_ACCESS_TOKEN] Adding AccessToken: %s', res.id)
+      })
+      .catch((err) => console.log(err))
   }
 
 }

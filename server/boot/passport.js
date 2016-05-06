@@ -73,7 +73,7 @@ module.exports = function (app) {
           class: providerClass,
         }
 
-        AuthProvider.create(entry, function (err, data) {
+        AuthProvider.create(entry, (err, data) => {
           if (err) {
             console.log(err)
           }
@@ -87,14 +87,14 @@ module.exports = function (app) {
 
   var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn
 
-  app.get('/auth/account', ensureLoggedIn('/'), function (req, res, next) {
+  app.get('/auth/account', ensureLoggedIn('/'), (req, res, next) => {
     console.log('Logged in', req.user)
     // Copy the cookie over for our AppAuth service that looks for accessToken cookie
     res.cookie('accessToken', req.signedCookies['access_token'], {signed: true})
     res.redirect('/#/app')
   })
 
-  app.get('/auth/current', function (req, res, next) {
+  app.get('/auth/current', (req, res, next) => {
     if (!req.isAuthenticated || !req.isAuthenticated()) {
       return res.status(200).json({})
     }
@@ -104,9 +104,7 @@ module.exports = function (app) {
     res.status(200).json(ret)
   })
 
-  app.post('/auth/logout', function (req, res, next) {
-    req.session.destroy(function () {
-      res.redirect('/')
-    })
+  app.post('/auth/logout', (req, res, next) => {
+    req.session.destroy(() => res.redirect('/'))
   })
 }

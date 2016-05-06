@@ -6,6 +6,12 @@
       "always-multiline"
     ],
     "padded-blocks": 0,
+    "prefer-arrow-callback": [
+      "error",
+      {
+        "allowNamedFunctions": true
+      }
+    ],
     "prefer-template": 1
   }
 }

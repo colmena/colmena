@@ -48,8 +48,8 @@ module.exports = function (app) {
       value: true,
     } ]
 
-    settings.forEach(function (setting) {
-      Setting.create(setting, function (err) {
+    settings.forEach((setting) => {
+      Setting.create(setting, (err) => {
         if (err) {
           console.error(err)
         }
@@ -59,13 +59,10 @@ module.exports = function (app) {
 
   function loadExistingSettings () {
     console.error('Loading existing settings')
-
-    Setting.find(function (data) {
-      log(data)
-    })
+    Setting.find((data) => log(data))
   }
 
-  Setting.count(function (err, result) {
+  Setting.count((err, result) => {
     if (err) {
       console.error(err)
     }

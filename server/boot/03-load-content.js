@@ -17,7 +17,7 @@ module.exports = function (app) {
   Category.findOrCreate(
     {where: {name: 'Beer'}}, // find
     {name: 'Beer'}, // create
-    function (err, category, created) {
+    (err, category, created) => {
       if (err) {
         console.error('err', err)
       }
@@ -30,7 +30,7 @@ module.exports = function (app) {
           price: '250',
           categoryId: category.id,
         }, // create
-        function (err, data, created) {
+        (err, data, created) => {
           if (err) {
             console.error('err', err)
           }
@@ -44,7 +44,7 @@ module.exports = function (app) {
           price: '350',
           categoryId: category.id,
         }, // create
-        function (err, data, created) {
+        (err, data, created) => {
           if (err) {
             console.error('err', err)
           }
@@ -55,7 +55,7 @@ module.exports = function (app) {
 
   Category.findOrCreate({where: {name: 'Wine'}}, {
     name: 'Wine',
-  }, function (err, category, created) {
+  }, (err, category, created) => {
     if (err) {
       console.error('err', err)
     }
@@ -65,7 +65,7 @@ module.exports = function (app) {
       name: 'Red wine',
       price: '350',
       categoryId: category.id,
-    }, function (err, data, created) {
+    }, (err, data, created) => {
       if (err) {
         console.error('err', err)
       }
@@ -76,7 +76,7 @@ module.exports = function (app) {
       name: 'White wine',
       price: '350',
       categoryId: category.id,
-    }, function (err, data, created) {
+    }, (err, data, created) => {
       if (err) {
         console.error('err', err)
       }
