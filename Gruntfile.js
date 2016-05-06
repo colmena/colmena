@@ -65,20 +65,9 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep:server']
       },
-      js: {
-        files: [
-          '!<%= yeoman.app %>/modules/**/tests/**',
-          '<%= yeoman.app %>/modules/**/{,*/}*.js'
-        ],
-        tasks: ['newer:jshint:all'],
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        }
-      },
       jsTest: {
         files: ['<%= yeoman.test %>/spec/{,*/}*.js'],
         tasks: [
-          'newer:jshint:test',
           'karma'
         ]
       },
@@ -188,26 +177,6 @@ module.exports = function (grunt) {
           open: true,
           base: '<%= yeoman.dist %>'
         }
-      }
-    },
-
-    // Make sure code styles are up to par and there are no obvious mistakes
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      all: {
-        src: [
-          'Gruntfile.js',
-          '<%= yeoman.app %>/modules/**/{,*/}*.js'
-        ]
-      },
-      test: {
-        options: {
-          jshintrc: '<%= yeoman.test %>/.jshintrc'
-        },
-        src: ['<%= yeoman.test %>/spec/{,*/}*.js']
       }
     },
 
@@ -577,26 +546,6 @@ module.exports = function (grunt) {
       ]
     },
 
-    "jsbeautifier": {
-      "default": {
-        src: [
-          "client/app/js/app.js",
-          "client/app/modules/**/*.js",
-          "common/**/*.js",
-          "server/**/*.js"
-        ],
-        options: {
-          config: '.jsbeautifyrc'
-        }
-      },
-      "git-pre-commit": {
-        src: ["src/**/*.js"],
-        options: {
-          mode: "VERIFY_ONLY"
-        }
-      }
-    }
-
   });
 
   // Load the plugin that provides the "loopback-angular" and "grunt-docular" tasks.
@@ -641,10 +590,6 @@ module.exports = function (grunt) {
     grunt.task.run(['serve:' + target]);
   });
 
-  grunt.registerTask('format', [
-    'jsbeautifier:default'
-  ]);
-
   grunt.registerTask('test', [
     'clean:server',
     'includeSource:server',
@@ -676,7 +621,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
     'test',
     'ngconstant:development',
     'loopback_sdk_angular:development',

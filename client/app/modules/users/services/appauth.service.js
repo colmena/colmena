@@ -1,9 +1,6 @@
 (function () {
   'use strict';
 
-  /*jshint sub:true*/
-  /*jshint camelcase: false */
-
   angular
     .module('com.module.users')
     .factory('AppAuth', function ($cookies, User, LoopBackAuth, $http) {
