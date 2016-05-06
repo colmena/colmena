@@ -1,5 +1,5 @@
-var utils = require('loopback-datasource-juggler/lib/utils');
-var _ = require('lodash');
+var utils = require('loopback-datasource-juggler/lib/utils')
+var _ = require('lodash')
 
 module.exports = function (Meta) {
 
@@ -7,14 +7,13 @@ module.exports = function (Meta) {
    * Helper method for format the type of the properties
    */
   function formatProperties (properties) {
-    var result = {};
+    var result = {}
     for (var key in properties) {
-      result[key] = _.clone(properties[key]);
-      result[key].type = properties[key].type.name;
+      result[key] = _.clone(properties[key])
+      result[key].type = properties[key].type.name
     }
-    return result;
+    return result
   }
-
 
   /**
    * Get the definition of a model and format the result in a way that's similar to a LoopBack model definition file
@@ -22,48 +21,48 @@ module.exports = function (Meta) {
   function getModelInfo (modelName) {
 
     // Get the model
-    var model = Meta.app.models[modelName];
+    var model = Meta.app.models[modelName]
 
     // Create the base return object
     var result = {
       id: model.definition.name,
       name: model.definition.name,
       properties: formatProperties(model.definition.properties)
-    };
+    }
 
     // Get the following keys from the settings object, if they are set
     var keys = ['description', 'plural', 'base', 'idInjection', 'persistUndefinedAsNull', 'strict', 'hidden',
       'validations', 'relations', 'acls', 'methods', 'mixins'
-    ];
+    ]
     keys.forEach(function (key) {
-      result[key] = _.get(model.definition.settings, key);
-    });
-    return result;
+      result[key] = _.get(model.definition.settings, key)
+    })
+    return result
   }
 
   /**
    * Get all the models with its information
    */
   Meta.getModels = function (cb) {
-    cb = cb || utils.createPromiseCallback();
-    var modelNames = Object.keys(Meta.app.models);
+    cb = cb || utils.createPromiseCallback()
+    var modelNames = Object.keys(Meta.app.models)
     process.nextTick(function () {
       cb(null, modelNames.sort().map(function (modelName) {
-        return getModelInfo(modelName);
-      }));
-    });
-    return cb.promise;
-  };
+        return getModelInfo(modelName)
+      }))
+    })
+    return cb.promise
+  }
 
   /**
    * Get one model with its information
    */
   Meta.getModelById = function (modelName, cb) {
-    cb = cb || utils.createPromiseCallback();
+    cb = cb || utils.createPromiseCallback()
     process.nextTick(function () {
-      cb(null, getModelInfo(modelName));
-    });
-    return cb.promise;
-  };
+      cb(null, getModelInfo(modelName))
+    })
+    return cb.promise
+  }
 
-};
+}

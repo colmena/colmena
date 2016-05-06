@@ -1,32 +1,32 @@
-'use strict';
+'use strict'
 
-var Showdown = require('showdown');
+var Showdown = require('showdown')
 
-module.exports = function(Page) {
+module.exports = function (Page) {
 
   Page.createFakeData = function (faker) {
-    var name = faker.company.catchPhrase();
-    var slug = faker.helpers.slugify(name);
+    var name = faker.company.catchPhrase()
+    var slug = faker.helpers.slugify(name)
     return Page.create({
       id: slug,
       name: name,
       slug: slug,
-      content: ' > ' + faker.lorem.paragraph()
-    });
-  };
+      content: ` > ${faker.lorem.paragraph()}`
+    })
+  }
 
-  var converter = new Showdown.converter();
+  var converter = new Showdown.converter() // eslint-disable-line new-cap
 
-  Page.html = function(id, cb) {
-    Page.findById(id, function(err, page) {
+  Page.html = function (id, cb) {
+    Page.findById(id, function (err, page) {
       if (err) {
-        return cb(err);
+        return cb(err)
       }
-      var result = page;
-      result.html = converter.makeHtml(page.content);
-      cb(err, result);
-    });
-  };
+      var result = page
+      result.html = converter.makeHtml(page.content)
+      cb(err, result)
+    })
+  }
 
   Page.remoteMethod('html', {
     accepts: {
@@ -41,6 +41,6 @@ module.exports = function(Page) {
       path: '/:id/html',
       verb: 'get'
     }
-  });
+  })
 
-};
+}

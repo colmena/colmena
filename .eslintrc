@@ -1,0 +1,7 @@
+{
+  "extends": "standard",
+  "rules": {
+    "padded-blocks": 0,
+    "prefer-template": 1
+  }
+}

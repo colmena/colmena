@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = function (Post) {
 
@@ -6,8 +6,8 @@ module.exports = function (Post) {
     return Post.create({
       title: faker.lorem.sentence(),
       content: faker.lorem.paragraph(),
-      image: faker.image.imageUrl() + '/nature/' + (Math.random() * 9 | 0)
-    });
-  };
+      image: `${faker.image.imageUrl()}/nature/${(Math.random() * 9 | 0)}`
+    })
+  }
 
-};
+}

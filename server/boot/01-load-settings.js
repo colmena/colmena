@@ -1,16 +1,16 @@
-'use strict';
+'use strict'
 
 // to enable these logs set `DEBUG=boot:01-load-settings` or `DEBUG=boot:*`
-var log = require('debug')('boot:01-load-settings');
+var log = require('debug')('boot:01-load-settings')
 
-module.exports = function(app) {
+module.exports = function (app) {
 
-  var Setting = app.models.Setting;
+  var Setting = app.models.Setting
 
-  function loadDefaultSettings() {
-    console.error('Creating default settings');
+  function loadDefaultSettings () {
+    console.error('Creating default settings')
 
-    var settings = [{
+    var settings = [ {
       type: 'string',
       key: 'appName',
       value: 'LoopBack Admin'
@@ -46,36 +46,34 @@ module.exports = function(app) {
       type: 'boolean',
       key: 'com.module.users.enable_registration',
       value: true
-    }];
+    } ]
 
-    settings.forEach(function(setting) {
-      Setting.create(setting, function(err) {
+    settings.forEach(function (setting) {
+      Setting.create(setting, function (err) {
         if (err) {
-          console.error(err);
+          console.error(err)
         }
-      });
-    });
+      })
+    })
   }
 
-  function loadExistingSettings() {
-    console.error('Loading existing settings');
+  function loadExistingSettings () {
+    console.error('Loading existing settings')
 
-    Setting.find(function(data) {
-      log(data);
-    });
+    Setting.find(function (data) {
+      log(data)
+    })
   }
 
-
-  Setting.count(function(err, result) {
+  Setting.count(function (err, result) {
     if (err) {
-      console.error(err);
+      console.error(err)
     }
     if (result < 1) {
-      loadDefaultSettings();
+      loadDefaultSettings()
     } else {
-      loadExistingSettings();
+      loadExistingSettings()
     }
-  });
+  })
 
-
-};
+}

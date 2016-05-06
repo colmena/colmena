@@ -1,7 +1,7 @@
 'use strict'
 import path from 'path'
 
-module.exports = function(app) {
+module.exports = function (app) {
 
   const ds = app.loopback.createDataSource({
     connector: require('loopback-component-storage'),

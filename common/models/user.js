@@ -1,15 +1,15 @@
 module.exports = function (user) {
 
   // Set the username to the users email address by default.
-  user.observe('before save', function setDefaultUsername(ctx, next) {
+  user.observe('before save', function setDefaultUsername (ctx, next) {
     if (ctx.instance) {
-      if(ctx.isNewInstance) {
-        ctx.instance.username = ctx.instance.email;
+      if (ctx.isNewInstance) {
+        ctx.instance.username = ctx.instance.email
       }
-      ctx.instance.status = 'created';
-      ctx.instance.created = Date.now();
+      ctx.instance.status = 'created'
+      ctx.instance.created = Date.now()
     }
-    next();
-  });
+    next()
+  })
 
-};
+}

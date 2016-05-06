@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = function (Note) {
 
@@ -6,7 +6,7 @@ module.exports = function (Note) {
     return Note.create({
       title: faker.lorem.sentence(),
       body: faker.lorem.paragraph()
-    });
+    })
   }
 
-};
+}

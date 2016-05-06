@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = function (Event) {
 
@@ -8,8 +8,8 @@ module.exports = function (Event) {
       description: faker.lorem.paragraph(),
       startDate: faker.date.future(),
       endDate: faker.date.future(),
-      image: faker.image.imageUrl() + '/nightlife/' + (Math.random() * 9 | 0)
-    });
+      image: `${faker.image.imageUrl()}/nightlife/${(Math.random() * 9 | 0)}`
+    })
   }
 
-};
+}
