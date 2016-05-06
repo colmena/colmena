@@ -1,3 +1,7 @@
+# Check the [develop](https://github.com/beeman/loopback-angular-admin/tree/develop) branch for the latest and greatest
+
+More info on that is happening in the develop branch can be found [here](https://github.com/beeman/loopback-angular-admin/issues/179)
+
 
 # loopback-angular-admin
 
