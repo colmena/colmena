@@ -1,7 +1,7 @@
 module.exports = function (app) {
 
   if (process.env.NODE_ENV !== 'production' && process.env.DEV_ACCESS_TOKEN !== undefined) {
-    var defaultToken = {
+    const defaultToken = {
       id: process.env.DEV_ACCESS_TOKEN || new Date().getTime(),
       userId: 1,
     }

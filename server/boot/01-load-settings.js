@@ -1,16 +1,16 @@
 'use strict'
 
 // to enable these logs set `DEBUG=boot:01-load-settings` or `DEBUG=boot:*`
-var log = require('debug')('boot:01-load-settings')
+const log = require('debug')('boot:01-load-settings')
 
 module.exports = function (app) {
 
-  var Setting = app.models.Setting
+  const Setting = app.models.Setting
 
   function loadDefaultSettings () {
     console.error('Creating default settings')
 
-    var settings = [ {
+    const settings = [ {
       type: 'string',
       key: 'appName',
       value: 'LoopBack Admin',

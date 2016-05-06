@@ -4,7 +4,8 @@ module.exports = function (Category) {
 
   Category.observe('before delete', (ctx, next) => {
 
-    var Product = ctx.Model.app.models.Product
+    const Product = ctx.Model.app.models.Product
+
     Product.find({
       where: {
         categoryId: ctx.where.id,

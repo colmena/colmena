@@ -2,8 +2,8 @@
 
 module.exports = function (app) {
 
-  var bodyParser = require('body-parser')
-  var loopback = require('loopback')
+  const bodyParser = require('body-parser')
+  const loopback = require('loopback')
 
   // to support JSON-encoded bodies
   app.use(bodyParser.json())
@@ -24,7 +24,7 @@ module.exports = function (app) {
     resave: true,
   }))
 
-  var config = false
+  let config = false
   try {
     config = require('../../providers.json')
   } catch (err) {
@@ -38,10 +38,10 @@ module.exports = function (app) {
   if (config) {
     console.log('Configuring passport')
 
-    var AuthProvider = app.models.AuthProvider
-    var loopbackPassport = require('loopback-component-passport')
-    var PassportConfigurator = loopbackPassport.PassportConfigurator
-    var passportConfigurator = new PassportConfigurator(app)
+    const AuthProvider = app.models.AuthProvider
+    const loopbackPassport = require('loopback-component-passport')
+    const PassportConfigurator = loopbackPassport.PassportConfigurator
+    const passportConfigurator = new PassportConfigurator(app)
 
     // Initialize passport
     passportConfigurator.init()
@@ -55,17 +55,17 @@ module.exports = function (app) {
 
     // Configure passport strategies for third party auth providers and add them to the API
     AuthProvider.destroyAll()
-    for (var s in config) {
-      var c = config[s]
+    for (let s in config) {
+      const c = config[s]
 
       if (c.provider !== 'local') {
 
-        var providerClass = c.provider
+        let providerClass = c.provider
         if (c.provider === 'google') {
           providerClass = 'google-plus'
         }
 
-        var entry = {
+        const entry = {
           name: s,
           link: c.link,
           authPath: c.authPath,
@@ -85,7 +85,7 @@ module.exports = function (app) {
     }
   }
 
-  var ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn
+  const ensureLoggedIn = require('connect-ensure-login').ensureLoggedIn
 
   app.get('/auth/account', ensureLoggedIn('/'), (req, res, next) => {
     console.log('Logged in', req.user)
@@ -99,7 +99,7 @@ module.exports = function (app) {
       return res.status(200).json({})
     }
     // poor man's copy
-    var ret = JSON.parse(JSON.stringify(req.user))
+    const ret = JSON.parse(JSON.stringify(req.user))
     delete ret.password
     res.status(200).json(ret)
   })

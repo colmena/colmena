@@ -1,8 +1,8 @@
 'use strict'
 
-var log = require('debug')('boot:99-fake.data')
-var faker = require('faker')
-var Promise = require('bluebird')
+const log = require('debug')('boot:99-fake.data')
+const faker = require('faker')
+const Promise = require('bluebird')
 
 module.exports = function (app) {
 
@@ -10,9 +10,9 @@ module.exports = function (app) {
     return
   }
 
-  var promises = []
+  const promises = []
 
-  var structure = {
+  const structure = {
     Post: {
       count: 15,
     },
@@ -34,10 +34,10 @@ module.exports = function (app) {
   }
 
   function createFakeData () {
-    for (var model in structure) {
-      var options = structure[model]
+    for (let model in structure) {
+      const options = structure[model]
       log('Creating %s items for model %s', options.count, model)
-      for (var i = 0; i < options.count; i++) {
+      for (let i = 0; i < options.count; i++) {
         promises.push(app.models[model].createFakeData(faker))
       }
     }

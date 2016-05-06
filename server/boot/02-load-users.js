@@ -1,7 +1,7 @@
 'use strict'
 
 // to enable these logs set `DEBUG=boot:02-load-users` or `DEBUG=boot:*`
-var log = require('debug')('boot:02-load-users')
+const log = require('debug')('boot:02-load-users')
 
 module.exports = function (app) {
 
@@ -15,12 +15,12 @@ module.exports = function (app) {
 
     log('Creating roles and users')
 
-    var User = app.models.User
-    var Role = app.models.Role
-    var RoleMapping = app.models.RoleMapping
+    const User = app.models.User
+    const Role = app.models.Role
+    const RoleMapping = app.models.RoleMapping
 
-    var users = []
-    var roles = [{
+    const users = []
+    const roles = [{
       name: 'admin',
       users: [{
         firstName: 'Admin',

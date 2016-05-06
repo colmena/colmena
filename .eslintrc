@@ -5,6 +5,7 @@
       "error",
       "always-multiline"
     ],
+    "no-var": 1,
     "padded-blocks": 0,
     "prefer-arrow-callback": [
       "error",

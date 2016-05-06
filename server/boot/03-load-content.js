@@ -1,7 +1,7 @@
 'use strict'
 
 // to enable these logs set `DEBUG=boot:03-load-content` or `DEBUG=boot:*`
-var log = require('debug')('boot:03-load-content')
+const log = require('debug')('boot:03-load-content')
 
 module.exports = function (app) {
 
@@ -11,8 +11,8 @@ module.exports = function (app) {
 
   log('Creating categories and products')
 
-  var Category = app.models.Category
-  var Product = app.models.Product
+  const Category = app.models.Category
+  const Product = app.models.Product
 
   Category.findOrCreate(
     {where: {name: 'Beer'}}, // find
