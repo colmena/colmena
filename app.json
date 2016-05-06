@@ -1,7 +1,0 @@
-{
-  "name": "Loopback-angular-admin",
-  "description": "Quickly create admin interfaces on a Loopback 2.x API ",
-  "repository": "https://github.com/beeman/loopback-angular-admin",
-  "logo": "https://node-js-sample.herokuapp.com/node.svg",
-  "keywords": ["node", "angular", "loopback", "admin", "api"]
-}
