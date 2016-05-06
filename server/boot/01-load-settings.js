@@ -13,39 +13,39 @@ module.exports = function (app) {
     var settings = [ {
       type: 'string',
       key: 'appName',
-      value: 'LoopBack Admin'
+      value: 'LoopBack Admin',
     }, {
       type: 'select',
       key: 'appTheme',
       value: 'skin-blue',
       options: [
         'skin-blue',
-        'skin-black'
-      ]
+        'skin-black',
+      ],
     }, {
       type: 'select',
       key: 'appLayout',
       value: 'fixed',
       options: [
         'skin-blue',
-        'not-fixed'
-      ]
+        'not-fixed',
+      ],
     }, {
       type: 'string',
       key: 'formLayout',
-      value: 'horizontal'
+      value: 'horizontal',
     }, {
       type: 'int',
       key: 'formLabelSize',
-      value: 3
+      value: 3,
     }, {
       type: 'int',
       key: 'formInputSize',
-      value: 9
+      value: 9,
     }, {
       type: 'boolean',
       key: 'com.module.users.enable_registration',
-      value: true
+      value: true,
     } ]
 
     settings.forEach(function (setting) {

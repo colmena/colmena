@@ -7,8 +7,8 @@ module.exports = function (Category) {
     var Product = ctx.Model.app.models.Product
     Product.find({
       where: {
-        categoryId: ctx.where.id
-      }
+        categoryId: ctx.where.id,
+      },
     }, function (err, products) {
       if (err) {
         next(err)

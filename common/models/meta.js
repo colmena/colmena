@@ -27,12 +27,12 @@ module.exports = function (Meta) {
     var result = {
       id: model.definition.name,
       name: model.definition.name,
-      properties: formatProperties(model.definition.properties)
+      properties: formatProperties(model.definition.properties),
     }
 
     // Get the following keys from the settings object, if they are set
     var keys = ['description', 'plural', 'base', 'idInjection', 'persistUndefinedAsNull', 'strict', 'hidden',
-      'validations', 'relations', 'acls', 'methods', 'mixins'
+      'validations', 'relations', 'acls', 'methods', 'mixins',
     ]
     keys.forEach(function (key) {
       result[key] = _.get(model.definition.settings, key)

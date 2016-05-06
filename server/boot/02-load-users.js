@@ -27,8 +27,8 @@ module.exports = function (app) {
         lastName: 'User',
         email: 'admin@admin.com',
         username: 'admin',
-        password: 'admin'
-      }]
+        password: 'admin',
+      }],
     }, {
       name: 'users',
       users: [{
@@ -36,8 +36,8 @@ module.exports = function (app) {
         lastName: 'User',
         email: 'user@user.com',
         username: 'user',
-        password: 'user'
-      }]
+        password: 'user',
+      }],
     }]
 
     roles.forEach(function (role) {
@@ -62,7 +62,7 @@ module.exports = function (app) {
                           : log('found user', createdUser.username)
                 createdRole.principals.create({
                   principalType: RoleMapping.USER,
-                  principalId: createdUser.id
+                  principalId: createdUser.id,
                 }, function (err, rolePrincipal) {
                   if (err) {
                     console.error('error creating rolePrincipal', err)

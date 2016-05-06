@@ -1,6 +1,10 @@
 {
   "extends": "standard",
   "rules": {
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
     "padded-blocks": 0,
     "prefer-template": 1
   }

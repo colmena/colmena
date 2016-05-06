@@ -9,19 +9,19 @@ module.exports = function (app) {
   app.use(bodyParser.json())
   // to support URL-encoded bodies
   app.use(bodyParser.urlencoded({
-    extended: true
+    extended: true,
   }))
 
   // The access token is only available after boot
   app.use(app.loopback.token({
-    model: app.models.accessToken
+    model: app.models.accessToken,
   }))
 
   app.use(loopback.cookieParser(app.get('cookieSecret')))
   app.middleware('session', loopback.session({
     secret: app.get('cookieSecret'),
     saveUninitialized: true,
-    resave: true
+    resave: true,
   }))
 
   var config = false
@@ -50,7 +50,7 @@ module.exports = function (app) {
     passportConfigurator.setupModels({
       userModel: app.models.user,
       userIdentityModel: app.models.userIdentity,
-      userCredentialModel: app.models.userCredential
+      userCredentialModel: app.models.userCredential,
     })
 
     // Configure passport strategies for third party auth providers and add them to the API
@@ -70,7 +70,7 @@ module.exports = function (app) {
           link: c.link,
           authPath: c.authPath,
           provider: c.provider,
-          class: providerClass
+          class: providerClass,
         }
 
         AuthProvider.create(entry, function (err, data) {

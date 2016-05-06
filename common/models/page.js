@@ -11,7 +11,7 @@ module.exports = function (Page) {
       id: slug,
       name: name,
       slug: slug,
-      content: ` > ${faker.lorem.paragraph()}`
+      content: ` > ${faker.lorem.paragraph()}`,
     })
   }
 
@@ -31,16 +31,16 @@ module.exports = function (Page) {
   Page.remoteMethod('html', {
     accepts: {
       arg: 'id',
-      type: 'string'
+      type: 'string',
     },
     returns: {
       arg: 'content',
-      type: 'string'
+      type: 'string',
     },
     http: {
       path: '/:id/html',
-      verb: 'get'
-    }
+      verb: 'get',
+    },
   })
 
 }

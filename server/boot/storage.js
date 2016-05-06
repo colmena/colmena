@@ -6,7 +6,7 @@ module.exports = function (app) {
   const ds = app.loopback.createDataSource({
     connector: require('loopback-component-storage'),
     provider: 'filesystem',
-    root: path.join(__dirname, '../', '../', 'storage')
+    root: path.join(__dirname, '../', '../', 'storage'),
   })
   const container = ds.createModel('container')
 

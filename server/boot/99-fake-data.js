@@ -14,17 +14,17 @@ module.exports = function (app) {
 
   var structure = {
     Post: {
-      count: 15
+      count: 15,
     },
     Event: {
-      count: 15
+      count: 15,
     },
     Note: {
-      count: 15
+      count: 15,
     },
     Page: {
-      count: 15
-    }
+      count: 15,
+    },
   }
 
   if (app.dataSources.db.connected) {

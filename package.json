@@ -19,6 +19,7 @@
   },
   "scripts": {
     "lint": "eslint ./server/**/*.js ./common/**/*.js",
+    "lint-fix": "eslint --fix ./server/**/*.js ./common/**/*.js",
     "test": "mocha",
     "start": "babel-node server/server.js",
     "dev": "nodemon -x babel-node server/server.js --watch server --watch common --ext js,json ",
