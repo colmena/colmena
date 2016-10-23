@@ -46,6 +46,7 @@ import { EventApi } from './services/custom/Event';
 import { PostApi } from './services/custom/Post';
 import { ProductApi } from './services/custom/Product';
 import { TagApi } from './services/custom/Tag';
+import { PingApi } from './services/custom/Ping';
 
 @NgModule({
   imports:      [ CommonModule, HttpModule ],
@@ -69,7 +70,8 @@ export class SDKModule {
         EventApi,
         PostApi,
         ProductApi,
-        TagApi
+        TagApi,
+        PingApi
       ]
     };
   }

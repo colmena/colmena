@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+
+import {PingApi} from '../shared/sdk/services';
 
 @Component({
   selector: 'app-about',
@@ -6,7 +9,7 @@ import {Component} from '@angular/core';
 })
 export class AboutComponent {
 
-  private projects = [{
+private projects = [{
     name: 'Loopback',
     url: 'https://loopback.io/',
     description: 'The Node.js API Framework. Built by StrongLoop, an IBM company',
@@ -28,7 +31,10 @@ export class AboutComponent {
     class: 'card-accent-primary'
   }];
 
-  constructor() {
+  private ping = {}
+
+  constructor(private pingApi: PingApi) {
+    this.pingApi.ping().subscribe(res => this.ping = res)
   }
 
 }

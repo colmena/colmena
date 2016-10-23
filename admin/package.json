@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "2.1.0",
     "@angular/router": "3.1.0",
     "@angular/upgrade": "2.1.0",
+    "@types/node": "^6.0.45",
     "@types/socket.io-client": "^1.4.27",
     "chart.js": "2.3.0",
     "core-js": "2.4.1",

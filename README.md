@@ -70,6 +70,9 @@ From inside the project dir (`colmena-cms`) run `nps dev`:
 
 This will start the API and the Admin in the same terminal.
 
+- The API listens on [http://0.0.0.0:3000](http://0.0.0.0:3000).
+- The Admin listens on [http://0.0.0.0:4200](http://0.0.0.0:4200).
+
 You can also start the two components separately:
 
 #### Start the API

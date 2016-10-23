@@ -2,6 +2,7 @@
   "loopback-component-explorer": {
     "mountPath": "/explorer"
   },
+  "loopback-component-ping": {},
   "@mean-expert/loopback-component-realtime": {
     "auth": false
   }
