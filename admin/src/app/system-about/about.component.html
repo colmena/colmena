@@ -31,6 +31,31 @@
     API
   </div>
   <div class="card-block">
-    <pre>{{ping | json}}</pre>
+    <pre>
+      {{ping.application | json}}
+      {{ping.timestamp | json}}
+      {{ping.uptime | json}}
+    </pre>
+    <tabset>
+      <tab heading="System">
+        <pre>{{ping.system | json}}</pre>
+      </tab>
+      <tab heading="Resources">
+        <pre>{{ping.resources | json}}</pre>
+      </tab>
+      <tab heading="Environment Variables">
+        <table class="table table-bordered">
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+          </tr>
+          <tr *ngFor="let environment of ping.environment | keys">
+            <td>{{environment.key}}</td>
+            <td>{{environment.value}}</td>
+          </tr>
+        </table>
+        <pre>{{ping.environment | json}}</pre>
+      </tab>
+    </tabset>
   </div>
 </div>
