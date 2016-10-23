@@ -1,0 +1,27 @@
+<div class="card card-accent-info">
+  <div class="card-header">
+    Colmena CMS
+  </div>
+  <div class="card-block">
+    This project is created using the following open source projects:
+  </div>
+  <div class="card-footer">
+    <a href="https://github.com/colmena/cms" class="pull-right" target="_blank">Homepage</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 col-md-6" *ngFor="let project of projects">
+    <div class="card {{project.class}}">
+      <div class="card-header">
+        {{project.name}}
+      </div>
+      <div class="card-block">
+        {{project.description}}
+      </div>
+      <div class="card-footer">
+        <a href="{{project.url}}" class="pull-right" target="_blank">Homepage</a>
+      </div>
+    </div>
+  </div>
+</div>

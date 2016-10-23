@@ -1,0 +1,11 @@
+{
+  "name": "colmena-cms",
+  "version": "1.0.0-beta.1",
+  "description": "colmena-cms",
+  "license": "MIT",
+  "author": "Bram Borggreve <bram@colmena.io>",
+  "url": "https://github.com/colmena/cms",
+  "scripts": {
+    "start": "nps"
+  }
+}

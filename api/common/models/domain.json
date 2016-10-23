@@ -1,0 +1,44 @@
+{
+  "name": "Domain",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "String",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "String",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "events": {
+      "type": "hasMany",
+      "model": "Event"
+    },
+    "products": {
+      "type": "hasMany",
+      "model": "Product"
+    },
+    "authors": {
+      "type": "hasMany",
+      "model": "Author"
+    },
+    "posts": {
+      "type": "hasMany",
+      "model": "Post"
+    },
+    "tags": {
+      "type": "hasMany",
+      "model": "Tag"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

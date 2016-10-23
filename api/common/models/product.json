@@ -1,0 +1,51 @@
+{
+  "name": "Product",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true
+    },
+    "domainId": {
+      "type": "String",
+      "required": false
+    },
+    "name": {
+      "type": "String",
+      "required": false
+    },
+    "description": {
+      "type": "String",
+      "required": false
+    },
+    "sku": {
+      "type": "String",
+      "required": false
+    },
+    "created": {
+      "type": "Date",
+      "required": false
+    },
+    "modified": {
+      "type": "Date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "tag": {
+      "type": "belongsTo",
+      "model": "Tag"
+    },
+    "domain": {
+      "type": "belongsTo",
+      "model": "Domain"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

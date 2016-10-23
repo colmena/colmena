@@ -1,0 +1,91 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-align-justify"></i> Products
+        </div>
+        <div class="card-block">
+          <table class="table table-bordered table-striped table-condensed">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>SKU</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let product of products | async">
+              <td>{{product.name}}</td>
+              <td>{{product.sku}}</td>
+              <td>
+                <button (click)="select(product)" class="btn btn-sm btn-outline-primary">
+                  <i class="fa fa-pencil-square-o"></i>
+                </button>
+                <button (click)="remove(product)" class="btn btn-sm btn-outline-danger">
+                  <i class="fa fa-trash-o"></i>
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card">
+        <form (submit)="upsert()">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i>
+            <span *ngIf="product.id">Edit</span>
+            <span *ngIf="!product.id">Add</span>
+            Product
+          </div>
+          <div class="card-block">
+            <div class="form-group">
+              <label for="productName">Name</label>
+              <input type="text"
+                     id="productName"
+                     class="form-control"
+                     name="productName"
+                     [(ngModel)]="product.name"
+                     placeholder="Name"/>
+            </div>
+
+            <div class="form-group">
+              <label for="productDescription">Description</label>
+              <input type="text"
+                     id="productDescription"
+                     class="form-control"
+                     name="productDescription"
+                     [(ngModel)]="product.description"
+                     placeholder="Description"/>
+            </div>
+
+            <div class="form-group">
+              <label for="productSKU">SKU</label>
+              <input type="text"
+                     id="productSKU"
+                     class="form-control"
+                     name="productSKU"
+                     [(ngModel)]="product.sku"
+                     placeholder="SKU"/>
+            </div>
+
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-sm btn-outline-success">
+              <i class="fa fa-dot-circle-o"></i>
+              <span *ngIf="product.id">Update</span>
+              <span *ngIf="!product.id">Add</span>
+            </button>
+            <button (click)="new()" *ngIf="product.id" class="btn btn-sm btn-outline-info">
+              <i class="fa fa-crosshairs"></i>
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

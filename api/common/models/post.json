@@ -1,0 +1,51 @@
+{
+  "name": "Post",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true
+    },
+    "domainId": {
+      "type": "String",
+      "required": false
+    },
+    "title": {
+      "type": "String",
+      "required": false
+    },
+    "content": {
+      "type": "String",
+      "required": false
+    },
+    "authorId": {
+      "type": "Number",
+      "required": false
+    },
+    "created": {
+      "type": "Date",
+      "required": false
+    },
+    "modified": {
+      "type": "Date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "tag": {
+      "type": "belongsTo",
+      "model": "Tag"
+    },
+    "domain": {
+      "type": "belongsTo",
+      "model": "Domain"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

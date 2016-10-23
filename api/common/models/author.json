@@ -1,0 +1,56 @@
+{
+  "name": "Author",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true
+    },
+    "domainId": {
+      "type": "String",
+      "required": false
+    },
+    "firstName": {
+      "type": "String",
+      "required": true
+    },
+    "lastName": {
+      "type": "String",
+      "required": true
+    },
+    "username": {
+      "type": "String",
+      "required": true
+    },
+    "email": {
+      "type": "String",
+      "required": true
+    },
+    "active": {
+      "type": "Boolean",
+      "required": true,
+      "default": true
+    },
+    "modified": {
+      "type": "Date",
+      "required": false
+    },
+    "created": {
+      "type": "Date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "domain": {
+      "type": "belongsTo",
+      "model": "Domain"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

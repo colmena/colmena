@@ -1,0 +1,40 @@
+<div class="animated fadeIn">
+  <h4>Content</h4>
+  <hr>
+  <div class="row">
+    <div class="col-xs-6 col-lg-3" *ngFor="let widget of contentWidgets">
+      <div class="card">
+        <div class="card-block p-1 clearfix">
+          <i class="{{widget.icon}} {{widget.class}} p-1 font-2xl mr-1 pull-left"></i>
+          <div class="h5 text-primary mb-0 mt-h">{{widget.count}}</div>
+          <div class="text-muted text-uppercase font-weight-bold font-xs">{{widget.label}}</div>
+        </div>
+        <div class="card-footer px-1 py-h">
+          <a class="font-weight-bold font-xs btn-block text-muted" [routerLink]="[widget.link]">
+            View More <i class="fa fa-angle-right pull-right font-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h4>System</h4>
+  <hr>
+  <div class="row">
+    <div class="col-xs-6 col-lg-3" *ngFor="let widget of systemWidgets">
+      <div class="card">
+        <div class="card-block p-1 clearfix">
+          <i class="{{widget.icon}} {{widget.class}} p-1 font-2xl mr-1 pull-left"></i>
+          <div class="h5 text-primary mb-0 mt-h">{{widget.count}}</div>
+          <div class="text-muted text-uppercase font-weight-bold font-xs">{{widget.label}}</div>
+        </div>
+        <div class="card-footer px-1 py-h">
+          <a class="font-weight-bold font-xs btn-block text-muted" [routerLink]="[widget.link]">
+            View More <i class="fa fa-angle-right pull-right font-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

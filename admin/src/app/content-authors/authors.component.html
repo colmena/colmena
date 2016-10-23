@@ -1,0 +1,75 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="card">
+        <div class="card-header">
+          <i class="{{page.icon}}"></i> {{page.title}}
+        </div>
+        <div class="card-block">
+          <table class="{{tableConfig.class}}">
+            <thead>
+            <tr>
+              <th *ngFor="let column of tableConfig.columns">{{column.label}}</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of items | async">
+              <td *ngFor="let column of tableConfig.columns">
+                <span *ngIf="!column.click">
+                  {{item[column.field]}}
+                </span>
+                <span *ngIf="column.click">
+                  <a href="javascript:void(0)" (click)="column.click(item)">
+                  {{item[column.field]}}
+                  </a>
+                </span>
+              </td>
+              <td>
+                <button
+                  *ngFor="let button of tableConfig.rowButtons"
+                  (click)="button.click(item)" class="{{button.class}}">
+                  <i class="{{button.icon}}"></i> {{button.label}}
+                </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <div class="card">
+        <form (submit)="upsert()">
+          <div class="card-header">
+            <i class="{{page.icon}}"></i>
+            <span *ngIf="item.id">Edit</span>
+            <span *ngIf="!item.id">Add</span>
+          </div>
+          <div class="card-block">
+            <div *ngFor="let field of formConfig.fields">
+              <label>{{field.label}}</label>
+              <input type="{{field.type}}"
+                     id="{{field.name}}"
+                     class="form-control"
+                     name="{{field.name}}"
+                     [(ngModel)]="item[field.name]"
+                     placeholder="{{field.placeholder}}"/>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-sm btn-outline-success">
+              <i class="fa fa-dot-circle-o"></i>
+              <span *ngIf="item.id">Update</span>
+              <span *ngIf="!item.id">Add</span>
+            </button>
+            <button (click)="new()" *ngIf="item.id" class="btn btn-sm btn-outline-info">
+              <i class="fa fa-crosshairs"></i>
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

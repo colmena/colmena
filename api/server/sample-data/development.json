@@ -1,0 +1,62 @@
+{
+  "Domain": [
+    {
+      "id": "example.com",
+      "name": "example.com"
+    }
+  ],
+  "Event": [
+    {
+      "id": 1,
+      "domainId": "example.com",
+      "name": "New Years Eve's Special",
+      "date": "2016-12-31T00:00:00.000Z",
+      "location": "Hollywood",
+      "created": "2016-10-21T00:00:00.000Z",
+      "modified": "2016-10-21T00:00:00.000Z"
+    }
+  ],
+  "Product": [
+    {
+      "id": 1,
+      "domainId": "example.com",
+      "name": "Example.com MUG",
+      "description": "The awesome Example.com MUG",
+      "sku": "example-com-mug",
+      "created": "2016-10-21T00:00:00.000Z",
+      "modified": "2016-10-21T00:00:00.000Z"
+    }, {
+      "id": 2,
+      "domainId": "example.com",
+      "name": "Example.com Shirt",
+      "description": "The awesome Example.com Shirt",
+      "sku": "example-com-shirt",
+      "created": "2016-10-21T00:00:00.000Z",
+      "modified": "2016-10-21T00:00:00.000Z"
+    }
+  ],
+  "Author": [
+    {
+      "id": 1,
+      "domainId": "example.com",
+      "firstName": "Admin",
+      "lastName": "User",
+      "username": "admin",
+      "email": "admin@example.com",
+      "active": true,
+      "modified": "2016-10-21T00:00:00.000Z",
+      "created": "2016-10-21T00:00:00.000Z"
+    }
+  ],
+  "Post": [
+    {
+      "id": 1,
+      "domainId": "example.com",
+      "title": "Welcome to the Example App",
+      "content": "Read all about this app!",
+      "authorId": 1,
+      "created": "2016-10-21T00:00:00.000Z",
+      "modified": "2016-10-21T00:00:00.000Z"
+    }
+  ]
+}

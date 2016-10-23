@@ -1,0 +1,51 @@
+{
+  "name": "Tag",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true
+    },
+    "domainId": {
+      "type": "String",
+      "required": false
+    },
+    "tag": {
+      "type": "String",
+      "required": false
+    },
+    "created": {
+      "type": "Date",
+      "required": false
+    },
+    "modified": {
+      "type": "Date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "domain": {
+      "type": "belongsTo",
+      "model": "Domain"
+    },
+    "events": {
+      "type": "hasMany",
+      "model": "Event"
+    },
+    "products": {
+      "type": "hasMany",
+      "model": "Product"
+    },
+    "posts": {
+      "type": "hasMany",
+      "model": "Post"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
