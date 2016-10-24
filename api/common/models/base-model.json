@@ -1,19 +1,23 @@
 {
   "name": "BaseModel",
   "base": "PersistedModel",
-  "idInjection": true,
-  "options": {
-    "validateUpsert": true
-  },
+  "description": "An intermediate model between the Models defined in the app and PersistedModel",
   "properties": {},
   "validations": [],
   "relations": {},
   "acls": [],
   "methods": {},
   "mixins": {
+    "ReadOnly": {
+      "created": true,
+      "modified": true
+    },
     "TimeStamp" : {
       "createdAt" : "created",
-      "updatedAt" : "modified"
+      "updatedAt" : "modified",
+      "required" : false,
+      "validateUpsert": true,
+      "silenceWarnings": false
     }
   }
 }
