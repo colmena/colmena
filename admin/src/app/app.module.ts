@@ -24,8 +24,8 @@ import {SDKModule}                    from './shared/sdk';
 import {AppRoutingModule}             from './app.routing';
 
 // Layouts
-import {FullLayoutComponent}          from './layouts/full-layout.component';
-import {SimpleLayoutComponent}        from './layouts/simple-layout.component';
+import {FullLayoutComponent}          from './system-layouts/full-layout.component';
+import {SimpleLayoutComponent}        from './system-layouts/simple-layout.component';
 
 @NgModule({
   imports: [
