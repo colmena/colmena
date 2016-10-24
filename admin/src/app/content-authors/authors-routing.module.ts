@@ -1,15 +1,25 @@
 import {NgModule}               from '@angular/core';
 import {Routes, RouterModule}   from '@angular/router';
 
-import {AuthorsComponent}       from './authors.component';
+import {AuthorDetailsComponent}   from './author-details.component';
+import {AuthorFormComponent}      from './author-form.component';
+import {AuthorListComponent}      from './author-list.component';
 
-const routes: Routes = [{
-  path: 'authors',
-  component: AuthorsComponent,
-  data: {
-    title: 'Authors'
+const routes: Routes = [
+  {
+    path: '',
+    data: {
+      title: 'Authors'
+    },
+    children: [
+      { path: '', redirectTo: 'authors', pathMatch: 'full' },
+      { path: 'authors', component: AuthorListComponent, data: { title: 'List' } },
+      { path: 'authors/add', component: AuthorFormComponent, data: { title: 'Add' } },
+      { path: 'authors/:id', component: AuthorDetailsComponent, data: { title: 'Details' }  },
+      { path: 'authors/:id/edit', component: AuthorFormComponent, data: { title: 'Edit' }  },
+    ]
   }
-}];
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

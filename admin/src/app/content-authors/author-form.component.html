@@ -1,0 +1,35 @@
+<div class="card">
+  <form (submit)="upsert()">
+    <div class="card-header">
+      <i class="{{module.icon}}"></i>
+      <span *ngIf="item.id">Edit</span>
+      <span *ngIf="!item.id">Add</span>
+    </div>
+    <div class="card-block">
+      <div *ngFor="let field of module.form.fields">
+        <label>{{field.label}}</label>
+        <input type="{{field.type}}"
+               id="{{field.name}}"
+               class="form-control"
+               name="{{field.name}}"
+               [(ngModel)]="item[field.name]"
+               placeholder="{{field.placeholder}}"/>
+      </div>
+    </div>
+    <div class="card-footer">
+
+      <div class="pull-right">
+        <button type="submit" class="btn btn-sm btn-outline-success">
+          <i class="fa fa-dot-circle-o"></i>
+          <span *ngIf="item.id">Update</span>
+          <span *ngIf="!item.id">Add</span>
+        </button>
+
+        <a [routerLink]="['..']" class="btn btn-sm btn-outline-info">
+          <i class="fa fa-crosshairs"></i>
+          Cancel
+        </a>
+      </div>
+    </div>
+  </form>
+</div>

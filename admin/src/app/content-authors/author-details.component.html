@@ -1,0 +1,21 @@
+<div class="animated fadeIn">
+  <div class="card">
+    <div class="card-header">
+      <i class="{{module.icon}}"></i>
+      {{module.title}}
+
+      <div class="pull-right">
+        <a [routerLink]="['..']" class="btn btn-sm btn-outline-info">Back</a>
+        <a [routerLink]="['edit']" class="btn btn-sm btn-outline-success">Edit</a>
+      </div>
+    </div>
+    <div class="card-block">
+      <table class="table table-bordered">
+        <tr *ngFor="let field of fields">
+          <th>{{field}}</th>
+          <td>{{item[field]}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,19 +1,24 @@
-import { NgModule }                 from '@angular/core';
-import { CommonModule }             from '@angular/common';
-import { FormsModule }              from '@angular/forms';
+import {NgModule}                 from '@angular/core';
+import {CommonModule}             from '@angular/common';
+import {FormsModule}              from '@angular/forms';
 
-import { AuthorsComponent }         from './authors.component';
+import {AuthorsRoutingModule}     from './authors-routing.module';
 
-import { AuthorsRoutingModule }     from './authors-routing.module';
+import {AuthorDetailsComponent}   from './author-details.component';
+import {AuthorFormComponent}      from './author-form.component';
+import {AuthorListComponent}      from './author-list.component';
 
 @NgModule({
-    imports: [
-      AuthorsRoutingModule,
-      CommonModule,
-      FormsModule
-    ],
-    declarations: [
-        AuthorsComponent,
-    ]
+  imports: [
+    AuthorsRoutingModule,
+    CommonModule,
+    FormsModule
+  ],
+  declarations: [
+    AuthorDetailsComponent,
+    AuthorFormComponent,
+    AuthorListComponent,
+  ]
 })
-export class AuthorsModule { }
+export class AuthorsModule {
+}
