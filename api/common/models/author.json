@@ -1,6 +1,6 @@
 {
   "name": "Author",
-  "base": "PersistedModel",
+  "base": "BaseModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -34,14 +34,6 @@
       "type": "Boolean",
       "required": true,
       "default": true
-    },
-    "modified": {
-      "type": "Date",
-      "required": false
-    },
-    "created": {
-      "type": "Date",
-      "required": false
     }
   },
   "validations": [],

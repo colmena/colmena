@@ -1,6 +1,6 @@
 {
   "name": "Domain",
-  "base": "PersistedModel",
+  "base": "BaseModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true

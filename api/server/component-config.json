@@ -4,12 +4,14 @@
   },
   "loopback-component-ping": {},
   "loopback-component-templates": {
-    "acls": [{
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$unauthenticated",
-      "permission": "ALLOW"
-    }]
+    "acls": [
+      {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$unauthenticated",
+        "permission": "ALLOW"
+      }
+    ]
   },
   "@mean-expert/loopback-component-realtime": {
     "auth": false

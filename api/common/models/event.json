@@ -1,6 +1,6 @@
 {
   "name": "Event",
-  "base": "PersistedModel",
+  "base": "BaseModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -24,14 +24,6 @@
     },
     "location": {
       "type": "String",
-      "required": false
-    },
-    "created": {
-      "type": "Date",
-      "required": false
-    },
-    "modified": {
-      "type": "Date",
       "required": false
     }
   },

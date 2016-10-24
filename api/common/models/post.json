@@ -1,6 +1,6 @@
 {
   "name": "Post",
-  "base": "PersistedModel",
+  "base": "BaseModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -24,14 +24,6 @@
     },
     "authorId": {
       "type": "Number",
-      "required": false
-    },
-    "created": {
-      "type": "Date",
-      "required": false
-    },
-    "modified": {
-      "type": "Date",
       "required": false
     }
   },
