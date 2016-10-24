@@ -12,10 +12,10 @@ import {AuthorsConfig} from './authors-config';
 })
 export class AuthorListComponent implements OnInit {
   private items: Author[];
-  private module: AuthorsConfig;
+  private module: AuthorsConfig = new AuthorsConfig();
 
   constructor(private authorApi: AuthorApi) {
-    this.module = new AuthorsConfig(authorApi)
+
   }
 
   ngOnInit() {

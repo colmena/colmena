@@ -13,10 +13,9 @@ import {AuthorsConfig} from './authors-config'
 export class AuthorDetailsComponent implements OnInit {
 
   private item: Author = new Author();
-  private module: AuthorsConfig;
+  private module = new AuthorsConfig();
 
   constructor(private route: ActivatedRoute, private authorApi: AuthorApi) {
-    this.module = new AuthorsConfig(authorApi)
   }
 
   ngOnInit() {

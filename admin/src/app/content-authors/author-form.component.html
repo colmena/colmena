@@ -20,13 +20,11 @@
 
       <div class="pull-right">
         <button type="submit" class="btn btn-sm btn-outline-success">
-          <i class="fa fa-dot-circle-o"></i>
           <span *ngIf="item.id">Update</span>
           <span *ngIf="!item.id">Add</span>
         </button>
 
         <a [routerLink]="['..']" class="btn btn-sm btn-outline-info">
-          <i class="fa fa-crosshairs"></i>
           Cancel
         </a>
       </div>

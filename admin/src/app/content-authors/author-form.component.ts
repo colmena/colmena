@@ -13,12 +13,11 @@ import {AuthorsConfig} from './authors-config'
 export class AuthorFormComponent implements OnInit {
 
   private item: Author = new Author();
-  private module: AuthorsConfig;
+  private module: AuthorsConfig = new AuthorsConfig();
 
   constructor(private authorApi: AuthorApi,
               private route: ActivatedRoute,
               private router: Router) {
-    this.module = new AuthorsConfig(authorApi)
   }
 
   ngOnInit() {

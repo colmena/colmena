@@ -1,11 +1,4 @@
-import {AuthorApi} from "../shared/sdk/services";
-
 export class AuthorsConfig {
-
-  constructor(private api: AuthorApi) {
-    console.log('api', api)
-  }
-
   public icon = 'icon-people';
   public title = 'Authors';
 
