@@ -2,6 +2,13 @@
   "loopback-component-explorer": {
     "mountPath": "/explorer"
   },
+  "loopback-component-fixtures": {
+    "environments": [
+      "development"
+    ],
+    "fixturesPath": "/server/fixtures/",
+    "loadFixturesOnStartup": true
+  },
   "loopback-component-ping": {},
   "loopback-component-templates": {
     "acls": [

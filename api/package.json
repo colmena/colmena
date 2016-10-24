@@ -21,6 +21,7 @@
     "loopback": "^2.22.0",
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^2.4.0",
+    "loopback-component-fixtures": "^1.0.2",
     "loopback-component-ping": "^1.0.1",
     "loopback-component-templates": "^1.1.6",
     "loopback-connector-mysql": "^2.4.0",

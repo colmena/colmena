@@ -5,51 +5,34 @@ module.exports = function (app, cb) {
   const nodeEnv = process.env.NODE_ENV;
 
   if (!nodeEnv && nodeEnv !== 'development') {
-    console.log('init-dummy-data: ignoring import: NODE_ENV is not set or is not set to development');
+    console.log('boot/init-dummy-data: ignoring import: NODE_ENV is not set or is not set to development');
     return cb();
   }
 
   const domainId = 'example.com';
 
+  // Create a recipe of models that use Model Templates to create dummy data
   const recipe = {
-    Domain: [ {
-      templateModel: 'Domain',
-      templateFn: 'exampleCom',
-    } ],
-    Product: [ {
-      templateModel: 'Product',
-      templateFn: 'basic',
-      amount: 20,
-    } ],
-    Author: [ {
-      templateModel: 'Author',
-      templateFn: 'basic',
-      amount: 5,
-    } ],
-    Post: [ {
-      templateModel: 'Post',
-      templateFn: 'basic',
-      amount: 40,
-    } ],
-    Event: [ {
-      templateModel: 'Event',
-      templateFn: 'basic',
-      amount: 15,
-    } ],
-    // Note: [
-    //   {
-    //     templateModel: 'Note',
-    //     templateFn: 'defaultNote',
-    //     amount: 20,
-    //   },
-    // ],
-    // Event: [
-    //   {
-    //     templateModel: 'Event',
-    //     templateFn: 'defaultEvent',
-    //     amount: 20,
-    //   },
-    // ],
+    // Product: [ {
+    //   templateModel: 'Product',
+    //   templateFn: 'basic',
+    //   amount: 20,
+    // } ],
+    // Author: [ {
+    //   templateModel: 'Author',
+    //   templateFn: 'basic',
+    //   amount: 5,
+    // } ],
+    // Post: [ {
+    //   templateModel: 'Post',
+    //   templateFn: 'basic',
+    //   amount: 40,
+    // } ],
+    // Event: [ {
+    //   templateModel: 'Event',
+    //   templateFn: 'basic',
+    //   amount: 15,
+    // } ],
   }
 
   const modelNames = Object.keys(recipe)
@@ -72,7 +55,7 @@ module.exports = function (app, cb) {
 
   return Promise
     .all(promises)
-    .then(res => console.log('%s dummy models created', res.length))
+    .then(res => console.log('boot/init-dummy-data: %s dummy models created', res.length))
     .then(cb)
     .catch(cb)
 }
