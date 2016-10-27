@@ -7,7 +7,7 @@ export class PostsService {
 
   constructor(private postApi: PostApi) {}
 
-  public icon = 'icon-calendar';
+  public icon = 'icon-pencil';
   public title = 'Posts';
 
   public fields = [
