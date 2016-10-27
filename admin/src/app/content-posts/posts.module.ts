@@ -2,18 +2,28 @@ import {NgModule}                 from '@angular/core';
 import {CommonModule}             from '@angular/common';
 import {FormsModule}              from '@angular/forms';
 
-import {PostsComponent}          from './posts.component';
+import {PostsRoutingModule}     from './posts-routing.module';
 
-import {PostsRoutingModule}      from './posts-routing.module';
+import {PostDetailsComponent}   from './post-details.component';
+import {PostFormComponent}      from './post-form.component';
+import {PostListComponent}      from './post-list.component';
+import {UiModule}                 from '../ui/ui.module';
+import {PostsService} from './posts.service';
 
 @NgModule({
   imports: [
     PostsRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    UiModule
   ],
   declarations: [
-    PostsComponent,
+    PostDetailsComponent,
+    PostFormComponent,
+    PostListComponent,
+  ],
+  providers: [
+    PostsService,
   ]
 })
 export class PostsModule {
