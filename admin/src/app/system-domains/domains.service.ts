@@ -7,7 +7,7 @@ export class DomainsService {
 
   constructor(private domainApi: DomainApi) {}
 
-  public icon = 'icon-pencil';
+  public icon = 'icon-globe';
   public title = 'Domains';
 
   public fields = [
