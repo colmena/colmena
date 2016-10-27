@@ -17,7 +17,7 @@ export class FullLayoutComponent {
     {type: 'title',   label: 'System'},
     {type: 'item',    label: 'Domains',   icon: 'icon-globe',       link: '/domains'},
     {type: 'item',    label: 'Settings',  icon: 'icon-settings',    link: '/settings'},
-    {type: 'item',    label: 'Users',     icon: 'icon-people',      link: '/users'},
+    {type: 'item',    label: 'Users',     icon: 'icon-user',        link: '/users'},
   ];
 
   private topNavItems = [
