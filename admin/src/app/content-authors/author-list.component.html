@@ -1,7 +1,7 @@
 <div class="animated fadeIn">
   <div class="card">
     <div class="card-header">
-      <i class="{{module.icon}}"></i> {{module.title}}
+      <i class="{{service.icon}}"></i> {{service.title}}
 
       <div class="pull-right">
         <a [routerLink]="['add']" class="btn btn-sm btn-outline-success">Add</a>
@@ -9,7 +9,7 @@
 
     </div>
     <div class="card-block">
-      <ui-table [config]="module.table" [items]="items"></ui-table>
+      <ui-table [config]="service.tableConfig" [items]="service.items"></ui-table>
     </div>
   </div>
 </div>

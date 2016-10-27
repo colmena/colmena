@@ -8,6 +8,7 @@ import {AuthorDetailsComponent}   from './author-details.component';
 import {AuthorFormComponent}      from './author-form.component';
 import {AuthorListComponent}      from './author-list.component';
 import {UiModule}                 from '../ui/ui.module';
+import {AuthorsService} from './authors.service';
 
 @NgModule({
   imports: [
@@ -20,6 +21,9 @@ import {UiModule}                 from '../ui/ui.module';
     AuthorDetailsComponent,
     AuthorFormComponent,
     AuthorListComponent,
+  ],
+  providers: [
+    AuthorsService,
   ]
 })
 export class AuthorsModule {

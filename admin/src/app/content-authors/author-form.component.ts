@@ -1,10 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
-import {Author} from '../shared/sdk/models';
-import {AuthorApi} from '../shared/sdk/services';
-
-import {AuthorsConfig} from './authors-config'
+import {AuthorsService} from './authors.service';
 
 @Component({
   selector: 'app-author-form',
@@ -12,26 +9,16 @@ import {AuthorsConfig} from './authors-config'
 })
 export class AuthorFormComponent implements OnInit {
 
-  private item: Author = new Author();
-  private module: AuthorsConfig = new AuthorsConfig();
-
-  constructor(private authorApi: AuthorApi,
-              private route: ActivatedRoute,
-              private router: Router) {
-  }
+  constructor(private route: ActivatedRoute, private router: Router, private service: AuthorsService) {}
 
   ngOnInit() {
     this.route.params
       .map(params => params['id'])
-      .subscribe((id) => {
-        if (id) {
-          this.authorApi.findById(id).subscribe(res => this.item = res)
-        }
-      });
+      .subscribe((id) => this.service.getItem(id));
   }
 
   upsert(): void {
-    this.authorApi.upsert(this.item).subscribe(
+    this.service.upsertItem(
       res => this.router.navigate(['../'], {relativeTo: this.route}),
       err => console.error(err)
     )

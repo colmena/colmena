@@ -1,19 +1,19 @@
 <div class="card">
   <form (submit)="upsert()">
     <div class="card-header">
-      <i class="{{module.icon}}"></i>
-      <span *ngIf="item.id">Edit</span>
-      <span *ngIf="!item.id">Add</span>
+      <i class="{{service.icon}}"></i>
+      <span *ngIf="service.item.id">Edit</span>
+      <span *ngIf="!service.item.id">Add</span>
     </div>
     <div class="card-block">
-      <ui-form [config]="module.form" [item]="item"></ui-form>
+      <ui-form [config]="service.formConfig" [item]="service.item"></ui-form>
     </div>
     <div class="card-footer">
 
       <div class="pull-right">
         <button type="submit" class="btn btn-sm btn-outline-success">
-          <span *ngIf="item.id">Update</span>
-          <span *ngIf="!item.id">Add</span>
+          <span *ngIf="service.item.id">Update</span>
+          <span *ngIf="!service.item.id">Add</span>
         </button>
 
         <a [routerLink]="['..']" class="btn btn-sm btn-outline-info">
