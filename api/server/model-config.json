@@ -15,11 +15,11 @@
       "./mixins"
     ]
   },
-  "User": {
+  "user": {
     "dataSource": "db",
-    "public": false
+    "public": true
   },
-  "AccessToken": {
+  "accessToken": {
     "dataSource": "db",
     "public": false
   },

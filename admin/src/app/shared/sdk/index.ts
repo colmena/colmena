@@ -40,6 +40,7 @@ import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RealTime } from './services/core/real.time';
+import { UserApi } from './services/custom/User';
 import { AuthorApi } from './services/custom/Author';
 import { DomainApi } from './services/custom/Domain';
 import { EventApi } from './services/custom/Event';
@@ -67,6 +68,7 @@ export class SDKModule {
         ErrorHandler,
         LoggerService,
         JSONSearchParams,
+        UserApi,
         AuthorApi,
         DomainApi,
         EventApi,

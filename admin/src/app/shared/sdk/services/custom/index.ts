@@ -1,4 +1,5 @@
 /* tslint:disable */
+export * from './User';
 export * from './Author';
 export * from './Domain';
 export * from './Event';

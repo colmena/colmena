@@ -1,0 +1,38 @@
+{
+  "name": "accessToken",
+  "plural": "accessTokens",
+  "base": "AccessToken",
+  "strict": true,
+  "validateUpsert": true,
+  "allowEternalTTL": true,
+  "description": "Token based authentication and access control.",
+  "properties": {
+    "id": {
+      "type": "String",
+      "id": true,
+      "defaultFn": "uuidv4"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [{
+    "accessType": "*",
+    "principalType": "ROLE",
+    "principalId": "admin",
+    "permission": "ALLOW"
+  }],
+  "methods": [],
+  "mixins": {
+    "Paginate": {
+      "config": {
+        "limit": "1000"
+      }
+    }
+  }
+}

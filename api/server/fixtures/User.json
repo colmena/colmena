@@ -1,0 +1,26 @@
+[
+  {
+    "id": "admin",
+    "username": "admin@example.com",
+    "email": "admin@example.com",
+    "firstName": "Admin",
+    "lastName": "System",
+    "password": "password"
+  },
+  {
+    "id": "manager",
+    "username": "manager@example.com",
+    "email": "manager@example.com",
+    "firstName": "Manager",
+    "lastName": "System",
+    "password": "password"
+  },
+  {
+    "id": "user",
+    "username": "user@example.com",
+    "email": "user@example.com",
+    "firstName": "User",
+    "lastName": "System",
+    "password": "password"
+  }
+]
