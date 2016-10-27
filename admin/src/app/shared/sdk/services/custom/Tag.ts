@@ -21,6 +21,10 @@ declare var EventSource: any;
 
 /**
  * Api services for the `Tag` model.
+ *
+ * **Details**
+ *
+ * An intermediate model between the Models defined in the app and PersistedModel
  */
 @Injectable()
 export class TagApi extends BaseLoopBackApi {
@@ -37,7 +41,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Fetches belongsTo relation domain.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param boolean refresh 
    *
@@ -67,7 +71,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for events.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for events
    *
@@ -97,7 +101,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for events.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for events
    *
@@ -124,7 +128,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for events.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for events
    *
@@ -160,7 +164,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for products.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for products
    *
@@ -190,7 +194,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for products.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for products
    *
@@ -217,7 +221,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for products.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for products
    *
@@ -253,7 +257,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for posts.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for posts
    *
@@ -283,7 +287,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for posts.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for posts
    *
@@ -310,7 +314,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for posts.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for posts
    *
@@ -346,7 +350,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Queries events of Tag.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object filter 
    *
@@ -376,7 +380,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in events of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -409,7 +413,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Deletes all events of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @returns object An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -433,7 +437,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Counts events of Tag.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object where Criteria to match model instances
    *
@@ -462,7 +466,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Queries products of Tag.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object filter 
    *
@@ -492,7 +496,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in products of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -525,7 +529,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Deletes all products of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @returns object An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -549,7 +553,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Counts products of Tag.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object where Criteria to match model instances
    *
@@ -578,7 +582,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Queries posts of Tag.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object filter 
    *
@@ -608,7 +612,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in posts of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -641,7 +645,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Deletes all posts of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @returns object An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -665,7 +669,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Counts posts of Tag.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object where Criteria to match model instances
    *
@@ -1037,7 +1041,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -1099,7 +1103,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in events of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -1132,7 +1136,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in products of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -1165,7 +1169,7 @@ export class TagApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in posts of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *

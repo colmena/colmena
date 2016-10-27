@@ -46,6 +46,8 @@ import { EventApi } from './services/custom/Event';
 import { PostApi } from './services/custom/Post';
 import { ProductApi } from './services/custom/Product';
 import { TagApi } from './services/custom/Tag';
+import { SettingApi } from './services/custom/Setting';
+import { FixturesApi } from './services/custom/Fixtures';
 import { PingApi } from './services/custom/Ping';
 
 @NgModule({
@@ -71,6 +73,8 @@ export class SDKModule {
         PostApi,
         ProductApi,
         TagApi,
+        SettingApi,
+        FixturesApi,
         PingApi
       ]
     };

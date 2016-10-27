@@ -12,8 +12,8 @@ export interface AuthorInterface {
   username: string;
   email: string;
   active: boolean;
-  modified?: any;
   created?: any;
+  modified?: any;
   domain?: Domain;
 }
 
@@ -25,8 +25,8 @@ export class Author implements AuthorInterface {
   username: string;
   email: string;
   active: boolean;
-  modified: any;
   created: any;
+  modified: any;
   domain: Domain;
   constructor(instance?: AuthorInterface) {
     Object.assign(this, instance);

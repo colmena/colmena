@@ -82,7 +82,7 @@
   {
     "id": 9,
     "domainId": "example.com",
-    "name": "Ad quam aut aperiam voluptatem architecto ut unde inventore voluptatum.",
+    "name": "Ad quam aut aperiam voluptatem architecto.",
     "date": "2018-08-06T20:31:17.112Z",
     "location": "4679 Heaney Plain, North Jadon, DE",
     "created": "2016-10-24T04:15:30.466Z",
@@ -142,7 +142,7 @@
   {
     "id": 15,
     "domainId": "example.com",
-    "name": "Provident voluptatem omnis cupiditate pariatur sint adipisci et necessitatibus sint.",
+    "name": "Provident voluptatem omnis cupiditate.",
     "date": "2018-08-15T11:13:22.287Z",
     "location": "24618 Concepcion Gateway, Port Muhammad, UT",
     "created": "2016-10-24T04:15:30.468Z",

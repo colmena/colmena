@@ -11,6 +11,8 @@ declare var Object: any;
 export interface DomainInterface {
   id: string;
   name?: string;
+  created?: any;
+  modified?: any;
   authors?: Array<Author>;
   events?: Array<Event>;
   posts?: Array<Post>;
@@ -21,6 +23,8 @@ export interface DomainInterface {
 export class Domain implements DomainInterface {
   id: string;
   name: string;
+  created: any;
+  modified: any;
   authors: Array<Author>;
   events: Array<Event>;
   posts: Array<Post>;

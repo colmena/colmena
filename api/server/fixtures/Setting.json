@@ -1,0 +1,8 @@
+[
+  {
+    "id": 1,
+    "key": "nodeEnv",
+    "value": "development",
+    "description": "The NODE_ENV of the API"
+  }
+]

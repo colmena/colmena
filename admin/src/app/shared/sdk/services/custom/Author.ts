@@ -18,6 +18,10 @@ declare var EventSource: any;
 
 /**
  * Api services for the `Author` model.
+ *
+ * **Details**
+ *
+ * An intermediate model between the Models defined in the app and PersistedModel
  */
 @Injectable()
 export class AuthorApi extends BaseLoopBackApi {
@@ -34,7 +38,7 @@ export class AuthorApi extends BaseLoopBackApi {
   /**
    * Fetches belongsTo relation domain.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param boolean refresh 
    *
@@ -407,7 +411,7 @@ export class AuthorApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -466,6 +470,35 @@ export class AuthorApi extends BaseLoopBackApi {
     }
     return subject.asObservable();
   }
+  /**
+   * Generate template basic
+   *
+   * @param Object options Overwrite values of template
+   *
+   * @param Object params Pass parameters into the template method
+   *
+   * @returns object An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `Author` object.)
+   * </em>
+   */
+  public _template_basic_remote(options: any = undefined, params: any = undefined): Observable<any> {
+    let method: string = "GET";
+    let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/Authors/_template_basic";
+    let routeParams: any = {};
+    let postBody: any = {};
+    let urlParams: any = {};
+    if (options) urlParams.options = options;
+    if (params) urlParams.params = params;
+    let result = this.request(method, url, routeParams, urlParams, postBody);
+    return result;
+  }
+
   /**
    * Create a new instance of the model and persist it into the data source.
    *

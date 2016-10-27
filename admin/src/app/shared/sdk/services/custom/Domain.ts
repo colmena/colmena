@@ -22,6 +22,10 @@ declare var EventSource: any;
 
 /**
  * Api services for the `Domain` model.
+ *
+ * **Details**
+ *
+ * An intermediate model between the Models defined in the app and PersistedModel
  */
 @Injectable()
 export class DomainApi extends BaseLoopBackApi {
@@ -38,7 +42,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for authors.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for authors
    *
@@ -68,7 +72,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for authors.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for authors
    *
@@ -95,7 +99,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for authors.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for authors
    *
@@ -131,7 +135,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for events.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for events
    *
@@ -161,7 +165,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for events.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for events
    *
@@ -188,7 +192,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for events.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for events
    *
@@ -224,7 +228,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for posts.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for posts
    *
@@ -254,7 +258,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for posts.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for posts
    *
@@ -281,7 +285,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for posts.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for posts
    *
@@ -317,7 +321,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for products.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for products
    *
@@ -347,7 +351,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for products.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for products
    *
@@ -374,7 +378,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for products.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for products
    *
@@ -410,7 +414,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for tags.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for tags
    *
@@ -440,7 +444,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for tags.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for tags
    *
@@ -467,7 +471,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for tags.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param any fk Foreign key for tags
    *
@@ -503,7 +507,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries authors of Domain.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object filter 
    *
@@ -533,7 +537,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in authors of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -566,7 +570,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all authors of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @returns object An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -590,7 +594,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts authors of Domain.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object where Criteria to match model instances
    *
@@ -619,7 +623,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries events of Domain.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object filter 
    *
@@ -649,7 +653,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in events of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -682,7 +686,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all events of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @returns object An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -706,7 +710,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts events of Domain.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object where Criteria to match model instances
    *
@@ -735,7 +739,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries posts of Domain.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object filter 
    *
@@ -765,7 +769,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in posts of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -798,7 +802,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all posts of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @returns object An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -822,7 +826,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts posts of Domain.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object where Criteria to match model instances
    *
@@ -851,7 +855,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries products of Domain.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object filter 
    *
@@ -881,7 +885,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in products of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -914,7 +918,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all products of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @returns object An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -938,7 +942,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts products of Domain.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object where Criteria to match model instances
    *
@@ -967,7 +971,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries tags of Domain.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object filter 
    *
@@ -997,7 +1001,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in tags of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -1030,7 +1034,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all tags of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @returns object An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -1054,7 +1058,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts tags of Domain.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object where Criteria to match model instances
    *
@@ -1426,7 +1430,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -1486,9 +1490,38 @@ export class DomainApi extends BaseLoopBackApi {
     return subject.asObservable();
   }
   /**
+   * Generate template exampleCom
+   *
+   * @param Object options Overwrite values of template
+   *
+   * @param Object params Pass parameters into the template method
+   *
+   * @returns object An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `Domain` object.)
+   * </em>
+   */
+  public _template_exampleCom_remote(options: any = undefined, params: any = undefined): Observable<any> {
+    let method: string = "GET";
+    let url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/Domains/_template_exampleCom";
+    let routeParams: any = {};
+    let postBody: any = {};
+    let urlParams: any = {};
+    if (options) urlParams.options = options;
+    if (params) urlParams.params = params;
+    let result = this.request(method, url, routeParams, urlParams, postBody);
+    return result;
+  }
+
+  /**
    * Creates a new instance in authors of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -1521,7 +1554,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in events of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -1554,7 +1587,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in posts of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -1587,7 +1620,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in products of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
@@ -1620,7 +1653,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in tags of this model.
    *
-   * @param any id PersistedModel id
+   * @param any id BaseModel id
    *
    * @param object data Request data.
    *
