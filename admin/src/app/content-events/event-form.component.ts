@@ -5,7 +5,7 @@ import {EventsService} from './events.service';
 
 @Component({
   selector: 'app-event-form',
-  templateUrl: './event-form.component.html'
+  template: '<ui-crud-form [service]="service" (submit)="upsert"></ui-crud-form>'
 })
 export class EventFormComponent implements OnInit {
 

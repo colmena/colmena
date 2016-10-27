@@ -4,7 +4,7 @@ import {EventsService} from './events.service';
 
 @Component({
   selector: 'app-events',
-  templateUrl: './event-list.component.html',
+  template: '<ui-crud-list [service]="service"></ui-crud-list>'
 })
 export class EventListComponent implements OnInit {
 

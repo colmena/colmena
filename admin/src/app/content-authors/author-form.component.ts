@@ -5,7 +5,7 @@ import {AuthorsService} from './authors.service';
 
 @Component({
   selector: 'app-author-form',
-  templateUrl: './author-form.component.html'
+  template: '<ui-crud-form [service]="service" (submit)="upsert"></ui-crud-form>'
 })
 export class AuthorFormComponent implements OnInit {
 

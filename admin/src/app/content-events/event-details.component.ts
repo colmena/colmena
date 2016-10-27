@@ -5,7 +5,7 @@ import {EventsService} from './events.service';
 
 @Component({
   selector: 'app-event-details',
-  templateUrl: './event-details.component.html'
+  template: '<ui-crud-details [service]="service"></ui-crud-details>'
 })
 export class EventDetailsComponent implements OnInit {
 

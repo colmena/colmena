@@ -5,7 +5,7 @@ import {PostsService} from './posts.service';
 
 @Component({
   selector: 'app-post-form',
-  templateUrl: './post-form.component.html'
+  template: '<ui-crud-form [service]="service" (submit)="upsert"></ui-crud-form>'
 })
 export class PostFormComponent implements OnInit {
 

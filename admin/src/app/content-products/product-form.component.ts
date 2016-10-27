@@ -5,7 +5,7 @@ import {ProductsService} from './products.service';
 
 @Component({
   selector: 'app-product-form',
-  templateUrl: './product-form.component.html'
+  template: '<ui-crud-form [service]="service" (submit)="upsert"></ui-crud-form>'
 })
 export class ProductFormComponent implements OnInit {
 

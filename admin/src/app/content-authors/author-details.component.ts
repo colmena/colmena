@@ -5,7 +5,7 @@ import {AuthorsService} from './authors.service';
 
 @Component({
   selector: 'app-author-details',
-  templateUrl: './author-details.component.html'
+  template: '<ui-crud-details [service]="service"></ui-crud-details>'
 })
 export class AuthorDetailsComponent implements OnInit {
 
