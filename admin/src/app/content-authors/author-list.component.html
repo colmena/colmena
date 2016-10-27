@@ -9,47 +9,7 @@
 
     </div>
     <div class="card-block">
-      <table class="{{module.table.class}}">
-        <thead>
-        <tr>
-          <th *ngFor="let column of module.table.columns">{{column.label}}</th>
-          <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let item of items ">
-          <td *ngFor="let column of module.table.columns">
-            <span *ngIf="!column.click && !column.link">
-              {{item[column.field]}}
-            </span>
-            <span *ngIf="column.click">
-              <a href="javascript:void(0)" (click)="column.click(item)">
-                {{item[column.field]}}
-              </a>
-            </span>
-            <span *ngIf="column.link">
-              <a [routerLink]="[column.link, item.id]">
-                {{item[column.field]}}
-              </a>
-            </span>
-          </td>
-          <td>
-            <span *ngFor="let button of module.table.rowButtons">
-              <button
-                *ngIf="button.click"
-                (click)="button.click(item)" class="{{button.class}}">
-                <i class="{{button.icon}}"></i> {{button.label}}
-              </button>
-              <button
-                *ngIf="button.link"
-                [routerLink]="[item.id, button.link]" class="{{button.class}}">
-                <i class="{{button.icon}}"></i> {{button.label}}
-              </button>
-            </span>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+      <ui-table [config]="module.table" [items]="items"></ui-table>
     </div>
   </div>
 </div>

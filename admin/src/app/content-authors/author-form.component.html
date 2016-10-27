@@ -6,15 +6,7 @@
       <span *ngIf="!item.id">Add</span>
     </div>
     <div class="card-block">
-      <div *ngFor="let field of module.form.fields">
-        <label>{{field.label}}</label>
-        <input type="{{field.type}}"
-               id="{{field.name}}"
-               class="form-control"
-               name="{{field.name}}"
-               [(ngModel)]="item[field.name]"
-               placeholder="{{field.placeholder}}"/>
-      </div>
+      <ui-form [config]="module.form" [item]="item"></ui-form>
     </div>
     <div class="card-footer">
 

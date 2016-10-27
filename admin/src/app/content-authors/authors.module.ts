@@ -7,12 +7,14 @@ import {AuthorsRoutingModule}     from './authors-routing.module';
 import {AuthorDetailsComponent}   from './author-details.component';
 import {AuthorFormComponent}      from './author-form.component';
 import {AuthorListComponent}      from './author-list.component';
+import {UiModule}                 from '../ui/ui.module';
 
 @NgModule({
   imports: [
     AuthorsRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    UiModule
   ],
   declarations: [
     AuthorDetailsComponent,
