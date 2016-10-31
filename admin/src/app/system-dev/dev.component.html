@@ -1,0 +1,34 @@
+<div class="card card-accent-info">
+  <div class="card-header">
+    Development Module
+  </div>
+  <div class="card-block">
+    This module can be used to develop components and display functionality of existing components.
+  </div>
+</div>
+
+<div class="card card-accent-primary">
+  <div class="card-header">
+    Toasts
+  </div>
+  <div class="card-block">
+    <div class="form-group">
+      <label for="toastTitle">Toast Title</label>
+      <input id="toastTitle" type="text" class="form-control" [(ngModel)]="toast.title" />
+    </div>
+
+    <div class="form-group">
+      <label for="toastText">Toast Text</label>
+      <input id="toastText" type="text" class="form-control" [(ngModel)]="toast.text" />
+    </div>
+
+    <button (click)="addToast()" class="btn btn-default">All!</button>
+    <button (click)="addToastError()" class="btn btn-danger">Error!</button>
+    <button (click)="addToastInfo()" class="btn btn-info">Info!</button>
+    <button (click)="addToastSuccess()" class="btn btn-success">Success!</button>
+    <button (click)="addToastWait()" class="btn btn-primary">Wait!</button>
+    <button (click)="addToastWarning()" class="btn btn-warning">Warning!</button>
+  </div>
+</div>
+
+

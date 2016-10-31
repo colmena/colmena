@@ -5,8 +5,6 @@ import {User} from '../shared/sdk/models';
 @Injectable()
 export class UsersService {
 
-  constructor(private userApi: UserApi) {}
-
   public icon = 'icon-user';
   public title = 'Users';
 
@@ -14,7 +12,7 @@ export class UsersService {
     'firstName',
     'lastName',
     'email',
-  ]
+  ];
 
   public formConfig = {
     fields: [
@@ -40,18 +38,20 @@ export class UsersService {
   private item: User = new User();
   private items: User[];
 
+  constructor(private userApi: UserApi) {}
+
   deleteItem(id) {
     return this.userApi.deleteById(id).subscribe(
       () => this.getItems(),
       err => console.error(err)
-    )
+    );
   }
 
   getItem(id) {
     if (id) {
       return this.userApi.findById(id).subscribe(res => this.item = res);
     } else {
-      this.newItem()
+      this.newItem();
     }
   }
 
@@ -64,7 +64,7 @@ export class UsersService {
   }
 
   upsertItem(successCb, errorCb): void {
-    this.userApi.upsert(this.item).subscribe(successCb, errorCb)
+    this.userApi.upsert(this.item).subscribe(successCb, errorCb);
   }
 
 }

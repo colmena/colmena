@@ -1,3 +1,4 @@
+import { UiService } from './ui.service';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
@@ -29,6 +30,9 @@ import {UiTableComponent} from './ui-table.component';
     UiFormComponent,
     UiTableComponent
   ],
+  providers: [
+    UiService,
+  ]
 })
 export class UiModule {
 }

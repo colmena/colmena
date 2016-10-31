@@ -15,6 +15,7 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
+        "../node_modules/ng2-toasty/style-bootstrap.css",
         "scss/style.scss"
       ],
       "scripts": [

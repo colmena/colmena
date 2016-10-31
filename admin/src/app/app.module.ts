@@ -18,6 +18,7 @@ import {SIDEBAR_TOGGLE_DIRECTIVES}    from './shared/sidebar.directive';
 import {AsideToggleDirective}         from './shared/aside.directive';
 import {BreadcrumbsComponent}         from './shared/breadcrumb.component';
 import {SDKModule}                    from './shared/sdk';
+import {ToastyModule}                 from 'ng2-toasty';
 
 
 // Routing Module
@@ -36,7 +37,8 @@ import {SimpleLayoutComponent}        from './system-layouts/simple-layout.compo
     CommonModule,
     FormsModule,
     HttpModule,
-    SDKModule.forRoot()
+    SDKModule.forRoot(),
+    ToastyModule.forRoot()
   ],
   declarations: [
     AppComponent,
@@ -51,7 +53,10 @@ import {SimpleLayoutComponent}        from './system-layouts/simple-layout.compo
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    ToastyModule
+  ]
 })
 export class AppModule {
 }
