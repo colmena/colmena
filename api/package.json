@@ -1,17 +1,26 @@
 {
-  "name": "colmena-cms-api",
-  "version": "1.0.0-beta.1",
-  "description": "colmena-cms-api",
-  "license": "MIT",
+  "name": "@colmena/colmena-cms-api",
+  "version": "0.0.0",
+  "description": "Colmena CMS API",
+  "private": false,
+  "keywords": [],
+  "homepage": "https://github.com/colmena/colmena-cms",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colmena/colmena-cms"
+  },
+  "bugs": {
+    "url": "https://github.com/colmena/colmena-cms/issues"
+  },
   "author": "Bram Borggreve <bram@colmena.io>",
-  "url": "https://github.com/colmena/cms",
+  "license": "MIT",
   "scripts": {
     "start": "nps",
     "test": "nps test"
   },
   "main": "server/server.js",
   "dependencies": {
-    "@colmena/loopback": "latest",
+    "@colmena/colmena-loopback": "latest",
     "faker": "3.1.0",
     "lodash": "4.17.3"
   },

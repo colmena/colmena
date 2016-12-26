@@ -1,5 +1,5 @@
 {
-  "name": "@colmena/colmena-admin",
+  "name": "@colmena/colmena-cms-admin",
   "version": "0.0.0",
   "description": "Colmena CMS Admin",
   "private": false,
@@ -14,7 +14,6 @@
   },
   "author": "Bram Borggreve <bram@colmena.io>",
   "license": "MIT",
-  "main": "src/server/server.js",
   "scripts": {
     "start": "nps",
     "test": "nps test"
@@ -22,7 +21,7 @@
   "angular-cli": {},
   "dependencies": {},
   "devDependencies": {
-    "@colmena/angular": "latest",
+    "@colmena/colmena-angular": "latest",
     "angular-cli": "1.0.0-beta.24"
   }
 }
