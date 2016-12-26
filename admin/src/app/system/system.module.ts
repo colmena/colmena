@@ -1,28 +1,20 @@
-import {NgModule}                 from '@angular/core';
-import {CommonModule}             from '@angular/common';
-import {FormsModule}              from '@angular/forms';
+import { NgModule } from '@angular/core'
+import { DashboardComponent } from './dashboard/dashboard.component'
+import { AboutComponent } from './about/about.component'
+import { BrowserModule } from '@angular/platform-browser'
+import { FcUiModule } from '../../lib/fc.ui/fc-ui.module'
 
-import {AboutModule}              from '../system-about/about.module';
-import {DashboardModule}          from '../system-dashboard/dashboard.module';
-import {DevModule}                from '../system-dev/dev.module';
-import {DomainsModule}            from '../system-domains/domains.module';
-import {SettingsModule}           from '../system-settings/settings.module';
-import {UsersModule}              from '../system-users/users.module';
-
-import {SystemRoutingModule}      from './system-routing.module';
+const components = [
+  AboutComponent,
+  DashboardComponent,
+]
 
 @NgModule({
+  declarations: [...components],
+  exports: [...components],
   imports: [
-    CommonModule,
-    FormsModule,
-    AboutModule,
-    DashboardModule,
-    DevModule,
-    DomainsModule,
-    SettingsModule,
-    SystemRoutingModule,
-    UsersModule,
+    BrowserModule,
+    FcUiModule,
   ]
 })
-export class SystemModule {
-}
+export class SystemModule { }

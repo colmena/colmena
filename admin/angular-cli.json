@@ -1,13 +1,16 @@
 {
   "project": {
-    "version": "1.0.0-alpha.2",
-    "name": "core-ui"
+    "version": "1.0.0-beta.24",
+    "name": "colmena-angular"
   },
   "apps": [
     {
       "root": "src",
       "outDir": "dist",
-      "assets": "assets",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
       "index": "index.html",
       "main": "main.ts",
       "test": "test.ts",
@@ -15,16 +18,15 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "../node_modules/ng2-toasty/style-bootstrap.css",
-        "scss/style.scss"
+        "styles.scss"
       ],
       "scripts": [
-        "../node_modules/chart.js/dist/Chart.bundle.min.js",
-        "../node_modules/chart.js/dist/Chart.min.js"
+        "../node_modules/sweetalert2/dist/sweetalert2.min.js"
       ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
+        "hmr": "environments/environment.hmr.ts",
         "prod": "environments/environment.prod.ts"
       }
     }
@@ -43,6 +45,18 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "prefixInterfaces": false
+    "prefixInterfaces": false,
+    "inline": {
+      "style": true,
+      "template": true
+    },
+    "spec": {
+      "class": false,
+      "component": false,
+      "directive": false,
+      "module": false,
+      "pipe": false,
+      "service": false
+    }
   }
 }

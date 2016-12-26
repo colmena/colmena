@@ -1,11 +1,11 @@
-import { browser, element, by } from 'protractor/globals';
+import { browser, element, by } from 'protractor'
 
-export class CoreUIPage {
+export class ColmenaAngularPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get('/')
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('app-root h1')).getText()
   }
 }

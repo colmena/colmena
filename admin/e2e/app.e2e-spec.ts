@@ -1,14 +1,14 @@
-import { CoreUIPage } from './app.po';
+import { ColmenaAngularPage } from './app.po'
 
-describe('core-ui App', function() {
-  let page: CoreUIPage;
+describe('colmena-angular App', function() {
+  let page: ColmenaAngularPage
 
   beforeEach(() => {
-    page = new CoreUIPage();
-  });
+    page = new ColmenaAngularPage()
+  })
 
   it('should display message saying app works', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
-  });
-});
+    page.navigateTo()
+    expect(page.getParagraphText()).toEqual('app works!')
+  })
+})

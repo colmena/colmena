@@ -1,62 +1,41 @@
-import {NgModule}                     from '@angular/core';
-import {BrowserModule}                from '@angular/platform-browser';
-import {
-  CommonModule,
-  LocationStrategy,
-  HashLocationStrategy
-}         from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
+import { FormsModule } from '@angular/forms'
+import { HttpModule } from '@angular/http'
+import { RouterModule } from '@angular/router'
 
-import {FormsModule}                  from '@angular/forms';
-import {HttpModule}                   from '@angular/http';
+import { CoreUIModule } from 'coreui-angular/dist'
+import { FcUiModule } from '../lib/fc.ui/fc-ui.module'
+import { UiModule } from './ui/ui.module'
 
-import {AppComponent}                 from './app.component';
-import {Ng2BootstrapModule}           from 'ng2-bootstrap/ng2-bootstrap';
-import {NAV_DROPDOWN_DIRECTIVES}      from './shared/nav-dropdown.directive';
+import { DevModule } from './dev/dev.module'
+import { SystemModule } from './system/system.module'
 
-import {ChartsModule}                 from 'ng2-charts/ng2-charts';
-import {SIDEBAR_TOGGLE_DIRECTIVES}    from './shared/sidebar.directive';
-import {AsideToggleDirective}         from './shared/aside.directive';
-import {BreadcrumbsComponent}         from './shared/breadcrumb.component';
-import {SDKModule}                    from './shared/sdk';
-import {ToastyModule}                 from 'ng2-toasty';
-
-
-// Routing Module
-import {AppRoutingModule}             from './app.routing';
-
-// Layouts
-import {FullLayoutComponent}          from './system-layouts/full-layout.component';
-import {SimpleLayoutComponent}        from './system-layouts/simple-layout.component';
+import { AppComponent } from './app.component'
+import { appRoutes } from './app.routes'
 
 @NgModule({
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    Ng2BootstrapModule,
-    ChartsModule,
-    CommonModule,
     FormsModule,
     HttpModule,
-    SDKModule.forRoot(),
-    ToastyModule.forRoot()
+    RouterModule,
+
+    CoreUIModule,
+    FcUiModule,
+    UiModule,
+
+    DevModule,
+    SystemModule,
+
+    appRoutes,
   ],
+  providers: [],
   declarations: [
-    AppComponent,
-    FullLayoutComponent,
-    SimpleLayoutComponent,
-    NAV_DROPDOWN_DIRECTIVES,
-    BreadcrumbsComponent,
-    SIDEBAR_TOGGLE_DIRECTIVES,
-    AsideToggleDirective
+    AppComponent
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
-  bootstrap: [AppComponent],
-  exports: [
-    ToastyModule
+  bootstrap: [
+    AppComponent
   ]
 })
-export class AppModule {
-}
+export class AppModule { }
