@@ -1,6 +1,5 @@
 {
   "name": "BaseModel",
-  "description": "An intermediate model between the Models defined in the app and PersistedModel",
   "base": "PersistedModel",
   "mixins": {
     "ReadOnly": {

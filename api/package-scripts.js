@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   scripts: {
@@ -11,4 +11,4 @@ module.exports = {
     posttest: 'npm run lint && nsp check',
     test: 'true',
   },
-};
+}

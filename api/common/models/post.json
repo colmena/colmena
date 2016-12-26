@@ -22,17 +22,13 @@
       "type": "String",
       "required": false
     },
-    "authorId": {
+    "userId": {
       "type": "Number",
       "required": false
     }
   },
   "validations": [],
   "relations": {
-    "tag": {
-      "type": "belongsTo",
-      "model": "Tag"
-    },
     "domain": {
       "type": "belongsTo",
       "model": "Domain"

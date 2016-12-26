@@ -1,0 +1,4 @@
+/client/
+node_modules/
+admin/node_modules/
+api/node_modules/

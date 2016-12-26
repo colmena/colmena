@@ -26,17 +26,13 @@
       "type": "hasMany",
       "model": "Product"
     },
-    "authors": {
+    "users": {
       "type": "hasMany",
-      "model": "Author"
+      "model": "user"
     },
     "posts": {
       "type": "hasMany",
       "model": "Post"
-    },
-    "tags": {
-      "type": "hasMany",
-      "model": "Tag"
     }
   },
   "acls": [],

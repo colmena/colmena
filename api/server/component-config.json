@@ -1,6 +1,9 @@
 {
   "loopback-component-explorer": {
-    "mountPath": "/explorer"
+    "mountPath": "/explorer",
+    "uiDirs": [
+      "node_modules/@colmena/colmena-component-explorer-style"
+    ]
   },
   "loopback-component-fixtures": {
     "environments": [

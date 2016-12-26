@@ -29,10 +29,6 @@
   },
   "validations": [],
   "relations": {
-    "tag": {
-      "type": "belongsTo",
-      "model": "Tag"
-    },
     "domain": {
       "type": "belongsTo",
       "model": "Domain"

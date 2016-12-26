@@ -39,10 +39,6 @@
     "dataSource": "db",
     "public": false
   },
-  "Author": {
-    "dataSource": "db",
-    "public": true
-  },
   "Domain": {
     "dataSource": "db",
     "public": true
@@ -56,10 +52,6 @@
     "public": true
   },
   "Product": {
-    "dataSource": "db",
-    "public": true
-  },
-  "Tag": {
     "dataSource": "db",
     "public": true
   },

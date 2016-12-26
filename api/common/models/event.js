@@ -1,8 +1,8 @@
-'use strict';
+'use strict'
 
 const faker = require('faker/locale/en')
 
-module.exports = function(Event) {
+module.exports = function (Event) {
 
   Event._templates = () => ({
     basic: domainId => {
@@ -19,4 +19,4 @@ module.exports = function(Event) {
     },
   })
 
-};
+}

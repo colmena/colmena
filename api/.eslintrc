@@ -1,9 +1,0 @@
-{
-  "extends": "loopback",
-  "parserOptions": {
-    "ecmaVersion": 6
-  },
-  "rules": {
-    "max-len": [1, 120]
-  }
-}

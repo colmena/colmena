@@ -15,5 +15,5 @@ module.exports = {
       admin: 'cd admin; nps test',
       api: 'cd api; nps test',
     },
-  }
-};
+  },
+}
