@@ -1,3 +1,5 @@
+![](admin/src/assets/logo.png?raw=true)
+
 # Colmena CMS
 
 > Free and Open Source API and Admin
