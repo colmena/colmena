@@ -29,4 +29,4 @@ export const appRoutes: ModuleWithProviders = RouterModule.forRoot([
     path: '**',
     redirectTo: '',
   }
-])
+], { enableTracing: true })

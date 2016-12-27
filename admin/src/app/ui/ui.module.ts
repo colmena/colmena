@@ -6,11 +6,11 @@ import { RouterModule } from '@angular/router'
 
 import { ToastyService, ToastyModule } from 'ng2-toasty'
 
-import { UiCrudDetailsComponent } from './ui-crud-details.component'
-import { UiCrudFormComponent } from './ui-crud-form.component'
-import { UiCrudListComponent } from './ui-crud-list.component'
-import { UiFormComponent } from './ui-form.component'
-import { UiTableComponent } from './ui-table.component'
+import { UiCrudDetailsComponent } from './crud-details/ui-crud-details.component'
+import { UiCrudFormComponent } from './crud-form/ui-crud-form.component'
+import { UiCrudListComponent } from './crud-list/ui-crud-list.component'
+import { UiFormComponent } from './form/ui-form.component'
+import { UiTableComponent } from './table/ui-table.component'
 
 @NgModule({
   imports: [

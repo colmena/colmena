@@ -9,16 +9,13 @@
       <ui-form [config]="service.formConfig" [item]="service.item"></ui-form>
     </div>
     <div class="card-footer">
-
       <div class="float-xs-right">
-        <button type="submit" class="btn btn-sm btn-outline-success">
-          <span *ngIf="service.item.id">Update</span>
-          <span *ngIf="!service.item.id">Add</span>
-        </button>
-
-        <a [routerLink]="['..']" class="btn btn-sm btn-outline-info">
-          Cancel
-        </a>
+        <span *ngIf="service.item.id">
+          <button type="submit" class="btn btn-sm btn-outline-success">Update</button>
+        </span>
+        <span *ngIf="!service.item.id">
+          <button type="submit" class="btn btn-sm btn-outline-success">Add</button>
+        </span>
       </div>
     </div>
   </form>

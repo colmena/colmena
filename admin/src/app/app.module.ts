@@ -7,7 +7,9 @@ import { RouterModule } from '@angular/router'
 import { CoreUIModule } from 'coreui-angular/dist'
 import { FcUiModule } from '../lib/fc.ui/fc-ui.module'
 import { UiModule } from './ui/ui.module'
+import { SDKBrowserModule } from '../lib/lb-sdk/index'
 
+import { ContentModule } from './content/content.module'
 import { DevModule } from './dev/dev.module'
 import { SystemModule } from './system/system.module'
 
@@ -21,10 +23,12 @@ import { appRoutes } from './app.routes'
     HttpModule,
     RouterModule,
 
+    SDKBrowserModule.forRoot(),
     CoreUIModule,
     FcUiModule,
     UiModule,
 
+    ContentModule,
     DevModule,
     SystemModule,
 
