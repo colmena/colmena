@@ -1,5 +1,6 @@
 {
   "name": "Domain",
+  "description": "Manage System Domains and related content",
   "base": "BaseModel",
   "idInjection": true,
   "options": {

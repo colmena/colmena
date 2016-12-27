@@ -1,5 +1,6 @@
 {
   "name": "Event",
+  "description": "Content model for managing Events in a Domain",
   "base": "BaseModel",
   "idInjection": true,
   "options": {

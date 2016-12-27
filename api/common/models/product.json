@@ -1,5 +1,6 @@
 {
   "name": "Product",
+  "description": "Content model for managing Products in a Domain",
   "base": "BaseModel",
   "idInjection": true,
   "options": {

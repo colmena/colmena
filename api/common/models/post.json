@@ -1,5 +1,6 @@
 {
   "name": "Post",
+  "description": "Content model for managing Posts in a Domain",
   "base": "BaseModel",
   "idInjection": true,
   "options": {

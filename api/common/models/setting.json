@@ -1,5 +1,6 @@
 {
   "name": "Setting",
+  "description": "Manage System Settings",
   "base": "BaseModel",
   "idInjection": true,
   "options": {

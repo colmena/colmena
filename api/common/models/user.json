@@ -1,5 +1,6 @@
 {
   "name": "user",
+  "description": "Manage System Users",
   "base": "User",
   "idInjection": true,
   "options": {
@@ -75,7 +76,7 @@
       "accessType": "READ",
       "principalType": "ROLE",
       "principalId": "$unauthenticated",
-      "permission": "DENY"
+      "permission": "ALLOW"
     },
     {
       "accessType": "READ",
