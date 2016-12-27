@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core'
-
 import { assign, noop } from 'lodash'
+import swal, { SweetAlertOptions } from 'sweetalert2'
 
 import { ToastyService, ToastyConfig } from 'ng2-toasty'
-
-let win: any = typeof window !== 'undefined' && window || {}
 
 @Injectable()
 export class UiService {
@@ -75,7 +73,7 @@ export class UiService {
       defaultOptions.cancelButtonClass = options.cancelButtonClass || 'btn btn-lg btn-secondary'
     }
 
-    return win.Sweetalert2(assign(defaultOptions, options))
+    return swal(assign(defaultOptions, options))
       .then(res => successCb(res), dismiss => closeCb(dismiss))
   }
 

@@ -20,9 +20,7 @@
       "styles": [
         "styles.scss"
       ],
-      "scripts": [
-        "../node_modules/sweetalert2/dist/sweetalert2.min.js"
-      ],
+      "scripts": [],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
