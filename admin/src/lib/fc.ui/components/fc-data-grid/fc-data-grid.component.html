@@ -1,0 +1,38 @@
+
+<div class="mb-1">
+  <fc-data-grid-header
+    (searchAction)="searchAction($event)"
+    (selectColumn)="selectColumn($event)"
+    (selectedAction)="selectedAction($event)"
+    (setLimit)="setLimit($event)"
+    (toggleView)="toggleView()"
+    [selectedItems]="selectedItems"
+    [columns]="columns"
+    [limit]="limit"
+    [view]="view">
+  </fc-data-grid-header>
+</div>
+<div class="mt-1">
+  <fc-data-grid-rows
+    *ngIf="view === 'rows'"
+    (selectColumn)="selectColumn($event)"
+    (selectItem)="selectItem($event)"
+    [columns]="columns"
+    [columnSorting]="columnSorting"
+    [items]="items"></fc-data-grid-rows>
+
+  <fc-data-grid-icons
+    *ngIf="view === 'icons'"
+    [template]="iconTemplate"
+    (selectItem)="selectItem($event)"
+    [selectedItems]="selectedItems"
+    [items]="items"></fc-data-grid-icons>
+</div>
+<div style="text-align: center">
+  <fc-data-grid-pager
+    (setOffsetLimit)="setOffsetLimit($event)"
+    [itemsPerPage]="limit"
+    [currentPage]="currentPage"
+    [totalItems]="totalItems"
+    ></fc-data-grid-pager>
+</div>

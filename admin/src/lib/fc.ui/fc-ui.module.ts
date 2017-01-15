@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core'
 
 import { FcButtonsModule } from './components/fc-buttons/fc-buttons.module'
 import { FcCardModule } from './components/fc-card/fc-card.module'
+import { FcCodeViewerModule } from './components/fc-code-viewer/fc-code-viewer.module'
+import { FcDataGridModule } from './components/fc-data-grid/fc-data-grid.module'
 import { FcFormModule } from './components/fc-form/fc-form.module'
-import { FcTableModule } from './components/fc-table/fc-table.module'
+import { FcModalModule } from './components/fc-modal/fc-modal.module'
 import { FcTagModule } from './components/fc-tag/fc-tag.module'
 
 /**
@@ -13,8 +15,10 @@ import { FcTagModule } from './components/fc-tag/fc-tag.module'
 const modules = [
   FcButtonsModule,
   FcCardModule,
+  FcCodeViewerModule,
+  FcDataGridModule,
   FcFormModule,
-  FcTableModule,
+  FcModalModule,
   FcTagModule,
 ]
 
@@ -31,12 +35,13 @@ const providers = []
  */
 const declarations = []
 
+
 @NgModule({
   declarations: [
-    ...declarations,
+    ...declarations
   ],
   providers: [
-    ...providers,
+    ...providers
   ],
   exports: [
     ...declarations,

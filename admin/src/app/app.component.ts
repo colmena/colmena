@@ -2,6 +2,7 @@ import { Component, VERSION } from '@angular/core'
 
 import { CoreUIConfig, CoreUINavItem } from 'coreui-angular/dist'
 import { LoopBackConfig } from '../lib/lb-sdk/lb.config'
+import { LogService } from './log.service'
 
 @Component({
   selector: 'app-root',
@@ -53,11 +54,17 @@ export class AppComponent {
     },
   }
 
-  constructor() {
+  constructor(
+    private log: LogService,
+  ) {
+    this.log.group( 'AppComponent' )
+
     const fcConfig = JSON.parse(window.localStorage.getItem('fcConfig')) || this.defaultConfig
+    this.log.info(`Configure LoopBack: ${fcConfig.fullcube.baseUrl}/${fcConfig.fullcube.apiVersion}`)
 
     LoopBackConfig.setBaseURL(fcConfig.fullcube.baseUrl)
     LoopBackConfig.setApiVersion(fcConfig.fullcube.apiVersion)
+    this.log.groupEnd()
   }
 
 }

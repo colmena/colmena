@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 
-import { DropdownModule } from 'ng2-bootstrap'
+import { DropdownModule } from 'ng2-bootstrap/dropdown'
 
 import { FcButtonsComponent } from './fc-buttons.component'
 
@@ -16,7 +16,7 @@ import { FcButtonsComponent } from './fc-buttons.component'
   imports: [
     CommonModule,
     FormsModule,
-    DropdownModule,
+    DropdownModule.forRoot(),
   ]
 })
 export class FcButtonsModule {

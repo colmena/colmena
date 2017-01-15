@@ -41,3 +41,22 @@ export class FcCardComponent implements AfterViewInit {
     this.hasFooter = this.cardFooter.nativeElement.querySelector('fc-card-footer')
   }
 }
+
+// The cards work without these three classes. These are defined merely to have the IDE's know about them
+@Component({
+  selector: 'fc-card-header',
+  template: `<ng-content></ng-content>`
+})
+export class FcCardHeaderComponent {}
+
+@Component({
+  selector: 'fc-card-content',
+  template: `<ng-content></ng-content>`
+})
+export class FcCardContentComponent {}
+
+@Component({
+  selector: 'fc-card-footer',
+  template: `<ng-content></ng-content>`
+})
+export class FcCardFooterComponent {}

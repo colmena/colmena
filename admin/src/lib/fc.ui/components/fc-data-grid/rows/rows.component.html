@@ -1,0 +1,33 @@
+<div *ngIf="!items.length">
+  <alert type="info" class="col-md-6 offset-md-3 pt-1">No items found.</alert>
+</div>
+<table class="table table-striped table-hover" *ngIf="items.length">
+  <thead>
+  <tr>
+    <th *ngFor="let column of columns">
+      <a href="#"
+         (click)="clickColumn($event, column)"
+         class="{{columnSorting[column.field]}}">
+        {{column.label}}
+      </a>
+    </th>
+    <th>&nbsp;</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of items">
+    <td *ngFor="let column of columns"
+        (dblclick)="dblclickItem($event, item)"
+        (click)="clickItem($event, item)">
+      {{item[column.field]}}
+    </td>
+    <td>
+      <fc-item-view-buttons
+        [item]="item"
+        (buttonClick)="selectItem.emit($event)">
+      </fc-item-view-buttons>
+    </td>
+  </tr>
+  </tbody>
+</table>
+

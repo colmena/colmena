@@ -1,0 +1,13 @@
+th a {
+  text-decoration: none;
+}
+td {
+  cursor: pointer;
+}
+.asc:after {
+  content: '\2191';
+}
+
+.desc:after {
+  content: '\2193';
+}

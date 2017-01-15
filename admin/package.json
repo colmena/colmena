@@ -19,7 +19,10 @@
     "test": "nps test"
   },
   "angular-cli": {},
-  "dependencies": {},
+  "dependencies": {
+    "highlight.js": "^9.9.0",
+    "ng2-bootstrap": "^1.2.1"
+  },
   "devDependencies": {
     "@colmena/colmena-angular": "latest",
     "angular-cli": "1.0.0-beta.24"

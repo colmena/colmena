@@ -1,10 +1,8 @@
-import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
-
-import { FcCardComponent } from './fc-card.component'
-import { FcCardContentComponent } from './fc-card-content.component'
-import { FcCardFooterComponent } from './fc-card-footer.component'
-import { FcCardHeaderComponent } from './fc-card-header.component'
+import { CommonModule } from '@angular/common'
+import {
+  FcCardComponent, FcCardContentComponent, FcCardFooterComponent, FcCardHeaderComponent
+} from './fc-card.component'
 
 const modules = [
   FcCardComponent,
@@ -20,9 +18,7 @@ const modules = [
   exports: [
     ...modules,
   ],
-  imports: [
-    CommonModule,
-  ]
+  imports: [ CommonModule ]
 })
 export class FcCardModule {
 }

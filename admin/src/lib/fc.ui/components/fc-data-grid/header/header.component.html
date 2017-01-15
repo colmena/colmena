@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-xs-3">
+    <select class="form-control"
+            #selectLimit
+            [ngModel]="limit"
+            (change)="setLimit.emit(selectLimit.value)">
+      <option value=20>20</option>
+      <option value=40>40</option>
+      <option value=80>80</option>
+      <option value=100>100</option>
+    </select>
+  </div>
+  
+  <div class="col-xs-6">
+    <div class="input-group">
+      <input class="form-control form-control" #search
+             type="search" id="search" name="search" autofocus
+             placeholder="Search"
+             [(ngModel)]="query" (keyup)="doSearch($event)" (blur)="doSearch($event)">
+      <span class="input-group-btn">
+        <button (click)="doSearch($event)" class="btn btn btn-primary">
+          <i class="icon-magnifier"></i>
+        </button>
+      </span>
+    </div>
+  </div>
+  
+  <div class="col-xs-3">
+    <span class="float-xs-right">
+      
+      <button class="btn"
+              type="button"
+              (click)="selectedAction.emit({ action: 'delete', items: selectedItems })"
+              [disabled]="(selectedItems.length < 1)"
+              [ngClass]="{
+                'btn-outline-primary': (selectedItems.length > 0),
+                'btn-outline-secondary': (selectedItems.length < 1)}">
+        <i class='icon-trash'></i>
+      </button>
+
+      <button class="btn btn btn-outline-primary" type="button" (click)="toggleView.emit()">
+        <i [ngClass]="{
+          'icon-grid': (view === 'rows'),
+          'icon-list': (view === 'icons')}">
+        </i>
+      </button>
+    </span>
+  </div>
+</div>
