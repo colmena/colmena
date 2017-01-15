@@ -29,3 +29,11 @@ $navbar-brand-logo-size: 130px auto;
 @import '~simple-line-icons/css/simple-line-icons.css';
 @import '~font-awesome/css/font-awesome.css';
 @import './assets/animate.css';
+
+.brand-logo {
+  display: block;
+  height: 80px;
+  margin-bottom: 30px;
+  background: $navbar-brand-logo no-repeat center center;
+  background-size: 200px auto;
+}

@@ -11,6 +11,7 @@ import { FcUiModule } from '@fc-ui'
 import { SDKBrowserModule } from '@lb-sdk'
 
 // Local Modules
+import { AuthModule } from './auth/auth.module'
 import { ContentModule } from './content/content.module'
 import { DevModule } from './dev/dev.module'
 import { SystemModule } from './system/system.module'
@@ -34,6 +35,7 @@ import { LogService } from './log.service'
     FcUiModule,
     UiModule,
 
+    AuthModule,
     ContentModule,
     DevModule,
     SystemModule,

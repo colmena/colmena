@@ -23,6 +23,9 @@ export const appRoutes: ModuleWithProviders = RouterModule.forRoot([
       }, {
         path: 'development',
         component: DevIndexComponent
+      }, {
+        path: 'development',
+        component: DevIndexComponent
       },
     ]
   }, {
