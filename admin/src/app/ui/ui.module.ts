@@ -14,6 +14,8 @@ import { UiCrudDetailsComponent } from './crud-details/ui-crud-details.component
 import { UiCrudFormComponent } from './crud-form/ui-crud-form.component'
 import { UiCrudListComponent } from './crud-list/ui-crud-list.component'
 import { UiFormComponent } from './form/ui-form.component'
+import { UiLogoComponent } from './logo/logo.component'
+import { UiMessageComponent } from './message/message.component'
 import { UiTableComponent } from './table/ui-table.component'
 
 const components = [
@@ -23,6 +25,8 @@ const components = [
   UiCrudFormComponent,
   UiCrudListComponent,
   UiFormComponent,
+  UiLogoComponent,
+  UiMessageComponent,
   UiTableComponent,
 ]
 

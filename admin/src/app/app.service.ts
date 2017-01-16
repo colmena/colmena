@@ -1,9 +1,12 @@
 import { Injectable, OnInit, VERSION } from '@angular/core'
 
 import { CoreUIConfig, CoreUINavItem } from 'coreui-angular'
+import { SettingApi } from '@lb-sdk'
 
 @Injectable()
 export class AppService implements OnInit {
+
+  settings: Map<string, any> = new Map()
 
   headerNav: CoreUINavItem[] = [
     { label: 'Dashboard', link: [ '/', 'dashboard' ] },
@@ -38,6 +41,24 @@ export class AppService implements OnInit {
 
   addSidebarLinks(linksArray) {
     this.config.sidebar.nav.push(...linksArray)
+  }
+
+  fetchSettings() {
+    return this.settingApi
+      .find()
+      .subscribe(res => {
+        res.forEach(setting => this.settings.set(setting['key'], setting['value']))
+      })
+  }
+
+  getSetting(key) {
+    console.log('get key', key, this.settings.get(key), this.settings)
+    return this.settings.get(key)
+  }
+
+  constructor(
+    private settingApi: SettingApi,
+  ) {
   }
 
 }

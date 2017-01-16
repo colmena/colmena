@@ -20,19 +20,20 @@ export class AppComponent {
     },
   }
 
-  constructor(
-    private app: AppService,
-    private log: LogService,
-  ) {
-    this.log.group( 'AppComponent' )
-
+  configureLoopBack() {
     const fcConfig = JSON.parse(window.localStorage.getItem('fcConfig')) || this.defaultConfig
-    this.log.info(`Configure LoopBack: ${fcConfig.fullcube.baseUrl}/${fcConfig.fullcube.apiVersion}`)
 
     LoopBackConfig.setBaseURL(fcConfig.fullcube.baseUrl)
     LoopBackConfig.setApiVersion(fcConfig.fullcube.apiVersion)
-    this.log.groupEnd()
+    this.log.info(`Configure LoopBack: ${fcConfig.fullcube.baseUrl}/${fcConfig.fullcube.apiVersion}`)
+  }
 
+  fetchSettings() {
+    this.app.fetchSettings()
+    this.log.info('Fetch settings')
+  }
+
+  createSidebar() {
     this.app.addSidebarLinks([
       { type: 'item', label: 'Dashboard',   icon: 'icon-speedometer', link: [ '/', 'dashboard' ] },
       { type: 'item', label: 'Events',      icon: 'icon-calendar',    link: [ '/', 'content', 'events' ] },
@@ -43,6 +44,22 @@ export class AppComponent {
       { type: 'item', label: 'Settings',    icon: 'icon-settings',    link: [ '/', 'settings' ] },
       { type: 'item', label: 'Development', icon: 'icon-wrench',      link: [ '/', 'development' ] },
     ])
+    this.log.info('Create SideBar')
+  }
+
+  loadApp() {
+    this.log.group('AppComponent: App Loading')
+    this.configureLoopBack()
+    this.fetchSettings()
+    this.createSidebar()
+    this.log.groupEnd()
+  }
+
+  constructor(
+    private app: AppService,
+    private log: LogService,
+  ) {
+    this.loadApp()
   }
 
 }

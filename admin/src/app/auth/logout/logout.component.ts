@@ -4,7 +4,7 @@ import { Router } from '@angular/router'
 import { AuthService } from '../auth.service'
 
 @Component({
-  template: `<h1>You are being logged out...</h1>`,
+  template: `<ui-message [message]="'You are being logged out.'"></ui-message>`,
 })
 export class LogoutComponent {
 
@@ -14,7 +14,10 @@ export class LogoutComponent {
   ) {
     this.auth.logout()
       .subscribe(() => {
-        this.router.navigate([ '/', 'router' ])
+        // TODO: This timeout can be removed when logout does not bounce back
+        setTimeout(() => {
+          this.router.navigate([ '/', 'login' ])
+        }, 500)
       })
   }
 }

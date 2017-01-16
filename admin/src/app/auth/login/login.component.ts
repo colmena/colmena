@@ -1,72 +1,89 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 
-import { AccessToken } from '@lb-sdk'
+import { AccessToken, DomainApi } from '@lb-sdk'
 import { AuthService } from '../auth.service'
+import { AppService } from '../../app.service'
+import { LogService } from '../../log.service'
+import { UiService } from '../../ui/ui.service'
 
 @Component({
   template: `
-    <div class="container d-table">
-      <div class="d-100vh-va-middle">
-        <div class="row">
-          <div class="col-md-6 offset-md-3">
-            <div class="card-group">
-              <div class="card p-2">
-                <div class="card-block">
-                  <div class="brand-logo"></div>
-                  <div class="input-group mb-1">
-                    <span class="input-group-addon">
-                      <i class="icon-globe"></i>
-                    </span>
-                    <input [(ngModel)]="realm"
-                      required type="text" class="form-control" placeholder="Domain">
-                  </div>
-                  <div class="input-group mb-1">
-                    <span class="input-group-addon">
-                      <i class="icon-user"></i>
-                    </span>
-                    <input [(ngModel)]="email"
-                      required type="text" class="form-control" placeholder="Email">
-                  </div>
-                  <div class="input-group mb-2">
-                    <span class="input-group-addon">
-                      <i class="icon-lock"></i>
-                    </span>
-                    <input [(ngModel)]="password"
-                      required type="password" class="form-control" placeholder="Password">
-                  </div>
-                  <div class="row">
-                    <div class="col-xs-12 text-xs-right">
-                      <button type="submit" class="btn btn-primary px-2" (click)="login()">Login</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <ui-message>
+      <div class="input-group mb-1" *ngIf="domains?.length > 1">
+        <span class="input-group-addon">
+          <i class="icon-globe"></i>
+        </span>
+        <select [(ngModel)]="credentials.realm" name="realm" id="realm" class="form-control">
+          <option *ngFor="let domain of domains" [value]="domain.id">{{domain.name}}</option>
+        </select>
+      </div>
+      <div class="input-group mb-1">
+        <span class="input-group-addon">
+          <i class="icon-user"></i>
+        </span>
+        <input [(ngModel)]="credentials.email"
+          required type="text" class="form-control" placeholder="Email">
+      </div>
+      <div class="input-group mb-1">
+        <span class="input-group-addon">
+          <i class="icon-lock"></i>
+        </span>
+        <input [(ngModel)]="credentials.password"
+          required type="password" class="form-control" placeholder="Password">
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-xs-right">
+          <button type="submit" class="btn btn-primary px-2" (click)="login()">
+            Sign in
+          </button>
+          <a class="btn btn-outline-primary px-2" [routerLink]="['/', 'register']">
+            Register
+          </a>
         </div>
       </div>
-    </div>
+    </ui-message>
+    <pre>{{credentials | json}}</pre>
   `,
 })
 export class LoginComponent {
 
-  public realm = 'example.com'
-  public email = 'admin@example.com'
-  public password = 'password'
+  public domains: any[]
+  public credentials = {
+    realm: '',
+    email: '',
+    password: '',
+  }
 
   constructor(
+    private app: AppService,
+    private log: LogService,
+    private ui: UiService,
     private auth: AuthService,
-    private router: Router) {
+    private router: Router,
+    private domainApi: DomainApi,
+  ) {
+    if (this.app.getSetting('nodeEnv') === 'development') {
+      this.ui.toastInfo('Development Mode Enabled', 'Using default credentials')
+      this.log.info('Development Model: setting credentials')
+      this.credentials.email = 'admin@example.com'
+      this.credentials.password = 'password'
+    }
+    this.domainApi
+      .find()
+      .subscribe(res => {
+        this.domains = res
+        if (this.domains.length === 1) {
+          if (this.app.getSetting('nodeEnv') === 'development') {
+            this.ui.toastInfo('Single Domain configured', `Using default domain: ${this.domains[0]['id']}`)
+          }
+          this.credentials.realm = this.domains[0]['id']
+        }
+      })
   }
 
   login() {
-    const credentials = {
-      realm: this.realm,
-      email: this.email,
-      password: this.password,
-    }
-    return this.auth.login(credentials)
+    return this.auth.login(this.credentials)
       .subscribe((token: AccessToken) => {
           this.auth.setToken(token)
             .then(() => {
@@ -74,7 +91,7 @@ export class LoginComponent {
               this.router.navigate([ '/dashboard' ])
             })
         },
-        err => alert(err.message)
+        err => this.ui.toastError('Login failed', err.message)
       )
   }
 

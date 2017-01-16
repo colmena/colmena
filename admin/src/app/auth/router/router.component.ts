@@ -4,7 +4,7 @@ import { Router } from '@angular/router'
 import { AuthService } from '../auth.service'
 
 @Component({
-  template: '<h1>Redirecting...</h1>',
+  template: `<ui-message [message]="'Redirecting.'"></ui-message>`,
 })
 export class RouterComponent {
 
@@ -12,10 +12,13 @@ export class RouterComponent {
     private auth: AuthService,
     private router: Router
   ) {
-    if (this.auth.isAuthenticated()) {
-      this.router.navigate([ '/', 'dashboard' ])
-    } else {
-      this.router.navigate([ '/', 'login' ])
-    }
+    // TODO: This timeout can be removed when Settings are resolved using the router
+    setTimeout(() => {
+      if (this.auth.isAuthenticated()) {
+        this.router.navigate([ '/', 'dashboard' ])
+      } else {
+        this.router.navigate([ '/', 'login' ])
+      }
+    }, 500)
   }
 }

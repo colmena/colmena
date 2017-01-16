@@ -2,14 +2,12 @@ import { Routes } from '@angular/router'
 import { DevIndexComponent } from './index/index.component'
 
 export const DevRoutes: Routes = [ {
-  path: 'dev',
+  path: 'development',
   data: {
     title: 'Development',
   },
   children: [
-    {
-      path: 'index',
-      component: DevIndexComponent
-    },
+    { path: '', redirectTo: 'index', pathMatch: 'full' },
+    { path: 'index', component: DevIndexComponent },
   ],
 } ]
