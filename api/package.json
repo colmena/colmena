@@ -21,7 +21,10 @@
   "main": "server/server.js",
   "dependencies": {
     "@colmena/colmena-loopback": "latest",
+    "bluebird": "^3.4.7",
+    "config": "^1.24.0",
     "faker": "3.1.0",
+    "js-yaml": "^3.7.0",
     "lodash": "4.17.3"
   },
   "devDependencies": {

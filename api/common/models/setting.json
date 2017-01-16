@@ -2,17 +2,23 @@
   "name": "Setting",
   "description": "Manage System Settings",
   "base": "BaseModel",
-  "idInjection": true,
+  "idInjection": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
     "key": {
       "type": "string",
+      "id": true,
       "required": true
     },
     "value": {
       "type": "string"
+    },
+    "system": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     },
     "type": {
       "type": "string",

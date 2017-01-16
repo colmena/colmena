@@ -18,3 +18,4 @@ coverage
 node_modules
 npm-debug.log
 db.json
+config/local*

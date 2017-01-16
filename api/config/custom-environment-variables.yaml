@@ -1,0 +1,6 @@
+db:
+  url: MONGODB_URL
+
+settings:
+  registrationEnabled: SETTINGS_REGISTRATION_ENABLED
+  multiDomain: SETTINGS_MULTI_DOMAIN
