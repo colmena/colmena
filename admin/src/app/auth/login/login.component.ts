@@ -37,7 +37,7 @@ import { UiService } from '../../ui/ui.service'
           <button type="submit" class="btn btn-primary px-2" (click)="login()">
             Sign in
           </button>
-          <a class="btn btn-outline-primary px-2" [routerLink]="['/', 'register']">
+          <a *ngIf="registrationEnabled" class="btn btn-outline-primary px-2" [routerLink]="['/', 'register']">
             Register
           </a>
         </div>
@@ -55,6 +55,8 @@ export class LoginComponent {
     password: '',
   }
 
+  public registrationEnabled: boolean = false
+
   constructor(
     private app: AppService,
     private log: LogService,
@@ -63,11 +65,17 @@ export class LoginComponent {
     private router: Router,
     private domainApi: DomainApi,
   ) {
+    this.log.group('LoginComponent: Init')
     if (this.app.getSetting('nodeEnv') === 'development') {
-      this.ui.toastInfo('Development Mode Enabled', 'Using default credentials')
-      this.log.info('Development Model: setting credentials')
+      this.log.info('Development Mode Enabled', 'Using default credentials')
       this.credentials.email = 'admin@example.com'
       this.credentials.password = 'password'
+    }
+    if (this.app.getSetting('registrationEnabled') === 'true') {
+      this.log.info('Registration Enabled', '')
+      this.registrationEnabled = true
+    } else {
+      this.log.info('Registration Disabled', '')
     }
     this.domainApi
       .find()
@@ -75,9 +83,10 @@ export class LoginComponent {
         this.domains = res
         if (this.domains.length === 1) {
           if (this.app.getSetting('nodeEnv') === 'development') {
-            this.ui.toastInfo('Single Domain configured', `Using default domain: ${this.domains[0]['id']}`)
+            this.log.info('Single Domain configured', `Using default domain: ${this.domains[0]['id']}`)
           }
           this.credentials.realm = this.domains[0]['id']
+          this.log.groupEnd()
         }
       })
   }

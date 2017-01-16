@@ -5,6 +5,7 @@ import { AccessToken, DomainApi } from '@lb-sdk'
 import { AuthService } from '../auth.service'
 import { UiService } from '../../ui/ui.service'
 import { AppService } from '../../app.service'
+import { LogService } from '../../log.service'
 
 @Component({
   template: `
@@ -54,7 +55,7 @@ import { AppService } from '../../app.service'
       </div>
       <div class="row">
         <div class="col-xs-12 text-xs-right">
-          <button type="submit" class="btn btn-primary px-2" (click)="regiter()">
+          <button type="submit" class="btn btn-primary px-2" (click)="register()">
             Register
           </button>
           <a class="btn btn-outline-primary px-2" [routerLink]="['/', 'login']">
@@ -82,24 +83,34 @@ export class RegisterComponent {
   constructor(
     private app: AppService,
     private auth: AuthService,
+    private log: LogService,
     private ui: UiService,
     private router: Router,
     private domainApi: DomainApi,
   ) {
+    this.log.group('RegisterComponent: init')
+
+    if (this.app.getSetting('registrationEnabled') !== 'true') {
+      this.log.info('Registration Disabled', '')
+      this.ui.toastInfo('Registration Disabled', '')
+      this.router.navigate([ '/', 'login' ])
+    }
+
     this.domainApi
       .find()
       .subscribe(res => {
         this.domains = res
         if (this.domains.length === 1) {
           if (this.app.getSetting('nodeEnv') === 'development') {
-            this.ui.toastInfo('Single Domain configured', `Using default domain: ${this.domains[0]['id']}`)
+            this.log.info('Single Domain configured', `Using default domain: ${this.domains[0]['id']}`)
           }
           this.credentials.realm = this.domains[0]['id']
+          this.log.groupEnd()
         }
       })
   }
 
-  regiter() {
+  register() {
     this.credentials.username = this.credentials.email
     return this.auth.register(this.credentials)
       .subscribe(res => {

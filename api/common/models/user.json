@@ -3,7 +3,10 @@
   "description": "Manage System Users",
   "base": "User",
   "idInjection": true,
+  "allowEternalTokens": true,
   "options": {
+    "realmRequired": true,
+    "realmDelimiter": ":",
     "validateUpsert": true
   },
   "properties": {
@@ -25,6 +28,10 @@
       "required": true
     },
     "lastName": {
+      "type": "String",
+      "required": true
+    },
+    "realm": {
       "type": "String",
       "required": true
     }

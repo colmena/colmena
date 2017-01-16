@@ -52,7 +52,6 @@ export class AppService implements OnInit {
   }
 
   getSetting(key) {
-    console.log('get key', key, this.settings.get(key), this.settings)
     return this.settings.get(key)
   }
 

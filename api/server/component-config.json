@@ -7,14 +7,23 @@
     "loadFixturesOnStartup": false,
     "errorOnSetupFailure": true
   },
-  "loopback-component-ping": {},
+  "loopback-component-ping": {
+    "acls": [
+      {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$unauthenticated",
+        "permission": "DENY"
+      }
+    ]
+  },
   "loopback-component-templates": {
     "acls": [
       {
         "accessType": "*",
         "principalType": "ROLE",
         "principalId": "$unauthenticated",
-        "permission": "ALLOW"
+        "permission": "DENY"
       }
     ]
   },
