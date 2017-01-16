@@ -1,6 +1,7 @@
 [
   {
-    "id": "example.com",
-    "name": "example.com"
+    "id": "default",
+    "name": "Default Domain",
+    "description": "This domain is defined in the sample data."
   }
 ]

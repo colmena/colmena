@@ -1,7 +1,7 @@
 [
   {
     "id": "admin",
-    "username": "admin@example.com",
+    "realm": "default",
     "email": "admin@example.com",
     "firstName": "Admin",
     "lastName": "System",
@@ -9,7 +9,7 @@
   },
   {
     "id": "manager",
-    "username": "manager@example.com",
+    "realm": "default",
     "email": "manager@example.com",
     "firstName": "Manager",
     "lastName": "System",
@@ -17,7 +17,7 @@
   },
   {
     "id": "user",
-    "username": "user@example.com",
+    "realm": "default",
     "email": "user@example.com",
     "firstName": "User",
     "lastName": "System",

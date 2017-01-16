@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Small Metal Pants",
     "description": "Qui ullam fugiat.",
     "sku": "small-metal-pants",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Gorgeous Cotton Keyboard",
     "description": "Voluptates qui et et id reprehenderit architecto voluptates at.",
     "sku": "gorgeous-cotton-keyboard",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Ergonomic Rubber Gloves",
     "description": "Sint porro rerum dicta quasi eos ea.",
     "sku": "ergonomic-rubber-gloves",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Handmade Frozen Bike",
     "description": "Omnis doloremque vitae.",
     "sku": "handmade-frozen-bike",
@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Ergonomic Wooden Gloves",
     "description": "Et assumenda qui aliquam et saepe eum eum.",
     "sku": "ergonomic-wooden-gloves",
@@ -46,7 +46,7 @@
   },
   {
     "id": 6,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Fantastic Soft Salad",
     "description": "Magnam delectus in facere voluptates est sint.",
     "sku": "fantastic-soft-salad",
@@ -55,7 +55,7 @@
   },
   {
     "id": 7,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Fantastic Concrete Chips",
     "description": "Rerum aut ex.",
     "sku": "fantastic-concrete-chips",
@@ -64,7 +64,7 @@
   },
   {
     "id": 8,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Practical Soft Sausages",
     "description": "Quo sequi commodi debitis accusantium assumenda dicta amet.",
     "sku": "practical-soft-sausages",
@@ -73,7 +73,7 @@
   },
   {
     "id": 9,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Ergonomic Concrete Chair",
     "description": "Reprehenderit iste mollitia accusantium et.",
     "sku": "ergonomic-concrete-chair",
@@ -82,7 +82,7 @@
   },
   {
     "id": 10,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Awesome Frozen Pizza",
     "description": "Deserunt ut odio consequatur qui sequi vitae qui culpa sapiente.",
     "sku": "awesome-frozen-pizza",
@@ -91,7 +91,7 @@
   },
   {
     "id": 11,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Fantastic Metal Towels",
     "description": "Impedit vitae et animi facilis eum aperiam tenetur.",
     "sku": "fantastic-metal-towels",
@@ -100,7 +100,7 @@
   },
   {
     "id": 12,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Rustic Granite Computer",
     "description": "Quisquam ipsum nesciunt animi et.",
     "sku": "rustic-granite-computer",
@@ -109,7 +109,7 @@
   },
   {
     "id": 13,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Small Soft Chicken",
     "description": "Dolor tempore quidem ut eos itaque.",
     "sku": "small-soft-chicken",
@@ -118,7 +118,7 @@
   },
   {
     "id": 14,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Gorgeous Wooden Bacon",
     "description": "Laudantium velit commodi id aliquam sit cumque aut est voluptatibus.",
     "sku": "gorgeous-wooden-bacon",
@@ -127,7 +127,7 @@
   },
   {
     "id": 15,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Sleek Soft Shoes",
     "description": "Totam consectetur at voluptatem eligendi accusamus quibusdam incidunt.",
     "sku": "sleek-soft-shoes",
@@ -136,7 +136,7 @@
   },
   {
     "id": 16,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Gorgeous Soft Pants",
     "description": "Et et deleniti iure quis exercitationem.",
     "sku": "gorgeous-soft-pants",
@@ -145,7 +145,7 @@
   },
   {
     "id": 17,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Refined Granite Cheese",
     "description": "Quas enim et.",
     "sku": "refined-granite-cheese",
@@ -154,7 +154,7 @@
   },
   {
     "id": 18,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Refined Cotton Soap",
     "description": "Vel excepturi numquam dolor veniam.",
     "sku": "refined-cotton-soap",
@@ -163,7 +163,7 @@
   },
   {
     "id": 19,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Tasty Metal Table",
     "description": "Autem et laboriosam libero.",
     "sku": "tasty-metal-table",
@@ -172,7 +172,7 @@
   },
   {
     "id": 20,
-    "domainId": "example.com",
+    "domainId": "default",
     "name": "Small Frozen Computer",
     "description": "Fugiat at alias et sint a.",
     "sku": "small-frozen-computer",
