@@ -43,8 +43,10 @@ globally:
 
 First clone the repository to get the project files:
 
-    $ git clone https://github.com/beeman/colmena-cms.git
+    $ git clone git@github.com:beeman/loopback-angular-admin.git colmena-cms
     $ cd colmena-cms
+    $ git checkout -b colmena-cms origin/colmena-cms
+    $ git branch -d master
 
 ### API
 
