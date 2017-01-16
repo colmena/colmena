@@ -3,8 +3,9 @@
     "environments": [
       "development"
     ],
-    "fixturesPath": "/server/fixtures/",
-    "loadFixturesOnStartup": true
+    "fixturesPath": "/server/sample-data/",
+    "loadFixturesOnStartup": false,
+    "errorOnSetupFailure": true
   },
   "loopback-component-ping": {},
   "loopback-component-templates": {
