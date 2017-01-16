@@ -1,0 +1,40 @@
+{
+  "name": "Event",
+  "description": "Content model for managing Events in a Domain",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true
+    },
+    "domainId": {
+      "type": "String",
+      "required": false
+    },
+    "name": {
+      "type": "String",
+      "required": false
+    },
+    "date": {
+      "type": "Date",
+      "required": false
+    },
+    "location": {
+      "type": "String",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "domain": {
+      "type": "belongsTo",
+      "model": "Domain"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

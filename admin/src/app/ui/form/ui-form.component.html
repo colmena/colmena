@@ -1,0 +1,9 @@
+<div *ngFor="let field of config.fields" class="form-group">
+  <label>{{field.label}}</label>
+  <input type="{{field.type}}"
+         id="{{field.name}}"
+         class="form-control"
+         name="{{field.name}}"
+         [(ngModel)]="item[field.name]"
+         placeholder="{{field.placeholder}}"/>
+</div>

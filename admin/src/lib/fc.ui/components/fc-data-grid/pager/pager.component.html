@@ -1,0 +1,9 @@
+<div class="text-center">
+  <pagination
+    [boundaryLinks]="true"
+    (pageChanged)="pageChanged($event)"
+    [itemsPerPage]="itemsPerPage"
+    [totalItems]="totalItems"
+    [(ngModel)]="currentPage">
+  </pagination>
+</div>

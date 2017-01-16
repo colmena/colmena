@@ -1,0 +1,9 @@
+db:
+  url: false
+
+settings:
+  registrationEnabled: true
+  multiDomain: true
+
+system:
+  initdb: false

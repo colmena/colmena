@@ -1,0 +1,40 @@
+{
+  "name": "Post",
+  "description": "Content model for managing Posts in a Domain",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true
+    },
+    "domainId": {
+      "type": "String",
+      "required": false
+    },
+    "title": {
+      "type": "String",
+      "required": false
+    },
+    "content": {
+      "type": "String",
+      "required": false
+    },
+    "userId": {
+      "type": "Number",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "domain": {
+      "type": "belongsTo",
+      "model": "Domain"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

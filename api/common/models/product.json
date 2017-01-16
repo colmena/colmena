@@ -1,0 +1,40 @@
+{
+  "name": "Product",
+  "description": "Content model for managing Products in a Domain",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true
+    },
+    "domainId": {
+      "type": "String",
+      "required": false
+    },
+    "name": {
+      "type": "String",
+      "required": false
+    },
+    "description": {
+      "type": "String",
+      "required": false
+    },
+    "sku": {
+      "type": "String",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "domain": {
+      "type": "belongsTo",
+      "model": "Domain"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

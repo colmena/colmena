@@ -1,0 +1,41 @@
+{
+  "name": "Domain",
+  "description": "Manage System Domains and related content",
+  "base": "BaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "String",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "String",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "events": {
+      "type": "hasMany",
+      "model": "Event"
+    },
+    "products": {
+      "type": "hasMany",
+      "model": "Product"
+    },
+    "users": {
+      "type": "hasMany",
+      "model": "user"
+    },
+    "posts": {
+      "type": "hasMany",
+      "model": "Post"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

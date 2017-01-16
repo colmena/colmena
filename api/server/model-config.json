@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../node_modules/loopback-ds-readonly-mixin/lib",
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true
+  },
+  "accessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "BaseModel": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Domain": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Event": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Post": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Product": {
+    "dataSource": "db",
+    "public": true
+  },
+  "Setting": {
+    "dataSource": "db",
+    "public": true
+  }
+}

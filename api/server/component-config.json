@@ -1,0 +1,39 @@
+{
+  "loopback-component-fixtures": {
+    "environments": [
+      "development"
+    ],
+    "fixturesPath": "/server/sample-data/",
+    "loadFixturesOnStartup": false,
+    "errorOnSetupFailure": true
+  },
+  "loopback-component-ping": {
+    "acls": [
+      {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$unauthenticated",
+        "permission": "DENY"
+      }
+    ]
+  },
+  "loopback-component-templates": {
+    "acls": [
+      {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$unauthenticated",
+        "permission": "DENY"
+      }
+    ]
+  },
+  "@mean-expert/loopback-component-realtime": {
+    "auth": false
+  },
+  "loopback-component-explorer": {
+    "mountPath": "/explorer",
+    "uiDirs": [
+      "node_modules/@colmena/colmena-component-explorer-style"
+    ]
+  }
+}
