@@ -1,10 +1,4 @@
 {
-  "loopback-component-explorer": {
-    "mountPath": "/explorer",
-    "uiDirs": [
-      "node_modules/@colmena/colmena-component-explorer-style"
-    ]
-  },
   "loopback-component-fixtures": {
     "environments": [
       "development"
@@ -25,5 +19,11 @@
   },
   "@mean-expert/loopback-component-realtime": {
     "auth": false
+  },
+  "loopback-component-explorer": {
+    "mountPath": "/explorer",
+    "uiDirs": [
+      "node_modules/@colmena/colmena-component-explorer-style"
+    ]
   }
 }

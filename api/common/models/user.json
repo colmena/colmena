@@ -93,7 +93,7 @@
     {
       "principalType": "ROLE",
       "principalId": "$unauthenticated",
-      "permission": "DENY",
+      "permission": "ALLOW",
       "property": "create"
     },
     {
