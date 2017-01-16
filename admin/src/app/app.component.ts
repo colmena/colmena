@@ -1,51 +1,17 @@
-import { Component, VERSION } from '@angular/core'
+import { Component } from '@angular/core'
 
-import { CoreUIConfig, CoreUINavItem } from 'coreui-angular/dist'
-import { LoopBackConfig } from '../lib/lb-sdk/lb.config'
+import { LoopBackConfig } from '@lb-sdk'
 import { LogService } from './log.service'
+import { AppService } from './app.service'
 
 @Component({
   selector: 'app-root',
   template: `
-    <coreui-layout [config]="config">
-      <router-outlet></router-outlet>
-    </coreui-layout>
+    <router-outlet></router-outlet>
     <ng2-toasty></ng2-toasty>
   `,
 })
 export class AppComponent {
-
-  headerNav: CoreUINavItem[] = [
-    { label: 'Dashboard', link: [ '/', 'dashboard' ] },
-  ]
-
-  sidebarNav: CoreUINavItem[] = [
-    { type: 'item', label: 'Dashboard',   icon: 'icon-speedometer', link: [ '/', 'dashboard' ] },
-    { type: 'item', label: 'Events',      icon: 'icon-calendar',    link: [ '/', 'content', 'events' ] },
-    { type: 'item', label: 'Posts',       icon: 'icon-pencil',      link: [ '/', 'content', 'posts' ] },
-    { type: 'item', label: 'Products',    icon: 'icon-basket',      link: [ '/', 'content', 'products' ] },
-    { type: 'item', label: 'Domains',     icon: 'icon-globe',       link: [ '/', 'domains' ] },
-    { type: 'item', label: 'Users',       icon: 'icon-user',        link: [ '/', 'users' ] },
-    { type: 'item', label: 'Settings',    icon: 'icon-settings',    link: [ '/', 'settings' ] },
-    { type: 'item', label: 'Development', icon: 'icon-wrench',      link: [ '/', 'development' ] },
-  ]
-
-  config: CoreUIConfig = {
-    footer: {
-      left: 'Colmena CMS',
-      right: 'angular@' + VERSION.full,
-    },
-    header: {
-      aside: false,
-      nav: this.headerNav,
-    },
-    main: {
-      breadcrumbs: true,
-    },
-    sidebar: {
-      nav: this.sidebarNav,
-    }
-  }
 
   private defaultConfig = {
     fullcube: {
@@ -55,6 +21,7 @@ export class AppComponent {
   }
 
   constructor(
+    private app: AppService,
     private log: LogService,
   ) {
     this.log.group( 'AppComponent' )
@@ -65,6 +32,17 @@ export class AppComponent {
     LoopBackConfig.setBaseURL(fcConfig.fullcube.baseUrl)
     LoopBackConfig.setApiVersion(fcConfig.fullcube.apiVersion)
     this.log.groupEnd()
+
+    this.app.addSidebarLinks([
+      { type: 'item', label: 'Dashboard',   icon: 'icon-speedometer', link: [ '/', 'dashboard' ] },
+      { type: 'item', label: 'Events',      icon: 'icon-calendar',    link: [ '/', 'content', 'events' ] },
+      { type: 'item', label: 'Posts',       icon: 'icon-pencil',      link: [ '/', 'content', 'posts' ] },
+      { type: 'item', label: 'Products',    icon: 'icon-basket',      link: [ '/', 'content', 'products' ] },
+      { type: 'item', label: 'Domains',     icon: 'icon-globe',       link: [ '/', 'domains' ] },
+      { type: 'item', label: 'Users',       icon: 'icon-user',        link: [ '/', 'users' ] },
+      { type: 'item', label: 'Settings',    icon: 'icon-settings',    link: [ '/', 'settings' ] },
+      { type: 'item', label: 'Development', icon: 'icon-wrench',      link: [ '/', 'development' ] },
+    ])
   }
 
 }

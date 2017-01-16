@@ -6,9 +6,8 @@ import { DomainsModule } from './domains/domains.module'
 import { SettingsModule } from './settings/settings.module'
 import { UsersModule } from './users/users.module'
 
-import { DashboardComponent } from './dashboard/dashboard.component'
 import { AboutComponent } from './about/about.component'
-import { SystemRoutesModule } from './system.routes'
+import { DashboardComponent } from './dashboard/dashboard.component'
 
 const components = [
   AboutComponent,
@@ -16,11 +15,14 @@ const components = [
 ]
 
 @NgModule({
-  declarations: [...components],
-  exports: [...components],
+  declarations: [
+    ...components,
+  ],
+  exports: [
+    ...components,
+  ],
   imports: [
     FcUiModule,
-    SystemRoutesModule,
     DomainsModule,
     SettingsModule,
     UsersModule,

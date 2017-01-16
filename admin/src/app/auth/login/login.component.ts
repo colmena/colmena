@@ -5,7 +5,6 @@ import { AccessToken } from '@lb-sdk'
 import { AuthService } from '../auth.service'
 
 @Component({
-  selector: 'app-login',
   template: `
     <div class="container d-table">
       <div class="d-100vh-va-middle">
@@ -49,7 +48,6 @@ import { AuthService } from '../auth.service'
       </div>
     </div>
   `,
-  styles: []
 })
 export class LoginComponent {
 

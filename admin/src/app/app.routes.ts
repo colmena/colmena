@@ -1,35 +1,33 @@
 import { ModuleWithProviders } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
-import { DevIndexComponent } from './dev/index/index.component'
+import { FullLayoutComponent } from './ui/layouts/full-layout.component'
+import { SimpleLayoutComponent } from './ui/layouts/simple-layout.component'
 
-import { AboutComponent } from './system/about/about.component'
-import { DashboardComponent } from './system/dashboard/dashboard.component'
+import { AuthRoutes } from './auth/auth.routes'
+import { ContentRoutes } from './content/content.routes'
+import { DevRoutes } from './dev/dev.routes'
+import { SystemRoutes } from './system/system.routes'
 
-export const appRoutes: ModuleWithProviders = RouterModule.forRoot([
+const routes = [
+  { path: '', redirectTo: 'router', pathMatch: 'full' },
   {
     path: '',
+    component: SimpleLayoutComponent,
     children: [
-      {
-        path: '',
-        redirectTo: 'dashboard',
-        pathMatch: 'full'
-      }, {
-        path: 'dashboard',
-        component: DashboardComponent
-      }, {
-        path: 'about',
-        component: AboutComponent
-      }, {
-        path: 'development',
-        component: DevIndexComponent
-      }, {
-        path: 'development',
-        component: DevIndexComponent
-      },
+      ...AuthRoutes,
     ]
   }, {
-    path: '**',
-    redirectTo: '',
-  }
-], { enableTracing: true })
+    path: '',
+    component: FullLayoutComponent,
+    children: [
+      ...ContentRoutes,
+      ...DevRoutes,
+      ...SystemRoutes,
+    ]
+  },
+  { path: '**', redirectTo: 'not-found' }
+]
+
+// Set enableTracing to true to debug routing
+export const appRoutes: ModuleWithProviders = RouterModule.forRoot(routes, { enableTracing: false })
