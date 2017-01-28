@@ -27,9 +27,6 @@
       }
     ]
   },
-  "@mean-expert/loopback-component-realtime": {
-    "auth": false
-  },
   "loopback-component-explorer": {
     "mountPath": "/explorer",
     "uiDirs": [
