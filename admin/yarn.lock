@@ -65,9 +65,9 @@
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/@angularclass/hmr/-/hmr-1.2.2.tgz#46a18f89a1e94d05c268b83c9480e005f73fc265"
 
-"@colmena/colmena-angular@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@colmena/colmena-angular/-/colmena-angular-0.2.0.tgz#3a8dc70ffd6c98f4313bde1cad983da3f780cd8a"
+"@colmena/colmena-angular@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@colmena/colmena-angular/-/colmena-angular-0.2.1.tgz#d6ad04275836ac8423ee86c87f92d3bf9bea01fd"
   dependencies:
     "@angular/common" "2.4.5"
     "@angular/compiler" "2.4.5"
@@ -93,6 +93,7 @@
     core-js "2.4.1"
     coreui-angular latest
     coreui-styles latest
+    extract-text-webpack-plugin "2.0.0-rc.0"
     font-awesome "^4.7.0"
     highlight.js "^9.9.0"
     jasmine-core "2.5.2"
@@ -1814,6 +1815,14 @@ extglob@^0.3.1:
   dependencies:
     is-extglob "^1.0.0"
 
+extract-text-webpack-plugin@2.0.0-rc.0:
+  version "2.0.0-rc.0"
+  resolved "https://registry.yarnpkg.com/extract-text-webpack-plugin/-/extract-text-webpack-plugin-2.0.0-rc.0.tgz#502c7a662efb2285cfe0ffaad640e3d5b248a69b"
+  dependencies:
+    async "^2.1.2"
+    loader-utils "^0.2.3"
+    webpack-sources "^0.1.0"
+
 extract-text-webpack-plugin@^2.0.0-beta.4:
   version "2.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/extract-text-webpack-plugin/-/extract-text-webpack-plugin-2.0.0-rc.1.tgz#4d31550bdb3fd747008efa31d2150422128a3703"
@@ -2940,7 +2949,7 @@ loader-runner@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.3.0.tgz#f482aea82d543e07921700d5a46ef26fdac6b8a2"
 
-loader-utils@0.2.x, loader-utils@0.x.x, loader-utils@^0.2.14, loader-utils@^0.2.15, loader-utils@^0.2.16, loader-utils@^0.2.5, loader-utils@^0.2.7, loader-utils@^0.2.9, loader-utils@~0.2.2, loader-utils@~0.2.5:
+loader-utils@0.2.x, loader-utils@0.x.x, loader-utils@^0.2.14, loader-utils@^0.2.15, loader-utils@^0.2.16, loader-utils@^0.2.3, loader-utils@^0.2.5, loader-utils@^0.2.7, loader-utils@^0.2.9, loader-utils@~0.2.2, loader-utils@~0.2.5:
   version "0.2.16"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.16.tgz#f08632066ed8282835dff88dfb52704765adee6d"
   dependencies:
@@ -3191,11 +3200,7 @@ lowercase-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.0.tgz#4e3366b39e7f5457e35f1324bdf6f88d0bfc7306"
 
-lru-cache@2:
-  version "2.7.3"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.7.3.tgz#6d4524e8b955f95d4f5b58851ce21dd72fb4e952"
-
-lru-cache@2.2.x:
+lru-cache@2, lru-cache@2.2.x:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.2.4.tgz#6c658619becf14031d0d0b594b16042ce4dc063d"
 
