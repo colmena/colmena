@@ -1,0 +1,38 @@
+
+<div class="mb-1">
+  <ui-data-grid-header
+    (searchAction)="searchAction($event)"
+    (selectColumn)="selectColumn($event)"
+    (selectedAction)="selectedAction($event)"
+    (setLimit)="setLimit($event)"
+    (toggleView)="toggleView()"
+    [selectedItems]="selectedItems"
+    [columns]="columns"
+    [limit]="limit"
+    [view]="view">
+  </ui-data-grid-header>
+</div>
+<div class="mt-1">
+  <ui-data-grid-rows
+    *ngIf="view === 'rows'"
+    (selectColumn)="selectColumn($event)"
+    (selectItem)="selectItem($event)"
+    [columns]="columns"
+    [columnSorting]="columnSorting"
+    [items]="items"></ui-data-grid-rows>
+
+  <ui-data-grid-icons
+    *ngIf="view === 'icons'"
+    [template]="iconTemplate"
+    (selectItem)="selectItem($event)"
+    [selectedItems]="selectedItems"
+    [items]="items"></ui-data-grid-icons>
+</div>
+<div style="text-align: center">
+  <ui-data-grid-pager
+    (setOffsetLimit)="setOffsetLimit($event)"
+    [itemsPerPage]="limit"
+    [currentPage]="currentPage"
+    [totalItems]="totalItems"
+    ></ui-data-grid-pager>
+</div>
