@@ -1,10 +1,10 @@
 import { ModuleWithProviders } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
-import { FullLayoutComponent } from './ui/layouts/full-layout.component'
-import { SimpleLayoutComponent } from './ui/layouts/simple-layout.component'
+import { FullLayoutComponent } from '@colmena/colmena-angular-layout'
+import { SimpleLayoutComponent } from '@colmena/colmena-angular-layout'
 
-import { AuthRoutes } from './auth/auth.routes'
+import { AuthRoutes } from '@colmena/colmena-angular-auth'
 import { ContentRoutes } from './content/content.routes'
 import { DevRoutes } from './dev/dev.routes'
 import { SystemRoutes } from './system/system.routes'

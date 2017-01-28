@@ -8,15 +8,14 @@ import { RouterModule } from '@angular/router'
 // Third party Modules
 import { SDKBrowserModule } from '@lb-sdk'
 
+import { ColmenaAuthModule } from '@colmena/colmena-angular-auth'
 import { ColmenaLayoutModule } from '@colmena/colmena-angular-layout'
 import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
 
 // Local Modules
-import { AuthModule } from './auth/auth.module'
 import { ContentModule } from './content/content.module'
 import { DevModule } from './dev/dev.module'
 import { SystemModule } from './system/system.module'
-import { UiModule } from './ui/ui.module'
 
 // Local Components/Routes/Services
 import { AppComponent } from './app.component'
@@ -32,11 +31,10 @@ import { LogService } from './log.service'
     RouterModule,
 
     SDKBrowserModule.forRoot(),
+    ColmenaAuthModule,
     ColmenaLayoutModule,
     ColmenaUiModule,
-    UiModule,
 
-    AuthModule,
     ContentModule,
     DevModule,
     SystemModule,

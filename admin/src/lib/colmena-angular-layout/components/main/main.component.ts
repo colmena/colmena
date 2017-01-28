@@ -1,15 +1,15 @@
 import { Component, Input } from '@angular/core'
-import { CoreUIConfigMain } from '../../coreui-config'
+import { LayoutConfigMain } from '../../layout-config'
 
 @Component({
-  selector: 'coreui-main',
+  selector: 'layout-main',
   template: `
   <!-- Main content -->
   <main class="main">
   
     <!-- Breadcrumb -->
     <ol class="breadcrumb" *ngIf="config.breadcrumbs">
-      <coreui-breadcrumbs></coreui-breadcrumbs>
+      <layout-breadcrumbs></layout-breadcrumbs>
   
       <!-- Breadcrumb Menu-->
       <li class="breadcrumb-menu" *ngIf="config.nav">
@@ -36,6 +36,6 @@ import { CoreUIConfigMain } from '../../coreui-config'
 export class MainComponent {
 
   @Input()
-  config: CoreUIConfigMain
+  config: LayoutConfigMain
 
 }

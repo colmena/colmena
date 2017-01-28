@@ -1,2 +1,3 @@
+export * from './services/ui.service'
 export * from './services/ui-data-grid.service'
-export * from './colmena-ui.module'
+export * from './ui.module'

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { UiService } from '../../ui/ui.service'
+import { UiService } from '@colmena/colmena-angular-ui'
 
 @Component({
   selector: 'app-dev-alert',

@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core'
-import { CoreUIConfigFooter } from '../../coreui-config'
+import { LayoutConfigFooter } from '../../layout-config'
 
 @Component({
-  selector: 'coreui-footer',
+  selector: 'layout-footer',
   template: `
     <footer class="footer">
         <span class="text-left" [innerHtml]="config.left"></span>
@@ -12,6 +12,6 @@ import { CoreUIConfigFooter } from '../../coreui-config'
 })
 export class FooterComponent {
 
-  @Input() config: CoreUIConfigFooter
+  @Input() config: LayoutConfigFooter
 
 }

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 
-import { UiModule } from '../../ui/ui.module'
+import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
 
 import { DomainFormComponent } from './domain-form.component'
 import { DomainListComponent } from './domain-list.component'
@@ -13,7 +13,7 @@ import { DomainsService } from './domains.service'
   imports: [
     CommonModule,
     FormsModule,
-    UiModule,
+    ColmenaUiModule,
   ],
   declarations: [
     DomainFormComponent,

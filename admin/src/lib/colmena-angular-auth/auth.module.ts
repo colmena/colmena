@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 
-import { UiModule } from '../ui/ui.module'
+import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
 
 import { AuthService } from './auth.service'
 
@@ -18,7 +18,7 @@ import { RouterComponent } from './router/router.component'
     CommonModule,
     FormsModule,
     RouterModule,
-    UiModule,
+    ColmenaUiModule,
   ],
   declarations: [
     LoginComponent,
@@ -31,4 +31,4 @@ import { RouterComponent } from './router/router.component'
     AuthService,
   ]
 })
-export class AuthModule { }
+export class ColmenaAuthModule { }

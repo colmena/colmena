@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core'
-import { CoreUIConfigHeader } from '../../coreui-config'
+import { LayoutConfigHeader } from '../../layout-config'
 
 @Component({
-  selector: 'coreui-header',
+  selector: 'layout-header',
   template: `
     <header class="navbar">
       <div class="container-fluid">
@@ -48,6 +48,6 @@ import { CoreUIConfigHeader } from '../../coreui-config'
 })
 export class HeaderComponent {
 
-  @Input() config: CoreUIConfigHeader
+  @Input() config: LayoutConfigHeader
 
 }

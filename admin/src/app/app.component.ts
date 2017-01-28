@@ -6,10 +6,7 @@ import { AppService } from './app.service'
 
 @Component({
   selector: 'app-root',
-  template: `
-    <router-outlet></router-outlet>
-    <ng2-toasty></ng2-toasty>
-  `,
+  template: `<router-outlet></router-outlet>`,
 })
 export class AppComponent {
 

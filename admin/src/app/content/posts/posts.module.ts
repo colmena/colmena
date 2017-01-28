@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 
-import { UiModule } from '../../ui/ui.module'
+import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
 
 import { PostFormComponent } from './post-form.component'
 import { PostListComponent } from './post-list.component'
@@ -13,7 +13,7 @@ import { PostsService } from './posts.service'
   imports: [
     CommonModule,
     FormsModule,
-    UiModule,
+    ColmenaUiModule,
   ],
   declarations: [
     PostFormComponent,

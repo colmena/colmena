@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 
-import { UiModule } from '../../ui/ui.module'
+import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
 
 import { UsersService } from './users.service'
 
@@ -13,7 +13,7 @@ import { UserListComponent } from './user-list.component'
   imports: [
     CommonModule,
     FormsModule,
-    UiModule,
+    ColmenaUiModule,
   ],
   declarations: [
     UserFormComponent,

@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, NavigationEnd } from '@angular/router'
 import 'rxjs/add/operator/filter'
 
 @Component({
-  selector: 'coreui-breadcrumbs',
+  selector: 'layout-breadcrumbs',
   template: `
     <template ngFor let-breadcrumb [ngForOf]="breadcrumbs" let-last = last>
         <li class="breadcrumb-item" *ngIf="breadcrumb.label.title" [ngClass]="{active: last}">

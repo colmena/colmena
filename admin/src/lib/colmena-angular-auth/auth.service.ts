@@ -3,7 +3,7 @@ import { Router } from '@angular/router'
 import { User, AccessToken, UserApi } from '@lb-sdk'
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/observable/of'
-import { LogService } from '../log.service'
+import { LogService } from '../../app/log.service'
 
 @Injectable()
 export class AuthService {

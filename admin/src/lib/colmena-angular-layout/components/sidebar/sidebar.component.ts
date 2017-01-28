@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core'
-import { CoreUIConfigSidebar } from '../../coreui-config'
+import { LayoutConfigSidebar } from '../../layout-config'
 
 @Component({
-  selector: 'coreui-sidebar',
+  selector: 'layout-sidebar',
   template: `
   <div class="sidebar">
     <nav class="sidebar-nav">
@@ -21,6 +21,6 @@ import { CoreUIConfigSidebar } from '../../coreui-config'
 })
 export class SidebarComponent {
 
-  @Input() config: CoreUIConfigSidebar
+  @Input() config: LayoutConfigSidebar
 
 }
