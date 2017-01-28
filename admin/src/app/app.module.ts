@@ -6,9 +6,10 @@ import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
 
 // Third party Modules
-import { CoreUIModule } from 'coreui-angular'
-import { FcUiModule } from '@fc-ui'
 import { SDKBrowserModule } from '@lb-sdk'
+
+import { ColmenaLayoutModule } from '@colmena/colmena-angular-layout'
+import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
 
 // Local Modules
 import { AuthModule } from './auth/auth.module'
@@ -31,8 +32,8 @@ import { LogService } from './log.service'
     RouterModule,
 
     SDKBrowserModule.forRoot(),
-    CoreUIModule,
-    FcUiModule,
+    ColmenaLayoutModule,
+    ColmenaUiModule,
     UiModule,
 
     AuthModule,

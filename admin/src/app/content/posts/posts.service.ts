@@ -39,7 +39,7 @@ export class PostsService {
 
 
   constructor(private api: DomainApi) {
-    this.domainId = 'example.com'
+    this.domainId = 'default'
   }
 
   deleteItem(id) {

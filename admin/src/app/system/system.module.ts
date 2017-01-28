@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core'
 
-import { FcUiModule } from '../../lib/fc.ui/fc-ui.module'
+import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
 
 import { DomainsModule } from './domains/domains.module'
 import { SettingsModule } from './settings/settings.module'
@@ -22,7 +22,7 @@ const components = [
     ...components,
   ],
   imports: [
-    FcUiModule,
+    ColmenaUiModule,
     DomainsModule,
     SettingsModule,
     UsersModule,

@@ -4,9 +4,9 @@ import { UiService } from '../../ui/ui.service'
 @Component({
   selector: 'app-dev-alert',
   template: `
-    <fc-card>
-      <fc-card-header>Alerts</fc-card-header>
-      <fc-card-content>
+    <ui-card>
+      <ui-card-header>Alerts</ui-card-header>
+      <ui-card-content>
         <div class="form-group">
           <label for="alertText">Alert Text</label>
           <input id="alertText" type="text" class="form-control" [(ngModel)]="alert.text" />
@@ -18,8 +18,8 @@ import { UiService } from '../../ui/ui.service'
         <button (click)="testAlertInfo()" class="btn btn-info">Info</button>
         <button (click)="testAlertQuestion()" class="btn btn-primary">Question</button>
         <button (click)="testAlertPrompt()" class="btn btn-secondary">Prompt</button>
-      </fc-card-content>
-    </fc-card>
+      </ui-card-content>
+    </ui-card>
   `,
   styles: []
 })

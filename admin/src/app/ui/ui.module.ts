@@ -4,7 +4,8 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 
-import { CoreUIModule } from 'coreui-angular'
+import { ColmenaLayoutModule } from '@colmena/colmena-angular-layout'
+import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
 import { ToastyService, ToastyModule } from 'ng2-toasty'
 
 import { SimpleLayoutComponent } from './layouts/simple-layout.component'
@@ -35,7 +36,8 @@ const components = [
     CommonModule,
     FormsModule,
     RouterModule,
-    CoreUIModule,
+    ColmenaLayoutModule,
+    ColmenaUiModule,
     ToastyModule.forRoot()
   ],
   declarations: [

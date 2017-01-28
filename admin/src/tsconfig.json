@@ -21,8 +21,14 @@
       "@fc-ui": [
         "lib/fc.ui"
       ],
-      "coreui-angular": [
-        "lib/coreui-angular"
+      "@colmena/colmena-angular-auth": [
+        "lib/colmena-angular-auth"
+      ],
+      "@colmena/colmena-angular-layout": [
+        "lib/colmena-angular-layout"
+      ],
+      "@colmena/colmena-angular-ui": [
+        "lib/colmena-angular-ui"
       ]
     }
   }

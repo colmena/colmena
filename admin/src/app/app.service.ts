@@ -1,6 +1,5 @@
 import { Injectable, OnInit, VERSION } from '@angular/core'
 
-import { CoreUIConfig, CoreUINavItem } from 'coreui-angular'
 import { SettingApi } from '@lb-sdk'
 
 @Injectable()
@@ -8,13 +7,13 @@ export class AppService implements OnInit {
 
   settings: Map<string, any> = new Map()
 
-  headerNav: CoreUINavItem[] = [
+  headerNav: any[] = [
     { label: 'Dashboard', link: [ '/', 'dashboard' ] },
   ]
 
-  sidebarNav: CoreUINavItem[] = []
+  sidebarNav: any[] = []
 
-  config: CoreUIConfig = {
+  config: any = {
     footer: {
       left: 'Colmena CMS',
       right: 'angular@' + VERSION.full,

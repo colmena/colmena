@@ -1,6 +1,5 @@
 import { Component } from '@angular/core'
 
-import { CoreUIConfig } from 'coreui-angular'
 import { AppService } from '../../app.service'
 
 @Component({
@@ -12,7 +11,7 @@ import { AppService } from '../../app.service'
 })
 export class FullLayoutComponent {
 
-  public config: CoreUIConfig
+  public config
 
   constructor(
     private app: AppService,

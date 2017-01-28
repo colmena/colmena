@@ -4,9 +4,9 @@ import { UiService } from '../../ui/ui.service'
 @Component({
   selector: 'app-dev-toast',
   template: `
-    <fc-card>
-      <fc-card-header>Toasts</fc-card-header>
-      <fc-card-content>
+    <ui-card>
+      <ui-card-header>Toasts</ui-card-header>
+      <ui-card-content>
         <div class="form-group">
           <label for="toastTitle">Toast Title</label>
           <input id="toastTitle" type="text" class="form-control" [(ngModel)]="toast.title" />
@@ -23,8 +23,8 @@ import { UiService } from '../../ui/ui.service'
         <button (click)="testToastInfo()" class="btn btn-info">Info!</button>
         <button (click)="testToastWait()" class="btn btn-primary">Wait!</button>
         <button (click)="testToast()" class="btn btn-secondary">All!</button>
-      </fc-card-content>
-    </fc-card>
+      </ui-card-content>
+    </ui-card>
   `,
   styles: []
 })

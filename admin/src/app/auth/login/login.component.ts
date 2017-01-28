@@ -68,6 +68,7 @@ export class LoginComponent {
     this.log.group('LoginComponent: Init')
     if (this.app.getSetting('nodeEnv') === 'development') {
       this.log.info('Development Mode Enabled', 'Using default credentials')
+      this.credentials.realm = 'default'
       this.credentials.email = 'admin@example.com'
       this.credentials.password = 'password'
     }
@@ -92,6 +93,7 @@ export class LoginComponent {
   }
 
   login() {
+    console.log('this.credentials', JSON.stringify(this.credentials))
     return this.auth.login(this.credentials)
       .subscribe((token: AccessToken) => {
           this.auth.setToken(token)

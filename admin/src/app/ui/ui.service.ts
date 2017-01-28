@@ -64,7 +64,7 @@ export class UiService {
       text: options.text || null,
       buttonsStyling: options.buttonsStyling || false,
       confirmButtonClass : options.confirmButtonClass || 'btn btn-lg btn-secondary',
-      animation: options.animation || false,
+      animation: options.animation || true,
       customClass: options.customClass || '',
     }
 
