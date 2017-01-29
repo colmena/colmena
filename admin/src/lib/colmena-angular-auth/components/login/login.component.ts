@@ -1,11 +1,12 @@
 import { Component } from '@angular/core'
-import { Router } from '@angular/router'
+import { Store } from '@ngrx/store'
 
-import { AccessToken, DomainApi } from '@lb-sdk'
-import { AuthService } from '../../auth.service'
+import { DomainApi } from '@lb-sdk'
 import { AppService } from '../../../../app/app.service'
 import { LogService } from '../../../../app/log.service'
 import { UiService } from '@colmena/colmena-angular-ui'
+
+import * as auth from '../../state/actions'
 
 @Component({
   template: `
@@ -61,8 +62,7 @@ export class LoginComponent {
     private app: AppService,
     private log: LogService,
     private ui: UiService,
-    private auth: AuthService,
-    private router: Router,
+    private store: Store<any>,
     private domainApi: DomainApi,
   ) {
     this.log.group('LoginComponent: Init')
@@ -93,17 +93,7 @@ export class LoginComponent {
   }
 
   login() {
-    console.log('this.credentials', JSON.stringify(this.credentials))
-    return this.auth.login(this.credentials)
-      .subscribe((token: AccessToken) => {
-          this.auth.setToken(token)
-            .then(() => {
-              console.log('We are logged in!', this.auth.isAuthenticated())
-              this.router.navigate([ '/dashboard' ])
-            })
-        },
-        err => this.ui.toastError('Login failed', err.message)
-      )
+    this.store.dispatch({ type: auth.ActionTypes.AUTH_LOGIN, payload: this.credentials })
   }
 
 }

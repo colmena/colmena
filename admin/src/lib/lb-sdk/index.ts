@@ -15,7 +15,7 @@
 * ============================================================================
 * import { NgModule }       from '@angular/core';
 * import { BrowserModule }  from '@angular/platform-browser';
-* // App Root 
+* // App Root
 * import { AppComponent }   from './app.component';
 * // Feature Modules
 * import { SDK[Browser|Node|Native]Module } from './shared/sdk/sdk.module';
@@ -104,4 +104,5 @@ export class SDKBrowserModule {
 export * from './models/index';
 export * from './services/index';
 export * from './lb.config';
+export * from './storage/storage.swaps'
 

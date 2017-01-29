@@ -24,6 +24,7 @@ import { AppComponent } from './app.component'
 import { appRoutes } from './app.routes'
 import { AppService } from './app.service'
 import { LogService } from './log.service'
+import { AppStoreModule } from './app.store'
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { LogService } from './log.service'
     DevModule,
     SystemModule,
 
+    AppStoreModule,
     appRoutes,
   ],
   providers: [
