@@ -2,10 +2,10 @@ import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 
 import { AccessToken, DomainApi } from '@lb-sdk'
-import { AuthService } from '../auth.service'
+import { AuthService } from '../../auth.service'
 import { UiService } from '@colmena/colmena-angular-ui'
-import { AppService } from '../../../app/app.service'
-import { LogService } from '../../../app/log.service'
+import { AppService } from '../../../../app/app.service'
+import { LogService } from '../../../../app/log.service'
 
 @Component({
   template: `

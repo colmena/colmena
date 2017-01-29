@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router'
 import { DevIndexComponent } from './index/index.component'
 
-export const DevRoutes: Routes = [ {
+export const DevModuleRoutes: Routes = [ {
   path: 'development',
   data: {
     title: 'Development',

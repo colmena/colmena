@@ -1,19 +1,15 @@
-import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
-import { FormsModule } from '@angular/forms'
 
-import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
-
-import { SettingsService } from './settings.service'
+import { AppSharedModule } from '../../app.shared.module'
 
 import { SettingFormComponent } from './setting-form.component'
 import { SettingListComponent } from './setting-list.component'
 
+import { SettingsService } from './settings.service'
+
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    ColmenaUiModule,
+    AppSharedModule,
   ],
   declarations: [
     SettingFormComponent,
@@ -23,5 +19,4 @@ import { SettingListComponent } from './setting-list.component'
     SettingsService,
   ],
 })
-export class SettingsModule {
-}
+export class SettingsModule {}

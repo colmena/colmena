@@ -14,6 +14,8 @@ import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
 
 // Local Modules
 import { ContentModule } from './content/content.module'
+import { CoreModule } from './core/core.module'
+import { DashboardModule } from './dashboard/dashboard.module'
 import { DevModule } from './dev/dev.module'
 import { SystemModule } from './system/system.module'
 
@@ -36,6 +38,8 @@ import { LogService } from './log.service'
     ColmenaUiModule,
 
     ContentModule,
+    CoreModule,
+    DashboardModule,
     DevModule,
     SystemModule,
 

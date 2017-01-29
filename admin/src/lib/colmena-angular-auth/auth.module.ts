@@ -7,11 +7,9 @@ import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
 
 import { AuthService } from './auth.service'
 
-import { LoginComponent } from './login/login.component'
-import { LogoutComponent } from './logout/logout.component'
-import { NotFoundComponent } from './not-found/not-found.component'
-import { RegisterComponent } from './register/register.component'
-import { RouterComponent } from './router/router.component'
+import { LoginComponent } from './components/login/login.component'
+import { LogoutComponent } from './components/logout/logout.component'
+import { RegisterComponent } from './components/register/register.component'
 
 @NgModule({
   imports: [
@@ -23,9 +21,7 @@ import { RouterComponent } from './router/router.component'
   declarations: [
     LoginComponent,
     LogoutComponent,
-    NotFoundComponent,
     RegisterComponent,
-    RouterComponent,
   ],
   providers: [
     AuthService,

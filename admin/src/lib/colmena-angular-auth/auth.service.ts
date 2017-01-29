@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core'
-import { Router } from '@angular/router'
 import { User, AccessToken, UserApi } from '@lb-sdk'
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/observable/of'
-import { LogService } from '../../app/log.service'
 
 @Injectable()
 export class AuthService {
@@ -12,8 +10,7 @@ export class AuthService {
   private token: AccessToken = new AccessToken()
 
   constructor(
-    private log: LogService,
-    private userApi: UserApi, private router: Router
+    private userApi: UserApi,
   ) {
   }
 
@@ -27,11 +24,11 @@ export class AuthService {
 
   logout() {
     if (this.isAuthenticated()) {
-      this.log.info('Logging out...')
+      console.log('Logging out...')
       window.localStorage.removeItem('token')
       return this.userApi.logout()
     } else {
-      this.log.info('Already logged out...')
+      console.log('Already logged out...')
       return Observable.of({})
     }
   }

@@ -1,8 +1,6 @@
-import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
-import { FormsModule } from '@angular/forms'
 
-import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
+import { AppSharedModule } from '../../app.shared.module'
 
 import { ProductFormComponent } from './product-form.component'
 import { ProductListComponent } from './product-list.component'
@@ -11,9 +9,7 @@ import { ProductsService } from './products.service'
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    ColmenaUiModule,
+    AppSharedModule,
   ],
   declarations: [
     ProductFormComponent,
@@ -23,5 +19,4 @@ import { ProductsService } from './products.service'
     ProductsService,
   ],
 })
-export class ProductsModule {
-}
+export class ProductsModule {}

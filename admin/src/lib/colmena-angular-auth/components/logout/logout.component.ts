@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
 
-import { AuthService } from '../auth.service'
+import { AuthService } from '../../auth.service'
 
 @Component({
   template: `<ui-message [message]="'You are being logged out.'"></ui-message>`,

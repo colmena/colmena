@@ -1,19 +1,15 @@
-import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
-import { FormsModule } from '@angular/forms'
 
-import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
-
-import { UsersService } from './users.service'
+import { AppSharedModule } from '../../app.shared.module'
 
 import { UserFormComponent } from './user-form.component'
 import { UserListComponent } from './user-list.component'
 
+import { UsersService } from './users.service'
+
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    ColmenaUiModule,
+    AppSharedModule,
   ],
   declarations: [
     UserFormComponent,
@@ -23,5 +19,4 @@ import { UserListComponent } from './user-list.component'
     UsersService,
   ],
 })
-export class UsersModule {
-}
+export class UsersModule {}
