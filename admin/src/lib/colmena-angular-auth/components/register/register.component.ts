@@ -1,16 +1,12 @@
 import { Component } from '@angular/core'
-import { Router } from '@angular/router'
+import { Store } from '@ngrx/store'
 
-import { AccessToken, DomainApi } from '@lb-sdk'
-import { AuthService } from '../../auth.service'
-import { UiService } from '@colmena/colmena-angular-ui'
-import { AppService } from '../../../../app/app.service'
-import { LogService } from '../../../../app/log.service'
+import * as auth from '../../state/auth.actions'
 
 @Component({
   template: `
     <ui-message>
-      <div class="input-group mb-1" *ngIf="domains?.length > 1">
+      <div class="input-group mb-1" *ngIf="settings.multiDomain">
         <span class="input-group-addon">
           <i class="icon-globe"></i>
         </span>
@@ -54,10 +50,12 @@ import { LogService } from '../../../../app/log.service'
           required type="password" class="form-control" placeholder="Confirm password">
       </div>
       <div class="row">
-        <div class="col-xs-12 text-xs-right">
+        <div class="col-xs-6 text-xs-left">
           <button type="submit" class="btn btn-primary px-2" (click)="register()">
             Register
           </button>
+        </div>
+        <div class="col-xs-6 text-xs-right">
           <a class="btn btn-outline-primary px-2" [routerLink]="['/', 'login']">
             Sign in
           </a>
@@ -69,9 +67,10 @@ import { LogService } from '../../../../app/log.service'
 export class RegisterComponent {
 
   public domains: any[]
+  public settings: any
 
   public credentials = {
-    realm: '',
+    realm: 'default',
     email: '',
     username: '',
     firstName: '',
@@ -81,53 +80,19 @@ export class RegisterComponent {
   }
 
   constructor(
-    private app: AppService,
-    private auth: AuthService,
-    private log: LogService,
-    private ui: UiService,
-    private router: Router,
-    private domainApi: DomainApi,
+    private store: Store<any>,
   ) {
-    this.log.group('RegisterComponent: init')
-
-    if (this.app.getSetting('registrationEnabled') !== 'true') {
-      this.log.info('Registration Disabled', '')
-      this.ui.toastInfo('Registration Disabled', '')
-      this.router.navigate([ '/', 'login' ])
-    }
-
-    this.domainApi
-      .find()
-      .subscribe(res => {
-        this.domains = res
-        if (this.domains.length === 1) {
-          if (this.app.getSetting('nodeEnv') === 'development') {
-            this.log.info('Single Domain configured', `Using default domain: ${this.domains[0]['id']}`)
-          }
-          this.credentials.realm = this.domains[0]['id']
-          this.log.groupEnd()
-        }
+    this.store
+      .select('app')
+      .subscribe((res: any) => {
+        this.domains = res.domains
+        this.settings = res.settings
       })
   }
 
   register() {
     this.credentials.username = this.credentials.email
-    return this.auth.register(this.credentials)
-      .subscribe(res => {
-        this.ui.toastSuccess('Registered', 'You are registered.')
-        return this.auth.login(this.credentials)
-          .subscribe((token: AccessToken) => {
-              this.auth.setToken(token)
-                .then(() => {
-                  this.ui.toastSuccess('Logged in', 'You are logged in.')
-                  this.router.navigate([ '/', 'dashboard' ])
-                })
-            },
-            err => this.ui.toastError('Login failed', err.message)
-          )
-        },
-        err => this.ui.toastError('Registration failed', err.message)
-      )
+    this.store.dispatch({ type: auth.ActionTypes.AUTH_REGISTER, payload: this.credentials })
   }
 
 }

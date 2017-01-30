@@ -1,17 +1,12 @@
 import { Component } from '@angular/core'
 import { Store } from '@ngrx/store'
 
-import { DomainApi } from '@lb-sdk'
-import { AppService } from '../../../../app/app.service'
-import { LogService } from '../../../../app/log.service'
-import { UiService } from '@colmena/colmena-angular-ui'
-
-import * as auth from '../../state/actions'
+import * as auth from '../../state/auth.actions'
 
 @Component({
   template: `
     <ui-message>
-      <div class="input-group mb-1" *ngIf="domains?.length > 1">
+      <div class="input-group mb-1" *ngIf="settings.multiDomain">
         <span class="input-group-addon">
           <i class="icon-globe"></i>
         </span>
@@ -34,61 +29,42 @@ import * as auth from '../../state/actions'
           required type="password" class="form-control" placeholder="Password">
       </div>
       <div class="row">
-        <div class="col-xs-12 text-xs-right">
+        <div class="col-xs-3 text-xs-left">
           <button type="submit" class="btn btn-primary px-2" (click)="login()">
             Sign in
           </button>
-          <a *ngIf="registrationEnabled" class="btn btn-outline-primary px-2" [routerLink]="['/', 'register']">
+        </div>
+        <div class="col-xs-9 text-xs-right">
+          <a class="btn btn-outline-primary px-2" [routerLink]="['/', 'password-request']">
+            Forgot Password
+          </a>
+          <a *ngIf="settings.registrationEnabled" class="btn btn-outline-primary px-2" [routerLink]="['/', 'register']">
             Register
           </a>
         </div>
       </div>
     </ui-message>
-    <pre>{{credentials | json}}</pre>
   `,
 })
 export class LoginComponent {
 
   public domains: any[]
+  public settings: any
+
   public credentials = {
-    realm: '',
+    realm: 'default',
     email: '',
     password: '',
   }
 
-  public registrationEnabled: boolean = false
-
   constructor(
-    private app: AppService,
-    private log: LogService,
-    private ui: UiService,
     private store: Store<any>,
-    private domainApi: DomainApi,
   ) {
-    this.log.group('LoginComponent: Init')
-    if (this.app.getSetting('nodeEnv') === 'development') {
-      this.log.info('Development Mode Enabled', 'Using default credentials')
-      this.credentials.realm = 'default'
-      this.credentials.email = 'admin@example.com'
-      this.credentials.password = 'password'
-    }
-    if (this.app.getSetting('registrationEnabled') === 'true') {
-      this.log.info('Registration Enabled', '')
-      this.registrationEnabled = true
-    } else {
-      this.log.info('Registration Disabled', '')
-    }
-    this.domainApi
-      .find()
-      .subscribe(res => {
-        this.domains = res
-        if (this.domains.length === 1) {
-          if (this.app.getSetting('nodeEnv') === 'development') {
-            this.log.info('Single Domain configured', `Using default domain: ${this.domains[0]['id']}`)
-          }
-          this.credentials.realm = this.domains[0]['id']
-          this.log.groupEnd()
-        }
+    this.store
+      .select('app')
+      .subscribe((res: any) => {
+        this.domains = res.domains
+        this.settings = res.settings
       })
   }
 

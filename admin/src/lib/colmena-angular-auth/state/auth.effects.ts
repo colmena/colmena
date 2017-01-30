@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable'
 
 import { UserApi } from '@lb-sdk'
 
-import * as auth from './actions'
+import * as auth from './auth.actions'
 
 @Injectable()
 export class AuthEffects {
@@ -24,7 +24,7 @@ export class AuthEffects {
       this.userApi.login(action.payload, 'user', true)
         .subscribe(
           (success) => this.store.dispatch(new auth.AuthLoginSuccessAction(success)),
-          (error) => new auth.AuthLoginSuccessAction(error),
+          (error) => this.store.dispatch(new auth.AuthLoginErrorAction(error)),
         )
     })
 
@@ -42,6 +42,28 @@ export class AuthEffects {
     .do((action) => {
       window.localStorage.setItem('token', JSON.stringify(action))
       return this.store.dispatch({ type: 'APP_REDIRECT_ROUTER' })
+    })
+
+  @Effect({ dispatch: false })
+  register: Observable<Action> = this.actions$
+    .ofType(auth.ActionTypes.AUTH_REGISTER)
+    .do(action => {
+      this.userApi.create(action.payload)
+        .subscribe(
+          (success) => this.store.dispatch(new auth.AuthRegisterSuccessAction(success)),
+          (error) => this.store.dispatch(new auth.AuthRegisterErrorAction(error)),
+        )
+    })
+
+  @Effect({ dispatch: false })
+  registerSuccess: Observable<Action> = this.actions$
+    .ofType(auth.ActionTypes.AUTH_LOGIN_SUCCESS)
+    .do((action: any) => {
+      return this.store.dispatch(new auth.AuthLoginAction({
+        realm: action.realm,
+        email: action.email,
+        password: action.password,
+      }))
     })
 
   constructor(
