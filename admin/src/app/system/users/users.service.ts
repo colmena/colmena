@@ -17,6 +17,7 @@ export class UsersService {
 
   public formConfig = {
     fields: [
+      { name: 'realm', label: 'Domain', type: 'text', placeholder: 'Domain' },
       { name: 'firstName', label: 'First name', type: 'text', placeholder: 'First name' },
       { name: 'lastName', label: 'Last name', type: 'text', placeholder: 'Last name' },
       { name: 'email', label: 'Email', type: 'text', placeholder: 'Email' },
@@ -26,6 +27,7 @@ export class UsersService {
   public tableConfig = {
     class: 'table table-bordered table-striped table-condensed',
     columns: [
+      { field: 'realm', label: 'Domain'},
       { field: 'firstName', label: 'First name', link: 'edit' },
       { field: 'lastName', label: 'Last name', link: 'edit' },
       { field: 'email', label: 'Email' },

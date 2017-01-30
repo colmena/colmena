@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core'
-import { LayoutConfigSidebar } from '../../layout-config'
+import { Component } from '@angular/core'
+import { Store } from '@ngrx/store'
 
 @Component({
   selector: 'layout-sidebar',
@@ -7,8 +7,8 @@ import { LayoutConfigSidebar } from '../../layout-config'
   <div class="sidebar">
     <nav class="sidebar-nav">
       <ul class="nav">
-        <li *ngFor="let nav of config.nav" class="nav-{{nav.type}}">
-          <a class="nav-link" routerLinkActive="active" [routerLink]=nav.link [routerLinkActiveOptions]="{exact: true}">
+        <li *ngFor="let nav of sidebarNav" class="nav-{{nav.type || 'item'}}">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="nav.link">
             <i *ngIf="nav.icon" class="{{nav.icon}}"></i>
             {{nav.label}}
           </a>
@@ -21,6 +21,14 @@ import { LayoutConfigSidebar } from '../../layout-config'
 })
 export class SidebarComponent {
 
-  @Input() config: LayoutConfigSidebar
+  public sidebarNav: any[]
+
+  constructor(
+    private store: Store<any>,
+  ) {
+    this.store
+      .select('layout')
+      .subscribe((res: any) => this.sidebarNav = res.sidebarNav)
+  }
 
 }

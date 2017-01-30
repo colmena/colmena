@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { Store } from '@ngrx/store'
 
 import { AppSharedModule } from '../../app.shared.module'
 
@@ -19,4 +20,12 @@ import { ProductsService } from './products.service'
     ProductsService,
   ],
 })
-export class ProductsModule {}
+export class ProductsModule {
+  constructor(private store: Store<any>) {
+    this.store.dispatch({
+      type: 'LAYOUT_SIDEBAR_NAV', payload: {
+        weight: 30, label: 'Products', icon: 'icon-basket', link: [ '/', 'content', 'products' ]
+      }
+    })
+  }
+}

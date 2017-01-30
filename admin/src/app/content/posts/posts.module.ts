@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { Store } from '@ngrx/store'
 
 import { AppSharedModule } from '../../app.shared.module'
 
@@ -19,4 +20,12 @@ import { PostsService } from './posts.service'
     PostsService,
   ],
 })
-export class PostsModule {}
+export class PostsModule {
+  constructor(private store: Store<any>) {
+    this.store.dispatch({
+      type: 'LAYOUT_SIDEBAR_NAV', payload: {
+        weight: 20, label: 'Posts', icon: 'icon-pencil', link: [ '/', 'content', 'posts' ]
+      }
+    })
+  }
+}

@@ -22,6 +22,7 @@ import { UiTableComponent } from './components/table/ui-table.component'
 
 
 import { UiService } from './services/ui.service'
+import { UiTemplatesComponent } from './components/templates/templates.component'
 
 /**
  * Exported Modules
@@ -48,6 +49,7 @@ const components = [
   UiLogoComponent,
   UiMessageComponent,
   UiTableComponent,
+  UiTemplatesComponent,
 ]
 
 /**
@@ -71,7 +73,7 @@ const declarations = []
     CommonModule,
     FormsModule,
     RouterModule,
-    ToastyModule.forRoot(),
+    ToastyModule,
     ...modules,
   ],
   declarations: [

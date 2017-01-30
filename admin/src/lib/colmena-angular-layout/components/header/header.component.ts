@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core'
-import { LayoutConfigHeader } from '../../layout-config'
+import { get } from 'lodash'
+import { Component } from '@angular/core'
+import { Store } from '@ngrx/store'
 
 @Component({
   selector: 'layout-header',
@@ -13,12 +14,13 @@ import { LayoutConfigHeader } from '../../layout-config'
           <li class="nav-item">
             <a class="nav-link navbar-toggler sidebar-toggle" href="#">&#9776;</a>
           </li>
-          <li class="nav-item px-1" *ngFor="let nav of config.nav">
-            <i class="{{nav.icon}}"></i>
+          <li class="nav-item px-1" *ngFor="let nav of headerNav">
             <a class="nav-link"
                routerLinkActive="active"
-               [routerLinkActiveOptions]="{exact: true}"
-               [routerLink]="nav.link">{{nav.label}}</a>
+               [routerLink]="nav.link">
+               <i *ngIf="nav.icon" [class]="nav.icon"></i>
+                {{nav.label}}
+               </a>
           </li>
         </ul>
         
@@ -27,19 +29,24 @@ import { LayoutConfigHeader } from '../../layout-config'
             <a class="nav-link dropdown-toggle"
                data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle>
               
-              <span class="hidden-md-down">admin</span>
+              <span class="hidden-md-down">
+                {{user.firstName}} {{user.lastName}}  
+              </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" dropdownMenu aria-labelledby="simple-dropdown">
               <div class="dropdown-header text-xs-center">
                 <strong>Settings</strong>
               </div>
-              <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+              <a class="dropdown-item" [routerLink]="['/', 'profile']"><i class="fa fa-user"></i> Profile</a>
               <div class="divider"></div>
-              <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+              
+              <a class="dropdown-item" *ngFor="let domain of domains" (click)="switchDomain(domain.id)">
+                <i class="icon-globe"></i> {{domain.name}}
+              </a>
+
+              <div class="divider"></div>
+              <a class="dropdown-item" [routerLink]="[ '/', 'logout' ]"><i class="fa fa-lock"></i> Logout</a>
             </div>
-          </li>
-          <li class="nav-item" *ngIf="config.aside">
-            <a class="nav-link navbar-toggler aside-toggle" href="#">&#9776;</a>
           </li>
         </ul>
       </div>
@@ -48,6 +55,30 @@ import { LayoutConfigHeader } from '../../layout-config'
 })
 export class HeaderComponent {
 
-  @Input() config: LayoutConfigHeader
+  public headerNav: any[]
+  public user = {}
+  public domains: any[]
+
+
+  public switchDomain(newDomain) {
+    console.log('Switching current domain to ', newDomain)
+  }
+
+  constructor(
+    private store: Store<any>,
+  ) {
+    this.store
+      .select('app')
+      .subscribe((res: any) => this.domains = res.domains)
+    this.store
+      .select('auth')
+      .subscribe((res: any) => {
+        this.user = get(res, 'currentUser.user') || {}
+      })
+    this.store
+      .select('layout')
+      .subscribe((res: any) => this.headerNav = res.headerNav)
+  }
+
 
 }

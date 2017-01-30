@@ -82,7 +82,6 @@ export class AppModule {
     this.configureLoopBack()
     this.appService.fetchSettings()
     this.appService.fetchDomains()
-    this.appService.createSidebar()
   }
 
 }

@@ -5,18 +5,19 @@ import { EffectsModule } from '@ngrx/effects'
 
 import { app, AppEffects } from './state'
 import { auth, AuthEffects } from '@colmena/colmena-angular-auth'
-// import { layout } from '@colmena/colmena-angular-layout'
+import { layout, LayoutEffects } from '@colmena/colmena-angular-layout'
 
 @NgModule({
   imports: [
     StoreModule.provideStore({
       app,
       auth,
-      // layout,
+      layout,
     }),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     EffectsModule.run(AppEffects),
     EffectsModule.run(AuthEffects),
+    EffectsModule.run(LayoutEffects),
   ],
 })
 export class AppStoreModule {}

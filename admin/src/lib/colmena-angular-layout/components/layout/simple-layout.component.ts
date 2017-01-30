@@ -1,9 +1,6 @@
 import { Component } from '@angular/core'
 
 @Component({
-  template: `
-    <router-outlet></router-outlet>
-    <ng2-toasty></ng2-toasty>
-  `,
+  template: `<router-outlet></router-outlet>`,
 })
 export class SimpleLayoutComponent {}

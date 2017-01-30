@@ -12,7 +12,7 @@ import { Component, Input } from '@angular/core'
                 <ui-logo></ui-logo>
               </div>
               <div class="card-block">
-                <h1 *ngIf="message" class="my-3 text-xs-center">{{message}}</h1>
+                <h3 *ngIf="message" class="my-3 text-xs-center">{{message}}</h3>
                 <ng-content></ng-content>
               </div>
             </div>

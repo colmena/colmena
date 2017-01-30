@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { Store } from '@ngrx/store'
 
 import { AppSharedModule } from '../../app.shared.module'
 
@@ -19,4 +20,14 @@ import { UsersService } from './users.service'
     UsersService,
   ],
 })
-export class UsersModule {}
+export class UsersModule {
+
+  constructor(private store: Store<any>) {
+    this.store.dispatch({
+      type: 'LAYOUT_HEADER_NAV', payload: {
+        weight: 30, label: 'Users', icon: 'icon-people', link: [ '/', 'system', 'users' ]
+      }
+    })
+  }
+
+}

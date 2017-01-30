@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { Store } from '@ngrx/store'
 
 import { AppSharedModule } from '../../app.shared.module'
 
@@ -19,4 +20,12 @@ import { SettingsService } from './settings.service'
     SettingsService,
   ],
 })
-export class SettingsModule {}
+export class SettingsModule {
+  constructor(private store: Store<any>) {
+    this.store.dispatch({
+      type: 'LAYOUT_HEADER_NAV', payload: {
+        weight: 20, label: 'Settings', icon: 'icon-settings', link: [ '/', 'system', 'settings' ]
+      }
+    })
+  }
+}

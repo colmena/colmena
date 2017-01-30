@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { Store } from '@ngrx/store'
 
 import { AppSharedModule } from '../../app.shared.module'
 
@@ -19,4 +20,12 @@ import { EventsService } from './events.service'
     EventsService,
   ],
 })
-export class EventsModule {}
+export class EventsModule {
+  constructor(private store: Store<any>) {
+    this.store.dispatch({
+      type: 'LAYOUT_SIDEBAR_NAV', payload: {
+        weight: 10, label: 'Events', icon: 'icon-calendar', link: [ '/', 'content', 'events' ]
+      }
+    })
+  }
+}

@@ -41,15 +41,15 @@ export class AuthLoginSuccessAction implements Action {
 /** LOGOUT **/
 export class AuthLogoutAction implements Action {
   type = ActionTypes.AUTH_LOGOUT
-  constructor(public payload: any) { }
+  constructor(public payload: any = {}) { }
 }
 export class AuthLogoutErrorAction implements Action {
   type = ActionTypes.AUTH_LOGOUT_ERROR
-  constructor(public payload: any) { }
+  constructor(public payload: any = {}) { }
 }
 export class AuthLogoutSuccessAction implements Action {
   type = ActionTypes.AUTH_LOGOUT_SUCCESS
-  constructor(public payload: any) { }
+  constructor(public payload: any = {}) { }
 }
 
 /** PASS_REQUEST **/

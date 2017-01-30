@@ -9,6 +9,10 @@ const initialState: any = {
 export const auth: ActionReducer<any> = (state = initialState, action: Action) => {
   switch (action.type) {
 
+    case 'AUTH_LOGIN_TOKEN':
+      console.log('AUTH_LOGIN_TOKEN', action.payload)
+      return Object.assign({}, state)
+
     case 'AUTH_LOGIN':
       console.log('AUTH_LOGIN', action.payload)
       return Object.assign({}, state)
