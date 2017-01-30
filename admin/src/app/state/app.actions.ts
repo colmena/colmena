@@ -1,9 +1,21 @@
 import { Action } from '@ngrx/store'
 
 export const ActionTypes = {
+  APP_ADD_DOMAIN:           'APP_ADD_DOMAIN',
+  APP_ADD_SETTING:          'APP_ADD_SETTING',
   APP_REDIRECT_DASHBOARD:   'APP_REDIRECT_DASHBOARD',
   APP_REDIRECT_LOGIN:       'APP_REDIRECT_LOGIN',
   APP_REDIRECT_ROUTER:      'APP_REDIRECT_ROUTER',
+}
+
+export class AppAddDomainAction implements Action {
+  type = ActionTypes.APP_ADD_DOMAIN
+  constructor() { }
+}
+
+export class AppAddSettingAction implements Action {
+  type = ActionTypes.APP_ADD_SETTING
+  constructor() { }
 }
 
 export class AppRedirectDashboardAction implements Action {
@@ -22,6 +34,8 @@ export class AppRedirectRouterAction implements Action {
 }
 
 export type Actions
-  = AppRedirectDashboardAction
+  = AppAddDomainAction
+  | AppAddSettingAction
+  | AppRedirectDashboardAction
   | AppRedirectLoginAction
   | AppRedirectRouterAction

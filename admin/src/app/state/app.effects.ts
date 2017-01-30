@@ -5,7 +5,7 @@ import { Action } from '@ngrx/store'
 import { Observable } from 'rxjs/Observable'
 
 
-import * as app from './actions'
+import * as app from './app.actions'
 
 @Injectable()
 export class AppEffects {

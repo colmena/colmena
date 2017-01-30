@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
 
 // Third party Modules
-import { SDKBrowserModule } from '@lb-sdk'
+import { LoopBackConfig, SDKBrowserModule } from '@lb-sdk'
 
 import { ColmenaAuthModule } from '@colmena/colmena-angular-auth'
 import { ColmenaLayoutModule } from '@colmena/colmena-angular-layout'
@@ -58,4 +58,31 @@ import { AppStoreModule } from './app.store'
     AppComponent
   ]
 })
-export class AppModule { }
+export class AppModule {
+
+  private defaultConfig = {
+    fullcube: {
+      baseUrl: 'http://localhost:3000',
+      apiVersion: 'api/v1',
+    },
+  }
+
+  configureLoopBack() {
+    const fcConfig = JSON.parse(window.localStorage.getItem('fcConfig')) || this.defaultConfig
+
+    LoopBackConfig.setBaseURL(fcConfig.fullcube.baseUrl)
+    LoopBackConfig.setApiVersion(fcConfig.fullcube.apiVersion)
+    this.logService.info(`Configure LoopBack: ${fcConfig.fullcube.baseUrl}/${fcConfig.fullcube.apiVersion}`)
+  }
+
+  constructor(
+    private appService: AppService,
+    private logService: LogService,
+  ) {
+    this.configureLoopBack()
+    this.appService.fetchSettings()
+    this.appService.fetchDomains()
+    this.appService.createSidebar()
+  }
+
+}
