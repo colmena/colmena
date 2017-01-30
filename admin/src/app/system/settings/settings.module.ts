@@ -21,11 +21,11 @@ import { SettingsService } from './settings.service'
   ],
 })
 export class SettingsModule {
+  moduleLink = {
+    weight: 20, label: 'Settings', icon: 'icon-settings', link: [ '/', 'system', 'settings' ]
+  }
   constructor(private store: Store<any>) {
-    this.store.dispatch({
-      type: 'LAYOUT_HEADER_NAV', payload: {
-        weight: 20, label: 'Settings', icon: 'icon-settings', link: [ '/', 'system', 'settings' ]
-      }
-    })
+    this.store.dispatch({ type: 'LAYOUT_HEADER_NAV', payload: this.moduleLink })
+    this.store.dispatch({ type: 'APP_SYSTEM_DASHBOARD', payload: this.moduleLink })
   }
 }

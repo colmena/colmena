@@ -7,6 +7,9 @@ import { ProfileComponent } from './profile/profile.component'
 
 export const DashboardModuleRoutes: Routes = [ {
   path: '',
+  data: {
+    title: 'Dashboard',
+  },
   children: [
     { path: 'about', component: AboutComponent },
     { path: 'dashboard', component: DashboardComponent },

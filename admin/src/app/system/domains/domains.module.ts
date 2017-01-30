@@ -21,13 +21,11 @@ import { DomainsService } from './domains.service'
   ],
 })
 export class DomainsModule {
-
-  constructor(private store: Store<any>) {
-    this.store.dispatch({
-      type: 'LAYOUT_HEADER_NAV', payload: {
-        weight: 10, label: 'Domains', icon: 'icon-globe', link: [ '/', 'system', 'domains' ]
-      }
-    })
+  moduleLink = {
+    weight: 10, label: 'Domains', icon: 'icon-globe', link: [ '/', 'system', 'domains' ]
   }
-
+  constructor(private store: Store<any>) {
+    this.store.dispatch({ type: 'LAYOUT_HEADER_NAV', payload: this.moduleLink })
+    this.store.dispatch({ type: 'APP_SYSTEM_DASHBOARD', payload: this.moduleLink })
+  }
 }

@@ -21,11 +21,11 @@ import { PostsService } from './posts.service'
   ],
 })
 export class PostsModule {
+  moduleLink = {
+    weight: 20, label: 'Posts', icon: 'icon-pencil', link: [ '/', 'content', 'posts' ]
+  }
   constructor(private store: Store<any>) {
-    this.store.dispatch({
-      type: 'LAYOUT_SIDEBAR_NAV', payload: {
-        weight: 20, label: 'Posts', icon: 'icon-pencil', link: [ '/', 'content', 'posts' ]
-      }
-    })
+    this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload: this.moduleLink })
+    this.store.dispatch({ type: 'APP_CONTENT_DASHBOARD', payload: this.moduleLink})
   }
 }

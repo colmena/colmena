@@ -21,11 +21,11 @@ import { EventsService } from './events.service'
   ],
 })
 export class EventsModule {
+  moduleLink = {
+    weight: 10, label: 'Events', icon: 'icon-calendar', link: [ '/', 'content', 'events' ]
+  }
   constructor(private store: Store<any>) {
-    this.store.dispatch({
-      type: 'LAYOUT_SIDEBAR_NAV', payload: {
-        weight: 10, label: 'Events', icon: 'icon-calendar', link: [ '/', 'content', 'events' ]
-      }
-    })
+    this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload: this.moduleLink})
+    this.store.dispatch({ type: 'APP_CONTENT_DASHBOARD', payload: this.moduleLink})
   }
 }

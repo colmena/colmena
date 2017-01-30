@@ -8,7 +8,7 @@ import { Store } from '@ngrx/store'
     <header class="navbar">
       <div class="container-fluid">
         <button class="navbar-toggler hidden-lg-up" type="button" mobile-nav-toggle>&#9776;</button>
-        <a class="navbar-brand" href="#"></a>
+        <a class="navbar-brand" [routerLink]="['/']"></a>
     
         <ul class="nav navbar-nav hidden-md-down">
           <li class="nav-item">
