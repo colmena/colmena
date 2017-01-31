@@ -81,7 +81,11 @@ export class AuthEffects {
   @Effect({ dispatch: false })
   logoutError: Observable<Action> = this.actions$
     .ofType(auth.ActionTypes.AUTH_LOGOUT_ERROR)
-    .do((action) => this.ui.toastError(get(action, 'payload.name'), get(action, 'payload.message')))
+    .do((action) => {
+      window.localStorage.removeItem('token')
+      this.ui.toastError(get(action, 'payload.name'), get(action, 'payload.message'))
+      return this.store.dispatch({ type: 'APP_REDIRECT_ROUTER' })
+    })
 
   @Effect({ dispatch: false })
   logoutSuccess: Observable<Action> = this.actions$
