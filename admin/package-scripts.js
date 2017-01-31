@@ -20,7 +20,7 @@ module.exports = {
       },
     },
     dev: {
-      script: 'ng serve --port 9000 --host 0.0.0.0 --progress false --hmr -e=hmr --extract-css',
+      script: 'ng serve --port 9000 --host 0.0.0.0 --progress false --hmr -e=hmr',
       description: 'Serve the client app in development mode',
     },
     lint: {
