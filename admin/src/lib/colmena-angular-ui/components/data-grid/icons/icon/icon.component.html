@@ -1,11 +1,6 @@
-<div class="card" [ngClass]="{selected: selected}">
-  <div [ngTemplateOutlet]="template"
-       [ngOutletContext]="{ item: item }">
-  </div>
+<div class="card">
+  <div [ngTemplateOutlet]="template" [ngOutletContext]="{ item: item }"></div>
   <div class="card-footer">
-    <ui-item-view-buttons
-      [item]="item"
-      (buttonClick)="selectItem.emit($event)">
-    </ui-item-view-buttons>
+    <ui-item-view-buttons [item]="item" (action)="action.emit($event)"></ui-item-view-buttons>
   </div>
 </div>

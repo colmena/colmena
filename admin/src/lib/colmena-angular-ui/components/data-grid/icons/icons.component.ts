@@ -7,6 +7,5 @@ import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/co
 export class IconsComponent {
   @Input() public template: TemplateRef<any>
   @Input() public items: any[]
-  @Input() public selectedItems: any[]
-  @Output() selectItem = new EventEmitter()
+  @Output() action = new EventEmitter()
 }

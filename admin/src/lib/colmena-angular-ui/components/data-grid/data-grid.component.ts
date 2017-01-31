@@ -6,21 +6,19 @@ import { Component, Input, OnInit, Output, EventEmitter, TemplateRef } from '@an
 })
 export class UiDataGridComponent implements OnInit {
 
-  @Input() view: string = 'icons'
-  @Input() limit: number = 20
+  @Input() view = 'rows'
+  @Input() limit = 20
 
   @Input() iconTemplate: TemplateRef<any>
 
   @Input() service: any
-  @Output() itemsSelected = new EventEmitter()
-  @Output() itemSelected = new EventEmitter()
+  @Output() action = new EventEmitter()
 
   public items: any[]
 
   public totalItems
   public currentPage: any = {}
 
-  public selectedItems: any[] = []
   public columns = []
   public columnSorting = {}
 
@@ -37,7 +35,7 @@ export class UiDataGridComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.setLimit(this.limit)
+    this.service.limit = this.limit
     this.refreshData()
   }
 
@@ -46,7 +44,7 @@ export class UiDataGridComponent implements OnInit {
     this.refreshData()
   }
 
-  selectColumn(event) {
+  setOrder(event) {
     this.service.order = event
     this.refreshData()
   }
@@ -62,27 +60,6 @@ export class UiDataGridComponent implements OnInit {
     this.refreshData()
   }
 
-  selectItem(event) {
-    let idx = null
-
-    this.selectedItems.forEach(selectedItem => {
-      if (selectedItem === event.item) {
-        idx = this.selectedItems.indexOf(event.item)
-      }
-    })
-
-    if (idx === null) {
-      this.selectedItems.push(event.item)
-    } else {
-      this.selectedItems.splice(idx, 1)
-    }
-    this.itemSelected.emit(event)
-  }
-
-  selectedAction(event) {
-    this.itemsSelected.emit(event)
-  }
-
   toggleView() {
     switch (this.view) {
       case 'icons':
@@ -93,4 +70,27 @@ export class UiDataGridComponent implements OnInit {
         break
     }
   }
+
+  gridAction(event) {
+    switch (event.type) {
+      case 'toggleView':
+        this.toggleView()
+        break
+      case 'limit':
+        this.setLimit(event.payload)
+        break
+      case 'sort':
+        this.setOrder(event.payload)
+        break
+      case 'offset':
+        this.setOffsetLimit(event.payload)
+        break
+      case 'search':
+        this.searchAction(event.payload)
+        break
+      default:
+        this.action.emit(event)
+    }
+  }
+
 }

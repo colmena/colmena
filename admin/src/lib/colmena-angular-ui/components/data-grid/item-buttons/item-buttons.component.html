@@ -1,8 +1,10 @@
 <div class="float-xs-right text-muted">
-  <a href="" (click)="doClick($event, 'edit')">
-    <i class="icon-pencil"></i>
-  </a>
-  <a href="" (click)="doClick($event, 'delete')">
-    <i class="icon-trash"></i>
-  </a>
+  <div class="btn-group">
+    <button class="btn btn-link btn-sm" (click)="doClick('edit')">
+      <i class="icon-pencil"></i>
+    </button>
+    <button class="btn btn-link btn-sm" (click)="doClick('delete')">
+      <i class="icon-trash"></i>
+    </button>
+  </div>
 </div>

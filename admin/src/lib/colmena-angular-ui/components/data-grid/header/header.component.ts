@@ -7,27 +7,42 @@ import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core
 })
 export class HeaderComponent {
 
+  @ViewChild('search') searchBox
+
   @Input() public columns
   @Input() public limit
   @Input() public view
-  @Input() public selectedItems
 
-  @Output() toggleView = new EventEmitter()
-  @Output() searchAction = new EventEmitter()
-  @Output() selectedAction = new EventEmitter()
-  @Output() selectColumn = new EventEmitter()
-  @Output() setLimit = new EventEmitter()
+  @Output() action = new EventEmitter()
 
-  @ViewChild('search') searchBox
+  public limits = [
+    8,
+    20,
+    40,
+    80,
+    100,
+  ]
 
   public query: string = null
+
+  add() {
+    this.action.emit({ type: 'add' })
+  }
+
+  toggleView() {
+    this.action.emit({ type: 'toggleView' })
+  }
+
+  setLimit() {
+    this.action.emit({ type: 'limit', payload: this.limit })
+  }
 
   doSearch($event) {
     if ($event.code === 'Enter' || $event.type === 'click' || $event.type === 'blur') {
       if ($event.type !== 'blur') {
         this.searchBox.nativeElement.focus()
       }
-      this.searchAction.emit(this.query)
+      this.action.emit({ type: 'search', payload: this.query })
     }
   }
 }

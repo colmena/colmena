@@ -1,13 +1,7 @@
 <div class="row">
   <div class="col-xs-3">
-    <select class="form-control"
-            #selectLimit
-            [ngModel]="limit"
-            (change)="setLimit.emit(selectLimit.value)">
-      <option value=20>20</option>
-      <option value=40>40</option>
-      <option value=80>80</option>
-      <option value=100>100</option>
+    <select class="form-control" [(ngModel)]="limit" (change)="setLimit()">
+      <option *ngFor="let limit of limits" [value]=limit>{{limit}}</option>
     </select>
   </div>
   
@@ -26,19 +20,12 @@
   </div>
   
   <div class="col-xs-3">
-    <span class="float-xs-right">
-      
-      <button class="btn"
-              type="button"
-              (click)="selectedAction.emit({ action: 'delete', items: selectedItems })"
-              [disabled]="(selectedItems.length < 1)"
-              [ngClass]="{
-                'btn-outline-primary': (selectedItems.length > 0),
-                'btn-outline-secondary': (selectedItems.length < 1)}">
-        <i class='icon-trash'></i>
-      </button>
+    <button class="btn btn-outline-success" type="button" (click)="add()">
+      <i class='icon-plus'></i>
+    </button>
 
-      <button class="btn btn btn-outline-primary" type="button" (click)="toggleView.emit()">
+    <span class="float-xs-right">
+      <button class="btn btn btn-outline-primary" type="button" (click)="toggleView()">
         <i [ngClass]="{
           'icon-grid': (view === 'rows'),
           'icon-list': (view === 'icons')}">

@@ -6,16 +6,19 @@ import { Component, EventEmitter, Input, Output } from '@angular/core'
 })
 export class PagerComponent {
 
-  @Input() currentPage
-  @Input() itemsPerPage
-  @Input() totalItems
+  @Input() public currentPage
+  @Input() public itemsPerPage
+  @Input() public totalItems
 
-  @Output() setOffsetLimit = new EventEmitter()
+  @Output() action = new EventEmitter()
 
   pageChanged($event) {
-    this.setOffsetLimit.emit({
-      limit: $event.itemsPerPage,
-      offset: ($event.itemsPerPage * $event.page) - $event.itemsPerPage
+    this.action.emit({
+      type: 'offset',
+      payload: {
+        limit: $event.itemsPerPage,
+        offset: ($event.itemsPerPage * $event.page) - $event.itemsPerPage,
+      },
     })
   }
 }

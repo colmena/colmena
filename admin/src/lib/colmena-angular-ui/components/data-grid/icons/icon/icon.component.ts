@@ -1,57 +1,15 @@
-import { Component, EventEmitter, Input, OnInit, Output, ElementRef, TemplateRef } from '@angular/core'
-import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/observable/fromEvent'
+import { Component, EventEmitter, Input, Output, ElementRef, TemplateRef } from '@angular/core'
 
 @Component({
   selector: 'ui-data-grid-icon',
   templateUrl: './icon.component.html',
-  styleUrls: [ './icon.component.scss' ],
 })
-export class IconComponent implements OnInit {
+export class IconComponent {
 
   @Input() public item: any
   @Input() public template: TemplateRef<any>
-  @Output() selectItem = new EventEmitter()
+  @Output() action = new EventEmitter()
 
-  public selected = false
-
-  constructor(
-    private elementRef: ElementRef,
-  ) {
-
-  }
-
-  ngOnInit() {
-    const click$ = Observable.fromEvent(this.elementRef.nativeElement, 'click')
-
-    click$
-      .buffer(click$.debounce((() => Observable.timer(300))))
-      .map(clicksWithing300ms => clicksWithing300ms.length)
-      .subscribe(event => {
-          if (event === 1) {
-            this.clickItem()
-          }
-          if (event === 2) {
-            this.dblclickItem()
-          }
-        }
-      )
-  }
-
-
-  clickItem() {
-    this.selected = !this.selected
-    this.selectItem.emit({
-      action: 'select',
-      item: this.item,
-    })
-  }
-
-  dblclickItem() {
-    this.selectItem.emit({
-      action: 'activate',
-      item: this.item,
-    })
-  }
+  constructor(private elementRef: ElementRef) { }
 
 }

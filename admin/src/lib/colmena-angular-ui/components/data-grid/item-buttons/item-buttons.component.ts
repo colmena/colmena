@@ -8,13 +8,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ItemButtonsComponent {
 
   @Input() item
-  @Output() buttonClick = new EventEmitter()
+  @Output() action = new EventEmitter()
 
-
-  doClick($event, action) {
-    $event.preventDefault()
-
-    this.buttonClick.emit({
+  doClick(action) {
+    this.action.emit({
       action,
       item: this.item,
     })

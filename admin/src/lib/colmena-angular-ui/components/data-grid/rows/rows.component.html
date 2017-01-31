@@ -1,7 +1,7 @@
-<div *ngIf="!items.length">
+<div *ngIf="!items?.length">
   <alert type="info" class="col-md-6 offset-md-3 pt-1">No items found.</alert>
 </div>
-<table class="table table-striped table-hover" *ngIf="items.length">
+<table class="table table-striped table-hover" *ngIf="items?.length">
   <thead>
   <tr>
     <th *ngFor="let column of columns">
@@ -16,16 +16,11 @@
   </thead>
   <tbody>
   <tr *ngFor="let item of items">
-    <td *ngFor="let column of columns"
-        (dblclick)="dblclickItem($event, item)"
-        (click)="clickItem($event, item)">
+    <td *ngFor="let column of columns">
       {{item[column.field]}}
     </td>
     <td>
-      <ui-item-view-buttons
-        [item]="item"
-        (buttonClick)="selectItem.emit($event)">
-      </ui-item-view-buttons>
+      <ui-item-view-buttons [item]="item" (action)="action.emit($event)"></ui-item-view-buttons>
     </td>
   </tr>
   </tbody>
