@@ -65,6 +65,11 @@ export class LoginComponent {
       .subscribe((res: any) => {
         this.domains = res.domains
         this.settings = res.settings
+
+        if (this.settings.nodeEnv === 'development') {
+          this.credentials.email = 'admin@example.com'
+          this.credentials.password = 'password'
+        }
       })
   }
 
