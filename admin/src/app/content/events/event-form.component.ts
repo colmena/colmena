@@ -9,7 +9,9 @@ import { EventsService } from './events.service'
 })
 export class EventFormComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router, private service: EventsService) {
+  constructor(
+    private route: ActivatedRoute, private router: Router, public service: EventsService
+  ) {
   }
 
   ngOnInit() {
