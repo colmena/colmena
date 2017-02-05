@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { Store } from '@ngrx/store'
 
 import { AppSharedModule } from '../app.shared.module'
 import { DomainsModule } from './domains/domains.module'
@@ -21,4 +22,12 @@ import { SystemDashboardComponent } from './system.component'
     SystemDashboardComponent,
   ],
 })
-export class SystemModule { }
+export class SystemModule {
+
+  constructor(
+    private store: Store<any>,
+  ) {
+    this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload: { weight: 100, type: 'title', label: 'System' } })
+  }
+
+}

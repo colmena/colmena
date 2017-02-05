@@ -22,10 +22,11 @@ import { DomainsService } from './domains.service'
 })
 export class DomainsModule {
   moduleLink = {
-    weight: 10, label: 'Domains', icon: 'icon-globe', link: [ '/', 'system', 'domains' ]
+    weight: 110, label: 'Domains', icon: 'icon-globe', link: [ '/', 'system', 'domains' ]
   }
   constructor(private store: Store<any>) {
     this.store.dispatch({ type: 'LAYOUT_HEADER_NAV', payload: this.moduleLink })
+    this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload: this.moduleLink })
     this.store.dispatch({ type: 'APP_SYSTEM_DASHBOARD', payload: this.moduleLink })
   }
 }

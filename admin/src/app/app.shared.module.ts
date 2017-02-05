@@ -26,6 +26,7 @@ const modules = [
     FormlyModule.forRoot(),
   ],
   exports: [
+    FormlyModule,
     ...modules,
   ]
 })

@@ -5,11 +5,17 @@ import { SettingsService } from './settings.service'
 
 @Component({
   selector: 'app-setting-form',
-  template: '<ui-crud-form [service]="service" (submit)="upsert()"></ui-crud-form>',
+  template: `
+    <ui-crud-form [service]="service" (submit)="upsert()"></ui-crud-form>
+  `,
 })
 export class SettingFormComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router, private service: SettingsService) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    public service: SettingsService,
+  ) {
   }
 
   ngOnInit() {

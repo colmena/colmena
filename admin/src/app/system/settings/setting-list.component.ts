@@ -4,11 +4,15 @@ import { SettingsService } from './settings.service'
 
 @Component({
   selector: 'app-settings',
-  template: '<ui-crud-list [service]="service"></ui-crud-list>',
+  template: `
+    <ui-crud-list [service]="service"></ui-crud-list>
+  `,
 })
 export class SettingListComponent implements OnInit {
 
-  constructor(private service: SettingsService) {
+  constructor(
+    public service: SettingsService,
+  ) {
   }
 
   ngOnInit() {

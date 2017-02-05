@@ -22,10 +22,11 @@ import { UsersService } from './users.service'
 })
 export class UsersModule {
   moduleLink = {
-    weight: 30, label: 'Users', icon: 'icon-people', link: [ '/', 'system', 'users' ]
+    weight: 130, label: 'Users', icon: 'icon-people', link: [ '/', 'system', 'users' ]
   }
   constructor(private store: Store<any>) {
     this.store.dispatch({ type: 'LAYOUT_HEADER_NAV', payload: this.moduleLink })
+    this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload: this.moduleLink })
     this.store.dispatch({ type: 'APP_SYSTEM_DASHBOARD', payload: this.moduleLink })
   }
 }

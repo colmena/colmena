@@ -5,7 +5,9 @@ import { DomainsService } from './domains.service'
 
 @Component({
   selector: 'app-domain-form',
-  template: '<ui-crud-form [service]="service" (submit)="upsert()"></ui-crud-form>',
+  template: `
+    <ui-crud-form [service]="service" (submit)="upsert()"></ui-crud-form>
+  `,
 })
 export class DomainFormComponent implements OnInit {
 
