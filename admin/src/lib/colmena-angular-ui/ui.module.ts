@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
+
+import { FormlyModule, FormlyBootstrapModule } from 'ng-formly'
 
 import { ToastyService, ToastyModule } from 'ng2-toasty'
 
 import { UiButtonsModule } from './components/buttons/buttons.module'
 import { UiCardModule } from './components/card/card.module'
 import { UiDataGridModule } from './components/data-grid/data-grid.module'
-import { UiFormModule } from './components/form/form.module'
 import { UiModalModule } from './components/modal/modal.module'
 import { UiTagModule } from './components/tag/tag.module'
 
@@ -32,7 +33,6 @@ const modules = [
   UiButtonsModule,
   UiCardModule,
   UiDataGridModule,
-  UiFormModule,
   UiModalModule,
   UiTagModule,
 ]
@@ -72,8 +72,11 @@ const declarations = []
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     ToastyModule,
+    FormlyModule.forRoot(),
+    FormlyBootstrapModule,
     ...modules,
   ],
   declarations: [
@@ -84,6 +87,7 @@ const declarations = []
     ...providers
   ],
   exports: [
+    FormlyModule,
     ...declarations,
     ...modules,
     ...components,

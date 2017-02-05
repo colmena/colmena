@@ -26,15 +26,15 @@ export class HeaderComponent {
   public query: string = null
 
   add() {
-    this.action.emit({ type: 'add' })
+    this.action.emit({ action: 'add' })
   }
 
   toggleView() {
-    this.action.emit({ type: 'toggleView' })
+    this.action.emit({ action: 'toggleView' })
   }
 
   setLimit() {
-    this.action.emit({ type: 'limit', payload: this.limit })
+    this.action.emit({ action: 'limit', payload: this.limit })
   }
 
   doSearch($event) {
@@ -42,7 +42,7 @@ export class HeaderComponent {
       if ($event.type !== 'blur') {
         this.searchBox.nativeElement.focus()
       }
-      this.action.emit({ type: 'search', payload: this.query })
+      this.action.emit({ action: 'search', payload: this.query })
     }
   }
 }

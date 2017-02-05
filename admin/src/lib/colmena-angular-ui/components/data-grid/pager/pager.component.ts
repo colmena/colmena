@@ -14,7 +14,7 @@ export class PagerComponent {
 
   pageChanged($event) {
     this.action.emit({
-      type: 'offset',
+      action: 'offset',
       payload: {
         limit: $event.itemsPerPage,
         offset: ($event.itemsPerPage * $event.page) - $event.itemsPerPage,

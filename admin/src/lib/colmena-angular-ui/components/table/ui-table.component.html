@@ -24,15 +24,7 @@
       </td>
       <td>
         <span *ngFor="let button of config.rowButtons">
-          <button
-            *ngIf="button.click"
-            (click)="button.click(item)" class="{{button.class}}">
-            <i class="{{button.icon}}"></i>
-            {{button.label}}
-          </button>
-          <button
-            *ngIf="button.link"
-            [routerLink]="[item.id, button.link]" class="{{button.class}}">
+          <button (click)="action.emit({ type: button.typeName, payload: item })" class="{{button.className}}">
             <i class="{{button.icon}}"></i>
             {{button.label}}
           </button>

@@ -14,6 +14,6 @@ export class RowsComponent {
 
   clickColumn($event, column) {
     $event.preventDefault()
-    this.action.emit({ type: 'sort', payload: column.field })
+    this.action.emit({ action: 'sort', payload: column.field })
   }
 }

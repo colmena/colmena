@@ -8,7 +8,8 @@ import { Store } from '@ngrx/store'
     <nav class="sidebar-nav">
       <ul class="nav">
         <li *ngFor="let nav of sidebarNav" class="nav-{{nav.type || 'item'}}">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="nav.link">
+          <span *ngIf="nav.type === 'title'">{{nav.label}}</span>
+          <a *ngIf="nav.type !== 'title'" class="nav-link" routerLinkActive="active" [routerLink]="nav.link">
             <i *ngIf="nav.icon" class="{{nav.icon}}"></i>
             {{nav.label}}
           </a>

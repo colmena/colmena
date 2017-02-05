@@ -7,7 +7,7 @@ import { Component } from '@angular/core'
       <ol class="breadcrumb">
         <layout-breadcrumbs></layout-breadcrumbs>
       </ol>
-      <div class="container-fluid">
+      <div class="container">
         <router-outlet></router-outlet>
       </div>
     </main>

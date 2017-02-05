@@ -72,7 +72,7 @@ export class UiDataGridComponent implements OnInit {
   }
 
   gridAction(event) {
-    switch (event.type) {
+    switch (event.action) {
       case 'toggleView':
         this.toggleView()
         break
