@@ -22,7 +22,7 @@ export class EventsService extends UiDataGridService {
 
   getItem(id) {
     if (id) {
-      return this.api.findById(id).subscribe(res => this.item = res)
+      return this.eventApi.findById(id).subscribe(res => this.item = res)
     } else {
       this.newItem()
     }
@@ -32,11 +32,11 @@ export class EventsService extends UiDataGridService {
     this.item = new Event()
   }
 
-  upsertItem(successCb, errorCb): void {
-    if (this.item.id) {
-      this.api.updateById(this.item.id, this.item).subscribe(successCb, errorCb)
+  upsertItem(item, successCb, errorCb): void {
+    if (item.id) {
+      this.eventApi.upsert(item).subscribe(successCb, errorCb)
     } else {
-      this.api.create(this.item).subscribe(successCb, errorCb)
+      this.eventApi.create(item).subscribe(successCb, errorCb)
     }
   }
 

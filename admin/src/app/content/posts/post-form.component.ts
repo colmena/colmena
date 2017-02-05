@@ -1,29 +1,24 @@
-import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
-
-import { PostsService } from './posts.service'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 
 @Component({
   selector: 'app-post-form',
-  template: '<ui-crud-form [service]="service" (submit)="upsert()"></ui-crud-form>',
+  template: `
+    <form>
+      <!--<ui-form [config]="config" [item]="item"></ui-form>-->
+      <div class="text-xs-center">
+        <button type="button" (click)="save.emit(item)" class="btn btn-sm btn-outline-success">Save</button>
+      </div>
+    </form>
+  `,
 })
-export class PostFormComponent implements OnInit {
+export class PostFormComponent {
 
-  constructor(private route: ActivatedRoute, private router: Router, private service: PostsService) {
+  @Output() save = new EventEmitter()
+  @Input() item
+  @Input() config = {
+    fields: [
+      { name: 'title', label: 'Title', type: 'text', placeholder: 'Title' },
+      { name: 'content', label: 'Content', type: 'text', placeholder: 'Content' },
+    ],
   }
-
-  ngOnInit() {
-    this.route.params
-      .map(params => params[ 'id' ])
-      .subscribe((id) => this.service.getItem(id))
-  }
-
-  upsert(): void {
-    console.log('upsert')
-    this.service.upsertItem(
-      res => this.router.navigate([ '../' ], { relativeTo: this.route }),
-      err => console.error(err)
-    )
-  }
-
 }

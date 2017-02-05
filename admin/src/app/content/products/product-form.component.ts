@@ -1,28 +1,26 @@
-import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
-
-import { ProductsService } from './products.service'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
 
 @Component({
   selector: 'app-product-form',
-  template: '<ui-crud-form [service]="service" (submit)="upsert()"></ui-crud-form>',
+  template: `
+    <form>
+      <!--<ui-form [config]="config" [item]="item"></ui-form>-->
+      <div class="text-xs-center">
+        <button type="button" (click)="save.emit(item)" class="btn btn-sm btn-outline-success">Save</button>
+      </div>
+    </form>
+  `,
 })
-export class ProductFormComponent implements OnInit {
+export class ProductFormComponent {
 
-  constructor(private route: ActivatedRoute, private router: Router, private service: ProductsService) {
+  @Output() save = new EventEmitter()
+  @Input() item
+  @Input() config = {
+    fields: [
+      { name: 'name', label: 'Name', type: 'text', placeholder: 'Name' },
+      { name: 'description', label: 'Description', type: 'text', placeholder: 'Description' },
+      { name: 'sku', label: 'SKU', type: 'text', placeholder: 'SKU' },
+      { name: 'price', label: 'Price', type: 'text', placeholder: 'Price' },
+    ],
   }
-
-  ngOnInit() {
-    this.route.params
-      .map(params => params[ 'id' ])
-      .subscribe((id) => this.service.getItem(id))
-  }
-
-  upsert(): void {
-    this.service.upsertItem(
-      res => this.router.navigate([ '../' ], { relativeTo: this.route }),
-      err => console.error(err)
-    )
-  }
-
 }

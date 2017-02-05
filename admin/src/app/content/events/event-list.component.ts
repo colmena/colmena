@@ -6,12 +6,10 @@ import { UiService } from '@colmena/colmena-angular-ui'
 @Component({
   selector: 'app-events',
   template: `
-    <ui-modal #form title="Event Form">
-      Item Form
-      <pre>{{item | json}}</pre>
+    <ui-modal #form>
+      <app-event-form [item]="item" (save)="save($event)" (close)="close()"></app-event-form>
     </ui-modal>
     <ui-modal #view title="View Item">
-      You are viewing the item!
       <pre>{{item | json}}</pre>
     </ui-modal>
     <template #iconTemplate let-item="item">
@@ -23,8 +21,7 @@ import { UiService } from '@colmena/colmena-angular-ui'
         <div class="text-muted" *ngIf="item.location">Location {{item.location}}</div>
       </div>
     </template>
-    <ui-data-grid #grid (action)="action($event)" [iconTemplate]="iconTemplate" [service]="service">
-    </ui-data-grid>
+    <ui-data-grid #grid (action)="action($event)" [iconTemplate]="iconTemplate" [service]="service"></ui-data-grid>
   `,
 })
 export class EventListComponent {
@@ -33,8 +30,27 @@ export class EventListComponent {
   @ViewChild('form') private form
   @ViewChild('view') private view
 
-  public item: any
-  public events: any[]
+  public item: any = {}
+
+  save(item): void {
+    this.service.upsertItem(
+      item,
+      (res) => {
+        this.uiService.toastSuccess('Event saved', res.name)
+        this.close()
+        this.refresh()
+      },
+      err => console.error(err)
+    )
+  }
+
+  close(): void {
+    this.form.hide()
+  }
+
+  refresh(): void {
+    this.grid.refreshData()
+  }
 
   constructor(
     public service: EventsService,
@@ -44,27 +60,39 @@ export class EventListComponent {
 
   action(event) {
     switch (event.action) {
-      case 'form':
-        this.item = event.item
+      case 'edit':
+        this.item = Object.assign({}, event.item)
+        this.form.title = `Edit: ${this.item.name}`
         this.form.show()
         break
-      case 'edit':
-        this.item = event.item
+      case 'add':
+        this.item = {}
+        this.form.title = 'Add Event'
         this.form.show()
         break
       case 'view':
         this.item = event.item
+        this.form.title = `${this.item.name}`
         this.view.show()
         break
       case 'delete':
-        const successCb = () => this.service.eventApi.deleteById(event.item.id)
-          .subscribe(() => this.grid.refreshData())
+        const successCb = () => this.service
+          .eventApi
+          .deleteById(event.item.id)
+          .subscribe(() => this.refresh())
 
-        this.uiService.alertQuestion({ title: 'Are you sure?', text: 'The action can not be undone.' }, successCb, () => ({}))
+        this.uiService.alertQuestion(
+          {
+            title: 'Are you sure?',
+            text: 'The action can not be undone.'
+          },
+          successCb,
+          () => ({})
+        )
 
         break
       default:
-        console.log('Unknown action', event)
+        console.log('Unknown event action', event)
         break
     }
   }

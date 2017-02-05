@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { Store } from '@ngrx/store'
 
 import { AppSharedModule } from '../app.shared.module'
 import { EventsModule } from './events/events.module'
@@ -21,4 +22,12 @@ import { ContentDashboardComponent } from './content.component'
     ContentDashboardComponent,
   ],
 })
-export class ContentModule {}
+export class ContentModule {
+
+  constructor(
+    private store: Store<any>,
+  ) {
+    this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload: { weight: 5, type: 'title', label: 'Content' } })
+  }
+
+}

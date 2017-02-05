@@ -1,78 +1,43 @@
 import { Injectable } from '@angular/core'
 
-import { Product } from '../../../lib/lb-sdk/models'
-import { DomainApi } from '../../../lib/lb-sdk/services'
+import { UiDataGridService } from '@colmena/colmena-angular-ui'
+
+import { Product, ProductApi } from '@lb-sdk'
 
 @Injectable()
-export class ProductsService {
+export class ProductsService extends UiDataGridService {
 
-  public domainId
-  public icon = 'icon-basket'
-  public title = 'Products'
+  public item
 
-  public fields = [
-    'id',
-    'domainId',
-    'name',
-    'description',
-    'sku',
-  ]
-
-  public formConfig = {
-    fields: [
-      { name: 'name', label: 'Name', type: 'text', placeholder: 'Name' },
-      { name: 'description', label: 'Description', type: 'text', placeholder: 'Description' },
-      { name: 'sku', label: 'SKU', type: 'text', placeholder: 'SKU' },
-    ],
-  }
-
-  public tableConfig = {
-    class: 'table table-bordered table-striped table-condensed',
-    columns: [
-      { field: 'name', label: 'Name', link: 'edit' },
-      { field: 'sku', label: 'SKU', link: 'edit' },
-    ],
-    rowButtons: [
-      { class: 'btn btn-sm btn-outline-danger', icon: 'fa fa-fw fa-trash', click: (item) => this.deleteItem(item.id) },
-    ],
-  }
-
-  private item: Product = new Product()
-  private items: Product[]
-
-  constructor(private api: DomainApi) {
-    this.domainId = 'default'
-  }
-
-  deleteItem(id) {
-    return this.api.destroyByIdProducts(this.domainId, id).subscribe(
-      () => this.getItems(),
-      err => console.error(err)
-    )
+  constructor(
+    public productApi: ProductApi,
+  ) {
+    super()
+    this.api = productApi
+    this.columns = [
+      { field: 'name', label: 'Product' },
+      { field: 'sku', label: 'SKU' },
+      { field: 'price', label: 'Price' },
+    ]
   }
 
   getItem(id) {
     if (id) {
-      return this.api.findByIdProducts(this.domainId, id).subscribe(res => this.item = res)
+      return this.productApi.findById(id).subscribe(res => this.item = res)
     } else {
       this.newItem()
     }
-  }
-
-  getItems() {
-    return this.api.getProducts(this.domainId).subscribe(res => (this.items = res))
   }
 
   newItem() {
     this.item = new Product()
   }
 
-  upsertItem(successCb, errorCb): void {
-    this.item.domainId = this.domainId
-    if (this.item.id) {
-      this.api.updateByIdProducts(this.domainId, this.item.id, this.item).subscribe(successCb, errorCb)
+  upsertItem(item, successCb, errorCb): void {
+    if (item.id) {
+      this.productApi.upsert(item).subscribe(successCb, errorCb)
     } else {
-      this.api.createProducts(this.domainId, this.item).subscribe(successCb, errorCb)
+      this.productApi.create(item).subscribe(successCb, errorCb)
     }
   }
 
