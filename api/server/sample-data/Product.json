@@ -14,6 +14,7 @@
     "name": "Gorgeous Cotton Keyboard",
     "description": "Voluptates qui et et id reprehenderit architecto voluptates at.",
     "sku": "gorgeous-cotton-keyboard",
+    "price": "199",
     "created": "2016-10-24T04:07:39.142Z",
     "modified": "2016-10-24T04:07:39.142Z"
   },
@@ -23,6 +24,7 @@
     "name": "Ergonomic Rubber Gloves",
     "description": "Sint porro rerum dicta quasi eos ea.",
     "sku": "ergonomic-rubber-gloves",
+    "price": "299",
     "created": "2016-10-24T04:07:39.143Z",
     "modified": "2016-10-24T04:07:39.143Z"
   },
@@ -32,6 +34,7 @@
     "name": "Handmade Frozen Bike",
     "description": "Omnis doloremque vitae.",
     "sku": "handmade-frozen-bike",
+    "price": "399",
     "created": "2016-10-24T04:07:39.143Z",
     "modified": "2016-10-24T04:07:39.143Z"
   },
@@ -41,6 +44,7 @@
     "name": "Ergonomic Wooden Gloves",
     "description": "Et assumenda qui aliquam et saepe eum eum.",
     "sku": "ergonomic-wooden-gloves",
+    "price": "599",
     "created": "2016-10-24T04:07:39.143Z",
     "modified": "2016-10-24T04:07:39.143Z"
   },
@@ -50,6 +54,7 @@
     "name": "Fantastic Soft Salad",
     "description": "Magnam delectus in facere voluptates est sint.",
     "sku": "fantastic-soft-salad",
+    "price": "999",
     "created": "2016-10-24T04:07:39.143Z",
     "modified": "2016-10-24T04:07:39.143Z"
   },
@@ -59,6 +64,7 @@
     "name": "Fantastic Concrete Chips",
     "description": "Rerum aut ex.",
     "sku": "fantastic-concrete-chips",
+    "price": "42",
     "created": "2016-10-24T04:07:39.144Z",
     "modified": "2016-10-24T04:07:39.144Z"
   },
@@ -68,6 +74,7 @@
     "name": "Practical Soft Sausages",
     "description": "Quo sequi commodi debitis accusantium assumenda dicta amet.",
     "sku": "practical-soft-sausages",
+    "price": "799",
     "created": "2016-10-24T04:07:39.144Z",
     "modified": "2016-10-24T04:07:39.144Z"
   },
