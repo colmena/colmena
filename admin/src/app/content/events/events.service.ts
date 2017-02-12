@@ -3,13 +3,12 @@ import { Validators, FormControl} from '@angular/forms'
 
 import { UiDataGridService } from '@colmena/colmena-angular-ui'
 
-import { Event, EventApi, DomainApi } from '@lb-sdk'
+import { DomainApi } from '@lb-sdk'
 
 @Injectable()
 export class EventsService extends UiDataGridService {
 
   public _domain
-  public domainId
   public icon = 'icon-calendar'
   public title = 'Events'
 

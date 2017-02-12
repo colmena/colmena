@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core'
 import { Validators, FormControl} from '@angular/forms'
 
-import { DomainApi } from '@lb-sdk'
 import { UiDataGridService } from '@colmena/colmena-angular-ui'
+
+import { DomainApi } from '@lb-sdk'
 
 @Injectable()
 export class PostsService extends UiDataGridService {
 
   public _domain
-  public domainId
   public icon = 'icon-pencil'
   public title = 'Posts'
 

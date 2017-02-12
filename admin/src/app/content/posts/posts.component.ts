@@ -8,7 +8,7 @@ import { PostsService } from './posts.service'
   selector: 'app-posts',
   template: `
     <ui-modal-form #form>
-      <ui-crud-form [config]="config" [item]="item" (action)="action($event)"></ui-crud-form>
+      <ui-form [config]="config" [item]="item" (action)="action($event)"></ui-form>
     </ui-modal-form>
 
     <ui-modal #view title="View Item">

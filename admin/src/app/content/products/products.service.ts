@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core'
 import { Validators, FormControl} from '@angular/forms'
 
-import { DomainApi } from '@lb-sdk'
 import { UiDataGridService } from '@colmena/colmena-angular-ui'
+
+import { DomainApi } from '@lb-sdk'
 
 @Injectable()
 export class ProductsService extends UiDataGridService {
 
   public _domain
-  public domainId
   public icon = 'icon-basket'
   public title = 'Products'
 
   set domain(domain) {
     this._domain = domain
   }
-
 
   get domain() {
     return this._domain

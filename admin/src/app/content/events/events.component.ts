@@ -8,7 +8,7 @@ import { UiService } from '@colmena/colmena-angular-ui'
   selector: 'app-events',
   template: `
     <ui-modal-form #form>
-      <ui-crud-form [config]="config" [item]="item" (action)="action($event)"></ui-crud-form>
+      <ui-form [config]="config" [item]="item" (action)="action($event)"></ui-form>
     </ui-modal-form>
     <ui-modal #view title="View Item">
       <pre>{{item | json}}</pre>

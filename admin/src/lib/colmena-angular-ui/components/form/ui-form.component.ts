@@ -4,21 +4,37 @@ import { FormGroup } from '@angular/forms'
 @Component({
   selector: 'ui-form',
   template: `
-    <form class="formly" role="form" novalidate [formGroup]="form" (ngSubmit)="save.emit(item)">
-      <formly-form [model]="item" [fields]="fields">
-        <button type="submit" class="btn btn-default">Save</button>
-        <button (click)="close.emit()" type="button" class="btn btn-default">Cancel</button>
-      </formly-form>
+    <form class="formly" role="form" novalidate [formGroup]="form" (ngSubmit)="this.action.emit({ action: 'save', item: item })">
+      <div class="card">
+        <div class="card-header">
+          <i [class]="config.icon"></i>
+          <span *ngIf="!config.title && item.id">Edit</span>
+          <span *ngIf="!config.title && !item.id">Add</span>
+          <span *ngIf="config.title">{{config.title}}</span>
+        </div>
+        <div class="card-block">
+          <formly-form [model]="item" [fields]="config.fields" [form]="form"></formly-form>
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-primary">
+            Save
+          </button>
+          <button *ngIf="config.showCancel" type="button" class="btn btn-secondary" (click)="action.emit({ action: 'cancel' })">
+            Cancel
+          </button>
+        </div>
+      </div>
     </form>
-  `
+  `,
+  styles: [`
+    .card {
+      margin-bottom: 0px;
+    }
+  `]
 })
 export class UiFormComponent {
-  @Input() fields
-  @Input() item: any
-
-  @Output() save = new EventEmitter()
-  @Output() close = new EventEmitter()
-
-  public form: FormGroup = new FormGroup({})
-
+  form: FormGroup = new FormGroup({})
+  @Input() config
+  @Input() item
+  @Output() action = new EventEmitter()
 }

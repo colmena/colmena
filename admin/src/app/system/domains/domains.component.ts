@@ -2,10 +2,10 @@ import { Component, ViewChild } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { UiService } from '@colmena/colmena-angular-ui'
 
-import { ProductsService } from './products.service'
+import { DomainsService } from './domains.service'
 
 @Component({
-  selector: 'app-products',
+  selector: 'app-domains',
   template: `
     <ui-modal-form #form>
       <ui-form [config]="config" [item]="item" (action)="action($event)"></ui-form>
@@ -18,17 +18,16 @@ import { ProductsService } from './products.service'
     <template #iconTemplate let-item="item">
       <div class="card-block" style="min-height: 200px">
         <h6 style="text-decoration: underline; cursor: pointer;" (click)="action({ action: 'view', item: item })">
-          <i class="icon-basket"></i> {{item.name}}
+          <i class="icon-pencil"></i> {{item.name}}
         </h6>
-        <div class="text-muted" *ngIf="item.sku"><code>{{item.sku}}</code></div>
-        <div class="text-muted" *ngIf="item.description">{{item.description}}</div>
+        <p class="text-muted" *ngIf="item.description">{{item.description}}</p>
       </div>
     </template>
 
     <ui-data-grid #grid (action)="action($event)" [iconTemplate]="iconTemplate" [service]="service"></ui-data-grid>
   `,
 })
-export class ProductsComponent {
+export class DomainsComponent {
 
   @ViewChild('grid') private grid
   @ViewChild('form') private form
@@ -41,7 +40,7 @@ export class ProductsComponent {
     this.service.upsertItem(
       item,
       (res) => {
-        this.uiService.toastSuccess('Product saved', res.name)
+        this.uiService.toastSuccess('Post saved', res.name)
         this.close()
         this.refresh()
       },
@@ -58,14 +57,13 @@ export class ProductsComponent {
   }
 
   constructor(
-    public service: ProductsService,
+    public service: DomainsService,
     public uiService: UiService,
     private route: ActivatedRoute,
   ) {
-    this.service.domain = this.route.snapshot.data['domain']
     this.config = {
-      showCancel: true,
       icon: this.service.icon,
+      showCancel: true,
       fields: this.service.formFields,
     }
   }
@@ -78,8 +76,8 @@ export class ProductsComponent {
         this.form.show()
         break
       case 'add':
-        this.item = Object.assign({ name: null, sku: null, description: null })
-        this.form.title = 'Add Product'
+        this.item = Object.assign({}, { title: null, content: null })
+        this.form.title = 'Add Post'
         this.form.show()
         break
       case 'view':
@@ -113,5 +111,6 @@ export class ProductsComponent {
         break
     }
   }
+
 
 }

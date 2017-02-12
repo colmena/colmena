@@ -20,7 +20,6 @@ export class UiDataGridService {
     return this._columns.map(column => column.field)
   }
 
-
   private _sorting = {}
 
   get columnSorting() {
@@ -49,7 +48,7 @@ export class UiDataGridService {
     return Observable.of([])
   }
 
-  getItemCount() {
+  getItemCount(): any {
     return Observable.of([])
   }
 

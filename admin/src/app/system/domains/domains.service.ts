@@ -1,70 +1,82 @@
 import { Injectable } from '@angular/core'
+import { Validators, FormControl} from '@angular/forms'
 
-import { Domain } from '../../../lib/lb-sdk/models'
-import { DomainApi } from '../../../lib/lb-sdk/services'
+import { UiDataGridService } from '@colmena/colmena-angular-ui'
+
+import { DomainApi } from '@lb-sdk'
 
 @Injectable()
-export class DomainsService {
+export class DomainsService extends UiDataGridService {
 
   public icon = 'icon-globe'
   public title = 'Domains'
 
-  public fields = [
-    'id',
-    'name',
-    'description',
-    'created',
-    'modified',
-  ]
-
-  public formConfig = {
-    fields: [
-      { name: 'id', label: 'ID', type: 'text', placeholder: 'ID' },
-      { name: 'name', label: 'Name', type: 'text', placeholder: 'Name' },
-    ],
-  }
-
-  public tableConfig = {
-    class: 'table table-bordered table-striped table-condensed',
-    columns: [
-      { field: 'name', label: 'Name', link: 'edit' },
-    ],
-    rowButtons: [
-      { class: 'btn btn-sm btn-outline-danger', icon: 'fa fa-fw fa-trash', click: (item) => this.deleteItem(item.id) },
-    ],
-  }
-
-  private item: any = new Domain()
-  private items: any[]
-
-  constructor(private domainApi: DomainApi) {
-  }
-
-  deleteItem(id) {
-    return this.domainApi.deleteById(id).subscribe(
-      () => this.getItems(),
-      err => console.error(err)
-    )
-  }
-
-  getItem(id) {
-    if (id) {
-      return this.domainApi.findById(id).subscribe(res => this.item = res)
-    } else {
-      this.newItem()
-    }
+  constructor(
+    public domainApi: DomainApi,
+  ) {
+    super()
+    this.columns = this.tableColumns()
   }
 
   getItems() {
-    return this.domainApi.find().subscribe(res => (this.items = res))
+    return this.domainApi.find(this.getFilters())
   }
 
-  newItem() {
-    this.item = new Domain()
+  getItemCount() {
+    return this.domainApi.count(this.getWhereFilters())
   }
 
-  upsertItem(successCb, errorCb): void {
-    this.domainApi.upsert(this.item).subscribe(successCb, errorCb)
+  upsertItem(item, successCb, errorCb): void {
+    if (item.id) {
+      this.domainApi.upsert(item).subscribe(successCb, errorCb)
+    } else {
+      this.domainApi.create(item).subscribe(successCb, errorCb)
+    }
   }
 
+  deleteItem(item, successCb, errorCb) {
+    this.domainApi
+      .deleteById(item.id)
+      .subscribe(
+        (success) => successCb(success),
+        (error) => errorCb(error),
+      )
+  }
+
+  public tableColumns() {
+    return [
+      { field: 'id', label: 'ID', action: 'view' },
+      { field: 'name', label: 'Name', action: 'view' },
+    ]
+  }
+
+  public formFields = [{
+    key: 'id',
+    type: 'input',
+    templateOptions: {
+      type: 'text',
+      label: 'ID',
+      placeholder: 'ID',
+      keyup: (field, formControl: FormControl) => {
+        console.log(formControl.valid ? 'Valid' : 'Invalid');
+      },
+    },
+    validators: {
+      validation: Validators.compose([Validators.required]),
+    },
+  }, {
+    key: 'name',
+    type: 'input',
+    templateOptions: {
+      type: 'text',
+      label: 'Name',
+      placeholder: 'Name',
+      keyup: (field, formControl: FormControl) => {
+        console.log(formControl.valid ? 'Valid' : 'Invalid');
+      },
+    },
+    validators: {
+      validation: Validators.compose([ Validators.required ]),
+    },
+  } ];
 }
