@@ -1,11 +1,9 @@
 # ⚠️ Please note
 This branch is the `v0.x` version of the project, which is no longer support nor maintained as of January 16th 2017. 
 
-All development effort will be put in the new version of the project that is named [Colmena CMS](https://github.com/beeman/loopback-angular-admin/tree/colmena-cms).
+All development effort will be put in the new version of the project that is named [Colmena CMS](https://github.com/colmena/colmena-cms).
 
-Once most of the functionality is in place this branch will be archived and the project will be renamed.
-
-Please follow the status of the new project [in this issue](https://github.com/beeman/loopback-angular-admin/issues/204).
+Please follow the status of the new project [in this issue](https://github.com/colmena/colmena-cms/issues/204).
 
 # loopback-angular-admin
 
