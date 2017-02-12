@@ -1,42 +1,46 @@
 import { Component, ViewChild } from '@angular/core'
-
-import { ProductsService } from './products.service'
+import { ActivatedRoute } from '@angular/router'
 import { UiService } from '@colmena/colmena-angular-ui'
 
+import { PostsService } from './posts.service'
+
 @Component({
-  selector: 'app-products',
+  selector: 'app-posts',
   template: `
-    <ui-modal #form>
-      <app-product-form [item]="item" (save)="save($event)" (close)="close()"></app-product-form>
-    </ui-modal>
+    <ui-modal-form #form>
+      <ui-crud-form [config]="config" [item]="item" (action)="action($event)"></ui-crud-form>
+    </ui-modal-form>
+
     <ui-modal #view title="View Item">
       <pre>{{item | json}}</pre>
     </ui-modal>
+
     <template #iconTemplate let-item="item">
       <div class="card-block" style="min-height: 200px">
         <h6 style="text-decoration: underline; cursor: pointer;" (click)="action({ action: 'view', item: item })">
-          <i class="icon-calendar"></i> {{item.name}}
+          <i class="icon-pencil"></i> {{item.title}}
         </h6>
-        <div class="text-muted" *ngIf="item.date">Date: {{item.date | date: 'short' }}</div>
-        <div class="text-muted" *ngIf="item.location">Location {{item.location}}</div>
+        <div class="text-muted" *ngIf="item.created">Date: {{item.created | date: 'short' }}</div>
       </div>
     </template>
+
     <ui-data-grid #grid (action)="action($event)" [iconTemplate]="iconTemplate" [service]="service"></ui-data-grid>
   `,
 })
-export class ProductListComponent {
+export class PostsComponent {
 
   @ViewChild('grid') private grid
   @ViewChild('form') private form
   @ViewChild('view') private view
 
   public item: any = {}
+  public config: any = {}
 
   save(item): void {
     this.service.upsertItem(
       item,
       (res) => {
-        this.uiService.toastSuccess('Product saved', res.name)
+        this.uiService.toastSuccess('Post saved', res.name)
         this.close()
         this.refresh()
       },
@@ -53,9 +57,16 @@ export class ProductListComponent {
   }
 
   constructor(
-    public service: ProductsService,
+    public service: PostsService,
     public uiService: UiService,
+    private route: ActivatedRoute,
   ) {
+    this.service.domain = this.route.snapshot.data['domain']
+    this.config = {
+      icon: this.service.icon,
+      showCancel: true,
+      fields: this.service.formFields,
+    }
   }
 
   action(event) {
@@ -66,8 +77,8 @@ export class ProductListComponent {
         this.form.show()
         break
       case 'add':
-        this.item = {}
-        this.form.title = 'Add Product'
+        this.item = Object.assign({}, { title: null, content: null })
+        this.form.title = 'Add Post'
         this.form.show()
         break
       case 'view':
@@ -75,11 +86,17 @@ export class ProductListComponent {
         this.form.title = `${this.item.name}`
         this.view.show()
         break
+      case 'cancel':
+        this.close()
+        break
+      case 'save':
+        this.save(event.item)
+        break
       case 'delete':
         const successCb = () => this.service
-          .productApi
-          .deleteById(event.item.id)
-          .subscribe(() => this.refresh())
+          .deleteItem(event.item.id,
+            () => this.refresh(),
+            (err) => this.uiService.toastError('Error deleting item', err.message))
 
         this.uiService.alertQuestion(
           {
@@ -89,13 +106,11 @@ export class ProductListComponent {
           successCb,
           () => ({})
         )
-
         break
       default:
         console.log('Unknown event action', event)
         break
     }
   }
-
 
 }

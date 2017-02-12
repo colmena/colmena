@@ -4,9 +4,9 @@ import { HttpModule } from '@angular/http'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
 
-import { FormlyModule, FormlyBootstrapModule } from 'ng-formly'
-
 import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
+
+import { FormlyModule, FormlyBootstrapModule } from 'ng-formly'
 
 const modules = [
   BrowserModule,

@@ -9,11 +9,11 @@ import { LogService } from './log.service'
 export class AppService {
 
   public dispatchDomain(domain) {
-    this.store.dispatch({ type: 'APP_ADD_DOMAIN', payload: domain })
+    this.store.dispatch({ type: 'APP_DOMAIN_ADD', payload: domain })
   }
 
   public dispatchSetting(setting) {
-    this.store.dispatch({ type: 'APP_ADD_SETTING', payload: setting })
+    this.store.dispatch({ type: 'APP_SETTING_ADD', payload: setting })
   }
 
   public fetchSettings() {
@@ -36,9 +36,14 @@ export class AppService {
     private settingApi: SettingApi,
     private store: Store<any>
   ) {
-    const token = window.localStorage.getItem('token')
-    if (token) {
-      this.store.dispatch({ type: 'AUTH_LOGIN_TOKEN', payload: JSON.parse(token)})
+    if (window.localStorage.getItem('domain')) {
+      this.store.dispatch({ type: 'APP_DOMAIN_SET', payload: JSON.parse(window.localStorage.getItem('domain'))})
+    }
+    if (window.localStorage.getItem('token')) {
+      this.store.dispatch({ type: 'AUTH_SET_TOKEN', payload: JSON.parse(window.localStorage.getItem('token'))})
+    }
+    if (window.localStorage.getItem('roles')) {
+      this.store.dispatch({ type: 'AUTH_SET_ROLES', payload: JSON.parse(window.localStorage.getItem('roles'))})
     }
   }
 

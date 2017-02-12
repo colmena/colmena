@@ -1,42 +1,85 @@
 import { Injectable } from '@angular/core'
+import { Validators, FormControl} from '@angular/forms'
 
+import { DomainApi } from '@lb-sdk'
 import { UiDataGridService } from '@colmena/colmena-angular-ui'
-
-import { Post, PostApi } from '@lb-sdk'
 
 @Injectable()
 export class PostsService extends UiDataGridService {
 
-  public item
+  public _domain
+  public domainId
+  public icon = 'icon-pencil'
+  public title = 'Posts'
+
+  set domain(domain) {
+    this._domain = domain
+  }
+
+  get domain() {
+    return this._domain
+  }
 
   constructor(
-    public postApi: PostApi,
+    public domainApi: DomainApi,
   ) {
     super()
-    this.api = postApi
-    this.columns = [
-      { field: 'title', label: 'Title' },
-    ]
+    this.columns = this.tableColumns()
   }
 
-  getItem(id) {
-    if (id) {
-      return this.postApi.findById(id).subscribe(res => this.item = res)
-    } else {
-      this.newItem()
-    }
+  getItems() {
+    return this.domainApi.getPosts(this.domain.id, this.getFilters())
   }
 
-  newItem() {
-    this.item = new Post()
+  getItemCount() {
+    return this.domainApi.countPosts(this.domain.id, this.getWhereFilters())
   }
 
   upsertItem(item, successCb, errorCb): void {
     if (item.id) {
-      this.postApi.upsert(item).subscribe(successCb, errorCb)
+      this.domainApi.updateByIdPosts(this.domain.id, item.id, item).subscribe(successCb, errorCb)
     } else {
-      this.postApi.create(item).subscribe(successCb, errorCb)
+      this.domainApi.createPosts(this.domain.id, item).subscribe(successCb, errorCb)
     }
   }
+
+  deleteItem(item, successCb, errorCb) {
+    this.domainApi
+      .deletePosts(item.id)
+      .subscribe(
+        (success) => successCb(success),
+        (error) => errorCb(error),
+      )
+  }
+
+  public tableColumns() {
+    return [
+      { field: 'title', label: 'Title', action: 'view' },
+    ]
+  }
+
+  public formFields = [{
+    key: 'title',
+    type: 'input',
+    templateOptions: {
+      type: 'text',
+      label: 'Title',
+      placeholder: 'Title',
+      keyup: (field, formControl: FormControl) => {
+        console.log(formControl.valid ? 'Valid' : 'Invalid');
+      },
+    },
+    validators: {
+      validation: Validators.compose([ Validators.required ]),
+    },
+  }, {
+    key: 'content',
+    type: 'textarea',
+    templateOptions: {
+      type: 'text',
+      label: 'Content',
+      placeholder: 'Content'
+    },
+  } ];
 
 }

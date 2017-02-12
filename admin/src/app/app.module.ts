@@ -1,6 +1,7 @@
 // Angular Modules
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
+import { LocationStrategy, HashLocationStrategy } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
@@ -25,6 +26,8 @@ import { appRoutes } from './app.routes'
 import { AppService } from './app.service'
 import { LogService } from './log.service'
 import { AppStoreModule } from './app.store'
+import { DomainResolver } from './app.resolvers'
+import { HasContentAccess, HasSystemAccess, UserLoggedIn } from './app.guards'
 
 @NgModule({
   imports: [
@@ -47,15 +50,22 @@ import { AppStoreModule } from './app.store'
     AppStoreModule,
     appRoutes,
   ],
-  providers: [
+  providers: [ {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    },
     AppService,
     LogService,
+    DomainResolver,
+    HasContentAccess,
+    HasSystemAccess,
+    UserLoggedIn,
   ],
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   bootstrap: [
-    AppComponent
+    AppComponent,
   ]
 })
 export class AppModule {

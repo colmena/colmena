@@ -1,19 +1,24 @@
 import { Routes } from '@angular/router'
 
-import { ContentEventsRoutes } from './events/events.routes'
-import { ContentPostsRoutes } from './posts/posts.routes'
-import { ContentProductsRoutes } from './products/products.routes'
+import { HasContentAccess } from '../app.guards'
+import { DomainResolver } from '../app.resolvers'
+
 import { ContentDashboardComponent } from './content.component'
+import { EventsComponent } from './events/events.component'
+import { PostsComponent } from './posts/posts.component'
+import { ProductsComponent } from './products/products.component'
 
 export const ContentModuleRoutes: Routes = [ {
   path: 'content',
   data: {
     title: 'Content',
   },
+  canActivate: [ HasContentAccess ],
+  resolve: { domain: DomainResolver },
   children: [
     { path: '', component: ContentDashboardComponent, data: { title: 'Dashboard' } },
-    ...ContentEventsRoutes,
-    ...ContentPostsRoutes,
-    ...ContentProductsRoutes,
+    { path: 'events', component: EventsComponent, data: { title: 'Events' } },
+    { path: 'posts', component: PostsComponent, data: { title: 'Posts' } },
+    { path: 'products', component: ProductsComponent, data: { title: 'Products' } },
   ],
 } ]
