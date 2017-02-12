@@ -132,5 +132,19 @@
       "property": "removeRole"
     }
   ],
-  "methods": {}
+  "methods": {
+    "info": {
+      "isStatic": false,
+      "returns": {
+        "arg": "result",
+        "type": "Object",
+        "root": true
+      },
+      "description": "Get the roles for this user.",
+      "http": {
+        "path": "/info",
+        "verb": "get"
+      }
+    }
+  }
 }

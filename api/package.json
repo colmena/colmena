@@ -21,5 +21,8 @@
   "main": "server/server.js",
   "dependencies": {
     "@colmena/colmena-loopback": "0.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "1.11.0"
   }
 }
