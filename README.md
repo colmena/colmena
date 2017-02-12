@@ -1,9 +1,10 @@
 ![](admin/src/assets/logo.png?raw=true)
-[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors)
 
 # Colmena CMS
 
-> Free and Open Source API and Admin
+> Free and Open Source API and Admin powered by LoopBack and Angular
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors) [![](https://colmena-cms.now.sh/badge.svg)](https://colmena-cms.now.sh/)
 
 #### TPFKALAA
 
@@ -35,7 +36,7 @@ The project consists of 2 components, the API and the Admin interface.
 
 This project is built with node and therefore `node` (v6.x) and `npm` (v3.x) need to be available on your machine.
 
-Additionally it uses [p-s](https://github.com/kentcdodds/p-s) to run the project, which is recommended to be installed 
+Additionally it uses [p-s](https://github.com/kentcdodds/p-s) to run the project, which is recommended to be installed
 globally:
 
     $ npm i -g p-s
