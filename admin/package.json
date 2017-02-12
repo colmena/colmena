@@ -20,7 +20,7 @@
   },
   "angular-cli": {},
   "devDependencies": {
-    "@angular/cli": "1.0.0-beta.30",
+    "@angular/cli": "1.0.0-beta.31",
     "@colmena/colmena-angular": "0.2.5"
   }
 }
