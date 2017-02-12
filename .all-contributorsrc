@@ -1,0 +1,25 @@
+{
+  "projectName": "colmena-cms",
+  "projectOwner": "colmena",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "beeman",
+      "name": "Bram Borggreve",
+      "avatar_url": "https://avatars.githubusercontent.com/u/36491?v=3",
+      "profile": "http://colmena.io/",
+      "contributions": [
+        "question",
+        "bug",
+        "code",
+        "design",
+        "doc",
+        "tool"
+      ]
+    }
+  ]
+}

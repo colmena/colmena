@@ -9,6 +9,7 @@
     "start": "nps"
   },
   "devDependencies": {
+    "all-contributors-cli": "^3.1.1",
     "eslint": "^3.12.2",
     "eslint-config-standard": "6.2.1",
     "eslint-plugin-promise": "3.4.0",

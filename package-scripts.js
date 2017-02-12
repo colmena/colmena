@@ -1,5 +1,9 @@
 module.exports = {
   scripts: {
+    contributors: {
+      add: "all-contributors add",
+      generate: "all-contributors generate"
+    },
     dev: {
       default: 'nps -p dev.admin,dev.api',
       admin: 'cd admin; nps dev',

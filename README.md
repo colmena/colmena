@@ -1,4 +1,5 @@
 ![](admin/src/assets/logo.png?raw=true)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 # Colmena CMS
 
@@ -92,3 +93,14 @@ You can also start the two components separately:
 ### More commands
 
 For a list of all the commands available run `nps` in the project dir or in one of the components.
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars.githubusercontent.com/u/36491?v=3" width="100px;"/><br /><sub>Bram Borggreve</sub>](http://colmena.io/)<br />💬 [🐛](https://github.com/colmena/colmena-cms/issues?q=author%3Abeeman) [💻](https://github.com/colmena/colmena-cms/commits?author=beeman) 🎨 [📖](https://github.com/colmena/colmena-cms/commits?author=beeman) 🔧 |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
