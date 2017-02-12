@@ -9,38 +9,41 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Rx';
 import { Product } from '../../models/Product';
-import { SocketConnections } from '../../sockets/socket.connections';
+import { SocketConnection } from '../../sockets/socket.connections';
 import { Domain } from '../../models/Domain';
 
 
 /**
  * Api services for the `Product` model.
+ *
+ * **Details**
+ *
+ * Content model for managing Products in a Domain
  */
 @Injectable()
 export class ProductApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
-    @Inject(SocketConnections) protected connections: SocketConnections,
+    @Inject(SocketConnection) protected connection: SocketConnection,
     @Inject(SDKModels) protected models: SDKModels,
     @Inject(LoopBackAuth) protected auth: LoopBackAuth,
     @Inject(JSONSearchParams) protected searchParams: JSONSearchParams,
     @Optional() @Inject(ErrorHandler) protected errorHandler: ErrorHandler
   ) {
-    super(http,  connections,  models, auth, searchParams, errorHandler);
+    super(http,  connection,  models, auth, searchParams, errorHandler);
   }
 
   /**
    * Fetches belongsTo relation domain.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param boolean refresh 
+   * @param {boolean} refresh 
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -66,11 +69,11 @@ export class ProductApi extends BaseLoopBackApi {
   /**
    * Generate template basic
    *
-   * @param Object options Overwrite values of template
+   * @param {Object} options Overwrite values of template
    *
-   * @param Object params Pass parameters into the template method
+   * @param {Object} params Pass parameters into the template method
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *

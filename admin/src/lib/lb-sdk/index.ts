@@ -15,7 +15,7 @@
 * ============================================================================
 * import { NgModule }       from '@angular/core';
 * import { BrowserModule }  from '@angular/platform-browser';
-* // App Root
+* // App Root 
 * import { AppComponent }   from './app.component';
 * // Feature Modules
 * import { SDK[Browser|Node|Native]Module } from './shared/sdk/sdk.module';
@@ -46,7 +46,7 @@ import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
 import { SocketBrowser } from './sockets/socket.browser';
 import { SocketDriver } from './sockets/socket.driver';
-import { SocketConnections } from './sockets/socket.connections';
+import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
 import { DomainApi } from './services/custom/Domain';
@@ -70,11 +70,14 @@ import { PingApi } from './services/custom/Ping';
   exports:      [ ],
   providers:    [
     ErrorHandler,
-    SocketConnections
+    SocketConnection
   ]
 })
 export class SDKBrowserModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(internalStorageProvider: any = {
+    provide: InternalStorage,
+    useClass: CookieBrowser
+  }): ModuleWithProviders {
     return {
       ngModule  : SDKBrowserModule,
       providers : [
@@ -90,7 +93,7 @@ export class SDKBrowserModule {
         ProductApi,
         SettingApi,
         PingApi,
-        { provide: InternalStorage, useClass: CookieBrowser },
+        internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }
       ]
@@ -104,5 +107,6 @@ export class SDKBrowserModule {
 export * from './models/index';
 export * from './services/index';
 export * from './lb.config';
-export * from './storage/storage.swaps'
-
+export * from './storage/storage.swaps';
+export { CookieBrowser } from './storage/cookie.browser';
+export { StorageBrowser } from './storage/storage.browser';

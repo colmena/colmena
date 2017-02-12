@@ -7,7 +7,7 @@ export interface UserInterface {
   email: string;
   firstName: string;
   lastName: string;
-  realm?: string;
+  realm: string;
   password: string;
   challenges?: any;
   emailVerified?: boolean;
@@ -17,8 +17,8 @@ export interface UserInterface {
   lastUpdated?: Date;
   modified?: Date;
   domainId?: string;
-  accessTokens?: Array<any>;
-  roles?: Array<any>;
+  accessTokens?: any[];
+  roles?: any[];
 }
 
 export class User implements UserInterface {
@@ -37,8 +37,8 @@ export class User implements UserInterface {
   lastUpdated: Date;
   modified: Date;
   domainId: string;
-  accessTokens: Array<any>;
-  roles: Array<any>;
+  accessTokens: any[];
+  roles: any[];
   constructor(data?: UserInterface) {
     Object.assign(this, data);
   }
@@ -138,12 +138,12 @@ export class User implements UserInterface {
       relations: {
         accessTokens: {
           name: 'accessTokens',
-          type: 'Array<any>',
+          type: 'any[]',
           model: ''
         },
         roles: {
           name: 'roles',
-          type: 'Array<any>',
+          type: 'any[]',
           model: ''
         },
       }

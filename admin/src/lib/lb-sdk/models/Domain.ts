@@ -12,10 +12,10 @@ export interface DomainInterface {
   name?: string;
   created?: Date;
   modified?: Date;
-  users?: Array<User>;
-  events?: Array<Event>;
-  posts?: Array<Post>;
-  products?: Array<Product>;
+  users?: User[];
+  events?: Event[];
+  posts?: Post[];
+  products?: Product[];
 }
 
 export class Domain implements DomainInterface {
@@ -23,10 +23,10 @@ export class Domain implements DomainInterface {
   name: string;
   created: Date;
   modified: Date;
-  users: Array<User>;
-  events: Array<Event>;
-  posts: Array<Post>;
-  products: Array<Product>;
+  users: User[];
+  events: Event[];
+  posts: Post[];
+  products: Product[];
   constructor(data?: DomainInterface) {
     Object.assign(this, data);
   }
@@ -78,22 +78,22 @@ export class Domain implements DomainInterface {
       relations: {
         users: {
           name: 'users',
-          type: 'Array<User>',
+          type: 'User[]',
           model: 'User'
         },
         events: {
           name: 'events',
-          type: 'Array<Event>',
+          type: 'Event[]',
           model: 'Event'
         },
         posts: {
           name: 'posts',
-          type: 'Array<Post>',
+          type: 'Post[]',
           model: 'Post'
         },
         products: {
           name: 'products',
-          type: 'Array<Product>',
+          type: 'Product[]',
           model: 'Product'
         },
       }

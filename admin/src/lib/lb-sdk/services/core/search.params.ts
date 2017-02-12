@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { URLSearchParams } from '@angular/http';
 /**
-* @author Jonathan Casarrubias <twitter:@johncasarrubias> <github:@johncasarrubias>
+* @author Jonathan Casarrubias <twitter:@johncasarrubias> <github:@mean-expert-official>
 * @module JSONSearchParams
 * @license MIT
 * @description

@@ -4,9 +4,9 @@ declare var Object: any;
 export interface SettingInterface {
   key: string;
   value?: string;
+  system: boolean;
   type: string;
   description?: string;
-  id?: number;
   created?: Date;
   modified?: Date;
 }
@@ -14,9 +14,9 @@ export interface SettingInterface {
 export class Setting implements SettingInterface {
   key: string;
   value: string;
+  system: boolean;
   type: string;
   description: string;
-  id: number;
   created: Date;
   modified: Date;
   constructor(data?: SettingInterface) {
@@ -58,6 +58,11 @@ export class Setting implements SettingInterface {
           name: 'value',
           type: 'string'
         },
+        system: {
+          name: 'system',
+          type: 'boolean',
+          default: false
+        },
         type: {
           name: 'type',
           type: 'string',
@@ -66,10 +71,6 @@ export class Setting implements SettingInterface {
         description: {
           name: 'description',
           type: 'string'
-        },
-        id: {
-          name: 'id',
-          type: 'number'
         },
         created: {
           name: 'created',

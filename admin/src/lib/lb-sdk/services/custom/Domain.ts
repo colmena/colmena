@@ -9,10 +9,9 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Rx';
 import { Domain } from '../../models/Domain';
-import { SocketConnections } from '../../sockets/socket.connections';
+import { SocketConnection } from '../../sockets/socket.connections';
 import { User } from '../../models/User';
 import { Event } from '../../models/Event';
 import { Post } from '../../models/Post';
@@ -21,29 +20,33 @@ import { Product } from '../../models/Product';
 
 /**
  * Api services for the `Domain` model.
+ *
+ * **Details**
+ *
+ * Manage System Domains and related content
  */
 @Injectable()
 export class DomainApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
-    @Inject(SocketConnections) protected connections: SocketConnections,
+    @Inject(SocketConnection) protected connection: SocketConnection,
     @Inject(SDKModels) protected models: SDKModels,
     @Inject(LoopBackAuth) protected auth: LoopBackAuth,
     @Inject(JSONSearchParams) protected searchParams: JSONSearchParams,
     @Optional() @Inject(ErrorHandler) protected errorHandler: ErrorHandler
   ) {
-    super(http,  connections,  models, auth, searchParams, errorHandler);
+    super(http,  connection,  models, auth, searchParams, errorHandler);
   }
 
   /**
    * Find a related item by id for users.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param any fk Foreign key for users
+   * @param {any} fk Foreign key for users
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -69,11 +72,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for users.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param any fk Foreign key for users
+   * @param {any} fk Foreign key for users
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -96,15 +99,15 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for users.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param any fk Foreign key for users
+   * @param {any} fk Foreign key for users
    *
-   * @param object data Request data.
+   * @param {object} data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -132,11 +135,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for events.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param any fk Foreign key for events
+   * @param {any} fk Foreign key for events
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -162,11 +165,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for events.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param any fk Foreign key for events
+   * @param {any} fk Foreign key for events
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -189,15 +192,15 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for events.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param any fk Foreign key for events
+   * @param {any} fk Foreign key for events
    *
-   * @param object data Request data.
+   * @param {object} data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -225,11 +228,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for posts.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param any fk Foreign key for posts
+   * @param {any} fk Foreign key for posts
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -255,11 +258,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for posts.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param any fk Foreign key for posts
+   * @param {any} fk Foreign key for posts
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -282,15 +285,15 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for posts.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param any fk Foreign key for posts
+   * @param {any} fk Foreign key for posts
    *
-   * @param object data Request data.
+   * @param {object} data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -318,11 +321,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for products.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param any fk Foreign key for products
+   * @param {any} fk Foreign key for products
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -348,11 +351,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for products.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param any fk Foreign key for products
+   * @param {any} fk Foreign key for products
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -375,15 +378,15 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for products.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param any fk Foreign key for products
+   * @param {any} fk Foreign key for products
    *
-   * @param object data Request data.
+   * @param {object} data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -411,11 +414,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries users of Domain.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object filter 
+   * @param {object} filter 
    *
-   * @returns object[] An empty reference that will be
+   * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -441,13 +444,13 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in users of this model.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object data Request data.
+   * @param {object} data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -474,9 +477,9 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all users of this model.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -498,11 +501,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts users of Domain.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object where Criteria to match model instances
+   * @param {object} where Criteria to match model instances
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -527,11 +530,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries events of Domain.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object filter 
+   * @param {object} filter 
    *
-   * @returns object[] An empty reference that will be
+   * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -557,13 +560,13 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in events of this model.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object data Request data.
+   * @param {object} data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -590,9 +593,9 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all events of this model.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -614,11 +617,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts events of Domain.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object where Criteria to match model instances
+   * @param {object} where Criteria to match model instances
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -643,11 +646,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries posts of Domain.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object filter 
+   * @param {object} filter 
    *
-   * @returns object[] An empty reference that will be
+   * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -673,13 +676,13 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in posts of this model.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object data Request data.
+   * @param {object} data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -706,9 +709,9 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all posts of this model.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -730,11 +733,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts posts of Domain.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object where Criteria to match model instances
+   * @param {object} where Criteria to match model instances
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -759,11 +762,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries products of Domain.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object filter 
+   * @param {object} filter 
    *
-   * @returns object[] An empty reference that will be
+   * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -789,13 +792,13 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in products of this model.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object data Request data.
+   * @param {object} data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -822,9 +825,9 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all products of this model.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -846,11 +849,11 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts products of Domain.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object where Criteria to match model instances
+   * @param {object} where Criteria to match model instances
    *
-   * @returns object An empty reference that will be
+   * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -875,13 +878,13 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in users of this model.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object data Request data.
+   * @param {object} data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns object[] An empty reference that will be
+   * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -890,7 +893,7 @@ export class DomainApi extends BaseLoopBackApi {
    * This usually means the response is a `Domain` object.)
    * </em>
    */
-  public createManyUsers(id: any, data: Array<any> = []): Observable<any> {
+  public createManyUsers(id: any, data: any[] = []): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Domains/:id/users";
@@ -908,13 +911,13 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in events of this model.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object data Request data.
+   * @param {object} data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns object[] An empty reference that will be
+   * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -923,7 +926,7 @@ export class DomainApi extends BaseLoopBackApi {
    * This usually means the response is a `Domain` object.)
    * </em>
    */
-  public createManyEvents(id: any, data: Array<any> = []): Observable<any> {
+  public createManyEvents(id: any, data: any[] = []): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Domains/:id/events";
@@ -941,13 +944,13 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in posts of this model.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object data Request data.
+   * @param {object} data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns object[] An empty reference that will be
+   * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -956,7 +959,7 @@ export class DomainApi extends BaseLoopBackApi {
    * This usually means the response is a `Domain` object.)
    * </em>
    */
-  public createManyPosts(id: any, data: Array<any> = []): Observable<any> {
+  public createManyPosts(id: any, data: any[] = []): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Domains/:id/posts";
@@ -974,13 +977,13 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in products of this model.
    *
-   * @param any id BaseModel id
+   * @param {any} id BaseModel id
    *
-   * @param object data Request data.
+   * @param {object} data Request data.
    *
    * This method expects a subset of model properties as request parameters.
    *
-   * @returns object[] An empty reference that will be
+   * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
    *
@@ -989,7 +992,7 @@ export class DomainApi extends BaseLoopBackApi {
    * This usually means the response is a `Domain` object.)
    * </em>
    */
-  public createManyProducts(id: any, data: Array<any> = []): Observable<any> {
+  public createManyProducts(id: any, data: any[] = []): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Domains/:id/products";

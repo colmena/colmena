@@ -10,6 +10,7 @@ export interface ProductInterface {
   name?: string;
   description?: string;
   sku?: string;
+  price?: number;
   created?: Date;
   modified?: Date;
   domain?: Domain;
@@ -21,6 +22,7 @@ export class Product implements ProductInterface {
   name: string;
   description: string;
   sku: string;
+  price: number;
   created: Date;
   modified: Date;
   domain: Domain;
@@ -74,6 +76,10 @@ export class Product implements ProductInterface {
         sku: {
           name: 'sku',
           type: 'string'
+        },
+        price: {
+          name: 'price',
+          type: 'number'
         },
         created: {
           name: 'created',

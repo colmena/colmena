@@ -8,7 +8,6 @@ export class FireLoop {
 
   public ref<T>(model: any): FireLoopRef<T> {
     let name: string = model.getModelName();
-    if (this.references[name]) { return this.references[name]; }
     model.models = this.models;
     this.references[name] = new FireLoopRef<T>(model, this.socket);
     return this.references[name];

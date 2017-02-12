@@ -9,27 +9,30 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Rx';
 import { Setting } from '../../models/Setting';
-import { SocketConnections } from '../../sockets/socket.connections';
+import { SocketConnection } from '../../sockets/socket.connections';
 
 
 /**
  * Api services for the `Setting` model.
+ *
+ * **Details**
+ *
+ * Manage System Settings
  */
 @Injectable()
 export class SettingApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
-    @Inject(SocketConnections) protected connections: SocketConnections,
+    @Inject(SocketConnection) protected connection: SocketConnection,
     @Inject(SDKModels) protected models: SDKModels,
     @Inject(LoopBackAuth) protected auth: LoopBackAuth,
     @Inject(JSONSearchParams) protected searchParams: JSONSearchParams,
     @Optional() @Inject(ErrorHandler) protected errorHandler: ErrorHandler
   ) {
-    super(http,  connections,  models, auth, searchParams, errorHandler);
+    super(http,  connection,  models, auth, searchParams, errorHandler);
   }
 
   /**

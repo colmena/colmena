@@ -53,11 +53,11 @@ export class LoggerService {
 
   time(arg: string) {
     if (LoopBackConfig.debuggable())
-    console.count(arg);
+    console.time(arg);
   }
 
   timeEnd(arg: string) {
     if (LoopBackConfig.debuggable())
-    console.count(arg);
+    console.timeEnd(arg);
   }
 }
