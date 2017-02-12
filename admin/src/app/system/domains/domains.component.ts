@@ -18,7 +18,7 @@ import { DomainsService } from './domains.service'
     <template #iconTemplate let-item="item">
       <div class="card-block" style="min-height: 200px">
         <h6 style="text-decoration: underline; cursor: pointer;" (click)="action({ action: 'view', item: item })">
-          <i class="icon-pencil"></i> {{item.name}}
+          <i class="icon-globe"></i> {{item.name}}
         </h6>
         <p class="text-muted" *ngIf="item.description">{{item.description}}</p>
       </div>

@@ -18,11 +18,15 @@ import { DevToastComponent } from './toast/toast.component'
   ],
 })
 export class DevModule {
+
   constructor(private store: Store<any>) {
-    this.store.dispatch({
-      type: 'LAYOUT_HEADER_NAV', payload: {
-        weight: 40, label: 'Development', icon: 'icon-wrench', link: [ '/', 'development' ]
-      }
-    })
+    this.dispatchLinks({ weight: 140, label: 'Development', icon: 'icon-wrench', link: [ '/', 'development' ] })
   }
+
+  dispatchLinks(links) {
+    this.store.dispatch({ type: 'LAYOUT_HEADER_NAV', payload: links })
+    this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload: links })
+    this.store.dispatch({ type: 'APP_SYSTEM_DASHBOARD', payload: links })
+  }
+
 }
