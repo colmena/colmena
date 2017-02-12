@@ -7,11 +7,13 @@ import { SystemModule } from '../system/system.module'
 
 import { AboutComponent } from './about/about.component'
 import { DashboardComponent } from './dashboard/dashboard.component'
+import { PasswordComponent } from './password/password.component'
 import { ProfileComponent } from './profile/profile.component'
 
 const components = [
   AboutComponent,
   DashboardComponent,
+  PasswordComponent,
   ProfileComponent,
 ]
 
