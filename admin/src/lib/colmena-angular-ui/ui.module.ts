@@ -13,7 +13,6 @@ import { UiDataGridModule } from './components/data-grid/data-grid.module'
 import { UiModalModule } from './components/modal/modal.module'
 import { UiTagModule } from './components/tag/tag.module'
 
-import { UiCrudListComponent } from './components/crud-list/ui-crud-list.component'
 import { UiFormComponent } from './components/form/ui-form.component'
 import { UiLogoComponent } from './components/logo/logo.component'
 import { UiMessageComponent } from './components/message/message.component'
@@ -40,7 +39,6 @@ const modules = [
  * @type { Array }
  */
 const components = [
-  UiCrudListComponent,
   UiFormComponent,
   UiLogoComponent,
   UiMessageComponent,

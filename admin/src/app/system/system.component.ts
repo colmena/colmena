@@ -6,20 +6,20 @@ import { Store } from '@ngrx/store'
   template: `
     <div class="row">
       <div class="col-md-4" *ngFor="let link of links">
-        <div class="card" [routerLink]="link.link">
-          <div class="card-block">
-            <h1>
-              <i class="{{link.icon}}"></i>
-              {{link.label}}
-            </h1>
-          </div>
-        </div>
+        <ui-card [routerLink]="link.link">
+          <ui-card-header>
+            <h3> <i class="{{link.icon}}"></i> &nbsp; {{link.label}} </h3>
+          </ui-card-header>
+        </ui-card>
       </div>
     </div>
   `,
   styles: [`
-    .card { 
+    ui-card { 
       cursor: pointer;
+    }
+    ui-card h3 { 
+      margin: 0;
     }
   `]
 })
