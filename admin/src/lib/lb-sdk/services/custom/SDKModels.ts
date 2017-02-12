@@ -6,6 +6,7 @@ import { Event } from '../../models/Event';
 import { Post } from '../../models/Post';
 import { Product } from '../../models/Product';
 import { Setting } from '../../models/Setting';
+import { Page } from '../../models/Page';
 import { Ping } from '../../models/Ping';
 
 export interface Models { [name: string]: any }
@@ -20,6 +21,7 @@ export class SDKModels {
     Post: Post,
     Product: Product,
     Setting: Setting,
+    Page: Page,
     Ping: Ping,
     
   };

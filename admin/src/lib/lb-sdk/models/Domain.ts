@@ -3,7 +3,8 @@ import {
   User,
   Event,
   Post,
-  Product
+  Product,
+  Page
 } from '../index';
 
 declare var Object: any;
@@ -16,6 +17,7 @@ export interface DomainInterface {
   events?: Event[];
   posts?: Post[];
   products?: Product[];
+  pages?: Page[];
 }
 
 export class Domain implements DomainInterface {
@@ -27,6 +29,7 @@ export class Domain implements DomainInterface {
   events: Event[];
   posts: Post[];
   products: Product[];
+  pages: Page[];
   constructor(data?: DomainInterface) {
     Object.assign(this, data);
   }
@@ -95,6 +98,11 @@ export class Domain implements DomainInterface {
           name: 'products',
           type: 'Product[]',
           model: 'Product'
+        },
+        pages: {
+          name: 'pages',
+          type: 'Page[]',
+          model: 'Page'
         },
       }
     }

@@ -4,7 +4,7 @@ declare var Object: any;
 export interface SettingInterface {
   key: string;
   value?: string;
-  system: boolean;
+  system?: boolean;
   type: string;
   description?: string;
   created?: Date;

@@ -4,44 +4,42 @@ import {
 } from '../index';
 
 declare var Object: any;
-export interface EventInterface {
+export interface PageInterface {
   id?: number;
   domainId?: string;
   name: string;
-  date?: Date;
-  location?: string;
+  content?: string;
   created?: Date;
   modified?: Date;
   domain?: Domain;
 }
 
-export class Event implements EventInterface {
+export class Page implements PageInterface {
   id: number;
   domainId: string;
   name: string;
-  date: Date;
-  location: string;
+  content: string;
   created: Date;
   modified: Date;
   domain: Domain;
-  constructor(data?: EventInterface) {
+  constructor(data?: PageInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Event`.
+   * i.e. `Page`.
    */
   public static getModelName() {
-    return "Event";
+    return "Page";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of Event for dynamic purposes.
+  * This method creates an instance of Page for dynamic purposes.
   **/
-  public static factory(data: EventInterface): Event{
-    return new Event(data);
+  public static factory(data: PageInterface): Page{
+    return new Page(data);
   }  
   /**
   * @method getModelDefinition
@@ -52,8 +50,8 @@ export class Event implements EventInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'Event',
-      plural: 'Events',
+      name: 'Page',
+      plural: 'Pages',
       properties: {
         id: {
           name: 'id',
@@ -67,12 +65,8 @@ export class Event implements EventInterface {
           name: 'name',
           type: 'string'
         },
-        date: {
-          name: 'date',
-          type: 'Date'
-        },
-        location: {
-          name: 'location',
+        content: {
+          name: 'content',
           type: 'string'
         },
         created: {
