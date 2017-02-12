@@ -18,7 +18,7 @@ import { PostsService } from './posts.service'
     <template #iconTemplate let-item="item">
       <div class="card-block" style="min-height: 200px">
         <h6 style="text-decoration: underline; cursor: pointer;" (click)="action({ action: 'view', item: item })">
-          <i class="icon-pencil"></i> {{item.title}}
+          <i class="icon-note"></i> {{item.title}}
         </h6>
         <div class="text-muted" *ngIf="item.created">Date: {{item.created | date: 'short' }}</div>
       </div>

@@ -6,6 +6,16 @@ import 'rxjs/add/observable/of'
 @Injectable()
 export class UiDataGridService {
 
+  public _domain
+
+  set domain(domain) {
+    this._domain = domain
+  }
+
+  get domain() {
+    return this._domain
+  }
+
   private _columns = []
 
   get columns() {

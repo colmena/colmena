@@ -1,31 +1,33 @@
 import { Component, ViewChild } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-
-import { EventsService } from './events.service'
 import { UiService } from '@colmena/colmena-angular-ui'
 
+import { PagesService } from './pages.service'
+
 @Component({
-  selector: 'app-events',
+  selector: 'app-pages',
   template: `
     <ui-modal-form #form>
       <ui-form [config]="config" [item]="item" (action)="action($event)"></ui-form>
     </ui-modal-form>
+
     <ui-modal #view title="View Item">
       <pre>{{item | json}}</pre>
     </ui-modal>
+
     <template #iconTemplate let-item="item">
       <div class="card-block" style="min-height: 200px">
         <h6 style="text-decoration: underline; cursor: pointer;" (click)="action({ action: 'view', item: item })">
-          <i class="icon-event"></i> {{item.name}}
+          <i class="icon-doc"></i> {{item.name}}
         </h6>
-        <div class="text-muted" *ngIf="item.date">Date: {{item.date | date: 'short' }}</div>
-        <div class="text-muted" *ngIf="item.location">Location {{item.location}}</div>
+        <div class="text-muted" *ngIf="item.created">Date: {{item.created | date: 'short' }}</div>
       </div>
     </template>
+
     <ui-data-grid #grid (action)="action($event)" [iconTemplate]="iconTemplate" [service]="service"></ui-data-grid>
   `,
 })
-export class EventsComponent {
+export class PagesComponent {
 
   @ViewChild('grid') private grid
   @ViewChild('form') private form
@@ -38,7 +40,7 @@ export class EventsComponent {
     this.service.upsertItem(
       item,
       (res) => {
-        this.uiService.toastSuccess('Event saved', res.name)
+        this.uiService.toastSuccess('Page saved', res.name)
         this.close()
         this.refresh()
       },
@@ -55,7 +57,7 @@ export class EventsComponent {
   }
 
   constructor(
-    public service: EventsService,
+    public service: PagesService,
     public uiService: UiService,
     private route: ActivatedRoute,
   ) {
@@ -75,12 +77,12 @@ export class EventsComponent {
         this.form.show()
         break
       case 'add':
-        this.item = Object.assign({}, { name: null, description: null, location: null, date: null })
-        this.form.title = 'Add Event'
+        this.item = Object.assign({}, { name: null, content: null })
+        this.form.title = 'Add Page'
         this.form.show()
         break
       case 'view':
-        this.item = Object.assign({}, event.item)
+        this.item = event.item
         this.form.title = `${this.item.name}`
         this.view.show()
         break

@@ -8,17 +8,8 @@ import { DomainApi } from '@lb-sdk'
 @Injectable()
 export class PostsService extends UiDataGridService {
 
-  public _domain
-  public icon = 'icon-pencil'
+  public icon = 'icon-note'
   public title = 'Posts'
-
-  set domain(domain) {
-    this._domain = domain
-  }
-
-  get domain() {
-    return this._domain
-  }
 
   constructor(
     public domainApi: DomainApi,

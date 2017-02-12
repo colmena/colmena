@@ -6,10 +6,10 @@ import { UiDataGridService } from '@colmena/colmena-angular-ui'
 import { DomainApi } from '@lb-sdk'
 
 @Injectable()
-export class EventsService extends UiDataGridService {
+export class PagesService extends UiDataGridService {
 
-  public icon = 'icon-event'
-  public title = 'Events'
+  public icon = 'icon-doc'
+  public title = 'Pages'
 
   constructor(
     public domainApi: DomainApi,
@@ -19,24 +19,24 @@ export class EventsService extends UiDataGridService {
   }
 
   getItems() {
-    return this.domainApi.getEvents(this.domain.id, this.getFilters())
+    return this.domainApi.getPages(this.domain.id, this.getFilters())
   }
 
   getItemCount() {
-    return this.domainApi.countEvents(this.domain.id, this.getWhereFilters())
+    return this.domainApi.countPages(this.domain.id, this.getWhereFilters())
   }
 
   upsertItem(item, successCb, errorCb): void {
     if (item.id) {
-      this.domainApi.updateByIdEvents(this.domain.id, item.id, item).subscribe(successCb, errorCb)
+      this.domainApi.updateByIdPages(this.domain.id, item.id, item).subscribe(successCb, errorCb)
     } else {
-      this.domainApi.createEvents(this.domain.id, item).subscribe(successCb, errorCb)
+      this.domainApi.createPages(this.domain.id, item).subscribe(successCb, errorCb)
     }
   }
 
   deleteItem(item, successCb, errorCb) {
     this.domainApi
-      .deleteEvents(item.id)
+      .deletePages(item.id)
       .subscribe(
         (success) => successCb(success),
         (error) => errorCb(error),
@@ -46,7 +46,6 @@ export class EventsService extends UiDataGridService {
   public tableColumns() {
     return [
       { field: 'name', label: 'Name', action: 'view' },
-      { field: 'location', label: 'Location' },
     ]
   }
 
@@ -65,28 +64,12 @@ export class EventsService extends UiDataGridService {
       validation: Validators.compose([ Validators.required ]),
     },
   }, {
-    key: 'description',
+    key: 'content',
     type: 'textarea',
     templateOptions: {
       type: 'text',
-      label: 'Description',
-      placeholder: 'Description'
-    },
-  }, {
-    key: 'date',
-    type: 'input',
-    templateOptions: {
-      type: 'date',
-      label: 'Date',
-      placeholder: 'Date'
-    },
-  }, {
-    key: 'location',
-    type: 'input',
-    templateOptions: {
-      type: 'text',
-      label: 'Location',
-      placeholder: 'Location'
+      label: 'Content',
+      placeholder: 'Content'
     },
   } ];
 
