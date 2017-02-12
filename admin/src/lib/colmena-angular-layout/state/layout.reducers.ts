@@ -6,7 +6,7 @@ import { Action, ActionReducer } from '@ngrx/store'
 const initialState: any = {
   headerNav: [],
   footerLeft: 'Colmena CMS',
-  footerRight: `angular@${VERSION.full}`,
+  footerRight: `Angular ${VERSION.full}`,
   sidebarNav: [],
 }
 
