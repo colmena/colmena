@@ -2,6 +2,8 @@ import { sortBy } from 'lodash'
 import { Action, ActionReducer } from '@ngrx/store'
 
 const initialState: any = {
+  activeDomain: null,
+  development: false,
   domains: [],
   settings: {},
   contentDashboard: [],
@@ -11,10 +13,17 @@ const initialState: any = {
 export const app: ActionReducer<any> = (state = initialState, action: Action) => {
   switch (action.type) {
 
-    case 'APP_ADD_DOMAIN':
+    case 'APP_DEVELOPMENT_ENABLE':
+      return Object.assign({}, state, { development: true })
+
+    case 'APP_DOMAIN_ADD':
       return Object.assign({}, state, { domains: [ ...state.domains, action.payload] })
 
-    case 'APP_ADD_SETTING':
+    case 'APP_DOMAIN_SELECT':
+    case 'APP_DOMAIN_SET':
+      return Object.assign({}, state, { activeDomain: action.payload })
+
+    case 'APP_SETTING_ADD':
       const settings = state.settings
       settings[action.payload.key] = action.payload.value
 

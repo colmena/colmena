@@ -1,20 +1,20 @@
 import { Action } from '@ngrx/store'
 
 export const ActionTypes = {
-  APP_ADD_DOMAIN:           'APP_ADD_DOMAIN',
-  APP_ADD_SETTING:          'APP_ADD_SETTING',
+  APP_DOMAIN_ADD:           'APP_DOMAIN_ADD',
+  APP_SETTING_ADD:          'APP_SETTING_ADD',
   APP_REDIRECT_DASHBOARD:   'APP_REDIRECT_DASHBOARD',
   APP_REDIRECT_LOGIN:       'APP_REDIRECT_LOGIN',
   APP_REDIRECT_ROUTER:      'APP_REDIRECT_ROUTER',
 }
 
 export class AppAddDomainAction implements Action {
-  type = ActionTypes.APP_ADD_DOMAIN
+  type = ActionTypes.APP_DOMAIN_ADD
   constructor() { }
 }
 
 export class AppAddSettingAction implements Action {
-  type = ActionTypes.APP_ADD_SETTING
+  type = ActionTypes.APP_SETTING_ADD
   constructor() { }
 }
 
