@@ -3,11 +3,24 @@
   "description": "Manage System Users",
   "base": "User",
   "idInjection": true,
-  "allowEternalTokens": true,
   "options": {
     "realmRequired": true,
     "realmDelimiter": ":",
     "validateUpsert": true
+  },
+  "allowEternalTokens": true,
+  "mixins": {
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "modified",
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    },
+    "ReadOnly": {
+      "created": true,
+      "modified": true
+    }
   },
   "properties": {
     "id": {
@@ -36,19 +49,6 @@
       "required": true
     }
   },
-  "mixins": {
-    "TimeStamp": {
-      "createdAt": "created",
-      "updatedAt": "modified",
-      "required": false,
-      "validateUpsert": true,
-      "silenceWarnings": false
-    },
-    "ReadOnly": {
-      "created": true,
-      "modified": true
-    }
-  },
   "validations": [],
   "relations": {
     "accessTokens": {
@@ -62,8 +62,8 @@
     "roles": {
       "type": "hasMany",
       "model": "Role",
-      "through": "RoleMapping",
-      "foreignKey": "principalId"
+      "foreignKey": "principalId",
+      "through": "RoleMapping"
     }
   },
   "acls": [

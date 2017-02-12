@@ -58,5 +58,9 @@
   "Setting": {
     "dataSource": "db",
     "public": true
+  },
+  "Page": {
+    "dataSource": "db",
+    "public": true
   }
 }

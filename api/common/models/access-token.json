@@ -1,11 +1,18 @@
 {
   "name": "accessToken",
+  "description": "Token based authentication and access control.",
   "plural": "accessTokens",
   "base": "AccessToken",
   "strict": true,
   "validateUpsert": true,
   "allowEternalTTL": true,
-  "description": "Token based authentication and access control.",
+  "mixins": {
+    "Paginate": {
+      "config": {
+        "limit": "1000"
+      }
+    }
+  },
   "properties": {
     "id": {
       "type": "String",
@@ -21,18 +28,13 @@
       "foreignKey": "userId"
     }
   },
-  "acls": [{
-    "accessType": "*",
-    "principalType": "ROLE",
-    "principalId": "admin",
-    "permission": "ALLOW"
-  }],
-  "methods": [],
-  "mixins": {
-    "Paginate": {
-      "config": {
-        "limit": "1000"
-      }
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
     }
-  }
+  ],
+  "methods": {}
 }

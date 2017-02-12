@@ -1,5 +1,5 @@
 {
-  "name": "Event",
+  "name": "Page",
   "description": "Content model for managing Events in a Domain",
   "base": "BaseModel",
   "idInjection": true,
@@ -15,14 +15,11 @@
       "type": "String"
     },
     "name": {
-      "type": "String",
+      "type": "string",
       "required": true
     },
-    "date": {
-      "type": "Date"
-    },
-    "location": {
-      "type": "String"
+    "content": {
+      "type": "string"
     }
   },
   "validations": [],

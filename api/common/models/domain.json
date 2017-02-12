@@ -23,6 +23,14 @@
       "type": "hasMany",
       "model": "Event"
     },
+    "pages": {
+      "type": "hasMany",
+      "model": "Page"
+    },
+    "posts": {
+      "type": "hasMany",
+      "model": "Post"
+    },
     "products": {
       "type": "hasMany",
       "model": "Product"
@@ -30,10 +38,6 @@
     "users": {
       "type": "hasMany",
       "model": "user"
-    },
-    "posts": {
-      "type": "hasMany",
-      "model": "Post"
     }
   },
   "acls": [],
