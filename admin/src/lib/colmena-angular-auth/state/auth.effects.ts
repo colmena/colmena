@@ -18,7 +18,10 @@ export class AuthEffects {
     .do(action => {
       this.userApi.login(action.payload, 'user', true)
         .subscribe(
-          (success) => this.store.dispatch(new auth.AuthLoginSuccessAction(success)),
+          (success) => {
+            this.store.dispatch({ type: 'AUTH_GET_USER_ROLES', payload: success })
+            this.store.dispatch(new auth.AuthLoginSuccessAction(success))
+          },
           (error) => this.store.dispatch(new auth.AuthLoginErrorAction(error)),
         )
     })
@@ -94,6 +97,19 @@ export class AuthEffects {
       window.localStorage.removeItem('token')
       this.ui.toastSuccess('Log out successful', 'You are logged out')
       return this.store.dispatch({ type: 'APP_REDIRECT_ROUTER' })
+    })
+
+  @Effect({ dispatch: false })
+  getUserInfo$ = this.actions$
+    .ofType('AUTH_GET_USER_ROLES')
+    .do(action => {
+      console.log('AUTH_GET_USER_ROLES', action.payload)
+      this.userApi.info(action.payload.userId)
+        .subscribe(res => {
+          console.log('set roles')
+          window.localStorage.setItem('roles', JSON.stringify(res.roles))
+          this.store.dispatch({ type: 'AUTH_SET_ROLES', payload: res.roles})
+        })
     })
 
   constructor(
