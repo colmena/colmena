@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core'
+import { Observable } from 'rxjs/Observable'
+
+import 'rxjs/add/observable/of'
 
 @Injectable()
 export class UiDataGridService {
-
-  private _api
-
-  set api(api) {
-    this._api = api
-  }
 
   private _columns = []
 
@@ -30,9 +27,6 @@ export class UiDataGridService {
     return this._sorting
   }
 
-
-  private _items = []
-
   private _filters: any = {
     where: {},
     limit: 20,
@@ -43,12 +37,20 @@ export class UiDataGridService {
   private _page = 1
 
 
-  getItems() {
-    return this._api.find(this._filters)
+  public getFilters() {
+    return this._filters
   }
 
-  getTotalItems() {
-    return this._api.count(this._filters.where)
+  public getWhereFilters() {
+    return this._filters.where
+  }
+
+  getItems() {
+    return Observable.of([])
+  }
+
+  getItemCount() {
+    return Observable.of([])
   }
 
   get currentPage() {

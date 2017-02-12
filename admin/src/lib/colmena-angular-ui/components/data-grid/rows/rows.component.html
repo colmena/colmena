@@ -17,7 +17,13 @@
   <tbody>
   <tr *ngFor="let item of items">
     <td *ngFor="let column of columns">
-      {{item[column.field]}}
+
+      <span *ngIf="!column.action">{{item[column.field]}}</span>
+      <span *ngIf="column.action">
+        <a href="#" (click)="clickItem($event, column.action, item)">
+          {{item[column.field]}}
+        </a>
+      </span>
     </td>
     <td>
       <ui-item-view-buttons [item]="item" (action)="action.emit($event)"></ui-item-view-buttons>

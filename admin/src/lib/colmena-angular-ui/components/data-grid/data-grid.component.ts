@@ -17,7 +17,7 @@ export class UiDataGridComponent implements OnInit {
   public items: any[]
 
   public totalItems
-  public currentPage: any = {}
+  public currentPage: any = 1
 
   public columns = []
   public columnSorting = {}
@@ -30,7 +30,7 @@ export class UiDataGridComponent implements OnInit {
     this.service.getItems()
       .subscribe(res => this.items = res)
 
-    this.service.getTotalItems()
+    this.service.getItemCount()
       .subscribe(res => this.totalItems = res.count)
   }
 
@@ -87,6 +87,9 @@ export class UiDataGridComponent implements OnInit {
         break
       case 'search':
         this.searchAction(event.payload)
+        break
+      case 'refresh':
+        this.refreshData()
         break
       default:
         this.action.emit(event)

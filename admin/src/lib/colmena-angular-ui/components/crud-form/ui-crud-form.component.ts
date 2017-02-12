@@ -1,41 +1,40 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core'
+import { Component, EventEmitter, Input, Output } from '@angular/core'
+import { FormGroup } from '@angular/forms'
 
 @Component({
   selector: 'ui-crud-form',
   template: `
-    <div class="card">
-      <form (submit)="submit">
+    <form class="formly" role="form" novalidate [formGroup]="form" (ngSubmit)="this.action.emit({ action: 'save', item: item })">
+      <div class="card">
         <div class="card-header">
-          <i class="{{service.icon}}"></i>
-          <span *ngIf="service.item.id">Edit</span>
-          <span *ngIf="!service.item.id">Add</span>
+          <i [class]="config.icon"></i>
+          <span *ngIf="!config.title && item.id">Edit</span>
+          <span *ngIf="!config.title && !item.id">Add</span>
+          <span *ngIf="config.title">{{config.title}}</span>
         </div>
         <div class="card-block">
-          <div *ngFor="let field of service.formConfig.fields" class="form-group">
-            <label>{{field.label}}</label>
-            <input type="{{field.type}}"
-                   id="{{field.name}}"
-                   class="form-control"
-                   name="{{field.name}}"
-                   [(ngModel)]="service.item[field.name]"
-                   placeholder="{{field.placeholder}}"/>
-          </div>
+          <formly-form [model]="item" [fields]="config.fields" [form]="form"></formly-form>
         </div>
         <div class="card-footer">
-          <div class="float-xs-right">
-            <span *ngIf="service.item.id">
-              <button type="submit" class="btn btn-sm btn-outline-success">Update</button>
-            </span>
-            <span *ngIf="!service.item.id">
-              <button type="submit" class="btn btn-sm btn-outline-success">Add</button>
-            </span>
-          </div>
+          <button type="submit" class="btn btn-primary">
+            Save
+          </button>
+          <button *ngIf="config.showCancel" type="button" class="btn btn-secondary" (click)="action.emit({ action: 'cancel' })">
+            Cancel
+          </button>
         </div>
-      </form>
-    </div>
-`
+      </div>
+    </form>
+  `,
+  styles: [`
+    .card {
+      margin-bottom: 0px;
+    }
+  `]
 })
 export class UiCrudFormComponent {
-  @Input() service
-  @Output() submit = new EventEmitter()
+  form: FormGroup = new FormGroup({})
+  @Input() config
+  @Input() item
+  @Output() action = new EventEmitter()
 }

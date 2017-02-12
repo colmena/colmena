@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-xs-3">
-    <select class="form-control" [(ngModel)]="limit" (change)="setLimit()">
-      <option *ngFor="let limit of limits" [value]=limit>{{limit}}</option>
-    </select>
+    <button class="btn btn btn-outline-primary" type="button" (click)="refresh($event)">
+      <i class="icon-refresh"></i>
+    </button>
   </div>
-  
+
   <div class="col-xs-6">
     <div class="input-group">
       <input class="form-control form-control" #search
@@ -18,7 +18,7 @@
       </span>
     </div>
   </div>
-  
+
   <div class="col-xs-3">
     <button class="btn btn-outline-success" type="button" (click)="add()">
       <i class='icon-plus'></i>

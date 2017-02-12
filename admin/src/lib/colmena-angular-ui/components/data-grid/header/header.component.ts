@@ -33,6 +33,10 @@ export class HeaderComponent {
     this.action.emit({ action: 'toggleView' })
   }
 
+  refresh() {
+    this.action.emit({ action: 'refresh' })
+  }
+
   setLimit() {
     this.action.emit({ action: 'limit', payload: this.limit })
   }

@@ -1,12 +1,20 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-import { UiModalComponent } from './modal.component'
 import { ModalModule } from 'ng2-bootstrap/modal'
 
+import { UiModalComponent } from './modal.component'
+import { UiModalFormComponent  } from './modal-form.component'
+
 @NgModule({
-  declarations: [ UiModalComponent ],
-  exports: [ UiModalComponent ],
+  declarations: [
+    UiModalComponent,
+    UiModalFormComponent,
+  ],
+  exports: [
+    UiModalComponent,
+    UiModalFormComponent,
+  ],
   imports: [
     CommonModule,
     ModalModule.forRoot()
