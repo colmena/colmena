@@ -1,6 +1,9 @@
 db:
   url: false
 
+storage:
+  path: './storage'
+
 settings:
   registrationEnabled: true
   multiDomain: true

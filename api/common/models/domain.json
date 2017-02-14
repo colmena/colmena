@@ -23,6 +23,11 @@
       "type": "hasMany",
       "model": "Event"
     },
+    "files": {
+      "type": "hasMany",
+      "model": "File",
+      "foreignKey": "container"
+    },
     "pages": {
       "type": "hasMany",
       "model": "Page"

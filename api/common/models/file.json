@@ -1,5 +1,5 @@
 {
-  "name": "Page",
+  "name": "File",
   "description": "Content model for managing Events in a Domain",
   "base": "BaseModel",
   "idInjection": true,
@@ -8,27 +8,26 @@
   },
   "properties": {
     "id": {
-      "type": "String",
-      "required": true
-    },
-    "domainId": {
-      "type": "String"
+      "type": "string",
+      "id": true
     },
     "name": {
-      "type": "string",
-      "required": true
-    },
-    "content": {
       "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "created": {
+      "type": "Date",
+      "defaultFn": "now"
+    },
+    "modified": {
+      "type": "Date",
+      "defaultFn": "now"
     }
   },
   "validations": [],
-  "relations": {
-    "domain": {
-      "type": "belongsTo",
-      "model": "Domain"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

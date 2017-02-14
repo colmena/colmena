@@ -1,0 +1,14 @@
+{
+  "name": "Container",
+  "description": "Model for managing Containers for storing Files in a Domain",
+  "base": "Model",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
