@@ -27,7 +27,7 @@ Mark your choice with an "x" (eg. [x], NOT [*]).
 
 
 
-### Additional information (Node.js version, LoopBack version, etc)
+### Additional information (OS, Node.js version, etc)
 
 
 <!--
