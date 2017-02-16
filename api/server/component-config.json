@@ -1,4 +1,7 @@
 {
+  "loopback-component-model-extender": {
+    "basePath": ""
+  },
   "loopback-component-fixtures": {
     "environments": [
       "development"
