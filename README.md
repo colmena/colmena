@@ -45,10 +45,14 @@ globally:
 
 First clone the repository to get the project files:
 
-    $ git clone git@github.com:beeman/loopback-angular-admin.git colmena-cms
+    $ git clone https://github.com/colmena/colmena-cms
     $ cd colmena-cms
-    $ git checkout -b colmena-cms origin/colmena-cms
-    $ git branch -d master
+
+### Top-level directory
+
+From inside the project dir (`colmena-cms`) run `npm install`:
+
+    $ npm install
 
 ### API
 
@@ -70,11 +74,11 @@ Currently there is now way to build the project, it can only be run in developme
 
 ### Running in development mode
 
-From inside the project dir (`colmena-cms`) run `nps dev`:
+From inside the project dir (`colmena-cms`) run `INITDB=1 nps dev`:
 
-    $ nps dev
+    $ INITDB=1 nps dev
 
-This will start the API and the Admin in the same terminal.
+This will start the API and the Admin in the same terminal, and by using `INITDB=1` the sample data will be loaded.
 
 - The API listens on [http://0.0.0.0:3000](http://0.0.0.0:3000).
 - The Admin listens on [http://0.0.0.0:9000](http://0.0.0.0:9000).
