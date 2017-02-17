@@ -21,11 +21,15 @@ export class DevModule {
 
   constructor(private store: Store<any>) {
     this.dispatchLinks({ weight: 140, label: 'Development', icon: 'icon-wrench', link: [ '/', 'development' ] })
+    this.dispatchIcons({ label: 'Development', type: 'danger', icon: 'icon-wrench', link: [ '/', 'development' ] })
   }
 
   dispatchLinks(links) {
     this.store.dispatch({ type: 'LAYOUT_HEADER_NAV', payload: links })
     this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload: links })
+  }
+
+  dispatchIcons(links) {
     this.store.dispatch({ type: 'APP_SYSTEM_DASHBOARD', payload: links })
   }
 

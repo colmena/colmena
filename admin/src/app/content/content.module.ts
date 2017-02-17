@@ -55,10 +55,18 @@ export class ContentModule {
     this.dispatchLinks({ weight: 20, label: 'Pages', icon: 'icon-doc', link: [ '/', 'content', 'pages' ] })
     this.dispatchLinks({ weight: 30, label: 'Posts', icon: 'icon-note', link: [ '/', 'content', 'posts' ] })
     this.dispatchLinks({ weight: 40, label: 'Products', icon: 'icon-basket', link: [ '/', 'content', 'products' ] })
+
+    this.dispatchIcons({ count: '∞', label: 'Events', type: 'info', icon: 'icon-event', link: [ '/', 'content', 'events' ] })
+    this.dispatchIcons({ count: '∞', label: 'Pages', type: 'success', icon: 'icon-doc', link: [ '/', 'content', 'pages' ] })
+    this.dispatchIcons({ count: '∞', label: 'Posts', type: 'warning', icon: 'icon-note', link: [ '/', 'content', 'posts' ] })
+    this.dispatchIcons({ count: '∞', label: 'Products', type: 'danger', icon: 'icon-basket', link: [ '/', 'content', 'products' ] })
   }
 
   dispatchLinks(links) {
     this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload: links})
+  }
+
+  dispatchIcons(links) {
     this.store.dispatch({ type: 'APP_CONTENT_DASHBOARD', payload: links})
   }
 }

@@ -13,6 +13,7 @@ import { UiDataGridModule } from './components/data-grid/data-grid.module'
 import { UiModalModule } from './components/modal/modal.module'
 import { UiTagModule } from './components/tag/tag.module'
 
+import { UiDashboardIconComponent } from './components/dashboard-icon/dashboard-icon.component'
 import { UiFormComponent } from './components/form/ui-form.component'
 import { UiLogoComponent } from './components/logo/logo.component'
 import { UiMessageComponent } from './components/message/message.component'
@@ -39,6 +40,7 @@ const modules = [
  * @type { Array }
  */
 const components = [
+  UiDashboardIconComponent,
   UiFormComponent,
   UiLogoComponent,
   UiMessageComponent,

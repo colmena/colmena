@@ -5,12 +5,14 @@ import { Store } from '@ngrx/store'
   selector: 'app-system-dashboard',
   template: `
     <div class="row">
-      <div class="col-md-3" *ngFor="let link of links">
-        <ui-card [routerLink]="link.link">
-          <ui-card-header>
-            <h4> <i class="{{link.icon}}"></i> &nbsp; {{link.label}} </h4>
-          </ui-card-header>
-        </ui-card>
+      <div class="col-md-3" *ngFor="let widget of widgets">
+        <ui-dashboard-icon
+          [routerLink]="widget.link"
+          [count]="widget.count"
+          [icon]="widget.icon"
+          [label]="widget.label"
+          [type]="widget.type">
+        </ui-dashboard-icon>
       </div>
     </div>
   `,
@@ -25,13 +27,13 @@ import { Store } from '@ngrx/store'
 })
 export class SystemDashboardComponent {
 
-  public links = []
+  public widgets = []
 
   constructor(
     private store: Store<any>,
   ) {
     this.store
       .select('app')
-      .subscribe((res: any) => this.links = res.systemDashboard)
+      .subscribe((res: any) => this.widgets = res.systemDashboard)
   }
 }
