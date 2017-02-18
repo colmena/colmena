@@ -1,5 +1,6 @@
 'use strict'
 const config = require('config')
+const Promise = require('bluebird')
 
 module.exports = function (app, cb) {
 
@@ -9,13 +10,48 @@ module.exports = function (app, cb) {
     return cb()
   }
 
-  return app.models.Fixtures
-    .setupFixtures((err, res) => {
+  const Container = app.models.Container
+  const Domain = app.models.Domain
+  const Fixtures = app.models.Fixtures
+
+  function setupFixtures() {
+    return new Promise((resolve, reject) => Fixtures.setupFixtures((err, res) => {
       if (err) {
-        return cb(err)
+        return reject(err)
       }
-      console.log('System init db: loaded sample data: ' + res)
-      return cb()
-    })
+      return resolve(res)
+    }));
+  }
+
+  function teardownFixtures() {
+    return new Promise((resolve, reject) => Fixtures.teardownFixtures((err, res) => {
+      if (err) {
+        return reject(err)
+      }
+      return resolve(res)
+    }));
+  }
+
+  function removeContainer() {
+    return Container.destroy('default')
+  }
+
+  function importImages() {
+    return Domain.findById('default')
+      .then(res => Promise.all([
+        res.importFileByUrl('http://images.freeimages.com/images/previews/a4d/pencils-texture-1150153.jpg', 'pencils.jpg'),
+        res.importFileByUrl('http://images.freeimages.com/images/previews/496/dj-night-1-1150471.jpg', 'dj-night.jpg'),
+      ])
+    )
+  }
+
+  return Promise.resolve()
+    .then(() => removeContainer())
+    .then(() => teardownFixtures())
+    .then(() => setupFixtures())
+    .then(() => importImages())
+    .then(() => console.log('System init db: loaded sample data.'))
+    .then(() => cb())
+    .catch(err => cb(err))
 
 }
