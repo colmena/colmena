@@ -20,9 +20,31 @@
   },
   "main": "server/server.js",
   "dependencies": {
-    "@colmena/colmena-loopback": "0.2.1",
+    "@colmena/colmena-component-explorer-style": "1.0.2",
+    "bluebird": "^3.4.7",
+    "compression": "1.6.2",
+    "config": "^1.24.0",
+    "cors": "2.8.1",
+    "faker": "3.1.0",
+    "helmet": "3.4.0",
+    "js-yaml": "^3.7.0",
+    "lodash": "4.17.4",
+    "loopback": "3.2.1",
+    "loopback-boot": "2.23.0",
+    "loopback-component-explorer": "4.1.0",
+    "loopback-component-fixtures": "1.1.0",
     "loopback-component-model-extender": "0.1.3",
-    "loopback-component-storage": "3.0.1"
+    "loopback-component-ping": "1.0.1",
+    "loopback-component-storage": "3.0.1",
+    "loopback-component-templates": "1.1.9",
+    "loopback-connector-mongodb": "3.0.1",
+    "loopback-datasource-juggler": "3.2.0",
+    "loopback-ds-readonly-mixin": "1.0.1",
+    "loopback-ds-timestamp-mixin": "3.4.0",
+    "nsp": "2.6.2",
+    "p-s": "3.0.3",
+    "serve-favicon": "2.3.2",
+    "strong-error-handler": "1.2.1"
   },
   "devDependencies": {
     "nodemon": "1.11.0"
