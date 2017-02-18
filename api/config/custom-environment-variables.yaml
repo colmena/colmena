@@ -2,7 +2,7 @@ api:
   baseUrl: API_BASE_URL
   version: API_VERSION
 
-db:
+mongodb:
   url: MONGODB_URL
 
 storage:
