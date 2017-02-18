@@ -10,44 +10,11 @@ export class PagesService extends UiDataGridService {
 
   public icon = 'icon-doc'
   public title = 'Pages'
+  public files: any[] = []
 
-  constructor(
-    public domainApi: DomainApi,
-  ) {
-    super()
-    this.columns = this.tableColumns()
-  }
-
-  getItems() {
-    return this.domainApi.getPages(this.domain.id, this.getFilters())
-  }
-
-  getItemCount() {
-    return this.domainApi.countPages(this.domain.id, this.getWhereFilters())
-  }
-
-  upsertItem(item, successCb, errorCb): void {
-    if (item.id) {
-      this.domainApi.updateByIdPages(this.domain.id, item.id, item).subscribe(successCb, errorCb)
-    } else {
-      this.domainApi.createPages(this.domain.id, item).subscribe(successCb, errorCb)
-    }
-  }
-
-  deleteItem(item, successCb, errorCb) {
-    this.domainApi
-      .deletePages(item.id)
-      .subscribe(
-        (success) => successCb(success),
-        (error) => errorCb(error),
-      )
-  }
-
-  public tableColumns() {
-    return [
-      { field: 'name', label: 'Name', action: 'view' },
-    ]
-  }
+  public tableColumns = [
+    { field: 'name', label: 'Name', action: 'view' },
+  ]
 
   public formFields = [{
     key: 'name',
@@ -71,6 +38,46 @@ export class PagesService extends UiDataGridService {
       label: 'Content',
       placeholder: 'Content'
     },
+  }, {
+    key: 'fileId',
+    type: 'select',
+    templateOptions: {
+      type: 'text',
+      label: 'File',
+      options: this.files,
+    },
   } ];
+
+  constructor(
+    public domainApi: DomainApi,
+  ) {
+    super()
+    this.columns = this.tableColumns
+  }
+
+  getItems() {
+    return this.domainApi.getPages(this.domain.id, this.getFilters({ include: ['file'] }))
+  }
+
+  getItemCount() {
+    return this.domainApi.countPages(this.domain.id, this.getWhereFilters())
+  }
+
+  upsertItem(item, successCb, errorCb): void {
+    if (item.id) {
+      this.domainApi.updateByIdPages(this.domain.id, item.id, item).subscribe(successCb, errorCb)
+    } else {
+      this.domainApi.createPages(this.domain.id, item).subscribe(successCb, errorCb)
+    }
+  }
+
+  deleteItem(item, successCb, errorCb) {
+    this.domainApi
+      .deletePages(item.id)
+      .subscribe(
+        (success) => successCb(success),
+        (error) => errorCb(error),
+      )
+  }
 
 }

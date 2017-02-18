@@ -10,44 +10,11 @@ export class PostsService extends UiDataGridService {
 
   public icon = 'icon-note'
   public title = 'Posts'
+  public files: any[] = []
 
-  constructor(
-    public domainApi: DomainApi,
-  ) {
-    super()
-    this.columns = this.tableColumns()
-  }
-
-  getItems() {
-    return this.domainApi.getPosts(this.domain.id, this.getFilters())
-  }
-
-  getItemCount() {
-    return this.domainApi.countPosts(this.domain.id, this.getWhereFilters())
-  }
-
-  upsertItem(item, successCb, errorCb): void {
-    if (item.id) {
-      this.domainApi.updateByIdPosts(this.domain.id, item.id, item).subscribe(successCb, errorCb)
-    } else {
-      this.domainApi.createPosts(this.domain.id, item).subscribe(successCb, errorCb)
-    }
-  }
-
-  deleteItem(item, successCb, errorCb) {
-    this.domainApi
-      .deletePosts(item.id)
-      .subscribe(
-        (success) => successCb(success),
-        (error) => errorCb(error),
-      )
-  }
-
-  public tableColumns() {
-    return [
-      { field: 'title', label: 'Title', action: 'view' },
-    ]
-  }
+  public tableColumns = [
+    { field: 'title', label: 'Title', action: 'view' },
+  ]
 
   public formFields = [{
     key: 'title',
@@ -71,6 +38,46 @@ export class PostsService extends UiDataGridService {
       label: 'Content',
       placeholder: 'Content'
     },
+  }, {
+    key: 'fileId',
+    type: 'select',
+    templateOptions: {
+      type: 'text',
+      label: 'File',
+      options: this.files,
+    },
   } ];
+
+  constructor(
+    public domainApi: DomainApi,
+  ) {
+    super()
+    this.columns = this.tableColumns
+  }
+
+  getItems() {
+    return this.domainApi.getPosts(this.domain.id, this.getFilters({ include: ['file'] }))
+  }
+
+  getItemCount() {
+    return this.domainApi.countPosts(this.domain.id, this.getWhereFilters())
+  }
+
+  upsertItem(item, successCb, errorCb): void {
+    if (item.id) {
+      this.domainApi.updateByIdPosts(this.domain.id, item.id, item).subscribe(successCb, errorCb)
+    } else {
+      this.domainApi.createPosts(this.domain.id, item).subscribe(successCb, errorCb)
+    }
+  }
+
+  deleteItem(item, successCb, errorCb) {
+    this.domainApi
+      .deletePosts(item.id)
+      .subscribe(
+        (success) => successCb(success),
+        (error) => errorCb(error),
+      )
+  }
 
 }

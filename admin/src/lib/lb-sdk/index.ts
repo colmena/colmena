@@ -55,6 +55,8 @@ import { PostApi } from './services/custom/Post';
 import { ProductApi } from './services/custom/Product';
 import { SettingApi } from './services/custom/Setting';
 import { PageApi } from './services/custom/Page';
+import { ContainerApi } from './services/custom/Container';
+import { FileApi } from './services/custom/File';
 import { PingApi } from './services/custom/Ping';
 /**
 * @module SDKBrowserModule
@@ -94,6 +96,8 @@ export class SDKBrowserModule {
         ProductApi,
         SettingApi,
         PageApi,
+        ContainerApi,
+        FileApi,
         PingApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },

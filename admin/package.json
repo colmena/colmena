@@ -21,6 +21,7 @@
   "angular-cli": {},
   "devDependencies": {
     "@angular/cli": "1.0.0-beta.31",
-    "@colmena/colmena-angular": "0.2.5"
+    "@colmena/colmena-angular": "1.0.0",
+    "ng2-file-upload": "1.2.0"
   }
 }

@@ -46,8 +46,8 @@ export class UiDataGridService {
   private _page = 1
 
 
-  public getFilters() {
-    return this._filters
+  public getFilters(filters = {}) {
+    return Object.assign({}, this._filters, filters)
   }
 
   public getWhereFilters() {

@@ -62,6 +62,8 @@ export class PagesComponent {
     private route: ActivatedRoute,
   ) {
     this.service.domain = this.route.snapshot.data['domain']
+    this.service.domainApi.getFiles(this.service.domain.id)
+      .subscribe(files => files.map(file => this.service.files.push({ value: file.id, label: file.name })))
     this.config = {
       icon: this.service.icon,
       showCancel: true,

@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 
 import { FormlyModule, FormlyBootstrapModule } from 'ng-formly'
-
+import { FileUploadModule } from 'ng2-file-upload'
 import { ToastyService, ToastyModule } from 'ng2-toasty'
 
 import { UiButtonsModule } from './components/buttons/buttons.module'
@@ -18,7 +18,7 @@ import { UiFormComponent } from './components/form/ui-form.component'
 import { UiLogoComponent } from './components/logo/logo.component'
 import { UiMessageComponent } from './components/message/message.component'
 import { UiTableComponent } from './components/table/ui-table.component'
-
+import { UiUploaderComponent } from './components/uploader/ui-uploader.component'
 
 import { UiService } from './services/ui.service'
 import { UiTemplatesComponent } from './components/templates/templates.component'
@@ -33,6 +33,7 @@ const modules = [
   UiDataGridModule,
   UiModalModule,
   UiTagModule,
+  FileUploadModule,
 ]
 
 /**
@@ -46,6 +47,7 @@ const components = [
   UiMessageComponent,
   UiTableComponent,
   UiTemplatesComponent,
+  UiUploaderComponent,
 ]
 
 /**

@@ -9,6 +9,7 @@ export class HeaderComponent {
 
   @ViewChild('search') searchBox
 
+  @Input() public config
   @Input() public columns
   @Input() public limit
   @Input() public view

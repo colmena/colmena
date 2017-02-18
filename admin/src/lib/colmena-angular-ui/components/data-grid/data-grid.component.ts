@@ -9,6 +9,8 @@ export class UiDataGridComponent implements OnInit {
   @Input() view = 'rows'
   @Input() limit = 20
 
+  @Input() config: any = {}
+
   @Input() iconTemplate: TemplateRef<any>
 
   @Input() service: any
@@ -37,6 +39,14 @@ export class UiDataGridComponent implements OnInit {
   ngOnInit() {
     this.service.limit = this.limit
     this.refreshData()
+
+    if (!this.config.header) {
+      this.config.header = {
+        buttons: [
+          { action: 'add', icon: 'icon-plus', classNames: 'btn btn-outline-success' },
+        ]
+      }
+    }
   }
 
   searchAction(query) {

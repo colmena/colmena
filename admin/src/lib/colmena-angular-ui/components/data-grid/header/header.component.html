@@ -20,9 +20,13 @@
   </div>
 
   <div class="col-xs-3">
-    <button class="btn btn-outline-success" type="button" (click)="add()">
-      <i class='icon-plus'></i>
-    </button>
+    <div class="btn-group">
+      <button type="button"
+              *ngFor="let button of config?.buttons"
+              class="{{button.classNames}}" (click)="action.emit({ action: button.action })">
+        <i class='{{button.icon}}'></i>
+      </button>
+    </div>
 
     <span class="float-xs-right">
       <button class="btn btn btn-outline-primary" type="button" (click)="toggleView()">

@@ -10,45 +10,12 @@ export class EventsService extends UiDataGridService {
 
   public icon = 'icon-event'
   public title = 'Events'
+  public files: any[] = []
 
-  constructor(
-    public domainApi: DomainApi,
-  ) {
-    super()
-    this.columns = this.tableColumns()
-  }
-
-  getItems() {
-    return this.domainApi.getEvents(this.domain.id, this.getFilters())
-  }
-
-  getItemCount() {
-    return this.domainApi.countEvents(this.domain.id, this.getWhereFilters())
-  }
-
-  upsertItem(item, successCb, errorCb): void {
-    if (item.id) {
-      this.domainApi.updateByIdEvents(this.domain.id, item.id, item).subscribe(successCb, errorCb)
-    } else {
-      this.domainApi.createEvents(this.domain.id, item).subscribe(successCb, errorCb)
-    }
-  }
-
-  deleteItem(item, successCb, errorCb) {
-    this.domainApi
-      .deleteEvents(item.id)
-      .subscribe(
-        (success) => successCb(success),
-        (error) => errorCb(error),
-      )
-  }
-
-  public tableColumns() {
-    return [
-      { field: 'name', label: 'Name', action: 'view' },
-      { field: 'location', label: 'Location' },
-    ]
-  }
+  public tableColumns = [
+    { field: 'name', label: 'Name', action: 'view' },
+    { field: 'location', label: 'Location' },
+  ]
 
   public formFields = [{
     key: 'name',
@@ -88,6 +55,45 @@ export class EventsService extends UiDataGridService {
       label: 'Location',
       placeholder: 'Location'
     },
+  }, {
+    key: 'fileId',
+    type: 'select',
+    templateOptions: {
+      type: 'text',
+      label: 'File',
+      options: this.files,
+    },
   } ];
+  constructor(
+    public domainApi: DomainApi,
+  ) {
+    super()
+    this.columns = this.tableColumns
+  }
+
+  getItems() {
+    return this.domainApi.getEvents(this.domain.id, this.getFilters({ include: ['file'] }))
+  }
+
+  getItemCount() {
+    return this.domainApi.countEvents(this.domain.id, this.getWhereFilters())
+  }
+
+  upsertItem(item, successCb, errorCb): void {
+    if (item.id) {
+      this.domainApi.updateByIdEvents(this.domain.id, item.id, item).subscribe(successCb, errorCb)
+    } else {
+      this.domainApi.createEvents(this.domain.id, item).subscribe(successCb, errorCb)
+    }
+  }
+
+  deleteItem(item, successCb, errorCb) {
+    this.domainApi
+      .deleteEvents(item.id)
+      .subscribe(
+        (success) => successCb(success),
+        (error) => errorCb(error),
+      )
+  }
 
 }

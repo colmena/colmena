@@ -4,7 +4,8 @@ import {
   Event,
   Post,
   Product,
-  Page
+  Page,
+  File
 } from '../index';
 
 declare var Object: any;
@@ -18,6 +19,7 @@ export interface DomainInterface {
   posts?: Post[];
   products?: Product[];
   pages?: Page[];
+  files?: File[];
 }
 
 export class Domain implements DomainInterface {
@@ -30,6 +32,7 @@ export class Domain implements DomainInterface {
   posts: Post[];
   products: Product[];
   pages: Page[];
+  files: File[];
   constructor(data?: DomainInterface) {
     Object.assign(this, data);
   }
@@ -103,6 +106,11 @@ export class Domain implements DomainInterface {
           name: 'pages',
           type: 'Page[]',
           model: 'Page'
+        },
+        files: {
+          name: 'files',
+          type: 'File[]',
+          model: 'File'
         },
       }
     }

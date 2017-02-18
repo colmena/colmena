@@ -6,17 +6,20 @@ import { AppSharedModule } from '../app.shared.module'
 import { ContentDashboardComponent } from './content.component'
 
 import { EventsComponent } from './events/events.component'
+import { FilesComponent } from './files/files.component'
 import { PagesComponent } from './pages/pages.component'
 import { PostsComponent } from './posts/posts.component'
 import { ProductsComponent } from './products/products.component'
 
 import { EventsService } from './events/events.service'
+import { FilesService } from './files/files.service'
 import { PagesService } from './pages/pages.service'
 import { PostsService } from './posts/posts.service'
 import { ProductsService } from './products/products.service'
 
 const components = [
   EventsComponent,
+  FilesComponent,
   PagesComponent,
   PostsComponent,
   ProductsComponent,
@@ -24,6 +27,7 @@ const components = [
 
 const providers = [
   EventsService,
+  FilesService,
   PagesService,
   PostsService,
   ProductsService,
@@ -52,12 +56,14 @@ export class ContentModule {
     this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload: { weight: 5, type: 'title', label: 'Content' } })
 
     this.dispatchLinks({ weight: 10, label: 'Events', icon: 'icon-event', link: [ '/', 'content', 'events' ] })
-    this.dispatchLinks({ weight: 20, label: 'Pages', icon: 'icon-doc', link: [ '/', 'content', 'pages' ] })
-    this.dispatchLinks({ weight: 30, label: 'Posts', icon: 'icon-note', link: [ '/', 'content', 'posts' ] })
-    this.dispatchLinks({ weight: 40, label: 'Products', icon: 'icon-basket', link: [ '/', 'content', 'products' ] })
+    this.dispatchLinks({ weight: 20, label: 'Files', icon: 'icon-docs', link: [ '/', 'content', 'files' ] })
+    this.dispatchLinks({ weight: 30, label: 'Pages', icon: 'icon-book-open', link: [ '/', 'content', 'pages' ] })
+    this.dispatchLinks({ weight: 40, label: 'Posts', icon: 'icon-note', link: [ '/', 'content', 'posts' ] })
+    this.dispatchLinks({ weight: 50, label: 'Products', icon: 'icon-basket', link: [ '/', 'content', 'products' ] })
 
     this.dispatchIcons({ count: '∞', label: 'Events', type: 'info', icon: 'icon-event', link: [ '/', 'content', 'events' ] })
-    this.dispatchIcons({ count: '∞', label: 'Pages', type: 'success', icon: 'icon-doc', link: [ '/', 'content', 'pages' ] })
+    this.dispatchIcons({ count: '∞', label: 'Files', type: 'success', icon: 'icon-docs', link: [ '/', 'content', 'files' ] })
+    this.dispatchIcons({ count: '∞', label: 'Pages', type: 'primary', icon: 'icon-book-open', link: [ '/', 'content', 'pages' ] })
     this.dispatchIcons({ count: '∞', label: 'Posts', type: 'warning', icon: 'icon-note', link: [ '/', 'content', 'posts' ] })
     this.dispatchIcons({ count: '∞', label: 'Products', type: 'danger', icon: 'icon-basket', link: [ '/', 'content', 'products' ] })
   }
