@@ -1,3 +1,7 @@
+api:
+  baseUrl: API_BASE_URL
+  version: API_VERSION
+
 db:
   url: MONGODB_URL
 

@@ -38,6 +38,11 @@
       "paths": [
         "${restApiRoot}"
       ]
+    },
+    "./middleware/publish-config.js": {
+      "paths": [
+        "/config.js"
+      ]
     }
   },
   "files": {},
