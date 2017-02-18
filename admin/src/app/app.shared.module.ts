@@ -6,8 +6,6 @@ import { RouterModule } from '@angular/router'
 
 import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
 
-import { FormlyModule, FormlyBootstrapModule } from 'ng-formly'
-
 const modules = [
   BrowserModule,
   FormsModule,
@@ -15,18 +13,14 @@ const modules = [
   HttpModule,
   RouterModule,
 
-  FormlyBootstrapModule,
-
   ColmenaUiModule,
 ]
 
 @NgModule({
   imports: [
     ...modules,
-    FormlyModule.forRoot(),
   ],
   exports: [
-    FormlyModule,
     ...modules,
   ]
 })
