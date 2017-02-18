@@ -46,5 +46,31 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {
+    "importFileByUrl": {
+      "isStatic": false,
+      "accepts": [
+        {
+          "arg": "url",
+          "type": "String",
+          "required": true
+        },
+        {
+          "arg": "fileName",
+          "type": "String",
+          "required": false
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "type": "Object",
+        "root": true
+      },
+      "description": "Import a file by URL",
+      "http": {
+        "path": "/importFileByUrl",
+        "verb": "post"
+      }
+    }
+  }
 }

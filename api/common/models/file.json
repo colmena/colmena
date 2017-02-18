@@ -27,7 +27,24 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "events": {
+      "type": "hasMany",
+      "model": "Event"
+    },
+    "pages": {
+      "type": "hasMany",
+      "model": "Page"
+    },
+    "posts": {
+      "type": "hasMany",
+      "model": "Post"
+    },
+    "products": {
+      "type": "hasMany",
+      "model": "Product"
+    }
+  },
   "acls": [],
   "methods": {}
 }

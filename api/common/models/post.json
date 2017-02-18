@@ -15,6 +15,9 @@
       "type": "String",
       "required": false
     },
+    "fileId": {
+      "type": "String"
+    },
     "title": {
       "type": "String",
       "required": false
@@ -33,6 +36,10 @@
     "domain": {
       "type": "belongsTo",
       "model": "Domain"
+    },
+    "file": {
+      "type": "belongsTo",
+      "model": "File"
     }
   },
   "acls": [],

@@ -28,4 +28,8 @@ module.exports = function(Domain) {
     }
   })
 
+  Domain.prototype.importFileByUrl = function importFileByUrl(url, fileName) {
+    return Domain.app.models.Container.importUrl(url, this.id, fileName)
+  }
+
 }

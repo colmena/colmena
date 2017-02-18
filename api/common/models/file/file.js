@@ -1,9 +1,10 @@
 'use strict';
 
+const config = require('config')
 module.exports = function(File) {
 
   File.prototype.getContainerUrl = function () {
-    return [ File.app.settings.restApiRoot, 'Containers', this.container, 'download', this.name ].join('/');
+    return [ config.get('api.url'), 'Containers', this.container, 'download', this.name ].join('/')
   };
 
   File.observe('loaded', (ctx, next) => {
