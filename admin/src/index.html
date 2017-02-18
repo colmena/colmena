@@ -11,6 +11,10 @@
 
   <base href="/">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="/config.js" charset="utf-8"></script>
+  <script>
+    window.localStorage.setItem('apiConfig', JSON.stringify(window.apiConfig));
+  </script>
   <style>
     .loading {
       height: 100vh;

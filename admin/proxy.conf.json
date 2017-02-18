@@ -1,0 +1,7 @@
+{
+  "/config.js": {
+    "target": "http://0.0.0.0:3000/config.js",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

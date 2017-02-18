@@ -70,19 +70,12 @@ import { HasContentAccess, HasSystemAccess, UserLoggedIn } from './app.guards'
 })
 export class AppModule {
 
-  private defaultConfig = {
-    fullcube: {
-      baseUrl: 'http://localhost:3000',
-      apiVersion: 'api/v1',
-    },
-  }
-
   configureLoopBack() {
-    const fcConfig = JSON.parse(window.localStorage.getItem('fcConfig')) || this.defaultConfig
+    const apiConfig = JSON.parse(window.localStorage.getItem('apiConfig'))
 
-    LoopBackConfig.setBaseURL(fcConfig.fullcube.baseUrl)
-    LoopBackConfig.setApiVersion(fcConfig.fullcube.apiVersion)
-    this.logService.info(`Configure LoopBack: ${fcConfig.fullcube.baseUrl}/${fcConfig.fullcube.apiVersion}`)
+    LoopBackConfig.setBaseURL(apiConfig.baseUrl)
+    LoopBackConfig.setApiVersion(apiConfig.version)
+    this.logService.info(`Configure LoopBack: ${apiConfig.baseUrl}/${apiConfig.version}`)
   }
 
   constructor(
