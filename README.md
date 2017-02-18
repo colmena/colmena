@@ -24,7 +24,7 @@ Colmena CMS is a starter kit for an API with an Admin interface that can be easi
 It is built using a collection of great Open Source projects, including but not limited to:
 
 - [LoopBack](https://loopback.io/) `v2.x` - API server based on Express.
-- [Angular](https://angular.io/) `v2.x` - MVC framework to build web apps.
+- [Angular](https://angular.io/) `v4.x +` - MVC framework to build web apps.
 - [Fireloop](http://fireloop.io/) - Awesome Real-Time integration of Loopback and Angular.
 - [CoreUI](http://coreui.io/) - Amazing Bootstrap Admin Template.
 
@@ -53,15 +53,17 @@ First clone the repository to get the project files:
 From inside the project dir (`colmena-cms`) run `npm install`:
 
     $ npm install
+    
+This command should also trigger running `npm install` in the API and Admin directories using the `npm postinstall` step.
 
-### API
+### API (manual install of dependencies)
 
 From inside the project dir (`colmena-cms`) enter the `api` directory and run `npm install`:
 
     $ cd api
     $ npm install
 
-### Admin
+### Admin (manual install of dependencies)
 
 From inside the project dir (`colmena-cms`) enter the `admin` directory and run `npm install`:
 

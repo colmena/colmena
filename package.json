@@ -6,7 +6,8 @@
   "author": "Bram Borggreve <bram@colmena.io>",
   "url": "https://github.com/colmena/colmena-cms",
   "scripts": {
-    "start": "nps"
+    "start": "nps",
+    "postinstall": "nps install"
   },
   "devDependencies": {
     "all-contributors-cli": "^3.1.1",
