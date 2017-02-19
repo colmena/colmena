@@ -73,7 +73,7 @@ export class PagesService extends UiDataGridService {
 
   deleteItem(item, successCb, errorCb) {
     this.domainApi
-      .deletePages(item.id)
+      .destroyByIdPages(this.domain.id, item.id)
       .subscribe(
         (success) => successCb(success),
         (error) => errorCb(error),

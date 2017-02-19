@@ -96,7 +96,7 @@ export class PagesComponent {
         break
       case 'delete':
         const successCb = () => this.service
-          .deleteItem(event.item.id,
+          .deleteItem(event.item,
             () => this.refresh(),
             (err) => this.uiService.toastError('Error deleting item', err.message))
 

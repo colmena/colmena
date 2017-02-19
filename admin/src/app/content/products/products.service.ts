@@ -36,7 +36,7 @@ export class ProductsService extends UiDataGridService {
 
   deleteItem(item, successCb, errorCb) {
     this.domainApi
-      .deleteProducts(item.id)
+      .destroyByIdProducts(this.domain.id, item.id)
       .subscribe(
         (success) => successCb(success),
         (error) => errorCb(error),

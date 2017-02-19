@@ -89,7 +89,7 @@ export class EventsService extends UiDataGridService {
 
   deleteItem(item, successCb, errorCb) {
     this.domainApi
-      .deleteEvents(item.id)
+      .destroyByIdEvents(this.domain.id, item.id)
       .subscribe(
         (success) => successCb(success),
         (error) => errorCb(error),

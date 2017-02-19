@@ -73,7 +73,7 @@ export class PostsService extends UiDataGridService {
 
   deleteItem(item, successCb, errorCb) {
     this.domainApi
-      .deletePosts(item.id)
+      .destroyByIdPosts(this.domain.id, item.id)
       .subscribe(
         (success) => successCb(success),
         (error) => errorCb(error),
