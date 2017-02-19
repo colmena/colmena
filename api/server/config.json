@@ -19,5 +19,6 @@
     "cors": false,
     "handleErrors": false
   },
-  "legacyExplorer": false
+  "legacyExplorer": false,
+  "logoutSessionsOnSensitiveChanges": true
 }
