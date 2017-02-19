@@ -71,7 +71,6 @@ export class ProductsComponent {
   }
 
   action(event) {
-    console.log('event',event);
     switch (event.action) {
       case 'edit':
         this.item = Object.assign({}, event.item)
@@ -95,7 +94,6 @@ export class ProductsComponent {
         this.save(event.item)
         break
       case 'delete':
-        console.log('delete');
         const successCb = () => this.service
           .deleteItem(event.item,
             () => this.refresh(),
