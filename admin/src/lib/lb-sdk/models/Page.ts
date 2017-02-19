@@ -1,27 +1,32 @@
 /* tslint:disable */
 import {
-  Domain
+  Domain,
+  File
 } from '../index';
 
 declare var Object: any;
 export interface PageInterface {
   id?: number;
   domainId?: string;
+  fileId?: string;
   name: string;
   content?: string;
   created?: Date;
   modified?: Date;
   domain?: Domain;
+  file?: File;
 }
 
 export class Page implements PageInterface {
   id: number;
   domainId: string;
+  fileId: string;
   name: string;
   content: string;
   created: Date;
   modified: Date;
   domain: Domain;
+  file: File;
   constructor(data?: PageInterface) {
     Object.assign(this, data);
   }
@@ -61,6 +66,10 @@ export class Page implements PageInterface {
           name: 'domainId',
           type: 'string'
         },
+        fileId: {
+          name: 'fileId',
+          type: 'string'
+        },
         name: {
           name: 'name',
           type: 'string'
@@ -83,6 +92,11 @@ export class Page implements PageInterface {
           name: 'domain',
           type: 'Domain',
           model: 'Domain'
+        },
+        file: {
+          name: 'file',
+          type: 'File',
+          model: 'File'
         },
       }
     }

@@ -1,4 +1,10 @@
 /* tslint:disable */
+import {
+  Event,
+  Page,
+  Post,
+  Product
+} from '../index';
 
 declare var Object: any;
 export interface FileInterface {
@@ -8,6 +14,10 @@ export interface FileInterface {
   created?: Date;
   modified?: Date;
   container?: string;
+  events?: Event[];
+  pages?: Page[];
+  posts?: Post[];
+  products?: Product[];
 }
 
 export class File implements FileInterface {
@@ -17,6 +27,10 @@ export class File implements FileInterface {
   created: Date;
   modified: Date;
   container: string;
+  events: Event[];
+  pages: Page[];
+  posts: Post[];
+  products: Product[];
   constructor(data?: FileInterface) {
     Object.assign(this, data);
   }
@@ -74,6 +88,26 @@ export class File implements FileInterface {
         },
       },
       relations: {
+        events: {
+          name: 'events',
+          type: 'Event[]',
+          model: 'Event'
+        },
+        pages: {
+          name: 'pages',
+          type: 'Page[]',
+          model: 'Page'
+        },
+        posts: {
+          name: 'posts',
+          type: 'Post[]',
+          model: 'Post'
+        },
+        products: {
+          name: 'products',
+          type: 'Product[]',
+          model: 'Product'
+        },
       }
     }
   }

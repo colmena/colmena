@@ -13,6 +13,7 @@ import { Observable } from 'rxjs/Rx';
 import { Post } from '../../models/Post';
 import { SocketConnection } from '../../sockets/socket.connections';
 import { Domain } from '../../models/Domain';
+import { File } from '../../models/File';
 
 
 /**
@@ -39,7 +40,7 @@ export class PostApi extends BaseLoopBackApi {
   /**
    * Fetches belongsTo relation domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Post id
    *
    * @param {boolean} refresh 
    *
@@ -56,6 +57,36 @@ export class PostApi extends BaseLoopBackApi {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Posts/:id/domain";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (refresh) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Fetches belongsTo relation file.
+   *
+   * @param {any} id Post id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `Post` object.)
+   * </em>
+   */
+  public getFile(id: any, refresh: any = {}): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/Posts/:id/file";
     let _routeParams: any = {
       id: id
     };

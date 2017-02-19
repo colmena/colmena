@@ -1,29 +1,34 @@
 /* tslint:disable */
 import {
-  Domain
+  Domain,
+  File
 } from '../index';
 
 declare var Object: any;
 export interface EventInterface {
   id?: number;
   domainId?: string;
+  fileId?: string;
   name: string;
   date?: Date;
   location?: string;
   created?: Date;
   modified?: Date;
   domain?: Domain;
+  file?: File;
 }
 
 export class Event implements EventInterface {
   id: number;
   domainId: string;
+  fileId: string;
   name: string;
   date: Date;
   location: string;
   created: Date;
   modified: Date;
   domain: Domain;
+  file: File;
   constructor(data?: EventInterface) {
     Object.assign(this, data);
   }
@@ -63,6 +68,10 @@ export class Event implements EventInterface {
           name: 'domainId',
           type: 'string'
         },
+        fileId: {
+          name: 'fileId',
+          type: 'string'
+        },
         name: {
           name: 'name',
           type: 'string'
@@ -89,6 +98,11 @@ export class Event implements EventInterface {
           name: 'domain',
           type: 'Domain',
           model: 'Domain'
+        },
+        file: {
+          name: 'file',
+          type: 'File',
+          model: 'File'
         },
       }
     }

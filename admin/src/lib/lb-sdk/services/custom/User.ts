@@ -38,7 +38,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for accessTokens.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {any} fk Foreign key for accessTokens
    *
@@ -68,7 +68,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for accessTokens.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {any} fk Foreign key for accessTokens
    *
@@ -95,7 +95,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for accessTokens.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {any} fk Foreign key for accessTokens
    *
@@ -131,7 +131,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for roles.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {any} fk Foreign key for roles
    *
@@ -161,7 +161,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for roles.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {any} fk Foreign key for roles
    *
@@ -188,7 +188,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for roles.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {any} fk Foreign key for roles
    *
@@ -224,7 +224,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Add a related item by id for roles.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {any} fk Foreign key for roles
    *
@@ -260,7 +260,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Remove the roles relation to an item by id.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {any} fk Foreign key for roles
    *
@@ -287,7 +287,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Check the existence of roles relation to an item by id.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {any} fk Foreign key for roles
    *
@@ -317,7 +317,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Queries accessTokens of user.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {object} filter 
    *
@@ -347,7 +347,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in accessTokens of this model.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {object} data Request data.
    *
@@ -380,7 +380,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Deletes all accessTokens of this model.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -404,7 +404,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Counts accessTokens of user.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -433,7 +433,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Queries roles of user.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {object} filter 
    *
@@ -463,7 +463,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in roles of this model.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {object} data Request data.
    *
@@ -496,7 +496,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Deletes all roles of this model.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -520,7 +520,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Counts roles of user.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -678,7 +678,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Get the roles for this user.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -705,7 +705,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in accessTokens of this model.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {object} data Request data.
    *
@@ -738,7 +738,7 @@ export class UserApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in roles of this model.
    *
-   * @param {any} id User id
+   * @param {any} id user id
    *
    * @param {object} data Request data.
    *

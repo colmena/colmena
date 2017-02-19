@@ -1,29 +1,34 @@
 /* tslint:disable */
 import {
-  Domain
+  Domain,
+  File
 } from '../index';
 
 declare var Object: any;
 export interface PostInterface {
   id?: number;
   domainId?: string;
+  fileId?: string;
   title?: string;
   content?: string;
   userId?: number;
   created?: Date;
   modified?: Date;
   domain?: Domain;
+  file?: File;
 }
 
 export class Post implements PostInterface {
   id: number;
   domainId: string;
+  fileId: string;
   title: string;
   content: string;
   userId: number;
   created: Date;
   modified: Date;
   domain: Domain;
+  file: File;
   constructor(data?: PostInterface) {
     Object.assign(this, data);
   }
@@ -63,6 +68,10 @@ export class Post implements PostInterface {
           name: 'domainId',
           type: 'string'
         },
+        fileId: {
+          name: 'fileId',
+          type: 'string'
+        },
         title: {
           name: 'title',
           type: 'string'
@@ -89,6 +98,11 @@ export class Post implements PostInterface {
           name: 'domain',
           type: 'Domain',
           model: 'Domain'
+        },
+        file: {
+          name: 'file',
+          type: 'File',
+          model: 'File'
         },
       }
     }

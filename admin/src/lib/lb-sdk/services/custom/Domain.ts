@@ -44,7 +44,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for users.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for users
    *
@@ -74,7 +74,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for users.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for users
    *
@@ -101,7 +101,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for users.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for users
    *
@@ -137,7 +137,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for events.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for events
    *
@@ -167,7 +167,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for events.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for events
    *
@@ -194,7 +194,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for events.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for events
    *
@@ -230,7 +230,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for posts.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for posts
    *
@@ -260,7 +260,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for posts.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for posts
    *
@@ -287,7 +287,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for posts.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for posts
    *
@@ -323,7 +323,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for products.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for products
    *
@@ -353,7 +353,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for products.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for products
    *
@@ -380,7 +380,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for products.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for products
    *
@@ -416,7 +416,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for pages.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for pages
    *
@@ -446,7 +446,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for pages.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for pages
    *
@@ -473,7 +473,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for pages.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for pages
    *
@@ -509,7 +509,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for files.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for files
    *
@@ -539,7 +539,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for files.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for files
    *
@@ -566,7 +566,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for files.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {any} fk Foreign key for files
    *
@@ -602,7 +602,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries users of Domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} filter 
    *
@@ -632,7 +632,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in users of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *
@@ -665,7 +665,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all users of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -689,7 +689,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts users of Domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -718,7 +718,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries events of Domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} filter 
    *
@@ -748,7 +748,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in events of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *
@@ -781,7 +781,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all events of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -805,7 +805,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts events of Domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -834,7 +834,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries posts of Domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} filter 
    *
@@ -864,7 +864,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in posts of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *
@@ -897,7 +897,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all posts of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -921,7 +921,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts posts of Domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -950,7 +950,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries products of Domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} filter 
    *
@@ -980,7 +980,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in products of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *
@@ -1013,7 +1013,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all products of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -1037,7 +1037,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts products of Domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -1066,7 +1066,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries pages of Domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} filter 
    *
@@ -1096,7 +1096,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in pages of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *
@@ -1129,7 +1129,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all pages of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -1153,7 +1153,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts pages of Domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -1182,7 +1182,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Queries files of Domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} filter 
    *
@@ -1212,7 +1212,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in files of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *
@@ -1245,7 +1245,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Deletes all files of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -1269,7 +1269,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Counts files of Domain.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -1298,7 +1298,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Import a file by URL
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *
@@ -1333,7 +1333,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in users of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *
@@ -1366,7 +1366,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in events of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *
@@ -1399,7 +1399,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in posts of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *
@@ -1432,7 +1432,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in products of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *
@@ -1465,7 +1465,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in pages of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *
@@ -1498,7 +1498,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in files of this model.
    *
-   * @param {any} id BaseModel id
+   * @param {any} id Domain id
    *
    * @param {object} data Request data.
    *

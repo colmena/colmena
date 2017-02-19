@@ -1,12 +1,14 @@
 /* tslint:disable */
 import {
-  Domain
+  Domain,
+  File
 } from '../index';
 
 declare var Object: any;
 export interface ProductInterface {
   id?: number;
   domainId?: string;
+  fileId?: string;
   name?: string;
   description?: string;
   sku?: string;
@@ -14,11 +16,13 @@ export interface ProductInterface {
   created?: Date;
   modified?: Date;
   domain?: Domain;
+  file?: File;
 }
 
 export class Product implements ProductInterface {
   id: number;
   domainId: string;
+  fileId: string;
   name: string;
   description: string;
   sku: string;
@@ -26,6 +30,7 @@ export class Product implements ProductInterface {
   created: Date;
   modified: Date;
   domain: Domain;
+  file: File;
   constructor(data?: ProductInterface) {
     Object.assign(this, data);
   }
@@ -65,6 +70,10 @@ export class Product implements ProductInterface {
           name: 'domainId',
           type: 'string'
         },
+        fileId: {
+          name: 'fileId',
+          type: 'string'
+        },
         name: {
           name: 'name',
           type: 'string'
@@ -95,6 +104,11 @@ export class Product implements ProductInterface {
           name: 'domain',
           type: 'Domain',
           model: 'Domain'
+        },
+        file: {
+          name: 'file',
+          type: 'File',
+          model: 'File'
         },
       }
     }
