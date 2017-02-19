@@ -97,6 +97,19 @@ You can also start the two components separately:
     $ cd admin
     $ nps dev
 
+### Running on other host than localhost
+
+By default the development stack assumes that the API and Admin are both started on localhost (using `0.0.0.0`).
+
+When this is not the case, the admin needs to know on which IP address it can reach the API. In order to do this, you
+need to specify the `api.baseUrl` config property, which you can control using the `API_BASE_URL` environment variable.
+
+    $ API_BASE_URL=http://192.168.12.34:3000 nps dev
+
+> Make sure to leave out the trailing slash in the `API_BASE_URL` variable.
+
+You should now be able to connect to the Admin on http://192.168.12.34:9000 and it should connect to the API.
+
 ### More commands
 
 For a list of all the commands available run `nps` in the project dir or in one of the components.
