@@ -29,16 +29,16 @@ import * as auth from '../../state/auth.actions'
           required type="password" class="form-control" placeholder="Password">
       </div>
       <div class="row">
-        <div class="col-xs-3 text-xs-left">
-          <button type="submit" class="btn btn-primary px-2" (click)="login()">
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-block btn-primary" (click)="login()">
             Sign in
           </button>
         </div>
-        <div class="col-xs-9 text-xs-right">
-          <a class="btn btn-outline-primary px-2" [routerLink]="['/', 'password-request']">
+        <div class="col-xs-8 text-xs-right">
+          <a class="btn btn-outline-primary" [routerLink]="['/', 'password-recover']">
             Forgot Password
           </a>
-          <a *ngIf="settings.registrationEnabled" class="btn btn-outline-primary px-2" [routerLink]="['/', 'register']">
+          <a *ngIf="settings.registrationEnabled" class="btn btn-outline-primary" [routerLink]="['/', 'register']">
             Register
           </a>
         </div>

@@ -1,5 +1,6 @@
 /* tslint:disable */
 export * from './User';
+export * from './Email';
 export * from './Domain';
 export * from './Event';
 export * from './Post';
