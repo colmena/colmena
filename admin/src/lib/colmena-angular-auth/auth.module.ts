@@ -9,7 +9,9 @@ import { AuthService } from './auth.service'
 
 import { LoginComponent } from './components/login/login.component'
 import { LogoutComponent } from './components/logout/logout.component'
+import { RecoverComponent } from './components/recover/recover.component'
 import { RegisterComponent } from './components/register/register.component'
+import { ResetComponent } from './components/reset/reset.component'
 
 @NgModule({
   imports: [
@@ -21,7 +23,9 @@ import { RegisterComponent } from './components/register/register.component'
   declarations: [
     LoginComponent,
     LogoutComponent,
+    RecoverComponent,
     RegisterComponent,
+    ResetComponent,
   ],
   providers: [
     AuthService,

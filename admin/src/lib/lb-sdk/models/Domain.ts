@@ -11,7 +11,8 @@ import {
 declare var Object: any;
 export interface DomainInterface {
   id: string;
-  name?: string;
+  name: string;
+  email: string;
   created?: Date;
   modified?: Date;
   users?: User[];
@@ -25,6 +26,7 @@ export interface DomainInterface {
 export class Domain implements DomainInterface {
   id: string;
   name: string;
+  email: string;
   created: Date;
   modified: Date;
   users: User[];
@@ -70,6 +72,10 @@ export class Domain implements DomainInterface {
         },
         name: {
           name: 'name',
+          type: 'string'
+        },
+        email: {
+          name: 'email',
           type: 'string'
         },
         created: {

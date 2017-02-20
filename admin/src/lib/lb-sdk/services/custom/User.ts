@@ -703,6 +703,99 @@ export class UserApi extends BaseLoopBackApi {
   }
 
   /**
+   * Reset the password for user
+   *
+   * @param {object} data Request data.
+   *
+   *  - `req` – `{object}` - 
+   *
+   *  - `res` – `{object}` - 
+   *
+   *  - `body` – `{object}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `User` object.)
+   * </em>
+   */
+  public doPasswordReset(req: any = {}, res: any = {}, body: any = {}): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/users/doPasswordReset";
+    let _routeParams: any = {};
+    let _postBody: any = {
+      body: body
+    };
+    let _urlParams: any = {};
+    if (req) _urlParams.req = req;
+    if (res) _urlParams.res = res;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Generate template passwordResetHtml
+   *
+   * @param {Object} options Overwrite values of template
+   *
+   * @param {Object} params Pass parameters into the template method
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `User` object.)
+   * </em>
+   */
+  public _template_passwordResetHtml_remote(options: any = {}, params: any = {}): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/users/_template_passwordResetHtml";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (options) _urlParams.options = options;
+    if (params) _urlParams.params = params;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Generate template passwordResetText
+   *
+   * @param {Object} options Overwrite values of template
+   *
+   * @param {Object} params Pass parameters into the template method
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `User` object.)
+   * </em>
+   */
+  public _template_passwordResetText_remote(options: any = {}, params: any = {}): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/users/_template_passwordResetText";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (options) _urlParams.options = options;
+    if (params) _urlParams.params = params;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
    * Creates a new instance in accessTokens of this model.
    *
    * @param {any} id user id

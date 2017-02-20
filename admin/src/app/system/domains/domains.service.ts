@@ -24,6 +24,10 @@ export class DomainsService extends UiDataGridService {
       label: 'Name',
       placeholder: 'Name'
     }),
+    this.formService.email('email', {
+      label: 'Email',
+      placeholder: 'Email'
+    }),
   ]
 
   constructor(

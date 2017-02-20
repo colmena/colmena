@@ -33,6 +33,21 @@ export class AuthService {
     }
   }
 
+  recover(user: any) {
+    this.userApi.resetPassword(user)
+      .subscribe(
+        (success) => console.log({type: 'AUTH_RECOVER_SUCCESS', payload: user }),
+        (error) => console.log({type: 'AUTH_RECOVER_ERROR', payload: error }),
+      )
+  }
+
+  reset(user: any) {
+    this.userApi.doPasswordReset({}, {}, user)
+      .subscribe(
+        (success) => console.log({ type: 'AUTH_RESET_SUCCESS', payload: success }),
+        (error) => console.log({ type: 'AUTH_RESET_ERROR', payload: error }))
+  }
+
   register(credentials) {
     return this.userApi.create(credentials)
   }
