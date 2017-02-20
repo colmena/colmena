@@ -1,25 +1,64 @@
 import { Injectable } from '@angular/core'
-import { Validators, FormControl} from '@angular/forms'
-
-import { UiDataGridService } from '@colmena/colmena-angular-ui'
 
 import { DomainApi } from '@lb-sdk'
+
+import { UiDataGridService, FormService } from '@colmena/colmena-angular-ui'
 
 @Injectable()
 export class ProductsService extends UiDataGridService {
 
   public icon = 'icon-basket'
   public title = 'Products'
+  public files: any[] = []
+
+  public tableColumns = [
+    { field: 'name', label: 'Name', action: 'view' },
+    { field: 'description', label: 'Description' },
+    { field: 'sku', label: 'SKU' },
+  ]
+
+  public formFields = [
+    this.formService.input('name', {
+      label: 'Name',
+      placeholder: 'Name'
+    }),
+    this.formService.input('sku', {
+      label: 'SKU',
+      placeholder: 'SKU'
+    }),
+    this.formService.textarea('description', {
+      label: 'Description',
+      placeholder: 'Description'
+    }),
+    this.formService.select('fileId', {
+      label: 'File',
+      options: this.files
+    }),
+  ]
 
   constructor(
     public domainApi: DomainApi,
+    public formService: FormService,
   ) {
     super()
-    this.columns = this.tableColumns()
+    this.columns = this.tableColumns
+  }
+
+  getFormConfig() {
+    return {
+      icon: this.icon,
+      fields: this.formFields,
+      showCancel: true,
+    }
+  }
+
+  getFiles() {
+    this.domainApi.getFiles(this.domain.id)
+      .subscribe(files => files.map(file => this.files.push({ value: file.id, label: file.name })))
   }
 
   getItems() {
-    return this.domainApi.getProducts(this.domain.id, this.getFilters())
+    return this.domainApi.getProducts(this.domain.id, this.getFilters({ include: ['file'] }))
   }
 
   getItemCount() {
@@ -42,51 +81,5 @@ export class ProductsService extends UiDataGridService {
         (error) => errorCb(error),
       )
   }
-
-  public tableColumns() {
-    return [
-      { field: 'name', label: 'Name', action: 'view' },
-      { field: 'description', label: 'Description' },
-      { field: 'sku', label: 'SKU' },
-    ]
-  }
-
-  public formFields = [{
-    key: 'name',
-    type: 'input',
-    templateOptions: {
-      type: 'text',
-      label: 'Name',
-      placeholder: 'Name',
-      keyup: (field, formControl: FormControl) => {
-        console.log(formControl.valid ? 'Valid' : 'Invalid');
-      },
-    },
-    validators: {
-      validation: Validators.compose([ Validators.required ]),
-    },
-  }, {
-    key: 'sku',
-    type: 'input',
-    templateOptions: {
-      type: 'text',
-      label: 'SKU',
-      placeholder: 'SKU',
-      keyup: (field, formControl: FormControl) => {
-        console.log(formControl.valid ? 'Valid' : 'Invalid');
-      },
-    },
-    validators: {
-      validation: Validators.compose([ Validators.required ]),
-    },
-  }, {
-    key: 'description',
-    type: 'textarea',
-    templateOptions: {
-      type: 'text',
-      label: 'Description',
-      placeholder: 'Description'
-    },
-  } ];
 
 }

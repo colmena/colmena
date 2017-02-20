@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core'
-import { Validators, FormControl} from '@angular/forms'
 
-import { UiDataGridService } from '@colmena/colmena-angular-ui'
+import { UiDataGridService, FormService } from '@colmena/colmena-angular-ui'
 
 import { DomainApi } from '@lb-sdk'
 
@@ -17,28 +16,27 @@ export class FilesService extends UiDataGridService {
     { field: 'type', label: 'Type' },
   ]
 
-  public formFields = [{
-    key: 'url',
-    type: 'input',
-    templateOptions: {
-      type: 'text',
+  public formFields = [
+    this.formService.input('url', {
       label: 'URL',
       placeholder: 'The URL you want to import',
-      keyup: (field, formControl: FormControl) => {
-        console.log(formControl.valid ? 'Valid' : 'Invalid')
-      },
-    },
-    validators: {
-      validation: Validators.compose([ Validators.required ]),
-    },
-  } ]
-
+    }),
+  ]
 
   constructor(
     public domainApi: DomainApi,
+    public formService: FormService,
   ) {
     super()
     this.columns = this.tableColumns
+  }
+
+  getFormConfig() {
+    return {
+      icon: this.icon,
+      fields: this.formFields,
+      showCancel: true,
+    }
   }
 
   getUploadUrl() {
@@ -48,10 +46,9 @@ export class FilesService extends UiDataGridService {
   }
 
   getItems() {
-    const filters = this.getFilters()
-
-    // filters.include = ['events', 'posts', 'products']
-    return this.domainApi.getFiles(this.domain.id, filters)
+    return this.domainApi.getFiles(this.domain.id, this.getFilters({
+      include: ['events', 'pages', 'posts', 'products'],
+    }))
   }
 
   getItemCount() {

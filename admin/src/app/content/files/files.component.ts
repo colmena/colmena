@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
+
 import { UiService } from '@colmena/colmena-angular-ui'
 
 import { FilesService } from './files.service'
@@ -12,16 +13,20 @@ import { FilesService } from './files.service'
     </ui-modal-form>
 
     <ui-modal-form #importForm>
-      <ui-form [config]="config" [item]="item" (action)="action($event)"></ui-form>
+      <ui-form [config]="formConfig" [item]="item" (action)="action($event)"></ui-form>
     </ui-modal-form>
 
     <ui-modal #view>
       <img src="{{item.url}}" class="img-fluid" >
       <p>
-        <span class="item-success" title="Linked to {{item?.events?.length}} event(s)">
+        <span title="Linked to {{item?.events?.length}} event(s)">
           <i class="icon-event"></i>
           {{item?.events?.length}}
         </span>  
+        <span title="Linked to {{item?.pages?.length}} pages(s)">
+          <i class="icon-book-open"></i> 
+          {{item?.pages?.length}}
+        </span>
         <span title="Linked to {{item?.posts?.length}} post(s)">
           <i class="icon-pencil"></i> 
           {{item?.posts?.length}}
@@ -62,7 +67,7 @@ export class FilesComponent {
   public uploadUrl: string = null
 
   public item: any = {}
-  public config: any = {}
+  public formConfig: any = {}
   public gridConfig: any = {
     header: {
       buttons: [
@@ -72,27 +77,6 @@ export class FilesComponent {
     }
   }
 
-  save(item): void {
-    console.log('item', item)
-    this.service.importFile(
-      item,
-      () => {
-        this.uiService.toastSuccess('File imported', item.url)
-        this.close()
-        this.refresh()
-      },
-      err => this.uiService.toastError('Error saving file', err.message)
-    )
-  }
-
-  close(): void {
-    this.form.hide()
-  }
-
-  refresh(): void {
-    this.grid.refreshData()
-  }
-
   constructor(
     public service: FilesService,
     public uiService: UiService,
@@ -100,11 +84,20 @@ export class FilesComponent {
   ) {
     this.service.domain = this.route.snapshot.data['domain']
     this.uploadUrl = this.service.getUploadUrl()
-    this.config = {
-      icon: this.service.icon,
-      showCancel: true,
-      fields: this.service.formFields,
-    }
+    this.formConfig = this.service.getFormConfig()
+  }
+
+  save(item): void {
+    console.log('item', item)
+    this.service.importFile(
+      item,
+      () => {
+        this.uiService.toastSuccess('File imported', item.url)
+        this.form.hide()
+        this.grid.refreshData()
+      },
+      err => this.uiService.toastError('Error saving file', err.message)
+    )
   }
 
   action(event) {
@@ -128,10 +121,10 @@ export class FilesComponent {
         this.importForm.show()
         break
       case 'cancel':
-        this.close()
+        this.form.hide()
         break
       case 'close':
-        this.refresh()
+        this.grid.refreshData()
         break
       case 'save':
         this.save(event.item)
@@ -139,17 +132,10 @@ export class FilesComponent {
       case 'delete':
         const successCb = () => this.service
           .deleteItem(event.item,
-            () => this.refresh(),
+            () => this.grid.refreshData(),
             (err) => this.uiService.toastError('Error deleting item', err.message))
-
-        this.uiService.alertQuestion(
-          {
-            title: 'Are you sure?',
-            text: 'The action can not be undone.'
-          },
-          successCb,
-          () => ({})
-        )
+        const question = { title: 'Are you sure?', text: 'The action can not be undone.' }
+        this.uiService.alertQuestion( question, successCb, () => ({}) )
         break
       default:
         console.log('Unknown event action', event)

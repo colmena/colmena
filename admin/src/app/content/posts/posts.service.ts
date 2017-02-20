@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core'
-import { Validators, FormControl} from '@angular/forms'
-
-import { UiDataGridService } from '@colmena/colmena-angular-ui'
 
 import { DomainApi } from '@lb-sdk'
+
+import { UiDataGridService, FormService } from '@colmena/colmena-angular-ui'
 
 @Injectable()
 export class PostsService extends UiDataGridService {
@@ -16,43 +15,40 @@ export class PostsService extends UiDataGridService {
     { field: 'title', label: 'Title', action: 'view' },
   ]
 
-  public formFields = [{
-    key: 'title',
-    type: 'input',
-    templateOptions: {
-      type: 'text',
+  public formFields = [
+    this.formService.input('title', {
       label: 'Title',
-      placeholder: 'Title',
-      keyup: (field, formControl: FormControl) => {
-        console.log(formControl.valid ? 'Valid' : 'Invalid');
-      },
-    },
-    validators: {
-      validation: Validators.compose([ Validators.required ]),
-    },
-  }, {
-    key: 'content',
-    type: 'textarea',
-    templateOptions: {
-      type: 'text',
+      placeholder: 'Title'
+    }),
+    this.formService.textarea('content', {
       label: 'Content',
       placeholder: 'Content'
-    },
-  }, {
-    key: 'fileId',
-    type: 'select',
-    templateOptions: {
-      type: 'text',
+    }),
+    this.formService.select('fileId', {
       label: 'File',
-      options: this.files,
-    },
-  } ];
+      options: this.files
+    }),
+  ]
 
   constructor(
     public domainApi: DomainApi,
+    public formService: FormService,
   ) {
     super()
     this.columns = this.tableColumns
+  }
+
+  getFormConfig() {
+    return {
+      icon: this.icon,
+      fields: this.formFields,
+      showCancel: true,
+    }
+  }
+
+  getFiles() {
+    this.domainApi.getFiles(this.domain.id)
+      .subscribe(files => files.map(file => this.files.push({ value: file.id, label: file.name })))
   }
 
   getItems() {
