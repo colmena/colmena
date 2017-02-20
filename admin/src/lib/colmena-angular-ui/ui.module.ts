@@ -22,6 +22,7 @@ import { UiUploaderComponent } from './components/uploader/ui-uploader.component
 
 import { UiService } from './services/ui.service'
 import { UiTemplatesComponent } from './components/templates/templates.component'
+import { FormService } from './services/form.service'
 
 /**
  * Exported Modules
@@ -55,6 +56,7 @@ const components = [
  * @type { Array }
  */
 const providers = [
+  FormService,
   UiService,
   ToastyService,
 ]
