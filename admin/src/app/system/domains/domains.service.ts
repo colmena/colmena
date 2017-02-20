@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core'
-import { Validators, FormControl} from '@angular/forms'
-
-import { UiDataGridService } from '@colmena/colmena-angular-ui'
 
 import { DomainApi } from '@lb-sdk'
+
+import { UiDataGridService, FormService } from '@colmena/colmena-angular-ui'
 
 @Injectable()
 export class DomainsService extends UiDataGridService {
@@ -11,11 +10,36 @@ export class DomainsService extends UiDataGridService {
   public icon = 'icon-globe'
   public title = 'Domains'
 
+  public tableColumns = [
+    { field: 'id', label: 'ID', action: 'view' },
+    { field: 'name', label: 'Name', action: 'view' },
+  ]
+
+  public formFields = [
+    this.formService.input('id', {
+      label: 'ID',
+      placeholder: 'ID'
+    }),
+    this.formService.input('name', {
+      label: 'Name',
+      placeholder: 'Name'
+    }),
+  ]
+
   constructor(
     public domainApi: DomainApi,
+    public formService: FormService,
   ) {
     super()
-    this.columns = this.tableColumns()
+    this.columns = this.tableColumns
+  }
+
+  getFormConfig() {
+    return {
+      icon: this.icon,
+      fields: this.formFields,
+      showCancel: true,
+    }
   }
 
   getItems() {
@@ -43,40 +67,4 @@ export class DomainsService extends UiDataGridService {
       )
   }
 
-  public tableColumns() {
-    return [
-      { field: 'id', label: 'ID', action: 'view' },
-      { field: 'name', label: 'Name', action: 'view' },
-    ]
-  }
-
-  public formFields = [{
-    key: 'id',
-    type: 'input',
-    templateOptions: {
-      type: 'text',
-      label: 'ID',
-      placeholder: 'ID',
-      keyup: (field, formControl: FormControl) => {
-        console.log(formControl.valid ? 'Valid' : 'Invalid');
-      },
-    },
-    validators: {
-      validation: Validators.compose([Validators.required]),
-    },
-  }, {
-    key: 'name',
-    type: 'input',
-    templateOptions: {
-      type: 'text',
-      label: 'Name',
-      placeholder: 'Name',
-      keyup: (field, formControl: FormControl) => {
-        console.log(formControl.valid ? 'Valid' : 'Invalid');
-      },
-    },
-    validators: {
-      validation: Validators.compose([ Validators.required ]),
-    },
-  } ];
 }

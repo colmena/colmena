@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
+
 import { UiService } from '@colmena/colmena-angular-ui'
-import { Store } from '@ngrx/store'
 
 import { UsersService } from './users.service'
 
@@ -9,7 +8,7 @@ import { UsersService } from './users.service'
   selector: 'app-users',
   template: `
     <ui-modal-form #form>
-      <ui-form [config]="config" [item]="item" (action)="action($event)"></ui-form>
+      <ui-form [config]="formConfig" [item]="item" (action)="action($event)"></ui-form>
     </ui-modal-form>
 
     <ui-modal #view title="View Item">
@@ -34,45 +33,27 @@ export class UsersComponent {
   @ViewChild('form') private form
   @ViewChild('view') private view
 
-  public item: any = {}
-  public config: any = {}
+  public item: any = { realm: 'default' }
+  public formConfig: any = {}
+
+  constructor(
+    public service: UsersService,
+    public uiService: UiService,
+  ) {
+    this.service.getDomains()
+    this.formConfig = this.service.getFormConfig()
+  }
 
   save(item): void {
     this.service.upsertItem(
       item,
       (res) => {
-        this.uiService.toastSuccess('Post saved', res.name)
-        this.close()
-        this.refresh()
+        this.uiService.toastSuccess('User saved', res.name)
+        this.form.hide()
+        this.grid.refreshData()
       },
       err => console.error(err)
     )
-  }
-
-  close(): void {
-    this.form.hide()
-  }
-
-  refresh(): void {
-    this.grid.refreshData()
-  }
-
-  constructor(
-    public service: UsersService,
-    public uiService: UiService,
-    private route: ActivatedRoute,
-    private store: Store<any>,
-  ) {
-    this.config = {
-      icon: this.service.icon,
-      showCancel: true,
-      fields: this.service.formFields,
-    }
-    this.store
-      .select('app')
-      .subscribe((res: any) => {
-        res.domains.map(domain => this.service.domains.push({ value: domain.id, label: domain.name }))
-      })
   }
 
   action(event) {
@@ -83,8 +64,8 @@ export class UsersComponent {
         this.form.show()
         break
       case 'add':
-        this.item = Object.assign({}, { title: null, content: null })
-        this.form.title = 'Add Post'
+        this.item = Object.assign({}, {realm: 'default', email: null, firstName: null, lastName: null, password: null})
+        this.form.title = 'Add User'
         this.form.show()
         break
       case 'view':
@@ -93,7 +74,7 @@ export class UsersComponent {
         this.view.show()
         break
       case 'cancel':
-        this.close()
+        this.form.hide()
         break
       case 'save':
         this.save(event.item)
@@ -101,23 +82,15 @@ export class UsersComponent {
       case 'delete':
         const successCb = () => this.service
           .deleteItem(event.item.id,
-            () => this.refresh(),
+            () => this.grid.refreshData(),
             (err) => this.uiService.toastError('Error deleting item', err.message))
-
-        this.uiService.alertQuestion(
-          {
-            title: 'Are you sure?',
-            text: 'The action can not be undone.'
-          },
-          successCb,
-          () => ({})
-        )
+        const question = { title: 'Are you sure?', text: 'The action can not be undone.' }
+        this.uiService.alertQuestion( question, successCb, () => ({}) )
         break
       default:
         console.log('Unknown event action', event)
         break
     }
   }
-
 
 }

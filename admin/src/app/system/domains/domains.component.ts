@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core'
-import { ActivatedRoute } from '@angular/router'
+
 import { UiService } from '@colmena/colmena-angular-ui'
 
 import { DomainsService } from './domains.service'
@@ -8,7 +8,7 @@ import { DomainsService } from './domains.service'
   selector: 'app-domains',
   template: `
     <ui-modal-form #form>
-      <ui-form [config]="config" [item]="item" (action)="action($event)"></ui-form>
+      <ui-form [config]="formConfig" [item]="item" (action)="action($event)"></ui-form>
     </ui-modal-form>
 
     <ui-modal #view title="View Item">
@@ -34,38 +34,25 @@ export class DomainsComponent {
   @ViewChild('view') private view
 
   public item: any = {}
-  public config: any = {}
+  public formConfig: any = {}
+
+  constructor(
+    public service: DomainsService,
+    public uiService: UiService,
+  ) {
+    this.formConfig = this.service.getFormConfig()
+  }
 
   save(item): void {
     this.service.upsertItem(
       item,
       (res) => {
-        this.uiService.toastSuccess('Post saved', res.name)
-        this.close()
-        this.refresh()
+        this.uiService.toastSuccess('Domain saved', res.name)
+        this.form.hide()
+        this.grid.refreshData()
       },
       err => console.error(err)
     )
-  }
-
-  close(): void {
-    this.form.hide()
-  }
-
-  refresh(): void {
-    this.grid.refreshData()
-  }
-
-  constructor(
-    public service: DomainsService,
-    public uiService: UiService,
-    private route: ActivatedRoute,
-  ) {
-    this.config = {
-      icon: this.service.icon,
-      showCancel: true,
-      fields: this.service.formFields,
-    }
   }
 
   action(event) {
@@ -76,8 +63,8 @@ export class DomainsComponent {
         this.form.show()
         break
       case 'add':
-        this.item = Object.assign({}, { title: null, content: null })
-        this.form.title = 'Add Post'
+        this.item = Object.assign({}, { id: null, name: null })
+        this.form.title = 'Add Domain'
         this.form.show()
         break
       case 'view':
@@ -86,7 +73,7 @@ export class DomainsComponent {
         this.view.show()
         break
       case 'cancel':
-        this.close()
+        this.form.hide()
         break
       case 'save':
         this.save(event.item)
@@ -94,23 +81,15 @@ export class DomainsComponent {
       case 'delete':
         const successCb = () => this.service
           .deleteItem(event.item.id,
-            () => this.refresh(),
+            () => this.grid.refreshData(),
             (err) => this.uiService.toastError('Error deleting item', err.message))
-
-        this.uiService.alertQuestion(
-          {
-            title: 'Are you sure?',
-            text: 'The action can not be undone.'
-          },
-          successCb,
-          () => ({})
-        )
+        const question = { title: 'Are you sure?', text: 'The action can not be undone.' }
+        this.uiService.alertQuestion( question, successCb, () => ({}) )
         break
       default:
         console.log('Unknown event action', event)
         break
     }
   }
-
 
 }

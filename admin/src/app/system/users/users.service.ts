@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core'
-import { Validators, FormControl } from '@angular/forms'
-
-import { UiDataGridService } from '@colmena/colmena-angular-ui'
+import { Store } from '@ngrx/store'
 
 import { UserApi } from '@lb-sdk'
+
+import { UiDataGridService, FormService } from '@colmena/colmena-angular-ui'
 
 @Injectable()
 export class UsersService extends UiDataGridService {
@@ -12,9 +12,59 @@ export class UsersService extends UiDataGridService {
   public title = 'Users'
   public domains = []
 
-  constructor(public userApi: UserApi,) {
+  public tableColumns = [
+    { field: 'firstName', label: 'First name', link: 'edit' },
+    { field: 'lastName', label: 'Last name', link: 'edit' },
+    { field: 'email', label: 'Email' },
+    { field: 'realm', label: 'Domain'},
+  ]
+
+  public formFields = [
+    this.formService.select('realm', {
+      label: 'Domain',
+      options: this.domains,
+    }),
+    this.formService.email('email', {
+      label: 'Email address',
+      placeholder: 'Email address',
+    }),
+    this.formService.input('firstName', {
+      label: 'First name',
+      placeholder: 'First name',
+    }),
+    this.formService.input('lastName', {
+      label: 'Last name',
+      placeholder: 'Last name',
+    }),
+    this.formService.password('password', {
+      label: 'Password',
+      placeholder: 'Password'
+    }),
+  ]
+
+  constructor(
+    public userApi: UserApi,
+    public formService: FormService,
+    private store: Store<any>,
+  ) {
     super()
-    this.columns = this.tableColumns()
+    this.columns = this.tableColumns
+  }
+
+  getDomains() {
+    this.store
+      .select('app')
+      .subscribe((res: any) => {
+        res.domains.map(domain => this.domains.push({ value: domain.id, label: domain.name }))
+      })
+  }
+
+  getFormConfig() {
+    return {
+      icon: this.icon,
+      fields: this.formFields,
+      showCancel: true,
+    }
   }
 
   getItems() {
@@ -37,72 +87,5 @@ export class UsersService extends UiDataGridService {
         (error) => errorCb(error),
       )
   }
-
-  public tableColumns() {
-    return [
-      { field: 'firstName', label: 'First name', link: 'edit' },
-      { field: 'lastName', label: 'Last name', link: 'edit' },
-      { field: 'email', label: 'Email' },
-      { field: 'realm', label: 'Domain'},
-    ]
-  }
-
-  public formFields = [{
-    key: 'realm',
-    type: 'select',
-    templateOptions: {
-      type: 'text',
-      label: 'Domain',
-      options: this.domains,
-    },
-    validators: {
-      validation: Validators.compose([Validators.required])
-    }
-  }, {
-    key: 'email',
-    type: 'input',
-    templateOptions: {
-      type: 'email',
-      label: 'Email address',
-      placeholder: 'Enter email'
-    },
-    validators: {
-      validation: Validators.compose([Validators.required])
-    }
-  }, {
-    key: 'firstName',
-    type: 'input',
-    templateOptions: {
-      type: 'text',
-      label: 'First name',
-      placeholder: 'First name'
-    },
-    validators: {
-      validation: Validators.compose([Validators.required])
-    }
-  }, {
-    key: 'lastName',
-    type: 'input',
-    templateOptions: {
-      type: 'text',
-      label: 'Last name',
-      placeholder: 'Last name'
-    },
-    validators: {
-      validation: Validators.compose([Validators.required])
-    }
-  }, {
-    key: 'password',
-    type: 'input',
-    templateOptions: {
-      type: 'password',
-      label: 'Password',
-      placeholder: 'Password',
-      pattern: ''
-    },
-    validators: {
-      validation: Validators.compose([Validators.required])
-    }
-  }];
 
 }
