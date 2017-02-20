@@ -8,5 +8,9 @@
     "connector": "loopback-component-storage",
     "provider": "filesystem",
     "root": "./storage"
+  },
+  "mail": {
+    "name": "mail",
+    "connector": "mail"
   }
 }

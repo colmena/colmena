@@ -2,6 +2,7 @@
   {
     "id": "default",
     "name": "Default Domain",
+    "email": "no-reply@example.com",
     "description": "This domain is defined in the sample data."
   }
 ]

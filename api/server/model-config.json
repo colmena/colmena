@@ -36,6 +36,9 @@
     "dataSource": "db",
     "public": false
   },
+  "Email": {
+    "dataSource": "mail"
+  },
   "BaseModel": {
     "dataSource": "db",
     "public": false

@@ -38,6 +38,14 @@ module.exports = function (User) {
     next()
   })
 
+  // Set a fullName property on the user prototype
+  User.prototype.fullName = function fullName() {
+    if (this.firstName && this.lastName) {
+      return `${this.firstName} ${this.lastName}`
+    }
+    return this.firstName || this.lastName || ''
+  }
+
   /**
    * Method that retrieves all the roles in the system
    * @returns boolean
