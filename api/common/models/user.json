@@ -145,6 +145,42 @@
         "path": "/info",
         "verb": "get"
       }
+    },
+    "doPasswordReset": {
+      "isStatic": true,
+      "accepts": [
+        {
+          "arg": "req",
+          "type": "object",
+          "http": {
+            "source": "req"
+          }
+        },
+        {
+          "arg": "res",
+          "type": "object",
+          "http": {
+            "source": "res"
+          }
+        },
+        {
+          "arg": "body",
+          "type": "object",
+          "http": {
+            "source": "body"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "type": "Object",
+        "root": true
+      },
+      "description": "Reset the password for user",
+      "http": {
+        "path": "/doPasswordReset",
+        "verb": "post"
+      }
     }
   }
 }

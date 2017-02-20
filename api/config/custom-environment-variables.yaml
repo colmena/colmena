@@ -2,15 +2,23 @@ api:
   baseUrl: API_BASE_URL
   version: API_VERSION
 
+admin:
+  url: ADMIN_URL
+  recoverPath: ADMIN_RECOVER_PATH
+
 mongodb:
   url: MONGODB_URL
-
-storage:
-  path: STORAGE_PATH
 
 settings:
   registrationEnabled: SETTINGS_REGISTRATION_ENABLED
   multiDomain: SETTINGS_MULTI_DOMAIN
+
+smtp:
+  host: SMTP_HOST
+  port: SMTP_PORT
+
+storage:
+  path: STORAGE_PATH
 
 system:
   initdb: INITDB
