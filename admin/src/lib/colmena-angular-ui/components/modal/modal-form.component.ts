@@ -11,7 +11,12 @@ import { ModalDirective } from 'ng2-bootstrap'
         </div>
       </div>
     </div>
-  `
+  `,
+  styles: [`
+    .card {
+      margin-bottom: 0;
+    }
+  `]
 })
 export class UiModalFormComponent implements OnInit {
 

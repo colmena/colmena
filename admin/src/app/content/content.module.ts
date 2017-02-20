@@ -5,10 +5,15 @@ import { AppSharedModule } from '../app.shared.module'
 
 import { ContentDashboardComponent } from './content.component'
 
+import { EventComponent } from './events/event.component'
 import { EventsComponent } from './events/events.component'
+import { FileComponent } from './files/file.component'
 import { FilesComponent } from './files/files.component'
+import { PageComponent } from './pages/page.component'
 import { PagesComponent } from './pages/pages.component'
+import { PostComponent } from './posts/post.component'
 import { PostsComponent } from './posts/posts.component'
+import { ProductComponent } from './products/product.component'
 import { ProductsComponent } from './products/products.component'
 
 import { EventsService } from './events/events.service'
@@ -18,10 +23,15 @@ import { PostsService } from './posts/posts.service'
 import { ProductsService } from './products/products.service'
 
 const components = [
+  EventComponent,
   EventsComponent,
+  FileComponent,
   FilesComponent,
+  PageComponent,
   PagesComponent,
+  PostComponent,
   PostsComponent,
+  ProductComponent,
   ProductsComponent,
 ]
 

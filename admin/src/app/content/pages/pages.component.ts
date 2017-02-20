@@ -6,15 +6,15 @@ import { UiService } from '@colmena/colmena-angular-ui'
 import { PagesService } from './pages.service'
 
 @Component({
-  selector: 'app-pages',
+  selector: 'app-content-pages',
   template: `
     <ui-modal-form #form>
       <ui-form [config]="formConfig" [item]="item" (action)="action($event)"></ui-form>
     </ui-modal-form>
 
-    <ui-modal #view title="View Item">
-      <pre>{{item | json}}</pre>
-    </ui-modal>
+    <ui-modal-form #view>
+      <app-content-page [item]="item"></app-content-page>
+    </ui-modal-form>
 
     <template #iconTemplate let-item="item">
       <div class="card-block" style="min-height: 200px">

@@ -6,15 +6,15 @@ import { UiService } from '@colmena/colmena-angular-ui'
 import { EventsService } from './events.service'
 
 @Component({
-  selector: 'app-events',
+  selector: 'app-content-events',
   template: `
     <ui-modal-form #form>
       <ui-form [config]="formConfig" [item]="item" (action)="action($event)"></ui-form>
     </ui-modal-form>
 
-    <ui-modal #view title="View Item">
-      <pre>{{item | json}}</pre>
-    </ui-modal>
+    <ui-modal-form #view>
+      <app-content-event [item]="item"></app-content-event>
+    </ui-modal-form>
 
     <template #iconTemplate let-item="item">
       <div class="card-block" style="min-height: 200px">
@@ -74,7 +74,6 @@ export class EventsComponent {
         break
       case 'view':
         this.item = Object.assign({}, event.item)
-        this.form.title = `${this.item.name}`
         this.view.show()
         break
       case 'cancel':
