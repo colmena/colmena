@@ -4,7 +4,7 @@
 
 > Free and Open Source API and Admin powered by LoopBack and Angular
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors) [![](https://colmena-cms.now.sh/badge.svg)](https://colmena-cms.now.sh/)
+[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors) [![](https://colmena-cms.now.sh/badge.svg)](https://colmena-cms.now.sh/) [![OpenCollective](https://opencollective.com/colmena-cms/backers/badge.svg)](#backers) [![OpenCollective](https://opencollective.com/colmena-cms/sponsors/badge.svg)](#sponsors)
 
 #### TPFKALAA
 
@@ -127,3 +127,74 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
+
+## Backers
+
+Support us with a monthly donation and help us continue our activities. [[Become a backer](https://opencollective.com/colmena-cms#backer)]
+
+<a href="https://opencollective.com/colmena-cms/backer/0/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/0/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/1/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/1/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/2/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/2/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/3/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/3/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/4/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/4/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/5/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/5/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/6/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/6/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/7/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/7/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/8/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/8/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/9/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/9/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/10/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/10/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/11/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/11/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/12/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/12/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/13/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/13/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/14/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/14/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/15/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/15/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/16/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/16/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/17/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/17/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/18/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/18/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/19/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/19/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/20/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/20/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/21/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/21/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/22/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/22/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/23/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/23/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/24/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/24/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/25/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/25/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/26/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/26/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/27/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/27/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/28/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/28/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/backer/29/website" target="_blank"><img src="https://opencollective.com/colmena-cms/backer/29/avatar.svg"></a>
+
+
+## Sponsors
+
+Become a sponsor and get your logo on our README on Github with a link to your site. [[Become a sponsor](https://opencollective.com/colmena-cms#sponsor)]
+
+<a href="https://opencollective.com/colmena-cms/sponsor/0/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/1/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/2/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/3/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/4/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/5/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/6/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/7/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/8/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/9/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/9/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/10/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/10/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/11/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/11/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/12/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/12/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/13/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/13/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/14/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/14/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/15/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/15/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/16/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/16/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/17/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/17/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/18/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/18/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/19/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/19/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/20/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/20/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/21/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/21/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/22/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/22/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/23/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/23/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/24/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/24/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/25/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/25/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/26/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/26/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/27/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/27/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/28/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/28/avatar.svg"></a>
+<a href="https://opencollective.com/colmena-cms/sponsor/29/website" target="_blank"><img src="https://opencollective.com/colmena-cms/sponsor/29/avatar.svg"></a>
