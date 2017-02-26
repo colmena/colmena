@@ -14,6 +14,7 @@ This is a complete rewrite of The Project Formerly Known As Loopback Angular Adm
 
 #### This software is under 'active' development!
 #### Please do not use it in production as-is.
+#### Please refer to the [Work in Progress](#work-in-progress) section to find out what needs to be implemented to be production ready
 
 ## About
 
@@ -113,6 +114,32 @@ You should now be able to connect to the Admin on http://192.168.12.34:9000 and 
 ### More commands
 
 For a list of all the commands available run `nps` in the project dir or in one of the components.
+
+## Work in Progress
+
+Colmena CMS is still a work in progress and not all functionality is built yet.
+
+- Almost no ACLS are implemented, this means that the API can be used by whoever has access to it
+- There is no advanced user management
+- The interface does not reflect the user role (admin/manager/user)
+- Content will be leaking across domains, while this should not be possible
+
+## Known issues
+
+
+### npm WARN [dependency] requires a peer of @angular/[package] but none was installed.
+
+*This is a warning and can be safely ignored.*
+ 
+The reason this warning is shown is because Colmena CMS Admin uses Angular 4.x but depends on a couple of packages that 
+expect Angular 2.x. This will be resolved when the dependencies are going to support Angular 4.
+
+### The <template> element is deprecated. Use <ng-template> instead
+
+*This is a warning and can be safely ignored.*
+
+In Angular 4 `<template>` got deprecated in favor of `<ng-template>`. While Colmena CMS Admin has upgraded, most of its
+dependencies still use `<template>`. This will be resolved when the dependencies are going to update this.
 
 ## Contributors
 
