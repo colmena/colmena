@@ -24,7 +24,7 @@ module.exports = {
       description: 'Serve the client app in development mode',
     },
     lint: {
-      script: `tslint -e "${clientSrc}/lib/**/*.ts" "${clientSrc}/**/*.ts"`,
+      script: `ng lint`,
       description: 'Lint TypeScript code',
     },
     lbSDK: {

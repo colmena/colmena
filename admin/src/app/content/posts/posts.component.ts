@@ -16,14 +16,14 @@ import { PostsService } from './posts.service'
       <app-content-post [item]="item"></app-content-post>
     </ui-modal-form>
 
-    <template #iconTemplate let-item="item">
+    <ng-template #iconTemplate let-item="item">
       <div class="card-block" style="min-height: 200px">
         <h6 style="text-decoration: underline; cursor: pointer;" (click)="action({ action: 'view', item: item })">
           <i class="icon-note"></i> {{item.title}}
         </h6>
         <div class="text-muted" *ngIf="item.created">Date: {{item.created | date: 'short' }}</div>
       </div>
-    </template>
+    </ng-template>
 
     <ui-data-grid #grid (action)="action($event)" [iconTemplate]="iconTemplate" [service]="service"></ui-data-grid>
   `,

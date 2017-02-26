@@ -10,7 +10,7 @@ import { get } from 'lodash'
     <li class="nav-item px-1" *ngFor="let item of items">
       <a class="nav-link" routerLinkActive="active" [routerLink]="item.link">
         <i *ngIf="item.icon" [class]="item.icon"></i>
-        <template *ngIf="item.label">{{item.label}}</template>
+        <ng-template *ngIf="item.label">{{item.label}}</ng-template>
       </a>
     </li>
 `,

@@ -16,7 +16,7 @@ import { EventsService } from './events.service'
       <app-content-event [item]="item"></app-content-event>
     </ui-modal-form>
 
-    <template #iconTemplate let-item="item">
+    <ng-template #iconTemplate let-item="item">
       <div class="card-block" style="min-height: 200px">
         <h6 style="text-decoration: underline; cursor: pointer;" (click)="action({ action: 'view', item: item })">
           <i class="icon-event"></i> {{item.name}}
@@ -24,7 +24,7 @@ import { EventsService } from './events.service'
         <div class="text-muted" *ngIf="item.date">Date: {{item.date | date: 'short' }}</div>
         <div class="text-muted" *ngIf="item.location">Location {{item.location}}</div>
       </div>
-    </template>
+    </ng-template>
 
     <ui-data-grid #grid (action)="action($event)" [iconTemplate]="iconTemplate" [service]="service"></ui-data-grid>
   `,

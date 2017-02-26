@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es2016",
+      "dom"
+    ],
+    "outDir": "../out-tsc/app",
+    "target": "es5",
+    "module": "es2015",
+    "baseUrl": "",
+    "types": [
+      "webpack-env"
+    ],
+    "paths": {
+      "@lb-sdk": [
+        "lib/lb-sdk"
+      ],
+      "@colmena/colmena-angular-auth": [
+        "lib/colmena-angular-auth"
+      ],
+      "@colmena/colmena-angular-layout": [
+        "lib/colmena-angular-layout"
+      ],
+      "@colmena/colmena-angular-ui": [
+        "lib/colmena-angular-ui"
+      ]
+    }
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ]
+}

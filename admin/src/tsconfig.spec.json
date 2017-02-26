@@ -1,25 +1,24 @@
 {
   "compilerOptions": {
-    "baseUrl": "",
+    "sourceMap": true,
     "declaration": false,
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
-    "mapRoot": "./",
-    "module": "es6",
-    "moduleResolution": "node",
-    "outDir": "../dist/out-tsc",
-    "sourceMap": true,
-    "target": "es5",
-    "typeRoots": [
-      "../node_modules/@types"
+    "lib": [
+      "es2016"
+    ],
+    "outDir": "../out-tsc/spec",
+    "module": "commonjs",
+    "target": "es6",
+    "baseUrl": "",
+    "types": [
+      "jasmine",
+      "node"
     ],
     "paths": {
       "@lb-sdk": [
         "lib/lb-sdk"
-      ],
-      "@fc-ui": [
-        "lib/fc.ui"
       ],
       "@colmena/colmena-angular-auth": [
         "lib/colmena-angular-auth"
@@ -31,5 +30,11 @@
         "lib/colmena-angular-ui"
       ]
     }
-  }
+  },
+  "files": [
+    "test.ts"
+  ],
+  "include": [
+    "**/*.spec.ts"
+  ]
 }
