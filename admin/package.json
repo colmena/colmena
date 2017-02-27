@@ -75,6 +75,6 @@
     "sweetalert2": "6.4.2",
     "ts-helpers": "1.1.2",
     "tslint": "4.4.2",
-    "typescript": "2.2.1"
+    "typescript": "2.1.6"
   }
 }

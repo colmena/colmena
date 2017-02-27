@@ -30,11 +30,11 @@ export class JSONSearchParams {
         return parts.join('&');
     }
 
-    private _parseParam(key: string, value, parent: string) {
-        if (typeof value !== 'object') {
+    private _parseParam(key: string, value: any, parent: string) {
+        if (typeof value !== 'object' && typeof value !== 'array') {
             return parent ? parent + '[' + key + ']=' + value
                           : key + '=' + value;
-        } else if (typeof value === 'object') {
+        } else if (typeof value === 'object' ||  typeof value === 'array') {
             return parent ? this._JSON2URL(value, parent + '[' + key + ']')
                           : this._JSON2URL(value, key);
         } else {
