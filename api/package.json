@@ -36,7 +36,7 @@
     "loopback-component-model-extender": "0.1.3",
     "loopback-component-ping": "1.0.1",
     "loopback-component-storage": "3.0.1",
-    "loopback-component-templates": "1.1.9",
+    "loopback-component-templates": "1.1.10",
     "loopback-connector-mongodb": "3.0.1",
     "loopback-datasource-juggler": "2.54.0",
     "loopback-ds-paginate-mixin": "1.0.4",
