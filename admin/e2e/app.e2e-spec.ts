@@ -1,14 +1,14 @@
 import { ColmenaAngularPage } from './app.po'
 
 describe('colmena-angular App', function() {
-  let page: ColmenaAngularPage
+  let page: ColmenaAngularPage;
 
   beforeEach(() => {
     page = new ColmenaAngularPage()
-  })
+  });
 
-  it('should display message saying app works', () => {
-    page.navigateTo()
-    expect(page.getParagraphText()).toEqual('app works!')
-  })
-})
+  it('should render login page', function() {
+    page.navigateTo();
+    expect(page.getCurrentUrl()).toMatch('/login');
+  });
+});

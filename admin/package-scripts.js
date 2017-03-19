@@ -1,7 +1,7 @@
-'use strict'
+'use strict';
 
-const clientSrc = './src'
-const serverSrc = '../api/server/server.js'
+const clientSrc = './src';
+const serverSrc = '../api/server/server.js';
 
 module.exports = {
   scripts: {
@@ -24,16 +24,16 @@ module.exports = {
       description: 'Serve the client app in development mode',
     },
     lint: {
-      script: `ng lint`,
+      script: 'ng lint',
       description: 'Lint TypeScript code',
     },
     lbSDK: {
       description: 'Build the LoopBack SDK',
-      script: `NODE_ENV=codegen lb-sdk --wipe enabled ${serverSrc} ${clientSrc}/lib/lb-sdk`,
+      script: 'NODE_ENV=codegen lb-sdk --wipe enabled ${serverSrc} ${clientSrc}/lib/lb-sdk',
     },
     test: {
       default: {
-        script: 'nps client.test.e2e.install,client.test.e2e,client.test.unit',
+        script: 'nps test.e2e.install,test.e2e,test.unit',
         description: 'Run the full client test suite',
       },
       e2e: {
