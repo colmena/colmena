@@ -4,7 +4,7 @@
 
 > Free and Open Source API and Admin powered by LoopBack and Angular
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors) [![](https://colmena-cms.now.sh/badge.svg)](https://colmena-cms.now.sh/) [![OpenCollective](https://opencollective.com/colmena-cms/backers/badge.svg)](#backers) [![OpenCollective](https://opencollective.com/colmena-cms/sponsors/badge.svg)](#sponsors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors) [![](https://colmena-slack.now.sh/badge.svg)](https://colmena-slack.now.sh/) [![OpenCollective](https://opencollective.com/colmena-cms/backers/badge.svg)](#backers) [![OpenCollective](https://opencollective.com/colmena-cms/sponsors/badge.svg)](#sponsors)
 
 #### TPFKALAA
 
@@ -134,7 +134,7 @@ Colmena CMS is still a work in progress and not all functionality is built yet.
 The reason this warning is shown is because Colmena CMS Admin uses Angular 4.x but depends on a couple of packages that 
 expect Angular 2.x. This will be resolved when the dependencies are going to support Angular 4.
 
-### The <template> element is deprecated. Use <ng-template> instead
+### The `<template>` element is deprecated. Use `<ng-template>` instead
 
 *This is a warning and can be safely ignored.*
 
