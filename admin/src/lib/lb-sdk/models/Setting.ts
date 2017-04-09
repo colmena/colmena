@@ -2,23 +2,23 @@
 
 declare var Object: any;
 export interface SettingInterface {
-  key: string;
-  value?: string;
-  system?: boolean;
-  type: string;
-  description?: string;
-  created?: Date;
-  modified?: Date;
+  "key": any;
+  "value"?: any;
+  "system"?: any;
+  "type": any;
+  "description"?: any;
+  "created"?: any;
+  "modified"?: any;
 }
 
 export class Setting implements SettingInterface {
-  key: string;
-  value: string;
-  system: boolean;
-  type: string;
-  description: string;
-  created: Date;
-  modified: Date;
+  "key": any;
+  "value": any;
+  "system": any;
+  "type": any;
+  "description": any;
+  "created": any;
+  "modified": any;
   constructor(data?: SettingInterface) {
     Object.assign(this, data);
   }
@@ -37,7 +37,7 @@ export class Setting implements SettingInterface {
   **/
   public static factory(data: SettingInterface): Setting{
     return new Setting(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -50,35 +50,35 @@ export class Setting implements SettingInterface {
       name: 'Setting',
       plural: 'Settings',
       properties: {
-        key: {
+        "key": {
           name: 'key',
-          type: 'string'
+          type: 'any'
         },
-        value: {
+        "value": {
           name: 'value',
-          type: 'string'
+          type: 'any'
         },
-        system: {
+        "system": {
           name: 'system',
-          type: 'boolean',
+          type: 'any',
           default: false
         },
-        type: {
+        "type": {
           name: 'type',
-          type: 'string',
+          type: 'any',
           default: 'string'
         },
-        description: {
+        "description": {
           name: 'description',
-          type: 'string'
+          type: 'any'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date'
+          type: 'any'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date'
+          type: 'any'
         },
       },
       relations: {

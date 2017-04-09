@@ -6,29 +6,29 @@ import {
 
 declare var Object: any;
 export interface ProductInterface {
-  id?: number;
-  domainId?: string;
-  fileId?: string;
-  name?: string;
-  description?: string;
-  sku?: string;
-  price?: number;
-  created?: Date;
-  modified?: Date;
+  "id"?: any;
+  "domainId"?: any;
+  "fileId"?: any;
+  "name"?: any;
+  "description"?: any;
+  "sku"?: any;
+  "price"?: any;
+  "created"?: any;
+  "modified"?: any;
   domain?: Domain;
   file?: File;
 }
 
 export class Product implements ProductInterface {
-  id: number;
-  domainId: string;
-  fileId: string;
-  name: string;
-  description: string;
-  sku: string;
-  price: number;
-  created: Date;
-  modified: Date;
+  "id": any;
+  "domainId": any;
+  "fileId": any;
+  "name": any;
+  "description": any;
+  "sku": any;
+  "price": any;
+  "created": any;
+  "modified": any;
   domain: Domain;
   file: File;
   constructor(data?: ProductInterface) {
@@ -49,7 +49,7 @@ export class Product implements ProductInterface {
   **/
   public static factory(data: ProductInterface): Product{
     return new Product(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -62,41 +62,41 @@ export class Product implements ProductInterface {
       name: 'Product',
       plural: 'Products',
       properties: {
-        id: {
+        "id": {
           name: 'id',
-          type: 'number'
+          type: 'any'
         },
-        domainId: {
+        "domainId": {
           name: 'domainId',
-          type: 'string'
+          type: 'any'
         },
-        fileId: {
+        "fileId": {
           name: 'fileId',
-          type: 'string'
+          type: 'any'
         },
-        name: {
+        "name": {
           name: 'name',
-          type: 'string'
+          type: 'any'
         },
-        description: {
+        "description": {
           name: 'description',
-          type: 'string'
+          type: 'any'
         },
-        sku: {
+        "sku": {
           name: 'sku',
-          type: 'string'
+          type: 'any'
         },
-        price: {
+        "price": {
           name: 'price',
-          type: 'number'
+          type: 'any'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date'
+          type: 'any'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date'
+          type: 'any'
         },
       },
       relations: {

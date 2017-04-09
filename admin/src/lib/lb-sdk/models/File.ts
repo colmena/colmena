@@ -8,12 +8,12 @@ import {
 
 declare var Object: any;
 export interface FileInterface {
-  id?: string;
-  name?: string;
-  type?: string;
-  created?: Date;
-  modified?: Date;
-  container?: string;
+  "id"?: any;
+  "name"?: any;
+  "type"?: any;
+  "created"?: any;
+  "modified"?: any;
+  "container"?: any;
   events?: Event[];
   pages?: Page[];
   posts?: Post[];
@@ -21,12 +21,12 @@ export interface FileInterface {
 }
 
 export class File implements FileInterface {
-  id: string;
-  name: string;
-  type: string;
-  created: Date;
-  modified: Date;
-  container: string;
+  "id": any;
+  "name": any;
+  "type": any;
+  "created": any;
+  "modified": any;
+  "container": any;
   events: Event[];
   pages: Page[];
   posts: Post[];
@@ -49,7 +49,7 @@ export class File implements FileInterface {
   **/
   public static factory(data: FileInterface): File{
     return new File(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -62,29 +62,29 @@ export class File implements FileInterface {
       name: 'File',
       plural: 'Files',
       properties: {
-        id: {
+        "id": {
           name: 'id',
-          type: 'string'
+          type: 'any'
         },
-        name: {
+        "name": {
           name: 'name',
-          type: 'string'
+          type: 'any'
         },
-        type: {
+        "type": {
           name: 'type',
-          type: 'string'
+          type: 'any'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date'
+          type: 'any'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date'
+          type: 'any'
         },
-        container: {
+        "container": {
           name: 'container',
-          type: 'string'
+          type: 'any'
         },
       },
       relations: {

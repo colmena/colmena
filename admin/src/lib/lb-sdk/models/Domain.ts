@@ -10,11 +10,11 @@ import {
 
 declare var Object: any;
 export interface DomainInterface {
-  id: string;
-  name: string;
-  email: string;
-  created?: Date;
-  modified?: Date;
+  "id": any;
+  "name": any;
+  "email": any;
+  "created"?: any;
+  "modified"?: any;
   users?: User[];
   events?: Event[];
   posts?: Post[];
@@ -24,11 +24,11 @@ export interface DomainInterface {
 }
 
 export class Domain implements DomainInterface {
-  id: string;
-  name: string;
-  email: string;
-  created: Date;
-  modified: Date;
+  "id": any;
+  "name": any;
+  "email": any;
+  "created": any;
+  "modified": any;
   users: User[];
   events: Event[];
   posts: Post[];
@@ -53,7 +53,7 @@ export class Domain implements DomainInterface {
   **/
   public static factory(data: DomainInterface): Domain{
     return new Domain(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -66,25 +66,25 @@ export class Domain implements DomainInterface {
       name: 'Domain',
       plural: 'Domains',
       properties: {
-        id: {
+        "id": {
           name: 'id',
-          type: 'string'
+          type: 'any'
         },
-        name: {
+        "name": {
           name: 'name',
-          type: 'string'
+          type: 'any'
         },
-        email: {
+        "email": {
           name: 'email',
-          type: 'string'
+          type: 'any'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date'
+          type: 'any'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date'
+          type: 'any'
         },
       },
       relations: {

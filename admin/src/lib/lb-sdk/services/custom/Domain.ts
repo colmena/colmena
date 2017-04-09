@@ -1320,12 +1320,12 @@ export class DomainApi extends BaseLoopBackApi {
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Domains/:id/importFileByUrl";
     let _routeParams: any = {
-      id: id,
-      fileName: fileName
+      id: id
     };
     let _postBody: any = {};
     let _urlParams: any = {};
     if (url) _urlParams.url = url;
+    if (fileName) _urlParams.fileName = fileName;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
     return result;
   }

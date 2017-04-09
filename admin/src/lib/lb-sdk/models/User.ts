@@ -2,41 +2,41 @@
 
 declare var Object: any;
 export interface UserInterface {
-  id?: string;
-  username: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  realm: string;
-  password: string;
-  challenges?: any;
-  emailVerified?: boolean;
-  verificationToken?: string;
-  status?: string;
-  created?: Date;
-  lastUpdated?: Date;
-  modified?: Date;
-  domainId?: string;
+  "id"?: any;
+  "username": any;
+  "email": any;
+  "firstName": any;
+  "lastName": any;
+  "realm": any;
+  "password": any;
+  "challenges"?: any;
+  "emailVerified"?: any;
+  "verificationToken"?: any;
+  "status"?: any;
+  "created"?: any;
+  "lastUpdated"?: any;
+  "modified"?: any;
+  "domainId"?: any;
   accessTokens?: any[];
   roles?: any[];
 }
 
 export class User implements UserInterface {
-  id: string;
-  username: string;
-  email: string;
-  firstName: string;
-  lastName: string;
-  realm: string;
-  password: string;
-  challenges: any;
-  emailVerified: boolean;
-  verificationToken: string;
-  status: string;
-  created: Date;
-  lastUpdated: Date;
-  modified: Date;
-  domainId: string;
+  "id": any;
+  "username": any;
+  "email": any;
+  "firstName": any;
+  "lastName": any;
+  "realm": any;
+  "password": any;
+  "challenges": any;
+  "emailVerified": any;
+  "verificationToken": any;
+  "status": any;
+  "created": any;
+  "lastUpdated": any;
+  "modified": any;
+  "domainId": any;
   accessTokens: any[];
   roles: any[];
   constructor(data?: UserInterface) {
@@ -57,7 +57,7 @@ export class User implements UserInterface {
   **/
   public static factory(data: UserInterface): User{
     return new User(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -70,69 +70,69 @@ export class User implements UserInterface {
       name: 'User',
       plural: 'Users',
       properties: {
-        id: {
+        "id": {
           name: 'id',
-          type: 'string'
+          type: 'any'
         },
-        username: {
+        "username": {
           name: 'username',
-          type: 'string'
+          type: 'any'
         },
-        email: {
+        "email": {
           name: 'email',
-          type: 'string'
+          type: 'any'
         },
-        firstName: {
+        "firstName": {
           name: 'firstName',
-          type: 'string'
+          type: 'any'
         },
-        lastName: {
+        "lastName": {
           name: 'lastName',
-          type: 'string'
+          type: 'any'
         },
-        realm: {
+        "realm": {
           name: 'realm',
-          type: 'string'
+          type: 'any'
         },
-        password: {
+        "password": {
           name: 'password',
-          type: 'string'
+          type: 'any'
         },
-        credentials: {
+        "credentials": {
           name: 'credentials',
           type: 'any'
         },
-        challenges: {
+        "challenges": {
           name: 'challenges',
           type: 'any'
         },
-        emailVerified: {
+        "emailVerified": {
           name: 'emailVerified',
-          type: 'boolean'
+          type: 'any'
         },
-        verificationToken: {
+        "verificationToken": {
           name: 'verificationToken',
-          type: 'string'
+          type: 'any'
         },
-        status: {
+        "status": {
           name: 'status',
-          type: 'string'
+          type: 'any'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date'
+          type: 'any'
         },
-        lastUpdated: {
+        "lastUpdated": {
           name: 'lastUpdated',
-          type: 'Date'
+          type: 'any'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date'
+          type: 'any'
         },
-        domainId: {
+        "domainId": {
           name: 'domainId',
-          type: 'string'
+          type: 'any'
         },
       },
       relations: {

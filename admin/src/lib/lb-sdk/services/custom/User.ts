@@ -599,7 +599,7 @@ export class UserApi extends BaseLoopBackApi {
    *
    * @param {object} data Request data.
    *
-   *  - `access_token` – `{string}` - Do not supply this argument, it is automatically extracted from request headers.
+   * This method does not accept any data. Supply an empty object.
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -874,7 +874,7 @@ export class UserApi extends BaseLoopBackApi {
    *   populated with the actual data once the response is returned
    *   from the server.
    */
-  public getCurrent(): any {
+  public getCurrent(): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() + "/users" + "/:id";
     let id: any = this.auth.getCurrentUserId();

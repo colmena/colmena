@@ -2,21 +2,21 @@
 
 declare var Object: any;
 export interface EmailInterface {
-  to: string;
-  from: string;
-  subject: string;
-  text?: string;
-  html?: string;
-  id?: number;
+  "to": any;
+  "from": any;
+  "subject": any;
+  "text"?: any;
+  "html"?: any;
+  "id"?: any;
 }
 
 export class Email implements EmailInterface {
-  to: string;
-  from: string;
-  subject: string;
-  text: string;
-  html: string;
-  id: number;
+  "to": any;
+  "from": any;
+  "subject": any;
+  "text": any;
+  "html": any;
+  "id": any;
   constructor(data?: EmailInterface) {
     Object.assign(this, data);
   }
@@ -35,7 +35,7 @@ export class Email implements EmailInterface {
   **/
   public static factory(data: EmailInterface): Email{
     return new Email(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -48,29 +48,29 @@ export class Email implements EmailInterface {
       name: 'Email',
       plural: 'Emails',
       properties: {
-        to: {
+        "to": {
           name: 'to',
-          type: 'string'
+          type: 'any'
         },
-        from: {
+        "from": {
           name: 'from',
-          type: 'string'
+          type: 'any'
         },
-        subject: {
+        "subject": {
           name: 'subject',
-          type: 'string'
+          type: 'any'
         },
-        text: {
+        "text": {
           name: 'text',
-          type: 'string'
+          type: 'any'
         },
-        html: {
+        "html": {
           name: 'html',
-          type: 'string'
+          type: 'any'
         },
-        id: {
+        "id": {
           name: 'id',
-          type: 'number'
+          type: 'any'
         },
       },
       relations: {

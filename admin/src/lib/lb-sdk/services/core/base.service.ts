@@ -1,6 +1,6 @@
 /* tslint:disable */
 import { Injectable, Inject, Optional } from '@angular/core';
-import { Http, Headers, Request } from '@angular/http';
+import { Http, Headers, Request, RequestOptions } from '@angular/http';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { JSONSearchParams } from './search.params';
 import { ErrorHandler } from './error.service';
@@ -77,7 +77,7 @@ export abstract class BaseLoopBackApi {
     let body: any;
     let postBodyKeys = typeof postBody === 'object' ? Object.keys(postBody) : []
     if (postBodyKeys.length === 1) {
-      body = postBody[postBodyKeys[0]];
+      body = postBody[postBodyKeys.shift()];
     } else {
       body = postBody;
     }
@@ -87,19 +87,26 @@ export abstract class BaseLoopBackApi {
       delete urlParams.filter;
     }
     // Separate where object from url params and add to search query
+    /**
+    CODE BELOW WILL GENERATE THE FOLLOWING ISSUES:
+    - https://github.com/mean-expert-official/loopback-sdk-builder/issues/356
+    - https://github.com/mean-expert-official/loopback-sdk-builder/issues/328 
     if (urlParams.where) {
       headers.append('where', JSON.stringify(urlParams.where));
       delete urlParams.where;
     }
+    **/
     this.searchParams.setJSON(urlParams);
-    let request: Request = new Request({
-      headers : headers,
-      method  : method,
-      url     : url,
-      search  : Object.keys(urlParams).length > 0
-              ? this.searchParams.getURLSearchParams() : null,
-      body    : body ? JSON.stringify(body) : undefined
-    });
+    let request: Request = new Request(
+      new RequestOptions({
+        headers : headers,
+        method  : method,
+        url     : url,
+        search  : Object.keys(urlParams).length > 0
+                ? this.searchParams.getURLSearchParams() : null,
+        body    : body ? JSON.stringify(body) : undefined
+      })
+    );
     return this.http.request(request)
       .map((res: any) => (res.text() != "" ? res.json() : {}))
       .catch((e) => this.errorHandler.handleError(e));

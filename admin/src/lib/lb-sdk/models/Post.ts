@@ -6,27 +6,27 @@ import {
 
 declare var Object: any;
 export interface PostInterface {
-  id?: number;
-  domainId?: string;
-  fileId?: string;
-  title?: string;
-  content?: string;
-  userId?: number;
-  created?: Date;
-  modified?: Date;
+  "id"?: any;
+  "domainId"?: any;
+  "fileId"?: any;
+  "title"?: any;
+  "content"?: any;
+  "userId"?: any;
+  "created"?: any;
+  "modified"?: any;
   domain?: Domain;
   file?: File;
 }
 
 export class Post implements PostInterface {
-  id: number;
-  domainId: string;
-  fileId: string;
-  title: string;
-  content: string;
-  userId: number;
-  created: Date;
-  modified: Date;
+  "id": any;
+  "domainId": any;
+  "fileId": any;
+  "title": any;
+  "content": any;
+  "userId": any;
+  "created": any;
+  "modified": any;
   domain: Domain;
   file: File;
   constructor(data?: PostInterface) {
@@ -47,7 +47,7 @@ export class Post implements PostInterface {
   **/
   public static factory(data: PostInterface): Post{
     return new Post(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -60,37 +60,37 @@ export class Post implements PostInterface {
       name: 'Post',
       plural: 'Posts',
       properties: {
-        id: {
+        "id": {
           name: 'id',
-          type: 'number'
+          type: 'any'
         },
-        domainId: {
+        "domainId": {
           name: 'domainId',
-          type: 'string'
+          type: 'any'
         },
-        fileId: {
+        "fileId": {
           name: 'fileId',
-          type: 'string'
+          type: 'any'
         },
-        title: {
+        "title": {
           name: 'title',
-          type: 'string'
+          type: 'any'
         },
-        content: {
+        "content": {
           name: 'content',
-          type: 'string'
+          type: 'any'
         },
-        userId: {
+        "userId": {
           name: 'userId',
-          type: 'number'
+          type: 'any'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date'
+          type: 'any'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date'
+          type: 'any'
         },
       },
       relations: {

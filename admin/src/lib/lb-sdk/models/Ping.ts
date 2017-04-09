@@ -2,11 +2,11 @@
 
 declare var Object: any;
 export interface PingInterface {
-  id?: string;
+  "id"?: any;
 }
 
 export class Ping implements PingInterface {
-  id: string;
+  "id": any;
   constructor(data?: PingInterface) {
     Object.assign(this, data);
   }
@@ -25,7 +25,7 @@ export class Ping implements PingInterface {
   **/
   public static factory(data: PingInterface): Ping{
     return new Ping(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -38,9 +38,9 @@ export class Ping implements PingInterface {
       name: 'Ping',
       plural: 'Ping',
       properties: {
-        id: {
+        "id": {
           name: 'id',
-          type: 'string'
+          type: 'any'
         },
       },
       relations: {

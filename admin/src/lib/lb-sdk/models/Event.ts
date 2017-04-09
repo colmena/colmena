@@ -6,27 +6,27 @@ import {
 
 declare var Object: any;
 export interface EventInterface {
-  id?: number;
-  domainId?: string;
-  fileId?: string;
-  name: string;
-  date?: Date;
-  location?: string;
-  created?: Date;
-  modified?: Date;
+  "id"?: any;
+  "domainId"?: any;
+  "fileId"?: any;
+  "name": any;
+  "date"?: any;
+  "location"?: any;
+  "created"?: any;
+  "modified"?: any;
   domain?: Domain;
   file?: File;
 }
 
 export class Event implements EventInterface {
-  id: number;
-  domainId: string;
-  fileId: string;
-  name: string;
-  date: Date;
-  location: string;
-  created: Date;
-  modified: Date;
+  "id": any;
+  "domainId": any;
+  "fileId": any;
+  "name": any;
+  "date": any;
+  "location": any;
+  "created": any;
+  "modified": any;
   domain: Domain;
   file: File;
   constructor(data?: EventInterface) {
@@ -47,7 +47,7 @@ export class Event implements EventInterface {
   **/
   public static factory(data: EventInterface): Event{
     return new Event(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -60,37 +60,37 @@ export class Event implements EventInterface {
       name: 'Event',
       plural: 'Events',
       properties: {
-        id: {
+        "id": {
           name: 'id',
-          type: 'number'
+          type: 'any'
         },
-        domainId: {
+        "domainId": {
           name: 'domainId',
-          type: 'string'
+          type: 'any'
         },
-        fileId: {
+        "fileId": {
           name: 'fileId',
-          type: 'string'
+          type: 'any'
         },
-        name: {
+        "name": {
           name: 'name',
-          type: 'string'
+          type: 'any'
         },
-        date: {
+        "date": {
           name: 'date',
-          type: 'Date'
+          type: 'any'
         },
-        location: {
+        "location": {
           name: 'location',
-          type: 'string'
+          type: 'any'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date'
+          type: 'any'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date'
+          type: 'any'
         },
       },
       relations: {

@@ -6,25 +6,25 @@ import {
 
 declare var Object: any;
 export interface PageInterface {
-  id?: number;
-  domainId?: string;
-  fileId?: string;
-  name: string;
-  content?: string;
-  created?: Date;
-  modified?: Date;
+  "id"?: any;
+  "domainId"?: any;
+  "fileId"?: any;
+  "name": any;
+  "content"?: any;
+  "created"?: any;
+  "modified"?: any;
   domain?: Domain;
   file?: File;
 }
 
 export class Page implements PageInterface {
-  id: number;
-  domainId: string;
-  fileId: string;
-  name: string;
-  content: string;
-  created: Date;
-  modified: Date;
+  "id": any;
+  "domainId": any;
+  "fileId": any;
+  "name": any;
+  "content": any;
+  "created": any;
+  "modified": any;
   domain: Domain;
   file: File;
   constructor(data?: PageInterface) {
@@ -45,7 +45,7 @@ export class Page implements PageInterface {
   **/
   public static factory(data: PageInterface): Page{
     return new Page(data);
-  }  
+  }
   /**
   * @method getModelDefinition
   * @author Julien Ledun
@@ -58,33 +58,33 @@ export class Page implements PageInterface {
       name: 'Page',
       plural: 'Pages',
       properties: {
-        id: {
+        "id": {
           name: 'id',
-          type: 'number'
+          type: 'any'
         },
-        domainId: {
+        "domainId": {
           name: 'domainId',
-          type: 'string'
+          type: 'any'
         },
-        fileId: {
+        "fileId": {
           name: 'fileId',
-          type: 'string'
+          type: 'any'
         },
-        name: {
+        "name": {
           name: 'name',
-          type: 'string'
+          type: 'any'
         },
-        content: {
+        "content": {
           name: 'content',
-          type: 'string'
+          type: 'any'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date'
+          type: 'any'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date'
+          type: 'any'
         },
       },
       relations: {
