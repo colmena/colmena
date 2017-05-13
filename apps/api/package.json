@@ -53,12 +53,8 @@
     "loopback-ds-readonly-mixin": "1.0.1",
     "loopback-ds-timestamp-mixin": "3.4.0",
     "nsp": "2.6.2",
-    "p-s": "3.0.3",
     "request": "2.79.0",
     "serve-favicon": "2.3.2",
     "strong-error-handler": "1.2.1"
-  },
-  "devDependencies": {
-    "nodemon": "1.11.0"
   }
 }
