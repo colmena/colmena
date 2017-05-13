@@ -4,8 +4,8 @@ import { Effect, Actions } from '@ngrx/effects'
 import { Action, Store } from '@ngrx/store'
 import { Observable } from 'rxjs/Observable'
 
-import { UiService } from '@colmena/colmena-angular-ui'
-import { UserApi } from '@lb-sdk'
+import { UiService } from '@colmena/admin-ui'
+import { UserApi } from '@colmena/api-lb-sdk'
 
 import * as auth from './auth.actions'
 

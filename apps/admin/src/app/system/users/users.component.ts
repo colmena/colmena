@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core'
 
-import { UiService } from '@colmena/colmena-angular-ui'
+import { UiService } from '@colmena/admin-ui'
 
 import { UsersService } from './users.service'
 

@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http'
 import { BrowserModule } from '@angular/platform-browser'
 import { RouterModule } from '@angular/router'
 
-import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
+import { ColmenaUiModule } from '@colmena/admin-ui'
 
 const modules = [
   BrowserModule,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { User, AccessToken, UserApi } from '@lb-sdk'
+import { User, AccessToken, UserApi } from '@colmena/api-lb-sdk'
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/observable/of'
 

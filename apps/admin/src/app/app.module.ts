@@ -7,11 +7,11 @@ import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
 
 // Third party Modules
-import { LoopBackConfig, SDKBrowserModule } from '@lb-sdk'
+import { LoopBackConfig, SDKBrowserModule } from '@colmena/api-lb-sdk'
 
-import { ColmenaAuthModule } from '@colmena/colmena-angular-auth'
-import { ColmenaLayoutModule } from '@colmena/colmena-angular-layout'
-import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
+import { ColmenaAuthModule } from '@colmena/admin-auth'
+import { ColmenaLayoutModule } from '@colmena/admin-layout'
+import { ColmenaUiModule } from '@colmena/admin-ui'
 
 // Local Modules
 import { ContentModule } from './content/content.module'

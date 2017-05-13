@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Store } from '@ngrx/store'
 
-import { DomainApi, SettingApi } from '@lb-sdk'
+import { DomainApi, SettingApi } from '@colmena/api-lb-sdk'
 
 import { LogService } from './log.service'
 

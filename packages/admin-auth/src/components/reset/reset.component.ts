@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { LoopBackAuth, SDKToken } from '@lb-sdk'
+import { LoopBackAuth, SDKToken } from '@colmena/api-lb-sdk'
 
 import { AuthService } from '../../auth.service'
 

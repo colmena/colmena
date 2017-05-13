@@ -4,8 +4,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { EffectsModule } from '@ngrx/effects'
 
 import { app, AppEffects } from './state'
-import { auth, AuthEffects } from '@colmena/colmena-angular-auth'
-import { layout, LayoutEffects } from '@colmena/colmena-angular-layout'
+import { auth, AuthEffects } from '@colmena/admin-auth'
+import { layout, LayoutEffects } from '@colmena/admin-layout'
 
 @NgModule({
   imports: [

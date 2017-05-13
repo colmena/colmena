@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 
-import { UiService } from '@colmena/colmena-angular-ui'
+import { UiService } from '@colmena/admin-ui'
 
 import { ProductsService } from './products.service'
 

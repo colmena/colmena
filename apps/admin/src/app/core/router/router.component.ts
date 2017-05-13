@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { Store } from '@ngrx/store'
-import { auth } from '@colmena/colmena-angular-auth'
+import { auth } from '@colmena/admin-auth'
 
 @Component({
   template: `<ui-message [message]="'Redirecting.'"></ui-message>`,

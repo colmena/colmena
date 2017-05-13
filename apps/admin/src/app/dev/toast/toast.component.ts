@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { UiService } from '@colmena/colmena-angular-ui'
+import { UiService } from '@colmena/admin-ui'
 
 @Component({
   selector: 'app-dev-toast',

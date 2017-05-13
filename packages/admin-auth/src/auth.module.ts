@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 
-import { ColmenaUiModule } from '@colmena/colmena-angular-ui'
+import { ColmenaUiModule } from '@colmena/admin-ui'
 
 import { AuthService } from './auth.service'
 

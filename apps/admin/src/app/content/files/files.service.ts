@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core'
 
-import { UiDataGridService, FormService } from '@colmena/colmena-angular-ui'
+import { UiDataGridService, FormService } from '@colmena/admin-ui'
 
-import { DomainApi } from '@lb-sdk'
+import { DomainApi } from '@colmena/api-lb-sdk'
 
 @Injectable()
 export class FilesService extends UiDataGridService {

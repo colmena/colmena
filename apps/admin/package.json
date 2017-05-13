@@ -24,6 +24,10 @@
   },
   "angular-cli": {},
   "dependencies": {
+    "@colmena/admin-auth": "0.0.0",
+    "@colmena/admin-layout": "0.0.0",
+    "@colmena/admin-ui": "0.0.0",
+    "@colmena/api-lb-sdk": "0.0.0",
     "@angular/animations": "4.0.1",
     "@angular/common": "4.0.1",
     "@angular/compiler": "4.0.1",

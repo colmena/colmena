@@ -15,21 +15,7 @@
     "types": [
       "jasmine",
       "node"
-    ],
-    "paths": {
-      "@lb-sdk": [
-        "lib/lb-sdk"
-      ],
-      "@colmena/colmena-angular-auth": [
-        "lib/colmena-angular-auth"
-      ],
-      "@colmena/colmena-angular-layout": [
-        "lib/colmena-angular-layout"
-      ],
-      "@colmena/colmena-angular-ui": [
-        "lib/colmena-angular-ui"
-      ]
-    }
+    ]
   },
   "files": [
     "test.ts"

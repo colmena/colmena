@@ -4,7 +4,7 @@ import { CanActivate } from '@angular/router'
 import { Store } from '@ngrx/store'
 import { Observable } from 'rxjs/Observable'
 
-import { UiService } from '@colmena/colmena-angular-ui'
+import { UiService } from '@colmena/admin-ui'
 
 @Injectable()
 export class HasSystemAccess implements CanActivate {
