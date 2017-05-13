@@ -1,12 +1,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
+    "baseUrl": ".",
+    "noEmit": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "target": "es5",
     "paths": {
       "@angular/*": ["node_modules/@angular/*"],
       "@ngrx/*": ["node_modules/@ngrx/*"],

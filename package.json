@@ -26,7 +26,7 @@
     "clean": "lerna clean --yes && rimraf ./node_modules",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
-    "build": "run-p -l build:admin build:api",
+    "build": "run-s -l build:admin build:api",
     "build:admin": "lerna run build --stream --scope @colmena/admin",
     "build:api": "lerna run build --stream --scope @colmena/api",
     "dev": "run-p -l dev:admin dev:api",
@@ -37,6 +37,9 @@
     "sdk": "run-p -l sdk:api",
     "sdk:api": "cross-env NODE_ENV=codegen lb-sdk --wipe enabled apps/api/server/server.js packages/api-lb-sdk/src",
     "start": "nps"
+  },
+  "dependencies": {
+    "cross-env": "^5.0.0"
   },
   "devDependencies": {
     "@angular/animations": "4.0.1",
@@ -83,8 +86,5 @@
         }
       ]
     }
-  },
-  "dependencies": {
-    "cross-env": "^5.0.0"
   }
 }
