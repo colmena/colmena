@@ -64,6 +64,26 @@
     underscore "^1.8.3"
     underscore.inflections "^0.2.1"
 
+"@ngrx/core@^1.2.0":
+  version "1.2.0"
+  resolved "http://localhost:4873/@ngrx%2fcore/-/core-1.2.0.tgz#882b46abafa2e0e6d887cb71a1b2c2fa3e6d0dc6"
+
+"@ngrx/effects@^2.0.3":
+  version "2.0.3"
+  resolved "http://localhost:4873/@ngrx%2feffects/-/effects-2.0.3.tgz#e54ce340806dd91a81826796f13e2446aeeafb77"
+
+"@ngrx/router-store@^1.2.6":
+  version "1.2.6"
+  resolved "http://localhost:4873/@ngrx%2frouter-store/-/router-store-1.2.6.tgz#a2eb0ca515e9b367781f1030250dd64bb73c086b"
+
+"@ngrx/store-devtools@^3.2.4":
+  version "3.2.4"
+  resolved "http://localhost:4873/@ngrx%2fstore-devtools/-/store-devtools-3.2.4.tgz#2ce4d13bf34848a9e51ec87e3b125ed67b51e550"
+
+"@ngrx/store@^2.2.2":
+  version "2.2.2"
+  resolved "http://localhost:4873/@ngrx%2fstore/-/store-2.2.2.tgz#a00305a6452032a3385886a11ce529dce2dae65b"
+
 JSONStream@^1.0.4:
   version "1.3.1"
   resolved "http://localhost:4873/JSONStream/-/JSONStream-1.3.1.tgz#707f761e01dae9e16f1bcf93703b78c70966579a"
