@@ -23,6 +23,7 @@
     "admin"
   ],
   "scripts": {
+    "build": "true",
     "dev": "nodemon",
     "start": "nps",
     "test": "nps test"

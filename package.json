@@ -26,13 +26,16 @@
     "clean": "lerna clean --yes && rimraf ./node_modules",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
+    "build": "run-p -l build:admin build:api",
+    "build:admin": "lerna run build --stream --scope @colmena/admin",
+    "build:api": "lerna run build --stream --scope @colmena/api",
     "dev": "run-p -l dev:admin dev:api",
     "dev:admin": "lerna run dev --stream --scope @colmena/admin",
     "dev:api": "lerna run dev --stream --scope @colmena/api",
     "lint": "eslint . --fix",
     "postinstall": "lerna bootstrap",
     "sdk": "run-p -l sdk:api",
-    "sdk:api": "NODE_ENV=codegen lb-sdk --wipe enabled apps/api/server/server.js packages/api-lb-sdk/src",
+    "sdk:api": "cross-env NODE_ENV=codegen lb-sdk --wipe enabled apps/api/server/server.js packages/api-lb-sdk/src",
     "start": "nps"
   },
   "devDependencies": {
@@ -80,5 +83,8 @@
         }
       ]
     }
+  },
+  "dependencies": {
+    "cross-env": "^5.0.0"
   }
 }
