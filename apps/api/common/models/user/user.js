@@ -1,6 +1,7 @@
 'use strict'
 
 const config = require('config')
+const log = require('@colmena/logger')
 
 module.exports = function (User) {
 
@@ -15,9 +16,9 @@ module.exports = function (User) {
     const enabled = getRegistrationEnabled()
 
     if (enabled) {
-      console.log('User: registration enabled')
+      log.info('User: registration enabled')
     } else {
-      console.log('User: registration disabled')
+      log.info('User: registration disabled')
     }
 
     // FIXME: I wish there was a way to do this outside of the Model (like a boot script)

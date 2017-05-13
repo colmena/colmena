@@ -1,5 +1,6 @@
 'use strict'
 const config = require('config')
+const log = require('@colmena/logger')
 
 module.exports = function (app, cb) {
 
@@ -42,11 +43,11 @@ module.exports = function (app, cb) {
       system: true,
     })
     .then(res => {
-      console.log(`System Settings: ${res.count} removed`)
+      log.info(`System Settings: ${res.count} removed`)
       return Setting.create(systemSettings)
     })
     .then(res => {
-      console.log(`System Settings: ${res.length} added`)
+      log.info(`System Settings: ${res.length} added`)
       return cb(null, res)
     })
     .catch(cb)

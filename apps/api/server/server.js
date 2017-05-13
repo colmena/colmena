@@ -3,6 +3,8 @@
 const loopback = require('loopback')
 const boot = require('loopback-boot')
 
+const log = require('@colmena/logger')
+
 const app = module.exports = loopback()
 
 app.start = function () {
@@ -10,10 +12,10 @@ app.start = function () {
   const server = app.listen(function () {
     app.emit('started', server)
     const baseUrl = app.get('url').replace(/\/$/, '')
-    console.log('Colmena API listening at: %s', baseUrl)
+    log.info('Colmena API listening at: %s', baseUrl)
     if (app.get('loopback-component-explorer')) {
       const explorerPath = app.get('loopback-component-explorer').mountPath
-      console.log('Colmena API Explorer: %s%s', baseUrl, explorerPath)
+      log.info('Colmena API Explorer: %s%s', baseUrl, explorerPath)
     }
   })
   return server

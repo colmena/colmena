@@ -2,6 +2,7 @@
 
 const Promise = require('bluebird')
 const config = require('config')
+const log = require('@colmena/logger')
 
 module.exports = function userPasswordReset(User) {
 
@@ -47,11 +48,11 @@ module.exports = function userPasswordReset(User) {
           text: User._template_passwordResetText()(mailVars),
         }
 
-        console.log(`User.sendPasswordResetMessage:`, message)
+        log.info(`User.sendPasswordResetMessage:`, message)
         return User.app.models.Email
           .send(message, (err, result) => {
             if (err) {
-              console.error('User.sendPasswordResetMessage: Email.send failure:', err)
+              log.error('User.sendPasswordResetMessage: Email.send failure:', err)
               return Promise.reject(err)
             }
             return Promise.resolve(result)

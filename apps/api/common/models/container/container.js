@@ -1,5 +1,6 @@
 'use strict';
 const Promise = require('bluebird')
+const log = require('@colmena/logger')
 const request = require('request')
 
 module.exports = function(Container) {
@@ -25,12 +26,12 @@ module.exports = function(Container) {
       Container.getContainer(name, (err, container) => {
         if (err) {
           // If we can not retrieve it, try to create it
-          console.log(`Container does not exist, creating container ${name}`)
+          log.info(`Container does not exist, creating container ${name}`)
 
           return Container.createContainer({ name }, (err, newContainer) => {
             if (err) {
               // Something went wrong creating the container
-              console.error(`Error creating container ${name}`, err)
+              log.error(`Error creating container ${name}`, err)
               return reject(err)
             }
             // Return the created container
@@ -50,7 +51,7 @@ module.exports = function(Container) {
       Container.getContainer(name, err => {
         if (err) {
           // If we can not retrieve it, do nothing
-          console.log(`Container does not exist, not destroying container ${name}`)
+          log.info(`Container does not exist, not destroying container ${name}`)
           // Return the existing container
           return resolve(true)
         }
@@ -58,7 +59,7 @@ module.exports = function(Container) {
         return Container.destroyContainer(name, (err, res) => {
           if (err) {
             // Something went wrong creating the container
-            console.error(`Error destroying container ${name}`, err)
+            log.error(`Error destroying container ${name}`, err)
             return reject(err)
           }
           // Return confirmation
@@ -76,7 +77,7 @@ module.exports = function(Container) {
       Container.getFile(containerName, fileName, err => {
         if (err) {
           // If we can not retrieve it, do nothing
-          console.log(`File ${fileName} does not exist in container ${containerName} , skipping file deletion`)
+          log.info(`File ${fileName} does not exist in container ${containerName} , skipping file deletion`)
           // Return the existing container
           return resolve(true)
         }
@@ -84,7 +85,7 @@ module.exports = function(Container) {
         return Container.removeFile(containerName, fileName, (err, res) => {
           if (err) {
             // Something went wrong creating the container
-            console.error(`Error destroying file ${fileName} from container ${containerName}`, err)
+            log.error(`Error destroying file ${fileName} from container ${containerName}`, err)
             return reject(err)
           }
           // Return confirmation

@@ -1,12 +1,13 @@
 'use strict'
 const config = require('config')
+const log = require('@colmena/logger')
 const Promise = require('bluebird')
 
 module.exports = function (app, cb) {
 
   // Check if there is user configured Settings
   if (!config.has('system.initdb') || config.get('system.initdb') === false) {
-    console.log('System init db: skipping sample data')
+    log.info('System init db: skipping sample data')
     return cb()
   }
 
@@ -50,7 +51,7 @@ module.exports = function (app, cb) {
     .then(() => teardownFixtures())
     .then(() => setupFixtures())
     .then(() => importImages())
-    .then(() => console.log('System init db: loaded sample data.'))
+    .then(() => log.info('System init db: loaded sample data.'))
     .then(() => cb())
     .catch(err => cb(err))
 
