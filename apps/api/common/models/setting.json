@@ -13,7 +13,7 @@
       "required": true
     },
     "value": {
-      "type": "string"
+      "type": "object"
     },
     "system": {
       "type": "boolean",
