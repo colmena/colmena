@@ -35,12 +35,7 @@ The project consists of 2 components, the API and the Admin interface.
 
 #### Requirements
 
-This project is built with node and therefore `node` (v6.x) and `npm` (v3.x) need to be available on your machine.
-
-Additionally it uses [p-s](https://github.com/kentcdodds/p-s) to run the project, which is recommended to be installed
-globally:
-
-    $ npm i -g p-s
+This project is built with node and therefore `node` (v6.x) and `yarn` or `npm` (v3.x) need to be available on your machine.
 
 #### Clone repo
 
@@ -51,35 +46,23 @@ First clone the repository to get the project files:
 
 ### Top-level directory
 
-From inside the project dir (`colmena-cms`) run `npm install`:
+From inside the project dir (`colmena-cms`) run  `yarn` or `npm install`:
 
-    $ npm install
+    $ yarn
     
-This command should also trigger running `npm install` in the API and Admin directories using the `npm postinstall` step.
-
-### API (manual install of dependencies)
-
-From inside the project dir (`colmena-cms`) enter the `api` directory and run `npm install`:
-
-    $ cd api
-    $ npm install
-
-### Admin (manual install of dependencies)
-
-From inside the project dir (`colmena-cms`) enter the `admin` directory and run `npm install`:
-
-    $ cd admin
+or
+    
     $ npm install
 
 ## Development
 
-Currently there is now way to build the project, it can only be run in development mode.
+Currently there is no way to build the project, it can only be run in development mode.
 
 ### Running in development mode
 
-From inside the project dir (`colmena-cms`) run `INITDB=1 nps dev`:
+From inside the project dir (`colmena-cms`) run `INITDB=1 npm run dev`:
 
-    $ INITDB=1 nps dev
+    $ INITDB=1 npm run dev
 
 This will start the API and the Admin in the same terminal, and by using `INITDB=1` the sample data will be loaded.
 
@@ -91,12 +74,12 @@ You can also start the two components separately:
 #### Start the API
 
     $ cd api
-    $ nps dev
+    $ npm run dev
 
 #### Start the Admin
 
     $ cd admin
-    $ nps dev
+    $ npm run dev
 
 ### Running on other host than localhost
 
@@ -105,15 +88,11 @@ By default the development stack assumes that the API and Admin are both started
 When this is not the case, the admin needs to know on which IP address it can reach the API. In order to do this, you
 need to specify the `api.baseUrl` config property, which you can control using the `API_BASE_URL` environment variable.
 
-    $ API_BASE_URL=http://192.168.12.34:3000 nps dev
+    $ API_BASE_URL=http://192.168.12.34:3000 npm run dev
 
 > Make sure to leave out the trailing slash in the `API_BASE_URL` variable.
 
 You should now be able to connect to the Admin on http://192.168.12.34:9000 and it should connect to the API.
-
-### More commands
-
-For a list of all the commands available run `nps` in the project dir or in one of the components.
 
 ## Work in Progress
 
@@ -123,23 +102,6 @@ Colmena CMS is still a work in progress and not all functionality is built yet.
 - There is no advanced user management
 - The interface does not reflect the user role (admin/manager/user)
 - Content will be leaking across domains, while this should not be possible
-
-## Known issues
-
-
-### npm WARN [dependency] requires a peer of @angular/[package] but none was installed.
-
-*This is a warning and can be safely ignored.*
- 
-The reason this warning is shown is because Colmena CMS Admin uses Angular 4.x but depends on a couple of packages that 
-expect Angular 2.x. This will be resolved when the dependencies are going to support Angular 4.
-
-### The `<template>` element is deprecated. Use `<ng-template>` instead
-
-*This is a warning and can be safely ignored.*
-
-In Angular 4 `<template>` got deprecated in favor of `<ng-template>`. While Colmena CMS Admin has upgraded, most of its
-dependencies still use `<template>`. This will be resolved when the dependencies are going to update this.
 
 ## Contributors
 
