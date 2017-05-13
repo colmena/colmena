@@ -23,10 +23,11 @@
     "admin"
   ],
   "scripts": {
-    "build": "true",
+    "clean": "rimraf ./client/*",
+    "build": "npm run clean && cp -rv ../admin/dist/* ./client/",
     "dev": "nodemon",
-    "start": "nps",
-    "test": "nps test"
+    "start": "node .",
+    "test": "true"
   },
   "main": "server/server.js",
   "dependencies": {

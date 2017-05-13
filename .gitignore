@@ -3,3 +3,4 @@ node_modules
 dist
 admin/db.json
 lerna-debug.log
+apps/api/client
