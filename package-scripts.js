@@ -14,15 +14,5 @@ module.exports = {
       admin: 'cd admin && nps lint',
       api: 'cd api && nps lint',
     },
-    install: {
-      default: 'nps -p install.admin,install.api',
-      admin: 'cd admin && npm install',
-      api: 'cd api && npm install',
-    },
-    test: {
-      default: 'nps test.admin && nps test.api',
-      admin: 'cd admin && nps test',
-      api: 'cd api && nps test',
-    },
   },
 }

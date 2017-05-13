@@ -1,9 +1,11 @@
 {
-  "name": "@colmena/colmena-cms-admin",
+  "name": "@colmena/admin",
   "version": "0.0.0",
-  "description": "Colmena CMS Admin",
+  "description": "Colmena Admin",
   "private": false,
-  "keywords": [],
+  "license": "MIT",
+  "author": "Bram Borggreve <bram@colmena.io>",
+  "url": "https://github.com/colmena/colmena-cms",
   "homepage": "https://github.com/colmena/colmena-cms",
   "repository": {
     "type": "git",
@@ -12,9 +14,11 @@
   "bugs": {
     "url": "https://github.com/colmena/colmena-cms/issues"
   },
-  "author": "Bram Borggreve <bram@colmena.io>",
-  "license": "MIT",
+  "keywords": [
+    "colmena", "cms", "colmena-cms", "loopback", "angular", "admin"
+  ],
   "scripts": {
+    "dev": "ng serve --port 9000 --hmr true -e hmr --host 0.0.0.0 --progress false --proxy-config proxy.conf.json",
     "start": "nps",
     "test": "nps test"
   },
@@ -37,7 +41,6 @@
     "@angular/cli": "1.0.0",
     "@angular/compiler-cli": "4.0.1",
     "@angularclass/hmr": "1.2.2",
-    "@mean-expert/loopback-sdk-builder": "2.1.0-rc.9",
     "@ngrx/core": "1.2.0",
     "@ngrx/effects": "2.0.2",
     "@ngrx/router-store": "1.2.5",

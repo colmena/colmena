@@ -1,0 +1,132 @@
+0 silly input [ 'start' ]
+1 silly flags { _: [ 'run' ],
+1 silly flags   sort: true,
+1 silly flags   stream: true,
+1 silly flags   scope: '@colmena/api',
+1 silly flags   concurrency: 4,
+1 silly flags   script: 'start',
+1 silly flags   args: [] }
+2 verbose rootPath /Users/beeman/workspace/colmena/colmena-cms
+3 info version 2.0.0-rc.4
+4 silly isInitialized
+5 silly isInitialized true
+6 silly existsSync /Users/beeman/workspace/colmena/colmena-cms/VERSION
+7 info scope @colmena/api
+8 silly initialize attempt
+9 silly initialize success
+10 silly execute attempt
+11 silly runScriptInPackageStreaming [ 'start', [], '@colmena/api' ]
+12 silly getExecOpts { cwd: '/Users/beeman/workspace/colmena/colmena-cms/apps/api' }
+13 error execute Error: Command failed: npm run start
+13 error execute events.js:161
+13 error execute       throw er; // Unhandled 'error' event
+13 error execute       ^
+13 error execute
+13 error execute Error: listen EADDRINUSE 0.0.0.0:3000
+13 error execute     at Object.exports._errnoException (util.js:1028:11)
+13 error execute     at exports._exceptionWithHostPort (util.js:1051:20)
+13 error execute     at Server._listen2 (net.js:1261:14)
+13 error execute     at listen (net.js:1297:10)
+13 error execute     at doListening (net.js:1396:7)
+13 error execute     at _combinedTickCallback (internal/process/next_tick.js:77:11)
+13 error execute     at process._tickDomainCallback (internal/process/next_tick.js:122:9)
+13 error execute The script called "default" which runs "node ." failed with exit code 1 https://github.com/kentcdodds/p-s/blob/v3.0.3/other/ERRORS_AND_WARNINGS.md#failed-with-exit-code
+13 error execute
+13 error execute npm ERR! Darwin 16.5.0
+13 error execute npm ERR! argv "/usr/local/Cellar/node/7.6.0/bin/node" "/usr/local/bin/npm" "run" "start"
+13 error execute npm ERR! node v7.6.0
+13 error execute npm ERR! npm  v4.3.0
+13 error execute npm ERR! code ELIFECYCLE
+13 error execute npm ERR! errno 1
+13 error execute npm ERR! @colmena/api@0.0.0 start: `nps`
+13 error execute npm ERR! Exit status 1
+13 error execute npm ERR!
+13 error execute npm ERR! Failed at the @colmena/api@0.0.0 start script 'nps'.
+13 error execute npm ERR! Make sure you have the latest version of node.js and npm installed.
+13 error execute npm ERR! If you do, this is most likely a problem with the @colmena/api package,
+13 error execute npm ERR! not with npm itself.
+13 error execute npm ERR! Tell the author that this fails on your system:
+13 error execute npm ERR!     nps
+13 error execute npm ERR! You can get information on how to open an issue for this project with:
+13 error execute npm ERR!     npm bugs @colmena/api
+13 error execute npm ERR! Or if that isn't available, you can get their info via:
+13 error execute npm ERR!     npm owner ls @colmena/api
+13 error execute npm ERR! There is likely additional logging output above.
+13 error execute
+13 error execute npm ERR! Please include the following file with any support request:
+13 error execute npm ERR!     /Users/beeman/.npm/_logs/2017-05-13T01_19_06_393Z-debug.log
+13 error execute
+13 error execute > @colmena/api@0.0.0 start /Users/beeman/workspace/colmena/colmena-cms/apps/api
+13 error execute > nps
+13 error execute
+13 error execute nps executing: node .
+13 error execute Data sources: Using SMTP config: { host: 'localhost', port: 1025 }
+13 error execute User: registration enabled
+13 error execute Container does not exist, creating container default
+13 error execute System init db: loaded sample data.
+13 error execute System Settings: 0 removed
+13 error execute System Settings: 4 added
+13 error execute
+13 error execute     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:210:11)
+13 error execute     at process._tickCallback (internal/process/next_tick.js:103:7)
+13 error execute  callback with error
+13 error execute  { Error: Command failed: npm run start
+13 error execute events.js:161
+13 error execute       throw er; // Unhandled 'error' event
+13 error execute       ^
+13 error execute
+13 error execute Error: listen EADDRINUSE 0.0.0.0:3000
+13 error execute     at Object.exports._errnoException (util.js:1028:11)
+13 error execute     at exports._exceptionWithHostPort (util.js:1051:20)
+13 error execute     at Server._listen2 (net.js:1261:14)
+13 error execute     at listen (net.js:1297:10)
+13 error execute     at doListening (net.js:1396:7)
+13 error execute     at _combinedTickCallback (internal/process/next_tick.js:77:11)
+13 error execute     at process._tickDomainCallback (internal/process/next_tick.js:122:9)
+13 error execute The script called "default" which runs "node ." failed with exit code 1 https://github.com/kentcdodds/p-s/blob/v3.0.3/other/ERRORS_AND_WARNINGS.md#failed-with-exit-code
+13 error execute
+13 error execute npm ERR! Darwin 16.5.0
+13 error execute npm ERR! argv "/usr/local/Cellar/node/7.6.0/bin/node" "/usr/local/bin/npm" "run" "start"
+13 error execute npm ERR! node v7.6.0
+13 error execute npm ERR! npm  v4.3.0
+13 error execute npm ERR! code ELIFECYCLE
+13 error execute npm ERR! errno 1
+13 error execute npm ERR! @colmena/api@0.0.0 start: `nps`
+13 error execute npm ERR! Exit status 1
+13 error execute npm ERR!
+13 error execute npm ERR! Failed at the @colmena/api@0.0.0 start script 'nps'.
+13 error execute npm ERR! Make sure you have the latest version of node.js and npm installed.
+13 error execute npm ERR! If you do, this is most likely a problem with the @colmena/api package,
+13 error execute npm ERR! not with npm itself.
+13 error execute npm ERR! Tell the author that this fails on your system:
+13 error execute npm ERR!     nps
+13 error execute npm ERR! You can get information on how to open an issue for this project with:
+13 error execute npm ERR!     npm bugs @colmena/api
+13 error execute npm ERR! Or if that isn't available, you can get their info via:
+13 error execute npm ERR!     npm owner ls @colmena/api
+13 error execute npm ERR! There is likely additional logging output above.
+13 error execute
+13 error execute npm ERR! Please include the following file with any support request:
+13 error execute npm ERR!     /Users/beeman/.npm/_logs/2017-05-13T01_19_06_393Z-debug.log
+13 error execute
+13 error execute > @colmena/api@0.0.0 start /Users/beeman/workspace/colmena/colmena-cms/apps/api
+13 error execute > nps
+13 error execute
+13 error execute nps executing: node .
+13 error execute Data sources: Using SMTP config: { host: 'localhost', port: 1025 }
+13 error execute User: registration enabled
+13 error execute Container does not exist, creating container default
+13 error execute System init db: loaded sample data.
+13 error execute System Settings: 0 removed
+13 error execute System Settings: 4 added
+13 error execute
+13 error execute     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:210:11)
+13 error execute     at process._tickCallback (internal/process/next_tick.js:103:7)
+13 error execute   code: 1,
+13 error execute   killed: false,
+13 error execute   stdout: '\n> @colmena/api@0.0.0 start /Users/beeman/workspace/colmena/colmena-cms/apps/api\n> nps\n\nnps executing: node .\nData sources: Using SMTP config: { host: \'localhost\', port: 1025 }\nUser: registration enabled\nContainer does not exist, creating container default\nSystem init db: loaded sample data.\nSystem Settings: 0 removed\nSystem Settings: 4 added\n',
+13 error execute   stderr: 'events.js:161\n      throw er; // Unhandled \'error\' event\n      ^\n\nError: listen EADDRINUSE 0.0.0.0:3000\n    at Object.exports._errnoException (util.js:1028:11)\n    at exports._exceptionWithHostPort (util.js:1051:20)\n    at Server._listen2 (net.js:1261:14)\n    at listen (net.js:1297:10)\n    at doListening (net.js:1396:7)\n    at _combinedTickCallback (internal/process/next_tick.js:77:11)\n    at process._tickDomainCallback (internal/process/next_tick.js:122:9)\nThe script called "default" which runs "node ." failed with exit code 1 https://github.com/kentcdodds/p-s/blob/v3.0.3/other/ERRORS_AND_WARNINGS.md#failed-with-exit-code\n\nnpm ERR! Darwin 16.5.0\nnpm ERR! argv "/usr/local/Cellar/node/7.6.0/bin/node" "/usr/local/bin/npm" "run" "start"\nnpm ERR! node v7.6.0\nnpm ERR! npm  v4.3.0\nnpm ERR! code ELIFECYCLE\nnpm ERR! errno 1\nnpm ERR! @colmena/api@0.0.0 start: `nps`\nnpm ERR! Exit status 1\nnpm ERR! \nnpm ERR! Failed at the @colmena/api@0.0.0 start script \'nps\'.\nnpm ERR! Make sure you have the latest version of node.js and npm installed.\nnpm ERR! If you do, this is most likely a problem with the @colmena/api package,\nnpm ERR! not with npm itself.\nnpm ERR! Tell the author that this fails on your system:\nnpm ERR!     nps\nnpm ERR! You can get information on how to open an issue for this project with:\nnpm ERR!     npm bugs @colmena/api\nnpm ERR! Or if that isn\'t available, you can get their info via:\nnpm ERR!     npm owner ls @colmena/api\nnpm ERR! There is likely additional logging output above.\n\nnpm ERR! Please include the following file with any support request:\nnpm ERR!     /Users/beeman/.npm/_logs/2017-05-13T01_19_06_393Z-debug.log\n',
+13 error execute   failed: true,
+13 error execute   signal: null,
+13 error execute   cmd: 'npm run start',
+13 error execute   timedOut: false }
