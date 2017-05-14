@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 
-import { DomainApi } from '@colmena/api-lb-sdk'
+import { DomainApi } from '@colmena/admin-lb-sdk'
 
 import { UiDataGridService, FormService } from '@colmena/admin-ui'
 

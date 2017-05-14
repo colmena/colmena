@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 
-import { SettingApi } from '@colmena/api-lb-sdk'
+import { SettingApi } from '@colmena/admin-lb-sdk'
 
 import { UiDataGridService, FormService } from '@colmena/admin-ui'
 

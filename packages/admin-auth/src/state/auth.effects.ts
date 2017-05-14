@@ -5,7 +5,7 @@ import { Action, Store } from '@ngrx/store'
 import { Observable } from 'rxjs/Observable'
 
 import { UiService } from '@colmena/admin-ui'
-import { UserApi } from '@colmena/api-lb-sdk'
+import { UserApi } from '@colmena/admin-lb-sdk'
 
 import * as auth from './auth.actions'
 

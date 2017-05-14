@@ -37,7 +37,7 @@
     "lint": "eslint . --fix",
     "postinstall": "lerna bootstrap",
     "sdk": "run-p -l sdk:api",
-    "sdk:api": "cross-env NODE_ENV=codegen lb-sdk --wipe enabled apps/api/server/server.js packages/api-lb-sdk/src",
+    "sdk:api": "cross-env NODE_ENV=codegen lb-sdk --wipe enabled apps/api/server/server.js packages/admin-lb-sdk/src",
     "start": "cd apps/api && npm start"
   },
   "dependencies": {

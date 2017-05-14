@@ -3,6 +3,6 @@
   "version": "0.0.0",
   "license": "MIT",
   "dependencies": {
-    "@colmena/api-lb-sdk": "0.0.0"
+    "@colmena/admin-lb-sdk": "0.0.0"
   }
 }

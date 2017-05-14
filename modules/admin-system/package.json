@@ -2,7 +2,7 @@
   "name": "@colmena/module-admin-system",
   "version": "0.0.0",
   "dependencies": {
-    "@colmena/api-lb-sdk": "0.0.0"
+    "@colmena/admin-lb-sdk": "0.0.0"
   },
   "license": "MIT"
 }
