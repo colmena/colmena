@@ -1,5 +1,5 @@
 {
-  "db"      : {
+  "db": {
     "name"      : "db",
     "connector" : "loopback-connector-sqlite3",
     "file"      : "pc2sp.db",
