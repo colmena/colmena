@@ -81,7 +81,7 @@ export class UsersComponent {
         break
       case 'delete':
         const successCb = () => this.service
-          .deleteItem(event.item.id,
+          .deleteItem(event.item,
             () => this.grid.refreshData(),
             (err) => this.uiService.toastError('Error deleting item', err.message))
         const question = { title: 'Are you sure?', text: 'The action can not be undone.' }
