@@ -1,47 +1,61 @@
-![](admin/src/assets/logo.png?raw=true)
+![](apps/admin/src/assets/logo.png?raw=true)
 
 # Colmena CMS
 
 > Free and Open Source API and Admin powered by LoopBack and Angular
 
+> This project was formerly known as [Loopback Angular Admin](https://github.com/beeman/loopback-angular-admin).
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-25-orange.svg?style=flat-square)](#contributors) [![](https://colmena-slack.now.sh/badge.svg)](https://colmena-slack.now.sh/) [![OpenCollective](https://opencollective.com/colmena-cms/backers/badge.svg)](#backers) [![OpenCollective](https://opencollective.com/colmena-cms/sponsors/badge.svg)](#sponsors)
 
-#### TPFKALAA
+## ⚠️ Warning
 
-This is a complete rewrite of The Project Formerly Known As Loopback Angular Admin.
-
-## Warning
-
-#### This software is under 'active' development!
-#### Please do not use it in production as-is.
-#### Please refer to the [Work in Progress](#work-in-progress) section to find out what needs to be implemented to be production ready
+#### This software is under active development!
+#### Please do not use it in production without addressing the issues in the [Work in Progress](#work-in-progress) section
 
 ## About
 
 Colmena CMS is a starter kit for an API with an Admin interface that can be easily extended and built upon.
 
-#### Components
-
 It is built using a collection of great Open Source projects, including but not limited to:
 
-- [LoopBack](https://loopback.io/) `v2.x` - API server based on Express.
-- [Angular](https://angular.io/) `v4.x +` - MVC framework to build web apps.
-- [Fireloop](http://fireloop.io/) - Awesome Real-Time integration of Loopback and Angular.
+- [LoopBack](https://loopback.io/) - API server based on Express.
+- [Angular](https://angular.io/) - MVC framework to build web apps.
+- [LoopBack SDK Builder](https://www.npmjs.com/package/@mean-expert/loopback-sdk-builder) - Awesome integration of Loopback and Angular.
 - [CoreUI](http://coreui.io/) - Amazing Bootstrap Admin Template.
 
 ## Installation
 
-The project consists of 2 components, the API and the Admin interface.
+The project is a mono-repo managed by [lerna](https://lernajs.io) that consists of the following:
+
+- apps
+  - admin - The Admin interface built with Angular.
+  - api - The REST API built with LoopBack.
+- modules - Modules that add functionality to the apps.
+- packages - Shareable packages used by the apps and the modules.
 
 #### Requirements
 
-This project is built with node and therefore `node` (v6.x) and `yarn` or `npm` (v3.x) need to be available on your machine.
+Software installed on your system:
+
+- `node` (v6.9.x or higher).
+- `yarn` or `npm` (v3.x or higher).
+
+
+Globally installed Node packages:
+
+- Angular CLI (`npm install -g @angular/cli`)
+- LernaJS (`npm install -g lerna`)
+
+And lastly (not needed to run the app, but will be useful during development):
+
+- LoopBack CLI (`npm install -g loopback-cli`)
 
 #### Clone repo
 
 First clone the repository to get the project files:
 
-    $ git clone https://github.com/colmena/colmena-cms
+    $ git clone -b develop https://github.com/colmena/colmena-cms
     $ cd colmena-cms
 
 ### Top-level directory
@@ -73,13 +87,11 @@ You can also start the two components separately:
 
 #### Start the API
 
-    $ cd api
-    $ npm run dev
+    $ npm run dev:api
 
 #### Start the Admin
 
-    $ cd admin
-    $ npm run dev
+    $ npm run dev:admin
 
 ### Running on other host than localhost
 
