@@ -1,8 +1,6 @@
 'use strict'
 
-
-module.exports = function (Setting) {
-
+module.exports = function(Setting) {
   Setting.observe('loaded', (ctx, next) => {
     if (ctx.instance && ctx.instance.type) {
       switch (ctx.instance.type) {
@@ -16,5 +14,4 @@ module.exports = function (Setting) {
     }
     return next()
   })
-
 }

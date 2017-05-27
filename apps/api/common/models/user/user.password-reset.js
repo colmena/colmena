@@ -5,7 +5,6 @@ const config = require('config')
 const log = require('@colmena/logger')
 
 module.exports = function userPasswordReset(User) {
-
   /**
    * user: Password reset wrapped to ensure that no data is leaked.
    */
@@ -23,12 +22,15 @@ module.exports = function userPasswordReset(User) {
 
   User.sendPasswordResetMessage = function sendPasswordResetMessage(ctx) {
     // We first retrieve the domain based on the realm to get the reply-to email and name
-    return User.app.models.Domain.findById(ctx.user.realm)
+    return User.app.models.Domain
+      .findById(ctx.user.realm)
       .then(domain => {
         // This is the access token we will send to the user
         const accessToken = ctx.accessToken.id
         // This is the frontend URL that has the password reset dialog
-        const baseUrl = config.get('admin.url').replace(/\/$/, '') + config.get('admin.recoverPath')
+        const baseUrl =
+          config.get('admin.url').replace(/\/$/, '') +
+          config.get('admin.recoverPath')
         const resetPasswordUrl = `${baseUrl}?token=${accessToken}`
 
         // These variables are passed into the password reset mails
@@ -49,25 +51,23 @@ module.exports = function userPasswordReset(User) {
         }
 
         log.info(`User.sendPasswordResetMessage:`, message)
-        return User.app.models.Email
-          .send(message, (err, result) => {
-            if (err) {
-              log.error('User.sendPasswordResetMessage: Email.send failure:', err)
-              return Promise.reject(err)
-            }
-            return Promise.resolve(result)
-          })
+        return User.app.models.Email.send(message, (err, result) => {
+          if (err) {
+            log.error('User.sendPasswordResetMessage: Email.send failure:', err)
+            return Promise.reject(err)
+          }
+          return Promise.resolve(result)
+        })
       })
       .catch(err => Promise.reject(err))
   }
 
   // Wrapping sendPasswordResetMessage instead of using `bind` ensures that our test spies will work.
   User.on('resetPasswordRequest', (...args) =>
-    User.sendPasswordResetMessage(...args)
-      .catch(() => {
-        // Squelching error because the LB call chain is not equipped to deal with it,
-        // but we still desire the error to be available for other callers of sendPasswordResetMessage.
-      })
+    User.sendPasswordResetMessage(...args).catch(() => {
+      // Squelching error because the LB call chain is not equipped to deal with it,
+      // but we still desire the error to be available for other callers of sendPasswordResetMessage.
+    })
   )
 
   /**
@@ -86,7 +86,11 @@ module.exports = function userPasswordReset(User) {
     }
 
     // Verify passwords match
-    if (!req.body.password || !req.body.verify || req.body.password !== req.body.verify) {
+    if (
+      !req.body.password ||
+      !req.body.verify ||
+      req.body.password !== req.body.verify
+    ) {
       const err = new Error('Passwords do not match')
 
       err.statusCode = 401
@@ -112,7 +116,5 @@ module.exports = function userPasswordReset(User) {
         return res.json({ status: 'success' })
       })
     })
-
   }
-
 }

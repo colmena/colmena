@@ -1,8 +1,7 @@
 const _ = require('lodash')
 const fs = require('fs')
 
-function parse (templatePath, params) {
-
+function parse(templatePath, params) {
   // Read the template
   let content = fs.readFileSync(templatePath) // eslint-disable-line no-sync
 

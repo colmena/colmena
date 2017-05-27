@@ -1,10 +1,9 @@
-'use strict';
+'use strict'
 const Promise = require('bluebird')
 const log = require('@colmena/logger')
 const request = require('request')
 
 module.exports = function(Container) {
-
   Container.afterRemote('upload', (ctx, modelInstance) => {
     const fileInfo = modelInstance.result.files.file[0]
     const metaData = {
@@ -15,8 +14,7 @@ module.exports = function(Container) {
       container: fileInfo.container,
     }
 
-    return Container.app.models.File
-      .upsert(metaData)
+    return Container.app.models.File.upsert(metaData)
   })
 
   // Promisified wrapper function to find or create a container by name
@@ -69,7 +67,6 @@ module.exports = function(Container) {
     })
   }
 
-
   // Promisified wrapper function to destroy a file from a container by name
   Container.deleteFile = function deleteFile(containerName, fileName) {
     return new Promise((resolve, reject) => {
@@ -77,7 +74,9 @@ module.exports = function(Container) {
       Container.getFile(containerName, fileName, err => {
         if (err) {
           // If we can not retrieve it, do nothing
-          log.info(`File ${fileName} does not exist in container ${containerName} , skipping file deletion`)
+          log.info(
+            `File ${fileName} does not exist in container ${containerName} , skipping file deletion`
+          )
           // Return the existing container
           return resolve(true)
         }
@@ -85,7 +84,10 @@ module.exports = function(Container) {
         return Container.removeFile(containerName, fileName, (err, res) => {
           if (err) {
             // Something went wrong creating the container
-            log.error(`Error destroying file ${fileName} from container ${containerName}`, err)
+            log.error(
+              `Error destroying file ${fileName} from container ${containerName}`,
+              err
+            )
             return reject(err)
           }
           // Return confirmation
@@ -102,9 +104,12 @@ module.exports = function(Container) {
    * @param {String} containerName The storage container to download the file to
    * @param {String} fileName The name of the file to download the file to
    */
-  Container.importUrl = function importUrl(url, containerName, fileName = null) {
+  Container.importUrl = function importUrl(
+    url,
+    containerName,
+    fileName = null
+  ) {
     return new Promise((resolve, reject) => {
-
       // Sanitize image url
       url = url.replace(/^\s+|\s+$/g, '')
 
@@ -141,12 +146,12 @@ module.exports = function(Container) {
       pipe.on('error', error => reject(error))
 
       // Create the File instance after the download completes
-      pipe.on('finish', () => Container.app.models.File
-        .upsert(metaData)
-        .then(() => resolve(metaData))
-        .catch(err => Promise.reject(err))
+      pipe.on('finish', () =>
+        Container.app.models.File
+          .upsert(metaData)
+          .then(() => resolve(metaData))
+          .catch(err => Promise.reject(err))
       )
-
     })
   }
-};
+}

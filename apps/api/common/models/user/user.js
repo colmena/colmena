@@ -3,16 +3,21 @@
 const config = require('config')
 const log = require('@colmena/logger')
 
-module.exports = function (User) {
-
+module.exports = function(User) {
   // This does not work on bulk create: https://github.com/strongloop/loopback-datasource-juggler/issues/793
-  User.validatesUniquenessOf('email', { scopedTo: [ 'realm' ], message: 'Email is not unique within this realm' })
+  User.validatesUniquenessOf('email', {
+    scopedTo: ['realm'],
+    message: 'Email is not unique within this realm',
+  })
 
-  function getRegistrationEnabled () {
-    return (config.has('settings.registrationEnabled') && config.get('settings.registrationEnabled') !== false)
+  function getRegistrationEnabled() {
+    return (
+      config.has('settings.registrationEnabled') &&
+      config.get('settings.registrationEnabled') !== false
+    )
   }
 
-  function configureUserRegistration () {
+  function configureUserRegistration() {
     const enabled = getRegistrationEnabled()
 
     if (enabled) {
@@ -32,7 +37,7 @@ module.exports = function (User) {
 
   configureUserRegistration()
 
-  User.observe('before save', function setUsernameIfEmpty (ctx, next) {
+  User.observe('before save', function setUsernameIfEmpty(ctx, next) {
     if (ctx.isNewInstance && !ctx.instance.username && ctx.instance.email) {
       ctx.instance.username = ctx.instance.email
     }
@@ -75,12 +80,17 @@ module.exports = function (User) {
       .then(res => (userRoleNames = res))
       .then(() => User.getAllRoleNames())
       .then(res => (allRoleNames = res))
-      .then(() => (
-        result.roles = {
-          assigned: allRoleNames.filter(name => userRoleNames.indexOf(name) !== -1),
-          unassigned: allRoleNames.filter(name => userRoleNames.indexOf(name) === -1),
-        }
-      ))
+      .then(
+        () =>
+          (result.roles = {
+            assigned: allRoleNames.filter(
+              name => userRoleNames.indexOf(name) !== -1
+            ),
+            unassigned: allRoleNames.filter(
+              name => userRoleNames.indexOf(name) === -1
+            ),
+          })
+      )
       .then(() => result)
   }
 }

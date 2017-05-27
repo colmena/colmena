@@ -2,8 +2,7 @@
 
 const faker = require('faker/locale/en')
 
-module.exports = function (Product) {
-
+module.exports = function(Product) {
   Product._templates = () => ({
     basic: domainId => {
       const name = faker.commerce.productName()
@@ -17,5 +16,4 @@ module.exports = function (Product) {
       }
     },
   })
-
 }

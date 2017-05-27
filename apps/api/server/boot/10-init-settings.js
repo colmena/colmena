@@ -2,20 +2,22 @@
 const config = require('config')
 const log = require('@colmena/logger')
 
-module.exports = function (app, cb) {
-
+module.exports = function(app, cb) {
   // This is the array of Settings that will be created
-  const systemSettings = [ {
-    system: true,
-    type: 'string',
-    key: 'nodeEnv',
-    value: process.env.NODE_ENV || 'development',
-  }, {
-    system: true,
-    type: 'string',
-    key: 'appName',
-    value: 'Colmena CMS',
-  } ]
+  const systemSettings = [
+    {
+      system: true,
+      type: 'string',
+      key: 'nodeEnv',
+      value: process.env.NODE_ENV || 'development',
+    },
+    {
+      system: true,
+      type: 'string',
+      key: 'appName',
+      value: 'Colmena CMS',
+    },
+  ]
 
   // Check if there are user configured Settings
   if (config.has('settings')) {
@@ -24,7 +26,7 @@ module.exports = function (app, cb) {
 
     // Loop over the settings
     Object.keys(settings).forEach(key => {
-      const value = settings[ key ]
+      const value = settings[key]
 
       const setting = {
         key,
@@ -38,10 +40,9 @@ module.exports = function (app, cb) {
 
   const Setting = app.models.Setting
 
-  Setting
-    .destroyAll({
-      system: true,
-    })
+  Setting.destroyAll({
+    system: true,
+  })
     .then(res => {
       log.info(`System Settings: ${res.count} removed`)
       return Setting.create(systemSettings)
@@ -51,5 +52,4 @@ module.exports = function (app, cb) {
       return cb(null, res)
     })
     .catch(cb)
-
 }

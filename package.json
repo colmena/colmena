@@ -75,6 +75,9 @@
     "zone.js": "0.8.5"
   },
   "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 6
+    },
     "plugins": [
       "prettier"
     ],
