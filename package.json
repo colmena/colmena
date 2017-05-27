@@ -41,8 +41,7 @@
     "start": "cd apps/api && npm start"
   },
   "dependencies": {
-    "cross-env": "^5.0.0",
-    "now": "^5.2.3"
+    "cross-env": "^5.0.0"
   },
   "devDependencies": {
     "@angular/animations": "4.0.1",
