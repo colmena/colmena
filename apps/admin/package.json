@@ -32,6 +32,7 @@
     "@colmena/admin-ui": "0.0.0",
     "@colmena/admin-lb-sdk": "0.0.0",
     "@colmena/module-admin-content": "0.0.0",
+    "@colmena/module-admin-system": "0.0.0",
     "@angular/animations": "4.1.3",
     "@angular/common": "4.1.3",
     "@angular/compiler": "4.1.3",

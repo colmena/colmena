@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core'
 import { Store } from '@ngrx/store'
 
 import { AppSharedModule } from '../app.shared.module'
-import { SystemModule } from '../system/system.module'
+import { SystemModule } from '@colmena/module-admin-system'
 
 import { AboutComponent } from './about/about.component'
 import { DashboardComponent } from './dashboard/dashboard.component'
