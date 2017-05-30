@@ -17,9 +17,9 @@ import { ColmenaUiModule } from '@colmena/admin-ui'
 import { ContentModule } from '@colmena/module-admin-content'
 import { CoreModule } from '@colmena/module-admin-core'
 import { DashboardModule } from '@colmena/module-admin-dashboard'
+import { DevModule } from '@colmena/module-admin-dev'
 import { SystemModule } from '@colmena/module-admin-system'
 
-import { DevModule } from './dev/dev.module'
 
 // Local Components/Routes/Services
 import { AppComponent } from './app.component'

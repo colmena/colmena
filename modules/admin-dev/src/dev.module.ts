@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+
 import { Store } from '@ngrx/store'
 
-import { AppSharedModule } from '../app.shared.module'
+import { ColmenaUiModule } from '@colmena/admin-ui'
 
 import { DevAlertComponent } from './alert/alert.component'
 import { DevIndexComponent } from './index/index.component'
@@ -9,7 +12,10 @@ import { DevToastComponent } from './toast/toast.component'
 
 @NgModule({
   imports: [
-    AppSharedModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ColmenaUiModule,
   ],
   declarations: [
     DevAlertComponent,
