@@ -1,7 +1,5 @@
-import { Routes } from '@angular/router'
-
-import { HasContentAccess } from '../app.guards'
-import { DomainResolver } from '../app.resolvers'
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
 import { ContentDashboardComponent } from './content.component'
 
@@ -12,12 +10,10 @@ import { PostsComponent } from './posts/posts.component'
 import { ProductsComponent } from './products/products.component'
 
 export const ContentModuleRoutes: Routes = [ {
-  path: 'content',
+  path: '',
   data: {
     title: 'Content',
   },
-  canActivate: [ HasContentAccess ],
-  resolve: { domain: DomainResolver },
   children: [
     { path: '', component: ContentDashboardComponent, data: { title: 'Dashboard' } },
     { path: 'events', component: EventsComponent, data: { title: 'Events' } },
@@ -27,3 +23,9 @@ export const ContentModuleRoutes: Routes = [ {
     { path: 'products', component: ProductsComponent, data: { title: 'Products' } },
   ],
 } ]
+
+@NgModule({
+  imports: [RouterModule.forChild(ContentModuleRoutes)],
+  exports: [RouterModule]
+})
+export class ContentRoutesModule { }

@@ -21,7 +21,7 @@
     "clean": "rimraf ./dist",
     "prebuild": "npm run clean",
     "build": "ng build --output-path ./dist",
-    "dev": "ng serve --port 9000 --hmr true -e hmr --host 127.0.0.1 --progress false --proxy-config proxy.conf.json",
+    "dev": "ng serve --port 9000 --hmr true -e hmr --host 127.0.0.1 --progress true --proxy-config proxy.conf.json",
     "start": "nps",
     "test": "nps test"
   },
@@ -31,6 +31,7 @@
     "@colmena/admin-layout": "0.0.0",
     "@colmena/admin-ui": "0.0.0",
     "@colmena/admin-lb-sdk": "0.0.0",
+    "@colmena/module-admin-content": "0.0.0",
     "@angular/animations": "4.1.3",
     "@angular/common": "4.1.3",
     "@angular/compiler": "4.1.3",

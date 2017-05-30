@@ -5,19 +5,28 @@ import { FullLayoutComponent } from '@colmena/admin-layout'
 import { SimpleLayoutComponent } from '@colmena/admin-layout'
 
 import { AuthRoutes } from '@colmena/admin-auth'
-import { ContentModuleRoutes } from './content/content.routes'
+import { ContentModuleRoutes } from '@colmena/module-admin-content'
 import { DevModuleRoutes } from './dev/dev.routes'
 import { SystemModuleRoutes } from './system/system.routes'
 import { CoreModuleRoutes } from './core/core.routes'
 import { DashboardModuleRoutes } from './dashboard/dashboard.routes'
+import { HasContentAccess } from './app.guards'
+import { DomainResolver } from './app.resolvers'
 
 const simpleRoutes = [
   ...CoreModuleRoutes,
   ...AuthRoutes,
 ]
 
+const contentRoute = {
+  path: 'content',
+  canActivate: [ HasContentAccess ],
+  resolve: { domain: DomainResolver },
+  children: ContentModuleRoutes,
+}
+
 const fullRoutes = [
-  ...ContentModuleRoutes,
+  contentRoute,
   ...DashboardModuleRoutes,
   ...DevModuleRoutes,
   ...SystemModuleRoutes,

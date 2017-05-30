@@ -14,7 +14,7 @@ import { ColmenaLayoutModule } from '@colmena/admin-layout'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
 // Local Modules
-import { ContentModule } from './content/content.module'
+import { ContentModule } from '@colmena/module-admin-content'
 import { CoreModule } from './core/core.module'
 import { DashboardModule } from './dashboard/dashboard.module'
 import { DevModule } from './dev/dev.module'

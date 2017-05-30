@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core'
-import { Store } from '@ngrx/store'
+import { CommonModule } from '@angular/common'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpModule } from '@angular/http'
+import { RouterModule } from '@angular/router'
 
-import { AppSharedModule } from '../app.shared.module'
+import { ColmenaUiModule } from '@colmena/admin-ui'
+
+import { Store } from '@ngrx/store'
 
 import { ContentDashboardComponent } from './content.component'
 
@@ -45,7 +50,13 @@ const providers = [
 
 @NgModule({
   imports: [
-    AppSharedModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
+    RouterModule,
+
+    ColmenaUiModule,
   ],
   declarations: [
     ContentDashboardComponent,

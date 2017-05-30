@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core'
 import { Store } from '@ngrx/store'
 
 import { AppSharedModule } from '../app.shared.module'
-import { ContentModule } from '../content/content.module'
 import { SystemModule } from '../system/system.module'
 
 import { AboutComponent } from './about/about.component'
@@ -20,7 +19,6 @@ const components = [
 @NgModule({
   imports: [
     AppSharedModule,
-    ContentModule,
     SystemModule,
   ],
   declarations: [
