@@ -1,9 +1,9 @@
 api:
-  baseUrl: http://0.0.0.0:3000
+  baseUrl: http://127.0.0.1:3000
   version: api/v1
 
 admin:
-  url: http://0.0.0.0:9000
+  url: http://127.0.0.1:9000
   recoverPath: /#/password-reset
 
 mongodb:
