@@ -15,7 +15,12 @@
     "url": "https://github.com/colmena/colmena-cms/issues"
   },
   "keywords": [
-    "colmena", "cms", "colmena-cms", "loopback", "angular", "admin"
+    "colmena",
+    "cms",
+    "colmena-cms",
+    "loopback",
+    "angular",
+    "admin"
   ],
   "scripts": {
     "clean": "rimraf ./dist",

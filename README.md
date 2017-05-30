@@ -60,12 +60,8 @@ First clone the repository to get the project files:
 
 ### Top-level directory
 
-From inside the project dir (`colmena-cms`) run  `yarn` or `npm install`:
+From inside the project dir (`colmena-cms`) run `npm install`:
 
-    $ yarn
-    
-or
-    
     $ npm install
 
 ## Development
