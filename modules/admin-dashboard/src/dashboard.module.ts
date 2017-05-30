@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpModule } from '@angular/http'
+import { RouterModule } from '@angular/router'
+
+import { ColmenaUiModule } from '@colmena/admin-ui'
+
 import { Store } from '@ngrx/store'
 
-import { AppSharedModule } from '../app.shared.module'
+import { ContentModule } from '@colmena/module-admin-content'
 import { SystemModule } from '@colmena/module-admin-system'
 
 import { AboutComponent } from './about/about.component'
@@ -18,7 +25,14 @@ const components = [
 
 @NgModule({
   imports: [
-    AppSharedModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
+    RouterModule,
+
+    ColmenaUiModule,
+    ContentModule,
     SystemModule,
   ],
   declarations: [

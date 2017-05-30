@@ -15,10 +15,10 @@ import { ColmenaUiModule } from '@colmena/admin-ui'
 
 // Local Modules
 import { ContentModule } from '@colmena/module-admin-content'
+import { DashboardModule } from '@colmena/module-admin-dashboard'
 import { SystemModule } from '@colmena/module-admin-system'
 
 import { CoreModule } from './core/core.module'
-import { DashboardModule } from './dashboard/dashboard.module'
 import { DevModule } from './dev/dev.module'
 
 // Local Components/Routes/Services
