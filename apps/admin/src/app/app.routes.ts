@@ -6,16 +6,16 @@ import { SimpleLayoutComponent } from '@colmena/admin-layout'
 
 import { AuthRoutes } from '@colmena/admin-auth'
 import { ContentModuleRoutes } from '@colmena/module-admin-content'
+import { CoreModuleRoutes } from '@colmena/module-admin-core'
 import { DashboardModuleRoutes } from '@colmena/module-admin-dashboard'
 import { SystemModuleRoutes } from '@colmena/module-admin-system'
 
 import { DevModuleRoutes } from './dev/dev.routes'
-import { CoreModuleRoutes } from './core/core.routes'
 import { HasContentAccess } from './app.guards'
 import { DomainResolver } from './app.resolvers'
 
 const simpleRoutes = [
-  ...CoreModuleRoutes,
+  { path: '', children: CoreModuleRoutes },
   ...AuthRoutes,
 ]
 

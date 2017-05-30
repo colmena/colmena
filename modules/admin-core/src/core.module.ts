@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core'
 
-import { AppSharedModule } from '../app.shared.module'
+import { ColmenaUiModule } from '@colmena/admin-ui'
 
 import { NotFoundComponent } from './not-found/not-found.component'
 import { RouterComponent } from './router/router.component'
@@ -12,7 +12,7 @@ const components = [
 
 @NgModule({
   imports: [
-    AppSharedModule,
+    ColmenaUiModule,
   ],
   declarations: [
     ...components,

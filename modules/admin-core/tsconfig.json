@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "target": "es5",
+    "paths": {
+      "@angular/*": ["node_modules/@angular/*"],
+      "@colmena/*": ["node_modules/@colmena/*"],
+      "@ngrx/*": ["node_modules/@ngrx/*"],
+      "rxjs/*": ["node_modules/rxjs/*"]
+    },
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2016",
+      "dom"
+    ]
+  }
+}
