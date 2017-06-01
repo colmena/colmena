@@ -10,6 +10,7 @@
     "paths": {
       "@angular/*": ["node_modules/@angular/*"],
       "@ngrx/*": ["node_modules/@ngrx/*"],
+      "@colmena/*": ["node_modules/@colmena/*"],
       "rxjs/*": ["node_modules/rxjs/*"]
     },
     "typeRoots": [

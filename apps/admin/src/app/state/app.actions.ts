@@ -10,27 +10,27 @@ export const ActionTypes = {
 
 export class AppAddDomainAction implements Action {
   type = ActionTypes.APP_DOMAIN_ADD
-  constructor(payload: any) { }
+  constructor(public payload: any) { }
 }
 
 export class AppAddSettingAction implements Action {
   type = ActionTypes.APP_SETTING_ADD
-  constructor(payload: any) { }
+  constructor(public payload: any) { }
 }
 
 export class AppRedirectDashboardAction implements Action {
   type = ActionTypes.APP_REDIRECT_DASHBOARD
-  constructor(payload: any) { }
+  constructor(public payload: any) { }
 }
 
 export class AppRedirectLoginAction implements Action {
   type = ActionTypes.APP_REDIRECT_LOGIN
-  constructor(payload: any) { }
+  constructor(public payload: any) { }
 }
 
 export class AppRedirectRouterAction implements Action {
   type = ActionTypes.APP_REDIRECT_ROUTER
-  constructor(payload: any) { }
+  constructor(public payload: any) { }
 }
 
 export type Actions
