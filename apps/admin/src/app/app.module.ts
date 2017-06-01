@@ -51,10 +51,7 @@ import { HasContentAccess, HasSystemAccess, UserLoggedIn } from './app.guards'
     AppStoreModule,
     appRoutes,
   ],
-  providers: [ {
-      provide: LocationStrategy,
-      useClass: HashLocationStrategy
-    },
+  providers: [
     AppService,
     LogService,
     DomainResolver,

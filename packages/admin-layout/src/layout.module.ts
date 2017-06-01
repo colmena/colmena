@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
-import { BsDropdownModule } from 'ng2-bootstrap'
+import { BsDropdownModule } from 'ngx-bootstrap'
 
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component'
 import { FooterComponent } from './components/footer/footer.component'

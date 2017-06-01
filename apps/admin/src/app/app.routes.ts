@@ -22,7 +22,7 @@ const simpleRoutes = [
 
 const contentRoute = {
   path: 'content',
-  canActivate: [ HasContentAccess ],
+  canActivate: [HasContentAccess],
   resolve: { domain: DomainResolver },
   children: ContentModuleRoutes,
 }
@@ -34,7 +34,7 @@ const dashboardRoute = {
 
 const devRoute = {
   path: '',
-  canActivate: [ HasSystemAccess ],
+  canActivate: [HasSystemAccess],
   children: DevModuleRoutes,
 }
 
@@ -53,4 +53,4 @@ const routes = [
 ]
 
 // Set enableTracing to true to debug routing
-export const appRoutes: ModuleWithProviders = RouterModule.forRoot(routes, { enableTracing: false })
+export const appRoutes: ModuleWithProviders = RouterModule.forRoot(routes, { enableTracing: false, useHash: true })

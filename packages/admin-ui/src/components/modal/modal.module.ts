@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-import { ModalModule } from 'ng2-bootstrap/modal'
+import { ModalModule } from 'ngx-bootstrap/modal'
 
 import { UiModalComponent } from './modal.component'
 import { UiModalFormComponent  } from './modal-form.component'

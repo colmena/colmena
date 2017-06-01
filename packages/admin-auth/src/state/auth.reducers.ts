@@ -1,6 +1,16 @@
 import { Action, ActionReducer } from '@ngrx/store'
 
-const initialState: any = {
+export interface State {
+  currentUser: any,
+  loggedIn: boolean,
+  realms: any[],
+  roles: {
+    assigned: any[],
+    unassigned: any[],
+  },
+}
+
+const initialState: State = {
   currentUser: null,
   loggedIn: false,
   realms: [],
@@ -10,7 +20,7 @@ const initialState: any = {
   },
 }
 
-export const auth: ActionReducer<any> = (state = initialState, action: Action) => {
+export function reducer(state = initialState, action: Action): State {
   switch (action.type) {
 
     case 'AUTH_LOGIN':
@@ -25,13 +35,13 @@ export const auth: ActionReducer<any> = (state = initialState, action: Action) =
       return Object.assign({}, state, { currentUser: action.payload, loggedIn: true })
 
     case 'AUTH_REALMS_ADD':
-      return Object.assign({}, state, { realms: [ ...state.realms, action.payload ] })
+      return Object.assign({}, state, { realms: [...state.realms, action.payload] })
 
     case 'AUTH_SET_ROLES':
       return Object.assign({}, state, {
         roles: {
-          assigned: [...state.roles.assigned, ...action.payload.assigned ],
-          unassigned: [...state.roles.unassigned, ...action.payload.unassigned ],
+          assigned: [...state.roles.assigned, ...action.payload.assigned],
+          unassigned: [...state.roles.unassigned, ...action.payload.unassigned],
         },
       })
 

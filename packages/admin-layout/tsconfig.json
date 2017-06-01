@@ -13,7 +13,7 @@
       "@colmena/*": ["node_modules/@colmena/*"],
       "@ngrx/*": ["node_modules/@ngrx/*"],
       "rxjs/*": ["node_modules/rxjs/*"],
-      "ng2-bootstrap/*": ["node_modules/ng2-bootstrap/*"]
+      "ngx-bootstrap/*": ["node_modules/ngx-bootstrap/*"]
     },
     "typeRoots": [
       "node_modules/@types"

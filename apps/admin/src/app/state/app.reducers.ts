@@ -1,6 +1,15 @@
 import { sortBy } from 'lodash'
 import { Action, ActionReducer } from '@ngrx/store'
 
+export interface State {
+  activeDomain: any;
+  development: boolean;
+  domains: any[];
+  settings: any;
+  contentDashboard: any[];
+  systemDashboard: any[];
+}
+
 const initialState: any = {
   activeDomain: null,
   development: false,
@@ -10,14 +19,14 @@ const initialState: any = {
   systemDashboard: [],
 }
 
-export const app: ActionReducer<any> = (state = initialState, action: Action) => {
+export function reducer(state = initialState, action: Action): State {
   switch (action.type) {
 
     case 'APP_DEVELOPMENT_ENABLE':
       return Object.assign({}, state, { development: true })
 
     case 'APP_DOMAIN_ADD':
-      return Object.assign({}, state, { domains: [ ...state.domains, action.payload] })
+      return Object.assign({}, state, { domains: [...state.domains, action.payload] })
 
     case 'APP_DOMAIN_SELECT':
     case 'APP_DOMAIN_SET':
@@ -31,12 +40,12 @@ export const app: ActionReducer<any> = (state = initialState, action: Action) =>
 
     case 'APP_CONTENT_DASHBOARD':
       return Object.assign({}, state, {
-        contentDashboard: sortBy([ ...state.contentDashboard, action.payload ], ['weight'])
+        contentDashboard: sortBy([...state.contentDashboard, action.payload], ['weight'])
       })
 
     case 'APP_SYSTEM_DASHBOARD':
       return Object.assign({}, state, {
-        systemDashboard: sortBy([ ...state.systemDashboard, action.payload ], ['weight'])
+        systemDashboard: sortBy([...state.systemDashboard, action.payload], ['weight'])
       })
 
     default:
