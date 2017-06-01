@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core'
 import { assign, noop } from 'lodash'
-import swal, { SweetAlertOptions } from 'sweetalert2'
+// import swal, { SweetAlertOptions } from 'sweetalert2'
 
 import { ToastyService, ToastyConfig } from 'ng2-toasty'
 
+const swal = (args) => Promise.resolve(args)
 @Injectable()
 export class UiService {
 
