@@ -1,4 +1,4 @@
-# colmena-cms-admin
+# colmena-admin
 
 This project is based on CoreUI - Angular 2.
 

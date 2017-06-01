@@ -7,7 +7,7 @@
 Please use the following link syntaxes:
 
 - #42 (to reference issues in the current repository)
-- colmena/colmena-cms#42 (to reference issues in another repository)
+- colmena/colmena#42 (to reference issues in another repository)
 -->
 
 - None

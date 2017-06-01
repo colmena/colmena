@@ -1,6 +1,6 @@
-# Contributing to Colmena CMS
+# Contributing to Colmena
 
-Thanks for your interest in contributing to Colmena CMS.
+Thanks for your interest in contributing to Colmena.
 
 As a contributor, here are the guidelines we would like you to follow:
 
@@ -12,7 +12,7 @@ As a contributor, here are the guidelines we would like you to follow:
  - [Commit Message Guidelines](#commit)
 
 ## <a name="coc"></a> Code of Conduct
-Help us keep Colmena CMS open and inclusive. Please read and follow our [Code of Conduct][coc].
+Help us keep Colmena open and inclusive. Please read and follow our [Code of Conduct][coc].
 
 ## <a name="question"></a> Got a Question or Problem?
 
@@ -49,7 +49,7 @@ In order to reproduce bugs we might ask you to provide a minimal reproduction sc
 GitHub. Having a live, reproducible scenario gives us wealth of important information without going back & forth to you
 with additional questions like:
 
-- version of Colmena CMS used
+- version of Colmena used
 - 3rd-party libraries and their versions
 - and most importantly - a use-case that fails
 
@@ -63,12 +63,12 @@ we really need to isolate the problem before we can fix it.
 Unfortunately we are not able to investigate / fix bugs without a minimal reproduction, so if we don't hear back from
 you we are going to close an issue that don't have enough info to be reproduced.
 
-You can file new issues by filling out our [new issue form](https://github.com/colmena/colmena-cms/issues/new).
+You can file new issues by filling out our [new issue form](https://github.com/colmena/colmena/issues/new).
 
 ### <a name="submit-pr"></a> Submitting a Pull Request (PR)
 Before you submit your Pull Request (PR) consider the following guidelines:
 
-* Search [GitHub](https://github.com/colmena/colmena-cms/pulls) for an open or closed PR that relates to your submission.
+* Search [GitHub](https://github.com/colmena/colmena/pulls) for an open or closed PR that relates to your submission.
 You don't want to duplicate effort.
 * Make your changes in a new git branch:
 
@@ -91,10 +91,10 @@ You don't want to duplicate effort.
     git push origin my-fix-branch
     ```
 
-* In GitHub, send a pull request to `colmena-cms:develop`.
+* In GitHub, send a pull request to `colmena:develop`.
 * If we suggest changes then:
   * Make the required updates.
-  * Re-run the Colmena CMS test suites to ensure tests are still passing.
+  * Re-run the Colmena test suites to ensure tests are still passing.
   * Rebase your branch and force push to your GitHub repository (this will update your Pull Request):
 
     ```shell
@@ -137,7 +137,7 @@ from the main (upstream) repository:
 
 We have very precise rules over how our git commit messages can be formatted.  This leads to **more
 readable messages** that are easy to follow when looking through the **project history**.  But also,
-we use the git commit messages to **generate the Colmena CMS change log**.
+we use the git commit messages to **generate the Colmena change log**.
 
 ### Commit Message Format
 Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special
@@ -217,7 +217,7 @@ reference GitHub issues that this commit **Closes**.
 **Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
 
 [coc]: CODE_OF_CONDUCT.md
-[github]: https://github.com/colmena/colmena-cms
+[github]: https://github.com/colmena/colmena
 
 ### Credits
 This CONTRIBUTING.md is a modified version from [angular/angular](https://github.com/angular/angular/blob/master/CONTRIBUTING.md)

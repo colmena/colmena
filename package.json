@@ -5,19 +5,20 @@
   "private": false,
   "license": "MIT",
   "author": "Bram Borggreve <bram@colmena.io>",
-  "url": "https://github.com/colmena/colmena-cms",
-  "homepage": "https://github.com/colmena/colmena-cms",
+  "url": "https://github.com/colmena/colmena",
+  "homepage": "https://github.com/colmena/colmena",
   "repository": {
     "type": "git",
-    "url": "https://github.com/colmena/colmena-cms"
+    "url": "https://github.com/colmena/colmena"
   },
   "bugs": {
-    "url": "https://github.com/colmena/colmena-cms/issues"
+    "url": "https://github.com/colmena/colmena/issues"
   },
   "keywords": [
     "colmena",
     "cms",
-    "colmena-cms",
+    "mobile",
+    "backend",
     "loopback",
     "angular",
     "admin"

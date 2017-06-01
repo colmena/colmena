@@ -1,18 +1,18 @@
 import { VERSION } from '@angular/core'
 
 import { sortBy } from 'lodash'
-import { Action, ActionReducer } from '@ngrx/store'
+import { Action } from '@ngrx/store'
 
 export interface State {
-  headerNav: any[];
-  footerLeft: string;
-  footerRight: string;
-  sidebarNav: any[];
+  headerNav: any[]
+  footerLeft: string
+  footerRight: string
+  sidebarNav: any[]
 }
 
 const initialState: State = {
   headerNav: [],
-  footerLeft: 'Colmena CMS',
+  footerLeft: 'Colmena',
   footerRight: `Angular ${VERSION.full}`,
   sidebarNav: [],
 }

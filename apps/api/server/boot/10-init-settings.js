@@ -15,7 +15,7 @@ module.exports = function(app, cb) {
       system: true,
       type: 'string',
       key: 'appName',
-      value: 'Colmena CMS',
+      value: 'Colmena',
     },
   ]
 
