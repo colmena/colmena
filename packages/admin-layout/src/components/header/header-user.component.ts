@@ -14,7 +14,7 @@ import { get } from 'lodash'
           {{user?.firstName}} {{user?.lastName}}
         </span>
       </a>
-      <div class="dropdown-menu dropdown-menu-right" dropdownMenu aria-labelledby="simple-dropdown">
+      <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
         <a class="dropdown-item" [routerLink]="[ '/', 'profile' ]"><i class="icon-user"></i> Profile</a>
         <a class="dropdown-item" [routerLink]="[ '/', 'password' ]"><i class="icon-key"></i> Password</a>
         <a class="dropdown-item" [routerLink]="[ '/', 'logout' ]"><i class="fa fa-lock"></i> Logout</a>

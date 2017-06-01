@@ -5,9 +5,9 @@ import { get } from 'lodash'
 @Component({
   selector: 'layout-header-domains',
   template: `
-    <li class="nav-item dropdown px-1" dropdown>
+    <li class="nav-item dropdown px-1" *dropdown>
       <a class="nav-link dropdown-toggle"
-         data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle>
+         data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" *dropdownToggle>
 
         <span *ngIf="!activeDomain" class="alert alert-danger">
           Please select a domain
@@ -16,7 +16,7 @@ import { get } from 'lodash'
           {{activeDomain.name}}
         </span>
       </a>
-      <div class="dropdown-menu dropdown-menu-right" dropdownMenu aria-labelledby="simple-dropdown">
+      <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
         <a *ngFor="let domain of domains" (click)="switchDomain($event, domain)"
           [ngClass]="{'active': domain === activeDomain }"
           class="dropdown-item" href="" >

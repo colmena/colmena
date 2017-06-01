@@ -3,23 +3,25 @@ import { Component, Input, OnInit } from '@angular/core'
 @Component({
   selector: 'ui-buttons',
   template: `
-    <div class="{{groupClass}}" dropdown>
+    <div class="{{groupClass}}" *dropdown>
       <button *ngFor="let button of mainButtons" type="button" class="{{button.classes || btnClass }}" (click)="button.click(item)">
         <i *ngIf="button.icon" class="{{button.icon}}"></i>
         {{button.label}}
       </button>
-      <button *ngIf="hasSub" type="button" class="dropdown-toggle {{btnClass}}" dropdownToggle data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-        <i *ngIf="subIcon" class="{{subIcon}}"></i>
-        <span *ngIf="subLabel">{{subLabel}}</span>
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
-      <div *ngIf="hasSub" class="dropdown-menu dropdown-menu-right" dropdownMenu>
-        <button *ngFor="let button of subButtons" type="button" class="dropdown-item" (click)="button.click(item)">
-          <i *ngIf="button.icon" class="{{button.icon}}"></i>
-          {{button.label}}
+      <ng-template *ngIf="hasSub">
+        <button type="button" class="dropdown-toggle {{btnClass}}" *dropdownToggle data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+          <i *ngIf="subIcon" class="{{subIcon}}"></i>
+          <span *ngIf="subLabel">{{subLabel}}</span>
+          <span class="sr-only">Toggle Dropdown</span>
         </button>
-      </div>
+        <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+          <button *ngFor="let button of subButtons" type="button" class="dropdown-item" (click)="button.click(item)">
+            <i *ngIf="button.icon" class="{{button.icon}}"></i>
+            {{button.label}}
+          </button>
+        </div>
+      </ng-template>
     </div>
 `,
 styles: [`

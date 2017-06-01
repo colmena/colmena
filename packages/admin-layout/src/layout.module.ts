@@ -49,7 +49,7 @@ export const directives: any[] = [
     CommonModule,
     RouterModule,
 
-    BsDropdownModule,
+    BsDropdownModule.forRoot(),
   ],
   declarations: [
     ...components,
