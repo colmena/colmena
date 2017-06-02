@@ -55,7 +55,7 @@ And lastly (not needed to run the app, but will be useful during development):
 
 First clone the repository to get the project files:
 
-    $ git clone -b develop https://github.com/colmena/colmena
+    $ git clone https://github.com/colmena/colmena
     $ cd colmena
 
 ### Top-level directory
