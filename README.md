@@ -76,8 +76,8 @@ From inside the project dir (`colmena`) run `INITDB=1 npm run dev`:
 
 This will start the API and the Admin in the same terminal, and by using `INITDB=1` the sample data will be loaded.
 
-- The API listens on [http://0.0.0.0:3000](http://0.0.0.0:3000).
-- The Admin listens on [http://0.0.0.0:9000](http://0.0.0.0:9000).
+- The API listens on [http://127.0.0.1:3000](http://127.0.0.1:3000).
+- The Admin listens on [http://127.0.0.1:9000](http://127.0.0.1:9000).
 
 You can also start the two components separately:
 
@@ -91,7 +91,7 @@ You can also start the two components separately:
 
 ### Running on other host than localhost
 
-By default the development stack assumes that the API and Admin are both started on localhost (using `0.0.0.0`).
+By default the development stack assumes that the API and Admin are both started on localhost (using `127.0.0.1`).
 
 When this is not the case, the admin needs to know on which IP address it can reach the API. In order to do this, you
 need to specify the `api.baseUrl` config property, which you can control using the `API_BASE_URL` environment variable.
