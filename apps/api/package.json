@@ -52,6 +52,7 @@
     "loopback-component-storage": "3.0.1",
     "loopback-component-templates": "1.1.10",
     "loopback-connector-mongodb": "3.0.1",
+    "loopback-connector-sqlite3": "1.2.0",
     "loopback-datasource-juggler": "2.54.0",
     "loopback-ds-paginate-mixin": "1.0.4",
     "loopback-ds-readonly-mixin": "1.0.1",
