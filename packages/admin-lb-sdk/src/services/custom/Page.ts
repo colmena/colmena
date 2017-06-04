@@ -13,7 +13,7 @@ import { Observable } from 'rxjs/Rx';
 import { Page } from '../../models/Page';
 import { SocketConnection } from '../../sockets/socket.connections';
 import { Domain } from '../../models/Domain';
-import { File } from '../../models/File';
+import { StorageFile } from '../../models/StorageFile';
 
 
 /**
@@ -93,6 +93,68 @@ export class PageApi extends BaseLoopBackApi {
     let _postBody: any = {};
     let _urlParams: any = {};
     if (refresh) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Patch an existing model instance or insert a new one into the data source.
+   *
+   * @param {object} data Request data.
+   *
+   *  - `data` – `{object}` - Model instance data
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `Page` object.)
+   * </em>
+   */
+  public patchOrCreate(data: any = {}): Observable<any> {
+    let _method: string = "PATCH";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/Pages";
+    let _routeParams: any = {};
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Patch attributes for a model instance and persist it into the data source.
+   *
+   * @param {any} id Page id
+   *
+   * @param {object} data Request data.
+   *
+   *  - `data` – `{object}` - An object of model property name/value pairs
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `Page` object.)
+   * </em>
+   */
+  public patchAttributes(id: any, data: any = {}): Observable<any> {
+    let _method: string = "PATCH";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/Pages/:id";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
     return result;
   }

@@ -7,7 +7,7 @@ import {
 } from '../index';
 
 declare var Object: any;
-export interface FileInterface {
+export interface StorageFileInterface {
   "id"?: any;
   "name"?: any;
   "type"?: any;
@@ -20,7 +20,7 @@ export interface FileInterface {
   products?: Product[];
 }
 
-export class File implements FileInterface {
+export class StorageFile implements StorageFileInterface {
   "id": any;
   "name": any;
   "type": any;
@@ -31,24 +31,24 @@ export class File implements FileInterface {
   pages: Page[];
   posts: Post[];
   products: Product[];
-  constructor(data?: FileInterface) {
+  constructor(data?: StorageFileInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `File`.
+   * i.e. `StorageFile`.
    */
   public static getModelName() {
-    return "File";
+    return "StorageFile";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of File for dynamic purposes.
+  * This method creates an instance of StorageFile for dynamic purposes.
   **/
-  public static factory(data: FileInterface): File{
-    return new File(data);
+  public static factory(data: StorageFileInterface): StorageFile{
+    return new StorageFile(data);
   }
   /**
   * @method getModelDefinition
@@ -59,8 +59,8 @@ export class File implements FileInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'File',
-      plural: 'Files',
+      name: 'StorageFile',
+      plural: 'StorageFiles',
       properties: {
         "id": {
           name: 'id',

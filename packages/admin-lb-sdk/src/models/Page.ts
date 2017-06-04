@@ -1,7 +1,7 @@
 /* tslint:disable */
 import {
   Domain,
-  File
+  StorageFile
 } from '../index';
 
 declare var Object: any;
@@ -13,8 +13,9 @@ export interface PageInterface {
   "content"?: any;
   "created"?: any;
   "modified"?: any;
+  "storageFileId"?: any;
   domain?: Domain;
-  file?: File;
+  file?: StorageFile;
 }
 
 export class Page implements PageInterface {
@@ -25,8 +26,9 @@ export class Page implements PageInterface {
   "content": any;
   "created": any;
   "modified": any;
+  "storageFileId": any;
   domain: Domain;
-  file: File;
+  file: StorageFile;
   constructor(data?: PageInterface) {
     Object.assign(this, data);
   }
@@ -86,6 +88,10 @@ export class Page implements PageInterface {
           name: 'modified',
           type: 'any'
         },
+        "storageFileId": {
+          name: 'storageFileId',
+          type: 'any'
+        },
       },
       relations: {
         domain: {
@@ -95,8 +101,8 @@ export class Page implements PageInterface {
         },
         file: {
           name: 'file',
-          type: 'File',
-          model: 'File'
+          type: 'StorageFile',
+          model: 'StorageFile'
         },
       }
     }

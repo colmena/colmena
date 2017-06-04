@@ -319,7 +319,7 @@ export class UserApi extends BaseLoopBackApi {
    *
    * @param {any} id user id
    *
-   * @param {object} filter 
+   * @param {object} filter
    *
    * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -414,7 +414,7 @@ export class UserApi extends BaseLoopBackApi {
    *
    * Data properties:
    *
-   *  - `count` – `{number}` - 
+   *  - `count` – `{number}` -
    */
   public countAccessTokens(id: any, where: any = {}): Observable<any> {
     let _method: string = "GET";
@@ -435,7 +435,7 @@ export class UserApi extends BaseLoopBackApi {
    *
    * @param {any} id user id
    *
-   * @param {object} filter 
+   * @param {object} filter
    *
    * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -530,7 +530,7 @@ export class UserApi extends BaseLoopBackApi {
    *
    * Data properties:
    *
-   *  - `count` – `{number}` - 
+   *  - `count` – `{number}` -
    */
   public countRoles(id: any, where: any = {}): Observable<any> {
     let _method: string = "GET";
@@ -542,6 +542,68 @@ export class UserApi extends BaseLoopBackApi {
     let _postBody: any = {};
     let _urlParams: any = {};
     if (where) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Patch an existing model instance or insert a new one into the data source.
+   *
+   * @param {object} data Request data.
+   *
+   *  - `data` – `{object}` - Model instance data
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `User` object.)
+   * </em>
+   */
+  public patchOrCreate(data: any = {}): Observable<any> {
+    let _method: string = "PATCH";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/users";
+    let _routeParams: any = {};
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Patch attributes for a model instance and persist it into the data source.
+   *
+   * @param {any} id user id
+   *
+   * @param {object} data Request data.
+   *
+   *  - `data` – `{object}` - An object of model property name/value pairs
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `User` object.)
+   * </em>
+   */
+  public patchAttributes(id: any, data: any = {}): Observable<any> {
+    let _method: string = "PATCH";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/users/:id";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
     return result;
   }
@@ -566,9 +628,9 @@ export class UserApi extends BaseLoopBackApi {
    *
    * The response body contains properties of the AccessToken created on login.
    * Depending on the value of `include` parameter, the body may contain additional properties:
-   * 
+   *
    *   - `user` - `U+007BUserU+007D` - Data of the currently logged in user. (`include=user`)
-   * 
+   *
    *
    */
   public login(credentials: any, include: any = 'user', rememberMe: boolean = true): Observable<any> {
@@ -591,7 +653,7 @@ export class UserApi extends BaseLoopBackApi {
         }
       );
       return result;
-      
+
   }
 
   /**
@@ -615,19 +677,47 @@ export class UserApi extends BaseLoopBackApi {
     let _postBody: any = {};
     let _urlParams: any = {};
        _urlParams.access_token = this.auth.getAccessTokenId();
-    this.auth.clear(); 
+    this.auth.clear();
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
     return result;
   }
 
   /**
-   * Confirm a user registration with email verification token.
+   * Trigger user's identity verification with configured verifyOptions
    *
-   * @param {string} uid 
+   * @param {any} id user id
    *
-   * @param {string} token 
+   * @param {object} data Request data.
    *
-   * @param {string} redirect 
+   * This method does not accept any data. Supply an empty object.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public verify(id: any): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/users/:id/verify";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Confirm a user registration with identity verification token.
+   *
+   * @param {string} uid
+   *
+   * @param {string} token
+   *
+   * @param {string} redirect
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -707,11 +797,11 @@ export class UserApi extends BaseLoopBackApi {
    *
    * @param {object} data Request data.
    *
-   *  - `req` – `{object}` - 
+   *  - `req` – `{object}` -
    *
-   *  - `res` – `{object}` - 
+   *  - `res` – `{object}` -
    *
-   *  - `body` – `{object}` - 
+   *  - `body` – `{object}` -
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned

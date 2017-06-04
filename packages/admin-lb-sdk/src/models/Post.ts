@@ -1,7 +1,7 @@
 /* tslint:disable */
 import {
   Domain,
-  File
+  StorageFile
 } from '../index';
 
 declare var Object: any;
@@ -14,8 +14,9 @@ export interface PostInterface {
   "userId"?: any;
   "created"?: any;
   "modified"?: any;
+  "storageFileId"?: any;
   domain?: Domain;
-  file?: File;
+  file?: StorageFile;
 }
 
 export class Post implements PostInterface {
@@ -27,8 +28,9 @@ export class Post implements PostInterface {
   "userId": any;
   "created": any;
   "modified": any;
+  "storageFileId": any;
   domain: Domain;
-  file: File;
+  file: StorageFile;
   constructor(data?: PostInterface) {
     Object.assign(this, data);
   }
@@ -92,6 +94,10 @@ export class Post implements PostInterface {
           name: 'modified',
           type: 'any'
         },
+        "storageFileId": {
+          name: 'storageFileId',
+          type: 'any'
+        },
       },
       relations: {
         domain: {
@@ -101,8 +107,8 @@ export class Post implements PostInterface {
         },
         file: {
           name: 'file',
-          type: 'File',
-          model: 'File'
+          type: 'StorageFile',
+          model: 'StorageFile'
         },
       }
     }

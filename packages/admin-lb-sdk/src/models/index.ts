@@ -8,7 +8,7 @@ export * from './Product';
 export * from './Setting';
 export * from './Page';
 export * from './Container';
-export * from './File';
+export * from './StorageFile';
 export * from './Ping';
 export * from './BaseModels';
 export * from './FireLoopRef';

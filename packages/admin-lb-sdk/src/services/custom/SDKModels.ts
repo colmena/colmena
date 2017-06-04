@@ -9,7 +9,7 @@ import { Product } from '../../models/Product';
 import { Setting } from '../../models/Setting';
 import { Page } from '../../models/Page';
 import { Container } from '../../models/Container';
-import { File } from '../../models/File';
+import { StorageFile } from '../../models/StorageFile';
 import { Ping } from '../../models/Ping';
 
 export interface Models { [name: string]: any }
@@ -27,7 +27,7 @@ export class SDKModels {
     Setting: Setting,
     Page: Page,
     Container: Container,
-    File: File,
+    StorageFile: StorageFile,
     Ping: Ping,
     
   };

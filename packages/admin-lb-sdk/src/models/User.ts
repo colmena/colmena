@@ -9,12 +9,9 @@ export interface UserInterface {
   "lastName": any;
   "realm": any;
   "password": any;
-  "challenges"?: any;
   "emailVerified"?: any;
   "verificationToken"?: any;
-  "status"?: any;
   "created"?: any;
-  "lastUpdated"?: any;
   "modified"?: any;
   "domainId"?: any;
   accessTokens?: any[];
@@ -29,12 +26,9 @@ export class User implements UserInterface {
   "lastName": any;
   "realm": any;
   "password": any;
-  "challenges": any;
   "emailVerified": any;
   "verificationToken": any;
-  "status": any;
   "created": any;
-  "lastUpdated": any;
   "modified": any;
   "domainId": any;
   accessTokens: any[];
@@ -98,14 +92,6 @@ export class User implements UserInterface {
           name: 'password',
           type: 'any'
         },
-        "credentials": {
-          name: 'credentials',
-          type: 'any'
-        },
-        "challenges": {
-          name: 'challenges',
-          type: 'any'
-        },
         "emailVerified": {
           name: 'emailVerified',
           type: 'any'
@@ -114,16 +100,8 @@ export class User implements UserInterface {
           name: 'verificationToken',
           type: 'any'
         },
-        "status": {
-          name: 'status',
-          type: 'any'
-        },
         "created": {
           name: 'created',
-          type: 'any'
-        },
-        "lastUpdated": {
-          name: 'lastUpdated',
           type: 'any'
         },
         "modified": {

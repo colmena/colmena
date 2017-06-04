@@ -1,7 +1,7 @@
 /* tslint:disable */
 import {
   Domain,
-  File
+  StorageFile
 } from '../index';
 
 declare var Object: any;
@@ -14,8 +14,9 @@ export interface EventInterface {
   "location"?: any;
   "created"?: any;
   "modified"?: any;
+  "storageFileId"?: any;
   domain?: Domain;
-  file?: File;
+  file?: StorageFile;
 }
 
 export class Event implements EventInterface {
@@ -27,8 +28,9 @@ export class Event implements EventInterface {
   "location": any;
   "created": any;
   "modified": any;
+  "storageFileId": any;
   domain: Domain;
-  file: File;
+  file: StorageFile;
   constructor(data?: EventInterface) {
     Object.assign(this, data);
   }
@@ -92,6 +94,10 @@ export class Event implements EventInterface {
           name: 'modified',
           type: 'any'
         },
+        "storageFileId": {
+          name: 'storageFileId',
+          type: 'any'
+        },
       },
       relations: {
         domain: {
@@ -101,8 +107,8 @@ export class Event implements EventInterface {
         },
         file: {
           name: 'file',
-          type: 'File',
-          model: 'File'
+          type: 'StorageFile',
+          model: 'StorageFile'
         },
       }
     }
