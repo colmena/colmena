@@ -18,7 +18,6 @@ module.exports = function(app, cb) {
     return new Promise((resolve, reject) =>
       Fixtures.setupFixtures((err, res) => {
         if (err) {
-          console.log(err)
           return reject(err)
         }
         return resolve(res)
@@ -57,11 +56,11 @@ module.exports = function(app, cb) {
   }
 
   return Promise.resolve()
-    .then(() => removeContainer())
-    .then(() => teardownFixtures())
-    .then(() => setupFixtures())
-    .then(() => importImages())
-    .then(() => log.info('System init db: loaded sample data.'))
-    .then(() => cb())
-    .catch(err => cb(err))
+      .then(() => removeContainer())
+      .then(() => teardownFixtures())
+      .then(() => setupFixtures())
+      .then(() => importImages())
+      .then(() => log.info('System init db: loaded sample data.'))
+      .then(cb)
+      .catch(err => Promise.reject(err))
 }
