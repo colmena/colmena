@@ -2,13 +2,13 @@
 
 module.exports = function(Setting) {
   Setting.observe('loaded', (ctx, next) => {
-    if (ctx.instance && ctx.instance.type) {
-      switch (ctx.instance.type) {
+    if (ctx.data && ctx.data.type) {
+      switch (ctx.data.type) {
         case 'boolean':
-          ctx.instance.value = Boolean(String(ctx.instance.value) === 'true')
+          ctx.data.value = Boolean(String(ctx.data.value) === 'true')
           break
         case 'integer':
-          ctx.instance.value = parseInt(ctx.instance.value)
+          ctx.data.value = parseInt(ctx.data.value)
           break
       }
     }
