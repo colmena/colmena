@@ -12,9 +12,6 @@
       "id": true,
       "required": true
     },
-    "value": {
-      "type": "object"
-    },
     "system": {
       "type": "boolean",
       "default": false
