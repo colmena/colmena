@@ -3,11 +3,11 @@ const config = require('config')
 const log = require('@colmena/logger')
 const Promise = require('bluebird')
 
-module.exports = function(app, cb) {
+module.exports = function(app) {
   // Check if there is user configured Settings
   if (!config.has('system.initdb') || config.get('system.initdb') === false) {
     log.info('System init db: skipping sample data')
-    return cb()
+    return Promise.resolve()
   }
 
   const Container = app.models.Container
@@ -18,6 +18,7 @@ module.exports = function(app, cb) {
     return new Promise((resolve, reject) =>
       Fixtures.setupFixtures((err, res) => {
         if (err) {
+          console.log(err)
           return reject(err)
         }
         return resolve(res)
@@ -61,6 +62,6 @@ module.exports = function(app, cb) {
     .then(() => setupFixtures())
     .then(() => importImages())
     .then(() => log.info('System init db: loaded sample data.'))
-    .then(() => cb())
-    .catch(err => cb(err))
+    // .then(() => cb())
+    // .catch(err => cb(err))
 }

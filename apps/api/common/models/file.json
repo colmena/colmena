@@ -1,5 +1,5 @@
 {
-  "name": "File",
+  "name": "StorageFile",
   "description": "Content model for managing Events in a Domain",
   "base": "BaseModel",
   "idInjection": true,

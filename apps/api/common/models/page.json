@@ -3,6 +3,7 @@
   "description": "Content model for managing Events in a Domain",
   "base": "BaseModel",
   "idInjection": true,
+  "forceId": false,
   "options": {
     "validateUpsert": true
   },
@@ -33,7 +34,7 @@
     },
     "file": {
       "type": "belongsTo",
-      "model": "File"
+      "model": "StorageFile"
     }
   },
   "acls": [],

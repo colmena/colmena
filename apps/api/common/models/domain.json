@@ -29,7 +29,7 @@
     },
     "files": {
       "type": "hasMany",
-      "model": "File",
+      "model": "StorageFile",
       "foreignKey": "container"
     },
     "pages": {
@@ -51,8 +51,7 @@
   },
   "acls": [],
   "methods": {
-    "importFileByUrl": {
-      "isStatic": false,
+    "prototype.importFileByUrl": {
       "accepts": [
         {
           "arg": "url",

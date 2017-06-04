@@ -133,8 +133,7 @@
     }
   ],
   "methods": {
-    "info": {
-      "isStatic": false,
+    "prototype.info": {
       "returns": {
         "arg": "result",
         "type": "Object",
@@ -147,7 +146,6 @@
       }
     },
     "doPasswordReset": {
-      "isStatic": true,
       "accepts": [
         {
           "arg": "req",

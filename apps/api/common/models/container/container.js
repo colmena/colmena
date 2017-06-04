@@ -147,7 +147,7 @@ module.exports = function(Container) {
 
       // Create the File instance after the download completes
       pipe.on('finish', () =>
-        Container.app.models.File
+        Container.app.models.StorageFile
           .upsert(metaData)
           .then(() => resolve(metaData))
           .catch(err => Promise.reject(err))

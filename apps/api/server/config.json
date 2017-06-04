@@ -5,6 +5,7 @@
   "remoting": {
     "context": false,
     "rest": {
+      "handleErrors": false,
       "normalizeHttpPath": false,
       "xml": false
     },
@@ -16,9 +17,6 @@
       "extended": true,
       "limit": "100kb"
     },
-    "cors": false,
-    "handleErrors": false
-  },
-  "legacyExplorer": false,
-  "logoutSessionsOnSensitiveChanges": true
+    "cors": false
+  }
 }
