@@ -1,5 +1,4 @@
-
-// The Colmena color scheme
+// Colmena Color Scheme
 $colmena-red: #D32F2F;
 $colmena-blue: #1565C0;
 $colmena-primary: #1E88E5;
@@ -19,10 +18,9 @@ $btn-warning-color: $colmena-background;
 // Override CoreUI
 $sidebar-bg: $colmena-background;
 
-// Set logo
+// Set Logo
 $navbar-brand-logo: url('./assets/logo.png');
 $navbar-brand-logo-size: 130px auto;
-
 @import '~coreui-styles/scss/style.scss';
 @import '~@colmena/admin-ui/src/styles.css';
 @import '~simple-line-icons/css/simple-line-icons.css';

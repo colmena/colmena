@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table *ngIf="items"
+             class="table table-hover">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Created</th>
+            <th>TTL <small>(seconds)</small></th>
+            <th [style.text-align]="'right'">
+              <button (click)="handleAction({ type: 'generateToken'})"
+                      type="button"
+                      class="btn btn-primary">
+              <i class="fa fa-plus"></i> &nbsp; Generate Token
+            </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>
+              <i class="fa fa-unlock"></i> &nbsp; {{ item.id }}
+            </td>
+            <td>{{ item.created | date:'MM-dd-y HH:mm:ss' }}</td>
+            <td>{{ item.ttl | number }}</td>
+            <td [style.text-align]="'right'">
+              <div class="btn-group"
+                   dropdown>
+                <button (click)="handleAction({ type: 'deleteToken', payload: item })"
+                        type="button"
+                        class="btn btn-sm btn-outline-danger">Delete</button>
+                <button dropdownToggle
+                        type="button"
+                        class="btn btn-sm btn-danger dropdown-toggle dropwdown-toggle-split">
+                </button>
+                <ul *dropdownMenu
+                    class="dropdown-menu dropdown-menu-right"
+                    role="menu">
+                  <li role="menuitem">
+                    <a (click)="handleAction({ type: 'removeTtl', payload: item })"
+                       class="dropdown-item m-0">Remove TTL
+                     </a>
+                  </li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row justify-content-end">
+    <div class="col"
+         [style.text-align]="'right'">
+      <button (click)="handleAction({ type: 'deleteAllTokens' })"
+              class="btn btn-outline-danger ml-auto mr-1">
+        <i class="fa fa-minus"></i> &nbsp; Delete All Tokens
+      </button>
+    </div>
+  </div>
+</div>

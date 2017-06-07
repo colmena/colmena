@@ -4,17 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
 
-import { ColmenaUiModule } from '@colmena/admin-ui'
-
 import { Store } from '@ngrx/store'
+
+import { ColmenaUiModule } from '@colmena/admin-ui'
+import { SystemUsersModule } from './users/users.module'
 
 import { SystemDashboardComponent } from './system.component'
 import { DomainsComponent } from './domains/domains.component'
 import { SettingsComponent } from './settings/settings.component'
-import { UsersComponent } from './users/users.component'
 import { DomainsService } from './domains/domains.service'
 import { SettingsService } from './settings/settings.service'
-import { UsersService } from './users/users.service'
+
+import { SystemUserResolver } from './users/users.resolvers'
 
 @NgModule({
   imports: [
@@ -25,17 +26,18 @@ import { UsersService } from './users/users.service'
     RouterModule,
 
     ColmenaUiModule,
+    SystemUsersModule,
+    RouterModule,
   ],
   declarations: [
+    SystemDashboardComponent,
     DomainsComponent,
     SettingsComponent,
-    UsersComponent,
-    SystemDashboardComponent,
   ],
   providers: [
     DomainsService,
     SettingsService,
-    UsersService,
+    SystemUserResolver,
   ],
   exports: [
     SystemDashboardComponent,

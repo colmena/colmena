@@ -1,0 +1,11 @@
+<ul class="nav nav-tabs card-header-tabs">
+  <li *ngFor="let item of tabs"
+      class="nav-item">
+    <a [routerLink]="item.link"
+       routerLinkActive="active"
+       class="nav-link">
+      <i [class]="'fa fa-' + item.icon"></i>
+      &nbsp; {{ item.title }}
+    </a>
+  </li>
+</ul>

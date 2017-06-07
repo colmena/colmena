@@ -1,37 +1,34 @@
 import { Component, ViewChild } from '@angular/core'
+import { Router, ActivatedRoute } from '@angular/router'
 
 import { UiService } from '@colmena/admin-ui'
 
-import { UsersService } from './users.service'
+import { UsersService } from '../users.service'
 
 @Component({
-  selector: 'app-users',
+  selector: 'app-user-list',
   template: `
     <ui-modal-form #form>
       <ui-form [config]="formConfig" [item]="item" (action)="action($event)"></ui-form>
     </ui-modal-form>
 
-    <ui-modal #view title="View Item">
-      <pre>{{item | json}}</pre>
-    </ui-modal>
-
     <ui-data-grid #grid (action)="action($event)" [service]="service"></ui-data-grid>
   `,
 })
-export class UsersComponent {
+export class UserListComponent {
 
   @ViewChild('grid') private grid
   @ViewChild('form') private form
-  @ViewChild('view') private view
 
-  public item: any = { realm: 'default' }
+  public item: any = {}
   public formConfig: any = {}
 
   constructor(
     public service: UsersService,
     public uiService: UiService,
+    private router: Router,
+    private route: ActivatedRoute,
   ) {
-    this.service.getDomains()
     this.formConfig = this.service.getFormConfig()
   }
 
@@ -43,7 +40,7 @@ export class UsersComponent {
         this.form.hide()
         this.grid.refreshData()
       },
-      err => console.error(err)
+      (err) => console.error(err)
     )
   }
 
@@ -51,36 +48,24 @@ export class UsersComponent {
     switch (event.action) {
       case 'edit':
         this.item = Object.assign({}, event.item)
-        this.form.title = `Edit: ${this.item.name}`
-        this.form.show()
-        break
+        return this.router.navigate([this.item.id], { relativeTo: this.route })
       case 'add':
-        this.item = Object.assign({}, {realm: 'default', email: null, firstName: null, lastName: null, password: null})
+        this.item = Object.assign({}, { realm: 'default', email: null, firstName: null, lastName: null, password: null })
         this.form.title = 'Add User'
-        this.form.show()
-        break
-      case 'view':
-        this.item = event.item
-        this.form.title = `${this.item.name}`
-        this.view.show()
-        break
+        return this.form.show()
       case 'cancel':
-        this.form.hide()
-        break
+        return this.form.hide()
       case 'save':
-        this.save(event.item)
-        break
+        return this.save(event.item)
       case 'delete':
         const successCb = () => this.service
           .deleteItem(event.item,
-            () => this.grid.refreshData(),
-            (err) => this.uiService.toastError('Error deleting item', err.message))
+          () => this.grid.refreshData(),
+          (err) => this.uiService.toastError('Error deleting item', err.message))
         const question = { title: 'Are you sure?', text: 'The action can not be undone.' }
-        this.uiService.alertQuestion( question, successCb, () => ({}) )
-        break
+        return this.uiService.alertQuestion(question, successCb, () => ({}))
       default:
-        console.log('Unknown event action', event)
-        break
+        return console.log('Unknown event action', event)
     }
   }
 
