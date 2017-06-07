@@ -1,11 +1,13 @@
-[
-  {
+[{
+    "id": "admin",
     "name": "admin"
   },
   {
+    "id": "manager",
     "name": "manager"
   },
   {
+    "id": "user",
     "name": "user"
   }
 ]

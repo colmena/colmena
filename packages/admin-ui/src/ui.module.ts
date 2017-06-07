@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router'
 import { FormlyModule, FormlyBootstrapModule } from 'ng-formly'
 import { FileUploadModule } from 'ng2-file-upload'
 import { ToastyService, ToastyModule } from 'ng2-toasty'
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
 
 import { UiButtonsModule } from './components/buttons/buttons.module'
 import { UiCardModule } from './components/card/card.module'
@@ -77,6 +78,7 @@ const declarations = []
     ToastyModule,
     FormlyModule.forRoot(),
     FormlyBootstrapModule,
+    BsDropdownModule.forRoot(),
     ...modules,
   ],
   declarations: [
@@ -88,6 +90,7 @@ const declarations = []
   ],
   exports: [
     FormlyModule,
+    BsDropdownModule,
     ...declarations,
     ...modules,
     ...components,

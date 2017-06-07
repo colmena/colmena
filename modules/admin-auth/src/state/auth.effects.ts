@@ -18,12 +18,12 @@ export class AuthEffects {
     .do(action => {
       this.userApi.login(action.payload, 'user', true)
         .subscribe(
-          (success) => {
-            this.store.dispatch({ type: 'AUTH_GET_USER_ROLES', payload: success })
-            this.store.dispatch(new auth.AuthLoginSuccessAction(success))
-          },
-          (error) => this.store.dispatch(new auth.AuthLoginErrorAction(error)),
-        )
+        (success) => {
+          this.store.dispatch({ type: 'AUTH_GET_USER_ROLES', payload: success })
+          this.store.dispatch(new auth.AuthLoginSuccessAction(success))
+        },
+        (error) => this.store.dispatch(new auth.AuthLoginErrorAction(error)),
+      )
     })
 
   @Effect({ dispatch: false })
@@ -36,7 +36,7 @@ export class AuthEffects {
     .ofType(auth.ActionTypes.AUTH_LOGIN_SUCCESS)
     .do((action) => {
       window.localStorage.setItem('token', JSON.stringify(action.payload))
-      this.ui.toastSuccess('Sign in successful', `You are logged in as ${get(action, 'payload.user.email')}`)
+      this.ui.toastSuccess('Sign In Successful', `You are logged in as ${get(action, 'payload.user.email')}`)
       return this.store.dispatch({ type: 'APP_REDIRECT_ROUTER' })
     })
 
@@ -46,13 +46,13 @@ export class AuthEffects {
     .do((action: any) => {
       this.userApi.create(action.payload)
         .subscribe(
-          (success: any) => this.store.dispatch(new auth.AuthRegisterSuccessAction({
-            realm: action.payload.realm,
-            email: action.payload.email,
-            password: action.payload.password,
-          })),
-          (error) => this.store.dispatch(new auth.AuthRegisterErrorAction(error)),
-        )
+        (success: any) => this.store.dispatch(new auth.AuthRegisterSuccessAction({
+          realm: action.payload.realm,
+          email: action.payload.email,
+          password: action.payload.password,
+        })),
+        (error) => this.store.dispatch(new auth.AuthRegisterErrorAction(error)),
+      )
     })
 
   @Effect({ dispatch: false })
@@ -76,9 +76,9 @@ export class AuthEffects {
       window.localStorage.removeItem('token')
       this.userApi.logout()
         .subscribe(
-          (success) => this.store.dispatch(new auth.AuthLogoutSuccessAction(success)),
-          (error) => this.store.dispatch(new auth.AuthLogoutErrorAction(error)),
-        )
+        (success) => this.store.dispatch(new auth.AuthLogoutSuccessAction(success)),
+        (error) => this.store.dispatch(new auth.AuthLogoutErrorAction(error)),
+      )
     })
 
   @Effect({ dispatch: false })
@@ -95,7 +95,7 @@ export class AuthEffects {
     .ofType(auth.ActionTypes.AUTH_LOGOUT_SUCCESS)
     .do(() => {
       window.localStorage.removeItem('token')
-      this.ui.toastSuccess('Log out successful', 'You are logged out')
+      this.ui.toastSuccess('Log Out Successful', 'You are logged out')
       return this.store.dispatch({ type: 'APP_REDIRECT_ROUTER' })
     })
 
@@ -108,7 +108,7 @@ export class AuthEffects {
         .subscribe(res => {
           console.log('set roles')
           window.localStorage.setItem('roles', JSON.stringify(res.roles))
-          this.store.dispatch({ type: 'AUTH_SET_ROLES', payload: res.roles})
+          this.store.dispatch({ type: 'AUTH_SET_ROLES', payload: res.roles })
         })
     })
 
@@ -121,4 +121,3 @@ export class AuthEffects {
   }
 
 }
-
