@@ -17,4 +17,4 @@ deploy:
     skip_cleanup: true
     script: ./bin/deploy-to-now.sh
     on:
-      all_branches: true
+      branch: develop
