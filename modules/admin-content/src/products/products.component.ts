@@ -16,17 +16,7 @@ import { ProductsService } from './products.service'
       <app-content-product [item]="item"></app-content-product>
     </ui-modal-form>
 
-    <ng-template #iconTemplate let-item="item">
-      <div class="card-block" style="min-height: 200px">
-        <h6 style="text-decoration: underline; cursor: pointer;" (click)="action({ action: 'view', item: item })">
-          <i class="icon-basket"></i> {{item.name}}
-        </h6>
-        <div class="text-muted" *ngIf="item.sku"><code>{{item.sku}}</code></div>
-        <div class="text-muted" *ngIf="item.description">{{item.description}}</div>
-      </div>
-    </ng-template>
-
-    <ui-data-grid #grid (action)="action($event)" [iconTemplate]="iconTemplate" [service]="service"></ui-data-grid>
+    <ui-data-grid #grid (action)="action($event)" [service]="service"></ui-data-grid>
   `,
 })
 export class ProductsComponent {

@@ -15,16 +15,7 @@ import { SettingsService } from './settings.service'
       <pre>{{item | json}}</pre>
     </ui-modal>
 
-    <ng-template #iconTemplate let-item="item">
-      <div class="card-block" style="min-height: 200px">
-        <h6 style="text-decoration: underline; cursor: pointer;" (click)="action({ action: 'view', item: item })">
-          <i class="icon-settings"></i> {{item.name}}
-        </h6>
-        <p class="text-muted" *ngIf="item.description">{{item.description}}</p>
-      </div>
-    </ng-template>
-
-    <ui-data-grid #grid (action)="action($event)" [iconTemplate]="iconTemplate" [service]="service"></ui-data-grid>
+    <ui-data-grid #grid (action)="action($event)" [service]="service"></ui-data-grid>
   `,
 })
 export class SettingsComponent {

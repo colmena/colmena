@@ -8,8 +8,6 @@ import { AlertModule } from 'ngx-bootstrap/alert'
 import { UiDataGridComponent } from './data-grid.component'
 
 import { HeaderComponent } from './header/header.component'
-import { IconComponent } from './icons/icon/icon.component'
-import { IconsComponent } from './icons/icons.component'
 import { ItemButtonsComponent } from './item-buttons/item-buttons.component'
 import { PagerComponent } from './pager/pager.component'
 import { RowsComponent } from './rows/rows.component'
@@ -25,8 +23,6 @@ import { RowsComponent } from './rows/rows.component'
     UiDataGridComponent,
 
     HeaderComponent,
-    IconComponent,
-    IconsComponent,
     ItemButtonsComponent,
     RowsComponent,
     PagerComponent

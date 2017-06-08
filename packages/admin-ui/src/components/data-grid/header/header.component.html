@@ -20,21 +20,14 @@
   </div>
 
   <div class="col-xs-3">
-    <div class="btn-group">
-      <button type="button"
-              *ngFor="let button of config?.buttons"
-              class="{{button.classNames}}" (click)="action.emit({ action: button.action })">
-        <i class='{{button.icon}}'></i>
-      </button>
-    </div>
-
     <span class="float-xs-right">
-      <button class="btn btn btn-outline-primary" type="button" (click)="toggleView()">
-        <i [ngClass]="{
-          'icon-grid': (view === 'rows'),
-          'icon-list': (view === 'icons')}">
-        </i>
-      </button>
+      <div class="btn-group">
+        <button type="button"
+                *ngFor="let button of config?.buttons"
+                class="{{button.classNames}}" (click)="action.emit({ action: button.action })">
+          <i class='{{button.icon}}'></i>
+        </button>
+      </div>
     </span>
   </div>
 </div>

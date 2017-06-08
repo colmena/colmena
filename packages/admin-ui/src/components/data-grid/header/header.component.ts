@@ -12,15 +12,13 @@ export class HeaderComponent {
   @Input() public config
   @Input() public columns
   @Input() public limit
-  @Input() public view
 
   @Output() action = new EventEmitter()
 
   public limits = [
-    8,
+    10,
     20,
-    40,
-    80,
+    50,
     100,
   ]
 
@@ -28,10 +26,6 @@ export class HeaderComponent {
 
   add() {
     this.action.emit({ action: 'add' })
-  }
-
-  toggleView() {
-    this.action.emit({ action: 'toggleView' })
   }
 
   refresh() {

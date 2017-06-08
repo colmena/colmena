@@ -20,20 +20,10 @@ import { FilesService } from './files.service'
       <app-content-file [item]="item"></app-content-file>
     </ui-modal-form>
 
-    <ng-template #iconTemplate let-item="item">
-      <div class="card-header" (click)="action({ action: 'view', item: item })">
-        <i class="icon-doc"></i> {{ item.name }}
-      </div>
-      <div class="card-block">
-        <img src="{{item.url}}" class="img-fluid" >
-      </div>
-    </ng-template>
-
     <ui-data-grid
       #grid
       (action)="action($event)"
       [config]="gridConfig"
-      [iconTemplate]="iconTemplate"
       [service]="service">
     </ui-data-grid>
   `,

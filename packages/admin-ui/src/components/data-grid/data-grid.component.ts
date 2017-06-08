@@ -6,12 +6,9 @@ import { Component, Input, OnInit, Output, EventEmitter, TemplateRef } from '@an
 })
 export class UiDataGridComponent implements OnInit {
 
-  @Input() view = 'rows'
   @Input() limit = 20
 
   @Input() config: any = {}
-
-  @Input() iconTemplate: TemplateRef<any>
 
   @Input() service: any
   @Output() action = new EventEmitter()
@@ -70,39 +67,20 @@ export class UiDataGridComponent implements OnInit {
     this.refreshData()
   }
 
-  toggleView() {
-    switch (this.view) {
-      case 'icons':
-        this.view = 'rows'
-        break
-      case 'rows':
-        this.view = 'icons'
-        break
-    }
-  }
-
   gridAction(event) {
     switch (event.action) {
-      case 'toggleView':
-        this.toggleView()
-        break
       case 'limit':
-        this.setLimit(event.payload)
-        break
+        return this.setLimit(event.payload)
       case 'sort':
-        this.setOrder(event.payload)
-        break
+        return this.setOrder(event.payload)
       case 'offset':
-        this.setOffsetLimit(event.payload)
-        break
+        return this.setOffsetLimit(event.payload)
       case 'search':
-        this.searchAction(event.payload)
-        break
+        return this.searchAction(event.payload)
       case 'refresh':
-        this.refreshData()
-        break
+        return this.refreshData()
       default:
-        this.action.emit(event)
+        return this.action.emit(event)
     }
   }
 

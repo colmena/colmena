@@ -4,23 +4,16 @@
     (action)="gridAction($event)"
     [config]="config?.header"
     [columns]="columns"
-    [limit]="limit"
-    [view]="view">
+    [limit]="limit">
   </ui-data-grid-header>
 </div>
 <div class="mt-1">
-  <ui-data-grid-rows *ngIf="view === 'rows'"
+  <ui-data-grid-rows
     (action)="gridAction($event)"
     [columns]="columns"
     [columnSorting]="columnSorting"
     [items]="items">
   </ui-data-grid-rows>
-
-  <ui-data-grid-icons *ngIf="view === 'icons'"
-    (action)="gridAction($event)"
-    [template]="iconTemplate"
-    [items]="items">
-  </ui-data-grid-icons>
 </div>
 <div style="text-align: center" *ngIf="items?.length">
   <ui-data-grid-pager
