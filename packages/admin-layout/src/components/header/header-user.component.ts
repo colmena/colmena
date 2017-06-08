@@ -1,7 +1,5 @@
 import { Component } from '@angular/core'
-
 import { Store } from '@ngrx/store'
-
 import { get } from 'lodash'
 
 @Component({
@@ -9,7 +7,7 @@ import { get } from 'lodash'
   template: `
     <li class="nav-item dropdown px-1" dropdown>
       <a class="nav-link dropdown-toggle"
-         data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle>
+         data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle>
         <span class="hidden-md-down">
           {{user?.firstName}} {{user?.lastName}}
         </span>
@@ -20,7 +18,7 @@ import { get } from 'lodash'
         <a class="dropdown-item" [routerLink]="[ '/', 'logout' ]"><i class="fa fa-lock"></i> Logout</a>
       </div>
     </li>
-`,
+  `,
 })
 export class HeaderUserComponent {
 

@@ -1,7 +1,5 @@
-import { Component, Input } from '@angular/core'
-
+import { Component } from '@angular/core'
 import { Store } from '@ngrx/store'
-
 import { get } from 'lodash'
 
 @Component({
@@ -25,7 +23,6 @@ export class HeaderNavComponent {
     this.store
       .select('layout')
       .subscribe((res: any) => this.items = get(res, 'headerNav', []))
-
   }
 
 }
