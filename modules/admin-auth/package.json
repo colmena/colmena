@@ -1,5 +1,5 @@
 {
-  "name": "@colmena/admin-auth",
+  "name": "@colmena/module-admin-auth",
   "version": "0.0.0",
   "license": "MIT",
   "dependencies": {

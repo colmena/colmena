@@ -2,7 +2,7 @@
   "name": "@colmena/module-admin-core",
   "version": "0.0.0",
   "dependencies": {
-    "@colmena/admin-auth": "0.0.0",
+    "@colmena/module-admin-auth": "0.0.0",
     "@colmena/admin-ui": "0.0.0"
   },
   "license": "MIT"

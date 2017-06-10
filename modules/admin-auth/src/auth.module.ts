@@ -31,4 +31,4 @@ import { ResetComponent } from './components/reset/reset.component'
     AuthService,
   ]
 })
-export class ColmenaAuthModule { }
+export class AuthModule { }

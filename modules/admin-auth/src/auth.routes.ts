@@ -6,7 +6,7 @@ import { RecoverComponent } from './components/recover/recover.component'
 import { RegisterComponent } from './components/register/register.component'
 import { ResetComponent } from './components/reset/reset.component'
 
-export const AuthRoutes: Routes = [ {
+export const AuthModuleRoutes: Routes = [ {
   path: '',
   children: [
     { path: 'login', component: LoginComponent },

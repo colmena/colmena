@@ -5,7 +5,7 @@ import { EffectsModule } from '@ngrx/effects'
 import { ActionReducer, combineReducers } from '@ngrx/store';
 
 import * as app from './state'
-import * as auth from '@colmena/admin-auth'
+import * as auth from '@colmena/module-admin-auth'
 import * as layout from '@colmena/admin-layout'
 
 export interface State {
