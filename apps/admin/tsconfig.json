@@ -13,10 +13,9 @@
     ],
     "paths": {
       "@angular/*": ["node_modules/@angular/*"],
-      "@ngrx/*": ["node_modules/@ngrx/*"],
       "@colmena/*": ["node_modules/@colmena/*"],
-      "rxjs/*": ["node_modules/rxjs/*"],
-      "ngx-bootstrap/*": ["node_modules/ngx-bootstrap/*"]
+      "@ngrx/*": ["node_modules/@ngrx/*"],
+      "rxjs/*": ["node_modules/rxjs/*"]
     },
     "typeRoots": [
       "node_modules/@types"
