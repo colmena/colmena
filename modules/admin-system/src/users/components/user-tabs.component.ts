@@ -2,7 +2,15 @@ import { Component, Input } from '@angular/core'
 
 @Component({
   selector: 'app-user-tabs',
-  templateUrl: '../templates/user-tabs.html',
+  template: `
+    <ul class="nav nav-tabs card-header-tabs">
+      <li *ngFor="let item of tabs" class="nav-item">
+        <a [routerLink]="item.link" routerLinkActive="active" class="nav-link">
+          <i [class]="item.icon"></i> &nbsp; {{ item.title }}
+        </a>
+      </li>
+    </ul>
+  `,
   styles: [`
     .card-header-tabs {
       padding-top: 10px;

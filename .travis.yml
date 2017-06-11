@@ -3,9 +3,9 @@ notifications:
   slack: colmena-cms:o0Inc1h1waa9OKMvL4GiTbDW
 language: node_js
 node_js:
-- '8'
+  - '8'
 script:
-- npm run build
+  - npm run build
 cache:
   yarn: true
   directories:

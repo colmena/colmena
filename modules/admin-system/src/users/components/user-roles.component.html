@@ -1,0 +1,30 @@
+<table *ngIf="item" class="table table-hover">
+  <thead>
+    <tr>
+      <th [style.text-align]="'left'">Role</th>
+      <th [style.text-align]="'right'">
+        <div class="btn-group" placement="bottom left" dropdown>
+          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+          <i class="fa fa-plus"></i> &nbsp; Add Role &nbsp;
+          <span class="caret"></span>
+          </button>
+          <ul *dropdownMenu class="dropdown-menu" role="menu">
+            <li *ngFor="let option of items?.unassigned" role="menuitem">
+              <a class="dropdown-item" (click)="handleAction({ type: 'addRole', payload: option })"> {{ option }}</a>
+            </li>
+          </ul>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items?.assigned">
+      <td>
+        <i class="fa fa-tag"></i> &nbsp; {{ item }}
+      </td>
+      <td [style.text-align]="'right'">
+        <button class="btn btn-sm btn-outline-danger" (click)="handleAction({ type: 'removeRole', payload: item })">Remove</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

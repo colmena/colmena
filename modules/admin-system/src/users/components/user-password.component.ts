@@ -1,17 +1,20 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { UiService, FormService } from '@colmena/admin-ui'
 import { UsersService } from '../users.service'
 
 @Component({
   selector: 'app-user-password',
-  templateUrl: '../templates/user-password.html',
+  templateUrl: './user-password.component.html',
 })
-export class UserPasswordComponent {
+export class UserPasswordComponent implements OnInit {
 
-  // TODO: implement changePassword and resetPassword logic!
+  public formConfig: any = {
+    hasHeader: false,
+    fields: [],
+    showCancel: true,
+  }
 
-  public formConfig: any
   public item: any
 
   constructor(
@@ -20,21 +23,20 @@ export class UserPasswordComponent {
     private formService: FormService,
     private router: Router,
   ) {
+  }
+
+  ngOnInit() {
     this.item = this.service.selectedUser['user']
-    this.formConfig = {
-      hasHeader: false,
-      fields: [
-        this.formService.password('password', {
-          label: 'Password',
-          placeholder: 'Must be at least 5 characters'
-        }),
-        this.formService.password('password', {
-          label: 'Confirm Password',
-          placeholder: 'Re-enter the password to confirm'
-        }),
-      ],
-      showCancel: true,
-    }
+    this.formConfig.fields = [
+      this.formService.password('password', {
+        label: 'Password',
+        placeholder: 'Must be at least 5 characters'
+      }),
+      this.formService.password('password', {
+        label: 'Confirm Password',
+        placeholder: 'Re-enter the password to confirm'
+      }),
+    ]
   }
 
   handleAction(event) {

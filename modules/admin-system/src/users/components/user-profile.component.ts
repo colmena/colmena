@@ -12,7 +12,12 @@ import { UsersService } from '../users.service'
 })
 export class UserProfileComponent implements OnInit {
 
-  public formConfig: any
+  public formConfig: any = {
+    icon: 'fa fa-user',
+    fields: [],
+    showCancel: true,
+    hasHeader: false,
+  }
   public item: any
   public items: any[]
 
@@ -26,29 +31,24 @@ export class UserProfileComponent implements OnInit {
   ngOnInit() {
     this.item = this.service.selectedUser['user']
     this.items = this.service.domains
-    this.formConfig = {
-      icon: 'fa fa-user',
-      fields: [
-        this.formService.select('realm', {
-          label: 'Domain',
-          options: this.items,
-        }),
-        this.formService.email('email', {
-          label: 'Email address',
-          placeholder: 'Email address',
-        }),
-        this.formService.input('firstName', {
-          label: 'First name',
-          placeholder: 'First name',
-        }),
-        this.formService.input('lastName', {
-          label: 'Last name',
-          placeholder: 'Last name',
-        }),
-      ],
-      showCancel: true,
-      hasHeader: false,
-    }
+    this.formConfig.fields = [
+      this.formService.select('realm', {
+        label: 'Domain',
+        options: this.items,
+      }),
+      this.formService.email('email', {
+        label: 'Email address',
+        placeholder: 'Email address',
+      }),
+      this.formService.input('firstName', {
+        label: 'First name',
+        placeholder: 'First name',
+      }),
+      this.formService.input('lastName', {
+        label: 'Last name',
+        placeholder: 'Last name',
+      }),
+    ]
   }
 
   handleAction(event) {

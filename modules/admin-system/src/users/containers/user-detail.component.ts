@@ -27,10 +27,10 @@ import { NavTabLink } from '../components/user-tabs.component'
 export class UserDetailComponent {
 
   public tabs: NavTabLink[] = [
-    { icon: 'user', title: 'Profile', link: 'profile' },
-    { icon: 'key', title: 'Password', link: 'password' },
-    { icon: 'unlock', title: 'Access Tokens', link: 'access-tokens' },
-    { icon: 'tags', title: 'Roles', link: 'roles' },
+    { icon: 'fa fa-user', title: 'Profile', link: 'profile' },
+    { icon: 'fa fa-key', title: 'Password', link: 'password' },
+    { icon: 'fa fa-unlock', title: 'Access Tokens', link: 'access-tokens' },
+    { icon: 'fa fa-tags', title: 'Roles', link: 'roles' },
   ]
 
   public item: any

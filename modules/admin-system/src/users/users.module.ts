@@ -4,8 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
-import { UserListComponent } from './containers/user-list.component'
 import { UserDetailComponent } from './containers/user-detail.component'
+import { UserListComponent } from './containers/user-list.component'
 
 import { UserAccessTokensComponent } from './components/user-access-tokens.component'
 import { UserHeaderComponent } from './components/user-header.component'
@@ -25,8 +25,9 @@ import { UsersService } from './users.service'
     RouterModule,
   ],
   declarations: [
-    UserListComponent,
     UserDetailComponent,
+    UserListComponent,
+
     UserAccessTokensComponent,
     UserHeaderComponent,
     UserPasswordComponent,
@@ -37,8 +38,5 @@ import { UsersService } from './users.service'
   providers: [
     UsersService,
   ],
-  exports: [
-    UserListComponent
-  ]
 })
 export class SystemUsersModule { }
