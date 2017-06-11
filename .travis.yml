@@ -1,5 +1,6 @@
 notifications:
   email: false
+  slack: colmena-cms:o0Inc1h1waa9OKMvL4GiTbDW
 language: node_js
 node_js:
 - '8'
@@ -18,3 +19,4 @@ deploy:
     script: ./bin/deploy-to-now.sh
     on:
       branch: develop
+
