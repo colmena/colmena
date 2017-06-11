@@ -9,11 +9,11 @@ import { RouterModule } from '@angular/router'
 // Third party Modules
 import { LoopBackConfig, SDKBrowserModule } from '@colmena/admin-lb-sdk'
 
-import { ColmenaAuthModule } from '@colmena/admin-auth'
+// Local Modules
 import { ColmenaLayoutModule } from '@colmena/admin-layout'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
-// Local Modules
+import { AuthModule } from '@colmena/module-admin-auth'
 import { ContentModule } from '@colmena/module-admin-content'
 import { CoreModule } from '@colmena/module-admin-core'
 import { DashboardModule } from '@colmena/module-admin-dashboard'
@@ -38,10 +38,10 @@ import { HasContentAccess, HasSystemAccess, UserLoggedIn } from './app.guards'
     RouterModule,
 
     SDKBrowserModule.forRoot(),
-    ColmenaAuthModule,
     ColmenaLayoutModule,
     ColmenaUiModule,
 
+    AuthModule,
     ContentModule,
     CoreModule,
     DashboardModule,
