@@ -4,6 +4,9 @@
   "license": "MIT",
   "dependencies": {
     "@colmena/admin-ui": "0.0.0",
-    "@colmena/admin-lb-sdk": "0.0.0"
+    "@colmena/admin-lb-sdk": "0.0.0",
+    "@ngrx/core": "1.2.0",
+    "@ngrx/effects": "2.0.3",
+    "@ngrx/store": "2.2.2"
   }
 }

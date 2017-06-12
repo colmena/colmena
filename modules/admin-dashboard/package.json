@@ -4,7 +4,9 @@
   "dependencies": {
     "@colmena/module-admin-content": "0.0.0",
     "@colmena/module-admin-system": "0.0.0",
-    "@colmena/admin-ui": "0.0.0"
+    "@colmena/admin-ui": "0.0.0",
+    "@ngrx/core": "1.2.0",
+    "@ngrx/store": "2.2.2"
   },
   "license": "MIT"
 }
