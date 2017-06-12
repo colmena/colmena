@@ -793,6 +793,70 @@ export class UserApi extends BaseLoopBackApi {
   }
 
   /**
+   * Add a role to this user.
+   *
+   * @param {any} id user id
+   *
+   * @param {object} data Request data.
+   *
+   *  - `roleName` – `{String}` - The name of the role to add.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `User` object.)
+   * </em>
+   */
+  public addRole(id: any, roleName: any): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/users/:id/addRole";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (roleName) _urlParams.roleName = roleName;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
+   * Remove a role from this user.
+   *
+   * @param {any} id user id
+   *
+   * @param {object} data Request data.
+   *
+   *  - `roleName` – `{String}` - The name of the role to remove.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `User` object.)
+   * </em>
+   */
+  public removeRole(id: any, roleName: any): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/users/:id/removeRole";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (roleName) _urlParams.roleName = roleName;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
    * Reset the password for user
    *
    * @param {object} data Request data.

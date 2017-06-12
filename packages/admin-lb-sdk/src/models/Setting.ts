@@ -3,7 +3,6 @@
 declare var Object: any;
 export interface SettingInterface {
   "key": any;
-  "value"?: any;
   "system"?: any;
   "type": any;
   "description"?: any;
@@ -13,7 +12,6 @@ export interface SettingInterface {
 
 export class Setting implements SettingInterface {
   "key": any;
-  "value": any;
   "system": any;
   "type": any;
   "description": any;
@@ -52,10 +50,6 @@ export class Setting implements SettingInterface {
       properties: {
         "key": {
           name: 'key',
-          type: 'any'
-        },
-        "value": {
-          name: 'value',
           type: 'any'
         },
         "system": {
