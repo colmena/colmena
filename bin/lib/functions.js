@@ -1,9 +1,7 @@
-
 const fs = require('fs')
 const path = require('path')
 
 const pJoin = (p, f) => path.join(p, f)
-
 
 /**
  * Synchronously check if path exists
@@ -16,8 +14,7 @@ const exists = p => fs.existsSync(p)
  * @param p the dir to read
  * @returns array A list of dir names
  */
-const getDirectories = p => readDir(p)
-  .filter(f => isDir(pJoin(p, f)))
+const getDirectories = p => readDir(p).filter(f => isDir(pJoin(p, f)))
 
 /**
  * Synchronously check if path is a dir
@@ -49,10 +46,10 @@ const rmFile = f => fs.unlinkSync(f)
  * @param p the dir to remove
  */
 const rmDirRecursive = p => {
-  if(!exists(p)) return
+  if (!exists(p)) return
   readDir(p)
     .map(dirs => pJoin(p, dirs))
-    .map(item => isDir(item) ? rmDirRecursive(item) : rmFile(item))
+    .map(item => (isDir(item) ? rmDirRecursive(item) : rmFile(item)))
   rmDir(p)
 }
 
@@ -60,13 +57,14 @@ const rmDirRecursive = p => {
  * Clean the node_modules dir from a path
  * @param p the dir to remove
  */
-const clean = p => getDirectories(p)
-  .filter(dir => dir === 'node_modules')
-  .map(dir => pJoin(p, dir))
-  .map(dir => {
-    console.log(`[!] Removing ${dir}`)
-    rmDirRecursive(dir)
-  })
+const clean = p =>
+  getDirectories(p)
+    .filter(dir => dir === 'node_modules')
+    .map(dir => pJoin(p, dir))
+    .map(dir => {
+      console.log(`[!] Removing ${dir}`)
+      rmDirRecursive(dir)
+    })
 
 module.exports = {
   pJoin,

@@ -46,5 +46,4 @@ module.exports = function(app, cb) {
     .then(() => app.models.Setting.create(systemSettings))
     .then(res => log.info(`System Settings: ${res.length} added`))
     .asCallback(cb)
-
 }

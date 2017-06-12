@@ -6,7 +6,8 @@ const packageName = '@colmena/colmena'
 const projectPath = pJoin(__dirname, '..')
 
 if (!pJson || !pJson.name || pJson.name !== packageName) {
-  return console.log(`Could not find the ${packageName} project`)
+  console.log(`Could not find the ${packageName} project`)
+  process.emit(1)
 }
 console.log(`[clean] Removing node_modules from project path ${projectPath}`)
 

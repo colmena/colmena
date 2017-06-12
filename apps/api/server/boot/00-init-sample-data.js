@@ -56,11 +56,11 @@ module.exports = function(app, cb) {
   }
 
   return Promise.resolve()
-      .then(() => removeContainer())
-      .then(() => teardownFixtures())
-      .then(() => setupFixtures())
-      .then(() => importImages())
-      .then(() => log.info('System init db: loaded sample data.'))
-      .then(cb)
-      .catch(err => Promise.reject(err))
+    .then(() => removeContainer())
+    .then(() => teardownFixtures())
+    .then(() => setupFixtures())
+    .then(() => importImages())
+    .then(() => log.info('System init db: loaded sample data.'))
+    .then(cb)
+    .catch(err => Promise.reject(err))
 }

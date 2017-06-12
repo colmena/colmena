@@ -1,1 +1,3 @@
 node_modules
+apps/api/client
+apps/admin/dist
