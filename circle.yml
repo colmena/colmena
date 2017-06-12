@@ -1,0 +1,6 @@
+machine:
+  node:
+    version: 8.1.0
+dependencies:
+  post:
+    - npm run build
