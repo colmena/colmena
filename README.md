@@ -48,8 +48,9 @@ Globally installed Node packages:
 - [Lerna](https://github.com/lerna/lerna)
 - [LoopBack CLI](https://github.com/strongloop/loopback-cli)
 
-
-    $ npm install -g @angular/cli lerna loopback-cli
+```
+$ npm install -g @angular/cli lerna loopback-cli
+```
 
 #### Clone repo
 
