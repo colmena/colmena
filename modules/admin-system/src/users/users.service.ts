@@ -23,8 +23,6 @@ export class UsersService extends UiDataGridService {
 
   public formFields: any[]
 
-  private subscriptions: Subscription[] = []
-
   constructor(
     public userApi: UserApi,
     public formService: FormService,
@@ -57,28 +55,17 @@ export class UsersService extends UiDataGridService {
     ]
   }
 
-  // core functions
-
-  endAllSubscriptions() {
-    this.subscriptions.forEach(
-      (subscription: Subscription) => subscription.unsubscribe())
-  }
-
   setSelectedUser(user: any) {
     this.selectedUser = user
   }
 
   getDomains(): void {
-    this.subscriptions.push(
-      this.store.select('app')
-        .subscribe((data) => {
-          const domains = data['domains']
-          this.domains = domains.map(
-            (domain) => Object.assign({}, {
-              label: domain.name,
-              value: domain.id
-            }))
-        }))
+    this.store
+      .select('app')
+      .map(data => data['domains'])
+      .subscribe(domains => {
+        this.domains = domains.map(domain => ({ label: domain.name, value: domain.id }))
+      })
   }
 
   getFormConfig(): any {
@@ -102,89 +89,76 @@ export class UsersService extends UiDataGridService {
     return this.userApi.count(this.getWhereFilters())
   }
 
-  upsertItem(item, successCb, errorCb): void {
-    this.subscriptions.push(
-      this.userApi.upsert(
-        item
-      ).subscribe(successCb, errorCb))
+  upsertItem(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .upsert(item)
+      .subscribe(successCb, errorCb)
   }
 
-  deleteItem(item, successCb, errorCb): void {
-    this.subscriptions.push(
-      this.userApi.deleteById(
-        item.id
-      ).subscribe(successCb, errorCb))
+  deleteItem(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .deleteById(item.id)
+      .subscribe(successCb, errorCb)
   }
 
-  // custom functions
-
-  updateProfile(item, successCb, errorCb): void {
-    this.subscriptions.push(
-      this.userApi.patchAttributes(
-        item.id,
-        item
-      ).subscribe(successCb, errorCb))
+  updateProfile(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .patchAttributes(item.id, item)
+      .subscribe(successCb, errorCb)
   }
 
-  addUserToRole(item, successCb, errorCb): void {
-    this.userApi.addRole(item.user.id, item.role).subscribe(successCb, errorCb)
+  addUserToRole(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .addRole(item.user.id, item.role)
+      .subscribe(successCb, errorCb)
   }
 
-  removeUserFromRole(item, successCb, errorCb): void {
-    this.userApi.removeRole(item.user.id, item.role).subscribe(successCb, errorCb)
+  removeUserFromRole(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .removeRole(item.user.id, item.role)
+      .subscribe(successCb, errorCb)
   }
 
-  getUserAccessTokens(item, successCb, errorCb): void {
-    this.subscriptions.push(
-      this.userApi.getAccessTokens(
-        item.id
-      ).subscribe(successCb, errorCb))
+  getUserAccessTokens(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .getAccessTokens(item.id)
+      .subscribe(successCb, errorCb)
   }
 
-  generateToken(item, successCb, errorCb): void {
-    this.subscriptions.push(
-      this.userApi.createAccessTokens(
-        item.id
-      ).subscribe(successCb, errorCb))
+  generateToken(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .createAccessTokens(item.id)
+      .subscribe(successCb, errorCb)
   }
 
-  removeTtl(item, successCb, errorCb): void {
-    this.subscriptions.push(
-      this.userApi.updateByIdAccessTokens(
-        item.user.id,
-        item.token.id,
-        {
-          ttl: -1
-        }).subscribe(successCb, errorCb))
+  removeTtl(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .updateByIdAccessTokens(item.user.id, item.token.id, { ttl: -1 })
+      .subscribe(successCb, errorCb)
   }
 
-  deleteToken(item, successCb, errorCb): void {
-    this.subscriptions.push(
-      this.userApi.destroyByIdAccessTokens(
-        item.user.id,
-        item.token.id
-      ).subscribe(successCb, errorCb))
+  deleteToken(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .destroyByIdAccessTokens(item.user.id, item.token.id)
+      .subscribe(successCb, errorCb)
   }
 
-  deleteAllTokens(item, successCb, errorCb): void {
-    this.subscriptions.push(
-      this.userApi.deleteAccessTokens(
-        item.id
-      ).subscribe(successCb, errorCb))
+  deleteAllTokens(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .deleteAccessTokens(item.id)
+      .subscribe(successCb, errorCb)
   }
 
-  changePassword(item, successCb, errorCb): void {
-    this.subscriptions.push(
-      this.userApi.doPasswordReset(
-        item
-      ).subscribe(successCb, errorCb))
+  changePassword(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .doPasswordReset(item)
+      .subscribe(successCb, errorCb)
   }
 
-  resetPassword(item, successCb, errorCb): void {
-    this.subscriptions.push(
-      this.userApi.resetPassword(
-        item
-      ).subscribe(successCb, errorCb))
+  resetPassword(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .resetPassword(item)
+      .subscribe(successCb, errorCb)
   }
 
 }
