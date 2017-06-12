@@ -24,8 +24,6 @@
     "admin"
   ],
   "scripts": {
-    "clean": "rimraf ./client/*",
-    "build": "npm run clean && cp -rv ../admin/dist/* ./client/",
     "dev": "nodemon .",
     "start": "node .",
     "test": "true"

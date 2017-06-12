@@ -24,9 +24,9 @@
     "admin"
   ],
   "scripts": {
-    "clean": "rimraf ./dist",
+    "clean": "rimraf ../api/client",
     "prebuild": "npm run clean",
-    "build": "ng build --output-path ./dist",
+    "build": "ng build --output-path ../api/client",
     "dev": "ng serve --port 9000 --hmr true -e hmr --host 127.0.0.1 --progress true --proxy-config proxy.conf.json",
     "start": "nps",
     "test": "nps test"

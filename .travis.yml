@@ -5,7 +5,7 @@ language: node_js
 node_js:
 - '8'
 script:
-- npm run build
+- npm install
 cache:
   yarn: true
   directories:
@@ -19,4 +19,3 @@ deploy:
     script: ./bin/deploy-to-now.sh
     on:
       branch: develop
-
