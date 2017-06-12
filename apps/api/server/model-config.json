@@ -37,7 +37,10 @@
   },
   "Role": {
     "dataSource": "db",
-    "public": false
+    "public": false,
+    "options": {
+      "forceId": false
+    }
   },
   "Email": {
     "dataSource": "mail"
