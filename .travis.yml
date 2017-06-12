@@ -4,6 +4,9 @@ notifications:
 language: node_js
 node_js:
   - '8'
+install:
+  - npm install -g @angular/cli lerna loopback-cli
+  - npm install
 script:
   - npm run build
 cache:
