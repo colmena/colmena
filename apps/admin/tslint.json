@@ -90,8 +90,8 @@
       "check-type"
     ],
 
-    "directive-selector": [true, "attribute", ["app", "fc", "layout", "ui"], "camelCase"],
-    "component-selector": [true, "element", ["app", "fc", "layout", "ui"], "kebab-case"],
+    "directive-selector": [true, "attribute", ["app", "layout", "ui"], "camelCase"],
+    "component-selector": [true, "element", ["app", "layout", "ui"], "kebab-case"],
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
     "use-host-property-decorator": true,

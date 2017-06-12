@@ -1,16 +1,15 @@
-[
-  {
-    "roleId": 1,
+[{
+    "roleId": "admin",
     "principalId": "admin",
     "principalType": "USER"
   },
   {
-    "roleId": 2,
+    "roleId": "manager",
     "principalId": "manager",
     "principalType": "USER"
   },
   {
-    "roleId": 3,
+    "roleId": "user",
     "principalId": "user",
     "principalType": "USER"
   }

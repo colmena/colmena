@@ -1,30 +1,45 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Colmena - Open Source mobile backend">
-  <meta name="author" content="Bram Borggreve">
-  <meta name="keyword" content="Mobile,Backend,Loopback,Angular,Bootstrap,Admin,Open Source,MIT,Dashboard">
-  <title>Colmena - Open Source mobile backend</title>
 
-  <base href="/">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <script src="/config.js" charset="utf-8"></script>
-  <script>
-    window.localStorage.setItem('apiConfig', JSON.stringify(window.apiConfig));
-  </script>
-  <style>
-    .loading {
-      height: 100vh;
-      background: center center no-repeat url('data:image/png;base64,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');
-    }
-  </style>
-</head>
-<body class="navbar-fixed sidebar-nav fixed-nav">
-  <app-root>
-    <div class="loading"></div>
-  </app-root>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+          content="Colmena - Open Source mobile backend">
+    <meta name="author"
+          content="Bram Borggreve">
+    <meta name="keyword"
+          content="Mobile,Backend,Loopback,Angular,Bootstrap,Admin,Open Source,MIT,Dashboard">
+    <title>Colmena - Open Source mobile backend</title>
+
+    <base href="/">
+    <link rel="icon"
+          type="image/x-icon"
+          href="favicon.ico">
+    <script src="/config.js"
+            charset="utf-8"></script>
+    <script>
+      window.localStorage.setItem('apiConfig', JSON.stringify(window.apiConfig));
+    </script>
+    <style>
+      .loading {
+        height: 100vh;
+        background: center center no-repeat url('data:image/png;base64,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');
+      }
+    </style>
+  </head>
+
+  <body class="navbar-fixed sidebar-nav fixed-nav">
+    <!-- Enable bootstrap 4 theme -->
+    <script>
+      window.__theme = 'bs4';
+    </script>
+    <app-root>
+      <div class="loading"></div>
+    </app-root>
+  </body>
+
 </html>

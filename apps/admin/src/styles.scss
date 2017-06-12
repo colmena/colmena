@@ -1,37 +1,31 @@
-
-// The Colmena color scheme
+// Colmena Color Scheme
 $colmena-red: #D32F2F;
 $colmena-blue: #1565C0;
 $colmena-primary: #1E88E5;
 $colmena-yellow: #FDD835;
 $colmena-green: #66BB6A;
-$colmena-background: #263238;
-
+$colmena-background: #263238; //
 // Override Bootstrap
 $brand-info: $colmena-blue;
 $brand-primary: $colmena-primary;
 $brand-success: $colmena-green;
 $brand-warning: $colmena-yellow;
 $brand-danger: $colmena-red;
-
-$btn-warning-color: $colmena-background;
-
+$btn-warning-color: $colmena-background; //
 // Override CoreUI
-$sidebar-bg: $colmena-background;
-
-// Set logo
+$sidebar-bg: $colmena-background; //
+// Set Logo
 $navbar-brand-logo: url('./assets/logo.png');
 $navbar-brand-logo-size: 130px auto;
-
 @import '~coreui-styles/scss/style.scss';
-@import '~@colmena/admin-ui/src/styles.css';
+@import '~@colmena/admin-ui/src/styles.scss';
 @import '~simple-line-icons/css/simple-line-icons.css';
 @import '~font-awesome/css/font-awesome.css';
 @import './assets/animate.css';
 
 .brand-logo {
-  display: block;
-  height: 80px;
-  background: $navbar-brand-logo no-repeat center center;
+  display        : block;
+  height         : 80px;
+  background     : $navbar-brand-logo no-repeat center center;
   background-size: 200px auto;
 }

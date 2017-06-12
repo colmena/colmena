@@ -1,0 +1,34 @@
+{
+  "compileOnSave": false,
+  "compilerOptions":
+  {
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "es2016",
+      "dom"
+    ],
+<<<<<<< HEAD
+    "paths": {
+      "@angular/*": ["node_modules/@angular/*"],
+      "@colmena/*": ["node_modules/@colmena/*"],
+      "@ngrx/*": ["node_modules/@ngrx/*"],
+      "rxjs/*": ["node_modules/rxjs/*"]
+=======
+    "paths":
+    {
+      "@angular/*": [ "node_modules/@angular/*" ],
+      "@ngrx/*": [ "node_modules/@ngrx/*" ],
+      "@colmena/*": [ "node_modules/@colmena/*" ],
+      "rxjs/*": [ "node_modules/rxjs/*" ]
+>>>>>>> feat(user-mgmt): user management base
+    },
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  }
+}

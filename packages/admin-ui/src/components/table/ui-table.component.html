@@ -6,7 +6,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of items ">
+    <tr *ngFor="let item of items">
       <td *ngFor="let column of config.columns">
         <span *ngIf="!column.click && !column.link">
           {{item[column.field]}}

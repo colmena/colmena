@@ -6,8 +6,8 @@ import { FormGroup } from '@angular/forms'
   template: `
     <form class="formly" role="form" novalidate [formGroup]="form" (ngSubmit)="this.action.emit({ action: 'save', item: item })">
       <div class="card">
-        <div class="card-header">
-          <i [class]="config.icon"></i>
+        <div *ngIf="config.hasHeader !== false" class="card-header">
+          <i [class]="config.icon || ''"></i>
           <span *ngIf="!config.title && item.id">Edit</span>
           <span *ngIf="!config.title && !item.id">Add</span>
           <span *ngIf="config.title">{{config.title}}</span>
