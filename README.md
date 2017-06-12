@@ -44,12 +44,12 @@ Software installed on your system:
 
 Globally installed Node packages:
 
-- Angular CLI (`npm install -g @angular/cli`)
-- LernaJS (`npm install -g lerna`)
+- [Angular CLI](https://github.com/angular/angular-cli)
+- [Lerna](https://github.com/lerna/lerna)
+- [LoopBack CLI](https://github.com/strongloop/loopback-cli)
 
-And lastly (not needed to run the app, but will be useful during development):
 
-- LoopBack CLI (`npm install -g loopback-cli`)
+    $ npm install -g @angular/cli lerna loopback-cli
 
 #### Clone repo
 
@@ -107,7 +107,6 @@ You should now be able to connect to the Admin on http://192.168.12.34:9000 and 
 Colmena is still a work in progress and not all functionality is built yet.
 
 - Almost no ACLS are implemented, this means that the API can be used by whoever has access to it
-- There is no advanced user management
 - The interface does not reflect the user role (admin/manager/user)
 - Content will be leaking across domains, while this should not be possible
 

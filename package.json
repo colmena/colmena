@@ -24,7 +24,7 @@
     "admin"
   ],
   "scripts": {
-    "clean": "lerna clean --yes",
+    "clean": "lerna clean --yes && node bin/clean",
     "clean:api": "cd apps/api && npm run clean",
     "clean:admin": "cd apps/admin && npm run clean",
     "contributors:add": "all-contributors add",
