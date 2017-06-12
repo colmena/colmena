@@ -51,46 +51,4 @@ module.exports = function(User) {
     }
     return this.firstName || this.lastName || ''
   }
-
-  /**
-   * Method that retrieves all the roles in the system
-   * @returns boolean
-   */
-  User.getAllRoleNames = function getAllRoleNames() {
-    return User.app.models.Role
-      .find()
-      .then(roles => roles.map(role => role.name))
-  }
-
-  /**
-   * Get the roles for this User.
-   * @returns {Object} A map of all roles of this user
-   */
-  User.prototype.info = function info() {
-    const result = {
-      user: this,
-      roles: {},
-    }
-    let allRoleNames = []
-    let userRoleNames = []
-
-    return this.roles
-      .getAsync()
-      .then(userRoles => userRoles.map(userRole => userRole.name))
-      .then(res => (userRoleNames = res))
-      .then(() => User.getAllRoleNames())
-      .then(res => (allRoleNames = res))
-      .then(
-        () =>
-          (result.roles = {
-            assigned: allRoleNames.filter(
-              name => userRoleNames.indexOf(name) !== -1
-            ),
-            unassigned: allRoleNames.filter(
-              name => userRoleNames.indexOf(name) === -1
-            ),
-          })
-      )
-      .then(() => result)
-  }
 }

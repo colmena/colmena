@@ -145,6 +145,42 @@
         "verb": "get"
       }
     },
+    "prototype.addRole": {
+      "description": "Add a role to this user.",
+      "accepts": [{
+        "arg": "roleName",
+        "type": "String",
+        "required": true,
+        "description": "The name of the role to add."
+      }],
+      "returns": {
+        "arg": "result",
+        "type": "Boolean",
+        "root": true
+      },
+      "http": {
+        "path": "/addRole",
+        "verb": "post"
+      }
+    },
+    "prototype.removeRole": {
+      "description": "Remove a role from this user.",
+      "accepts": [{
+        "arg": "roleName",
+        "type": "String",
+        "required": true,
+        "description": "The name of the role to remove."
+      }],
+      "returns": {
+        "arg": "result",
+        "type": "Boolean",
+        "root": true
+      },
+      "http": {
+        "path": "/removeRole",
+        "verb": "post"
+      }
+    },
     "doPasswordReset": {
       "accepts": [
         {
