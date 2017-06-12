@@ -127,23 +127,11 @@ export class UsersService extends UiDataGridService {
   }
 
   addUserToRole(item, successCb, errorCb): void {
-    this.subscriptions.push(
-      this.userApi.linkRoles(
-        item.user.id,
-        item.role,
-        {
-          principalType: 'USER',
-          principalId: item.user.id,
-          roleId: item.role
-        }).subscribe(successCb, errorCb))
+    this.userApi.addRole(item.user.id, item.role).subscribe(successCb, errorCb)
   }
 
   removeUserFromRole(item, successCb, errorCb): void {
-    this.subscriptions.push(
-      this.userApi.unlinkRoles(
-        item.user.id,
-        item.role
-      ).subscribe(successCb, errorCb))
+    this.userApi.removeRole(item.user.id, item.role).subscribe(successCb, errorCb)
   }
 
   getUserAccessTokens(item, successCb, errorCb): void {

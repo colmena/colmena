@@ -4,13 +4,16 @@
       <th [style.text-align]="'left'">Role</th>
       <th [style.text-align]="'right'">
         <div class="btn-group" placement="bottom left" dropdown>
-          <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+          <button dropdownToggle type="button" class="btn btn-primary btn-sm dropdown-toggle">
           <i class="fa fa-plus"></i> &nbsp; Add Role &nbsp;
           <span class="caret"></span>
           </button>
           <ul *dropdownMenu class="dropdown-menu" role="menu">
             <li *ngFor="let option of items?.unassigned" role="menuitem">
               <a class="dropdown-item" (click)="handleAction({ type: 'addRole', payload: option })"> {{ option }}</a>
+            </li>
+            <li *ngIf="!items?.unassigned.length" role="menuitem">
+              <a class="dropdown-item"> All roles assigned</a>
             </li>
           </ul>
         </div>
