@@ -75,13 +75,13 @@
     {
       "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "admin",
+      "principalId": "system-admin",
       "permission": "ALLOW"
     },
     {
       "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "manager",
+      "principalId": "system-manager",
       "permission": "ALLOW"
     },
     {
@@ -111,28 +111,28 @@
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
-      "principalId": "admin",
+      "principalId": "system-admin",
       "permission": "ALLOW",
       "property": "addRole"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
-      "principalId": "admin",
+      "principalId": "system-admin",
       "permission": "ALLOW",
       "property": "removeRole"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
-      "principalId": "manager",
+      "principalId": "system-manager",
       "permission": "ALLOW",
       "property": "addRole"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
-      "principalId": "manager",
+      "principalId": "system-manager",
       "permission": "ALLOW",
       "property": "removeRole"
     }

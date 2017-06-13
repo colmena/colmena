@@ -19,7 +19,7 @@ export class HasSystemAccess implements CanActivate {
       .select('auth')
       .map((res: any) => res.roles.assigned)
       .map((roles: any) => {
-        if(roles.includes('admin')) {
+        if(roles.includes('system-admin')) {
           return true
         }
         this.uiService.toastError('Access Denied', 'Your assigned roles do not allow access.')
@@ -42,7 +42,7 @@ export class HasContentAccess implements CanActivate {
       .select('auth')
       .map((res: any) => res.roles.assigned)
       .map((roles: any) => {
-        if (roles.includes('admin') || roles.includes('manager')) {
+        if (roles.includes('system-admin') || roles.includes('system-manager')) {
           return true
         }
         this.uiService.toastError('Access Denied', 'Your assigned roles do not allow access.')

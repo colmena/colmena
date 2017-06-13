@@ -21,13 +21,13 @@
     {
       "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "admin",
+      "principalId": "system-admin",
       "permission": "ALLOW"
     },
     {
       "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "manager",
+      "principalId": "system-manager",
       "permission": "ALLOW"
     },
     {
