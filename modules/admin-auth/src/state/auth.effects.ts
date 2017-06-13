@@ -5,7 +5,7 @@ import { Action, Store } from '@ngrx/store'
 import { Observable } from 'rxjs/Observable'
 
 import { UiService } from '@colmena/admin-ui'
-import { UserApi } from '@colmena/admin-lb-sdk'
+import { SystemUserApi } from '@colmena/admin-lb-sdk'
 
 import * as auth from './auth.actions'
 
@@ -115,7 +115,7 @@ export class AuthEffects {
   constructor(
     private actions$: Actions,
     private store: Store<any>,
-    private userApi: UserApi,
+    private userApi: SystemUserApi,
     private ui: UiService,
   ) {
   }

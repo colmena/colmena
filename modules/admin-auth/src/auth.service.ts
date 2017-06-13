@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { User, AccessToken, UserApi } from '@colmena/admin-lb-sdk'
+import { SystemUser as User, AccessToken, SystemUserApi } from '@colmena/admin-lb-sdk'
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/observable/of'
 
@@ -10,7 +10,7 @@ export class AuthService {
   private token: AccessToken = new AccessToken()
 
   constructor(
-    private userApi: UserApi,
+    private userApi: SystemUserApi,
   ) {
   }
 
@@ -42,10 +42,10 @@ export class AuthService {
   }
 
   reset(user: any) {
-    this.userApi.doPasswordReset({}, {}, user)
-      .subscribe(
-        (success) => console.log({ type: 'AUTH_RESET_SUCCESS', payload: success }),
-        (error) => console.log({ type: 'AUTH_RESET_ERROR', payload: error }))
+    // this.userApi.doPasswordReset({}, {}, user)
+    //   .subscribe(
+    //     (success) => console.log({ type: 'AUTH_RESET_SUCCESS', payload: success }),
+    //     (error) => console.log({ type: 'AUTH_RESET_ERROR', payload: error }))
   }
 
   register(credentials) {
