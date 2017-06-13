@@ -19,6 +19,19 @@ export const SystemUsersRoutes: Routes = [{
       component: UserListComponent,
     },
     {
+      path: 'add',
+      component: UserDetailComponent,
+      data: { title: 'Add new user' },
+      children: [
+        { path: '', redirectTo: 'profile', pathMatch: 'full' },
+        {
+          path: 'profile',
+          component: UserProfileComponent,
+          data: { title: 'Profile' },
+        },
+      ]
+    },
+    {
       path: ':id',
       component: UserDetailComponent,
       resolve: {

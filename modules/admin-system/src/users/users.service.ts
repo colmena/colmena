@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { UserApi, User, Domain } from '@colmena/admin-lb-sdk'
+export { User } from '@colmena/admin-lb-sdk'
 import { UiDataGridService, FormService } from '@colmena/admin-ui'
 import { Observable } from 'rxjs/Observable'
 import { Subscription } from 'rxjs/Subscription'
@@ -11,7 +12,7 @@ export class UsersService extends UiDataGridService {
 
   public icon = 'icon-user'
   public title = 'Users'
-  public domains: any[]
+  public domains: any[] = []
   public selectedUser: any
 
   public tableColumns = [
@@ -21,7 +22,7 @@ export class UsersService extends UiDataGridService {
     { field: 'realm', label: 'Domain' },
   ]
 
-  public formFields: any[]
+  // public formFields: any[]
 
   constructor(
     public userApi: UserApi,
@@ -31,7 +32,23 @@ export class UsersService extends UiDataGridService {
     super()
     this.getDomains()
     this.columns = this.tableColumns
-    this.formFields = [
+  }
+
+  setSelectedUser(user: any) {
+    this.selectedUser = user
+  }
+
+  getDomains(): void {
+    this.store
+      .select('app')
+      .map(data => data['domains'])
+      .subscribe(domains => {
+        this.domains = domains.map(domain => ({ label: domain.name, value: domain.id }))
+      })
+  }
+
+  getFormFields(editForm = false) {
+    const fields = [
       this.formService.select('realm', {
         label: 'Domain',
         options: this.domains,
@@ -48,30 +65,23 @@ export class UsersService extends UiDataGridService {
         label: 'Last name',
         placeholder: 'Last name',
       }),
-      this.formService.password('password', {
-        label: 'Password',
-        placeholder: 'Password',
-      }),
     ]
+    // Only show password field if we're not on the edit form
+    if (!editForm) {
+      fields.push(
+        this.formService.password('password', {
+          label: 'Password',
+          placeholder: 'Password',
+        }),
+      )
+    }
+    return fields
   }
 
-  setSelectedUser(user: any) {
-    this.selectedUser = user
-  }
-
-  getDomains(): void {
-    this.store
-      .select('app')
-      .map(data => data['domains'])
-      .subscribe(domains => {
-        this.domains = domains.map(domain => ({ label: domain.name, value: domain.id }))
-      })
-  }
-
-  getFormConfig(): any {
+  getFormConfig(editForm = false): any {
     return {
       icon: this.icon,
-      fields: this.formFields,
+      fields: this.getFormFields(editForm),
       showCancel: true,
       hasHeader: false,
     }
@@ -90,20 +100,26 @@ export class UsersService extends UiDataGridService {
   }
 
   upsertItem(item, successCb, errorCb): Subscription {
+    if (item.id) {
+      return this.updateUser(item, successCb, errorCb)
+    }
+    return this.createUser(item, successCb, errorCb)
+  }
+  createUser(item, successCb, errorCb): Subscription {
     return this.userApi
-      .upsert(item)
+      .create(item)
+      .subscribe(successCb, errorCb)
+  }
+
+  updateUser(item, successCb, errorCb): Subscription {
+    return this.userApi
+      .patchAttributes(item.id, item)
       .subscribe(successCb, errorCb)
   }
 
   deleteItem(item, successCb, errorCb): Subscription {
     return this.userApi
       .deleteById(item.id)
-      .subscribe(successCb, errorCb)
-  }
-
-  updateProfile(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .patchAttributes(item.id, item)
       .subscribe(successCb, errorCb)
   }
 

@@ -1,8 +1,8 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { UiService } from '@colmena/admin-ui'
 
-import { UsersService } from '../users.service'
+import { User, UsersService } from '../users.service'
 import { NavTabLink } from '../components/user-tabs.component'
 
 @Component({
@@ -24,7 +24,7 @@ import { NavTabLink } from '../components/user-tabs.component'
     }
   `],
 })
-export class UserDetailComponent {
+export class UserDetailComponent implements OnInit {
 
   public tabs: NavTabLink[] = [
     { icon: 'fa fa-user', title: 'Profile', link: 'profile' },
@@ -41,8 +41,14 @@ export class UserDetailComponent {
     private router: Router,
     private route: ActivatedRoute,
   ) {
-    this.item = this.route.snapshot.data.systemUser
-    this.service.setSelectedUser(this.item)
   }
 
+  ngOnInit() {
+    this.item = this.route.snapshot.data.systemUser
+    if (!this.item) {
+      this.item = new User()
+      this.tabs = this.tabs.splice(0, 1)
+    }
+    this.service.setSelectedUser(this.item)
+  }
 }

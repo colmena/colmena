@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Resolve, RouterStateSnapshot, ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router'
+import { Resolve, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router'
 import { Observable } from 'rxjs/Observable'
 
 import { UsersService } from './users.service'
@@ -9,7 +9,6 @@ export class SystemUserResolver implements Resolve<any> {
 
   constructor(
     private service: UsersService,
-    private route: ActivatedRoute,
   ) { }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
