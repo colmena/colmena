@@ -1,74 +1,92 @@
 import { Injectable } from '@angular/core'
-
-import { DomainApi } from '@colmena/admin-lb-sdk'
-
+import { Domain, DomainApi } from '@colmena/admin-lb-sdk'
+export { Domain } from '@colmena/admin-lb-sdk'
 import { UiDataGridService, FormService } from '@colmena/admin-ui'
+import { Observable } from 'rxjs/Observable'
+import { Subscription } from 'rxjs/Subscription'
 
 @Injectable()
 export class DomainsService extends UiDataGridService {
 
   public icon = 'icon-globe'
   public title = 'Domains'
+  public selectedDomain: Domain
 
   public tableColumns = [
     { field: 'id', label: 'ID', action: 'view' },
     { field: 'name', label: 'Name', action: 'view' },
   ]
 
-  public formFields = [
-    this.formService.input('id', {
-      label: 'ID',
-      placeholder: 'ID'
-    }),
-    this.formService.input('name', {
-      label: 'Name',
-      placeholder: 'Name'
-    }),
-    this.formService.email('email', {
-      label: 'Email',
-      placeholder: 'Email'
-    }),
-  ]
-
   constructor(
-    public domainApi: DomainApi,
-    public formService: FormService,
+    private domainApi: DomainApi,
+    private formService: FormService,
   ) {
     super()
     this.columns = this.tableColumns
   }
 
+  setSelectedDomain(domain: Domain) {
+    this.selectedDomain = domain
+  }
+
+  getFormFields() {
+    return [
+      this.formService.input('id', {
+        label: 'ID',
+        placeholder: 'ID',
+      }),
+      this.formService.input('name', {
+        label: 'Name',
+        placeholder: 'Name',
+      }),
+      this.formService.email('email', {
+        label: 'Email',
+        placeholder: 'Email',
+      }),
+      this.formService.input('description', {
+        label: 'Description',
+        placeholder: 'Description',
+      }),
+    ]
+  }
+
   getFormConfig() {
     return {
       icon: this.icon,
-      fields: this.formFields,
+      fields: this.getFormFields(),
       showCancel: true,
+      hasHeader: false,
     }
   }
 
-  getItems() {
+  getItems(): Observable<Domain[]> {
     return this.domainApi.find(this.getFilters())
   }
 
-  getItemCount() {
+  getItem(id): Observable<Domain> {
+    return this.domainApi.findById(id)
+  }
+
+  getItemCount(): Observable<any> {
     return this.domainApi.count(this.getWhereFilters())
   }
 
-  upsertItem(item, successCb, errorCb): void {
+  upsertItem(item, successCb, errorCb): Subscription {
     if (item.id) {
-      this.domainApi.upsert(item).subscribe(successCb, errorCb)
-    } else {
-      this.domainApi.create(item).subscribe(successCb, errorCb)
+      return this.upsertDomain(item, successCb, errorCb)
     }
+    return this.createDomain(item, successCb, errorCb)
   }
 
-  deleteItem(item, successCb, errorCb) {
-    this.domainApi
-      .deleteById(item.id)
-      .subscribe(
-        (success) => successCb(success),
-        (error) => errorCb(error),
-      )
+  upsertDomain(item, successCb, errorCb): Subscription {
+    return this.domainApi.upsert(item).subscribe(successCb, errorCb)
   }
 
+  createDomain(item, successCb, errorCb): Subscription {
+    return this.domainApi.create(item).subscribe(successCb, errorCb)
+  }
+
+  deleteItem(item, successCb, errorCb): Subscription {
+    return this.domainApi.deleteById(item.id).subscribe(successCb, errorCb)
+  }
 }

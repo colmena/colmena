@@ -7,12 +7,11 @@ import { RouterModule } from '@angular/router'
 import { Store } from '@ngrx/store'
 
 import { ColmenaUiModule } from '@colmena/admin-ui'
+import { SystemDomainsModule } from './domains/domains.module'
 import { SystemUsersModule } from './users/users.module'
 
 import { SystemDashboardComponent } from './system.component'
-import { DomainsComponent } from './domains/domains.component'
 import { SettingsComponent } from './settings/settings.component'
-import { DomainsService } from './domains/domains.service'
 import { SettingsService } from './settings/settings.service'
 
 import { SystemUserResolver } from './users/users.resolvers'
@@ -26,16 +25,15 @@ import { SystemUserResolver } from './users/users.resolvers'
     RouterModule,
 
     ColmenaUiModule,
+    SystemDomainsModule,
     SystemUsersModule,
     RouterModule,
   ],
   declarations: [
     SystemDashboardComponent,
-    DomainsComponent,
     SettingsComponent,
   ],
   providers: [
-    DomainsService,
     SettingsService,
     SystemUserResolver,
   ],
@@ -50,13 +48,13 @@ export class SystemModule {
   ) {
     this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload: { weight: 100, type: 'title', label: 'System' } })
 
-    this.dispatchLinks({ weight: 110, label: 'Domains', icon: 'icon-globe', link: [ '/', 'system', 'domains' ] })
-    this.dispatchLinks({ weight: 120, label: 'Settings', icon: 'icon-settings', link: [ '/', 'system', 'settings' ] })
-    this.dispatchLinks({ weight: 130, label: 'Users', icon: 'icon-people', link: [ '/', 'system', 'users' ] })
+    this.dispatchLinks({ weight: 110, label: 'Domains', icon: 'icon-globe', link: ['/', 'system', 'domains'] })
+    this.dispatchLinks({ weight: 120, label: 'Settings', icon: 'icon-settings', link: ['/', 'system', 'settings'] })
+    this.dispatchLinks({ weight: 130, label: 'Users', icon: 'icon-people', link: ['/', 'system', 'users'] })
 
-    this.dispatchIcons({ count: '∞', label: 'Domains', type: 'info', icon: 'icon-globe', link: [ '/', 'system', 'domains' ] })
-    this.dispatchIcons({ count: '∞', label: 'Settings', type: 'success', icon: 'icon-settings', link: [ '/', 'system', 'settings' ] })
-    this.dispatchIcons({ count: '∞', label: 'Users', type: 'warning', icon: 'icon-people', link: [ '/', 'system', 'users' ] })
+    this.dispatchIcons({ count: '∞', label: 'Domains', type: 'info', icon: 'icon-globe', link: ['/', 'system', 'domains'] })
+    this.dispatchIcons({ count: '∞', label: 'Settings', type: 'success', icon: 'icon-settings', link: ['/', 'system', 'settings'] })
+    this.dispatchIcons({ count: '∞', label: 'Users', type: 'warning', icon: 'icon-people', link: ['/', 'system', 'users'] })
   }
 
   dispatchLinks(links) {
