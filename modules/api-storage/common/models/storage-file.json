@@ -6,6 +6,12 @@
   "options": {
     "validateUpsert": true
   },
+  "mixins": {
+    "SystemDomain": {
+      "required": false
+    },
+    "SystemUser": {}
+  },
   "properties": {
     "id": {
       "type": "string",
