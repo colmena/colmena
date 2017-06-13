@@ -1,6 +1,6 @@
 {
-  "name": "Container",
-  "description": "Model for managing Containers for storing Files in a Domain",
+  "name": "StorageContainer",
+  "description": "Storage: Manage Containers in a Domain",
   "base": "Model",
   "idInjection": true,
   "options": {

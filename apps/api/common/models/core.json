@@ -1,5 +1,7 @@
 {
   "name": "Core",
+  "plural": "Core",
+  "description": "Core: Information and management of the core",
   "base": "Model",
   "methods": {
     "getModules": {
@@ -14,5 +16,13 @@
         "verb": "get"
       }
     }
-  }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ]
 }

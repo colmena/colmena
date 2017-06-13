@@ -1,7 +1,7 @@
 {
   "name": "SystemUser",
   "plural": "Users",
-  "description": "Manage System Users",
+  "description": "System: Manage Users",
   "base": "User",
   "components": "../../modules/api-system/common/models/system-user",
   "idInjection": true,

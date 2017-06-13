@@ -5,7 +5,7 @@ module.exports = function(SystemDomain) {
   // Observe new domain creation to register a storage container
   SystemDomain.observe('after save', (ctx, next) => {
     if (ctx.instance && ctx.isNewInstance) {
-      SystemDomain.app.models.Container
+      SystemDomain.app.models.StorageContainer
         .findOrCreate(ctx.instance.id)
         .then(() => next())
         .catch(err => next(err))
@@ -19,7 +19,7 @@ module.exports = function(SystemDomain) {
     const domainId = ctx.where.id
 
     if (domainId) {
-      SystemDomain.app.models.Container
+      SystemDomain.app.models.StorageContainer
         .destroy(domainId)
         .then(() => next())
         .catch(err => next(err))
@@ -29,6 +29,6 @@ module.exports = function(SystemDomain) {
   })
 
   SystemDomain.prototype.importFileByUrl = function importFileByUrl(url, fileName) {
-    return SystemDomain.app.models.Container.importUrl(url, this.id, fileName)
+    return SystemDomain.app.models.StorageContainer.importUrl(url, this.id, fileName)
   }
 }

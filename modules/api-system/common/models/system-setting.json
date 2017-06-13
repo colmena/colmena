@@ -1,7 +1,7 @@
 {
   "name": "SystemSetting",
   "plural": "Settings",
-  "description": "Manage System Settings",
+  "description": "System: Manage Settings",
   "base": "SystemBaseModel",
   "components": "../../modules/api-system/common/models/system-setting",
   "idInjection": true,

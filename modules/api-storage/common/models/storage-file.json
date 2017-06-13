@@ -1,6 +1,6 @@
 {
   "name": "StorageFile",
-  "description": "Content model for managing Events in a Domain",
+  "description": "Storage: Manage Files in a Domain",
   "base": "SystemBaseModel",
   "idInjection": true,
   "options": {

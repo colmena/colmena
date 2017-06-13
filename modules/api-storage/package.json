@@ -1,0 +1,26 @@
+{
+  "name": "@colmena/module-api-storage",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@colmena/logger": "0.0.0",
+    "config": "^1.26.1"
+  },
+  "colmena": {
+    "module": {
+      "modelSources": [
+        "common/models"
+      ],
+      "models": {
+        "StorageContainer": {
+          "dataSource": "storage",
+          "public": true
+        },
+        "StorageFile": {
+          "dataSource": "db",
+          "public": true
+        }
+      }
+    }
+  }
+}

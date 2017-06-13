@@ -42,13 +42,5 @@
   },
   "Email": {
     "dataSource": "mail"
-  },
-  "Container": {
-    "dataSource": "storage",
-    "public": true
-  },
-  "StorageFile": {
-    "dataSource": "db",
-    "public": true
   }
 }

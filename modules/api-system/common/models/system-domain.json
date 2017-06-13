@@ -1,7 +1,7 @@
 {
   "name": "SystemDomain",
   "plural": "Domains",
-  "description": "Manage System Domains and related content",
+  "description": "System: Manage Domains and related content",
   "base": "SystemBaseModel",
   "components": "../../modules/api-system/common/models/system-domain",
   "idInjection": true,
