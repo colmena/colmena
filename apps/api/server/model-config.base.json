@@ -9,6 +9,7 @@
     "mixins": [
       "loopback/common/mixins",
       "loopback/server/mixins",
+      "../node_modules/loopback-ds-computed-mixin/lib",
       "../node_modules/loopback-ds-paginate-mixin/lib",
       "../node_modules/loopback-ds-readonly-mixin/lib",
       "../node_modules/loopback-ds-timestamp-mixin",

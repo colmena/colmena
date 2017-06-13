@@ -1,0 +1,41 @@
+{
+  "name": "@colmena/module-api-system",
+  "version": "0.0.0",
+  "license": "MIT",
+  "colmena": {
+    "module": {
+      "modelSources": [
+        "common/models"
+      ],
+      "mixinSources": [
+        "common/mixins"
+      ],
+      "models": {
+        "SystemAccessToken": {
+          "dataSource": "db",
+          "public": false
+        },
+        "SystemBaseModel": {
+          "dataSource": "db",
+          "public": false
+        },
+        "SystemDomain": {
+          "dataSource": "db"
+        },
+        "SystemSetting": {
+          "dataSource": "db"
+        },
+        "SystemUser": {
+          "dataSource": "db"
+        }
+      },
+      "sampleData": [
+        "sample-data/default.json"
+      ]
+    }
+  },
+  "dependencies": {
+    "inflection": "^1.12.0",
+    "lodash": "^4.17.4"
+  }
+}

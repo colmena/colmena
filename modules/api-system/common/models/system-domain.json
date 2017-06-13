@@ -1,0 +1,29 @@
+{
+  "name": "SystemDomain",
+  "plural": "Domains",
+  "description": "Manage System Domains and related content",
+  "base": "SystemBaseModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "String",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "String",
+      "required": true
+    },
+    "email": {
+      "type": "String",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

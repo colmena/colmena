@@ -1,0 +1,33 @@
+{
+  "name": "SystemAccessToken",
+  "description": "Token based authentication and access control.",
+  "plural": "accessTokens",
+  "base": "AccessToken",
+  "strict": true,
+  "validateUpsert": true,
+  "allowEternalTTL": true,
+  "properties": {
+    "id": {
+      "type": "String",
+      "id": true,
+      "defaultFn": "uuidv4"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "SystemUser",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

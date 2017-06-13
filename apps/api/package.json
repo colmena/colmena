@@ -35,6 +35,7 @@
     "@colmena/colmena-component-explorer-style": "1.0.2",
     "@colmena/logger": "0.0.0",
     "@colmena/module-api-content": "0.0.0",
+    "@colmena/module-api-system": "0.0.0",
     "bluebird": "3.5.0",
     "compression": "1.6.2",
     "config": "1.26.1",
@@ -53,6 +54,7 @@
     "loopback-component-templates": "1.2.1",
     "loopback-connector-mongodb": "3.1.0",
     "loopback-datasource-juggler": "3.9.1",
+    "loopback-ds-computed-mixin": "2.0.2",
     "loopback-ds-paginate-mixin": "1.0.4",
     "loopback-ds-readonly-mixin": "2.0.2",
     "loopback-ds-timestamp-mixin": "3.4.1",
@@ -64,7 +66,8 @@
   },
   "colmena": {
     "apps": [
-      "@colmena/module-api-content"
+      "@colmena/module-api-content",
+      "@colmena/module-api-system"
     ]
   }
 }
