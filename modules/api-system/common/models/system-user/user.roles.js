@@ -1,8 +1,8 @@
 'use strict'
 
 module.exports = function(SystemUser) {
-  const Role = SystemUser.app.models.Role
-  const RoleMapping = SystemUser.app.models.RoleMapping
+  const Role = SystemUser.app.models.SystemRole
+  const RoleMapping = SystemUser.app.models.SystemRoleMapping
 
   const findUserRoleMapping = (userId, roleId) =>
     RoleMapping.findOne({

@@ -21,21 +21,6 @@
     "dataSource": "db",
     "public": false
   },
-  "RoleMapping": {
-    "dataSource": "db",
-    "public": false,
-    "options": {
-      "forceId": false,
-      "strictObjectIDCoercion": true
-    }
-  },
-  "Role": {
-    "dataSource": "db",
-    "public": false,
-    "options": {
-      "forceId": false
-    }
-  },
   "Core": {
     "dataSource": "db",
     "public": true

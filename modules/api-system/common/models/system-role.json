@@ -1,0 +1,33 @@
+{
+  "name": "SystemRole",
+  "base": "Role",
+  "options": {
+    "forceId": false
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": "string",
+    "created": {
+      "type":"date",
+      "defaultFn": "now"
+    },
+    "modified": {
+      "type":"date",
+      "defaultFn": "now"
+    }
+  },
+  "relations": {
+    "principals": {
+      "type": "hasMany",
+      "model": "SystemRoleMapping",
+      "foreignKey": "roleId"
+    }
+  }
+}

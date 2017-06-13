@@ -1,17 +1,17 @@
 {
-  "RoleMapping": [
+  "SystemRoleMapping": [
     {
-      "roleId": 1,
+      "roleId": "system-admin",
       "principalId": "admin",
       "principalType": "USER"
     },
     {
-      "roleId": 2,
+      "roleId": "system-manager",
       "principalId": "manager",
       "principalType": "USER"
     },
     {
-      "roleId": 3,
+      "roleId": "system-user",
       "principalId": "user",
       "principalType": "USER"
     }

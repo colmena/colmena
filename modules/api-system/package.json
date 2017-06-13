@@ -2,6 +2,12 @@
   "name": "@colmena/module-api-system",
   "version": "0.0.0",
   "license": "MIT",
+  "dependencies": {
+    "@colmena/logger": "0.0.0",
+    "config": "^1.26.1",
+    "inflection": "^1.12.0",
+    "lodash": "^4.17.4"
+  },
   "colmena": {
     "module": {
       "modelSources": [
@@ -22,6 +28,14 @@
         "SystemDomain": {
           "dataSource": "db"
         },
+        "SystemRole": {
+          "dataSource": "db",
+          "public": false
+        },
+        "SystemRoleMapping": {
+          "dataSource": "db",
+          "public": false
+        },
         "SystemSetting": {
           "dataSource": "db"
         },
@@ -37,11 +51,5 @@
         "sample-data/users.json"
       ]
     }
-  },
-  "dependencies": {
-    "@colmena/logger": "0.0.0",
-    "config": "^1.26.1",
-    "inflection": "^1.12.0",
-    "lodash": "^4.17.4"
   }
 }

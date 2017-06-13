@@ -66,9 +66,9 @@
     },
     "roles": {
       "type": "hasMany",
-      "model": "Role",
+      "model": "SystemRole",
       "foreignKey": "principalId",
-      "through": "RoleMapping"
+      "through": "SystemRoleMapping"
     }
   },
   "acls": [
