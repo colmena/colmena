@@ -45,7 +45,8 @@
     "sdk": "npm run sdk:api",
     "sdk:api": "cross-env NODE_ENV=codegen lb-sdk --wipe enabled apps/api/server/server.js packages/admin-lb-sdk/src",
     "start": "cd apps/api && npm start",
-    "test": "true"
+    "test": "true",
+    "update": "lerna exec 'ncu -a && npm update'"
   },
   "dependencies": {
     "cross-env": "5.0.1"

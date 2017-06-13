@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "dependencies": {
-    "coreui-styles": "latest",
+    "coreui-styles": "1.0.2",
     "font-awesome": "4.7.0",
     "ng-formly": "1.0.0-rc.9",
-    "ng2-file-upload": "^1.2.1",
+    "ng2-file-upload": "1.2.1",
     "ng2-toasty": "4.0.3",
     "ngx-bootstrap": "1.7.1",
     "simple-line-icons": "2.4.1",
