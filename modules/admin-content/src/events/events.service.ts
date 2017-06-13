@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 
-import { DomainApi } from '@colmena/admin-lb-sdk'
+import { SystemDomainApi } from '@colmena/admin-lb-sdk'
 
 import { UiDataGridService, FormService } from '@colmena/admin-ui'
 
@@ -39,7 +39,7 @@ export class EventsService extends UiDataGridService {
   ]
 
   constructor(
-    public domainApi: DomainApi,
+    public domainApi: SystemDomainApi,
     public formService: FormService,
   ) {
     super()
@@ -55,29 +55,29 @@ export class EventsService extends UiDataGridService {
   }
 
   getFiles() {
-    this.domainApi.getFiles(this.domain.id)
+    this.domainApi.getStorageFiles(this.domain.id)
       .subscribe(files => files.map(file => this.files.push({ value: file.id, label: file.name })))
   }
 
   getItems() {
-    return this.domainApi.getEvents(this.domain.id, this.getFilters({ include: ['file'] }))
+    return this.domainApi.getContentEvents(this.domain.id, this.getFilters({ include: ['file'] }))
   }
 
   getItemCount() {
-    return this.domainApi.countEvents(this.domain.id, this.getWhereFilters())
+    return this.domainApi.countContentEvents(this.domain.id, this.getWhereFilters())
   }
 
   upsertItem(item, successCb, errorCb): void {
     if (item.id) {
-      this.domainApi.updateByIdEvents(this.domain.id, item.id, item).subscribe(successCb, errorCb)
+      this.domainApi.updateByIdContentEvents(this.domain.id, item.id, item).subscribe(successCb, errorCb)
     } else {
-      this.domainApi.createEvents(this.domain.id, item).subscribe(successCb, errorCb)
+      this.domainApi.createContentEvents(this.domain.id, item).subscribe(successCb, errorCb)
     }
   }
 
   deleteItem(item, successCb, errorCb) {
     this.domainApi
-      .destroyByIdEvents(this.domain.id, item.id)
+      .destroyByIdContentEvents(this.domain.id, item.id)
       .subscribe(
         (success) => successCb(success),
         (error) => errorCb(error),
