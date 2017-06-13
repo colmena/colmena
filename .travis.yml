@@ -10,12 +10,8 @@ install:
 script:
   - npm run build
 cache:
-  yarn: true
   directories:
-  - apps/admin/node_modules
-  - apps/api/node_modules
   - node_modules
-
 deploy:
   - provider: script
     skip_cleanup: true
