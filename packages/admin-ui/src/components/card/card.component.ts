@@ -1,26 +1,22 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core'
+import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core'
 
 @Component({
   selector: 'ui-card',
   template: `
-<div class="ui-card card">
-
-  <div *ngIf="hasHeader" #cardHeader class="card-header">
-    <ng-content select="ui-card-header"></ng-content>
-  </div>
-
-  <div *ngIf="hasContent" #cardContent class="card-block">
-    <ng-content select="ui-card-content"></ng-content>
-  </div>
-
-  <div *ngIf="!hasContent">
-    <ng-content></ng-content>
-  </div>
-  
-  <div *ngIf="hasFooter" #cardFooter class="card-footer">
-    <ng-content select="ui-card-footer?"></ng-content>
-  </div>
-</div>
+    <div class="ui-card card">
+      <div *ngIf="hasHeader" #cardHeader class="card-header">
+        <ng-content select="ui-card-header"></ng-content>
+      </div>
+      <div *ngIf="hasContent" #cardContent class="card-block">
+        <ng-content select="ui-card-content"></ng-content>
+      </div>
+      <div *ngIf="!hasContent">
+        <ng-content></ng-content>
+      </div>
+      <div *ngIf="hasFooter" #cardFooter class="card-footer">
+        <ng-content select="ui-card-footer?"></ng-content>
+      </div>
+    </div>
 `
 })
 export class UiCardComponent implements AfterViewInit {
@@ -34,11 +30,17 @@ export class UiCardComponent implements AfterViewInit {
   @ViewChild('cardFooter') cardFooter
   @ViewChild('cardHeader') cardHeader
 
+  constructor(
+    private _changeDetectorRef: ChangeDetectorRef,
+  ) {
+  }
+
   // Determine visibility based on existence of child sections
   ngAfterViewInit() {
     this.hasContent = this.cardContent.nativeElement.querySelector('ui-card-content')
     this.hasHeader = this.cardHeader.nativeElement.querySelector('ui-card-header')
     this.hasFooter = this.cardFooter.nativeElement.querySelector('ui-card-footer')
+    this._changeDetectorRef.detectChanges()
   }
 }
 
