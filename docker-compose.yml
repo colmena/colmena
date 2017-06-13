@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - 1025:1025
+      - 8025:8025
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo:/data/configdb
+      - mongo:/data/db
+
+volumes:
+  mongo:
+    driver: local
