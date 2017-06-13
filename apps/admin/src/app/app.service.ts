@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Store } from '@ngrx/store'
 
-import { DomainApi, SettingApi } from '@colmena/admin-lb-sdk'
+import { SystemDomainApi, SystemSettingApi } from '@colmena/admin-lb-sdk'
 
 import { LogService } from './log.service'
 
@@ -31,9 +31,9 @@ export class AppService {
   }
 
   constructor(
-    private domainApi: DomainApi,
+    private domainApi: SystemDomainApi,
     private log: LogService,
-    private settingApi: SettingApi,
+    private settingApi: SystemSettingApi,
     private store: Store<any>
   ) {
     if (window.localStorage.getItem('domain')) {
