@@ -10,19 +10,19 @@ import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
-import { Container } from '../../models/Container';
+import { StorageContainer } from '../../models/StorageContainer';
 import { SocketConnection } from '../../sockets/socket.connections';
 
 
 /**
- * Api services for the `Container` model.
+ * Api services for the `StorageContainer` model.
  *
  * **Details**
  *
- * Model for managing Containers for storing Files in a Domain
+ * Storage: Manage Containers in a Domain
  */
 @Injectable()
-export class ContainerApi extends BaseLoopBackApi {
+export class StorageContainerApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
@@ -37,9 +37,9 @@ export class ContainerApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Container`.
+   * i.e. `StorageContainer`.
    */
   public getModelName() {
-    return "Container";
+    return "StorageContainer";
   }
 }

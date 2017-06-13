@@ -10,25 +10,24 @@ import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
-import { Domain } from '../../models/Domain';
+import { SystemDomain } from '../../models/SystemDomain';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { User } from '../../models/User';
-import { Event } from '../../models/Event';
-import { Post } from '../../models/Post';
-import { Product } from '../../models/Product';
-import { Page } from '../../models/Page';
+import { ContentEvent } from '../../models/ContentEvent';
+import { ContentPage } from '../../models/ContentPage';
+import { ContentProduct } from '../../models/ContentProduct';
+import { ContentPost } from '../../models/ContentPost';
 import { StorageFile } from '../../models/StorageFile';
 
 
 /**
- * Api services for the `Domain` model.
+ * Api services for the `SystemDomain` model.
  *
  * **Details**
  *
- * Manage System Domains and related content
+ * System: Manage Domains and related content
  */
 @Injectable()
-export class DomainApi extends BaseLoopBackApi {
+export class SystemDomainApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
@@ -42,11 +41,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Find a related item by id for users.
+   * Find a related item by id for contentBaseModels.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for users
+   * @param {any} fk Foreign key for contentBaseModels
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -54,13 +53,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public findByIdUsers(id: any, fk: any): Observable<any> {
+  public findByIdContentBaseModels(id: any, fk: any): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/users/:fk";
+    "/Domains/:id/contentBaseModels/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -72,11 +71,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Delete a related item by id for users.
+   * Delete a related item by id for contentBaseModels.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for users
+   * @param {any} fk Foreign key for contentBaseModels
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -84,10 +83,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdUsers(id: any, fk: any): Observable<any> {
+  public destroyByIdContentBaseModels(id: any, fk: any): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/users/:fk";
+    "/Domains/:id/contentBaseModels/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -99,11 +98,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Update a related item by id for users.
+   * Update a related item by id for contentBaseModels.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for users
+   * @param {any} fk Foreign key for contentBaseModels
    *
    * @param {object} data Request data.
    *
@@ -115,13 +114,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public updateByIdUsers(id: any, fk: any, data: any = {}): Observable<any> {
+  public updateByIdContentBaseModels(id: any, fk: any, data: any = {}): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/users/:fk";
+    "/Domains/:id/contentBaseModels/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -135,11 +134,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Find a related item by id for events.
+   * Find a related item by id for contentEvents.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for events
+   * @param {any} fk Foreign key for contentEvents
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -147,13 +146,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public findByIdEvents(id: any, fk: any): Observable<any> {
+  public findByIdContentEvents(id: any, fk: any): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/events/:fk";
+    "/Domains/:id/contentEvents/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -165,11 +164,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Delete a related item by id for events.
+   * Delete a related item by id for contentEvents.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for events
+   * @param {any} fk Foreign key for contentEvents
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -177,10 +176,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdEvents(id: any, fk: any): Observable<any> {
+  public destroyByIdContentEvents(id: any, fk: any): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/events/:fk";
+    "/Domains/:id/contentEvents/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -192,11 +191,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Update a related item by id for events.
+   * Update a related item by id for contentEvents.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for events
+   * @param {any} fk Foreign key for contentEvents
    *
    * @param {object} data Request data.
    *
@@ -208,13 +207,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public updateByIdEvents(id: any, fk: any, data: any = {}): Observable<any> {
+  public updateByIdContentEvents(id: any, fk: any, data: any = {}): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/events/:fk";
+    "/Domains/:id/contentEvents/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -228,11 +227,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Find a related item by id for posts.
+   * Find a related item by id for contentPages.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for posts
+   * @param {any} fk Foreign key for contentPages
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -240,13 +239,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public findByIdPosts(id: any, fk: any): Observable<any> {
+  public findByIdContentPages(id: any, fk: any): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/posts/:fk";
+    "/Domains/:id/contentPages/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -258,11 +257,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Delete a related item by id for posts.
+   * Delete a related item by id for contentPages.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for posts
+   * @param {any} fk Foreign key for contentPages
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -270,10 +269,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdPosts(id: any, fk: any): Observable<any> {
+  public destroyByIdContentPages(id: any, fk: any): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/posts/:fk";
+    "/Domains/:id/contentPages/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -285,11 +284,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Update a related item by id for posts.
+   * Update a related item by id for contentPages.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for posts
+   * @param {any} fk Foreign key for contentPages
    *
    * @param {object} data Request data.
    *
@@ -301,13 +300,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public updateByIdPosts(id: any, fk: any, data: any = {}): Observable<any> {
+  public updateByIdContentPages(id: any, fk: any, data: any = {}): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/posts/:fk";
+    "/Domains/:id/contentPages/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -321,11 +320,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Find a related item by id for products.
+   * Find a related item by id for contentProducts.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for products
+   * @param {any} fk Foreign key for contentProducts
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -333,13 +332,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public findByIdProducts(id: any, fk: any): Observable<any> {
+  public findByIdContentProducts(id: any, fk: any): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/products/:fk";
+    "/Domains/:id/contentProducts/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -351,11 +350,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Delete a related item by id for products.
+   * Delete a related item by id for contentProducts.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for products
+   * @param {any} fk Foreign key for contentProducts
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -363,10 +362,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdProducts(id: any, fk: any): Observable<any> {
+  public destroyByIdContentProducts(id: any, fk: any): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/products/:fk";
+    "/Domains/:id/contentProducts/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -378,11 +377,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Update a related item by id for products.
+   * Update a related item by id for contentProducts.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for products
+   * @param {any} fk Foreign key for contentProducts
    *
    * @param {object} data Request data.
    *
@@ -394,13 +393,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public updateByIdProducts(id: any, fk: any, data: any = {}): Observable<any> {
+  public updateByIdContentProducts(id: any, fk: any, data: any = {}): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/products/:fk";
+    "/Domains/:id/contentProducts/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -414,11 +413,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Find a related item by id for pages.
+   * Find a related item by id for contentPosts.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for pages
+   * @param {any} fk Foreign key for contentPosts
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -426,13 +425,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public findByIdPages(id: any, fk: any): Observable<any> {
+  public findByIdContentPosts(id: any, fk: any): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/pages/:fk";
+    "/Domains/:id/contentPosts/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -444,11 +443,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Delete a related item by id for pages.
+   * Delete a related item by id for contentPosts.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for pages
+   * @param {any} fk Foreign key for contentPosts
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -456,10 +455,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdPages(id: any, fk: any): Observable<any> {
+  public destroyByIdContentPosts(id: any, fk: any): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/pages/:fk";
+    "/Domains/:id/contentPosts/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -471,11 +470,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Update a related item by id for pages.
+   * Update a related item by id for contentPosts.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for pages
+   * @param {any} fk Foreign key for contentPosts
    *
    * @param {object} data Request data.
    *
@@ -487,13 +486,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public updateByIdPages(id: any, fk: any, data: any = {}): Observable<any> {
+  public updateByIdContentPosts(id: any, fk: any, data: any = {}): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/pages/:fk";
+    "/Domains/:id/contentPosts/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -507,11 +506,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Find a related item by id for files.
+   * Find a related item by id for storageFiles.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for files
+   * @param {any} fk Foreign key for storageFiles
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -519,13 +518,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public findByIdFiles(id: any, fk: any): Observable<any> {
+  public findByIdStorageFiles(id: any, fk: any): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/files/:fk";
+    "/Domains/:id/storageFiles/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -537,11 +536,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Delete a related item by id for files.
+   * Delete a related item by id for storageFiles.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for files
+   * @param {any} fk Foreign key for storageFiles
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -549,10 +548,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdFiles(id: any, fk: any): Observable<any> {
+  public destroyByIdStorageFiles(id: any, fk: any): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/files/:fk";
+    "/Domains/:id/storageFiles/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -564,11 +563,11 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Update a related item by id for files.
+   * Update a related item by id for storageFiles.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
-   * @param {any} fk Foreign key for files
+   * @param {any} fk Foreign key for storageFiles
    *
    * @param {object} data Request data.
    *
@@ -580,13 +579,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public updateByIdFiles(id: any, fk: any, data: any = {}): Observable<any> {
+  public updateByIdStorageFiles(id: any, fk: any, data: any = {}): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/files/:fk";
+    "/Domains/:id/storageFiles/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -600,9 +599,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Queries users of Domain.
+   * Queries contentBaseModels of SystemDomain.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} filter 
    *
@@ -612,13 +611,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public getUsers(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public getContentBaseModels(id: any, filter: LoopBackFilter = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/users";
+    "/Domains/:id/contentBaseModels";
     let _routeParams: any = {
       id: id
     };
@@ -630,9 +629,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in users of this model.
+   * Creates a new instance in contentBaseModels of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -644,13 +643,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public createUsers(id: any, data: any = {}): Observable<any> {
+  public createContentBaseModels(id: any, data: any = {}): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/users";
+    "/Domains/:id/contentBaseModels";
     let _routeParams: any = {
       id: id
     };
@@ -663,9 +662,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all users of this model.
+   * Deletes all contentBaseModels of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -673,10 +672,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteUsers(id: any): Observable<any> {
+  public deleteContentBaseModels(id: any): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/users";
+    "/Domains/:id/contentBaseModels";
     let _routeParams: any = {
       id: id
     };
@@ -687,9 +686,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Counts users of Domain.
+   * Counts contentBaseModels of SystemDomain.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -701,10 +700,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countUsers(id: any, where: any = {}): Observable<any> {
+  public countContentBaseModels(id: any, where: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/users/count";
+    "/Domains/:id/contentBaseModels/count";
     let _routeParams: any = {
       id: id
     };
@@ -716,9 +715,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Queries events of Domain.
+   * Queries contentEvents of SystemDomain.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} filter 
    *
@@ -728,13 +727,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public getEvents(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public getContentEvents(id: any, filter: LoopBackFilter = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/events";
+    "/Domains/:id/contentEvents";
     let _routeParams: any = {
       id: id
     };
@@ -746,9 +745,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in events of this model.
+   * Creates a new instance in contentEvents of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -760,13 +759,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public createEvents(id: any, data: any = {}): Observable<any> {
+  public createContentEvents(id: any, data: any = {}): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/events";
+    "/Domains/:id/contentEvents";
     let _routeParams: any = {
       id: id
     };
@@ -779,9 +778,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all events of this model.
+   * Deletes all contentEvents of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -789,10 +788,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteEvents(id: any): Observable<any> {
+  public deleteContentEvents(id: any): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/events";
+    "/Domains/:id/contentEvents";
     let _routeParams: any = {
       id: id
     };
@@ -803,9 +802,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Counts events of Domain.
+   * Counts contentEvents of SystemDomain.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -817,10 +816,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countEvents(id: any, where: any = {}): Observable<any> {
+  public countContentEvents(id: any, where: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/events/count";
+    "/Domains/:id/contentEvents/count";
     let _routeParams: any = {
       id: id
     };
@@ -832,9 +831,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Queries posts of Domain.
+   * Queries contentPages of SystemDomain.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} filter 
    *
@@ -844,13 +843,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public getPosts(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public getContentPages(id: any, filter: LoopBackFilter = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/posts";
+    "/Domains/:id/contentPages";
     let _routeParams: any = {
       id: id
     };
@@ -862,9 +861,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in posts of this model.
+   * Creates a new instance in contentPages of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -876,13 +875,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public createPosts(id: any, data: any = {}): Observable<any> {
+  public createContentPages(id: any, data: any = {}): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/posts";
+    "/Domains/:id/contentPages";
     let _routeParams: any = {
       id: id
     };
@@ -895,9 +894,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all posts of this model.
+   * Deletes all contentPages of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -905,10 +904,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deletePosts(id: any): Observable<any> {
+  public deleteContentPages(id: any): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/posts";
+    "/Domains/:id/contentPages";
     let _routeParams: any = {
       id: id
     };
@@ -919,9 +918,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Counts posts of Domain.
+   * Counts contentPages of SystemDomain.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -933,10 +932,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countPosts(id: any, where: any = {}): Observable<any> {
+  public countContentPages(id: any, where: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/posts/count";
+    "/Domains/:id/contentPages/count";
     let _routeParams: any = {
       id: id
     };
@@ -948,9 +947,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Queries products of Domain.
+   * Queries contentProducts of SystemDomain.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} filter 
    *
@@ -960,13 +959,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public getProducts(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public getContentProducts(id: any, filter: LoopBackFilter = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/products";
+    "/Domains/:id/contentProducts";
     let _routeParams: any = {
       id: id
     };
@@ -978,9 +977,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in products of this model.
+   * Creates a new instance in contentProducts of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -992,13 +991,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public createProducts(id: any, data: any = {}): Observable<any> {
+  public createContentProducts(id: any, data: any = {}): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/products";
+    "/Domains/:id/contentProducts";
     let _routeParams: any = {
       id: id
     };
@@ -1011,9 +1010,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all products of this model.
+   * Deletes all contentProducts of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -1021,10 +1020,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteProducts(id: any): Observable<any> {
+  public deleteContentProducts(id: any): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/products";
+    "/Domains/:id/contentProducts";
     let _routeParams: any = {
       id: id
     };
@@ -1035,9 +1034,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Counts products of Domain.
+   * Counts contentProducts of SystemDomain.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -1049,10 +1048,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countProducts(id: any, where: any = {}): Observable<any> {
+  public countContentProducts(id: any, where: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/products/count";
+    "/Domains/:id/contentProducts/count";
     let _routeParams: any = {
       id: id
     };
@@ -1064,9 +1063,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Queries pages of Domain.
+   * Queries contentPosts of SystemDomain.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} filter 
    *
@@ -1076,13 +1075,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public getPages(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public getContentPosts(id: any, filter: LoopBackFilter = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/pages";
+    "/Domains/:id/contentPosts";
     let _routeParams: any = {
       id: id
     };
@@ -1094,9 +1093,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in pages of this model.
+   * Creates a new instance in contentPosts of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -1108,13 +1107,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public createPages(id: any, data: any = {}): Observable<any> {
+  public createContentPosts(id: any, data: any = {}): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/pages";
+    "/Domains/:id/contentPosts";
     let _routeParams: any = {
       id: id
     };
@@ -1127,9 +1126,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all pages of this model.
+   * Deletes all contentPosts of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -1137,10 +1136,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deletePages(id: any): Observable<any> {
+  public deleteContentPosts(id: any): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/pages";
+    "/Domains/:id/contentPosts";
     let _routeParams: any = {
       id: id
     };
@@ -1151,9 +1150,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Counts pages of Domain.
+   * Counts contentPosts of SystemDomain.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -1165,10 +1164,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countPages(id: any, where: any = {}): Observable<any> {
+  public countContentPosts(id: any, where: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/pages/count";
+    "/Domains/:id/contentPosts/count";
     let _routeParams: any = {
       id: id
     };
@@ -1180,9 +1179,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Queries files of Domain.
+   * Queries storageFiles of SystemDomain.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} filter 
    *
@@ -1192,13 +1191,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public getFiles(id: any, filter: LoopBackFilter = {}): Observable<any> {
+  public getStorageFiles(id: any, filter: LoopBackFilter = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/files";
+    "/Domains/:id/storageFiles";
     let _routeParams: any = {
       id: id
     };
@@ -1210,9 +1209,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in files of this model.
+   * Creates a new instance in storageFiles of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -1224,13 +1223,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public createFiles(id: any, data: any = {}): Observable<any> {
+  public createStorageFiles(id: any, data: any = {}): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/files";
+    "/Domains/:id/storageFiles";
     let _routeParams: any = {
       id: id
     };
@@ -1243,9 +1242,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all files of this model.
+   * Deletes all storageFiles of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -1253,10 +1252,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteFiles(id: any): Observable<any> {
+  public deleteStorageFiles(id: any): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/files";
+    "/Domains/:id/storageFiles";
     let _routeParams: any = {
       id: id
     };
@@ -1267,9 +1266,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Counts files of Domain.
+   * Counts storageFiles of SystemDomain.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -1281,10 +1280,10 @@ export class DomainApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countFiles(id: any, where: any = {}): Observable<any> {
+  public countStorageFiles(id: any, where: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/files/count";
+    "/Domains/:id/storageFiles/count";
     let _routeParams: any = {
       id: id
     };
@@ -1308,7 +1307,7 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}): Observable<any> {
@@ -1327,7 +1326,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -1339,7 +1338,7 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}): Observable<any> {
@@ -1360,7 +1359,7 @@ export class DomainApi extends BaseLoopBackApi {
   /**
    * Import a file by URL
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -1374,7 +1373,7 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
   public importFileByUrl(id: any, url: any, fileName: any = {}): Observable<any> {
@@ -1393,9 +1392,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in users of this model.
+   * Creates a new instance in contentBaseModels of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -1407,13 +1406,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public createManyUsers(id: any, data: any[] = []): Observable<any> {
+  public createManyContentBaseModels(id: any, data: any[] = []): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/users";
+    "/Domains/:id/contentBaseModels";
     let _routeParams: any = {
       id: id
     };
@@ -1426,9 +1425,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in events of this model.
+   * Creates a new instance in contentEvents of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -1440,13 +1439,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public createManyEvents(id: any, data: any[] = []): Observable<any> {
+  public createManyContentEvents(id: any, data: any[] = []): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/events";
+    "/Domains/:id/contentEvents";
     let _routeParams: any = {
       id: id
     };
@@ -1459,9 +1458,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in posts of this model.
+   * Creates a new instance in contentPages of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -1473,13 +1472,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public createManyPosts(id: any, data: any[] = []): Observable<any> {
+  public createManyContentPages(id: any, data: any[] = []): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/posts";
+    "/Domains/:id/contentPages";
     let _routeParams: any = {
       id: id
     };
@@ -1492,9 +1491,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in products of this model.
+   * Creates a new instance in contentProducts of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -1506,13 +1505,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public createManyProducts(id: any, data: any[] = []): Observable<any> {
+  public createManyContentProducts(id: any, data: any[] = []): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/products";
+    "/Domains/:id/contentProducts";
     let _routeParams: any = {
       id: id
     };
@@ -1525,9 +1524,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in pages of this model.
+   * Creates a new instance in contentPosts of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -1539,13 +1538,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public createManyPages(id: any, data: any[] = []): Observable<any> {
+  public createManyContentPosts(id: any, data: any[] = []): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/pages";
+    "/Domains/:id/contentPosts";
     let _routeParams: any = {
       id: id
     };
@@ -1558,9 +1557,9 @@ export class DomainApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in files of this model.
+   * Creates a new instance in storageFiles of this model.
    *
-   * @param {any} id Domain id
+   * @param {any} id SystemDomain id
    *
    * @param {object} data Request data.
    *
@@ -1572,13 +1571,13 @@ export class DomainApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Domain` object.)
+   * This usually means the response is a `SystemDomain` object.)
    * </em>
    */
-  public createManyFiles(id: any, data: any[] = []): Observable<any> {
+  public createManyStorageFiles(id: any, data: any[] = []): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Domains/:id/files";
+    "/Domains/:id/storageFiles";
     let _routeParams: any = {
       id: id
     };
@@ -1592,9 +1591,9 @@ export class DomainApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Domain`.
+   * i.e. `SystemDomain`.
    */
   public getModelName() {
-    return "Domain";
+    return "SystemDomain";
   }
 }

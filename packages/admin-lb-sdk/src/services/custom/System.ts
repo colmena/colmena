@@ -10,19 +10,19 @@ import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
-import { Setting } from '../../models/Setting';
+import { System } from '../../models/System';
 import { SocketConnection } from '../../sockets/socket.connections';
 
 
 /**
- * Api services for the `Setting` model.
+ * Api services for the `System` model.
  *
  * **Details**
  *
- * Manage System Settings
+ * System: Get information from the system
  */
 @Injectable()
-export class SettingApi extends BaseLoopBackApi {
+export class SystemApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
@@ -36,11 +36,7 @@ export class SettingApi extends BaseLoopBackApi {
   }
 
   /**
-   * Patch an existing model instance or insert a new one into the data source.
-   *
-   * @param {object} data Request data.
-   *
-   *  - `data` – `{object}` - Model instance data
+   * Show the modules loaded by the API
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -48,30 +44,22 @@ export class SettingApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Setting` object.)
+   * This usually means the response is a `System` object.)
    * </em>
    */
-  public patchOrCreate(data: any = {}): Observable<any> {
-    let _method: string = "PATCH";
+  public modules(): Observable<any> {
+    let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Settings";
+    "/System/modules";
     let _routeParams: any = {};
-    let _postBody: any = {
-      data: data
-    };
+    let _postBody: any = {};
     let _urlParams: any = {};
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
     return result;
   }
 
   /**
-   * Patch attributes for a model instance and persist it into the data source.
-   *
-   * @param {any} id Setting id
-   *
-   * @param {object} data Request data.
-   *
-   *  - `data` – `{object}` - An object of model property name/value pairs
+   * Ping the API to retrieve its internal state
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -79,19 +67,15 @@ export class SettingApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Setting` object.)
+   * This usually means the response is a `System` object.)
    * </em>
    */
-  public patchAttributes(id: any, data: any = {}): Observable<any> {
-    let _method: string = "PATCH";
+  public ping(): Observable<any> {
+    let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Settings/:id";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
+    "/System/ping";
+    let _routeParams: any = {};
+    let _postBody: any = {};
     let _urlParams: any = {};
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
     return result;
@@ -99,9 +83,9 @@ export class SettingApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Setting`.
+   * i.e. `System`.
    */
   public getModelName() {
-    return "Setting";
+    return "System";
   }
 }

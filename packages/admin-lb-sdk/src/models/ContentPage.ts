@@ -1,56 +1,54 @@
 /* tslint:disable */
 import {
-  Domain,
-  StorageFile
+  SystemDomain,
+  SystemUser
 } from '../index';
 
 declare var Object: any;
-export interface ProductInterface {
+export interface ContentPageInterface {
   "id"?: any;
   "domainId"?: any;
   "fileId"?: any;
-  "name"?: any;
-  "description"?: any;
-  "sku"?: any;
-  "price"?: any;
+  "name": any;
+  "content"?: any;
   "created"?: any;
   "modified"?: any;
-  "storageFileId"?: any;
-  domain?: Domain;
-  file?: StorageFile;
+  "systemDomainId"?: any;
+  "systemUserId"?: any;
+  systemDomain?: SystemDomain;
+  systemUser?: SystemUser;
 }
 
-export class Product implements ProductInterface {
+export class ContentPage implements ContentPageInterface {
   "id": any;
   "domainId": any;
   "fileId": any;
   "name": any;
-  "description": any;
-  "sku": any;
-  "price": any;
+  "content": any;
   "created": any;
   "modified": any;
-  "storageFileId": any;
-  domain: Domain;
-  file: StorageFile;
-  constructor(data?: ProductInterface) {
+  "systemDomainId": any;
+  "systemUserId": any;
+  systemDomain: SystemDomain;
+  systemUser: SystemUser;
+  constructor(data?: ContentPageInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Product`.
+   * i.e. `ContentPage`.
    */
   public static getModelName() {
-    return "Product";
+    return "ContentPage";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of Product for dynamic purposes.
+  * This method creates an instance of ContentPage for dynamic purposes.
   **/
-  public static factory(data: ProductInterface): Product{
-    return new Product(data);
+  public static factory(data: ContentPageInterface): ContentPage{
+    return new ContentPage(data);
   }
   /**
   * @method getModelDefinition
@@ -61,8 +59,8 @@ export class Product implements ProductInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'Product',
-      plural: 'Products',
+      name: 'ContentPage',
+      plural: 'ContentPages',
       properties: {
         "id": {
           name: 'id',
@@ -80,16 +78,8 @@ export class Product implements ProductInterface {
           name: 'name',
           type: 'any'
         },
-        "description": {
-          name: 'description',
-          type: 'any'
-        },
-        "sku": {
-          name: 'sku',
-          type: 'any'
-        },
-        "price": {
-          name: 'price',
+        "content": {
+          name: 'content',
           type: 'any'
         },
         "created": {
@@ -100,21 +90,25 @@ export class Product implements ProductInterface {
           name: 'modified',
           type: 'any'
         },
-        "storageFileId": {
-          name: 'storageFileId',
+        "systemDomainId": {
+          name: 'systemDomainId',
+          type: 'any'
+        },
+        "systemUserId": {
+          name: 'systemUserId',
           type: 'any'
         },
       },
       relations: {
-        domain: {
-          name: 'domain',
-          type: 'Domain',
-          model: 'Domain'
+        systemDomain: {
+          name: 'systemDomain',
+          type: 'SystemDomain',
+          model: 'SystemDomain'
         },
-        file: {
-          name: 'file',
-          type: 'StorageFile',
-          model: 'StorageFile'
+        systemUser: {
+          name: 'systemUser',
+          type: 'SystemUser',
+          model: 'SystemUser'
         },
       }
     }

@@ -48,16 +48,17 @@ import { SocketBrowser } from './sockets/socket.browser';
 import { SocketDriver } from './sockets/socket.driver';
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
-import { UserApi } from './services/custom/User';
 import { EmailApi } from './services/custom/Email';
-import { DomainApi } from './services/custom/Domain';
-import { EventApi } from './services/custom/Event';
-import { PostApi } from './services/custom/Post';
-import { ProductApi } from './services/custom/Product';
-import { SettingApi } from './services/custom/Setting';
-import { PageApi } from './services/custom/Page';
-import { ContainerApi } from './services/custom/Container';
+import { StorageContainerApi } from './services/custom/StorageContainer';
+import { SystemApi } from './services/custom/System';
+import { ContentEventApi } from './services/custom/ContentEvent';
+import { ContentPageApi } from './services/custom/ContentPage';
+import { ContentProductApi } from './services/custom/ContentProduct';
+import { ContentPostApi } from './services/custom/ContentPost';
 import { StorageFileApi } from './services/custom/StorageFile';
+import { SystemDomainApi } from './services/custom/SystemDomain';
+import { SystemSettingApi } from './services/custom/SystemSetting';
+import { SystemUserApi } from './services/custom/SystemUser';
 import { PingApi } from './services/custom/Ping';
 /**
 * @module SDKBrowserModule
@@ -90,16 +91,17 @@ export class SDKBrowserModule {
         JSONSearchParams,
         SDKModels,
         RealTime,
-        UserApi,
         EmailApi,
-        DomainApi,
-        EventApi,
-        PostApi,
-        ProductApi,
-        SettingApi,
-        PageApi,
-        ContainerApi,
+        StorageContainerApi,
+        SystemApi,
+        ContentEventApi,
+        ContentPageApi,
+        ContentProductApi,
+        ContentPostApi,
         StorageFileApi,
+        SystemDomainApi,
+        SystemSettingApi,
+        SystemUserApi,
         PingApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },

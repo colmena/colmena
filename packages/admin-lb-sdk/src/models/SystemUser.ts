@@ -1,56 +1,75 @@
 /* tslint:disable */
+import {
+  ContentEvent,
+  ContentPage,
+  ContentProduct,
+  ContentPost,
+  StorageFile
+} from '../index';
 
 declare var Object: any;
-export interface UserInterface {
-  "id"?: any;
-  "username": any;
-  "email": any;
-  "firstName": any;
-  "lastName": any;
-  "realm": any;
-  "password": any;
-  "emailVerified"?: any;
-  "verificationToken"?: any;
-  "created"?: any;
-  "modified"?: any;
-  "domainId"?: any;
-  accessTokens?: any[];
-  roles?: any[];
-}
-
-export class User implements UserInterface {
+export interface SystemUserInterface {
   "id": any;
   "username": any;
   "email": any;
   "firstName": any;
   "lastName": any;
+  "avatar"?: any;
+  "realm"?: any;
+  "password": any;
+  "emailVerified"?: any;
+  "verificationToken"?: any;
+  "created"?: any;
+  "modified"?: any;
+  accessTokens?: any[];
+  roles?: any[];
+  contentBaseModels?: any[];
+  contentEvents?: ContentEvent[];
+  contentPages?: ContentPage[];
+  contentProducts?: ContentProduct[];
+  contentPosts?: ContentPost[];
+  storageFiles?: StorageFile[];
+}
+
+export class SystemUser implements SystemUserInterface {
+  "id": any;
+  "username": any;
+  "email": any;
+  "firstName": any;
+  "lastName": any;
+  "avatar": any;
   "realm": any;
   "password": any;
   "emailVerified": any;
   "verificationToken": any;
   "created": any;
   "modified": any;
-  "domainId": any;
   accessTokens: any[];
   roles: any[];
-  constructor(data?: UserInterface) {
+  contentBaseModels: any[];
+  contentEvents: ContentEvent[];
+  contentPages: ContentPage[];
+  contentProducts: ContentProduct[];
+  contentPosts: ContentPost[];
+  storageFiles: StorageFile[];
+  constructor(data?: SystemUserInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `User`.
+   * i.e. `SystemUser`.
    */
   public static getModelName() {
-    return "User";
+    return "SystemUser";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of User for dynamic purposes.
+  * This method creates an instance of SystemUser for dynamic purposes.
   **/
-  public static factory(data: UserInterface): User{
-    return new User(data);
+  public static factory(data: SystemUserInterface): SystemUser{
+    return new SystemUser(data);
   }
   /**
   * @method getModelDefinition
@@ -61,7 +80,7 @@ export class User implements UserInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'User',
+      name: 'SystemUser',
       plural: 'Users',
       properties: {
         "id": {
@@ -82,6 +101,10 @@ export class User implements UserInterface {
         },
         "lastName": {
           name: 'lastName',
+          type: 'any'
+        },
+        "avatar": {
+          name: 'avatar',
           type: 'any'
         },
         "realm": {
@@ -108,10 +131,6 @@ export class User implements UserInterface {
           name: 'modified',
           type: 'any'
         },
-        "domainId": {
-          name: 'domainId',
-          type: 'any'
-        },
       },
       relations: {
         accessTokens: {
@@ -123,6 +142,36 @@ export class User implements UserInterface {
           name: 'roles',
           type: 'any[]',
           model: ''
+        },
+        contentBaseModels: {
+          name: 'contentBaseModels',
+          type: 'any[]',
+          model: ''
+        },
+        contentEvents: {
+          name: 'contentEvents',
+          type: 'ContentEvent[]',
+          model: 'ContentEvent'
+        },
+        contentPages: {
+          name: 'contentPages',
+          type: 'ContentPage[]',
+          model: 'ContentPage'
+        },
+        contentProducts: {
+          name: 'contentProducts',
+          type: 'ContentProduct[]',
+          model: 'ContentProduct'
+        },
+        contentPosts: {
+          name: 'contentPosts',
+          type: 'ContentPost[]',
+          model: 'ContentPost'
+        },
+        storageFiles: {
+          name: 'storageFiles',
+          type: 'StorageFile[]',
+          model: 'StorageFile'
         },
       }
     }

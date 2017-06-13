@@ -10,21 +10,21 @@ import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
-import { Product } from '../../models/Product';
+import { ContentEvent } from '../../models/ContentEvent';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { Domain } from '../../models/Domain';
-import { StorageFile } from '../../models/StorageFile';
+import { SystemDomain } from '../../models/SystemDomain';
+import { SystemUser } from '../../models/SystemUser';
 
 
 /**
- * Api services for the `Product` model.
+ * Api services for the `ContentEvent` model.
  *
  * **Details**
  *
- * Content model for managing Products in a Domain
+ * Content: Manage Events in a Domain
  */
 @Injectable()
-export class ProductApi extends BaseLoopBackApi {
+export class ContentEventApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
@@ -38,9 +38,9 @@ export class ProductApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation domain.
+   * Fetches belongsTo relation systemDomain.
    *
-   * @param {any} id Product id
+   * @param {any} id ContentEvent id
    *
    * @param {boolean} refresh 
    *
@@ -50,13 +50,13 @@ export class ProductApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Product` object.)
+   * This usually means the response is a `ContentEvent` object.)
    * </em>
    */
-  public getDomain(id: any, refresh: any = {}): Observable<any> {
+  public getSystemDomain(id: any, refresh: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Products/:id/domain";
+    "/ContentEvents/:id/systemDomain";
     let _routeParams: any = {
       id: id
     };
@@ -68,9 +68,9 @@ export class ProductApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation file.
+   * Fetches belongsTo relation systemUser.
    *
-   * @param {any} id Product id
+   * @param {any} id ContentEvent id
    *
    * @param {boolean} refresh 
    *
@@ -80,13 +80,13 @@ export class ProductApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Product` object.)
+   * This usually means the response is a `ContentEvent` object.)
    * </em>
    */
-  public getFile(id: any, refresh: any = {}): Observable<any> {
+  public getSystemUser(id: any, refresh: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Products/:id/file";
+    "/ContentEvents/:id/systemUser";
     let _routeParams: any = {
       id: id
     };
@@ -110,13 +110,13 @@ export class ProductApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Product` object.)
+   * This usually means the response is a `ContentEvent` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Products";
+    "/ContentEvents";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -129,7 +129,7 @@ export class ProductApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id Product id
+   * @param {any} id ContentEvent id
    *
    * @param {object} data Request data.
    *
@@ -141,13 +141,13 @@ export class ProductApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Product` object.)
+   * This usually means the response is a `ContentEvent` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Products/:id";
+    "/ContentEvents/:id";
     let _routeParams: any = {
       id: id
     };
@@ -172,13 +172,13 @@ export class ProductApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Product` object.)
+   * This usually means the response is a `ContentEvent` object.)
    * </em>
    */
   public _template_basic_remote(options: any = {}, params: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Products/_template_basic";
+    "/ContentEvents/_template_basic";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
@@ -190,9 +190,9 @@ export class ProductApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Product`.
+   * i.e. `ContentEvent`.
    */
   public getModelName() {
-    return "Product";
+    return "ContentEvent";
   }
 }

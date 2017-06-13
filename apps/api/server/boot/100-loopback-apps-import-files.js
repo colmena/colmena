@@ -7,7 +7,7 @@ module.exports = function(app) {
   // Check if there is user configured Settings
   if (!config.has('system.initdb') || config.get('system.initdb') === false) {
     log.info('System init db: skipping sample data')
-    return cb()
+    return true
   }
 
   const Container = app.models.Container

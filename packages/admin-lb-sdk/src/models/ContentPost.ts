@@ -1,52 +1,56 @@
 /* tslint:disable */
 import {
-  Domain,
-  StorageFile
+  SystemDomain,
+  SystemUser
 } from '../index';
 
 declare var Object: any;
-export interface PageInterface {
+export interface ContentPostInterface {
   "id"?: any;
   "domainId"?: any;
   "fileId"?: any;
-  "name": any;
+  "title"?: any;
   "content"?: any;
+  "userId"?: any;
   "created"?: any;
   "modified"?: any;
-  "storageFileId"?: any;
-  domain?: Domain;
-  file?: StorageFile;
+  "systemDomainId"?: any;
+  "systemUserId"?: any;
+  systemDomain?: SystemDomain;
+  systemUser?: SystemUser;
 }
 
-export class Page implements PageInterface {
+export class ContentPost implements ContentPostInterface {
   "id": any;
   "domainId": any;
   "fileId": any;
-  "name": any;
+  "title": any;
   "content": any;
+  "userId": any;
   "created": any;
   "modified": any;
-  "storageFileId": any;
-  domain: Domain;
-  file: StorageFile;
-  constructor(data?: PageInterface) {
+  "systemDomainId": any;
+  "systemUserId": any;
+  systemDomain: SystemDomain;
+  systemUser: SystemUser;
+  constructor(data?: ContentPostInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Page`.
+   * i.e. `ContentPost`.
    */
   public static getModelName() {
-    return "Page";
+    return "ContentPost";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of Page for dynamic purposes.
+  * This method creates an instance of ContentPost for dynamic purposes.
   **/
-  public static factory(data: PageInterface): Page{
-    return new Page(data);
+  public static factory(data: ContentPostInterface): ContentPost{
+    return new ContentPost(data);
   }
   /**
   * @method getModelDefinition
@@ -57,8 +61,8 @@ export class Page implements PageInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'Page',
-      plural: 'Pages',
+      name: 'ContentPost',
+      plural: 'ContentPosts',
       properties: {
         "id": {
           name: 'id',
@@ -72,12 +76,16 @@ export class Page implements PageInterface {
           name: 'fileId',
           type: 'any'
         },
-        "name": {
-          name: 'name',
+        "title": {
+          name: 'title',
           type: 'any'
         },
         "content": {
           name: 'content',
+          type: 'any'
+        },
+        "userId": {
+          name: 'userId',
           type: 'any'
         },
         "created": {
@@ -88,21 +96,25 @@ export class Page implements PageInterface {
           name: 'modified',
           type: 'any'
         },
-        "storageFileId": {
-          name: 'storageFileId',
+        "systemDomainId": {
+          name: 'systemDomainId',
+          type: 'any'
+        },
+        "systemUserId": {
+          name: 'systemUserId',
           type: 'any'
         },
       },
       relations: {
-        domain: {
-          name: 'domain',
-          type: 'Domain',
-          model: 'Domain'
+        systemDomain: {
+          name: 'systemDomain',
+          type: 'SystemDomain',
+          model: 'SystemDomain'
         },
-        file: {
-          name: 'file',
-          type: 'StorageFile',
-          model: 'StorageFile'
+        systemUser: {
+          name: 'systemUser',
+          type: 'SystemUser',
+          model: 'SystemUser'
         },
       }
     }

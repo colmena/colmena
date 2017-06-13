@@ -1,15 +1,16 @@
 /* tslint:disable */
 import { Injectable } from '@angular/core';
-import { User } from '../../models/User';
 import { Email } from '../../models/Email';
-import { Domain } from '../../models/Domain';
-import { Event } from '../../models/Event';
-import { Post } from '../../models/Post';
-import { Product } from '../../models/Product';
-import { Setting } from '../../models/Setting';
-import { Page } from '../../models/Page';
-import { Container } from '../../models/Container';
+import { StorageContainer } from '../../models/StorageContainer';
+import { System } from '../../models/System';
+import { ContentEvent } from '../../models/ContentEvent';
+import { ContentPage } from '../../models/ContentPage';
+import { ContentProduct } from '../../models/ContentProduct';
+import { ContentPost } from '../../models/ContentPost';
 import { StorageFile } from '../../models/StorageFile';
+import { SystemDomain } from '../../models/SystemDomain';
+import { SystemSetting } from '../../models/SystemSetting';
+import { SystemUser } from '../../models/SystemUser';
 import { Ping } from '../../models/Ping';
 
 export interface Models { [name: string]: any }
@@ -18,16 +19,17 @@ export interface Models { [name: string]: any }
 export class SDKModels {
 
   private models: Models = {
-    User: User,
     Email: Email,
-    Domain: Domain,
-    Event: Event,
-    Post: Post,
-    Product: Product,
-    Setting: Setting,
-    Page: Page,
-    Container: Container,
+    StorageContainer: StorageContainer,
+    System: System,
+    ContentEvent: ContentEvent,
+    ContentPage: ContentPage,
+    ContentProduct: ContentProduct,
+    ContentPost: ContentPost,
     StorageFile: StorageFile,
+    SystemDomain: SystemDomain,
+    SystemSetting: SystemSetting,
+    SystemUser: SystemUser,
     Ping: Ping,
     
   };

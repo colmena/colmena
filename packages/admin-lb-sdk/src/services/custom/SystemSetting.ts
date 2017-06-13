@@ -10,21 +10,19 @@ import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
-import { Page } from '../../models/Page';
+import { SystemSetting } from '../../models/SystemSetting';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { Domain } from '../../models/Domain';
-import { StorageFile } from '../../models/StorageFile';
 
 
 /**
- * Api services for the `Page` model.
+ * Api services for the `SystemSetting` model.
  *
  * **Details**
  *
- * Content model for managing Events in a Domain
+ * System: Manage Settings
  */
 @Injectable()
-export class PageApi extends BaseLoopBackApi {
+export class SystemSettingApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
@@ -35,66 +33,6 @@ export class PageApi extends BaseLoopBackApi {
     @Optional() @Inject(ErrorHandler) protected errorHandler: ErrorHandler
   ) {
     super(http,  connection,  models, auth, searchParams, errorHandler);
-  }
-
-  /**
-   * Fetches belongsTo relation domain.
-   *
-   * @param {any} id Page id
-   *
-   * @param {boolean} refresh 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `Page` object.)
-   * </em>
-   */
-  public getDomain(id: any, refresh: any = {}): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Pages/:id/domain";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (refresh) _urlParams.refresh = refresh;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
-   * Fetches belongsTo relation file.
-   *
-   * @param {any} id Page id
-   *
-   * @param {boolean} refresh 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `Page` object.)
-   * </em>
-   */
-  public getFile(id: any, refresh: any = {}): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Pages/:id/file";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (refresh) _urlParams.refresh = refresh;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
   }
 
   /**
@@ -110,13 +48,13 @@ export class PageApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Page` object.)
+   * This usually means the response is a `SystemSetting` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Pages";
+    "/Settings";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -129,7 +67,7 @@ export class PageApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id Page id
+   * @param {any} id SystemSetting id
    *
    * @param {object} data Request data.
    *
@@ -141,13 +79,13 @@ export class PageApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Page` object.)
+   * This usually means the response is a `SystemSetting` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Pages/:id";
+    "/Settings/:id";
     let _routeParams: any = {
       id: id
     };
@@ -161,9 +99,9 @@ export class PageApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Page`.
+   * i.e. `SystemSetting`.
    */
   public getModelName() {
-    return "Page";
+    return "SystemSetting";
   }
 }

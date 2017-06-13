@@ -1,7 +1,7 @@
 /* tslint:disable */
 
 declare var Object: any;
-export interface SettingInterface {
+export interface SystemSettingInterface {
   "key": any;
   "system"?: any;
   "type": any;
@@ -10,31 +10,31 @@ export interface SettingInterface {
   "modified"?: any;
 }
 
-export class Setting implements SettingInterface {
+export class SystemSetting implements SystemSettingInterface {
   "key": any;
   "system": any;
   "type": any;
   "description": any;
   "created": any;
   "modified": any;
-  constructor(data?: SettingInterface) {
+  constructor(data?: SystemSettingInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Setting`.
+   * i.e. `SystemSetting`.
    */
   public static getModelName() {
-    return "Setting";
+    return "SystemSetting";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of Setting for dynamic purposes.
+  * This method creates an instance of SystemSetting for dynamic purposes.
   **/
-  public static factory(data: SettingInterface): Setting{
-    return new Setting(data);
+  public static factory(data: SystemSettingInterface): SystemSetting{
+    return new SystemSetting(data);
   }
   /**
   * @method getModelDefinition
@@ -45,7 +45,7 @@ export class Setting implements SettingInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'Setting',
+      name: 'SystemSetting',
       plural: 'Settings',
       properties: {
         "key": {

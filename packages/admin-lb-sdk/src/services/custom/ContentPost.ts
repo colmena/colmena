@@ -10,21 +10,21 @@ import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
-import { StorageFile } from '../../models/StorageFile';
+import { ContentPost } from '../../models/ContentPost';
 import { SocketConnection } from '../../sockets/socket.connections';
 import { SystemDomain } from '../../models/SystemDomain';
 import { SystemUser } from '../../models/SystemUser';
 
 
 /**
- * Api services for the `StorageFile` model.
+ * Api services for the `ContentPost` model.
  *
  * **Details**
  *
- * Storage: Manage Files in a Domain
+ * Content: Manage Posts in a Domain
  */
 @Injectable()
-export class StorageFileApi extends BaseLoopBackApi {
+export class ContentPostApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
@@ -40,7 +40,7 @@ export class StorageFileApi extends BaseLoopBackApi {
   /**
    * Fetches belongsTo relation systemDomain.
    *
-   * @param {any} id StorageFile id
+   * @param {any} id ContentPost id
    *
    * @param {boolean} refresh 
    *
@@ -50,13 +50,13 @@ export class StorageFileApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `StorageFile` object.)
+   * This usually means the response is a `ContentPost` object.)
    * </em>
    */
   public getSystemDomain(id: any, refresh: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/StorageFiles/:id/systemDomain";
+    "/ContentPosts/:id/systemDomain";
     let _routeParams: any = {
       id: id
     };
@@ -70,7 +70,7 @@ export class StorageFileApi extends BaseLoopBackApi {
   /**
    * Fetches belongsTo relation systemUser.
    *
-   * @param {any} id StorageFile id
+   * @param {any} id ContentPost id
    *
    * @param {boolean} refresh 
    *
@@ -80,13 +80,13 @@ export class StorageFileApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `StorageFile` object.)
+   * This usually means the response is a `ContentPost` object.)
    * </em>
    */
   public getSystemUser(id: any, refresh: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/StorageFiles/:id/systemUser";
+    "/ContentPosts/:id/systemUser";
     let _routeParams: any = {
       id: id
     };
@@ -110,13 +110,13 @@ export class StorageFileApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `StorageFile` object.)
+   * This usually means the response is a `ContentPost` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/StorageFiles";
+    "/ContentPosts";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -129,7 +129,7 @@ export class StorageFileApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id StorageFile id
+   * @param {any} id ContentPost id
    *
    * @param {object} data Request data.
    *
@@ -141,13 +141,13 @@ export class StorageFileApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `StorageFile` object.)
+   * This usually means the response is a `ContentPost` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/StorageFiles/:id";
+    "/ContentPosts/:id";
     let _routeParams: any = {
       id: id
     };
@@ -160,10 +160,39 @@ export class StorageFileApi extends BaseLoopBackApi {
   }
 
   /**
+   * Generate template basic
+   *
+   * @param {Object} options Overwrite values of template
+   *
+   * @param {Object} params Pass parameters into the template method
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ContentPost` object.)
+   * </em>
+   */
+  public _template_basic_remote(options: any = {}, params: any = {}): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ContentPosts/_template_basic";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (options) _urlParams.options = options;
+    if (params) _urlParams.params = params;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
-   * i.e. `StorageFile`.
+   * i.e. `ContentPost`.
    */
   public getModelName() {
-    return "StorageFile";
+    return "ContentPost";
   }
 }

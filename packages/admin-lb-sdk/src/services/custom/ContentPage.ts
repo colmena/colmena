@@ -10,21 +10,21 @@ import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
-import { Event } from '../../models/Event';
+import { ContentPage } from '../../models/ContentPage';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { Domain } from '../../models/Domain';
-import { StorageFile } from '../../models/StorageFile';
+import { SystemDomain } from '../../models/SystemDomain';
+import { SystemUser } from '../../models/SystemUser';
 
 
 /**
- * Api services for the `Event` model.
+ * Api services for the `ContentPage` model.
  *
  * **Details**
  *
- * Content model for managing Events in a Domain
+ * Content: Manage Pages in a Domain
  */
 @Injectable()
-export class EventApi extends BaseLoopBackApi {
+export class ContentPageApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
@@ -38,9 +38,9 @@ export class EventApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation domain.
+   * Fetches belongsTo relation systemDomain.
    *
-   * @param {any} id Event id
+   * @param {any} id ContentPage id
    *
    * @param {boolean} refresh 
    *
@@ -50,13 +50,13 @@ export class EventApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Event` object.)
+   * This usually means the response is a `ContentPage` object.)
    * </em>
    */
-  public getDomain(id: any, refresh: any = {}): Observable<any> {
+  public getSystemDomain(id: any, refresh: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Events/:id/domain";
+    "/ContentPages/:id/systemDomain";
     let _routeParams: any = {
       id: id
     };
@@ -68,9 +68,9 @@ export class EventApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation file.
+   * Fetches belongsTo relation systemUser.
    *
-   * @param {any} id Event id
+   * @param {any} id ContentPage id
    *
    * @param {boolean} refresh 
    *
@@ -80,13 +80,13 @@ export class EventApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Event` object.)
+   * This usually means the response is a `ContentPage` object.)
    * </em>
    */
-  public getFile(id: any, refresh: any = {}): Observable<any> {
+  public getSystemUser(id: any, refresh: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Events/:id/file";
+    "/ContentPages/:id/systemUser";
     let _routeParams: any = {
       id: id
     };
@@ -110,13 +110,13 @@ export class EventApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Event` object.)
+   * This usually means the response is a `ContentPage` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Events";
+    "/ContentPages";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -129,7 +129,7 @@ export class EventApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id Event id
+   * @param {any} id ContentPage id
    *
    * @param {object} data Request data.
    *
@@ -141,13 +141,13 @@ export class EventApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Event` object.)
+   * This usually means the response is a `ContentPage` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Events/:id";
+    "/ContentPages/:id";
     let _routeParams: any = {
       id: id
     };
@@ -160,39 +160,10 @@ export class EventApi extends BaseLoopBackApi {
   }
 
   /**
-   * Generate template basic
-   *
-   * @param {Object} options Overwrite values of template
-   *
-   * @param {Object} params Pass parameters into the template method
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `Event` object.)
-   * </em>
-   */
-  public _template_basic_remote(options: any = {}, params: any = {}): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Events/_template_basic";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (options) _urlParams.options = options;
-    if (params) _urlParams.params = params;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
    * The name of the model represented by this $resource,
-   * i.e. `Event`.
+   * i.e. `ContentPage`.
    */
   public getModelName() {
-    return "Event";
+    return "ContentPage";
   }
 }

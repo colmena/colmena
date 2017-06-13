@@ -1,30 +1,30 @@
 /* tslint:disable */
 
 declare var Object: any;
-export interface ContainerInterface {
+export interface SystemInterface {
   "id"?: any;
 }
 
-export class Container implements ContainerInterface {
+export class System implements SystemInterface {
   "id": any;
-  constructor(data?: ContainerInterface) {
+  constructor(data?: SystemInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Container`.
+   * i.e. `System`.
    */
   public static getModelName() {
-    return "Container";
+    return "System";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of Container for dynamic purposes.
+  * This method creates an instance of System for dynamic purposes.
   **/
-  public static factory(data: ContainerInterface): Container{
-    return new Container(data);
+  public static factory(data: SystemInterface): System{
+    return new System(data);
   }
   /**
   * @method getModelDefinition
@@ -35,8 +35,8 @@ export class Container implements ContainerInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'Container',
-      plural: 'Containers',
+      name: 'System',
+      plural: 'System',
       properties: {
         "id": {
           name: 'id',

@@ -1,54 +1,54 @@
 /* tslint:disable */
 import {
-  Domain,
-  StorageFile
+  SystemDomain,
+  SystemUser
 } from '../index';
 
 declare var Object: any;
-export interface EventInterface {
+export interface ContentEventInterface {
   "id"?: any;
-  "domainId"?: any;
   "fileId"?: any;
   "name": any;
   "date"?: any;
   "location"?: any;
   "created"?: any;
   "modified"?: any;
-  "storageFileId"?: any;
-  domain?: Domain;
-  file?: StorageFile;
+  "systemDomainId"?: any;
+  "systemUserId"?: any;
+  systemDomain?: SystemDomain;
+  systemUser?: SystemUser;
 }
 
-export class Event implements EventInterface {
+export class ContentEvent implements ContentEventInterface {
   "id": any;
-  "domainId": any;
   "fileId": any;
   "name": any;
   "date": any;
   "location": any;
   "created": any;
   "modified": any;
-  "storageFileId": any;
-  domain: Domain;
-  file: StorageFile;
-  constructor(data?: EventInterface) {
+  "systemDomainId": any;
+  "systemUserId": any;
+  systemDomain: SystemDomain;
+  systemUser: SystemUser;
+  constructor(data?: ContentEventInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Event`.
+   * i.e. `ContentEvent`.
    */
   public static getModelName() {
-    return "Event";
+    return "ContentEvent";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of Event for dynamic purposes.
+  * This method creates an instance of ContentEvent for dynamic purposes.
   **/
-  public static factory(data: EventInterface): Event{
-    return new Event(data);
+  public static factory(data: ContentEventInterface): ContentEvent{
+    return new ContentEvent(data);
   }
   /**
   * @method getModelDefinition
@@ -59,15 +59,11 @@ export class Event implements EventInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'Event',
-      plural: 'Events',
+      name: 'ContentEvent',
+      plural: 'ContentEvents',
       properties: {
         "id": {
           name: 'id',
-          type: 'any'
-        },
-        "domainId": {
-          name: 'domainId',
           type: 'any'
         },
         "fileId": {
@@ -94,21 +90,25 @@ export class Event implements EventInterface {
           name: 'modified',
           type: 'any'
         },
-        "storageFileId": {
-          name: 'storageFileId',
+        "systemDomainId": {
+          name: 'systemDomainId',
+          type: 'any'
+        },
+        "systemUserId": {
+          name: 'systemUserId',
           type: 'any'
         },
       },
       relations: {
-        domain: {
-          name: 'domain',
-          type: 'Domain',
-          model: 'Domain'
+        systemDomain: {
+          name: 'systemDomain',
+          type: 'SystemDomain',
+          model: 'SystemDomain'
         },
-        file: {
-          name: 'file',
-          type: 'StorageFile',
-          model: 'StorageFile'
+        systemUser: {
+          name: 'systemUser',
+          type: 'SystemUser',
+          model: 'SystemUser'
         },
       }
     }

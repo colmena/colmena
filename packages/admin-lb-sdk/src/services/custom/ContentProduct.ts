@@ -10,21 +10,21 @@ import { JSONSearchParams } from '../core/search.params';
 import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Rx';
-import { Post } from '../../models/Post';
+import { ContentProduct } from '../../models/ContentProduct';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { Domain } from '../../models/Domain';
-import { StorageFile } from '../../models/StorageFile';
+import { SystemDomain } from '../../models/SystemDomain';
+import { SystemUser } from '../../models/SystemUser';
 
 
 /**
- * Api services for the `Post` model.
+ * Api services for the `ContentProduct` model.
  *
  * **Details**
  *
- * Content model for managing Posts in a Domain
+ * Content: Manage Products in a Domain
  */
 @Injectable()
-export class PostApi extends BaseLoopBackApi {
+export class ContentProductApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(Http) protected http: Http,
@@ -38,9 +38,9 @@ export class PostApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation domain.
+   * Fetches belongsTo relation systemDomain.
    *
-   * @param {any} id Post id
+   * @param {any} id ContentProduct id
    *
    * @param {boolean} refresh 
    *
@@ -50,13 +50,13 @@ export class PostApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Post` object.)
+   * This usually means the response is a `ContentProduct` object.)
    * </em>
    */
-  public getDomain(id: any, refresh: any = {}): Observable<any> {
+  public getSystemDomain(id: any, refresh: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Posts/:id/domain";
+    "/ContentProducts/:id/systemDomain";
     let _routeParams: any = {
       id: id
     };
@@ -68,9 +68,9 @@ export class PostApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation file.
+   * Fetches belongsTo relation systemUser.
    *
-   * @param {any} id Post id
+   * @param {any} id ContentProduct id
    *
    * @param {boolean} refresh 
    *
@@ -80,13 +80,13 @@ export class PostApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Post` object.)
+   * This usually means the response is a `ContentProduct` object.)
    * </em>
    */
-  public getFile(id: any, refresh: any = {}): Observable<any> {
+  public getSystemUser(id: any, refresh: any = {}): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Posts/:id/file";
+    "/ContentProducts/:id/systemUser";
     let _routeParams: any = {
       id: id
     };
@@ -110,13 +110,13 @@ export class PostApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Post` object.)
+   * This usually means the response is a `ContentProduct` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Posts";
+    "/ContentProducts";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -129,7 +129,7 @@ export class PostApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id Post id
+   * @param {any} id ContentProduct id
    *
    * @param {object} data Request data.
    *
@@ -141,13 +141,13 @@ export class PostApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Post` object.)
+   * This usually means the response is a `ContentProduct` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Posts/:id";
+    "/ContentProducts/:id";
     let _routeParams: any = {
       id: id
     };
@@ -160,39 +160,10 @@ export class PostApi extends BaseLoopBackApi {
   }
 
   /**
-   * Generate template basic
-   *
-   * @param {Object} options Overwrite values of template
-   *
-   * @param {Object} params Pass parameters into the template method
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `Post` object.)
-   * </em>
-   */
-  public _template_basic_remote(options: any = {}, params: any = {}): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Posts/_template_basic";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (options) _urlParams.options = options;
-    if (params) _urlParams.params = params;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
-    return result;
-  }
-
-  /**
    * The name of the model represented by this $resource,
-   * i.e. `Post`.
+   * i.e. `ContentProduct`.
    */
   public getModelName() {
-    return "Post";
+    return "ContentProduct";
   }
 }
