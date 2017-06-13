@@ -17,14 +17,6 @@
       "./mixins"
     ]
   },
-  "user": {
-    "dataSource": "db",
-    "public": true
-  },
-  "accessToken": {
-    "dataSource": "db",
-    "public": false
-  },
   "ACL": {
     "dataSource": "db",
     "public": false
@@ -50,18 +42,6 @@
   },
   "Email": {
     "dataSource": "mail"
-  },
-  "BaseModel": {
-    "dataSource": "db",
-    "public": false
-  },
-  "Domain": {
-    "dataSource": "db",
-    "public": true
-  },
-  "Setting": {
-    "dataSource": "db",
-    "public": true
   },
   "Container": {
     "dataSource": "storage",

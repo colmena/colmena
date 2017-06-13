@@ -1,8 +1,8 @@
 'use strict'
 
-module.exports = function(User) {
-  const Role = User.app.models.Role
-  const RoleMapping = User.app.models.RoleMapping
+module.exports = function(SystemUser) {
+  const Role = SystemUser.app.models.Role
+  const RoleMapping = SystemUser.app.models.RoleMapping
 
   const findUserRoleMapping = (userId, roleId) =>
     RoleMapping.findOne({
@@ -103,7 +103,7 @@ module.exports = function(User) {
    * @param {String} roleName The name of the Role
    * @returns {Boolean} True if successful
    */
-  User.prototype.addRole = function addRole(roleName) {
+  SystemUser.prototype.addRole = function addRole(roleName) {
     return findRoleByName(roleName).then(role => addUserRole(this.id, role.id))
   }
 
@@ -112,7 +112,7 @@ module.exports = function(User) {
    * @param {String} roleName The name of the Role
    * @returns {Boolean} True if successful
    */
-  User.prototype.removeRole = function removeRole(roleName) {
+  SystemUser.prototype.removeRole = function removeRole(roleName) {
     return findRoleByName(roleName).then(role =>
       removeUserRole(this.id, role.id)
     )
@@ -122,7 +122,7 @@ module.exports = function(User) {
    * Get the names of the assigned roles for the current user
    * @returns {string[]} array of role names
    */
-  User.prototype.getUserRoleNames = function getUserRoleNames() {
+  SystemUser.prototype.getUserRoleNames = function getUserRoleNames() {
     return this.roles.getAsync().map(userRole => userRole.name)
   }
 
@@ -137,10 +137,10 @@ module.exports = function(User) {
   })
 
   /**
-   * Get the roles for this User.
+   * Get the roles for this SystemUser.
    * @returns {Object} A map of all roles of this user
    */
-  User.prototype.info = function info() {
+  SystemUser.prototype.info = function info() {
     return Promise.all([getSystemRoleNames(), this.getUserRoleNames()])
       .then(([systemRoles, userRoles]) =>
         getRoleAssignment(systemRoles, userRoles)

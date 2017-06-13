@@ -47,7 +47,6 @@
     "loopback": "3.8.0",
     "loopback-boot": "2.24.1",
     "loopback-component-explorer": "4.2.0",
-    "loopback-component-fixtures": "1.1.0",
     "loopback-component-model-extender": "0.1.8",
     "loopback-component-ping": "2.0.2",
     "loopback-component-storage": "3.2.0",

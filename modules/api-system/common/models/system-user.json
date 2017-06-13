@@ -3,15 +3,28 @@
   "plural": "Users",
   "description": "Manage System Users",
   "base": "User",
+  "components": "../../modules/api-system/common/models/system-user",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
+  "allowEternalTokens": true,
   "mixins": {
     "Computed": {
       "properties": {
         "avatar": "getAvatarUrl"
       }
+    },
+    "ReadOnly": {
+      "created": true,
+      "modified": true
+    },
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "modified",
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
     }
   },
   "properties": {
@@ -58,6 +71,120 @@
       "through": "RoleMapping"
     }
   },
-  "acls": [],
-  "methods": {}
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "addRole"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW",
+      "property": "removeRole"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "addRole"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW",
+      "property": "removeRole"
+    }
+  ],
+  "methods": {
+    "prototype.info": {
+      "returns": {
+        "arg": "result",
+        "type": "Object",
+        "root": true
+      },
+      "description": "Get the roles for this user.",
+      "http": {
+        "path": "/info",
+        "verb": "get"
+      }
+    },
+    "prototype.addRole": {
+      "description": "Add a role to this user.",
+      "accepts": [{
+        "arg": "roleName",
+        "type": "String",
+        "required": true,
+        "description": "The name of the role to add."
+      }],
+      "returns": {
+        "arg": "result",
+        "type": "Boolean",
+        "root": true
+      },
+      "http": {
+        "path": "/addRole",
+        "verb": "post"
+      }
+    },
+    "prototype.removeRole": {
+      "description": "Remove a role from this user.",
+      "accepts": [{
+        "arg": "roleName",
+        "type": "String",
+        "required": true,
+        "description": "The name of the role to remove."
+      }],
+      "returns": {
+        "arg": "result",
+        "type": "Boolean",
+        "root": true
+      },
+      "http": {
+        "path": "/removeRole",
+        "verb": "post"
+      }
+    }
+  }
 }

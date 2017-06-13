@@ -30,11 +30,17 @@
         }
       },
       "sampleData": [
-        "sample-data/default.json"
+        "sample-data/access-tokens.json",
+        "sample-data/domains.json",
+        "sample-data/role-mappings.json",
+        "sample-data/roles.json",
+        "sample-data/users.json"
       ]
     }
   },
   "dependencies": {
+    "@colmena/logger": "0.0.0",
+    "config": "^1.26.1",
     "inflection": "^1.12.0",
     "lodash": "^4.17.4"
   }

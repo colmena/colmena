@@ -1,5 +1,7 @@
 const { getApps } = require('../lib/loopback-apps')
 
+const log = require('@colmena/logger')
+
 let config = require('./model-config.base.json')
 
 const getModelPath = (packageName, path) => `../node_modules/${packageName}/${path}`
@@ -7,7 +9,7 @@ const getModelPath = (packageName, path) => `../node_modules/${packageName}/${pa
 getApps()
   .forEach(appName => {
     const app = require(appName)
-    console.log(`Registering models from module: ${appName}`)
+    log.info(`[loopback-modules] Registering models from module: ${appName}`)
 
     if (app.models) {
       config = Object.assign(config, app.models)

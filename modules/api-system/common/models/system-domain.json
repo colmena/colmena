@@ -3,6 +3,7 @@
   "plural": "Domains",
   "description": "Manage System Domains and related content",
   "base": "SystemBaseModel",
+  "components": "../../modules/api-system/common/models/system-domain",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -25,5 +26,30 @@
   "validations": [],
   "relations": {},
   "acls": [],
-  "methods": {}
+  "methods": {
+    "prototype.importFileByUrl": {
+      "accepts": [
+        {
+          "arg": "url",
+          "type": "String",
+          "required": true
+        },
+        {
+          "arg": "fileName",
+          "type": "String",
+          "required": false
+        }
+      ],
+      "returns": {
+        "arg": "result",
+        "type": "Object",
+        "root": true
+      },
+      "description": "Import a file by URL",
+      "http": {
+        "path": "/importFileByUrl",
+        "verb": "post"
+      }
+    }
+  }
 }

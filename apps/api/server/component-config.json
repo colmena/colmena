@@ -2,14 +2,6 @@
   "loopback-component-model-extender": {
     "basePath": ""
   },
-  "loopback-component-fixtures": {
-    "environments": [
-      "development"
-    ],
-    "fixturesPath": "/server/sample-data/",
-    "loadFixturesOnStartup": false,
-    "errorOnSetupFailure": true
-  },
   "loopback-component-ping": {
     "acls": [
       {

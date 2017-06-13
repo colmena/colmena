@@ -1,7 +1,8 @@
-'use strict'
+'use strict';
 
-module.exports = function(Setting) {
-  Setting.observe('loaded', (ctx, next) => {
+module.exports = function(SystemSetting) {
+
+  SystemSetting.observe('loaded', (ctx, next) => {
     if (ctx.data && ctx.data.type) {
       switch (ctx.data.type) {
         case 'boolean':
@@ -14,4 +15,4 @@ module.exports = function(Setting) {
     }
     return next()
   })
-}
+};

@@ -1,0 +1,25 @@
+{
+  "SystemUser": [
+    {
+      "id": "admin",
+      "email": "admin@example.com",
+      "firstName": "Admin",
+      "lastName": "Colmena",
+      "password": "password"
+    },
+    {
+      "id": "manager",
+      "email": "manager@example.com",
+      "firstName": "Manager",
+      "lastName": "Colmena",
+      "password": "password"
+    },
+    {
+      "id": "user",
+      "email": "user@example.com",
+      "firstName": "User",
+      "lastName": "Colmena",
+      "password": "password"
+    }
+  ]
+}

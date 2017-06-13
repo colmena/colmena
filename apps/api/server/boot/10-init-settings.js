@@ -38,12 +38,12 @@ module.exports = function(app, cb) {
     })
   }
 
-  return app.models.Setting
+  return app.models.SystemSetting
     .destroyAll({
       system: true,
     })
-    .then(res => log.info(`System Settings: ${res.count} removed`))
-    .then(() => app.models.Setting.create(systemSettings))
-    .then(res => log.info(`System Settings: ${res.length} added`))
+    .then(res => log.info(`[system-settings] ${res.count} removed`))
+    .then(() => app.models.SystemSetting.create(systemSettings))
+    .then(res => log.info(`[system-settings] ${res.length} added`))
     .asCallback(cb)
 }

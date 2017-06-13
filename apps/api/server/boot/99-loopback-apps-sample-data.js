@@ -1,15 +1,16 @@
 const { getAppConfigs, getSampleDataSets } = require('../../lib/loopback-apps')
+const log = require('@colmena/logger')
 
 module.exports = function(app) {
 
   const loadModelData = (modelName, data) => app.models[modelName]
     .create(data, (err, res) => {
       if (err) {
-        console.error(`${modelName}: Error importing sample data`)
-        console.log(err)
+        log.error(`${modelName}: Error importing sample data`)
+        log.info(err)
         return
       }
-      console.log(`${modelName}: Imported ${res.length} items`)
+      log.info(`[sample-data ${modelName}: Imported ${res.length} items`)
     })
 
   app.once('booted', () => {

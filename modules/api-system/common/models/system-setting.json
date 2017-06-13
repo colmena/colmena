@@ -3,6 +3,7 @@
   "plural": "Settings",
   "description": "Manage System Settings",
   "base": "SystemBaseModel",
+  "components": "../../modules/api-system/common/models/system-setting",
   "idInjection": true,
   "options": {
     "validateUpsert": true
@@ -12,9 +13,6 @@
       "type": "string",
       "id": true,
       "required": true
-    },
-    "value": {
-      "type": "string"
     },
     "system": {
       "type": "boolean",
