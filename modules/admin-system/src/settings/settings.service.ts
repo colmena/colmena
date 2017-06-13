@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core'
-import { Setting, SettingApi } from '@colmena/admin-lb-sdk'
-export { Setting } from '@colmena/admin-lb-sdk'
+
+import { SystemSetting as Setting, SystemSettingApi } from '@colmena/admin-lb-sdk'
+export { SystemSetting as Setting} from '@colmena/admin-lb-sdk'
+
 import { UiDataGridService, FormService } from '@colmena/admin-ui'
 import { Observable } from 'rxjs/Observable'
 import { Subscription } from 'rxjs/Subscription'
@@ -20,7 +22,7 @@ export class SettingsService extends UiDataGridService {
   ]
 
   constructor(
-    private settingApi: SettingApi,
+    private settingApi: SystemSettingApi,
     private formService: FormService,
   ) {
     super()

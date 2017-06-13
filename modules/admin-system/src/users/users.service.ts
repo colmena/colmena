@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Store } from '@ngrx/store'
-import { UserApi, User, Domain } from '@colmena/admin-lb-sdk'
-export { User } from '@colmena/admin-lb-sdk'
+import { SystemUserApi, SystemDomain as Domain } from '@colmena/admin-lb-sdk'
+export { SystemUser as User } from '@colmena/admin-lb-sdk'
 import { UiDataGridService, FormService } from '@colmena/admin-ui'
 import { Observable } from 'rxjs/Observable'
 import { Subscription } from 'rxjs/Subscription'
@@ -22,10 +22,8 @@ export class UsersService extends UiDataGridService {
     { field: 'realm', label: 'Domain' },
   ]
 
-  // public formFields: any[]
-
   constructor(
-    public userApi: UserApi,
+    public userApi: SystemUserApi,
     public formService: FormService,
     private store: Store<any>,
   ) {
@@ -167,7 +165,7 @@ export class UsersService extends UiDataGridService {
 
   changePassword(item, successCb, errorCb): Subscription {
     return this.userApi
-      .doPasswordReset(item)
+      .resetPassword(item)
       .subscribe(successCb, errorCb)
   }
 

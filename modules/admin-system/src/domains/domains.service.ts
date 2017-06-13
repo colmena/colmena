@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
-import { Domain, DomainApi } from '@colmena/admin-lb-sdk'
-export { Domain } from '@colmena/admin-lb-sdk'
+import { SystemDomain as Domain, SystemDomainApi } from '@colmena/admin-lb-sdk'
+export { SystemDomain as Domain } from '@colmena/admin-lb-sdk'
 import { UiDataGridService, FormService } from '@colmena/admin-ui'
 import { Observable } from 'rxjs/Observable'
 import { Subscription } from 'rxjs/Subscription'
@@ -18,7 +18,7 @@ export class DomainsService extends UiDataGridService {
   ]
 
   constructor(
-    private domainApi: DomainApi,
+    private domainApi: SystemDomainApi,
     private formService: FormService,
   ) {
     super()
