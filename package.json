@@ -35,7 +35,7 @@
     "dev": "lerna run dev --stream",
     "dev:admin": "lerna run dev --stream --scope @colmena/admin",
     "dev:api": "lerna run dev --stream --scope @colmena/api",
-    "lint": "eslint . --fix",
+    "lint": "eslint . --fix --ext js --ext ts",
     "postinstall": "lerna bootstrap",
     "sdk": "npm run sdk:api",
     "sdk:api": "cross-env NODE_ENV=codegen lb-sdk --wipe enabled apps/api/server/server.js packages/admin-lb-sdk/src",
@@ -68,16 +68,18 @@
     "coreui-styles": "latest",
     "eslint": "4.0.0",
     "eslint-plugin-prettier": "2.1.1",
+    "eslint-plugin-typescript": "0.1.0",
     "font-awesome": "4.7.0",
     "lerna": "2.0.0-rc.5",
-    "nodemon": "1.11.0",
     "ng-formly": "1.0.0-rc.9",
-    "ng2-toasty": "4.0.2",
     "ng2-file-upload": "^1.2.1",
-    "ngx-bootstrap": "1.7.1",
+    "ng2-toasty": "4.0.2",
     "ngrx-store-freeze": "0.1.9",
     "ngrx-store-logger": "0.1.8",
+    "ngx-bootstrap": "1.7.1",
+    "nodemon": "1.11.0",
     "prettier": "1.4.4",
+    "prettier-eslint": "6.3.0",
     "reselect": "3.0.1",
     "rimraf": "2.6.1",
     "rxjs": "5.4.0",
@@ -85,11 +87,14 @@
     "sweetalert2": "6.6.5",
     "tslint": "5.4.3",
     "typescript": "2.3.4",
+    "typescript-eslint-parser": "3.0.0",
     "zone.js": "0.8.12"
   },
   "eslintConfig": {
+    "parser": "typescript-eslint-parser",
     "parserOptions": {
-      "ecmaVersion": 6
+      "ecmaVersion": 6,
+      "sourceType": "module"
     },
     "plugins": [
       "prettier"
