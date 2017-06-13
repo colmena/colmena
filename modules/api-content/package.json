@@ -1,0 +1,30 @@
+{
+  "name": "@colmena/module-api-content",
+  "version": "0.0.0",
+  "license": "MIT",
+  "colmena": {
+    "module": {
+      "modelSources": [
+        "common/models"
+      ],
+      "models": {
+        "ContentBaseModel": {
+          "dataSource": "db",
+          "public": false
+        },
+        "ContentEvent": {
+          "dataSource": "db"
+        },
+        "ContentPage": {
+          "dataSource": "db"
+        },
+        "ContentPost": {
+          "dataSource": "db"
+        }
+      },
+      "sampleData": [
+        "sample-data/default.json"
+      ]
+    }
+  }
+}
