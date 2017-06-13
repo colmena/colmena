@@ -8,11 +8,6 @@
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-26-orange.svg?style=flat-square)](#contributors) [![](https://colmena-slack.now.sh/badge.svg)](https://colmena-slack.now.sh/) [![OpenCollective](https://opencollective.com/colmena/backers/badge.svg)](#backers) [![OpenCollective](https://opencollective.com/colmena/sponsors/badge.svg)](#sponsors)
 
-## ⚠️ Warning
-
-#### This software is under active development!
-#### Please do not use it in production without addressing the issues in the [Work in Progress](#work-in-progress) section
-
 ## About
 
 Colmena is a starter kit for an API with an Admin interface that can be easily extended and built upon.
@@ -24,92 +19,205 @@ It is built using a collection of great Open Source projects, including but not 
 - [LoopBack SDK Builder](https://www.npmjs.com/package/@mean-expert/loopback-sdk-builder) - Awesome integration of Loopback and Angular.
 - [CoreUI](http://coreui.io/) - Amazing Bootstrap Admin Template.
 
+## ⚠️ Warning
+
+#### This software is under active development!
+#### Please do not use it in production without addressing the issues in the [Work in Progress](#work-in-progress) section
+
+
+## Work in Progress
+
+Colmena is a work in progress and not all functionality is built yet.
+
+- Only basic ACLS are implemented, this means that the API can be used by whoever has access to it
+- The interface does not reflect the user role (admin/manager/user)
+- Content will be leaking across domains, while this should not be possible
+
+## Structure
+
+The project is a mono-repo managed by [lerna](https://lernajs.io). It is structured like this:
+
+- `apps/`
+  - `admin` The Admin interface built with Angular.
+  - `api` The REST API built with LoopBack.
+- `modules/`
+  - `admin-*` Modules that add functionality to the Admin app.
+  - `api-*` Modules that add functionality to the API app.
+- `packages/`
+  - `admin-*` Packages used by the Admin app.
+  - `api-*` Packages used by the API app.
+
+The structure of this project is inspired by this great example: [OasisDigital/scalable-enterprise-angular](https://github.com/OasisDigital/scalable-enterprise-angular).
+
 ## Installation
 
-The project is a mono-repo managed by [lerna](https://lernajs.io) that consists of the following:
+### Requirements
 
-- apps
-  - admin - The Admin interface built with Angular.
-  - api - The REST API built with LoopBack.
-- modules - Modules that add functionality to the apps.
-- packages - Shareable packages used by the apps and the modules.
-
-#### Requirements
-
-Software installed on your system:
+#### Software installed on your system:
 
 - `node` (v6.9.x or higher).
-- `yarn` or `npm` (v3.x or higher).
+- `npm` (v3.x or higher).
 
 
-Globally installed Node packages:
+#### Globally installed Node packages:
 
 - [Angular CLI](https://github.com/angular/angular-cli)
 - [Lerna](https://github.com/lerna/lerna)
 - [LoopBack CLI](https://github.com/strongloop/loopback-cli)
 
+```bash
+npm install -g @angular/cli lerna loopback-cli
 ```
-$ npm install -g @angular/cli lerna loopback-cli
+
+### Setup
+
+Clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/colmena/colmena
+cd colmena
+npm install
 ```
 
-#### Clone repo
-
-First clone the repository to get the project files:
-
-    $ git clone https://github.com/colmena/colmena
-    $ cd colmena
-
-### Top-level directory
-
-From inside the project dir (`colmena`) run `npm install`:
-
-    $ npm install
 
 ## Development
 
-Currently there is no way to build the project, it can only be run in development mode.
-
 ### Running in development mode
 
-From inside the project dir (`colmena`) run `INITDB=1 npm run dev`:
+When the project is running in development mode the API and the Admin will restart automatically when a code change is
+detected.
 
-    $ INITDB=1 npm run dev
-
-This will start the API and the Admin in the same terminal, and by using `INITDB=1` the sample data will be loaded.
-
+#### URLs
 - The API listens on [http://127.0.0.1:3000](http://127.0.0.1:3000).
 - The Admin listens on [http://127.0.0.1:9000](http://127.0.0.1:9000).
+
+#### Start the project
+
+From inside the project dir run `npm run dev`:
+
+```bash
+npm run dev
+```
+
+This will start both the API and the Admin in the same terminal.
 
 You can also start the two components separately:
 
 #### Start the API
 
-    $ npm run dev:api
+```bash
+npm run dev:api
+```
 
 #### Start the Admin
 
-    $ npm run dev:admin
+```bash
+npm run dev:admin
+```
 
-### Running on other host than localhost
+#### Clean up the project
+
+During development it can be useful to bring the project back to a clean state. To do this run:
+
+```bash
+npm run clean && npm install
+```
+
+### Configuring the development setup
+
+#### local.yaml
+
+You can configure the API in development mode by creating a `local.yaml` file in `apps/api/config`. The contents of this
+file is not tracked by git so it only lives on your local machine.
+
+To start with the default settings copy `apps/api/config/default.yaml` to `apps/api/config/local.yaml`.
+
+
+#### Sample data
+
+The API comes with a set of sample data for development.
+
+To load the sample data when starting the API update [`local.yaml`](#localyaml) to include:
+
+```yaml
+system:
+  initdb: true
+```
+
+You can also use the `INITDB` environment variable.
+
+#### API Base Url
 
 By default the development stack assumes that the API and Admin are both started on localhost (using `127.0.0.1`).
 
-When this is not the case, the admin needs to know on which IP address it can reach the API. In order to do this, you
-need to specify the `api.baseUrl` config property, which you can control using the `API_BASE_URL` environment variable.
+In order to run the API on another host than localhost the admin needs to know on which IP address it can reach the API. 
+To do this you need to update the `api.baseUrl` config property.
 
-    $ API_BASE_URL=http://192.168.12.34:3000 npm run dev
+> Make sure to configure the API Base Url **without** a trailing slash.
 
-> Make sure to leave out the trailing slash in the `API_BASE_URL` variable.
+To set the API Base Url update [`local.yaml`](#localyaml) to include:
+
+```yaml
+api:
+  # Do not use trailing spaces for the baseUrl
+  baseUrl: http://192.168.12.34:3000
+```
+
+You can also use the `API_BASE_URL` environment variable.
 
 You should now be able to connect to the Admin on http://192.168.12.34:9000 and it should connect to the API.
 
-## Work in Progress
 
-Colmena is still a work in progress and not all functionality is built yet.
+### Development Servers
 
-- Almost no ACLS are implemented, this means that the API can be used by whoever has access to it
-- The interface does not reflect the user role (admin/manager/user)
-- Content will be leaking across domains, while this should not be possible
+Colmena comes with a Docker Compose configuration for running development servers easily.
+
+#### mongodb
+
+To use the mongodb server update [`local.yaml`](#localyaml) to include:
+
+```yaml
+mongodb:
+  url: mongodb://localhost/colmena
+```
+
+You can also use the `MONGODB_URL` environment variable
+
+#### mailhog
+
+To use the mailhog server update [`local.yaml`](#localyaml) to include:
+
+```yaml
+smtp:
+  host: localhost
+  port: 1025
+```
+
+You can also use the `SMTP_HOST` and `SMTP_PORT` environment variables
+
+#### Start the servers
+
+```bash
+npm run servers # or: npm run servers:start
+```
+
+#### Show the servers logging
+
+```bash
+npm run servers:logs
+```
+
+#### Stop the servers
+
+```bash
+npm run servers:stop
+```
+
+#### Delete the servers
+
+```bash
+npm run servers:rm
+```
 
 ## Contributors
 
