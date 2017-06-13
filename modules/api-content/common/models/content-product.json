@@ -37,7 +37,12 @@
       "required": false
     }  },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "file": {
+      "type": "belongsTo",
+      "model": "StorageFile"
+    }
+  },
   "acls": [],
   "methods": {}
 }
