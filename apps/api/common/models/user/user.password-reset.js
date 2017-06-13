@@ -5,62 +5,49 @@ const config = require('config')
 const log = require('@colmena/logger')
 
 module.exports = function userPasswordReset(User) {
+
+  const getDomainById = id => User.app.models.Domain.findById(id)
+
+  const getBaseRecoverUrl = () => config.get('admin.url').replace(/\/$/, '') + config.get('admin.recoverPath')
+
+  const getResetPasswordUrl = token => `${getBaseRecoverUrl()}?token=${token}`
+
+  const sendEmail = message => new Promise((resolve, reject) => {
+    log.info(`sendEmail:`, message)
+    return User.app.models.Email.send(message, (err, result) => err ? reject(err) : resolve(result))
+  })
+
+  const getMailVars = (ctx, domain) => ({
+    firstName: ctx.user.firstName,
+    resetPasswordUrl: getResetPasswordUrl(ctx.accessToken.id),
+    domainName: domain.name,
+    domainEmail: domain.email,
+  })
+
+  const getMessage = (ctx, domain) => ({
+    to: `"${ctx.user.fullName()}" <${ctx.email}>`,
+    from: domain.email,
+    subject: `Reset your ${domain.name} password`,
+    html: User._template_passwordResetHtml()(getMailVars(ctx, domain)),
+    text: User._template_passwordResetText()(getMailVars(ctx, domain)),
+  })
+
   /**
    * user: Password reset wrapped to ensure that no data is leaked.
    */
   const _resetPassword = User.resetPassword
 
-  User.resetPassword = function resetPassword(options) {
-    return _resetPassword.call(User, options, err => {
-      // Limit the information we reveal.
-      if (err && err.code !== 'EMAIL_NOT_FOUND') {
-        return Promise.reject(err)
-      }
-      return Promise.resolve()
+  User.resetPassword = (options) => _resetPassword.call(User, options, err => {
+    // Return all errors except for EMAIL_NOT_FOUND
+    (err && err.code !== 'EMAIL_NOT_FOUND') ? Promise.reject(err) : Promise.resolve()
+  })
+
+  User.sendPasswordResetMessage = ctx => getDomainById(ctx.user.realm || 'default')
+    .then(domain => sendEmail(getMessage(ctx, domain)))
+    .catch(err => {
+      log.error('User.sendPasswordResetMessage: Email.send failure:', err)
+      return Promise.reject(err)
     })
-  }
-
-  User.sendPasswordResetMessage = function sendPasswordResetMessage(ctx) {
-    // We first retrieve the domain based on the realm to get the reply-to email and name
-    return User.app.models.Domain
-      .findById(ctx.user.realm)
-      .then(domain => {
-        // This is the access token we will send to the user
-        const accessToken = ctx.accessToken.id
-        // This is the frontend URL that has the password reset dialog
-        const baseUrl =
-          config.get('admin.url').replace(/\/$/, '') +
-          config.get('admin.recoverPath')
-        const resetPasswordUrl = `${baseUrl}?token=${accessToken}`
-
-        // These variables are passed into the password reset mails
-        const mailVars = {
-          firstName: ctx.user.firstName,
-          resetPasswordUrl,
-          domainName: domain.name,
-          domainEmail: domain.email,
-        }
-
-        // This is the message that is composed
-        const message = {
-          to: `"${ctx.user.fullName()}" <${ctx.email}>`,
-          from: domain.email,
-          subject: `Reset your ${domain.name} password`,
-          html: User._template_passwordResetHtml()(mailVars),
-          text: User._template_passwordResetText()(mailVars),
-        }
-
-        log.info(`User.sendPasswordResetMessage:`, message)
-        return User.app.models.Email.send(message, (err, result) => {
-          if (err) {
-            log.error('User.sendPasswordResetMessage: Email.send failure:', err)
-            return Promise.reject(err)
-          }
-          return Promise.resolve(result)
-        })
-      })
-      .catch(err => Promise.reject(err))
-  }
 
   // Wrapping sendPasswordResetMessage instead of using `bind` ensures that our test spies will work.
   User.on('resetPasswordRequest', (...args) =>
@@ -113,7 +100,7 @@ module.exports = function userPasswordReset(User) {
           return Promise.reject(err)
         }
 
-        return res.json({ status: 'success' })
+        return res.json({status: 'success'})
       })
     })
   }
