@@ -1,7 +1,8 @@
 {
-  "name": "Post",
-  "description": "Content model for managing Posts in a Domain",
-  "base": "BaseModel",
+  "name": "ContentProduct",
+  "plural": "ContentProducts",
+  "description": "Content: Manage Products in a Domain",
+  "base": "ContentBaseModel",
   "idInjection": true,
   "forceId": false,
   "options": {
@@ -19,30 +20,24 @@
     "fileId": {
       "type": "String"
     },
-    "title": {
+    "name": {
       "type": "String",
       "required": false
     },
-    "content": {
+    "description": {
       "type": "String",
       "required": false
     },
-    "userId": {
+    "sku": {
+      "type": "String",
+      "required": false
+    },
+    "price": {
       "type": "Number",
       "required": false
-    }
-  },
+    }  },
   "validations": [],
-  "relations": {
-    "domain": {
-      "type": "belongsTo",
-      "model": "Domain"
-    },
-    "file": {
-      "type": "belongsTo",
-      "model": "StorageFile"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

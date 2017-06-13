@@ -1,13 +1,25 @@
 {
   "name": "ContentPage",
   "plural": "ContentPages",
+  "description": "Content: Manage Pages in a Domain",
   "base": "ContentBaseModel",
   "idInjection": true,
+  "forceId": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "title": {
+    "id": {
+      "type": "String",
+      "required": true
+    },
+    "domainId": {
+      "type": "String"
+    },
+    "fileId": {
+      "type": "String"
+    },
+    "name": {
       "type": "string",
       "required": true
     },

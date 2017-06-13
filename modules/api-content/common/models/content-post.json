@@ -1,18 +1,36 @@
 {
   "name": "ContentPost",
   "plural": "ContentPosts",
+  "description": "Content: Manage Posts in a Domain",
   "base": "ContentBaseModel",
   "idInjection": true,
+  "forceId": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "title": {
-      "type": "string",
+    "id": {
+      "type": "String",
       "required": true
     },
+    "domainId": {
+      "type": "String",
+      "required": false
+    },
+    "fileId": {
+      "type": "String"
+    },
+    "title": {
+      "type": "String",
+      "required": false
+    },
     "content": {
-      "type": "string"
+      "type": "String",
+      "required": false
+    },
+    "userId": {
+      "type": "Number",
+      "required": false
     }
   },
   "validations": [],

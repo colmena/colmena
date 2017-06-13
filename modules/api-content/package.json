@@ -2,6 +2,9 @@
   "name": "@colmena/module-api-content",
   "version": "0.0.0",
   "license": "MIT",
+  "dependencies": {
+    "faker": "4.1.0"
+  },
   "colmena": {
     "module": {
       "modelSources": [
@@ -18,12 +21,18 @@
         "ContentPage": {
           "dataSource": "db"
         },
+        "ContentProduct": {
+          "dataSource": "db"
+        },
         "ContentPost": {
           "dataSource": "db"
         }
       },
       "sampleData": [
-        "sample-data/default.json"
+        "sample-data/events.json",
+        "sample-data/pages.json",
+        "sample-data/products.json",
+        "sample-data/posts.json"
       ]
     }
   }

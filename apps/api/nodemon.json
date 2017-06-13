@@ -6,7 +6,7 @@
   "watch": [
     "common/",
     "server/",
-    "../../modules/api-*"
+    "../../modules/"
   ],
   "env": {
     "NODE_ENV": "development"

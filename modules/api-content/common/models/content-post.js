@@ -2,8 +2,9 @@
 
 const faker = require('faker/locale/en')
 
-module.exports = function(Post) {
-  Post._templates = () => ({
+module.exports = function(ContentPost) {
+
+  ContentPost._templates = () => ({
     basic: domainId => ({
       domainId,
       userId: faker.random.arrayElement([1, 2, 3, 4, 5]),
@@ -12,4 +13,5 @@ module.exports = function(Post) {
       image: faker.image.technics(),
     }),
   })
+
 }

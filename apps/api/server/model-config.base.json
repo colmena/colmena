@@ -59,23 +59,7 @@
     "dataSource": "db",
     "public": true
   },
-  "Event": {
-    "dataSource": "db",
-    "public": true
-  },
-  "Post": {
-    "dataSource": "db",
-    "public": true
-  },
-  "Product": {
-    "dataSource": "db",
-    "public": true
-  },
   "Setting": {
-    "dataSource": "db",
-    "public": true
-  },
-  "Page": {
     "dataSource": "db",
     "public": true
   },

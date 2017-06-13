@@ -1,13 +1,53 @@
 {
   "name": "SystemBaseModel",
   "base": "PersistedModel",
-  "idInjection": true,
-  "options": {
-    "validateUpsert": true
+  "mixins": {
+    "ReadOnly": {
+      "created": true,
+      "modified": true
+    },
+    "TimeStamp": {
+      "createdAt": "created",
+      "updatedAt": "modified",
+      "required": false,
+      "validateUpsert": true,
+      "silenceWarnings": false
+    }
   },
   "properties": {},
   "validations": [],
   "relations": {},
-  "acls": [],
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "admin",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "manager",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
   "methods": {}
 }

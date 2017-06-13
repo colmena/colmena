@@ -2,8 +2,9 @@
 
 const faker = require('faker/locale/en')
 
-module.exports = function(Event) {
-  Event._templates = () => ({
+module.exports = function(ContentEvent) {
+
+  ContentEvent._templates = () => ({
     basic: domainId => {
       const address = faker.address
       const lorem = faker.lorem

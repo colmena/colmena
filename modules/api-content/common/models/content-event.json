@@ -1,18 +1,30 @@
 {
   "name": "ContentEvent",
   "plural": "ContentEvents",
+  "description": "Content: Manage Events in a Domain",
   "base": "ContentBaseModel",
   "idInjection": true,
+  "forceId": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "title": {
-      "type": "string",
+    "id": {
+      "type": "String",
       "required": true
     },
-    "content": {
-      "type": "string"
+    "fileId": {
+      "type": "String"
+    },
+    "name": {
+      "type": "String",
+      "required": true
+    },
+    "date": {
+      "type": "Date"
+    },
+    "location": {
+      "type": "String"
     }
   },
   "validations": [],
