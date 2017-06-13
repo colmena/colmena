@@ -23,7 +23,7 @@
   },
   "Core": {
     "dataSource": "db",
-    "public": true
+    "public": false
   },
   "Email": {
     "dataSource": "mail"

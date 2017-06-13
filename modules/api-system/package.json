@@ -17,6 +17,9 @@
         "common/mixins"
       ],
       "models": {
+        "System": {
+          "dataSource": false
+        },
         "SystemAccessToken": {
           "dataSource": "db",
           "public": false
