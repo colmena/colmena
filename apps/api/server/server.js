@@ -12,10 +12,10 @@ app.start = function() {
   const server = app.listen(function() {
     app.emit('started', server)
     const baseUrl = app.get('url').replace(/\/$/, '')
-    log.info('Colmena API listening at: %s', baseUrl)
+    log.yellow.b(`Colmena API listening at: ${baseUrl}`)
     if (app.get('loopback-component-explorer')) {
       const explorerPath = app.get('loopback-component-explorer').mountPath
-      log.info('Colmena API Explorer: %s%s', baseUrl, explorerPath)
+      log.yellow.b(`Colmena API Explorer: ${baseUrl}${explorerPath}`)
     }
   })
   return server

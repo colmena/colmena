@@ -11,9 +11,6 @@ const getApps = () => (colmena.apps || [])
 
 const getAppConfigs = () => getApps().map(app => require(app))
 
-const removeContainer = (app, container) => app.models.StorageContainer.destroy(container)
-  .then(() => log.info(`[sample-files] Destroyed Container ${container} `))
-
 const getDomain = (app, domain) => app.models.SystemDomain.findById('default')
 
 const getAppFileList = prop => getAppConfigs()
@@ -21,19 +18,15 @@ const getAppFileList = prop => getAppConfigs()
   .map(app => app[prop].map(file => `${app.name}/${file}`))
   .reduce((res, item) => res.concat(item), [])
 
-const removeContainers = (app, set) => Promise.all(
-  Object.keys(set).map(domain => removeContainer(app, domain))
-)
-
 const importSampleFileSet = (app, set) => Promise.all(
   Object.keys(set).map(domainName => {
     const files = set[domainName]
-    log.info('[sample-files]', `${files.length} files for domain`, domainName)
+    log.gray('[sample-files]', `${files.length} files for domain`, domainName)
 
     return getDomain(app, domainName)
       .then(domain => files.forEach(file => domain
         .importFileByUrl(file.url, file.fileName)
-        .then(() => log.info('[sample-files]', `${domainName} import ${file.url}`))
+        .then(() => log.gray('[sample-files]', `${domainName} import ${file.url}`))
       ))
   })
 )
@@ -41,7 +34,7 @@ const importSampleFileSet = (app, set) => Promise.all(
 const importSampleDataSet = (app, set) => Promise.all(Object.keys(set)
   .map(modelName => app.models[modelName]
     .create(set[modelName])
-    .then(res => log.info('[sample-data]', `${res.length} items for model`, modelName))
+    .then(res => log.gray('[sample-data]', `${res.length} items for model`, modelName))
   )
 )
 

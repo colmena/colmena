@@ -8,11 +8,11 @@ const log = require('@colmena/logger')
  * @return {Promise} Returns a promise that resolves once all data has been removed.
  */
 const dbMigrate = db => {
-  log.info('[db-migrate] Starting')
+  log.gray('[db-migrate] Starting')
   return db.automigrate()
-    .then(() => log.info('[db-migrate] Finished'))
+    .then(() => log.gray('[db-migrate] Finished'))
     .catch(err => {
-      log.error('[db-migrate] Failed', err)
+      log.red.b('[db-migrate] Failed', err)
       throw err
     })
 }
@@ -23,11 +23,11 @@ const dbMigrate = db => {
  * @return {Promise} Returns a promise that resolves once the database schema has been updated.
  */
 const dbUpdate = db => {
-  log.info('[db-update] Starting')
+  log.gray('[db-update] Starting')
   return db.autoupdate()
-    .then(() => log.info('[db-update] Finished'))
+    .then(() => log.gray('[db-update] Finished'))
     .catch(err => {
-      log.error('[db-update] Failed', err)
+      log.red.b('[db-update] Failed', err)
       throw err
     })
 }
