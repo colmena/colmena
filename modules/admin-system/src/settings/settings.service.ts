@@ -31,11 +31,12 @@ export class SettingsService extends UiDataGridService {
     this.selectedSetting = setting
   }
 
-  getFormFields() {
+  getFormFields(disabled = false) {
     return [
       this.formService.input('key', {
         label: 'Key',
         placeholder: 'Key',
+        disabled,
       }),
       this.formService.select('type', {
         label: 'Type',
@@ -44,18 +45,20 @@ export class SettingsService extends UiDataGridService {
           { label: 'integer', value: 'integer' },
           { label: 'string', value: 'string' },
         ],
+        disabled,
       }),
       this.formService.input('value', {
         label: 'Value',
         placeholder: 'Value',
+        disabled,
       }),
     ]
   }
 
-  getFormConfig() {
+  getFormConfig(disabled = false) {
     return {
       icon: this.icon,
-      fields: this.getFormFields(),
+      fields: this.getFormFields(disabled),
       showCancel: true,
       hasHeader: false,
     }

@@ -1,9 +1,6 @@
 import { Component, ViewChild } from '@angular/core'
 import { Router, ActivatedRoute } from '@angular/router'
 import { UiService } from '@colmena/admin-ui'
-import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/operator/filter'
-import 'rxjs/add/operator/map'
 
 import { SettingsService } from '../settings.service'
 
@@ -16,9 +13,6 @@ import { SettingsService } from '../settings.service'
 export class SettingListComponent {
 
   @ViewChild('grid') private grid
-  public tableConfig: any
-  public items: any[]
-  public systemSettings: any[]
 
   constructor(
     public service: SettingsService,

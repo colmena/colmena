@@ -23,7 +23,7 @@ export class SettingFormComponent implements OnInit {
 
   ngOnInit() {
     this.item = this.service.selectedSetting || new Setting()
-    this.formConfig = this.service.getFormConfig()
+    this.formConfig = this.service.getFormConfig(this.item && this.item.system)
   }
 
   handleAction(event) {
