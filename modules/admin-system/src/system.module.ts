@@ -3,16 +3,14 @@ import { CommonModule } from '@angular/common'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
-
 import { Store } from '@ngrx/store'
-
 import { ColmenaUiModule } from '@colmena/admin-ui'
+
 import { SystemDomainsModule } from './domains/domains.module'
+import { SystemSettingsModule } from './settings/settings.module'
 import { SystemUsersModule } from './users/users.module'
 
 import { SystemDashboardComponent } from './system.component'
-import { SettingsComponent } from './settings/settings.component'
-import { SettingsService } from './settings/settings.service'
 
 import { SystemUserResolver } from './users/users.resolvers'
 
@@ -22,19 +20,16 @@ import { SystemUserResolver } from './users/users.resolvers'
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule,
-
     ColmenaUiModule,
     SystemDomainsModule,
+    SystemSettingsModule,
     SystemUsersModule,
     RouterModule,
   ],
   declarations: [
     SystemDashboardComponent,
-    SettingsComponent,
   ],
   providers: [
-    SettingsService,
     SystemUserResolver,
   ],
   exports: [
