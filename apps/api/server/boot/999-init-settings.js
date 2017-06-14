@@ -42,8 +42,8 @@ module.exports = function(app, cb) {
     .destroyAll({
       system: true,
     })
-    .then(res => log.info(`[system-settings] ${res.count} removed`))
+    .then(res => log.gray(`[system-settings] ${res.count} removed`))
     .then(() => app.models.SystemSetting.create(systemSettings))
-    .then(res => log.info(`[system-settings] ${res.length} added`))
+    .then(res => log.gray(`[system-settings] ${res.length} added`))
     .asCallback(cb)
 }

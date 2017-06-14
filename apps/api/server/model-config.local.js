@@ -9,7 +9,7 @@ const getModelPath = (packageName, path) => `../node_modules/${packageName}/${pa
 getApps()
   .forEach(appName => {
     const app = require(appName)
-    log.info(`[loopback-modules] Registering models from module: ${appName}`)
+    log.white.b(`[loopback-modules] Registering models from module: ${appName}`)
 
     if (app.models) {
       config = Object.assign(config, app.models)

@@ -8,8 +8,8 @@ module.exports = function(app, cb) {
 
   // Check if there is user configured Settings
   if (!config.has('system.initdb') || config.get('system.initdb') === false) {
-    log.info('[sample-data] skipping sample data')
-    return true
+    log.gray.b('[db-migrate] skipping database migration (initdb = false)')
+    return cb()
   }
 
   return Promise.resolve()

@@ -16,9 +16,9 @@ module.exports = function(SystemUser) {
     const enabled = getRegistrationEnabled()
 
     if (enabled) {
-      log.info('User: registration enabled')
+      log.cyan.b('[api-system] User registration enabled')
     } else {
-      log.info('User: registration disabled')
+      log.cyan.b('[api-system] User registration disabled')
     }
 
     // FIXME: I wish there was a way to do this outside of the Model (like a boot script)

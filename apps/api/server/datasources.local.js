@@ -5,7 +5,7 @@ const log = require('@colmena/logger')
 const datasources = {}
 
 if (config.has('mongodb') && config.get('mongodb.url')) {
-  log.info('[data-sources] Using MongoDB config', config.get('mongodb'))
+  log.magenta.b('[data-sources] Configure MongoDB')
   datasources['db'] = {
     name: 'db',
     connector: 'mongodb',
@@ -14,7 +14,7 @@ if (config.has('mongodb') && config.get('mongodb.url')) {
 }
 
 if (config.has('smtp') && config.get('smtp.host') && config.get('smtp.port')) {
-  log.info('[data-sources] Using SMTP config:', config.get('smtp'))
+  log.magenta.b('[data-sources] Configure SMTP')
   datasources['mail'] = {
     connector: 'mail',
     transports: [
