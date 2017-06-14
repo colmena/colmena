@@ -15,6 +15,7 @@ export class FormService {
     }
 
     const toKeys = [
+      'disabled',
       'label',
       'options',
       'placeholder',
