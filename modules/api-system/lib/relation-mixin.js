@@ -1,5 +1,7 @@
 'use strict'
 
+const log = require('@colmena/logger')
+
 const { pluralize } = require('inflection')
 const { camelCase } = require('lodash')
 
@@ -29,7 +31,7 @@ const relationMixin = (ModelFrom, options) => {
 
   ModelFrom.observe('after save', (ctx, next) => {
     if (ctx.instance && !ctx.instance[foreignKey]) {
-      console.warn(`${modelName}: Missing foreignKey ${foreignKey}`)
+      log.warn(`[relation-mixin] Missing foreignKey ${foreignKey} on ${modelName} after save`)
     }
     next()
   })

@@ -5,6 +5,7 @@
   },
   "watch": [
     "common/",
+    "lib/",
     "server/",
     "../../modules/"
   ],

@@ -9,7 +9,6 @@ module.exports = function(Container) {
     const fileInfo = modelInstance.result.files.file[0]
     const metaData = {
       id: `${fileInfo.container}-${fileInfo.name}`,
-      systemDomainId: fileInfo.container,
       name: fileInfo.name,
       type: fileInfo.type,
       size: fileInfo.size,

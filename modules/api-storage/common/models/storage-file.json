@@ -8,9 +8,9 @@
   },
   "mixins": {
     "SystemDomain": {
+      "foreignKey": "container",
       "required": false
-    },
-    "SystemUser": {}
+    }
   },
   "properties": {
     "id": {
