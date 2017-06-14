@@ -2,7 +2,7 @@
 const config = require('config')
 const log = require('@colmena/logger')
 
-const { importSampleData, importSampleFiles } = require('../../lib/loopback-apps')
+const { dbMigrate, dbUpdate } = require('@colmena/api-helpers')
 
 module.exports = function(app, cb) {
 
@@ -13,10 +13,9 @@ module.exports = function(app, cb) {
   }
 
   return Promise.resolve()
-    .then(() => importSampleData(app))
-    .then(() => importSampleFiles(app))
+    .then(() => dbMigrate(app.dataSources.db))
+    .then(() => dbUpdate(app.dataSources.db))
     .then(() => cb())
     .catch(err => cb(err))
 
-
-};
+}

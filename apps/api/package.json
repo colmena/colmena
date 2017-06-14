@@ -32,6 +32,7 @@
   },
   "main": "server/server.js",
   "dependencies": {
+    "@colmena/api-helpers": "0.0.0",
     "@colmena/colmena-component-explorer-style": "1.0.2",
     "@colmena/logger": "0.0.0",
     "@colmena/module-api-content": "0.0.0",
