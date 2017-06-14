@@ -17,7 +17,7 @@
       "type": "String",
       "required": false
     },
-    "fileId": {
+    "storageFileId": {
       "type": "String"
     },
     "title": {

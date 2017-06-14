@@ -58,7 +58,7 @@ export class PagesComponent {
         this.form.show()
         break
       case 'add':
-        this.item = Object.assign({}, { name: null, content: null, fileId: null })
+        this.item = Object.assign({}, { name: null, content: null, storageFileId: null })
         this.form.title = 'Add Page'
         this.form.show()
         break

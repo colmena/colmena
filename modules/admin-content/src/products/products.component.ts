@@ -58,7 +58,7 @@ export class ProductsComponent {
         this.form.show()
         break
       case 'add':
-        this.item = Object.assign({}, { name: null, sku: null, description: null, fileId: null })
+        this.item = Object.assign({}, { name: null, sku: null, description: null, storageFileId: null })
         this.form.title = 'Add Product'
         this.form.show()
         break

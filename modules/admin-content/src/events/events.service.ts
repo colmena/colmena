@@ -32,7 +32,7 @@ export class EventsService extends UiDataGridService {
       label: 'Location',
       placeholder: 'Location'
     }),
-    this.formService.select('fileId', {
+    this.formService.select('storageFileId', {
       label: 'File',
       options: this.files
     }),

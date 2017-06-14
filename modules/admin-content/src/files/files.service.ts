@@ -42,7 +42,7 @@ export class FilesService extends UiDataGridService {
   getUploadUrl() {
     const apiConfig = JSON.parse(window.localStorage.getItem('apiConfig'))
 
-    return [ apiConfig.baseUrl, apiConfig.version, 'Containers', this.domain.id, 'upload' ].join('/')
+    return [ apiConfig.baseUrl, apiConfig.version, 'StorageContainers', this.domain.id, 'upload' ].join('/')
   }
 
   getItems() {

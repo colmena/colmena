@@ -24,7 +24,7 @@ export class PostsService extends UiDataGridService {
       label: 'Content',
       placeholder: 'Content'
     }),
-    this.formService.select('fileId', {
+    this.formService.select('storageFileId', {
       label: 'File',
       options: this.files
     }),

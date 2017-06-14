@@ -30,7 +30,7 @@ export class ProductsService extends UiDataGridService {
       label: 'Description',
       placeholder: 'Description'
     }),
-    this.formService.select('fileId', {
+    this.formService.select('storageFileId', {
       label: 'File',
       options: this.files
     }),

@@ -13,7 +13,7 @@
       "type": "String",
       "required": true
     },
-    "fileId": {
+    "storageFileId": {
       "type": "String"
     },
     "name": {

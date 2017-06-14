@@ -4,17 +4,19 @@ const log = require('@colmena/logger')
 const request = require('request')
 
 module.exports = function(Container) {
+
   Container.afterRemote('upload', (ctx, modelInstance) => {
     const fileInfo = modelInstance.result.files.file[0]
     const metaData = {
       id: `${fileInfo.container}-${fileInfo.name}`,
+      systemDomainId: fileInfo.container,
       name: fileInfo.name,
       type: fileInfo.type,
       size: fileInfo.size,
       container: fileInfo.container,
     }
 
-    return Container.app.models.File.upsert(metaData)
+    return Container.app.models.StorageFile.upsert(metaData)
   })
 
   // Promisified wrapper function to find or create a container by name

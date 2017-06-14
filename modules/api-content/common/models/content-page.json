@@ -16,7 +16,7 @@
     "domainId": {
       "type": "String"
     },
-    "fileId": {
+    "storageFileId": {
       "type": "String"
     },
     "name": {

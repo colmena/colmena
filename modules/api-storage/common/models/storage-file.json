@@ -36,19 +36,19 @@
   "relations": {
     "events": {
       "type": "hasMany",
-      "model": "Event"
+      "model": "ContentEvent"
     },
     "pages": {
       "type": "hasMany",
-      "model": "Page"
+      "model": "ContentPage"
     },
     "posts": {
       "type": "hasMany",
-      "model": "Post"
+      "model": "ContentPost"
     },
     "products": {
       "type": "hasMany",
-      "model": "Product"
+      "model": "ContentProduct"
     }
   },
   "acls": [],

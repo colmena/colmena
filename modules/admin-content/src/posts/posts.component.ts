@@ -58,7 +58,7 @@ export class PostsComponent {
         this.form.show()
         break
       case 'add':
-        this.item = Object.assign({}, { title: null, content: null, fileId: null })
+        this.item = Object.assign({}, { title: null, content: null, storageFileId: null })
         this.form.title = 'Add Post'
         this.form.show()
         break
