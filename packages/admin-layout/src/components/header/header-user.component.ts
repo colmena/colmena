@@ -5,9 +5,10 @@ import { get } from 'lodash'
 @Component({
   selector: 'layout-header-user',
   template: `
-    <li class="nav-item dropdown px-1" dropdown>
+    <li class="nav-item dropdown pr-1" dropdown>
       <a class="nav-link dropdown-toggle"
          data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle>
+        <img class="img-avatar" [src]="user?.avatar">
         <span class="hidden-md-down">
           {{user?.firstName}} {{user?.lastName}}
         </span>
@@ -19,6 +20,12 @@ import { get } from 'lodash'
       </div>
     </li>
   `,
+  styles: [`
+    .avatar {
+      height: 50px;
+      width: 50px;
+    }
+  `]
 })
 export class HeaderUserComponent {
 
