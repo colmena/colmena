@@ -3,13 +3,24 @@ import { Component, Input } from '@angular/core'
 @Component({
   selector: 'app-user-header',
   template: `
-    <h5 class="my-2">
+    <h5>
       <span *ngIf="user; else message">
-        {{user.firstName}} {{user.lastName}} <small>{{user.email}}</small>
+        <img [src]="user.avatar">
+        {{user.fullName}} <small>{{user.email}}</small>
       </span>
       <ng-template #message>Add new user</ng-template>
     </h5>
   `,
+  styles: [`
+    h5 {
+      padding: 10px 0;
+    }
+    img {
+      height: 50px;
+      width: 50px;
+      margin-right: 10px;
+    }
+  `]
 })
 export class UserHeaderComponent {
 

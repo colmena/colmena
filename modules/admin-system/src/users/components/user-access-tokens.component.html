@@ -8,7 +8,7 @@
             <th>Created</th>
             <th>TTL <small>(seconds)</small></th>
             <th [style.text-align]="'right'">
-              <button (click)="handleAction({ type: 'generateToken'})" type="button" class="btn btn-primary">
+              <button (click)="handleAction({ type: 'generateToken'})" type="button" class="btn btn-primary btn-sm">
                 <i class="fa fa-plus"></i> &nbsp; Generate Token
               </button>
             </th>
@@ -39,7 +39,7 @@
   </div>
   <div class="row justify-content-end">
     <div class="col" [style.text-align]="'right'">
-      <button (click)="handleAction({ type: 'deleteAllTokens' })" class="btn btn-outline-danger ml-auto mr-1">
+      <button (click)="handleAction({ type: 'deleteAllTokens' })" class="btn btn-outline-danger btn-sm ml-auto mr-1">
         <i class="fa fa-minus"></i> &nbsp; Delete All Tokens
       </button>
     </div>

@@ -16,10 +16,8 @@ export class UsersService extends UiDataGridService {
   public selectedUser: any
 
   public tableColumns = [
-    { field: 'firstName', label: 'First name', action: 'edit' },
-    { field: 'lastName', label: 'Last name', action: 'edit' },
+    { field: 'fullName', label: 'Name', action: 'edit' },
     { field: 'email', label: 'Email' },
-    { field: 'realm', label: 'Domain' },
   ]
 
   constructor(
@@ -47,14 +45,6 @@ export class UsersService extends UiDataGridService {
 
   getFormFields(editForm = false) {
     const fields = [
-      this.formService.select('realm', {
-        label: 'Domain',
-        options: this.domains,
-      }),
-      this.formService.email('email', {
-        label: 'Email address',
-        placeholder: 'Email address',
-      }),
       this.formService.input('firstName', {
         label: 'First name',
         placeholder: 'First name',
@@ -62,6 +52,10 @@ export class UsersService extends UiDataGridService {
       this.formService.input('lastName', {
         label: 'Last name',
         placeholder: 'Last name',
+      }),
+      this.formService.email('email', {
+        label: 'Email address',
+        placeholder: 'Email address',
       }),
     ]
     // Only show password field if we're not on the edit form
