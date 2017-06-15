@@ -14,10 +14,6 @@ export class AuthService {
   ) {
   }
 
-  getDomainId() {
-    return this.user.realm || null
-  }
-
   login(credentials) {
     return this.userApi.login(credentials)
   }

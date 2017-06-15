@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { LoopBackAuth, SDKToken } from '@colmena/admin-lb-sdk'
 
@@ -26,21 +26,21 @@ import { AuthService } from '../../auth.service'
     </ui-message>
   `
 })
-export class ResetComponent {
-  private token: string = null
+export class ResetComponent implements OnInit {
+
   public user: any = {
     password: '',
     verify: '',
   }
-  public realms: any[] = []
 
   constructor(
     private loopBackAuth: LoopBackAuth,
     private authService: AuthService,
     private route: ActivatedRoute,
-  ) {
+  ) { }
+
+  ngOnInit() {
     this.route.queryParams.subscribe((params: any) => {
-      console.log('setting token', params.token)
       this.loopBackAuth.setToken(new SDKToken({ id: params.token, created: new Date() }))
     })
   }

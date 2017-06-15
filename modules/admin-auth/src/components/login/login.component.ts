@@ -6,14 +6,6 @@ import * as auth from '../../state/auth.actions'
 @Component({
   template: `
     <ui-message>
-      <div class="input-group mb-1" *ngIf="settings.multiDomain">
-        <span class="input-group-addon">
-          <i class="icon-globe"></i>
-        </span>
-        <select [(ngModel)]="credentials.realm" name="realm" id="realm" class="form-control">
-          <option *ngFor="let domain of domains" [value]="domain.id">{{domain.name}}</option>
-        </select>
-      </div>
       <div class="input-group mb-1">
         <span class="input-group-addon">
           <i class="icon-user"></i>
@@ -48,11 +40,9 @@ import * as auth from '../../state/auth.actions'
 })
 export class LoginComponent {
 
-  public domains: any[]
   public settings: any
 
   public credentials = {
-    realm: 'default',
     email: '',
     password: '',
   }
@@ -63,7 +53,6 @@ export class LoginComponent {
     this.store
       .select('app')
       .subscribe((res: any) => {
-        this.domains = res.domains
         this.settings = res.settings
 
         if (this.settings.nodeEnv === 'development') {
