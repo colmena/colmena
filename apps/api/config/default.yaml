@@ -12,7 +12,6 @@ mongodb:
 
 settings:
   registrationEnabled: true
-  multiDomain: true
 
 smtp:
   host: false
