@@ -27,6 +27,7 @@
     "clean": "rimraf ./client/*",
     "build": "npm run clean && cp -rv ../admin/dist/* ./client/",
     "dev": "nodemon",
+    "initdb": "node bin/initdb",
     "start": "node .",
     "test": "true"
   },

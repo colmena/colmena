@@ -36,6 +36,7 @@
     "dev": "lerna run dev --stream",
     "dev:admin": "lerna run dev --stream --scope @colmena/admin",
     "dev:api": "lerna run dev --stream --scope @colmena/api",
+    "initdb": "cd apps/api && node bin/initdb",
     "servers": "npm run servers:start",
     "servers:logs": "docker-compose logs -f",
     "servers:start": "docker-compose up -d",
