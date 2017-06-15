@@ -23,3 +23,4 @@ storage:
 
 system:
   initdb: false
+  migratedb: false
