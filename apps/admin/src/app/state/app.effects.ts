@@ -26,6 +26,11 @@ export class AppEffects {
     })
 
   @Effect({ dispatch: false })
+  removeToken$ = this.actions$
+    .ofType('AUTH_REMOVE_TOKEN')
+    .do(() => window.localStorage.removeItem('token'))
+
+  @Effect({ dispatch: false })
   redirectDashboard: Observable<Action> = this.actions$
     .ofType(app.ActionTypes.APP_REDIRECT_DASHBOARD)
     .do(() => this.router.navigate(['/', 'dashboard']))
@@ -33,7 +38,10 @@ export class AppEffects {
   @Effect({ dispatch: false })
   redirectLogin: Observable<Action> = this.actions$
     .ofType(app.ActionTypes.APP_REDIRECT_LOGIN)
-    .do(() => this.router.navigate(['/', 'login']))
+    .do(() => {
+      this.store.dispatch({ type: 'AUTH_REMOVE_TOKEN' })
+      this.router.navigate(['/', 'login'])
+    })
 
   @Effect({ dispatch: false })
   redirectRouter: Observable<Action> = this.actions$
