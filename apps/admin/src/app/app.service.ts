@@ -38,6 +38,8 @@ export class AppService {
   ) {
     if (window.localStorage.getItem('domain')) {
       this.store.dispatch({ type: 'APP_DOMAIN_SET', payload: JSON.parse(window.localStorage.getItem('domain'))})
+    } else {
+      this.store.dispatch({ type: 'APP_DOMAIN_SET_DEFAULT' })
     }
     if (window.localStorage.getItem('token')) {
       this.store.dispatch({ type: 'AUTH_CHECK_TOKEN' })

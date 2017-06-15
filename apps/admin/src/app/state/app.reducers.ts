@@ -26,7 +26,10 @@ export function reducer(state = initialState, action: Action): State {
       return Object.assign({}, state, { development: true })
 
     case 'APP_DOMAIN_ADD':
-      return Object.assign({}, state, { domains: [...state.domains, action.payload] })
+      return Object.assign({}, state, {
+        domains: [...state.domains, action.payload ],
+        activeDomain: state.activeDomain || action.payload,
+      })
 
     case 'APP_DOMAIN_SELECT':
     case 'APP_DOMAIN_SET':
