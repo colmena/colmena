@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store'
   selector: 'app-content-dashboard',
   template: `
     <div class="row">
-      <div class="col-md-3" *ngFor="let widget of widgets">
+      <div class="col-md-4" *ngFor="let widget of widgets">
         <ui-dashboard-icon
           [routerLink]="widget.link"
           [count]="widget.count"
@@ -17,10 +17,10 @@ import { Store } from '@ngrx/store'
     </div>
   `,
   styles: [`
-    ui-card { 
+    ui-card {
       cursor: pointer;
     }
-    ui-card h4 { 
+    ui-card h4 {
       margin: 0;
     }
   `]

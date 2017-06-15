@@ -11,6 +11,8 @@ import { SystemSettingsModule } from './settings/settings.module'
 import { SystemUsersModule } from './users/users.module'
 
 import { SystemDashboardComponent } from './system.component'
+import { SystemInfoComponent } from './system-info.component'
+import { SystemModulesComponent } from './system-modules.component'
 
 import { SystemUserResolver } from './users/users.resolvers'
 
@@ -28,6 +30,8 @@ import { SystemUserResolver } from './users/users.resolvers'
   ],
   declarations: [
     SystemDashboardComponent,
+    SystemInfoComponent,
+    SystemModulesComponent,
   ],
   providers: [
     SystemUserResolver,

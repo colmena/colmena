@@ -15,12 +15,14 @@ import { Store } from '@ngrx/store'
         </ui-dashboard-icon>
       </div>
     </div>
+    <app-system-info></app-system-info>
+    <app-system-modules></app-system-modules>
   `,
   styles: [`
-    ui-card { 
+    ui-card {
       cursor: pointer;
     }
-    ui-card h4 { 
+    ui-card h4 {
       margin: 0;
     }
   `]
