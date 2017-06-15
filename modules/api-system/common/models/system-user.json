@@ -12,7 +12,8 @@
   "mixins": {
     "Computed": {
       "properties": {
-        "avatar": "getAvatarUrl"
+        "avatar": "getAvatarUrl",
+        "fullName": "getFullName"
       }
     },
     "ReadOnly": {
@@ -49,6 +50,9 @@
     "lastName": {
       "type": "String",
       "required": true
+    },
+    "fullName": {
+      "type": "String"
     },
     "avatar": {
       "type": "String"
