@@ -6,7 +6,7 @@ import { SystemSettingsRoutes } from './settings/settings.routes'
 import { SystemUsersRoutes } from './users/users.routes'
 
 export const SystemModuleRoutes: Routes = [{
-  path: 'system',
+  path: '',
   data: {
     title: 'System',
   },

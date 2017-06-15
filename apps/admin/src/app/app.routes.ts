@@ -19,29 +19,24 @@ const simpleRoutes = [
   ...AuthModuleRoutes,
 ]
 
-const contentRoute = {
-  path: 'content',
-  canActivate: [HasContentAccess],
-  resolve: { domain: DomainResolver },
-  children: ContentModuleRoutes,
-}
-
-const dashboardRoute = {
-  path: '',
-  children: DashboardModuleRoutes,
-}
-
-const devRoute = {
-  path: '',
-  canActivate: [HasSystemAccess],
-  children: DevModuleRoutes,
-}
-
 const fullRoutes = [
-  contentRoute,
-  dashboardRoute,
-  devRoute,
-  ...SystemModuleRoutes,
+  {
+    path: 'content',
+    canActivate: [HasContentAccess],
+    resolve: { domain: DomainResolver },
+    children: ContentModuleRoutes,
+  }, {
+    path: '',
+    children: DashboardModuleRoutes,
+  }, {
+    path: '',
+    canActivate: [HasSystemAccess],
+    children: DevModuleRoutes,
+  }, {
+    path: 'system',
+    canActivate: [HasSystemAccess],
+    children: SystemModuleRoutes,
+  }
 ]
 
 const routes = [
