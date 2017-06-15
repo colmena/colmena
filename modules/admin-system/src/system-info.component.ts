@@ -46,6 +46,7 @@ export class SystemInfoComponent implements OnInit {
 
   ngOnInit() {
     this.poll()
+  }
 
   poll() {
     this.systemApi.ping().subscribe(res => this.ping = res)
