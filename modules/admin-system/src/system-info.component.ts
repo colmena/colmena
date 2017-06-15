@@ -46,8 +46,6 @@ export class SystemInfoComponent implements OnInit {
 
   ngOnInit() {
     this.poll()
-    setInterval(() => this.poll(), 1000)
-  }
 
   poll() {
     this.systemApi.ping().subscribe(res => this.ping = res)
