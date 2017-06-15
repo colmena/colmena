@@ -1,22 +1,20 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Store } from '@ngrx/store'
 
 @Component({
   template: `<ui-message [message]="'Redirecting.'"></ui-message>`,
 })
-export class RouterComponent {
+export class RouterComponent implements OnInit {
 
   constructor(
     private store: Store<any>,
-  ) {
+  ) { }
+
+  ngOnInit() {
     this.store
       .select('auth')
       .subscribe((res: any) => {
-        console.log('res', res)
-        if (res.loggedIn) {
-          return this.store.dispatch({ type: 'APP_REDIRECT_DASHBOARD' })
-        }
-        return this.store.dispatch({ type: 'APP_REDIRECT_LOGIN' })
+        return this.store.dispatch({ type: res.loggedIn ? 'APP_REDIRECT_DASHBOARD' : 'APP_REDIRECT_LOGIN' })
       })
   }
 }

@@ -40,6 +40,7 @@ export class AppService {
       this.store.dispatch({ type: 'APP_DOMAIN_SET', payload: JSON.parse(window.localStorage.getItem('domain'))})
     }
     if (window.localStorage.getItem('token')) {
+      this.store.dispatch({ type: 'AUTH_CHECK_TOKEN' })
       this.store.dispatch({ type: 'AUTH_SET_TOKEN', payload: JSON.parse(window.localStorage.getItem('token'))})
     }
     if (window.localStorage.getItem('roles')) {

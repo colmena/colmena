@@ -112,6 +112,32 @@ export class AuthEffects {
         })
     })
 
+  @Effect({ dispatch: false })
+  checkToken: Observable<Action> = this.actions$
+    .ofType(auth.ActionTypes.AUTH_CHECK_TOKEN)
+    .do(() => this.userApi.getCurrent()
+      .subscribe(
+        (success) => this.store.dispatch(new auth.AuthCheckTokenSuccessAction(success)),
+        (error) => this.store.dispatch(new auth.AuthCheckTokenErrorAction(error)),
+      )
+    )
+
+  @Effect({ dispatch: false })
+  checkTokenError: Observable<Action> = this.actions$
+    .ofType(auth.ActionTypes.AUTH_CHECK_TOKEN_ERROR)
+    .do((action) => {
+      this.ui.toastError('Invalid Token', 'Redirecting to login screen')
+      return this.store.dispatch({ type: 'APP_REDIRECT_LOGIN' })
+    })
+
+  @Effect({ dispatch: false })
+  checkTokenSuccess: Observable<Action> = this.actions$
+    .ofType(auth.ActionTypes.AUTH_CHECK_TOKEN_SUCCESS)
+    .do(() => {
+      this.ui.toastSuccess('Valid Token', 'It all looks good :)')
+      return true
+    })
+
   constructor(
     private actions$: Actions,
     private store: Store<any>,

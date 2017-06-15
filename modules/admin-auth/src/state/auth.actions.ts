@@ -16,6 +16,9 @@ export const ActionTypes = {
   AUTH_REGISTER:              'AUTH_REGISTER',
   AUTH_REGISTER_ERROR:        'AUTH_REGISTER_ERROR',
   AUTH_REGISTER_SUCCESS:      'AUTH_REGISTER_SUCCESS',
+  AUTH_CHECK_TOKEN:           'AUTH_CHECK_TOKEN',
+  AUTH_CHECK_TOKEN_ERROR:     'AUTH_CHECK_TOKEN_ERROR',
+  AUTH_CHECK_TOKEN_SUCCESS:   'AUTH_CHECK_TOKEN_SUCCESS',
 }
 
 type credentials = {
@@ -94,6 +97,20 @@ export class AuthRegisterSuccessAction implements Action {
   constructor(public payload: any) { }
 }
 
+/** AUTH_CHECK_TOKEN **/
+export class AuthCheckTokenAction implements Action {
+  type = ActionTypes.AUTH_CHECK_TOKEN
+  constructor(public payload: any) { }
+}
+export class AuthCheckTokenErrorAction implements Action {
+  type = ActionTypes.AUTH_CHECK_TOKEN_ERROR
+  constructor(public payload: any) { }
+}
+export class AuthCheckTokenSuccessAction implements Action {
+  type = ActionTypes.AUTH_CHECK_TOKEN_SUCCESS
+  constructor(public payload: any) { }
+}
+
 export type Actions
   = AuthLoginAction
   | AuthLoginErrorAction
@@ -110,3 +127,6 @@ export type Actions
   | AuthRegisterAction
   | AuthRegisterErrorAction
   | AuthRegisterSuccessAction
+  | AuthCheckTokenAction
+  | AuthCheckTokenErrorAction
+  | AuthCheckTokenSuccessAction
