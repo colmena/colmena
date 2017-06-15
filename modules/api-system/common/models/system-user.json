@@ -88,7 +88,7 @@
       "accessType": "READ",
       "principalType": "ROLE",
       "principalId": "$unauthenticated",
-      "permission": "ALLOW"
+      "permission": "DENY"
     },
     {
       "accessType": "READ",
