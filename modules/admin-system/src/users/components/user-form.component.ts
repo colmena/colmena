@@ -2,28 +2,28 @@ import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { UiService } from '@colmena/admin-ui'
 
-import { Setting, SettingsService } from '../settings.service'
+import { User, UsersService } from '../users.service'
 
 @Component({
-  selector: 'app-setting-form',
+  selector: 'app-user-form',
   template: `
     <ui-form *ngIf="item" [config]="formConfig" [item]="item" (action)="handleAction($event)"></ui-form>
   `,
 })
-export class SettingFormComponent implements OnInit {
+export class UserFormComponent implements OnInit {
 
   public formConfig: any = {}
   public item: any
 
   constructor(
-    private service: SettingsService,
+    private service: UsersService,
     private uiService: UiService,
     private router: Router,
   ) { }
 
   ngOnInit() {
-    this.item = this.service.selectedSetting || new Setting()
-    this.formConfig = this.service.getFormConfig(this.item && this.item.system)
+    this.item = this.service.selectedUser && this.service.selectedUser['user'] || new User()
+    this.formConfig = this.service.getFormConfig(this.item && this.item.id)
   }
 
   handleAction(event) {
@@ -32,13 +32,14 @@ export class SettingFormComponent implements OnInit {
         return this.service.upsertItem(
           event.item,
           () => {
-            this.uiService.toastSuccess('Save Setting Success', `<u>${event.item.key}</u> has been saved successfully`)
+            this.uiService.toastSuccess('Update Profile Success',
+              `<u>${event.item.username}</u>'s profile has been ${event.item.id ? 'created' : 'updated '} successfully'`)
             this.handleAction({ action: 'cancel' })
           },
-          err => this.uiService.toastError('Save Setting Fail', err.message)
+          err => this.uiService.toastError('Update Profile Fail', err.message)
         )
       case 'cancel':
-        return this.router.navigate(['/system/settings'])
+        return this.router.navigate(['/system/users'])
       default:
         return console.log('Unknown event action:', event)
     }

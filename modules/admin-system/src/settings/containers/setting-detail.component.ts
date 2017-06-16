@@ -24,6 +24,7 @@ import { NavTabLink } from '../components/setting-tabs.component'
   `],
 })
 export class SettingDetailComponent implements OnInit {
+
   public tabs: NavTabLink[] = [
     { icon: 'fa fa-pencil', title: 'Edit', link: 'edit' },
   ]

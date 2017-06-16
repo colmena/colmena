@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute, Router } from '@angular/router'
-import { UiService } from '@colmena/admin-ui'
+import { ActivatedRoute } from '@angular/router'
 
 import { User, UsersService } from '../users.service'
 import { NavTabLink } from '../components/user-tabs.component'
@@ -33,21 +32,22 @@ export class UserDetailComponent implements OnInit {
     { icon: 'fa fa-tags', title: 'Roles', link: 'roles' },
   ]
 
-  public item: any
+  public item: any = {}
 
   constructor(
     public service: UsersService,
-    public uiService: UiService,
-    private router: Router,
     private route: ActivatedRoute,
   ) {
   }
 
   ngOnInit() {
     this.item = this.route.snapshot.data.systemUser
+
+    console.log(this.item)
     if (!this.item) {
-      this.item = new User()
-      this.tabs = this.tabs.splice(0, 1)
+      this.tabs = [
+        { icon: 'fa fa-plus', title: 'Create', link: '' },
+      ]
     }
     this.service.setSelectedUser(this.item)
   }

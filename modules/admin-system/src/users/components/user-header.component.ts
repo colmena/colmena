@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core'
         <img [src]="user.avatar">
         {{user.fullName}} <small>{{user.email}}</small>
       </span>
-      <ng-template #message>Add new user</ng-template>
+      <ng-template #message>Add New User</ng-template>
     </h5>
   `,
   styles: [`

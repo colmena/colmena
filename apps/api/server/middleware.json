@@ -39,7 +39,7 @@
         "${restApiRoot}"
       ]
     },
-    "./middleware/publish-config.js": {
+    "@colmena/api-helpers/src/publish-config.js": {
       "paths": [
         "/config.js"
       ]
