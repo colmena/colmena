@@ -11,11 +11,7 @@ export const SystemSettingsRoutes: Routes = [
     path: 'settings',
     data: { title: 'Settings' },
     children: [
-      {
-        path: '',
-        redirectTo: 'list',
-        pathMatch: 'full',
-      },
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
       {
         path: 'list',
         component: SettingListComponent,
@@ -40,11 +36,7 @@ export const SystemSettingsRoutes: Routes = [
         },
         data: { title: 'setting' },
         children: [
-          {
-            path: '',
-            redirectTo: 'edit',
-            pathMatch: 'full',
-          },
+          { path: '', redirectTo: 'edit', pathMatch: 'full' },
           {
             path: 'edit',
             component: SettingFormComponent,

@@ -11,11 +11,7 @@ export const SystemDomainsRoutes: Routes = [
     path: 'domains',
     data: { title: 'Domains' },
     children: [
-      {
-        path: '',
-        redirectTo: 'list',
-        pathMatch: 'full',
-      },
+      { path: '', redirectTo: 'list', pathMatch: 'full' },
       {
         path: 'list',
         component: DomainListComponent,
@@ -40,11 +36,7 @@ export const SystemDomainsRoutes: Routes = [
         },
         data: { title: 'domain' },
         children: [
-          {
-            path: '',
-            redirectTo: 'edit',
-            pathMatch: 'full',
-          },
+          { path: '', redirectTo: 'edit', pathMatch: 'full' },
           {
             path: 'edit',
             component: DomainFormComponent,

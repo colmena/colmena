@@ -10,7 +10,7 @@ import { UserListComponent } from './containers/user-list.component'
 import { UserAccessTokensComponent } from './components/user-access-tokens.component'
 import { UserHeaderComponent } from './components/user-header.component'
 import { UserPasswordComponent } from './components/user-password.component'
-import { UserProfileComponent } from './components/user-profile.component'
+import { UserFormComponent } from './components/user-form.component'
 import { UserRolesComponent } from './components/user-roles.component'
 import { UserTabsComponent } from './components/user-tabs.component'
 
@@ -31,7 +31,7 @@ import { UsersService } from './users.service'
     UserAccessTokensComponent,
     UserHeaderComponent,
     UserPasswordComponent,
-    UserProfileComponent,
+    UserFormComponent,
     UserRolesComponent,
     UserTabsComponent,
   ],

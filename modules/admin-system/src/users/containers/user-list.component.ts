@@ -26,9 +26,9 @@ export class UserListComponent {
   action(event) {
     switch (event.action) {
       case 'edit':
-        return this.router.navigate([event.item.id], { relativeTo: this.route })
+        return this.router.navigate([event.item.id], { relativeTo: this.route.parent })
       case 'add':
-        return this.router.navigate(['add'], { relativeTo: this.route })
+        return this.router.navigate(['create'], { relativeTo: this.route.parent })
       case 'delete':
         const successCb = () => this.service
           .deleteItem(event.item,

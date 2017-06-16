@@ -33,9 +33,10 @@ export class DomainFormComponent implements OnInit {
           event.item,
           () => {
             this.uiService.toastSuccess('Save Domain Success', `<u>${event.item.name}</u> has been saved successfully`)
+            this.handleAction({ action: 'cancel' })
           },
           err => this.uiService.toastError('Save Domain Fail', err.message)
-        ).add(() => this.router.navigate(['/system/domains']))
+        )
       case 'cancel':
         return this.router.navigate(['/system/domains'])
       default:
