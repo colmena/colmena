@@ -13,16 +13,15 @@ import { LoopBackConfig, SDKBrowserModule } from '@colmena/admin-lb-sdk'
 import { ColmenaLayoutModule } from '@colmena/admin-layout'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
-import { CoreModule } from '@colmena/module-admin-core'
-
 // Local Components/Routes/Services
 import { AppComponent } from './app.component'
-import { appRoutes } from './app.routes'
+import { AppRoutingModule } from './app-routing.module'
 import { AppService } from './app.service'
 import { LogService } from './log.service'
 import { AppStoreModule } from './app.store'
-import { DomainResolver } from './app.resolvers'
-import { UserLoggedIn } from './app.guards'
+
+import { NotFoundComponent } from './components/not-found/not-found.component'
+import { RouterComponent } from './components/router/router.component'
 
 @NgModule({
   imports: [
@@ -35,20 +34,17 @@ import { UserLoggedIn } from './app.guards'
     ColmenaLayoutModule,
     ColmenaUiModule,
 
-    CoreModule,
-
     AppStoreModule,
-    appRoutes,
+    AppRoutingModule,
   ],
   providers: [
     AppService,
     LogService,
-    DomainResolver,
-
-    UserLoggedIn,
   ],
   declarations: [
     AppComponent,
+    NotFoundComponent,
+    RouterComponent,
   ],
   bootstrap: [
     AppComponent,
