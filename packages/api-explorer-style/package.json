@@ -1,0 +1,6 @@
+{
+  "name": "@colmena/api-explorer-style",
+  "version": "0.0.0",
+  "description": "Colmena style for the Loopback API Explorer",
+  "license": "MIT"
+}
