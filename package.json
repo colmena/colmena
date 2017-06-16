@@ -91,7 +91,7 @@
     "prettier": "1.4.4",
     "reselect": "3.0.1",
     "rimraf": "2.6.1",
-    "rxjs": "5.4.0",
+    "rxjs": "5.4.1",
     "simple-line-icons": "2.4.1",
     "sweetalert2": "6.6.5",
     "tslint": "5.4.3",
