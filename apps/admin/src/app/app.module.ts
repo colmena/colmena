@@ -24,9 +24,11 @@ import { NotFoundComponent } from './components/not-found/not-found.component'
 import { RouterComponent } from './components/router/router.component'
 
 import { ContentConfigModule } from '@colmena/module-admin-content'
+import { SystemConfigModule } from '@colmena/module-admin-system'
 
 const moduleConfigs = [
   ContentConfigModule,
+  SystemConfigModule
 ]
 
 
