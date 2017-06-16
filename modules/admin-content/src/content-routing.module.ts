@@ -9,11 +9,16 @@ import { PagesComponent } from './pages/pages.component'
 import { PostsComponent } from './posts/posts.component'
 import { ProductsComponent } from './products/products.component'
 
-export const ContentModuleRoutes: Routes = [ {
-  path: '',
+import { HasContentAccess } from './content.guards'
+import { DomainResolver } from './content.resolvers'
+
+export const routes: Routes = [ {
+  path: 'content',
   data: {
     title: 'Content',
   },
+  canActivate: [HasContentAccess],
+  resolve: { domain: DomainResolver },
   children: [
     { path: '', component: ContentDashboardComponent, data: { title: 'Dashboard' } },
     { path: 'events', component: EventsComponent, data: { title: 'Events' } },
@@ -25,7 +30,7 @@ export const ContentModuleRoutes: Routes = [ {
 } ]
 
 @NgModule({
-  imports: [RouterModule.forChild(ContentModuleRoutes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ContentRoutesModule { }
+export class ContentRoutingModule { }

@@ -14,7 +14,7 @@ import { ColmenaLayoutModule } from '@colmena/admin-layout'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
 import { AuthModule } from '@colmena/module-admin-auth'
-import { ContentModule } from '@colmena/module-admin-content'
+
 import { CoreModule } from '@colmena/module-admin-core'
 
 import { SystemModule } from '@colmena/module-admin-system'
@@ -27,7 +27,7 @@ import { AppService } from './app.service'
 import { LogService } from './log.service'
 import { AppStoreModule } from './app.store'
 import { DomainResolver } from './app.resolvers'
-import { HasContentAccess, HasSystemAccess, UserLoggedIn } from './app.guards'
+import { HasSystemAccess, UserLoggedIn } from './app.guards'
 
 @NgModule({
   imports: [
@@ -41,7 +41,7 @@ import { HasContentAccess, HasSystemAccess, UserLoggedIn } from './app.guards'
     ColmenaUiModule,
 
     AuthModule,
-    ContentModule,
+
     CoreModule,
 
     SystemModule,
@@ -53,7 +53,7 @@ import { HasContentAccess, HasSystemAccess, UserLoggedIn } from './app.guards'
     AppService,
     LogService,
     DomainResolver,
-    HasContentAccess,
+
     HasSystemAccess,
     UserLoggedIn,
   ],

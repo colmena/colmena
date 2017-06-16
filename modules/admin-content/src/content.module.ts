@@ -27,6 +27,11 @@ import { PagesService } from './pages/pages.service'
 import { PostsService } from './posts/posts.service'
 import { ProductsService } from './products/products.service'
 
+import { HasContentAccess } from './content.guards'
+import { DomainResolver } from './content.resolvers'
+
+import { ContentRoutingModule } from './content-routing.module'
+
 const components = [
   EventComponent,
   EventsComponent,
@@ -46,6 +51,9 @@ const providers = [
   PagesService,
   PostsService,
   ProductsService,
+
+  HasContentAccess,
+  DomainResolver,
 ]
 
 @NgModule({
@@ -57,6 +65,8 @@ const providers = [
     RouterModule,
 
     ColmenaUiModule,
+
+    ContentRoutingModule,
   ],
   declarations: [
     ContentDashboardComponent,
