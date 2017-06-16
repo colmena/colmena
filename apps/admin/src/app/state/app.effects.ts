@@ -10,6 +10,21 @@ import * as app from './app.actions'
 @Injectable()
 export class AppEffects {
 
+
+
+
+  @Effect({ dispatch: false })
+  loadModule$ = this.actions$
+    .ofType('APP_LOAD_MODULE')
+    .do(action => {
+      const { moduleConfig } = action.payload
+
+      moduleConfig.topLinks.forEach(payload => this.store.dispatch({ type: 'LAYOUT_HEADER_NAV', payload }))
+      moduleConfig.sidebarLinks.forEach(payload => this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload }))
+      moduleConfig.dashboardLinks.forEach(payload => this.store.dispatch({ type: 'APP_CONTENT_DASHBOARD', payload }))
+    })
+
+
   @Effect({ dispatch: false })
   domainsAdd$ = this.actions$
     .ofType('APP_DOMAIN_ADD')

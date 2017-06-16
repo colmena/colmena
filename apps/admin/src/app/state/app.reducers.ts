@@ -2,12 +2,13 @@ import { sortBy } from 'lodash'
 import { Action, ActionReducer } from '@ngrx/store'
 
 export interface State {
-  activeDomain: any;
-  development: boolean;
-  domains: any[];
-  settings: any;
-  contentDashboard: any[];
-  systemDashboard: any[];
+  activeDomain: any
+  development: boolean
+  domains: any[]
+  settings: any
+  contentDashboard: any[]
+  systemDashboard: any[]
+  modules: any
 }
 
 const initialState: any = {
@@ -17,10 +18,16 @@ const initialState: any = {
   settings: {},
   contentDashboard: [],
   systemDashboard: [],
+  modules: {}
 }
 
 export function reducer(state = initialState, action: Action): State {
   switch (action.type) {
+
+    case 'APP_LOAD_MODULE':
+      const modules = state.modules
+      modules[action.payload.moduleName] = action.payload.moduleConfig
+      return Object.assign({}, state, modules)
 
     case 'APP_DEVELOPMENT_ENABLE':
       return Object.assign({}, state, { development: true })

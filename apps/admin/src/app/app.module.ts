@@ -23,6 +23,13 @@ import { AppStoreModule } from './app.store'
 import { NotFoundComponent } from './components/not-found/not-found.component'
 import { RouterComponent } from './components/router/router.component'
 
+import { ContentConfigModule } from '@colmena/module-admin-content'
+
+const moduleConfigs = [
+  ContentConfigModule,
+]
+
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -36,6 +43,8 @@ import { RouterComponent } from './components/router/router.component'
 
     AppStoreModule,
     AppRoutingModule,
+
+    ...moduleConfigs,
   ],
   providers: [
     AppService,
