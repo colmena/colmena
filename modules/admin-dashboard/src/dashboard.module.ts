@@ -6,8 +6,6 @@ import { RouterModule } from '@angular/router'
 
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
-import { Store } from '@ngrx/store'
-
 import { ContentModule } from '@colmena/module-admin-content'
 import { SystemModule } from '@colmena/module-admin-system'
 
@@ -46,17 +44,4 @@ const components = [
     ...components,
   ],
 })
-export class DashboardModule {
-  constructor(private store: Store<any>) {
-    this.store.dispatch({
-      type: 'LAYOUT_HEADER_NAV', payload: {
-        weight: 0, label: 'Dashboard',   icon: 'icon-speedometer', link: [ '/', 'dashboard' ]
-      }
-    })
-    this.store.dispatch({
-      type: 'LAYOUT_SIDEBAR_NAV', payload: {
-        weight: 0, label: 'Dashboard',   icon: 'icon-speedometer', link: [ '/', 'dashboard' ]
-      }
-    })
-  }
-}
+export class DashboardModule { }
