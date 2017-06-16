@@ -2,7 +2,7 @@
 const config = require('config')
 const log = require('@colmena/logger')
 
-const { importSampleData, importSampleFiles } = require('../../lib/loopback-apps')
+const { importSampleData, importSampleFiles } = require('@colmena/api-helpers')
 
 module.exports = function(app, cb) {
 
