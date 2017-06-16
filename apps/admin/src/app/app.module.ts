@@ -17,7 +17,6 @@ import { AuthModule } from '@colmena/module-admin-auth'
 import { ContentModule } from '@colmena/module-admin-content'
 import { CoreModule } from '@colmena/module-admin-core'
 
-import { DevModule } from '@colmena/module-admin-dev'
 import { SystemModule } from '@colmena/module-admin-system'
 
 
@@ -45,7 +44,6 @@ import { HasContentAccess, HasSystemAccess, UserLoggedIn } from './app.guards'
     ContentModule,
     CoreModule,
 
-    DevModule,
     SystemModule,
 
     AppStoreModule,

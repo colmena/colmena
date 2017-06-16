@@ -8,7 +8,6 @@ import { AuthModuleRoutes } from '@colmena/module-admin-auth'
 import { ContentModuleRoutes } from '@colmena/module-admin-content'
 import { CoreModuleRoutes } from '@colmena/module-admin-core'
 
-import { DevModuleRoutes  } from '@colmena/module-admin-dev'
 import { SystemModuleRoutes } from '@colmena/module-admin-system'
 
 import { HasContentAccess, HasSystemAccess } from './app.guards'
@@ -31,7 +30,7 @@ const fullRoutes = [
   }, {
     path: '',
     canActivate: [HasSystemAccess],
-    children: DevModuleRoutes,
+    loadChildren: '@colmena/module-admin-dev#DevModule',
   }, {
     path: 'system',
     canActivate: [HasSystemAccess],

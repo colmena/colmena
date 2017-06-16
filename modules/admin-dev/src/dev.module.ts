@@ -10,12 +10,16 @@ import { DevAlertComponent } from './alert/alert.component'
 import { DevIndexComponent } from './index/index.component'
 import { DevToastComponent } from './toast/toast.component'
 
+import { DevRoutingModule } from './dev-routing.module'
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     ColmenaUiModule,
+
+    DevRoutingModule,
   ],
   declarations: [
     DevAlertComponent,

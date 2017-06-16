@@ -1,7 +1,8 @@
-import { Routes } from '@angular/router'
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 import { DevIndexComponent } from './index/index.component'
 
-export const DevModuleRoutes: Routes = [ {
+export const routes: Routes = [ {
   path: 'development',
   data: {
     title: 'Development',
@@ -11,3 +12,9 @@ export const DevModuleRoutes: Routes = [ {
     { path: 'index', component: DevIndexComponent },
   ],
 } ]
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class DevRoutingModule { }
