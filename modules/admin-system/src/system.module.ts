@@ -16,6 +16,9 @@ import { SystemModulesComponent } from './system-modules.component'
 
 import { SystemUserResolver } from './users/users.resolvers'
 
+import { SystemRoutingModule } from './system-routing.module'
+import { HasSystemAccess } from './system.guards'
+
 @NgModule({
   imports: [
     CommonModule,
@@ -27,6 +30,8 @@ import { SystemUserResolver } from './users/users.resolvers'
     SystemSettingsModule,
     SystemUsersModule,
     RouterModule,
+
+    SystemRoutingModule,
   ],
   declarations: [
     SystemDashboardComponent,
@@ -35,6 +40,7 @@ import { SystemUserResolver } from './users/users.resolvers'
   ],
   providers: [
     SystemUserResolver,
+    HasSystemAccess,
   ],
   exports: [
     SystemDashboardComponent,

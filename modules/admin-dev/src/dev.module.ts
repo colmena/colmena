@@ -12,6 +12,8 @@ import { DevToastComponent } from './toast/toast.component'
 
 import { DevRoutingModule } from './dev-routing.module'
 
+import { HasDevAccess } from './dev.guards'
+
 @NgModule({
   imports: [
     CommonModule,
@@ -26,6 +28,9 @@ import { DevRoutingModule } from './dev-routing.module'
     DevIndexComponent,
     DevToastComponent,
   ],
+  providers: [
+    HasDevAccess,
+  ]
 })
 export class DevModule {
 

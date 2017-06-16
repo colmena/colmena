@@ -17,9 +17,6 @@ import { AuthModule } from '@colmena/module-admin-auth'
 
 import { CoreModule } from '@colmena/module-admin-core'
 
-import { SystemModule } from '@colmena/module-admin-system'
-
-
 // Local Components/Routes/Services
 import { AppComponent } from './app.component'
 import { appRoutes } from './app.routes'
@@ -27,7 +24,7 @@ import { AppService } from './app.service'
 import { LogService } from './log.service'
 import { AppStoreModule } from './app.store'
 import { DomainResolver } from './app.resolvers'
-import { HasSystemAccess, UserLoggedIn } from './app.guards'
+import { UserLoggedIn } from './app.guards'
 
 @NgModule({
   imports: [
@@ -44,8 +41,6 @@ import { HasSystemAccess, UserLoggedIn } from './app.guards'
 
     CoreModule,
 
-    SystemModule,
-
     AppStoreModule,
     appRoutes,
   ],
@@ -54,7 +49,6 @@ import { HasSystemAccess, UserLoggedIn } from './app.guards'
     LogService,
     DomainResolver,
 
-    HasSystemAccess,
     UserLoggedIn,
   ],
   declarations: [

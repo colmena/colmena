@@ -1,3 +1,3 @@
 export * from './system.component'
 export * from './system.module'
-export * from './system.routes'
+export * from './system-routing.module'

@@ -6,18 +6,25 @@ import { Observable } from 'rxjs/Observable'
 
 import { UiService } from '@colmena/admin-ui'
 
-
 @Injectable()
-export class UserLoggedIn implements CanActivate {
+export class HasSystemAccess implements CanActivate {
 
   constructor(
     private store: Store<any>,
+    private uiService: UiService,
   ) {}
 
   public canActivate(): Observable<boolean> {
     return this.store
       .select('auth')
-      .map((res: any) => res.loggedIn)
+      .map((res: any) => res.roles.assigned)
+      .map((roles: any) => {
+        if(roles.includes('system-admin')) {
+          return true
+        }
+        this.uiService.toastError('Access Denied', 'Your assigned roles do not allow access.')
+        return false
+      })
       .take(1)
   }
 }
