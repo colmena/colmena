@@ -4,24 +4,18 @@ import { RouterModule } from '@angular/router'
 import { FullLayoutComponent } from '@colmena/admin-layout'
 import { SimpleLayoutComponent } from '@colmena/admin-layout'
 
-import { AuthModuleRoutes } from '@colmena/module-admin-auth'
-
 import { CoreModuleRoutes } from '@colmena/module-admin-core'
 
 const simpleRoutes = [
   { path: '', children: CoreModuleRoutes },
-  ...AuthModuleRoutes,
+  { path: '', loadChildren: '@colmena/module-admin-auth#AuthModule' }
 ]
 
-const fullRoutes = [ {
-  path: '', loadChildren: '@colmena/module-admin-content#ContentModule',
-}, {
-  path: '', loadChildren: '@colmena/module-admin-dashboard#DashboardModule',
-}, {
-  path: '', loadChildren: '@colmena/module-admin-dev#DevModule',
-}, {
-  path: '', loadChildren: '@colmena/module-admin-system#SystemModule',
-}
+const fullRoutes = [
+  { path: '', loadChildren: '@colmena/module-admin-content#ContentModule' },
+  { path: '', loadChildren: '@colmena/module-admin-dashboard#DashboardModule' },
+  { path: '', loadChildren: '@colmena/module-admin-dev#DevModule' },
+  { path: '', loadChildren: '@colmena/module-admin-system#SystemModule' },
 ]
 
 const routes = [

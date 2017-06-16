@@ -13,12 +13,16 @@ import { RecoverComponent } from './components/recover/recover.component'
 import { RegisterComponent } from './components/register/register.component'
 import { ResetComponent } from './components/reset/reset.component'
 
+import { AuthRoutingModule } from './auth-routes.module'
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     RouterModule,
     ColmenaUiModule,
+
+    AuthRoutingModule,
   ],
   declarations: [
     LoginComponent,

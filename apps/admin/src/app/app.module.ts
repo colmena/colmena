@@ -13,8 +13,6 @@ import { LoopBackConfig, SDKBrowserModule } from '@colmena/admin-lb-sdk'
 import { ColmenaLayoutModule } from '@colmena/admin-layout'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
-import { AuthModule } from '@colmena/module-admin-auth'
-
 import { CoreModule } from '@colmena/module-admin-core'
 
 // Local Components/Routes/Services
@@ -36,8 +34,6 @@ import { UserLoggedIn } from './app.guards'
     SDKBrowserModule.forRoot(),
     ColmenaLayoutModule,
     ColmenaUiModule,
-
-    AuthModule,
 
     CoreModule,
 
