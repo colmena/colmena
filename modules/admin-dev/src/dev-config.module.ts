@@ -9,14 +9,14 @@ const moduleConfig = {
   name: 'Dev',
   dashboardIcon: true,
   topLinks: [
-
+    { weight: 140, label: 'Development', icon: 'icon-wrench', link: link() }
   ],
   sidebarLinks: [
-
+    { weight: 140, label: 'Development', icon: 'icon-wrench', link: link() }
   ],
   dashboardLinks: {
     system: [
-
+      { label: 'Development', type: 'danger', icon: 'icon-wrench', link: link() }
     ]
   },
 }
@@ -31,4 +31,3 @@ export class DevConfigModule {
   }
 
 }
-
