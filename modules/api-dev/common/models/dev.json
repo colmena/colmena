@@ -1,0 +1,14 @@
+{
+  "name": "Dev",
+  "plural": "Dev",
+  "description": "Dev: Development Environment",
+  "base": "Model",
+  "components": "../../modules/api-dev/common/models/dev",
+  "idInjection": true,
+  "forceId": false,
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

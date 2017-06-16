@@ -1,0 +1,21 @@
+{
+  "name": "@colmena/module-api-dev",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {},
+  "colmena": {
+    "module": {
+      "modelSources": [
+        "common/models"
+      ],
+      "models": {
+        "Dev": {
+          "dataSource": "db"
+        }
+      },
+      "sampleData": [
+        "sample-data/sample-data.json"
+      ]
+    }
+  }
+}
