@@ -21,10 +21,6 @@
     "dataSource": "db",
     "public": false
   },
-  "Core": {
-    "dataSource": "db",
-    "public": false
-  },
   "Email": {
     "dataSource": "mail"
   }
