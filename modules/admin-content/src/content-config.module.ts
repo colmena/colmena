@@ -8,7 +8,7 @@ const link = (...links) => ([ '/', moduleName, ...links ])
 const moduleConfig = {
   name: 'Content',
   icon: 'icon-layers',
-  dashboardIcon: true,
+  packageName: `@colmena/module-admin-${moduleName}`,
   topLinks: [
     { label: 'Content', icon: 'icon-layers', link: link() },
   ],
@@ -31,10 +31,7 @@ const moduleConfig = {
   },
 }
 
-@NgModule({
-  imports: [],
-  exports: []
-})
+@NgModule()
 export class ContentConfigModule {
 
   constructor(protected store: Store<any>) {
