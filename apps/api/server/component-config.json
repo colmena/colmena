@@ -25,7 +25,7 @@
   "loopback-component-explorer": {
     "mountPath": "/explorer",
     "uiDirs": [
-      "node_modules/@colmena/colmena-component-explorer-style"
+      "node_modules/@colmena/api-explorer-style"
     ]
   }
 }
