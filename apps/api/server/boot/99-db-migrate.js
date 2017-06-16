@@ -8,7 +8,7 @@ module.exports = function(app, cb) {
 
   // Check if there is user configured Settings
   if (!config.has('system.migratedb') || config.get('system.migratedb') === false) {
-    log.gray.b('[db-migrate] skipping database migration (migratedb = false)')
+    log.cyan.d('[db-migrate] skipping database migration (migratedb = false)')
     return cb()
   }
 
