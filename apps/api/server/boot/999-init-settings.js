@@ -11,12 +11,6 @@ module.exports = function(app, cb) {
       key: 'nodeEnv',
       value: process.env.NODE_ENV || 'development',
     },
-    {
-      system: true,
-      type: 'string',
-      key: 'appName',
-      value: 'Colmena',
-    },
   ]
 
   // Check if there are user configured Settings
