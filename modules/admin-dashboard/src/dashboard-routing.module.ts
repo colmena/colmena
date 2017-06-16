@@ -1,11 +1,12 @@
-import { Routes } from '@angular/router'
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
 import { AboutComponent } from './about/about.component'
 import { DashboardComponent } from './dashboard/dashboard.component'
 import { PasswordComponent } from './password/password.component'
 import { ProfileComponent } from './profile/profile.component'
 
-export const DashboardModuleRoutes: Routes = [ {
+export const routes: Routes = [ {
   path: '',
   data: {
     title: 'Dashboard',
@@ -18,3 +19,8 @@ export const DashboardModuleRoutes: Routes = [ {
   ],
 } ]
 
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class DashboardRoutingModule { }

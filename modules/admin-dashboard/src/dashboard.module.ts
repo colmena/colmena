@@ -16,6 +16,8 @@ import { DashboardComponent } from './dashboard/dashboard.component'
 import { PasswordComponent } from './password/password.component'
 import { ProfileComponent } from './profile/profile.component'
 
+import { DashboardRoutingModule } from './dashboard-routing.module'
+
 const components = [
   AboutComponent,
   DashboardComponent,
@@ -34,6 +36,8 @@ const components = [
     ColmenaUiModule,
     ContentModule,
     SystemModule,
+
+    DashboardRoutingModule,
   ],
   declarations: [
     ...components,

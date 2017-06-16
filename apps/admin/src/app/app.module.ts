@@ -1,7 +1,7 @@
 // Angular Modules
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
-import { LocationStrategy, HashLocationStrategy } from '@angular/common'
+
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
@@ -16,7 +16,7 @@ import { ColmenaUiModule } from '@colmena/admin-ui'
 import { AuthModule } from '@colmena/module-admin-auth'
 import { ContentModule } from '@colmena/module-admin-content'
 import { CoreModule } from '@colmena/module-admin-core'
-import { DashboardModule } from '@colmena/module-admin-dashboard'
+
 import { DevModule } from '@colmena/module-admin-dev'
 import { SystemModule } from '@colmena/module-admin-system'
 
@@ -44,7 +44,7 @@ import { HasContentAccess, HasSystemAccess, UserLoggedIn } from './app.guards'
     AuthModule,
     ContentModule,
     CoreModule,
-    DashboardModule,
+
     DevModule,
     SystemModule,
 
