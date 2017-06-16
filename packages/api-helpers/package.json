@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "mail": "index.js",
   "dependencies": {
-    "@colmena/logger": "0.0.0"
+    "@colmena/logger": "0.0.0",
+    "config": "1.26.1"
   },
   "license": "MIT"
 }

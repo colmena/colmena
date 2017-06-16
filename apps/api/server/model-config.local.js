@@ -1,4 +1,4 @@
-const { getApps } = require('../lib/loopback-apps')
+const { getModules } = require('@colmena/api-helpers')
 
 const log = require('@colmena/logger')
 
@@ -6,7 +6,7 @@ let config = require('./model-config.base.json')
 
 const getModelPath = (packageName, path) => `../node_modules/${packageName}/${path}`
 
-getApps()
+getModules()
   .forEach(appName => {
     const app = require(appName)
     log.white.b(`[loopback-modules] Registering models from module: ${appName}`)

@@ -1,15 +1,13 @@
 const Promise = require('bluebird')
-const pJson = require('../package.json')
+const config = require('config')
 
 const log = require('@colmena/logger')
 
-const colmena = pJson.colmena || {
-  apps: []
-}
+const getModuleList = () => config.get('colmena.modules')
+const getActiveModules = () => Object.keys(getModuleList()).filter(module => getModuleList()[module])
+const getModules = () => getActiveModules()
 
-const getApps = () => (colmena.apps || [])
-
-const getAppConfigs = () => getApps().map(app => require(app))
+const getAppConfigs = () => getModules().map(app => require(app))
 
 const getDomain = (app, domain) => app.models.SystemDomain.findById('default')
 
@@ -47,7 +45,7 @@ const importSampleFiles = (app) => Promise.resolve(getAppFileList('sampleFiles')
   .then(sets => Promise.each(sets, set => importSampleFileSet(app, set)))
 
 module.exports = {
-  getApps,
+  getModules,
   getAppConfigs,
   importSampleData,
   importSampleFiles,

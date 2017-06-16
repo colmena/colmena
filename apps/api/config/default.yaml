@@ -7,6 +7,12 @@ admin:
   url: http://127.0.0.1:9000
   recoverPath: /#/password-reset
 
+colmena:
+  modules:
+    '@colmena/module-api-content': true
+    '@colmena/module-api-storage': true
+    '@colmena/module-api-system': true
+
 mongodb:
   url: false
 

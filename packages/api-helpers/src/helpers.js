@@ -1,6 +1,10 @@
+const config = require('config')
 
 const log = require('@colmena/logger')
 
+const getModuleList = () => config.get('colmena.modules')
+const getActiveModules = () => Object.keys(getModuleList()).filter(module => getModuleList()[module])
+const getModules = () => getActiveModules()
 
 /**
  * Clear all data.
@@ -36,4 +40,5 @@ const dbUpdate = db => {
 module.exports = {
   dbMigrate,
   dbUpdate,
+  getModules,
 }

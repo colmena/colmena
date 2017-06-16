@@ -72,6 +72,7 @@
     "@ngrx/store-devtools": "3.2.4",
     "all-contributors-cli": "4.3.0",
     "codelyzer": "3.0.1",
+    "config": "1.26.1",
     "core-js": "2.4.1",
     "coreui-styles": "latest",
     "eslint": "4.0.0",

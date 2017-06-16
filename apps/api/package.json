@@ -65,12 +65,5 @@
     "request": "2.81.0",
     "serve-favicon": "2.4.3",
     "strong-error-handler": "2.1.0"
-  },
-  "colmena": {
-    "apps": [
-      "@colmena/module-api-content",
-      "@colmena/module-api-storage",
-      "@colmena/module-api-system"
-    ]
   }
 }
