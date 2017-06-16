@@ -1,4 +1,6 @@
+const prequire = require('parent-require')
 const config = require('config')
+const path = require('path')
 
 const log = require('@colmena/logger')
 
@@ -37,8 +39,44 @@ const dbUpdate = db => {
 }
 
 
+const loadModulePath = (moduleName, file) => path.join(moduleName, file);
+
+const loadParentModule = moduleName => prequire(moduleName);
+
+const loadModules = config => {
+
+  getModules()
+    .forEach(moduleName => {
+
+      const module = loadParentModule(moduleName)
+      log.white.b(`[loopback-modules] Registering models from module: ${moduleName}`)
+
+      if (module.models) {
+        config = Object.assign(config, module.models)
+      }
+
+      if (module.modelSources) {
+        config['_meta']['sources'] = [
+          ...config['_meta']['sources'],
+          ...module.modelSources.map(item => loadModulePath(moduleName, item)),
+        ]
+      }
+      if (module.mixinSources) {
+        config['_meta']['mixins'] = [
+          ...config['_meta']['mixins'],
+          ...module.mixinSources.map(item => loadModulePath(moduleName, item)),
+        ]
+      }
+    })
+
+  return config
+}
+
+
+
 module.exports = {
   dbMigrate,
   dbUpdate,
   getModules,
+  loadModules,
 }
