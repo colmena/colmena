@@ -12,9 +12,16 @@
     .page p {
       padding-top: 40px;
     }
+    .page p a {
+      text-decoration: none;
+      color: #1b95e0;
+    }
     .page p.brand {
       padding-top: 80px;
       font-size: 28px;
+    }
+    .page p.brand a {
+      color: #243447;
     }
   </style>
 </head>
@@ -22,7 +29,7 @@
   <div class="page">
     <p class="brand"><a href="https://github.com/colmena/colmena">Colmena</a></p>
     <p><a href="/explorer">API Explorer</a></p>
-    <p>Replace contents of <code>apps/api/client</code> to host a website here.</p>
+    <p>Run <code>npm run build</code> or replace the contents of <code>apps/api/client</code> to host a website here.</p>
   </div>
 </body>
 </html>
