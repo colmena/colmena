@@ -37,6 +37,7 @@
     "@colmena/colmena-component-explorer-style": "1.0.2",
     "@colmena/logger": "0.0.0",
     "@colmena/module-api-content": "0.0.0",
+    "@colmena/module-api-dev": "0.0.0",
     "@colmena/module-api-storage": "0.0.0",
     "@colmena/module-api-system": "0.0.0",
     "bluebird": "3.5.0",

@@ -1,0 +1,3 @@
+colmena:
+  modules:
+    '@colmena/module-api-dev': true
