@@ -45,7 +45,7 @@
     "lint": "eslint . --fix",
     "postinstall": "lerna bootstrap",
     "sdk": "npm run sdk:api",
-    "sdk:api": "cross-env NODE_ENV=codegen lb-sdk --wipe enabled apps/api/server/server.js packages/admin-lb-sdk/src",
+    "sdk:api": "cd apps/api && npm run sdk",
     "start": "cd apps/api && npm start",
     "test": "true",
     "update": "ncu -a && npm update && lerna exec 'ncu -a && npm update'"
