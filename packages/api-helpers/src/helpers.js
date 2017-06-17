@@ -85,23 +85,26 @@ const loadModules = config => {
 
 const getDomain = (app, domain) => app.models.SystemDomain.findById('default')
 
-const importSampleFileSet = (app, set) =>
-  Promise.all(
-    Object.keys(set).map(domainName => {
-      const files = set[domainName]
-      log.gray('[sample-files]', `${files.length} files for domain`, domainName)
+const importDomainFileByUrl = (domain, url, fileName) =>
+  domain
+    .importFileByUrl(url, fileName)
+    .then(() => log.gray('[sample-files]', `Import url ${url}`))
 
-      return getDomain(app, domainName).then(domain =>
-        files.forEach(file =>
-          domain
-            .importFileByUrl(file.url, file.fileName)
-            .then(() =>
-              log.gray('[sample-files]', `${domainName} import ${file.url}`)
-            )
-        )
-      )
-    })
-  )
+const importSampleFileSet = (app, set) => {
+  const importToDomain = (domainName, files) =>
+    getDomain(app, domainName).then(domain =>
+      files.map(file => importDomainFileByUrl(domain, file.url, file.fileName))
+    )
+
+  const domains = Object.keys(set)
+  const promises = domains.map(domainName => {
+    const files = set[domainName]
+    log.gray('[sample-files]', `${files.length} files for domain`, domainName)
+
+    return importToDomain(domainName, files)
+  })
+  return Promise.all(promises)
+}
 
 const importDataIntoModel = (Model, data) =>
   Model.create(data).then(res =>
