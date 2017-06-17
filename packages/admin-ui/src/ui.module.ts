@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 
-import { FormlyModule, FormlyBootstrapModule } from 'ng-formly'
 import { FileUploadModule } from 'ng2-file-upload'
 import { ToastyService, ToastyModule } from 'ng2-toasty'
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
+
+import { UIFormlyModule } from './modules/formly/formly.module'
 
 import { UiButtonsModule } from './components/buttons/buttons.module'
 import { UiCardModule } from './components/card/card.module'
@@ -78,8 +79,7 @@ const declarations = []
     ReactiveFormsModule,
     RouterModule,
     ToastyModule,
-    FormlyModule.forRoot(),
-    FormlyBootstrapModule,
+    UIFormlyModule,
     BsDropdownModule.forRoot(),
     ...modules,
   ],
@@ -91,7 +91,6 @@ const declarations = []
     ...providers
   ],
   exports: [
-    FormlyModule,
     BsDropdownModule,
     ...declarations,
     ...modules,

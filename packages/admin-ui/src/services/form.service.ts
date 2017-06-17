@@ -55,6 +55,10 @@ export class FormService {
     return this.field('textarea', 'text', key, options)
   }
 
+  wysiwyg(key, options: any = {}) {
+    return this.field('wysiwyg', 'text', key, options)
+  }
+
   select(key, options: any = {}) {
     return this.field('select', 'text', key, options)
   }
