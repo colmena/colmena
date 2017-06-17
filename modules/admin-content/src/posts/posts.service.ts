@@ -52,7 +52,7 @@ export class PostsService extends UiDataGridService {
   }
 
   getItems() {
-    return this.domainApi.getContentPosts(this.domain.id, this.getFilters({ include: ['file'] }))
+    return this.domainApi.getContentPosts(this.domain.id, this.getFilters({ include: ['storageFile'] }))
   }
 
   getItemCount() {

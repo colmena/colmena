@@ -47,7 +47,7 @@ export class FilesService extends UiDataGridService {
 
   getItems() {
     return this.domainApi.getStorageFiles(this.domain.id, this.getFilters({
-      include: ['events', 'pages', 'posts', 'products'],
+      include: [ 'contentEvents', 'contentPages', 'contentPosts', 'contentProducts'],
     }))
   }
 

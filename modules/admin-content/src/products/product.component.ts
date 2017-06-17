@@ -9,8 +9,8 @@ import { Component, Input } from '@angular/core'
         {{item.name}}
       </ui-card-header>
       <ui-card-content>
-        <p *ngIf="item.file?.url"><img src="{{item.file?.url}}" class="img-fluid" ></p>
-        <p *ngIf="item.description" [innerHtml]="item.description"></p>
+        <p *ngIf="item.storageFile?.url"><img src="{{item.storageFile?.url}}" class="img-fluid" ></p>
+        <div *ngIf="item.description" [innerHtml]="item.description"></div>
       </ui-card-content>
       <ui-card-footer>
         <span *ngIf="item.sku">SKU: {{item.sku}}</span>

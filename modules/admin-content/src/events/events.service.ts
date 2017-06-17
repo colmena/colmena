@@ -60,7 +60,7 @@ export class EventsService extends UiDataGridService {
   }
 
   getItems() {
-    return this.domainApi.getContentEvents(this.domain.id, this.getFilters({ include: ['file'] }))
+    return this.domainApi.getContentEvents(this.domain.id, this.getFilters({ include: ['storageFile'] }))
   }
 
   getItemCount() {

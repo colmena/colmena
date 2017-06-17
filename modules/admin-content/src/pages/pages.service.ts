@@ -52,7 +52,7 @@ export class PagesService extends UiDataGridService {
   }
 
   getItems() {
-    return this.domainApi.getContentPages(this.domain.id, this.getFilters({ include: ['file'] }))
+    return this.domainApi.getContentPages(this.domain.id, this.getFilters({ include: ['storageFile'] }))
   }
 
   getItemCount() {

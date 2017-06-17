@@ -13,22 +13,22 @@ import { Component, Input } from '@angular/core'
       </ui-card-content>
       <ui-card-footer>
         <div class="btn-group pull-right">
-          <span class="btn btn-secondary" title="Linked to {{item?.events?.length}} event(s)">
+          <span class="btn btn-secondary" title="Linked to {{item?.contentEvents?.length}} event(s)">
             <i class="icon-event"></i>
-            {{item?.events?.length}}
-          </span>  
-          <span class="btn btn-secondary" title="Linked to {{item?.pages?.length}} pages(s)">
-            <i class="icon-book-open"></i> 
-            {{item?.pages?.length}}
+            {{item?.contentEvents?.length}}
           </span>
-          <span class="btn btn-secondary" title="Linked to {{item?.posts?.length}} post(s)">
-            <i class="icon-pencil"></i> 
-            {{item?.posts?.length}}
+          <span class="btn btn-secondary" title="Linked to {{item?.contentPages?.length}} pages(s)">
+            <i class="icon-book-open"></i>
+            {{item?.contentPages?.length}}
           </span>
-          <span class="btn btn-secondary" title="Linked to {{item?.products?.length}} product(s)">
+          <span class="btn btn-secondary" title="Linked to {{item?.contentPosts?.length}} post(s)">
+            <i class="icon-pencil"></i>
+            {{item?.contentPosts?.length}}
+          </span>
+          <span class="btn btn-secondary" title="Linked to {{item?.contentProducts?.length}} product(s)">
             <i class="icon-basket"></i>
-            {{item?.products?.length}}
-          </span>  
+            {{item?.contentProducts?.length}}
+          </span>
         </div>
         <div *ngIf="item.size"><strong>Size: </strong>{{item.size}}</div>
         <div *ngIf="item.type"><strong>Type: </strong>{{item.type}}</div>
