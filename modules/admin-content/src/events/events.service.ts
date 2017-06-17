@@ -16,12 +16,12 @@ export class EventsService extends UiDataGridService {
     { field: 'location', label: 'Location' },
   ]
 
-  public formFields = [
+  public formFields = () => [
     this.formService.input('name', {
       label: 'Name',
       placeholder: 'Name'
     }),
-    this.formService.textarea('description', {
+    this.formService.wysiwyg('description', {
       label: 'Description',
       placeholder: 'Description'
     }),
@@ -49,7 +49,7 @@ export class EventsService extends UiDataGridService {
   getFormConfig() {
     return {
       icon: this.icon,
-      fields: this.formFields,
+      fields: this.formFields(),
       showCancel: true,
     }
   }
