@@ -48,7 +48,7 @@
     "sdk:api": "cross-env NODE_ENV=codegen lb-sdk --wipe enabled apps/api/server/server.js packages/admin-lb-sdk/src",
     "start": "cd apps/api && npm start",
     "test": "true",
-    "update": "lerna exec --concurrency=1 'ncu -a && npm update'"
+    "update": "ncu -a && npm update && lerna exec 'ncu -a && npm update'"
   },
   "dependencies": {
     "cross-env": "5.0.1",
@@ -56,17 +56,17 @@
     "parent-require": "1.0.0"
   },
   "devDependencies": {
-    "@angular/animations": "4.2.2",
+    "@angular/animations": "4.2.3",
     "@angular/cli": "1.1.2",
-    "@angular/common": "4.2.2",
-    "@angular/compiler": "4.2.2",
-    "@angular/compiler-cli": "4.2.2",
-    "@angular/core": "4.2.2",
-    "@angular/forms": "4.2.2",
-    "@angular/http": "4.2.2",
-    "@angular/platform-browser": "4.2.2",
-    "@angular/platform-browser-dynamic": "4.2.2",
-    "@angular/router": "4.2.2",
+    "@angular/common": "4.2.3",
+    "@angular/compiler": "4.2.3",
+    "@angular/compiler-cli": "4.2.3",
+    "@angular/core": "4.2.3",
+    "@angular/forms": "4.2.3",
+    "@angular/http": "4.2.3",
+    "@angular/platform-browser": "4.2.3",
+    "@angular/platform-browser-dynamic": "4.2.3",
+    "@angular/router": "4.2.3",
     "@ngrx/core": "1.2.0",
     "@ngrx/effects": "2.0.3",
     "@ngrx/router-store": "1.2.6",
