@@ -3,7 +3,7 @@ const fs = require('fs')
 
 function parse(templatePath, params) {
   // Read the template
-  let content = fs.readFileSync(templatePath) // eslint-disable-line no-sync
+  let content = fs.readFileSync(templatePath)
 
   // Convert it to a string
   content = content.toString()

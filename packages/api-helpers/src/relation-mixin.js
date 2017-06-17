@@ -23,7 +23,6 @@ const relationMixin = (ModelFrom, options) => {
   const modelName = ModelFrom.modelName
   const targetModelName = ModelTo.modelName
 
-
   ModelTo.on('attached', () => {
     log.debug(
       `[relation-mixin] [${targetModelName}] Create relation with ${modelName}`

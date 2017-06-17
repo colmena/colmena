@@ -1,6 +1,6 @@
 'use strict'
 const path = require('path')
-const templateHelper = require('../../../lib/template-helper')
+const templateHelper = require('@colmena/api-helpers/src/template-helper')
 
 module.exports = function modelFnProduct(UserModel) {
   // Helper to get the template path
