@@ -33,24 +33,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "events": {
-      "type": "hasMany",
-      "model": "ContentEvent"
-    },
-    "pages": {
-      "type": "hasMany",
-      "model": "ContentPage"
-    },
-    "posts": {
-      "type": "hasMany",
-      "model": "ContentPost"
-    },
-    "products": {
-      "type": "hasMany",
-      "model": "ContentProduct"
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": {}
 }

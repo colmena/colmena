@@ -13,7 +13,8 @@ const belongsTo = (modelFrom, modelTo, as, foreignKey) =>
 const hasMany = (modelFrom, modelTo, as, foreignKey) =>
   modelFrom.hasMany(modelTo, { as, foreignKey })
 
-const relationMixin = (ModelFrom, options) => {
+const relationMixin = (ModelFrom, options, relationType) => {
+  const blacklist = options.blacklist || []
   const foreignKey = options.foreignKey
   const required = options.required || false
   const targetModel = options.targetModel
@@ -23,29 +24,46 @@ const relationMixin = (ModelFrom, options) => {
   const modelName = ModelFrom.modelName
   const targetModelName = ModelTo.modelName
 
-  ModelTo.on('attached', () => {
-    log.debug(
-      `[relation-mixin] [${targetModelName}] Create relation with ${modelName}`
-    )
-    belongsTo(
-      ModelFrom,
-      ModelTo,
-      belongsToRelationName(targetModelName),
-      foreignKey
-    )
-    hasMany(ModelTo, ModelFrom, hasManyRelationName(modelName), foreignKey)
-  })
-
-  ModelFrom.defineProperty(foreignKey, { type: String, required }, {})
-
-  ModelFrom.observe('after save', (ctx, next) => {
-    if (ctx.instance && !ctx.instance[foreignKey]) {
-      log.warn(
-        `[relation-mixin] Missing foreignKey ${foreignKey} on ${modelName} after save`
+  if (!blacklist.includes(modelName)) {
+    ModelTo.on('attached', () => {
+      log.debug(
+        `[relation-mixin] ${targetModelName} ${relationType} ${modelName}`
       )
-    }
-    next()
-  })
+
+      switch (relationType) {
+        case 'hasMany':
+          hasMany(
+            ModelTo,
+            ModelFrom,
+            hasManyRelationName(modelName),
+            foreignKey
+          )
+          belongsTo(
+            ModelFrom,
+            ModelTo,
+            belongsToRelationName(targetModelName),
+            foreignKey
+          )
+          break
+      }
+    })
+
+    ModelFrom.defineProperty(foreignKey, { type: String, required }, {})
+
+    ModelFrom.observe('after save', (ctx, next) => {
+      if (required && ctx.instance && !ctx.instance[foreignKey]) {
+        log.warn(
+          `[relation-mixin] Missing foreignKey ${foreignKey} on ${modelName} after save`
+        )
+      }
+      next()
+    })
+  }
 }
 
-module.exports = { relationMixin }
+const hasManyRelation = (ModelFrom, options) =>
+  relationMixin(ModelFrom, options, 'hasMany')
+
+module.exports = {
+  hasManyRelation,
+}

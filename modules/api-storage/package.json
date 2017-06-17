@@ -3,11 +3,15 @@
   "version": "0.0.0",
   "license": "MIT",
   "dependencies": {
+    "@colmena/api-helpers": "0.0.0",
     "@colmena/logger": "0.0.0",
     "config": "^1.26.1"
   },
   "colmena": {
     "module": {
+      "mixinSources": [
+        "common/mixins"
+      ],
       "modelSources": [
         "common/models"
       ],
