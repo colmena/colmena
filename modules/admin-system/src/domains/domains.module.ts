@@ -8,7 +8,6 @@ import { DomainDetailComponent } from './containers/domain-detail.component'
 import { DomainFormComponent } from './components/domain-form.component'
 import { DomainHeaderComponent } from './components/domain-header.component'
 import { DomainListComponent } from './containers/domain-list.component'
-import { DomainTabsComponent } from './components/domain-tabs.component'
 
 import { DomainsService } from './domains.service'
 
@@ -27,7 +26,6 @@ import { SystemDomainResolver } from './domains.resolvers'
     DomainFormComponent,
     DomainHeaderComponent,
     DomainListComponent,
-    DomainTabsComponent,
   ],
   providers: [
     DomainsService,

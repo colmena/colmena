@@ -12,7 +12,6 @@ import { UserHeaderComponent } from './components/user-header.component'
 import { UserPasswordComponent } from './components/user-password.component'
 import { UserFormComponent } from './components/user-form.component'
 import { UserRolesComponent } from './components/user-roles.component'
-import { UserTabsComponent } from './components/user-tabs.component'
 
 import { UsersService } from './users.service'
 
@@ -33,7 +32,6 @@ import { UsersService } from './users.service'
     UserPasswordComponent,
     UserFormComponent,
     UserRolesComponent,
-    UserTabsComponent,
   ],
   providers: [
     UsersService,

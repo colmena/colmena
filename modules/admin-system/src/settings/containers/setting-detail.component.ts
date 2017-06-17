@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 
+import { UiTabLink } from '@colmena/admin-ui'
+
 import { SettingsService } from '../settings.service'
-import { NavTabLink } from '../components/setting-tabs.component'
 
 @Component({
   selector: 'app-setting-detail',
@@ -10,7 +11,7 @@ import { NavTabLink } from '../components/setting-tabs.component'
     <div class="card">
       <div class="card-header">
         <app-setting-header [item]="item"></app-setting-header>
-        <app-setting-tabs [tabs]="tabs"></app-setting-tabs>
+        <ui-tabs [tabs]="tabs"></ui-tabs>
       </div>
       <div class="card-block">
         <router-outlet></router-outlet>
@@ -25,7 +26,7 @@ import { NavTabLink } from '../components/setting-tabs.component'
 })
 export class SettingDetailComponent implements OnInit {
 
-  public tabs: NavTabLink[] = [
+  public tabs: UiTabLink[] = [
     { icon: 'fa fa-pencil', title: 'Edit', link: 'edit' },
   ]
 

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 
-import { User, UsersService } from '../users.service'
-import { NavTabLink } from '../components/user-tabs.component'
+import { UiTabLink } from '@colmena/admin-ui'
+
+import { UsersService } from '../users.service'
 
 @Component({
   selector: 'app-user-detail',
@@ -10,7 +11,7 @@ import { NavTabLink } from '../components/user-tabs.component'
     <div class="card">
       <div class="card-header">
         <app-user-header [user]="item?.user"></app-user-header>
-        <app-user-tabs [tabs]="tabs"></app-user-tabs>
+        <ui-tabs [tabs]="tabs"></ui-tabs>
       </div>
       <div class="card-block">
         <router-outlet></router-outlet>
@@ -25,7 +26,7 @@ import { NavTabLink } from '../components/user-tabs.component'
 })
 export class UserDetailComponent implements OnInit {
 
-  public tabs: NavTabLink[] = [
+  public tabs: UiTabLink[] = [
     { icon: 'fa fa-user', title: 'Profile', link: 'profile' },
     { icon: 'fa fa-key', title: 'Password', link: 'password' },
     { icon: 'fa fa-unlock', title: 'Access Tokens', link: 'access-tokens' },
