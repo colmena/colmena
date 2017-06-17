@@ -15,12 +15,12 @@ export class PagesService extends UiDataGridService {
     { field: 'name', label: 'Name', action: 'view' },
   ]
 
-  public formFields = [
+  public formFields = () => [
     this.formService.input('name', {
       label: 'Name',
       placeholder: 'Name'
     }),
-    this.formService.textarea('content', {
+    this.formService.wysiwyg('content', {
       label: 'Content',
       placeholder: 'Content'
     }),
@@ -41,7 +41,7 @@ export class PagesService extends UiDataGridService {
   getFormConfig() {
     return {
       icon: this.icon,
-      fields: this.formFields,
+      fields: this.formFields(),
       showCancel: true,
     }
   }
