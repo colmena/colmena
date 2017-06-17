@@ -15,12 +15,12 @@ export class PostsService extends UiDataGridService {
     { field: 'title', label: 'Title', action: 'view' },
   ]
 
-  public formFields = [
+  public formFields = () => [
     this.formService.input('title', {
       label: 'Title',
       placeholder: 'Title'
     }),
-    this.formService.textarea('content', {
+    this.formService.wysiwyg('content', {
       label: 'Content',
       placeholder: 'Content'
     }),
@@ -41,7 +41,7 @@ export class PostsService extends UiDataGridService {
   getFormConfig() {
     return {
       icon: this.icon,
-      fields: this.formFields,
+      fields: this.formFields(),
       showCancel: true,
     }
   }

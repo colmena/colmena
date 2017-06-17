@@ -53,11 +53,13 @@ export class PostsComponent {
   action(event) {
     switch (event.action) {
       case 'edit':
+        this.formConfig = this.service.getFormConfig()
         this.item = Object.assign({}, event.item)
         this.form.title = `Edit: ${this.item.name}`
         this.form.show()
         break
       case 'add':
+        this.formConfig = this.service.getFormConfig()
         this.item = Object.assign({}, { title: null, content: null, storageFileId: null })
         this.form.title = 'Add Post'
         this.form.show()
