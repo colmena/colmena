@@ -97,11 +97,18 @@ const importSampleFileSet = (app, set) => Promise.all(
   })
 )
 
+const importDataIntoModel = (Model, data) => Model.create(data)
+  .then(res => log.gray('[sample-data]', `${res.length} items for model`, Model.name))
+
+
 const importSampleDataSet = (app, set) => Promise.all(Object.keys(set)
-  .map(modelName => app.models[modelName]
-    .create(set[modelName])
-    .then(res => log.gray('[sample-data]', `${res.length} items for model`, modelName))
-  )
+  .map(modelName => {
+      const Model = app.models[modelName]
+      if (Model) {
+        return importDataIntoModel(Model, set[modelName])
+      }
+      log.warn(`Model ${modelName} does not exist. Skipping import.`)
+    })
 )
 
 const importSampleData = (app) => Promise.resolve(getAppFileList('sampleData'))
