@@ -3,18 +3,41 @@
   "plural": "ContentBaseModel",
   "base": "SystemBaseModel",
   "idInjection": true,
+  "forceId": false,
   "options": {
     "validateUpsert": true
   },
   "mixins": {
+    "StorageFile": {
+      "blacklist": [
+        "ContentBaseModel"
+      ]
+    },
     "SystemDomain": {
+      "blacklist": [
+        "ContentBaseModel"
+      ],
       "required": false
     },
-    "SystemUser": {}
+    "SystemUser": {
+      "blacklist": [
+        "ContentBaseModel"
+      ]
+    }
   },
-  "properties": {},
-  "validations": [],
-  "relations": {},
-  "acls": [],
-  "methods": {}
+  "properties": {
+    "id": {
+      "type": "String",
+      "required": true
+    },
+    "systemDomainId": {
+      "type": "String"
+    },
+    "systemUserId": {
+      "type": "String"
+    },
+    "storageFileId": {
+      "type": "String"
+    }
+  }
 }

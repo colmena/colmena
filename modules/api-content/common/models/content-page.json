@@ -3,22 +3,7 @@
   "plural": "ContentPages",
   "description": "Content: Manage Pages in a Domain",
   "base": "ContentBaseModel",
-  "idInjection": true,
-  "forceId": false,
-  "options": {
-    "validateUpsert": true
-  },
   "properties": {
-    "id": {
-      "type": "String",
-      "required": true
-    },
-    "domainId": {
-      "type": "String"
-    },
-    "storageFileId": {
-      "type": "String"
-    },
     "name": {
       "type": "string",
       "required": true
@@ -26,14 +11,5 @@
     "content": {
       "type": "string"
     }
-  },
-  "validations": [],
-  "relations": {
-    "file": {
-      "type": "belongsTo",
-      "model": "StorageFile"
-    }
-  },
-  "acls": [],
-  "methods": {}
+  }
 }

@@ -3,19 +3,7 @@
   "plural": "ContentEvents",
   "description": "Content: Manage Events in a Domain",
   "base": "ContentBaseModel",
-  "idInjection": true,
-  "forceId": false,
-  "options": {
-    "validateUpsert": true
-  },
   "properties": {
-    "id": {
-      "type": "String",
-      "required": true
-    },
-    "storageFileId": {
-      "type": "String"
-    },
     "name": {
       "type": "String",
       "required": true
@@ -26,14 +14,5 @@
     "location": {
       "type": "String"
     }
-  },
-  "validations": [],
-  "relations": {
-    "file": {
-      "type": "belongsTo",
-      "model": "StorageFile"
-    }
-  },
-  "acls": [],
-  "methods": {}
+  }
 }
