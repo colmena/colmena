@@ -1,6 +1,6 @@
 'use strict'
 
-const { relationMixin } = require('../../lib/relation-mixin')
+const { relationMixin } = require('@colmena/api-helpers/src/relation-mixin')
 
 module.exports = (Model, options) => {
   options.targetModel = 'SystemDomain'

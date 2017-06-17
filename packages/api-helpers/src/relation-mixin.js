@@ -21,9 +21,13 @@ const relationMixin = (ModelFrom, options) => {
   const ModelTo = ModelFrom.dataSource.models[targetModel]
 
   const modelName = ModelFrom.modelName
-  const targetModelName = ModelFrom.targetModelName
+  const targetModelName = ModelTo.modelName
+
 
   ModelTo.on('attached', () => {
+    log.debug(
+      `[relation-mixin] [${targetModelName}] Create relation with ${modelName}`
+    )
     belongsTo(
       ModelFrom,
       ModelTo,
