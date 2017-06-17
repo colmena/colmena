@@ -19,10 +19,26 @@ const log = bunyan.createLogger({
   streams,
 })
 
-const colors = ['black', 'red', 'green', 'yellow', 'blue', 'magenta', 'cyan', 'white', 'gray']
+const colors = [
+  'black',
+  'red',
+  'green',
+  'yellow',
+  'blue',
+  'magenta',
+  'cyan',
+  'white',
+  'gray',
+]
 
-colors.forEach(color => log[color] = (...str) => log.info(chalk[color](...str)))
-colors.forEach(color => log[color].b = (...str) => log.info(chalk[color].bold(...str)))
-colors.forEach(color => log[color].d = (...str) => log.info(chalk[color].dim(...str)))
+colors.forEach(
+  color => (log[color] = (...str) => log.info(chalk[color](...str)))
+)
+colors.forEach(
+  color => (log[color].b = (...str) => log.info(chalk[color].bold(...str)))
+)
+colors.forEach(
+  color => (log[color].d = (...str) => log.info(chalk[color].dim(...str)))
+)
 
 module.exports = log

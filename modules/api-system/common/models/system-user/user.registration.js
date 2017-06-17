@@ -1,10 +1,9 @@
-'use strict';
+'use strict'
 
 const config = require('config')
 const log = require('@colmena/logger')
 
 module.exports = function(SystemUser) {
-
   function getRegistrationEnabled() {
     return (
       config.has('settings.registrationEnabled') &&
@@ -31,5 +30,4 @@ module.exports = function(SystemUser) {
   }
 
   configureUserRegistration()
-
 }

@@ -4,7 +4,6 @@ const log = require('@colmena/logger')
 const request = require('request')
 
 module.exports = function(Container) {
-
   Container.afterRemote('upload', (ctx, modelInstance) => {
     const fileInfo = modelInstance.result.files.file[0]
     const metaData = {

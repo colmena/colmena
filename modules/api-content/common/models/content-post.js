@@ -3,7 +3,6 @@
 const faker = require('faker/locale/en')
 
 module.exports = function(ContentPost) {
-
   ContentPost._templates = () => ({
     basic: domainId => ({
       domainId,
@@ -13,5 +12,4 @@ module.exports = function(ContentPost) {
       image: faker.image.technics(),
     }),
   })
-
 }

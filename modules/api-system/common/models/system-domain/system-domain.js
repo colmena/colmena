@@ -1,7 +1,6 @@
-'use strict';
+'use strict'
 
 module.exports = function(SystemDomain) {
-
   // Observe new domain creation to register a storage container
   SystemDomain.observe('after save', (ctx, next) => {
     if (ctx.instance && ctx.isNewInstance) {
@@ -28,7 +27,14 @@ module.exports = function(SystemDomain) {
     }
   })
 
-  SystemDomain.prototype.importFileByUrl = function importFileByUrl(url, fileName) {
-    return SystemDomain.app.models.StorageContainer.importUrl(url, this.id, fileName)
+  SystemDomain.prototype.importFileByUrl = function importFileByUrl(
+    url,
+    fileName
+  ) {
+    return SystemDomain.app.models.StorageContainer.importUrl(
+      url,
+      this.id,
+      fileName
+    )
   }
 }

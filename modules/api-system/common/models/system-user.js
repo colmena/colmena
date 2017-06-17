@@ -1,11 +1,11 @@
-'use strict';
-const crypto = require('crypto');
+'use strict'
+const crypto = require('crypto')
 
-const getHash = str => crypto.createHash('md5').update(str).digest("hex")
-const getGravatarUrl = email => `http://www.gravatar.com/avatar/${getHash(email)}?s=120`
+const getHash = str => crypto.createHash('md5').update(str).digest('hex')
+const getGravatarUrl = email =>
+  `http://www.gravatar.com/avatar/${getHash(email)}?s=120`
 
 module.exports = function(SystemUser) {
-
   SystemUser.getAvatarUrl = item => getGravatarUrl(item.email)
 
   SystemUser.getFullName = item => `${item.firstName} ${item.lastName}`
@@ -16,5 +16,4 @@ module.exports = function(SystemUser) {
     }
     next()
   })
-
-};
+}
