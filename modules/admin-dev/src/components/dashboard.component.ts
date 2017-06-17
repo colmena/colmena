@@ -10,7 +10,7 @@ import { DevModule } from '../dev.module'
           [routerLink]="['..', item.link]"
           [count]="item.link"
           [icon]="item.icon"
-          [label]="item.name"
+          [label]="item.title"
           [type]="item.type">
         </ui-dashboard-icon>
       </span>
