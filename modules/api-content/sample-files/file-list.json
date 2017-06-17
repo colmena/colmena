@@ -1,0 +1,8 @@
+{
+  "default": [
+    {
+      "fileName": "colmena-logo.png",
+      "url": "https://raw.githubusercontent.com/colmena/colmena/develop/apps/admin/src/assets/logo.png"
+    }
+  ]
+}

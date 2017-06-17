@@ -1,18 +1,19 @@
 {
   "ContentPage": [
     {
-      "id": "page-1",
+      "id": "about",
+      "name": "About",
+      "storageFileId": "default-colmena-logo.png",
       "systemDomainId": "default",
       "systemUserId": 1,
-      "name": "About",
-      "content": "Odit est voluptatem et rem tempora. Consectetur dicta dolore. Officiis excepturi non. Eum aut ea quasi dignissimos quod omnis dolore aut facilis.\n \rEt corporis reprehenderit optio. Excepturi accusantium voluptate eos. Quo dolor officia reprehenderit aliquam porro quod reiciendis rerum.\n \rInventore similique et est mollitia delectus. Mollitia a sunt temporibus pariatur. Nesciunt voluptates quo officia porro quidem nesciunt expedita excepturi. Nihil consequuntur in laboriosam vel molestias animi illum iste. Earum qui eos veniam. Quod eveniet est sint nostrum."
+      "content": "<p><strong>🍯</strong><strong style=\"color: rgb(36, 41, 46);\">&nbsp;Free and Open Source mobile backend powered by LoopBack and Angular.</strong></p><p><a href=\"https://github.com/colmena/colmena\" target=\"_blank\">https://github.com/colmena/colmena</a></p><pre class=\"ql-syntax\" spellcheck=\"false\">The MIT License (MIT)\nCopyright (c) 2014-2017 Bram Borggreve and contributors\n</pre>"
     },
     {
-      "id": "page-2",
+      "id": "license",
+      "name": "License",
       "systemDomainId": "default",
       "systemUserId": 1,
-      "name": "Terms and Conditions",
-      "content": "Ut vero perspiciatis voluptas adipisci. Eligendi numquam sequi odio repudiandae. Enim exercitationem esse vel incidunt ratione deserunt. Occaecati ducimus qui sed veniam dolore quo. Rem et officiis voluptate dolorem asperiores. Est ut et ut autem facere.\n \rQui et neque et. Blanditiis ullam ut quaerat ut nostrum maiores ut sint et. Et distinctio dolore alias asperiores id deleniti vel. Voluptatibus velit voluptates assumenda laudantium. Possimus sint perferendis voluptatem eos tempora. Perspiciatis sint in voluptate sit quidem."
+      "content": "<pre class=\"ql-syntax\" spellcheck=\"false\">The MIT License (MIT) Copyright (c) 2014-2017 Bram Borggreve a Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. </pre>"
     }
   ]
 }
