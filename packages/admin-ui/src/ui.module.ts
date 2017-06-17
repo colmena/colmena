@@ -19,10 +19,11 @@ import { UiFormComponent } from './components/form/ui-form.component'
 import { UiLogoComponent } from './components/logo/logo.component'
 import { UiMessageComponent } from './components/message/message.component'
 import { UiTableComponent } from './components/table/ui-table.component'
+import { UiTabsComponent } from './components/tabs/tabs.component'
+import { UiTemplatesComponent } from './components/templates/templates.component'
 import { UiUploaderComponent } from './components/uploader/ui-uploader.component'
 
 import { UiService } from './services/ui.service'
-import { UiTemplatesComponent } from './components/templates/templates.component'
 import { FormService } from './services/form.service'
 
 /**
@@ -48,6 +49,7 @@ const components = [
   UiLogoComponent,
   UiMessageComponent,
   UiTableComponent,
+  UiTabsComponent,
   UiTemplatesComponent,
   UiUploaderComponent,
 ]
