@@ -52,6 +52,10 @@ export class FormsComponent implements OnInit {
           label: 'Text',
           placeholder: 'Text'
         }),
+        this.formService.wysiwyg('wysiwyg', {
+          label: 'Wysiwyg',
+          placeholder: 'Wysiwyg'
+        }),
         this.formService.date('date', {
           label: 'Date',
           placeholder: 'Date'
