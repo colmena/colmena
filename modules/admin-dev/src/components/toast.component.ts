@@ -28,7 +28,7 @@ import { UiService } from '@colmena/admin-ui'
   `,
   styles: []
 })
-export class DevToastComponent {
+export class ToastComponent {
 
   public toast = {
     title: 'Toast Title',

@@ -23,7 +23,7 @@ import { UiService } from '@colmena/admin-ui'
   `,
   styles: []
 })
-export class DevAlertComponent {
+export class AlertComponent {
 
   public alert = {
     text: 'This is the Alert Text!',
