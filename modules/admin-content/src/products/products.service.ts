@@ -13,11 +13,10 @@ export class ProductsService extends UiDataGridService {
 
   public tableColumns = [
     { field: 'name', label: 'Name', action: 'view' },
-    { field: 'description', label: 'Description' },
     { field: 'sku', label: 'SKU' },
   ]
 
-  public formFields = [
+  public formFields = () => [
     this.formService.input('name', {
       label: 'Name',
       placeholder: 'Name'
@@ -26,7 +25,7 @@ export class ProductsService extends UiDataGridService {
       label: 'SKU',
       placeholder: 'SKU'
     }),
-    this.formService.textarea('description', {
+    this.formService.wysiwyg('description', {
       label: 'Description',
       placeholder: 'Description'
     }),
@@ -47,7 +46,7 @@ export class ProductsService extends UiDataGridService {
   getFormConfig() {
     return {
       icon: this.icon,
-      fields: this.formFields,
+      fields: this.formFields(),
       showCancel: true,
     }
   }

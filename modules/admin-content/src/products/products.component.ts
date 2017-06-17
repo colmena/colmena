@@ -53,11 +53,13 @@ export class ProductsComponent {
   action(event) {
     switch (event.action) {
       case 'edit':
+        this.formConfig = this.service.getFormConfig()
         this.item = Object.assign({}, event.item)
         this.form.title = `Edit: ${this.item.name}`
         this.form.show()
         break
       case 'add':
+        this.formConfig = this.service.getFormConfig()
         this.item = Object.assign({}, { name: null, sku: null, description: null, storageFileId: null })
         this.form.title = 'Add Product'
         this.form.show()
