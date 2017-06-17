@@ -1,34 +1,35 @@
 /* tslint:disable */
 import {
+  StorageFile,
   SystemDomain,
   SystemUser
 } from '../index';
 
 declare var Object: any;
 export interface ContentPageInterface {
-  "id"?: any;
-  "domainId"?: any;
-  "fileId"?: any;
-  "name": any;
-  "content"?: any;
-  "created"?: any;
-  "modified"?: any;
-  "systemDomainId"?: any;
-  "systemUserId"?: any;
+  "name": string;
+  "content"?: string;
+  "id"?: number;
+  "systemDomainId"?: string;
+  "systemUserId"?: string;
+  "storageFileId"?: string;
+  "created"?: Date;
+  "modified"?: Date;
+  storageFile?: StorageFile;
   systemDomain?: SystemDomain;
   systemUser?: SystemUser;
 }
 
 export class ContentPage implements ContentPageInterface {
-  "id": any;
-  "domainId": any;
-  "fileId": any;
-  "name": any;
-  "content": any;
-  "created": any;
-  "modified": any;
-  "systemDomainId": any;
-  "systemUserId": any;
+  "name": string;
+  "content": string;
+  "id": number;
+  "systemDomainId": string;
+  "systemUserId": string;
+  "storageFileId": string;
+  "created": Date;
+  "modified": Date;
+  storageFile: StorageFile;
   systemDomain: SystemDomain;
   systemUser: SystemUser;
   constructor(data?: ContentPageInterface) {
@@ -62,44 +63,45 @@ export class ContentPage implements ContentPageInterface {
       name: 'ContentPage',
       plural: 'ContentPages',
       properties: {
-        "id": {
-          name: 'id',
-          type: 'any'
-        },
-        "domainId": {
-          name: 'domainId',
-          type: 'any'
-        },
-        "fileId": {
-          name: 'fileId',
-          type: 'any'
-        },
         "name": {
           name: 'name',
-          type: 'any'
+          type: 'string'
         },
         "content": {
           name: 'content',
-          type: 'any'
+          type: 'string'
         },
-        "created": {
-          name: 'created',
-          type: 'any'
-        },
-        "modified": {
-          name: 'modified',
-          type: 'any'
+        "id": {
+          name: 'id',
+          type: 'number'
         },
         "systemDomainId": {
           name: 'systemDomainId',
-          type: 'any'
+          type: 'string'
         },
         "systemUserId": {
           name: 'systemUserId',
-          type: 'any'
+          type: 'string'
+        },
+        "storageFileId": {
+          name: 'storageFileId',
+          type: 'string'
+        },
+        "created": {
+          name: 'created',
+          type: 'Date'
+        },
+        "modified": {
+          name: 'modified',
+          type: 'Date'
         },
       },
       relations: {
+        storageFile: {
+          name: 'storageFile',
+          type: 'StorageFile',
+          model: 'StorageFile'
+        },
         systemDomain: {
           name: 'systemDomain',
           type: 'SystemDomain',

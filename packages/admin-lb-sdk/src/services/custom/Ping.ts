@@ -47,14 +47,14 @@ export class PingApi extends BaseLoopBackApi {
    * This usually means the response is a `Ping` object.)
    * </em>
    */
-  public ping(): Observable<any> {
+  public ping(customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Ping";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody);
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 

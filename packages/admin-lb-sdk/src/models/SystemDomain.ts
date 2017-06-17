@@ -9,12 +9,11 @@ import {
 
 declare var Object: any;
 export interface SystemDomainInterface {
-  "id": any;
-  "name": any;
-  "email": any;
-  "created"?: any;
-  "modified"?: any;
-  contentBaseModels?: any[];
+  "id": string;
+  "name": string;
+  "email": string;
+  "created"?: Date;
+  "modified"?: Date;
   contentEvents?: ContentEvent[];
   contentPages?: ContentPage[];
   contentProducts?: ContentProduct[];
@@ -23,12 +22,11 @@ export interface SystemDomainInterface {
 }
 
 export class SystemDomain implements SystemDomainInterface {
-  "id": any;
-  "name": any;
-  "email": any;
-  "created": any;
-  "modified": any;
-  contentBaseModels: any[];
+  "id": string;
+  "name": string;
+  "email": string;
+  "created": Date;
+  "modified": Date;
   contentEvents: ContentEvent[];
   contentPages: ContentPage[];
   contentProducts: ContentProduct[];
@@ -67,31 +65,26 @@ export class SystemDomain implements SystemDomainInterface {
       properties: {
         "id": {
           name: 'id',
-          type: 'any'
+          type: 'string'
         },
         "name": {
           name: 'name',
-          type: 'any'
+          type: 'string'
         },
         "email": {
           name: 'email',
-          type: 'any'
+          type: 'string'
         },
         "created": {
           name: 'created',
-          type: 'any'
+          type: 'Date'
         },
         "modified": {
           name: 'modified',
-          type: 'any'
+          type: 'Date'
         },
       },
       relations: {
-        contentBaseModels: {
-          name: 'contentBaseModels',
-          type: 'any[]',
-          model: ''
-        },
         contentEvents: {
           name: 'contentEvents',
           type: 'ContentEvent[]',

@@ -29,12 +29,11 @@ export class LoopBackAuth {
    * The constructor will initialize the token loading data from storage
    **/
   constructor(@Inject(InternalStorage) protected storage: InternalStorage) {
-    this.token.id         = this.load('id');
-    this.token.user       = this.load('user');
-    this.token.userId     = this.load('userId');
-    this.token.issuedAt   = this.load('issuedAt');
-    this.token.created    = this.load('created');
-    this.token.ttl        = this.load('ttl');
+    this.token.id = this.load('id');
+    this.token.user = this.load('user');
+    this.token.userId = this.load('userId');
+    this.token.created = this.load('created');
+    this.token.ttl = this.load('ttl');
     this.token.rememberMe = this.load('rememberMe');
   }
   /**
@@ -61,7 +60,7 @@ export class LoopBackAuth {
   }
   /**
    * @method setToken
-   * @param {SDKToken} token SDKToken or casted AccessToken instance 
+   * @param {SDKToken} token SDKToken or casted AccessToken instance
    * @return {void}
    * @description
    * This method will set a flag in order to remember the current credentials
@@ -77,7 +76,7 @@ export class LoopBackAuth {
    * This method will set a flag in order to remember the current credentials.
    **/
   public getToken(): SDKToken {
-    return <SDKToken> this.token;
+    return <SDKToken>this.token;
   }
   /**
    * @method getAccessTokenId
@@ -118,14 +117,13 @@ export class LoopBackAuth {
       this.persist('id', this.token.id);
       this.persist('user', this.token.user);
       this.persist('userId', this.token.userId);
-      this.persist('issuedAt', this.token.issuedAt);
       this.persist('created', this.token.created);
       this.persist('ttl', this.token.ttl);
       this.persist('rememberMe', this.token.rememberMe);
       return true;
     } else {
       return false;
-    }    
+    }
   };
   /**
    * @method load
@@ -160,7 +158,7 @@ export class LoopBackAuth {
         (typeof value === 'object') ? JSON.stringify(value) : value
       );
     }
-    catch(err) {
+    catch (err) {
       console.error('Cannot access local/session storage:', err);
     }
   }

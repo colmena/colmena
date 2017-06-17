@@ -1,32 +1,39 @@
 /* tslint:disable */
 import {
-  SystemDomain,
-  SystemUser
+  ContentEvent,
+  ContentPage,
+  ContentProduct,
+  ContentPost,
+  SystemDomain
 } from '../index';
 
 declare var Object: any;
 export interface StorageFileInterface {
-  "id"?: any;
-  "name"?: any;
-  "type"?: any;
-  "created"?: any;
-  "modified"?: any;
-  "systemDomainId"?: any;
-  "systemUserId"?: any;
+  "id"?: string;
+  "name"?: string;
+  "type"?: string;
+  "created"?: Date;
+  "modified"?: Date;
+  "container"?: string;
+  contentEvents?: ContentEvent[];
+  contentPages?: ContentPage[];
+  contentProducts?: ContentProduct[];
+  contentPosts?: ContentPost[];
   systemDomain?: SystemDomain;
-  systemUser?: SystemUser;
 }
 
 export class StorageFile implements StorageFileInterface {
-  "id": any;
-  "name": any;
-  "type": any;
-  "created": any;
-  "modified": any;
-  "systemDomainId": any;
-  "systemUserId": any;
+  "id": string;
+  "name": string;
+  "type": string;
+  "created": Date;
+  "modified": Date;
+  "container": string;
+  contentEvents: ContentEvent[];
+  contentPages: ContentPage[];
+  contentProducts: ContentProduct[];
+  contentPosts: ContentPost[];
   systemDomain: SystemDomain;
-  systemUser: SystemUser;
   constructor(data?: StorageFileInterface) {
     Object.assign(this, data);
   }
@@ -60,43 +67,54 @@ export class StorageFile implements StorageFileInterface {
       properties: {
         "id": {
           name: 'id',
-          type: 'any'
+          type: 'string'
         },
         "name": {
           name: 'name',
-          type: 'any'
+          type: 'string'
         },
         "type": {
           name: 'type',
-          type: 'any'
+          type: 'string'
         },
         "created": {
           name: 'created',
-          type: 'any'
+          type: 'Date'
         },
         "modified": {
           name: 'modified',
-          type: 'any'
+          type: 'Date'
         },
-        "systemDomainId": {
-          name: 'systemDomainId',
-          type: 'any'
-        },
-        "systemUserId": {
-          name: 'systemUserId',
-          type: 'any'
+        "container": {
+          name: 'container',
+          type: 'string'
         },
       },
       relations: {
+        contentEvents: {
+          name: 'contentEvents',
+          type: 'ContentEvent[]',
+          model: 'ContentEvent'
+        },
+        contentPages: {
+          name: 'contentPages',
+          type: 'ContentPage[]',
+          model: 'ContentPage'
+        },
+        contentProducts: {
+          name: 'contentProducts',
+          type: 'ContentProduct[]',
+          model: 'ContentProduct'
+        },
+        contentPosts: {
+          name: 'contentPosts',
+          type: 'ContentPost[]',
+          model: 'ContentPost'
+        },
         systemDomain: {
           name: 'systemDomain',
           type: 'SystemDomain',
           model: 'SystemDomain'
-        },
-        systemUser: {
-          name: 'systemUser',
-          type: 'SystemUser',
-          model: 'SystemUser'
         },
       }
     }

@@ -2,11 +2,11 @@
 
 declare var Object: any;
 export interface StorageContainerInterface {
-  "id"?: any;
+  "id"?: number;
 }
 
 export class StorageContainer implements StorageContainerInterface {
-  "id": any;
+  "id": number;
   constructor(data?: StorageContainerInterface) {
     Object.assign(this, data);
   }
@@ -40,7 +40,7 @@ export class StorageContainer implements StorageContainerInterface {
       properties: {
         "id": {
           name: 'id',
-          type: 'any'
+          type: 'number'
         },
       },
       relations: {

@@ -6,7 +6,7 @@
  * The InternalStorage class is used for dependency injection swapping.
  * It will be provided using factory method from different sources.
  **/
-export class Storage {
+export class BaseStorage {
   /**
    * @method get
    * @param {string} key Storage key name
@@ -43,7 +43,7 @@ export class Storage {
  * This is mainly required because Angular Universal integration.
  * It does inject a CookieStorage instead of LocalStorage.
  **/
-export class InternalStorage extends Storage {}
+export class InternalStorage extends BaseStorage {}
 /**
  * @module SDKStorage
  * @author Jonathan Casarrubias <t: johncasarrubias, gh: mean-expert-official>
@@ -54,4 +54,4 @@ export class InternalStorage extends Storage {}
  * This is created for public usage, to allow persisting custom data
  * Into the local storage API.
  **/
-export class SDKStorage extends Storage {}
+export class SDKStorage extends BaseStorage {}

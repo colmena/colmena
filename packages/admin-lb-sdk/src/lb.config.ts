@@ -24,6 +24,7 @@ export class LoopBackConfig {
   private static version: string | number = 'api/v1';
   private static authPrefix: string = '';
   private static debug: boolean = true;
+  private static filterOn: string = 'headers';
 
   public static setApiVersion(version: string = 'api'): void {
     LoopBackConfig.version = version;
@@ -55,5 +56,17 @@ export class LoopBackConfig {
 
   public static debuggable(): boolean {
     return LoopBackConfig.debug;
+  }
+
+  public static filterOnUrl(): void {
+    LoopBackConfig.filterOn = 'url';
+  }
+
+  public static filterOnHeaders(): void {
+    LoopBackConfig.filterOn = 'headers';
+  }
+
+  public static isHeadersFilteringSet(): boolean {
+    return (LoopBackConfig.filterOn === 'headers');
   }
 }

@@ -2,21 +2,21 @@
 
 declare var Object: any;
 export interface EmailInterface {
-  "to": any;
-  "from": any;
-  "subject": any;
-  "text"?: any;
-  "html"?: any;
-  "id"?: any;
+  "to": string;
+  "from": string;
+  "subject": string;
+  "text"?: string;
+  "html"?: string;
+  "id"?: number;
 }
 
 export class Email implements EmailInterface {
-  "to": any;
-  "from": any;
-  "subject": any;
-  "text": any;
-  "html": any;
-  "id": any;
+  "to": string;
+  "from": string;
+  "subject": string;
+  "text": string;
+  "html": string;
+  "id": number;
   constructor(data?: EmailInterface) {
     Object.assign(this, data);
   }
@@ -50,27 +50,27 @@ export class Email implements EmailInterface {
       properties: {
         "to": {
           name: 'to',
-          type: 'any'
+          type: 'string'
         },
         "from": {
           name: 'from',
-          type: 'any'
+          type: 'string'
         },
         "subject": {
           name: 'subject',
-          type: 'any'
+          type: 'string'
         },
         "text": {
           name: 'text',
-          type: 'any'
+          type: 'string'
         },
         "html": {
           name: 'html',
-          type: 'any'
+          type: 'string'
         },
         "id": {
           name: 'id',
-          type: 'any'
+          type: 'number'
         },
       },
       relations: {

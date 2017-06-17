@@ -2,21 +2,21 @@
 
 declare var Object: any;
 export interface SystemSettingInterface {
-  "key": any;
-  "system"?: any;
-  "type": any;
-  "description"?: any;
-  "created"?: any;
-  "modified"?: any;
+  "key": string;
+  "system"?: boolean;
+  "type": string;
+  "description"?: string;
+  "created"?: Date;
+  "modified"?: Date;
 }
 
 export class SystemSetting implements SystemSettingInterface {
-  "key": any;
-  "system": any;
-  "type": any;
-  "description": any;
-  "created": any;
-  "modified": any;
+  "key": string;
+  "system": boolean;
+  "type": string;
+  "description": string;
+  "created": Date;
+  "modified": Date;
   constructor(data?: SystemSettingInterface) {
     Object.assign(this, data);
   }
@@ -50,29 +50,29 @@ export class SystemSetting implements SystemSettingInterface {
       properties: {
         "key": {
           name: 'key',
-          type: 'any'
+          type: 'string'
         },
         "system": {
           name: 'system',
-          type: 'any',
+          type: 'boolean',
           default: false
         },
         "type": {
           name: 'type',
-          type: 'any',
+          type: 'string',
           default: 'string'
         },
         "description": {
           name: 'description',
-          type: 'any'
+          type: 'string'
         },
         "created": {
           name: 'created',
-          type: 'any'
+          type: 'Date'
         },
         "modified": {
           name: 'modified',
-          type: 'any'
+          type: 'Date'
         },
       },
       relations: {

@@ -2,11 +2,11 @@
 
 declare var Object: any;
 export interface SystemInterface {
-  "id"?: any;
+  "id"?: number;
 }
 
 export class System implements SystemInterface {
-  "id": any;
+  "id": number;
   constructor(data?: SystemInterface) {
     Object.assign(this, data);
   }
@@ -40,7 +40,7 @@ export class System implements SystemInterface {
       properties: {
         "id": {
           name: 'id',
-          type: 'any'
+          type: 'number'
         },
       },
       relations: {

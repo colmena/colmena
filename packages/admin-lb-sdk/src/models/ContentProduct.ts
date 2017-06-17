@@ -1,38 +1,39 @@
 /* tslint:disable */
 import {
+  StorageFile,
   SystemDomain,
   SystemUser
 } from '../index';
 
 declare var Object: any;
 export interface ContentProductInterface {
-  "id"?: any;
-  "domainId"?: any;
-  "fileId"?: any;
-  "name"?: any;
-  "description"?: any;
-  "sku"?: any;
-  "price"?: any;
-  "created"?: any;
-  "modified"?: any;
-  "systemDomainId"?: any;
-  "systemUserId"?: any;
+  "name"?: string;
+  "description"?: string;
+  "sku"?: string;
+  "price"?: number;
+  "id"?: number;
+  "systemDomainId"?: string;
+  "systemUserId"?: string;
+  "storageFileId"?: string;
+  "created"?: Date;
+  "modified"?: Date;
+  storageFile?: StorageFile;
   systemDomain?: SystemDomain;
   systemUser?: SystemUser;
 }
 
 export class ContentProduct implements ContentProductInterface {
-  "id": any;
-  "domainId": any;
-  "fileId": any;
-  "name": any;
-  "description": any;
-  "sku": any;
-  "price": any;
-  "created": any;
-  "modified": any;
-  "systemDomainId": any;
-  "systemUserId": any;
+  "name": string;
+  "description": string;
+  "sku": string;
+  "price": number;
+  "id": number;
+  "systemDomainId": string;
+  "systemUserId": string;
+  "storageFileId": string;
+  "created": Date;
+  "modified": Date;
+  storageFile: StorageFile;
   systemDomain: SystemDomain;
   systemUser: SystemUser;
   constructor(data?: ContentProductInterface) {
@@ -66,52 +67,53 @@ export class ContentProduct implements ContentProductInterface {
       name: 'ContentProduct',
       plural: 'ContentProducts',
       properties: {
-        "id": {
-          name: 'id',
-          type: 'any'
-        },
-        "domainId": {
-          name: 'domainId',
-          type: 'any'
-        },
-        "fileId": {
-          name: 'fileId',
-          type: 'any'
-        },
         "name": {
           name: 'name',
-          type: 'any'
+          type: 'string'
         },
         "description": {
           name: 'description',
-          type: 'any'
+          type: 'string'
         },
         "sku": {
           name: 'sku',
-          type: 'any'
+          type: 'string'
         },
         "price": {
           name: 'price',
-          type: 'any'
+          type: 'number'
         },
-        "created": {
-          name: 'created',
-          type: 'any'
-        },
-        "modified": {
-          name: 'modified',
-          type: 'any'
+        "id": {
+          name: 'id',
+          type: 'number'
         },
         "systemDomainId": {
           name: 'systemDomainId',
-          type: 'any'
+          type: 'string'
         },
         "systemUserId": {
           name: 'systemUserId',
-          type: 'any'
+          type: 'string'
+        },
+        "storageFileId": {
+          name: 'storageFileId',
+          type: 'string'
+        },
+        "created": {
+          name: 'created',
+          type: 'Date'
+        },
+        "modified": {
+          name: 'modified',
+          type: 'Date'
         },
       },
       relations: {
+        storageFile: {
+          name: 'storageFile',
+          type: 'StorageFile',
+          model: 'StorageFile'
+        },
         systemDomain: {
           name: 'systemDomain',
           type: 'SystemDomain',

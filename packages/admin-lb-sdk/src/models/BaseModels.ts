@@ -12,20 +12,21 @@ export interface LoopBackFilter {
 }
 
 export interface AccessTokenInterface {
-    id?: any;
-    ttl?: number;
-    issuedAt?: any;
-    created: any;
-    userId?: number;
-    rememberMe?: boolean;
+  "id"?: string;
+  "ttl"?: number;
+  "scopes"?: ["string"];
+  "created"?: Date;
+  "userId"?: string;
+  "user"?: any;
 }
 
 export class AccessToken implements AccessTokenInterface {
-  id: any = '';
-  ttl: number = 1209600;
-  created: Date = new Date(0);
-  userId: number = 0;
-  user: any = null;
+  "id": string;
+  "ttl": number;
+  "scopes": ["string"];
+  "created": Date;
+  "userId": string;
+  "user": any;
   constructor(data?: AccessTokenInterface) {
     Object.assign(this, data);
   }
@@ -57,23 +58,26 @@ export class AccessToken implements AccessTokenInterface {
       name: 'AccessToken',
       plural: 'AccessTokens',
       properties: {
-        id: {
+        "id": {
           name: 'id',
           type: 'string'
         },
-        ttl: {
+        "ttl": {
           name: 'ttl',
           type: 'number',
           default: 1209600
         },
-        created: {
-          name: 'created',
-          type: 'Date',
-          default: new Date(0)
+        "scopes": {
+          name: 'scopes',
+          type: '["string"]'
         },
-        userId: {
+        "created": {
+          name: 'created',
+          type: 'Date'
+        },
+        "userId": {
           name: 'userId',
-          type: 'number'
+          type: 'string'
         },
       },
       relations: {
@@ -88,16 +92,16 @@ export class AccessToken implements AccessTokenInterface {
 }
 
 export class SDKToken implements AccessTokenInterface {
-    id: any = null;
-    ttl: number = null;
-    issuedAt: any = null;
-    created: any = null;
-    userId: any = null;
-    user: any = null;
-    rememberMe: boolean = null;
-    constructor(data?: AccessTokenInterface) {
-        Object.assign(this, data);
-    }
+  id: any = null;
+  ttl: number = null;
+  scopes: any = null;
+  created: any = null;
+  userId: any = null;
+  user: any = null;
+  rememberMe: boolean = null;
+  constructor(data?: AccessTokenInterface) {
+    Object.assign(this, data);
+  }
 }
 /**
 * This GeoPoint represents both, LoopBack and MongoDB GeoPoint

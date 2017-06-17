@@ -2,11 +2,11 @@
 
 declare var Object: any;
 export interface PingInterface {
-  "id"?: any;
+  "id"?: string;
 }
 
 export class Ping implements PingInterface {
-  "id": any;
+  "id": string;
   constructor(data?: PingInterface) {
     Object.assign(this, data);
   }
@@ -40,7 +40,7 @@ export class Ping implements PingInterface {
       properties: {
         "id": {
           name: 'id',
-          type: 'any'
+          type: 'string'
         },
       },
       relations: {

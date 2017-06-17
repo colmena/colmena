@@ -3,55 +3,52 @@ import {
   ContentEvent,
   ContentPage,
   ContentProduct,
-  ContentPost,
-  StorageFile
+  ContentPost
 } from '../index';
 
 declare var Object: any;
 export interface SystemUserInterface {
-  "id": any;
-  "username": any;
-  "email": any;
-  "firstName": any;
-  "lastName": any;
-  "avatar"?: any;
-  "realm"?: any;
-  "password": any;
-  "emailVerified"?: any;
-  "verificationToken"?: any;
-  "created"?: any;
-  "modified"?: any;
+  "id": string;
+  "username": string;
+  "email": string;
+  "firstName": string;
+  "lastName": string;
+  "fullName"?: string;
+  "avatar"?: string;
+  "realm"?: string;
+  "password": string;
+  "emailVerified"?: boolean;
+  "verificationToken"?: string;
+  "created"?: Date;
+  "modified"?: Date;
   accessTokens?: any[];
   roles?: any[];
-  contentBaseModels?: any[];
   contentEvents?: ContentEvent[];
   contentPages?: ContentPage[];
   contentProducts?: ContentProduct[];
   contentPosts?: ContentPost[];
-  storageFiles?: StorageFile[];
 }
 
 export class SystemUser implements SystemUserInterface {
-  "id": any;
-  "username": any;
-  "email": any;
-  "firstName": any;
-  "lastName": any;
-  "avatar": any;
-  "realm": any;
-  "password": any;
-  "emailVerified": any;
-  "verificationToken": any;
-  "created": any;
-  "modified": any;
+  "id": string;
+  "username": string;
+  "email": string;
+  "firstName": string;
+  "lastName": string;
+  "fullName": string;
+  "avatar": string;
+  "realm": string;
+  "password": string;
+  "emailVerified": boolean;
+  "verificationToken": string;
+  "created": Date;
+  "modified": Date;
   accessTokens: any[];
   roles: any[];
-  contentBaseModels: any[];
   contentEvents: ContentEvent[];
   contentPages: ContentPage[];
   contentProducts: ContentProduct[];
   contentPosts: ContentPost[];
-  storageFiles: StorageFile[];
   constructor(data?: SystemUserInterface) {
     Object.assign(this, data);
   }
@@ -85,51 +82,55 @@ export class SystemUser implements SystemUserInterface {
       properties: {
         "id": {
           name: 'id',
-          type: 'any'
+          type: 'string'
         },
         "username": {
           name: 'username',
-          type: 'any'
+          type: 'string'
         },
         "email": {
           name: 'email',
-          type: 'any'
+          type: 'string'
         },
         "firstName": {
           name: 'firstName',
-          type: 'any'
+          type: 'string'
         },
         "lastName": {
           name: 'lastName',
-          type: 'any'
+          type: 'string'
+        },
+        "fullName": {
+          name: 'fullName',
+          type: 'string'
         },
         "avatar": {
           name: 'avatar',
-          type: 'any'
+          type: 'string'
         },
         "realm": {
           name: 'realm',
-          type: 'any'
+          type: 'string'
         },
         "password": {
           name: 'password',
-          type: 'any'
+          type: 'string'
         },
         "emailVerified": {
           name: 'emailVerified',
-          type: 'any'
+          type: 'boolean'
         },
         "verificationToken": {
           name: 'verificationToken',
-          type: 'any'
+          type: 'string'
         },
         "created": {
           name: 'created',
-          type: 'any'
+          type: 'Date'
         },
         "modified": {
           name: 'modified',
-          type: 'any'
+          type: 'Date'
         },
       },
       relations: {
@@ -140,11 +141,6 @@ export class SystemUser implements SystemUserInterface {
         },
         roles: {
           name: 'roles',
-          type: 'any[]',
-          model: ''
-        },
-        contentBaseModels: {
-          name: 'contentBaseModels',
           type: 'any[]',
           model: ''
         },
@@ -167,11 +163,6 @@ export class SystemUser implements SystemUserInterface {
           name: 'contentPosts',
           type: 'ContentPost[]',
           model: 'ContentPost'
-        },
-        storageFiles: {
-          name: 'storageFiles',
-          type: 'StorageFile[]',
-          model: 'StorageFile'
         },
       }
     }
