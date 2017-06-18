@@ -45,6 +45,7 @@
     "@colmena/admin-lb-sdk": "0.0.0",
     "@colmena/admin-ui": "0.0.0",
     "@colmena/module-admin-auth": "0.0.0",
+    "@colmena/module-admin-data-browser": "0.0.0",
     "@colmena/module-admin-content": "0.0.0",
     "@colmena/module-admin-dashboard": "0.0.0",
     "@colmena/module-admin-dev": "0.0.0",

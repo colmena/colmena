@@ -10,15 +10,15 @@ const moduleConfig = {
   icon: 'icon-speedometer',
   packageName: `@colmena/module-admin-${moduleName}`,
   topLinks: [
-    { weight: 0, label: 'Dashboard',   icon: 'icon-speedometer', link: link() }
+    { weight: 80, label: 'Browser', icon: 'fa fa-database', link: link() }
   ],
   sidebarLinks: [
     { weight: 80, type: 'title', label: 'Data' },
-    { weight: 81, label: 'Browser', icon: 'fa fa-database', link: [ '/', 'browser' ] },
+    { weight: 81, label: 'Browser', icon: 'fa fa-database', link: link() },
   ],
   dashboardLinks: {
     content: [
-      { count: '∞', label: 'Data Browser', type: 'warning', icon: 'fa fa-database', link: [ '/', 'browser' ] },
+      { count: '∞', label: 'Data Browser', type: 'warning', icon: 'fa fa-database', link: link() },
     ]
   },
 }

@@ -26,6 +26,7 @@ import { RouterComponent } from './components/router/router.component'
 import { AuthConfigModule } from '@colmena/module-admin-auth'
 import { ContentConfigModule } from '@colmena/module-admin-content'
 import { DashboardConfigModule } from '@colmena/module-admin-dashboard'
+import { DataBrowserConfigModule } from '@colmena/module-admin-data-browser'
 import { DevConfigModule } from '@colmena/module-admin-dev'
 import { SystemConfigModule } from '@colmena/module-admin-system'
 
@@ -33,6 +34,7 @@ const moduleConfigs = [
   AuthConfigModule,
   ContentConfigModule,
   DashboardConfigModule,
+  DataBrowserConfigModule,
   DevConfigModule,
   SystemConfigModule
 ]

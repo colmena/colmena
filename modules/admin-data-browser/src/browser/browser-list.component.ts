@@ -25,13 +25,16 @@ export class BrowserListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.getModels().subscribe(res => this.handleModels(res))
+    this.service.getModels()
+      .subscribe(res => this.handleModels(res))
   }
 
   handleModels(models) {
     models.map(model => {
       model.plural = model.plural ? model.plural : model.plural = model.name + 's'
-      this.sideLinks.push({ title: model.name, link: [model.plural]})
+      if (!model.name.includes('BaseModel')) {
+        this.sideLinks.push({ title: model.name, link: [model.plural]})
+      }
     })
   }
 }
