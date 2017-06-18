@@ -10,12 +10,12 @@ import { Store } from '@ngrx/store'
 
 import { ContentDashboardComponent } from './content.component'
 
+import { PagesModule } from './pages/pages.module'
+
 import { EventComponent } from './events/event.component'
 import { EventsComponent } from './events/events.component'
 import { FileComponent } from './files/file.component'
 import { FilesComponent } from './files/files.component'
-import { PageComponent } from './pages/page.component'
-import { PagesComponent } from './pages/pages.component'
 import { PostComponent } from './posts/post.component'
 import { PostsComponent } from './posts/posts.component'
 import { ProductComponent } from './products/product.component'
@@ -23,7 +23,6 @@ import { ProductsComponent } from './products/products.component'
 
 import { EventsService } from './events/events.service'
 import { FilesService } from './files/files.service'
-import { PagesService } from './pages/pages.service'
 import { PostsService } from './posts/posts.service'
 import { ProductsService } from './products/products.service'
 
@@ -37,8 +36,6 @@ const components = [
   EventsComponent,
   FileComponent,
   FilesComponent,
-  PageComponent,
-  PagesComponent,
   PostComponent,
   PostsComponent,
   ProductComponent,
@@ -48,7 +45,6 @@ const components = [
 const providers = [
   EventsService,
   FilesService,
-  PagesService,
   PostsService,
   ProductsService,
 
@@ -65,20 +61,12 @@ const providers = [
     RouterModule,
 
     ColmenaUiModule,
+    PagesModule,
 
     ContentRoutingModule,
   ],
-  declarations: [
-    ContentDashboardComponent,
-    ...components,
-  ],
-  exports: [
-    ContentDashboardComponent,
-  ],
-  providers: [
-    ...providers,
-  ]
+  declarations: [ContentDashboardComponent, ...components],
+  exports: [ContentDashboardComponent],
+  providers: [...providers],
 })
-export class ContentModule {
-
-}
+export class ContentModule {}
