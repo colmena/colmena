@@ -1,12 +1,13 @@
-import { Routes } from '@angular/router'
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
-import { PageListComponent } from './containers/page-list.component'
-import { PageDetailComponent } from './containers/page-detail.component'
+import { PageDetailComponent } from './components/page-detail.component'
 import { PageFormComponent } from './components/page-form.component'
+import { PageListComponent } from './components/page-list.component'
 
 import { PagesResolver } from './pages.resolvers'
 
-export const PagesRoutes: Routes = [
+const routes: Routes = [
   {
     path: 'pages',
     data: { title: 'Pages' },
@@ -47,3 +48,9 @@ export const PagesRoutes: Routes = [
     ],
   },
 ]
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class PagesRoutingModule {}

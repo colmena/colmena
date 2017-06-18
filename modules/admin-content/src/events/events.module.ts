@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { RouterModule } from '@angular/router'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
-import { EventDetailComponent } from './components/event-detail.component'
+import { EventsRoutingModule } from './events-routing.module'
+
 import { EventComponent } from './components/event.component'
+import { EventDetailComponent } from './components/event-detail.component'
 import { EventFormComponent } from './components/event-form.component'
 import { EventListComponent } from './components/event-list.component'
 
@@ -18,7 +19,7 @@ import { EventsResolver } from './events.resolvers'
     FormsModule,
     ReactiveFormsModule,
     ColmenaUiModule,
-    RouterModule,
+    EventsRoutingModule,
   ],
   declarations: [
     EventComponent,

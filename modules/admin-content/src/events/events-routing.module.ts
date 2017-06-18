@@ -1,12 +1,13 @@
-import { Routes } from '@angular/router'
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
-import { EventListComponent } from './components/event-list.component'
 import { EventDetailComponent } from './components/event-detail.component'
 import { EventFormComponent } from './components/event-form.component'
+import { EventListComponent } from './components/event-list.component'
 
 import { EventsResolver } from './events.resolvers'
 
-export const EventsRoutes: Routes = [
+const routes: Routes = [
   {
     path: 'events',
     data: { title: 'Events' },
@@ -47,3 +48,9 @@ export const EventsRoutes: Routes = [
     ],
   },
 ]
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class EventsRoutingModule {}

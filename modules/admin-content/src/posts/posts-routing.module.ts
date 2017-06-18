@@ -1,12 +1,13 @@
-import { Routes } from '@angular/router'
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
-import { PostListComponent } from './components/post-list.component'
 import { PostDetailComponent } from './components/post-detail.component'
 import { PostFormComponent } from './components/post-form.component'
+import { PostListComponent } from './components/post-list.component'
 
 import { PostsResolver } from './posts.resolvers'
 
-export const PostsRoutes: Routes = [
+const routes: Routes = [
   {
     path: 'posts',
     data: { title: 'Posts' },
@@ -47,3 +48,9 @@ export const PostsRoutes: Routes = [
     ],
   },
 ]
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
+})
+export class PostsRoutingModule {}
