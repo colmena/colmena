@@ -2,6 +2,7 @@
   "name": "@colmena/module-admin-dev",
   "version": "0.0.0",
   "dependencies": {
+    "@colmena/admin-lb-sdk": "0.0.0",
     "@colmena/admin-ui": "0.0.0",
     "@ngrx/core": "1.2.0",
     "@ngrx/store": "2.2.2"

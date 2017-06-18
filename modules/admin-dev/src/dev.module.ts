@@ -8,6 +8,8 @@ import { HasDevAccess } from './dev.guards'
 
 import { DevRoutingModule } from './dev-routing.module'
 
+import { ColmenaModule } from './colmena/colmena.module'
+
 import { IndexComponent } from './containers/index.component'
 
 import { AlertComponent } from './components/alert.component'
@@ -23,6 +25,8 @@ import { FormsComponent } from './components/forms.component'
     ColmenaUiModule,
 
     DevRoutingModule,
+
+    ColmenaModule,
   ],
   declarations: [
     IndexComponent,
@@ -42,5 +46,6 @@ export class DevModule {
     { icon: 'icon-note', title: 'Forms', link: 'forms', type: 'warning' },
     { icon: 'icon-info', title: 'Alerts', link: 'alerts', type: 'danger' },
     { icon: 'icon-bubble', title: 'Toasts', link: 'toasts', type: 'success' },
+    { icon: 'fa fa-cube', title: 'Colmena', link: 'colmena', type: 'primary' },
   ]
 }

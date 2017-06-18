@@ -4,21 +4,10 @@ import { DevModule } from '../dev.module'
 @Component({
   selector: 'app-index',
   template: `
-    <div class="card">
-      <div class="card-header">
-        <h5 class="my-2">Development</h5>
-        <ui-tabs [tabs]="tabs"></ui-tabs>
-      </div>
-      <div class="card-block">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
+    <ui-page [tabs]="tabs" title="Development">
+      <router-outlet></router-outlet>
+    </ui-page>
   `,
-  styles: [`
-    .card-header {
-      padding-bottom: 0;
-    }
-  `],
 })
 export class IndexComponent {
 

@@ -37,11 +37,15 @@ export const routes: Routes = [ {
         component: FormsComponent,
         data: { title: 'Forms' }
       },
-      {
-        path: 'toasts',
-        component: ToastComponent,
-        data: { title: 'Toasts' }
-      },
+        {
+          path: 'toasts',
+          component: ToastComponent,
+          data: { title: 'Toasts' }
+        },
+        {
+          path: '',
+          loadChildren: './colmena/colmena.module#ColmenaModule',
+        },
     ] },
   ],
 } ]
