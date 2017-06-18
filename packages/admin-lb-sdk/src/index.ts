@@ -60,6 +60,7 @@ import { SystemDomainApi } from './services/custom/SystemDomain';
 import { SystemSettingApi } from './services/custom/SystemSetting';
 import { SystemUserApi } from './services/custom/SystemUser';
 import { PingApi } from './services/custom/Ping';
+import { MetaApi } from './services/custom/Meta';
 /**
 * @module SDKBrowserModule
 * @description
@@ -103,6 +104,7 @@ export class SDKBrowserModule {
         SystemSettingApi,
         SystemUserApi,
         PingApi,
+        MetaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

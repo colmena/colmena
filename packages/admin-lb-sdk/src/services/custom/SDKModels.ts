@@ -12,6 +12,7 @@ import { SystemDomain } from '../../models/SystemDomain';
 import { SystemSetting } from '../../models/SystemSetting';
 import { SystemUser } from '../../models/SystemUser';
 import { Ping } from '../../models/Ping';
+import { Meta } from '../../models/Meta';
 
 export interface Models { [name: string]: any }
 
@@ -31,6 +32,7 @@ export class SDKModels {
     SystemSetting: SystemSetting,
     SystemUser: SystemUser,
     Ping: Ping,
+    Meta: Meta,
     
   };
 

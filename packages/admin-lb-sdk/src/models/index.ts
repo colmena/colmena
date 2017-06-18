@@ -11,5 +11,6 @@ export * from './SystemDomain';
 export * from './SystemSetting';
 export * from './SystemUser';
 export * from './Ping';
+export * from './Meta';
 export * from './BaseModels';
 export * from './FireLoopRef';
