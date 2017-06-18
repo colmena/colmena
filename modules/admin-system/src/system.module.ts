@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router'
 import { Store } from '@ngrx/store'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
-import { SystemDomainsModule } from './domains/domains.module'
 import { SystemSettingsModule } from './settings/settings.module'
 import { SystemUsersModule } from './users/users.module'
 
@@ -26,7 +25,7 @@ import { HasSystemAccess } from './system.guards'
     ReactiveFormsModule,
     HttpModule,
     ColmenaUiModule,
-    SystemDomainsModule,
+
     SystemSettingsModule,
     SystemUsersModule,
     RouterModule,

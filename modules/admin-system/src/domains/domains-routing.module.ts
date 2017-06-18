@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router'
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
 import { DomainListComponent } from './components/domain-list.component'
 import { DomainDetailComponent } from './components/domain-detail.component'
@@ -47,3 +48,8 @@ export const SystemDomainsRoutes: Routes = [
     ],
   },
 ]
+@NgModule({
+  imports: [ RouterModule.forChild(SystemDomainsRoutes) ],
+  exports: [ RouterModule ]
+})
+export class DomainsRoutingModule {}

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { RouterModule } from '@angular/router'
 import { ColmenaUiModule } from '@colmena/admin-ui'
+
+import { DomainsRoutingModule } from './domains-routing.module'
 
 import { DomainDetailComponent } from './components/domain-detail.component'
 import { DomainFormComponent } from './components/domain-form.component'
@@ -19,7 +20,8 @@ import { SystemDomainResolver } from './domains.resolvers'
     FormsModule,
     ReactiveFormsModule,
     ColmenaUiModule,
-    RouterModule,
+
+    DomainsRoutingModule,
   ],
   declarations: [
     DomainDetailComponent,
