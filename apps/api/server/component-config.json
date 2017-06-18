@@ -27,5 +27,32 @@
     "uiDirs": [
       "node_modules/@colmena/api-explorer-style"
     ]
+  },
+  "loopback-component-meta": {
+    "enableRest": true,
+    "filter": [
+      "ACL",
+      "Dev",
+      "Email",
+      "Ping",
+      "Meta",
+      "System",
+      "StorageContainer",
+      "AccessToken",
+      "RoleMapping",
+      "Role",
+      "User",
+      "SystemRoleMapping",
+      "SystemRole",
+      "SystemAccessToken"
+    ],
+    "acls": [
+      {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$unauthenticated",
+        "permission": "DENY"
+      }
+    ]
   }
 }
