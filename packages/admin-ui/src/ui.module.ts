@@ -22,6 +22,7 @@ import { UiMessageComponent } from './components/message/message.component'
 import { UiPageComponent } from './components/page/page.component'
 import { UiTableComponent } from './components/table/ui-table.component'
 import { UiTabsComponent } from './components/tabs/tabs.component'
+import { UiTabsVerticalComponent } from './components/tabs/tabs-vertical.component'
 import { UiTemplatesComponent } from './components/templates/templates.component'
 import { UiUploaderComponent } from './components/uploader/ui-uploader.component'
 
@@ -53,6 +54,7 @@ const components = [
   UiPageComponent,
   UiTableComponent,
   UiTabsComponent,
+  UiTabsVerticalComponent,
   UiTemplatesComponent,
   UiUploaderComponent,
 ]

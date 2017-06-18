@@ -6,6 +6,7 @@ import { UiTabLink } from '../tabs/tabs.interface'
   template: `
     <div class="card">
       <div class="card-header">
+        <h5 *ngIf="title" class="my-2">{{title}}</h5>
         <ng-content select="header"></ng-content>
         <ui-tabs [tabs]="tabs"></ui-tabs>
       </div>
@@ -23,5 +24,6 @@ import { UiTabLink } from '../tabs/tabs.interface'
 export class UiPageComponent {
 
   @Input() tabs: UiTabLink[]
+  @Input() title: string
 
 }
