@@ -3,31 +3,31 @@ import { ActivatedRoute } from '@angular/router'
 
 import { UiTabLink } from '@colmena/admin-ui'
 
-import { PostsService } from '../posts.service'
+import { EventsService } from '../events.service'
 
 @Component({
-  selector: 'app-post-detail',
+  selector: 'app-event-detail',
   template: `
-    <ui-page [tabs]="tabs" [title]="item ? item.title : 'Add New Post'">
+    <ui-page [tabs]="tabs" [title]="item ? item.name : 'Add New Event'">
       <router-outlet></router-outlet>
     </ui-page>
   `,
 })
-export class PostDetailComponent implements OnInit {
+export class EventDetailComponent implements OnInit {
   public tabs: UiTabLink[] = [
     { icon: 'fa fa-pencil', title: 'Edit', link: 'edit' },
   ]
 
   public item: any
 
-  constructor(private service: PostsService, private route: ActivatedRoute) {}
+  constructor(private service: EventsService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.item = this.route.snapshot.data.post
+    this.item = this.route.snapshot.data.event
 
     if (!this.item) {
       this.tabs = [{ icon: 'fa fa-plus', title: 'Create', link: '' }]
     }
-    this.service.setSelectedPost(this.item)
+    this.service.setSelectedEvent(this.item)
   }
 }

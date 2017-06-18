@@ -9,15 +9,13 @@ import { ColmenaUiModule } from '@colmena/admin-ui'
 import { ContentDashboardComponent } from './content.component'
 import { PostsModule } from './posts/posts.module'
 import { PagesModule } from './pages/pages.module'
+import { EventsModule } from './events/events.module'
 
-import { EventComponent } from './events/event.component'
-import { EventsComponent } from './events/events.component'
 import { FileComponent } from './files/file.component'
 import { FilesComponent } from './files/files.component'
 import { ProductComponent } from './products/product.component'
 import { ProductsComponent } from './products/products.component'
 
-import { EventsService } from './events/events.service'
 import { FilesService } from './files/files.service'
 import { ProductsService } from './products/products.service'
 
@@ -27,8 +25,6 @@ import { DomainResolver } from './content.resolvers'
 import { ContentRoutingModule } from './content-routing.module'
 
 const components = [
-  EventComponent,
-  EventsComponent,
   FileComponent,
   FilesComponent,
   ProductComponent,
@@ -36,7 +32,6 @@ const components = [
 ]
 
 const providers = [
-  EventsService,
   FilesService,
   ProductsService,
 
@@ -55,6 +50,7 @@ const providers = [
     ColmenaUiModule,
     PagesModule,
     PostsModule,
+    EventsModule,
 
     ContentRoutingModule,
   ],
@@ -62,4 +58,4 @@ const providers = [
   exports: [ContentDashboardComponent],
   providers: [...providers],
 })
-export class ContentModule { }
+export class ContentModule {}
