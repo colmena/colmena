@@ -24,6 +24,6 @@ import { FormlyFieldWysiwygComponent } from './formly-wysiwyg/wysiwyg.component'
     FormlyFieldWysiwygComponent,
   ]
 })
-export class UIFormlyModule {
+export class UiFormlyModule {
 
 }

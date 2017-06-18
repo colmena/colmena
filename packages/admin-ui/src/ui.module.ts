@@ -7,7 +7,7 @@ import { FileUploadModule } from 'ng2-file-upload'
 import { ToastyService, ToastyModule } from 'ng2-toasty'
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
 
-import { UIFormlyModule } from './modules/formly/formly.module'
+import { UiFormlyModule } from './modules/formly/formly.module'
 
 import { UiButtonsModule } from './components/buttons/buttons.module'
 import { UiCardModule } from './components/card/card.module'
@@ -19,6 +19,7 @@ import { UiDashboardIconComponent } from './components/dashboard-icon/dashboard-
 import { UiFormComponent } from './components/form/ui-form.component'
 import { UiLogoComponent } from './components/logo/logo.component'
 import { UiMessageComponent } from './components/message/message.component'
+import { UiPageComponent } from './components/page/page.component'
 import { UiTableComponent } from './components/table/ui-table.component'
 import { UiTabsComponent } from './components/tabs/tabs.component'
 import { UiTemplatesComponent } from './components/templates/templates.component'
@@ -49,6 +50,7 @@ const components = [
   UiFormComponent,
   UiLogoComponent,
   UiMessageComponent,
+  UiPageComponent,
   UiTableComponent,
   UiTabsComponent,
   UiTemplatesComponent,
@@ -79,7 +81,7 @@ const declarations = []
     ReactiveFormsModule,
     RouterModule,
     ToastyModule,
-    UIFormlyModule,
+    UiFormlyModule,
     BsDropdownModule.forRoot(),
     ...modules,
   ],
