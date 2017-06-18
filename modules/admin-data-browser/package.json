@@ -1,0 +1,9 @@
+{
+  "name": "@colmena/module-admin-data-browser",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@colmena/admin-lb-sdk": "0.0.0",
+    "@colmena/admin-ui": "0.0.0"
+  }
+}
