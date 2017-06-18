@@ -4,10 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
-import { DomainDetailComponent } from './containers/domain-detail.component'
+import { DomainDetailComponent } from './components/domain-detail.component'
 import { DomainFormComponent } from './components/domain-form.component'
 import { DomainHeaderComponent } from './components/domain-header.component'
-import { DomainListComponent } from './containers/domain-list.component'
+import { DomainListComponent } from './components/domain-list.component'
 
 import { DomainsService } from './domains.service'
 

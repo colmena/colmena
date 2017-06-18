@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router'
 
-import { SettingListComponent } from './containers/setting-list.component'
-import { SettingDetailComponent } from './containers/setting-detail.component'
+import { SettingListComponent } from './components/setting-list.component'
+import { SettingDetailComponent } from './components/setting-detail.component'
 import { SettingFormComponent } from './components/setting-form.component'
 
 import { SystemSettingResolver } from './settings.resolvers'

@@ -4,10 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
-import { SettingDetailComponent } from './containers/setting-detail.component'
+import { SettingDetailComponent } from './components/setting-detail.component'
 import { SettingFormComponent } from './components/setting-form.component'
 import { SettingHeaderComponent } from './components/setting-header.component'
-import { SettingListComponent } from './containers/setting-list.component'
+import { SettingListComponent } from './components/setting-list.component'
 
 import { SettingsService } from './settings.service'
 import { SystemSettingResolver } from './settings.resolvers'

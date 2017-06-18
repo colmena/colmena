@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router'
 
-import { UserListComponent } from './containers/user-list.component'
-import { UserDetailComponent } from './containers/user-detail.component'
+import { UserListComponent } from './components/user-list.component'
+import { UserDetailComponent } from './components/user-detail.component'
 
 import { UserAccessTokensComponent } from './components/user-access-tokens.component'
 import { UserPasswordComponent } from './components/user-password.component'

@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router'
 
-import { DomainListComponent } from './containers/domain-list.component'
-import { DomainDetailComponent } from './containers/domain-detail.component'
+import { DomainListComponent } from './components/domain-list.component'
+import { DomainDetailComponent } from './components/domain-detail.component'
 import { DomainFormComponent } from './components/domain-form.component'
 
 import { SystemDomainResolver } from './domains.resolvers'
