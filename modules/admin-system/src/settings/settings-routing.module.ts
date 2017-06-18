@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router'
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
 import { SettingListComponent } from './components/setting-list.component'
 import { SettingDetailComponent } from './components/setting-detail.component'
@@ -47,3 +48,8 @@ export const SystemSettingsRoutes: Routes = [
     ],
   },
 ]
+@NgModule({
+  imports: [ RouterModule.forChild(SystemSettingsRoutes) ],
+  exports: [ RouterModule ]
+})
+export class SettingsRoutingModule {}

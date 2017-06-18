@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { RouterModule } from '@angular/router'
 import { ColmenaUiModule } from '@colmena/admin-ui'
+
+import { SettingsRoutingModule } from './settings-routing.module'
 
 import { SettingDetailComponent } from './components/setting-detail.component'
 import { SettingFormComponent } from './components/setting-form.component'
@@ -18,7 +19,8 @@ import { SystemSettingResolver } from './settings.resolvers'
     FormsModule,
     ReactiveFormsModule,
     ColmenaUiModule,
-    RouterModule,
+
+    SettingsRoutingModule,
   ],
   declarations: [
     SettingDetailComponent,

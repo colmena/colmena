@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router'
 import { Store } from '@ngrx/store'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
-import { SystemSettingsModule } from './settings/settings.module'
 import { SystemUsersModule } from './users/users.module'
 
 import { SystemDashboardComponent } from './system.component'
@@ -26,7 +25,6 @@ import { HasSystemAccess } from './system.guards'
     HttpModule,
     ColmenaUiModule,
 
-    SystemSettingsModule,
     SystemUsersModule,
     RouterModule,
 
