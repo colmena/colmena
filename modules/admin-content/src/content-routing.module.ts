@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
 import { ContentDashboardComponent } from './content.component'
+import { PostsRoutes } from './posts/posts.routes'
 
 import { PagesRoutes } from './pages/pages.routes'
 
 import { EventsComponent } from './events/events.component'
 import { FilesComponent } from './files/files.component'
-import { PostsComponent } from './posts/posts.component'
 import { ProductsComponent } from './products/products.component'
 
 import { HasContentAccess } from './content.guards'
@@ -30,7 +30,7 @@ export const routes: Routes = [
       { path: 'events', component: EventsComponent, data: { title: 'Events' } },
       { path: 'files', component: FilesComponent, data: { title: 'Files' } },
       ...PagesRoutes,
-      { path: 'posts', component: PostsComponent, data: { title: 'Posts' } },
+      ...PostsRoutes,
       {
         path: 'products',
         component: ProductsComponent,
