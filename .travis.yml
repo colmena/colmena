@@ -12,10 +12,3 @@ script:
 cache:
   directories:
   - node_modules
-deploy:
-  - provider: script
-    skip_cleanup: true
-    script: ./bin/deploy-to-now.sh
-    on:
-      branch: develop
-
