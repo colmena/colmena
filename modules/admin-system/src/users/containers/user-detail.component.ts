@@ -8,21 +8,13 @@ import { UsersService } from '../users.service'
 @Component({
   selector: 'app-user-detail',
   template: `
-    <div class="card">
-      <div class="card-header">
+    <ui-page [tabs]="tabs">
+      <header>
         <app-user-header [user]="item?.user"></app-user-header>
-        <ui-tabs [tabs]="tabs"></ui-tabs>
-      </div>
-      <div class="card-block">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
+      </header>
+      <router-outlet></router-outlet>
+    </ui-page>
   `,
-  styles: [`
-    .card-header {
-      padding-bottom: 0;
-    }
-  `],
 })
 export class UserDetailComponent implements OnInit {
 

@@ -8,21 +8,13 @@ import { SettingsService } from '../settings.service'
 @Component({
   selector: 'app-setting-detail',
   template: `
-    <div class="card">
-      <div class="card-header">
+    <ui-page [tabs]="tabs">
+      <header>
         <app-setting-header [item]="item"></app-setting-header>
-        <ui-tabs [tabs]="tabs"></ui-tabs>
-      </div>
-      <div class="card-block">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
+      </header>
+      <router-outlet></router-outlet>
+    </ui-page>
   `,
-  styles: [`
-    .card-header {
-      padding-bottom: 0;
-    }
-  `],
 })
 export class SettingDetailComponent implements OnInit {
 

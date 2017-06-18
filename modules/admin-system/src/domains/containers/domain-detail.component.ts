@@ -8,21 +8,13 @@ import { DomainsService } from '../domains.service'
 @Component({
   selector: 'app-domain-detail',
   template: `
-    <div class="card">
-      <div class="card-header">
+    <ui-page [tabs]="tabs">
+      <header>
         <app-domain-header [item]="item"></app-domain-header>
-        <ui-tabs [tabs]="tabs"></ui-tabs>
-      </div>
-      <div class="card-block">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
+      </header>
+      <router-outlet></router-outlet>
+    </ui-page>
   `,
-  styles: [`
-    .card-header {
-      padding-bottom: 0;
-    }
-  `],
 })
 export class DomainDetailComponent implements OnInit {
 
