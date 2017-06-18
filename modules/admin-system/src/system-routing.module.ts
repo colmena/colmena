@@ -3,8 +3,6 @@ import { Routes, RouterModule } from '@angular/router'
 
 import { SystemDashboardComponent } from './system.component'
 
-import { SystemUsersRoutes } from './users/users.routes'
-
 import { HasSystemAccess } from './system.guards'
 
 export const routes: Routes = [ {
@@ -17,7 +15,7 @@ export const routes: Routes = [ {
     { path: '', component: SystemDashboardComponent, data: { title: 'Dashboard' } },
     { path: '', loadChildren: './domains/domains.module#SystemDomainsModule' },
     { path: '', loadChildren: './settings/settings.module#SystemSettingsModule' },
-    ...SystemUsersRoutes,
+    { path: '', loadChildren: './users/users.module#SystemUsersModule' },
   ],
 } ]
 

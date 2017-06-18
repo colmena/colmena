@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router'
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
 import { UserListComponent } from './components/user-list.component'
 import { UserDetailComponent } from './components/user-detail.component'
@@ -10,7 +11,7 @@ import { UserRolesComponent } from './components/user-roles.component'
 
 import { SystemUserResolver } from './users.resolvers'
 
-export const SystemUsersRoutes: Routes = [
+const routes: Routes = [
   {
     path: 'users',
     data: { title: 'Users' },
@@ -65,3 +66,8 @@ export const SystemUsersRoutes: Routes = [
       },
     ]
   } ]
+@NgModule({
+  imports: [ RouterModule.forChild(routes) ],
+  exports: [ RouterModule ]
+})
+export class UsersRoutingModule {}

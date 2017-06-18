@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 import { Store } from '@ngrx/store'
-import { SystemUserApi, SystemDomain as Domain } from '@colmena/admin-lb-sdk'
+import { SystemUserApi } from '@colmena/admin-lb-sdk'
 export { SystemUser as User } from '@colmena/admin-lb-sdk'
 import { UiDataGridService, FormService } from '@colmena/admin-ui'
 import { Observable } from 'rxjs/Observable'
