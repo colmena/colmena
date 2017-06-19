@@ -18,11 +18,14 @@ const routes: Routes = [
   ]
   }, {
     path: '', component: FullLayoutComponent, children: [
+      // Colmena Module Routes
       { path: '', loadChildren: '@colmena/module-admin-content#ContentModule' },
       { path: '', loadChildren: '@colmena/module-admin-dashboard#DashboardModule' },
       { path: '', loadChildren: '@colmena/module-admin-data-browser#DataBrowserModule' },
       { path: '', loadChildren: '@colmena/module-admin-dev#DevModule' },
       { path: '', loadChildren: '@colmena/module-admin-system#SystemModule' },
+      // Custom Module Routes
+      // { path: '', loadChildren: '@colmena/module-admin-starter#StarterModule' },
     ]
   },
   { path: '**', redirectTo: 'not-found' },
