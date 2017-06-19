@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core'
 
 @Component({
-  selector: 'app-content-file',
+  selector: 'app-storage-file',
   template: `
     <ui-card>
       <ui-card-header>

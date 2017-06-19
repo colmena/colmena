@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router'
 
 import { ContentDashboardComponent } from './content.component'
 
-import { FilesComponent } from './files/files.component'
 import { ProductsComponent } from './products/products.component'
 
 import { HasContentAccess } from './content.guards'
@@ -22,7 +21,6 @@ export const routes: Routes = [
       { path: '', loadChildren: './events/events.module#EventsModule' },
       { path: '', loadChildren: './pages/pages.module#PagesModule' },
       { path: '', loadChildren: './posts/posts.module#PostsModule' },
-      { path: 'files', component: FilesComponent, data: { title: 'Files' } },
       { path: 'products', component: ProductsComponent, data: { title: 'Products' } },
     ],
   },

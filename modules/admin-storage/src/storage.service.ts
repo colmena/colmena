@@ -1,11 +1,20 @@
 import { Injectable } from '@angular/core'
 
+
 import { UiDataGridService, FormService } from '@colmena/admin-ui'
 
 import { SystemDomainApi } from '@colmena/admin-lb-sdk'
 
+// import { StorageItemApi } from '@colmena/admin-lb-sdk'
+
 @Injectable()
-export class FilesService extends UiDataGridService {
+export class StorageService extends UiDataGridService {
+
+  // constructor(private service: StorageItemApi) {}
+
+  // getItems() {
+  //   return this.service.find()
+  // }
 
   public icon = 'icon-doc'
   public title = 'Files'
@@ -67,4 +76,5 @@ export class FilesService extends UiDataGridService {
         (error) => errorCb(error),
       )
   }
+
 }

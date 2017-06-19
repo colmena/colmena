@@ -8,12 +8,9 @@ import { ColmenaUiModule } from '@colmena/admin-ui'
 
 import { ContentDashboardComponent } from './content.component'
 
-import { FileComponent } from './files/file.component'
-import { FilesComponent } from './files/files.component'
 import { ProductComponent } from './products/product.component'
 import { ProductsComponent } from './products/products.component'
 
-import { FilesService } from './files/files.service'
 import { ProductsService } from './products/products.service'
 
 import { HasContentAccess } from './content.guards'
@@ -22,14 +19,11 @@ import { DomainResolver } from './content.resolvers'
 import { ContentRoutingModule } from './content-routing.module'
 
 const components = [
-  FileComponent,
-  FilesComponent,
   ProductComponent,
   ProductsComponent,
 ]
 
 const providers = [
-  FilesService,
   ProductsService,
 
   HasContentAccess,
