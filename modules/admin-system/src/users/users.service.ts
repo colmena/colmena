@@ -9,7 +9,6 @@ import 'rxjs/add/operator/map'
 
 @Injectable()
 export class UsersService extends UiDataGridService {
-
   public icon = 'icon-user'
   public title = 'Users'
   public domains: any[] = []
@@ -23,7 +22,7 @@ export class UsersService extends UiDataGridService {
   constructor(
     public userApi: SystemUserApi,
     public formService: FormService,
-    private store: Store<any>,
+    private store: Store<any>
   ) {
     super()
     this.getDomains()
@@ -35,12 +34,12 @@ export class UsersService extends UiDataGridService {
   }
 
   getDomains(): void {
-    this.store
-      .select('app')
-      .map(data => data['domains'])
-      .subscribe(domains => {
-        this.domains = domains.map(domain => ({ label: domain.name, value: domain.id }))
-      })
+    this.store.select('app').map(data => data['domains']).subscribe(domains => {
+      this.domains = domains.map(domain => ({
+        label: domain.name,
+        value: domain.id,
+      }))
+    })
   }
 
   getFormFields(editForm = false) {
@@ -64,7 +63,7 @@ export class UsersService extends UiDataGridService {
         this.formService.password('password', {
           label: 'Password',
           placeholder: 'Password',
-        }),
+        })
       )
     }
     return fields
@@ -97,10 +96,9 @@ export class UsersService extends UiDataGridService {
     }
     return this.createUser(item, successCb, errorCb)
   }
+
   createUser(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .create(item)
-      .subscribe(successCb, errorCb)
+    return this.userApi.create(item).subscribe(successCb, errorCb)
   }
 
   updateUser(item, successCb, errorCb): Subscription {
@@ -110,9 +108,7 @@ export class UsersService extends UiDataGridService {
   }
 
   deleteItem(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .deleteById(item.id)
-      .subscribe(successCb, errorCb)
+    return this.userApi.deleteById(item.id).subscribe(successCb, errorCb)
   }
 
   addUserToRole(item, successCb, errorCb): Subscription {
@@ -128,9 +124,7 @@ export class UsersService extends UiDataGridService {
   }
 
   getUserAccessTokens(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .getAccessTokens(item.id)
-      .subscribe(successCb, errorCb)
+    return this.userApi.getAccessTokens(item.id).subscribe(successCb, errorCb)
   }
 
   generateToken(item, successCb, errorCb): Subscription {
@@ -158,15 +152,10 @@ export class UsersService extends UiDataGridService {
   }
 
   changePassword(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .resetPassword(item)
-      .subscribe(successCb, errorCb)
+    return this.userApi.resetPassword(item).subscribe(successCb, errorCb)
   }
 
   resetPassword(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .resetPassword(item)
-      .subscribe(successCb, errorCb)
+    return this.userApi.resetPassword(item).subscribe(successCb, errorCb)
   }
-
 }

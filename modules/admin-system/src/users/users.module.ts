@@ -14,6 +14,7 @@ import { UserPasswordComponent } from './components/user-password.component'
 import { UserRolesComponent } from './components/user-roles.component'
 
 import { UsersService } from './users.service'
+import { SystemUserResolver } from './users.resolvers'
 
 @NgModule({
   imports: [
@@ -33,8 +34,6 @@ import { UsersService } from './users.service'
     UserPasswordComponent,
     UserRolesComponent,
   ],
-  providers: [
-    UsersService,
-  ],
+  providers: [UsersService, SystemUserResolver],
 })
-export class SystemUsersModule { }
+export class SystemUsersModule {}

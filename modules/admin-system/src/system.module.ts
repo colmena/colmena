@@ -10,8 +10,6 @@ import { SystemDashboardComponent } from './system.component'
 import { SystemInfoComponent } from './system-info.component'
 import { SystemModulesComponent } from './system-modules.component'
 
-import { SystemUserResolver } from './users/users.resolvers'
-
 import { SystemRoutingModule } from './system-routing.module'
 import { HasSystemAccess } from './system.guards'
 
@@ -32,20 +30,11 @@ import { HasSystemAccess } from './system.guards'
     SystemInfoComponent,
     SystemModulesComponent,
   ],
-  providers: [
-    SystemUserResolver,
-    HasSystemAccess,
-  ],
-  exports: [
-    SystemDashboardComponent,
-  ],
+  providers: [HasSystemAccess],
+  exports: [SystemDashboardComponent],
 })
 export class SystemModule {
-
-  constructor(
-    private store: Store<any>,
-  ) {
-  }
+  constructor(private store: Store<any>) {}
 
   dispatchLinks(links) {
     this.store.dispatch({ type: 'LAYOUT_HEADER_NAV', payload: links })
