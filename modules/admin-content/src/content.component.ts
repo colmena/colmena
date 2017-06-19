@@ -4,15 +4,20 @@ import { Store } from '@ngrx/store'
 @Component({
   selector: 'app-content-dashboard',
   template: `
-    <div class="row">
-      <div class="col-md-4" *ngFor="let widget of widgets">
-        <ui-dashboard-icon
-          [routerLink]="widget.link"
-          [count]="widget.count"
-          [icon]="widget.icon"
-          [label]="widget.label"
-          [type]="widget.type">
-        </ui-dashboard-icon>
+    <div class="card">
+      <div class="card-header">Content</div>
+      <div class="card-block">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let widget of widgets">
+            <ui-dashboard-icon
+              [routerLink]="widget.link"
+              [count]="widget.count"
+              [icon]="widget.icon"
+              [label]="widget.label"
+              [type]="widget.type">
+            </ui-dashboard-icon>
+          </div>
+        </div>
       </div>
     </div>
   `,
