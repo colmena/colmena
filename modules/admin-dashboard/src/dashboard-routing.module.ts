@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
-import { AboutComponent } from './about/about.component'
-import { DashboardComponent } from './dashboard/dashboard.component'
-import { PasswordComponent } from './password/password.component'
-import { ProfileComponent } from './profile/profile.component'
+import { AboutComponent } from './components/about.component'
+import { DashboardComponent } from './components/dashboard.component'
+import { IndexComponent } from './components/index.component'
+import { PasswordComponent } from './components/password.component'
+import { ProfileComponent } from './components/profile.component'
 
-export const routes: Routes = [ {
-  path: '',
+const routes: Routes = [ {
+  path: 'dashboard',
   data: {
     title: 'Dashboard',
   },
   children: [
-    { path: 'about', component: AboutComponent },
-    { path: 'dashboard', component: DashboardComponent },
-    { path: 'password', component: PasswordComponent },
-    { path: 'profile', component: ProfileComponent },
-  ],
+    { path: '', component: IndexComponent, children: [
+      { path: '', redirectTo: 'index', pathMatch: 'full' },
+      { path: 'index', component: DashboardComponent },
+      { path: 'about', component: AboutComponent },
+      { path: 'password', component: PasswordComponent },
+      { path: 'profile', component: ProfileComponent },
+    ]}
+  ]
 } ]
 
 @NgModule({

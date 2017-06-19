@@ -4,7 +4,20 @@ import { Store } from '@ngrx/store'
 
 @Component({
   selector: 'app-password',
-  templateUrl: './password.component.html',
+  template: `
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <ui-card>
+          <ui-card-header>
+            <i class="icon-key"></i> Password
+          </ui-card-header>
+          <ui-card-content>
+            <pre>{{user | json}}</pre>
+          </ui-card-content>
+        </ui-card>
+      </div>
+    </div>
+  `,
 })
 export class PasswordComponent {
 

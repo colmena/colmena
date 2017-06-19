@@ -9,19 +9,13 @@ import { ColmenaUiModule } from '@colmena/admin-ui'
 import { ContentModule } from '@colmena/module-admin-content'
 import { SystemModule } from '@colmena/module-admin-system'
 
-import { AboutComponent } from './about/about.component'
-import { DashboardComponent } from './dashboard/dashboard.component'
-import { PasswordComponent } from './password/password.component'
-import { ProfileComponent } from './profile/profile.component'
+import { AboutComponent } from './components/about.component'
+import { DashboardComponent } from './components/dashboard.component'
+import { IndexComponent } from './components/index.component'
+import { PasswordComponent } from './components/password.component'
+import { ProfileComponent } from './components/profile.component'
 
 import { DashboardRoutingModule } from './dashboard-routing.module'
-
-const components = [
-  AboutComponent,
-  DashboardComponent,
-  PasswordComponent,
-  ProfileComponent,
-]
 
 @NgModule({
   imports: [
@@ -38,10 +32,11 @@ const components = [
     DashboardRoutingModule,
   ],
   declarations: [
-    ...components,
-  ],
-  exports: [
-    ...components,
+    AboutComponent,
+    DashboardComponent,
+    IndexComponent,
+    PasswordComponent,
+    ProfileComponent,
   ],
 })
 export class DashboardModule { }
