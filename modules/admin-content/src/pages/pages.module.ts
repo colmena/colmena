@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { RouterModule } from '@angular/router'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
-import { PageComponent } from './components/page.component'
-import { PageFormComponent } from './components/page-form.component'
+import { PagesRoutingModule } from './pages-routing.module'
 
-import { PageDetailComponent } from './containers/page-detail.component'
-import { PageListComponent } from './containers/page-list.component'
+import { PageComponent } from './components/page.component'
+import { PageDetailComponent } from './components/page-detail.component'
+import { PageFormComponent } from './components/page-form.component'
+import { PageListComponent } from './components/page-list.component'
 
 import { PagesService } from './pages.service'
 import { PagesResolver } from './pages.resolvers'
@@ -19,15 +19,14 @@ import { PagesResolver } from './pages.resolvers'
     FormsModule,
     ReactiveFormsModule,
     ColmenaUiModule,
-    RouterModule,
+    PagesRoutingModule,
   ],
   declarations: [
     PageComponent,
-    PageFormComponent,
-
     PageDetailComponent,
+    PageFormComponent,
     PageListComponent,
   ],
   providers: [PagesService, PagesResolver],
 })
-export class PagesModule { }
+export class PagesModule {}

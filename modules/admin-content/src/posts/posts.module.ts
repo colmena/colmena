@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { RouterModule } from '@angular/router'
 import { ColmenaUiModule } from '@colmena/admin-ui'
+
+import { PostsRoutingModule } from './posts-routing.module'
 
 import { PostComponent } from './components/post.component'
 import { PostDetailComponent } from './components/post-detail.component'
@@ -18,7 +19,7 @@ import { PostsResolver } from './posts.resolvers'
     FormsModule,
     ReactiveFormsModule,
     ColmenaUiModule,
-    RouterModule,
+    PostsRoutingModule,
   ],
   declarations: [
     PostComponent,
@@ -31,4 +32,4 @@ import { PostsResolver } from './posts.resolvers'
     PostsResolver,
   ],
 })
-export class PostsModule { }
+export class PostsModule {}

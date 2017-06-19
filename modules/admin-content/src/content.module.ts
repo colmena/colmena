@@ -7,9 +7,6 @@ import { RouterModule } from '@angular/router'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
 import { ContentDashboardComponent } from './content.component'
-import { PostsModule } from './posts/posts.module'
-import { PagesModule } from './pages/pages.module'
-import { EventsModule } from './events/events.module'
 
 import { FileComponent } from './files/file.component'
 import { FilesComponent } from './files/files.component'
@@ -48,9 +45,6 @@ const providers = [
     RouterModule,
 
     ColmenaUiModule,
-    PagesModule,
-    PostsModule,
-    EventsModule,
 
     ContentRoutingModule,
   ],
