@@ -16,7 +16,11 @@ import { ProductsService } from './products.service'
       <app-content-product [item]="item"></app-content-product>
     </ui-modal-form>
 
-    <ui-data-grid #grid (action)="action($event)" [service]="service"></ui-data-grid>
+    <div class="card">
+      <div class="card-block">
+        <ui-data-grid #grid (action)="action($event)" [service]="service"></ui-data-grid>
+      </div>
+    </div>
   `,
 })
 export class ProductsComponent {

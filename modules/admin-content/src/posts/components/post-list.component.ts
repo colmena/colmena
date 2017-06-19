@@ -7,7 +7,11 @@ import { PostsService } from '../posts.service'
 @Component({
   selector: 'app-post-list',
   template: `
-    <ui-data-grid #grid (action)="action($event)" [service]="service"></ui-data-grid>
+    <div class="card">
+      <div class="card-block">
+        <ui-data-grid #grid (action)="action($event)" [service]="service"></ui-data-grid>
+      </div>
+    </div>
   `,
 })
 export class PostListComponent {

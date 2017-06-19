@@ -7,7 +7,11 @@ import { EventsService } from '../events.service'
 @Component({
   selector: 'app-event-list',
   template: `
-    <ui-data-grid #grid (action)="action($event)" [service]="service"></ui-data-grid>
+    <div class="card">
+      <div class="card-block">
+        <ui-data-grid #grid (action)="action($event)" [service]="service"></ui-data-grid>
+      </div>
+    </div>
   `,
 })
 export class EventListComponent {
