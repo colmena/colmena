@@ -103,10 +103,8 @@ export class AuthEffects {
   getUserInfo$ = this.actions$
     .ofType('AUTH_GET_USER_ROLES')
     .do(action => {
-      console.log('AUTH_GET_USER_ROLES', action.payload)
       this.userApi.info(action.payload.userId)
         .subscribe(res => {
-          console.log('set roles')
           window.localStorage.setItem('roles', JSON.stringify(res.roles))
           this.store.dispatch({ type: 'AUTH_SET_ROLES', payload: res.roles })
         })

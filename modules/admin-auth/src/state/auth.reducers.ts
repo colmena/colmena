@@ -31,7 +31,6 @@ export function reducer(state = initialState, action: Action): State {
 
     case 'AUTH_SET_TOKEN':
     case 'AUTH_LOGIN_SUCCESS':
-      console.log('action.payload', action.payload)
       return Object.assign({}, state, { currentUser: action.payload, loggedIn: true })
 
     case 'AUTH_REALMS_ADD':

@@ -30,7 +30,6 @@ export class EventFormComponent implements OnInit {
   ngOnInit() {
     this.item = this.service.selectedEvent || new ContentEvent()
     this.formConfig = this.service.getFormConfig()
-    console.log(this.item)
   }
 
   handleAction(event) {

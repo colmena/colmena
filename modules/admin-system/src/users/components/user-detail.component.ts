@@ -36,7 +36,6 @@ export class UserDetailComponent implements OnInit {
   ngOnInit() {
     this.item = this.route.snapshot.data.systemUser
 
-    console.log(this.item)
     if (!this.item) {
       this.tabs = [
         { icon: 'fa fa-plus', title: 'Create', link: '' },

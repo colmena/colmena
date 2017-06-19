@@ -55,7 +55,6 @@ export class SystemModulesComponent implements OnInit {
     this.getData()
     this.store.select('app')
       .subscribe((res: any) => {
-        console.log('res.modules', res.modules)
         Object.keys(res.modules).forEach(module => this.modules.angular.push(res.modules[module]))
       })
   }

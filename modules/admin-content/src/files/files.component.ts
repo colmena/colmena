@@ -59,7 +59,6 @@ export class FilesComponent {
   }
 
   save(item): void {
-    console.log('item', item)
     this.service.importFile(
       item,
       () => {
