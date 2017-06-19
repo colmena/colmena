@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  colmena:
+    image: colmena/colmena:latest
+    ports:
+      - 3000:3000
+    environment:
+      - API_BASE_URL=http://0.0.0.0:3000
+      - STORAGE_PATH=/app/storage
+      - INITDB=true
+      - MIGRATEDB=true
+    volumes:
+      - colmena:/app/storage
+
+volumes:
+  mongo:
+    driver: local
+  colmena:
+    driver: local
