@@ -121,7 +121,7 @@
     ],
     "env": {
       "INITDB": true,
-      "API_PORT": "0.0.0.0",
+      "API_HOST": "0.0.0.0",
       "API_BASE_URL": "https://colmena.now.sh"
     }
   },
