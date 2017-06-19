@@ -44,6 +44,7 @@
     "docker:build": "docker build -t colmena/colmena:latest .",
     "docker:run": "docker run -it -p 3000:3000 -e INITDB=1 --name colmena --rm colmena/colmena:latest",
     "initdb": "cd apps/api && node bin/initdb",
+    "now": "now deploy --docker && now alias",
     "servers": "npm run servers:start",
     "servers:logs": "docker-compose -f docker-compose.servers.yml logs -f",
     "servers:start": "docker-compose -f docker-compose.servers.yml up -d",
@@ -105,6 +106,24 @@
     "tslint": "5.4.3",
     "typescript": "2.3.4",
     "zone.js": "0.8.12"
+  },
+  "now": {
+    "name": "colmena",
+    "alias": [
+      "colmena",
+      "colmena-cms",
+      "colmena-mobile",
+      "colmena-admin",
+      "colmena-site",
+      "colmena-app",
+      "colmena-api",
+      "colmena-demo"
+    ],
+    "env": {
+      "INITDB": true,
+      "API_PORT": "0.0.0.0",
+      "API_BASE_URL": "https://colmena.now.sh"
+    }
   },
   "eslintConfig": {
     "parserOptions": {
