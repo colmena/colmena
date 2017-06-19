@@ -34,21 +34,20 @@
 
 <body class="swagger-section standalone">
 <div id='header'>
-    <div class="swagger-ui-wrap">
-        <a id="logo">API Explorer</a>
-        <form id='api_selector'>
-            <div class='input'>
-                <span class='accessTokenDisplay'>Token Not Set</span>
-                <input placeholder="accessToken" id="input_accessToken" name="accessToken" type="text"/>
-            </div>
-            <div class='input'><a id="explore" type="submit">Set Access Token</a></div>
-        </form>
-    </div>
+    <a id="logo">API Explorer</a>
+    <form id='api_selector'>
+        <div class='input'>
+            <span class='accessTokenDisplay'>Token Not Set</span>
+            <input placeholder="accessToken" id="input_accessToken" name="accessToken" type="text"/>
+        </div>
+        <div class='input'><a id="explore" type="submit">Set Access Token</a></div>
+    </form>
 </div>
 
 <div class="contentWell">
-    <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
-    <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+    <div id="swagger-ui-container" class="swagger-ui-wrap">
+      <div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+    </div>
 </div>
 </body>
 </html>

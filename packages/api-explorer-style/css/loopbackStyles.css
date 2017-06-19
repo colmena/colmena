@@ -19,6 +19,7 @@ body {
   padding-top: 60px;
   font-family: 'helvetica neue', helvetica, arial, sans-serif;
   background: #e4e5e6;
+  color: #243447;
 }
 
 body #header {
@@ -350,6 +351,7 @@ FIXME: Separate the overrides from the rest of the styles, rather than override 
   font-weight: 200;
   font-size: 18px;
   line-height: 22px;
+  letter-spacing: 2px;
 }
 
 .swagger-section .swagger-ui-wrap ul#resources li.resource div.heading .options,
@@ -364,4 +366,12 @@ FIXME: Separate the overrides from the rest of the styles, rather than override 
 .options li a.toggleEndpointList  {
   /*border: 1px solid red;*/
   content: 'a';
+}
+#message-bar {
+  padding-top: 5px;
+  color: #243447!important;
+}
+#swagger-ui-container {
+  background: white;
+  padding: 30px 20px;
 }
