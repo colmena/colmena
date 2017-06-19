@@ -42,7 +42,7 @@
     "dev:admin": "lerna run dev --stream --scope @colmena/admin",
     "dev:api": "lerna run dev --stream --scope @colmena/api",
     "docker:build": "docker build -t colmena/colmena:latest .",
-    "docker:run": "docker run -it -p 3000:3000 --name colmena --rm colmena/colmena:latest",
+    "docker:run": "docker run -it -p 3000:3000 -e INITDB=1 --name colmena --rm colmena/colmena:latest",
     "initdb": "cd apps/api && node bin/initdb",
     "servers": "npm run servers:start",
     "servers:logs": "docker-compose -f docker-compose.servers.yml logs -f",

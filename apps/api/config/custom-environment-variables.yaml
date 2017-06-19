@@ -1,6 +1,8 @@
 api:
   # Do not use trailing spaces for the baseUrl
   baseUrl: API_BASE_URL
+  host: API_HOST
+  port: API_PORT
   version: API_VERSION
 
 admin:
