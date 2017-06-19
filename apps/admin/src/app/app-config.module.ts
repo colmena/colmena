@@ -10,6 +10,7 @@ import { SystemConfigModule } from '@colmena/module-admin-system'
 
 // Custom Modules
 // import { StarterConfigModule } from '@colmena/module-admin-starter'
+import { StorageConfigModule } from '@colmena/module-admin-storage'
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { SystemConfigModule } from '@colmena/module-admin-system'
 
     // Custom Modules
     // StarterConfigModule
+    StorageConfigModule
   ],
 })
 export class AppConfigModule {}

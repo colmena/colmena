@@ -26,6 +26,7 @@ const routes: Routes = [
       { path: '', loadChildren: '@colmena/module-admin-system#SystemModule' },
       // Custom Module Routes
       // { path: '', loadChildren: '@colmena/module-admin-starter#StarterModule' },
+      { path: '', loadChildren: '@colmena/module-admin-storage#StorageModule' },
     ]
   },
   { path: '**', redirectTo: 'not-found' },
