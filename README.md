@@ -5,7 +5,9 @@
 <h3 align="center">
 
 ```javascript
-Free + Full Stack + Open Source + Rapid API Development
+Free and Open Source 
+Full Stack
+RAPID API DEVELOPMENT
 ```
 
 </h3>
