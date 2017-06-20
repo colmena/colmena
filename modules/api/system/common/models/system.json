@@ -3,7 +3,7 @@
   "plural": "System",
   "description": "System: Get information from the system",
   "base": "Model",
-  "components": "../../modules/api-system/common/models/system",
+  "components": "../../modules/api/system/common/models/system",
   "validations": [],
   "relations": {},
   "acls": [

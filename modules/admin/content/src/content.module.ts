@@ -13,14 +13,14 @@ import { ContentRoutingModule } from './content-routing.module'
     ContentRoutingModule,
   ],
   declarations: [
-    ContentDashboardComponent
+    ContentDashboardComponent,
   ],
   exports: [
-    ContentDashboardComponent
+    ContentDashboardComponent,
   ],
   providers: [
     HasContentAccess,
-    DomainResolver
+    DomainResolver,
   ],
 })
 export class ContentModule {

@@ -3,7 +3,7 @@
   "plural": "Settings",
   "description": "System: Manage Settings",
   "base": "SystemBaseModel",
-  "components": "../../modules/api-system/common/models/system-setting",
+  "components": "../../modules/api/system/common/models/system-setting",
   "idInjection": true,
   "options": {
     "validateUpsert": true

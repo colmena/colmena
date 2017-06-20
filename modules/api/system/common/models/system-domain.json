@@ -3,7 +3,7 @@
   "plural": "Domains",
   "description": "System: Manage Domains and related content",
   "base": "SystemBaseModel",
-  "components": "../../modules/api-system/common/models/system-domain",
+  "components": "../../modules/api/system/common/models/system-domain",
   "idInjection": true,
   "options": {
     "validateUpsert": true
