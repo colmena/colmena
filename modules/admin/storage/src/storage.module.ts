@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
 import { StorageRoutingModule } from './storage-routing.module'
+
 import { StorageService } from './storage.service'
 
 import { DownloadComponent } from './components/download.component'
@@ -13,7 +13,6 @@ import { UploadComponent } from './components/upload.component'
 
 @NgModule({
   imports: [
-    CommonModule,
     ColmenaUiModule,
     StorageRoutingModule,
   ],
