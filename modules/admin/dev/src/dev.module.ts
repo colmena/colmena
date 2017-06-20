@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { FormsModule } from '@angular/forms'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
 import { DevRoutingModule } from './dev-routing.module'
@@ -13,6 +14,7 @@ import { ToastComponent } from './components/toast.component'
 
 @NgModule({
   imports: [
+    FormsModule,
     ColmenaUiModule,
     DevRoutingModule,
   ],
