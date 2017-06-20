@@ -5,6 +5,7 @@ FROM colmena/dev:latest
 COPY . .
 
 # Remove any local configuration settings
+RUN touch /app/apps/api/config/local.yaml
 RUN rm /app/apps/api/config/local*
 
 # Clean up any node_modules we copied over
