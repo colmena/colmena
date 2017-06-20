@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
 import { UsersRoutingModule } from './users-routing.module'
+
+import { UsersService } from './users.service'
+import { UserResolver } from './users.resolvers'
 
 import { UserAccessTokensComponent } from './components/user-access-tokens.component'
 import { UserDetailComponent } from './components/user-detail.component'
@@ -13,16 +14,9 @@ import { UserListComponent } from './components/user-list.component'
 import { UserPasswordComponent } from './components/user-password.component'
 import { UserRolesComponent } from './components/user-roles.component'
 
-import { UsersService } from './users.service'
-import { SystemUserResolver } from './users.resolvers'
-
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     ColmenaUiModule,
-
     UsersRoutingModule,
   ],
   declarations: [
@@ -34,6 +28,9 @@ import { SystemUserResolver } from './users.resolvers'
     UserPasswordComponent,
     UserRolesComponent,
   ],
-  providers: [UsersService, SystemUserResolver],
+  providers: [
+    UsersService,
+    UserResolver,
+  ],
 })
 export class SystemUsersModule {}

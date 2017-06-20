@@ -1,9 +1,4 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { HttpModule } from '@angular/http'
-import { RouterModule } from '@angular/router'
-import { Store } from '@ngrx/store'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
 import { SystemDashboardComponent } from './system.component'
@@ -15,14 +10,7 @@ import { HasSystemAccess } from './system.guards'
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
     ColmenaUiModule,
-
-    RouterModule,
-
     SystemRoutingModule,
   ],
   declarations: [
@@ -30,18 +18,11 @@ import { HasSystemAccess } from './system.guards'
     SystemInfoComponent,
     SystemModulesComponent,
   ],
-  providers: [HasSystemAccess],
-  exports: [SystemDashboardComponent],
+  providers: [
+    HasSystemAccess,
+  ],
+  exports: [
+    SystemDashboardComponent,
+  ],
 })
-export class SystemModule {
-  constructor(private store: Store<any>) {}
-
-  dispatchLinks(links) {
-    this.store.dispatch({ type: 'LAYOUT_HEADER_NAV', payload: links })
-    this.store.dispatch({ type: 'LAYOUT_SIDEBAR_NAV', payload: links })
-  }
-
-  dispatchIcons(links) {
-    this.store.dispatch({ type: 'APP_SYSTEM_DASHBOARD', payload: links })
-  }
-}
+export class SystemModule { }

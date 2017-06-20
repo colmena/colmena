@@ -9,7 +9,7 @@ import { UserPasswordComponent } from './components/user-password.component'
 import { UserFormComponent } from './components/user-form.component'
 import { UserRolesComponent } from './components/user-roles.component'
 
-import { SystemUserResolver } from './users.resolvers'
+import { UserResolver } from './users.resolvers'
 
 const routes: Routes = [
   {
@@ -37,7 +37,7 @@ const routes: Routes = [
         path: ':id',
         component: UserDetailComponent,
         resolve: {
-          systemUser: SystemUserResolver
+          systemUser: UserResolver
         },
         data: { title: 'user' },
         children: [

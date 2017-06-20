@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable'
 import { Setting, SettingsService } from './settings.service'
 
 @Injectable()
-export class SystemSettingResolver implements Resolve<Setting> {
+export class SettingResolver implements Resolve<Setting> {
 
   constructor(private service: SettingsService) { }
 

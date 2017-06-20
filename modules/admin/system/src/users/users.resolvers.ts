@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable'
 import { User, UsersService } from './users.service'
 
 @Injectable()
-export class SystemUserResolver implements Resolve<User> {
+export class UserResolver implements Resolve<User> {
   constructor(private service: UsersService) {}
 
   resolve(

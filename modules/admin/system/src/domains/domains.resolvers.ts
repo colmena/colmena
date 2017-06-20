@@ -5,8 +5,7 @@ import { Observable } from 'rxjs/Observable'
 import { Domain, DomainsService } from './domains.service'
 
 @Injectable()
-export class SystemDomainResolver implements Resolve<Domain> {
-
+export class DomainResolver implements Resolve<Domain> {
   constructor(private service: DomainsService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Domain> {

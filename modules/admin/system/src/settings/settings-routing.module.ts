@@ -5,7 +5,7 @@ import { SettingListComponent } from './components/setting-list.component'
 import { SettingDetailComponent } from './components/setting-detail.component'
 import { SettingFormComponent } from './components/setting-form.component'
 
-import { SystemSettingResolver } from './settings.resolvers'
+import { SettingResolver } from './settings.resolvers'
 
 export const SystemSettingsRoutes: Routes = [
   {
@@ -33,7 +33,7 @@ export const SystemSettingsRoutes: Routes = [
         path: ':id',
         component: SettingDetailComponent,
         resolve: {
-          systemSetting: SystemSettingResolver,
+          systemSetting: SettingResolver,
         },
         data: { title: 'setting' },
         children: [

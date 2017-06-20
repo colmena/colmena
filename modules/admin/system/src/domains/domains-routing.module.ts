@@ -5,7 +5,7 @@ import { DomainListComponent } from './components/domain-list.component'
 import { DomainDetailComponent } from './components/domain-detail.component'
 import { DomainFormComponent } from './components/domain-form.component'
 
-import { SystemDomainResolver } from './domains.resolvers'
+import { DomainResolver } from './domains.resolvers'
 
 export const SystemDomainsRoutes: Routes = [
   {
@@ -33,7 +33,7 @@ export const SystemDomainsRoutes: Routes = [
         path: ':id',
         component: DomainDetailComponent,
         resolve: {
-          systemDomain: SystemDomainResolver,
+          systemDomain: DomainResolver,
         },
         data: { title: 'domain' },
         children: [
