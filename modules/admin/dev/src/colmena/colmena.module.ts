@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { RouterModule } from '@angular/router'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
-import { ColmenaService } from './colmena.service'
-
 import { DevRoutingModule } from './colmena-routing.module'
+
+import { ColmenaService } from './colmena.service'
 
 import { DashboardComponent } from './components/dashboard.component'
 import { DataComponent } from './components/data.component'
@@ -17,10 +15,8 @@ import { ModulesSampleDataComponent } from './components/modules-sample-data.com
 
 @NgModule({
   imports: [
-    CommonModule,
-    RouterModule,
-    DevRoutingModule,
     ColmenaUiModule,
+    DevRoutingModule,
   ],
   declarations: [
     DashboardComponent,
@@ -35,5 +31,4 @@ import { ModulesSampleDataComponent } from './components/modules-sample-data.com
     ColmenaService,
   ]
 })
-export class ColmenaModule {
-}
+export class ColmenaModule {}

@@ -1,39 +1,26 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-
 import { ColmenaUiModule } from '@colmena/admin-ui'
-
-import { HasDevAccess } from './dev.guards'
 
 import { DevRoutingModule } from './dev-routing.module'
 
-import { ColmenaModule } from './colmena/colmena.module'
-
-import { IndexComponent } from './containers/index.component'
+import { HasDevAccess } from './dev.guards'
 
 import { AlertComponent } from './components/alert.component'
 import { DashboardComponent } from './components/dashboard.component'
-import { ToastComponent } from './components/toast.component'
 import { FormsComponent } from './components/forms.component'
+import { IndexComponent } from './containers/index.component'
+import { ToastComponent } from './components/toast.component'
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
     ColmenaUiModule,
-
     DevRoutingModule,
-
-    ColmenaModule,
   ],
   declarations: [
-    IndexComponent,
-
     AlertComponent,
     DashboardComponent,
     FormsComponent,
+    IndexComponent,
     ToastComponent,
   ],
   providers: [
