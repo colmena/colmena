@@ -1,0 +1,32 @@
+{
+  "name": "@colmena/module-api-auth",
+  "description": "Colmena API auth",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@colmena/logger": "0.0.0",
+    "config": "^1.26.1",
+    "loopback": "^3.8.0",
+    "loopback-component-passport": "^3.3.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-twitter": "^1.0.4"
+  },
+  "colmena": {
+    "module": {
+      "modelSources": [
+        "common/models"
+      ],
+      "models": {
+        "Auth": {
+          "dataSource": false
+        },
+        "AuthProvider": {
+          "dataSource": "db"
+        }
+      },
+      "sampleData": [
+        "sample-data/sample-data.json"
+      ]
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "AuthProvider",
+  "plural": "AuthProviders",
+  "description": "Auth: Manage Providers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "forceId": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "String",
+      "id": true
+    },
+    "provider": {
+      "type": "String",
+      "id": true
+    },
+    "config": {
+      "type": "Object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
