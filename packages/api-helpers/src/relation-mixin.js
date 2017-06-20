@@ -1,5 +1,6 @@
 'use strict'
 
+const debug = require('debug')('colmena:api-helpers')
 const log = require('@colmena/logger')
 
 const { pluralize } = require('inflection')
@@ -26,7 +27,7 @@ const relationMixin = (ModelFrom, options, relationType) => {
 
   if (!blacklist.includes(modelName)) {
     ModelTo.on('attached', () => {
-      log.debug(
+      debug(
         `[relation-mixin] ${targetModelName} ${relationType} ${modelName}`
       )
 

@@ -5,6 +5,7 @@
   "dependencies": {
     "@colmena/logger": "0.0.0",
     "config": "1.26.1",
+    "debug": "2.6.8",
     "parent-require": "1.0.0"
   },
   "license": "MIT"
