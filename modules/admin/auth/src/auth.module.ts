@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
 import { FormsModule } from '@angular/forms'
-import { RouterModule } from '@angular/router'
 
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
@@ -17,9 +15,7 @@ import { AuthRoutingModule } from './auth-routes.module'
 
 @NgModule({
   imports: [
-    CommonModule,
     FormsModule,
-    RouterModule,
     ColmenaUiModule,
 
     AuthRoutingModule,
