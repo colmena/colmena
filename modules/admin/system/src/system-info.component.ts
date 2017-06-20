@@ -39,7 +39,7 @@ import { SystemApi } from '@colmena/admin-lb-sdk'
   `,
 })
 export class SystemInfoComponent implements OnInit {
-  public ping = {}
+  public ping: any = {}
 
   constructor(private systemApi: SystemApi) {
   }
@@ -49,6 +49,7 @@ export class SystemInfoComponent implements OnInit {
   }
 
   poll() {
-    this.systemApi.ping().subscribe(res => this.ping = res)
+    this.systemApi.ping()
+      .subscribe((res: any) => this.ping = res)
   }
 }
