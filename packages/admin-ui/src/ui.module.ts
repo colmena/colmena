@@ -95,6 +95,7 @@ const declarations = []
     ...providers
   ],
   exports: [
+    CommonModule,
     BsDropdownModule,
     ...declarations,
     ...modules,
