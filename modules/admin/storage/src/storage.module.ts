@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { FormsModule } from '@angular/forms'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
 import { StorageRoutingModule } from './storage-routing.module'
@@ -13,6 +14,7 @@ import { UploadComponent } from './components/upload.component'
 
 @NgModule({
   imports: [
+    FormsModule,
     ColmenaUiModule,
     StorageRoutingModule,
   ],
