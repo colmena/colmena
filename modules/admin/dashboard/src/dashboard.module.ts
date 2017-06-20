@@ -1,10 +1,7 @@
 import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { HttpModule } from '@angular/http'
-import { RouterModule } from '@angular/router'
-
 import { ColmenaUiModule } from '@colmena/admin-ui'
+
+import { DashboardRoutingModule } from './dashboard-routing.module'
 
 import { ContentModule } from '@colmena/module-admin-content'
 import { SystemModule } from '@colmena/module-admin-system'
@@ -15,21 +12,12 @@ import { IndexComponent } from './components/index.component'
 import { PasswordComponent } from './components/password.component'
 import { ProfileComponent } from './components/profile.component'
 
-import { DashboardRoutingModule } from './dashboard-routing.module'
-
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    RouterModule,
-
     ColmenaUiModule,
+    DashboardRoutingModule,
     ContentModule,
     SystemModule,
-
-    DashboardRoutingModule,
   ],
   declarations: [
     AboutComponent,
