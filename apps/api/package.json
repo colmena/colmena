@@ -39,6 +39,7 @@
     "@colmena/api-explorer-style": "0.1.0",
     "@colmena/api-helpers": "0.1.0",
     "@colmena/logger": "0.1.0",
+    "@colmena/module-api-auth": "0.1.0",
     "@colmena/module-api-content": "0.1.0",
     "@colmena/module-api-core": "0.1.0",
     "@colmena/module-api-dev": "0.1.0",

@@ -9,6 +9,17 @@ admin:
   url: ADMIN_URL
   recoverPath: ADMIN_RECOVER_PATH
 
+auth:
+  providers:
+    googleLogin:
+      enabled: AUTH_PROVIDER_GOOGLE_ENABLED
+      clientID: AUTH_PROVIDER_GOOGLE_CLIENT_ID
+      clientSecret: AUTH_PROVIDER_GOOGLE_CLIENT_SECRET
+    twitterLogin:
+      enabled: AUTH_PROVIDER_TWITTER_ENABLED
+      consumerKey: AUTH_PROVIDER_TWITTER_CONSUMER_KEY
+      consumerSecret: AUTH_PROVIDER_TWITTER_CONSUMER_SECRET
+
 mongodb:
   url: MONGODB_URL
 

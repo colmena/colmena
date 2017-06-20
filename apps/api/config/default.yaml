@@ -9,10 +9,23 @@ admin:
   url: http://127.0.0.1:9000
   recoverPath: /#/password-reset
 
+auth:
+  providers:
+    googleLogin:
+      enabled: false
+      clientID: false
+      clientSecret: false
+    twitterLogin:
+      enabled: false
+      consumerKey: false
+      consumerSecret: false
+
 colmena:
   modules:
+    '@colmena/module-api-auth': true
     '@colmena/module-api-content': true
     '@colmena/module-api-core': true
+    "@colmena/module-api-dev": true
     '@colmena/module-api-storage': true
     '@colmena/module-api-system': true
 
