@@ -23,10 +23,10 @@ const routes: Routes = [
       { path: '', loadChildren: '@colmena/module-admin-dashboard#DashboardModule' },
       { path: '', loadChildren: '@colmena/module-admin-data-browser#DataBrowserModule' },
       { path: '', loadChildren: '@colmena/module-admin-dev#DevModule' },
+      { path: '', loadChildren: '@colmena/module-admin-storage#StorageModule' },
       { path: '', loadChildren: '@colmena/module-admin-system#SystemModule' },
       // Custom Module Routes
       // { path: '', loadChildren: '@colmena/module-admin-starter#StarterModule' },
-      { path: '', loadChildren: '@colmena/module-admin-storage#StorageModule' },
     ]
   },
   { path: '**', redirectTo: 'not-found' },
