@@ -19,7 +19,5 @@ import { Component, Input } from '@angular/core'
   `,
 })
 export class ProductComponent {
-
   @Input() item: any = {}
-
 }
