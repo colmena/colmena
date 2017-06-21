@@ -23,9 +23,10 @@ RUN npm run build
 # Expose the listening port
 EXPOSE 3000
 
-ENV API_HOST "0.0.0.0"
-ENV API_BASE_URL "/"
-ENV STORAGE_PATH "/tmp/storage"
+ENV API_PORT 3000
+ENV API_HOST 0.0.0.0
+ENV API_BASE_URL /
+ENV STORAGE_PATH /tmp/storage
 
 # Start the server
 CMD ["pm2-docker", "start", "npm", "--", "start"]
