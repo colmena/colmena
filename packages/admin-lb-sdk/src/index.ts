@@ -49,14 +49,18 @@ import { SocketDriver } from './sockets/socket.driver';
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { EmailApi } from './services/custom/Email';
-import { CoreApi } from './services/custom/Core';
-import { StorageContainerApi } from './services/custom/StorageContainer';
-import { SystemApi } from './services/custom/System';
+import { AuthCredentialApi } from './services/custom/AuthCredential';
+import { AuthIdentityApi } from './services/custom/AuthIdentity';
+import { AuthProviderApi } from './services/custom/AuthProvider';
 import { ContentEventApi } from './services/custom/ContentEvent';
 import { ContentPageApi } from './services/custom/ContentPage';
 import { ContentProductApi } from './services/custom/ContentProduct';
 import { ContentPostApi } from './services/custom/ContentPost';
+import { CoreApi } from './services/custom/Core';
+import { DevApi } from './services/custom/Dev';
+import { StorageContainerApi } from './services/custom/StorageContainer';
 import { StorageFileApi } from './services/custom/StorageFile';
+import { SystemApi } from './services/custom/System';
 import { SystemDomainApi } from './services/custom/SystemDomain';
 import { SystemSettingApi } from './services/custom/SystemSetting';
 import { SystemUserApi } from './services/custom/SystemUser';
@@ -94,14 +98,18 @@ export class SDKBrowserModule {
         SDKModels,
         RealTime,
         EmailApi,
-        CoreApi,
-        StorageContainerApi,
-        SystemApi,
+        AuthCredentialApi,
+        AuthIdentityApi,
+        AuthProviderApi,
         ContentEventApi,
         ContentPageApi,
         ContentProductApi,
         ContentPostApi,
+        CoreApi,
+        DevApi,
+        StorageContainerApi,
         StorageFileApi,
+        SystemApi,
         SystemDomainApi,
         SystemSettingApi,
         SystemUserApi,

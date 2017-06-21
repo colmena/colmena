@@ -1,14 +1,18 @@
 /* tslint:disable */
 import { Injectable } from '@angular/core';
 import { Email } from '../../models/Email';
-import { Core } from '../../models/Core';
-import { StorageContainer } from '../../models/StorageContainer';
-import { System } from '../../models/System';
+import { AuthCredential } from '../../models/AuthCredential';
+import { AuthIdentity } from '../../models/AuthIdentity';
+import { AuthProvider } from '../../models/AuthProvider';
 import { ContentEvent } from '../../models/ContentEvent';
 import { ContentPage } from '../../models/ContentPage';
 import { ContentProduct } from '../../models/ContentProduct';
 import { ContentPost } from '../../models/ContentPost';
+import { Core } from '../../models/Core';
+import { Dev } from '../../models/Dev';
+import { StorageContainer } from '../../models/StorageContainer';
 import { StorageFile } from '../../models/StorageFile';
+import { System } from '../../models/System';
 import { SystemDomain } from '../../models/SystemDomain';
 import { SystemSetting } from '../../models/SystemSetting';
 import { SystemUser } from '../../models/SystemUser';
@@ -22,14 +26,18 @@ export class SDKModels {
 
   private models: Models = {
     Email: Email,
-    Core: Core,
-    StorageContainer: StorageContainer,
-    System: System,
+    AuthCredential: AuthCredential,
+    AuthIdentity: AuthIdentity,
+    AuthProvider: AuthProvider,
     ContentEvent: ContentEvent,
     ContentPage: ContentPage,
     ContentProduct: ContentProduct,
     ContentPost: ContentPost,
+    Core: Core,
+    Dev: Dev,
+    StorageContainer: StorageContainer,
     StorageFile: StorageFile,
+    System: System,
     SystemDomain: SystemDomain,
     SystemSetting: SystemSetting,
     SystemUser: SystemUser,

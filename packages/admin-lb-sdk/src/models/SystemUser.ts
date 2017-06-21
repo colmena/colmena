@@ -1,5 +1,7 @@
 /* tslint:disable */
 import {
+  AuthIdentity,
+  AuthCredential,
   ContentEvent,
   ContentPage,
   ContentProduct,
@@ -11,8 +13,8 @@ export interface SystemUserInterface {
   "id": string;
   "username": string;
   "email": string;
-  "firstName": string;
-  "lastName": string;
+  "firstName"?: string;
+  "lastName"?: string;
   "fullName"?: string;
   "avatar"?: string;
   "realm"?: string;
@@ -23,6 +25,8 @@ export interface SystemUserInterface {
   "modified"?: Date;
   accessTokens?: any[];
   roles?: any[];
+  identities?: AuthIdentity[];
+  credentials?: AuthCredential[];
   contentEvents?: ContentEvent[];
   contentPages?: ContentPage[];
   contentProducts?: ContentProduct[];
@@ -45,6 +49,8 @@ export class SystemUser implements SystemUserInterface {
   "modified": Date;
   accessTokens: any[];
   roles: any[];
+  identities: AuthIdentity[];
+  credentials: AuthCredential[];
   contentEvents: ContentEvent[];
   contentPages: ContentPage[];
   contentProducts: ContentProduct[];
@@ -143,6 +149,16 @@ export class SystemUser implements SystemUserInterface {
           name: 'roles',
           type: 'any[]',
           model: ''
+        },
+        identities: {
+          name: 'identities',
+          type: 'AuthIdentity[]',
+          model: 'AuthIdentity'
+        },
+        credentials: {
+          name: 'credentials',
+          type: 'AuthCredential[]',
+          model: 'AuthCredential'
         },
         contentEvents: {
           name: 'contentEvents',
