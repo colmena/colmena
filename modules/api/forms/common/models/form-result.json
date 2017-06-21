@@ -1,0 +1,31 @@
+{
+  "name": "FormResult",
+  "plural": "FormResults",
+  "description": "Forms: Manage Results",
+  "base": "ContentBaseModel",
+  "properties": {
+    "id": {
+      "type": "String",
+      "id": true
+    },
+    "formId": {
+      "type": "String",
+      "id": true
+    },
+    "definition": {
+      "type": "Object"
+    },
+    "result": {
+      "type": "Object"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "form": {
+      "type": "belongsTo",
+      "model": "Form"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Form",
+  "plural": "Forms",
+  "description": "Forms: Manage Forms",
+  "base": "ContentBaseModel",
+  "properties": {
+    "id": {
+      "type": "String",
+      "id": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "definition": {
+      "type": "object"
+    }
+  },
+  "relations": {
+    "results": {
+      "type": "hasMany",
+      "model": "FormResult"
+    }
+  }
+}
