@@ -18,6 +18,8 @@ import { AppConfigModule } from './app-config.module'
 import { AppRoutingModule } from './app-routing.module'
 import { AppStoreModule } from './app.store'
 
+import { ExtensionsModule } from './extensions.module'
+
 import { AppService } from './app.service'
 import { LogService } from './log.service'
 
@@ -39,6 +41,8 @@ import { RouterComponent } from './components/router/router.component'
     AppStoreModule,
     AppRoutingModule,
     AppConfigModule,
+
+    ExtensionsModule,
   ],
   providers: [
     AppService,
