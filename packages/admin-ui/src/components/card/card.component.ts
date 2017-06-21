@@ -1,9 +1,9 @@
-import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core'
+import { Component, Input, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core'
 
 @Component({
   selector: 'ui-card',
   template: `
-    <div class="ui-card card">
+    <div class="ui-card card {{classNames}}">
       <div *ngIf="hasHeader" #cardHeader class="card-header">
         <ng-content select="ui-card-header"></ng-content>
       </div>
@@ -29,6 +29,9 @@ export class UiCardComponent implements AfterViewInit {
   @ViewChild('cardContent') cardContent
   @ViewChild('cardFooter') cardFooter
   @ViewChild('cardHeader') cardHeader
+
+  // Add additional classNames to a card
+  @Input() classNames = ''
 
   constructor(
     private _changeDetectorRef: ChangeDetectorRef,
