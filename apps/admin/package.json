@@ -27,7 +27,7 @@
     "clean": "rimraf ./dist",
     "prebuild": "npm run clean",
     "build": "ng build --output-path ./dist",
-    "dev": "ng serve --port 9000 --host 127.0.0.1 --progress true --proxy-config proxy.conf.json",
+    "dev": "ng serve --hmr true -e hmr --port 9000 --host 127.0.0.1 --progress true --proxy-config proxy.conf.json",
     "start": "ng",
     "test": "ng test"
   },
