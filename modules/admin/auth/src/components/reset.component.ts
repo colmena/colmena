@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { LoopBackAuth, SDKToken } from '@colmena/admin-lb-sdk'
 
-import { AuthService } from '../../auth.service'
+import { AuthService } from '../auth.service'
 
 @Component({
   selector: 'app-password-reset',

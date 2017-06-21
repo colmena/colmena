@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-
 import { ColmenaUiModule } from '@colmena/admin-ui'
+
+import { AuthRoutingModule } from './auth-routes.module'
 
 import { AuthService } from './auth.service'
 
-import { LoginComponent } from './components/login/login.component'
-import { LogoutComponent } from './components/logout/logout.component'
-import { RecoverComponent } from './components/recover/recover.component'
-import { RegisterComponent } from './components/register/register.component'
-import { ResetComponent } from './components/reset/reset.component'
+import { LoginComponent } from './components/login.component'
+import { LogoutComponent } from './components/logout.component'
+import { RecoverComponent } from './components/recover.component'
+import { RegisterComponent } from './components/register.component'
+import { ResetComponent } from './components/reset.component'
 
-import { AuthRoutingModule } from './auth-routes.module'
+import { SocialLoginComponent } from './components/social-login.component'
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { AuthRoutingModule } from './auth-routes.module'
     RecoverComponent,
     RegisterComponent,
     ResetComponent,
+    SocialLoginComponent,
   ],
   providers: [
     AuthService,

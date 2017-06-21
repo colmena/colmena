@@ -10,6 +10,7 @@ admin:
   recoverPath: /#/password-reset
 
 auth:
+  successRedirect: '/#/social-login'
   providers:
     googleLogin:
       enabled: false

@@ -1,3 +1,6 @@
 colmena:
   modules:
     '@colmena/module-api-dev': true
+
+auth:
+  successRedirect: 'http://127.0.0.1:9000/#/social-login'

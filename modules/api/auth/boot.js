@@ -1,8 +1,10 @@
 'use strict'
 
-const debug = require('debug')('colmena:auth')
-const log = require('@colmena/logger')
 const config = require('config')
+const log = require('@colmena/logger')
+const loopback = require('loopback')
+const cookieParser = require('cookie-parser')
+const session = require('express-session')
 
 const providers = require('./provider')
 
@@ -25,14 +27,36 @@ const getConfigs = providers =>
     .map(p => getConfig(p, providers[p]))
 
 module.exports = function(app) {
+  app.middleware('session:before', cookieParser('secretsecret'))
+  app.middleware(
+    'session',
+    session({
+      secret: 'kitty',
+      saveUninitialized: true,
+      resave: true,
+    })
+  )
+
   const passportConfigurator = new PassportConfigurator(app)
   passportConfigurator.init()
 
+  passportConfigurator.setupModels({
+    userModel: app.models.SystemUser,
+    userIdentityModel: app.models.AuthIdentity,
+    userCredentialModel: app.models.AuthCredential,
+  })
+
   const configs = getConfigs(getProviders())
 
-  configs.forEach(provider => {
-    log.magenta.b(`[auth-provider] Registering provider ${provider.name}`)
-    debug(provider)
+  configs.map(provider => {
+    log.blue.b(`[auth-provider] Registering provider ${provider.name}`)
     passportConfigurator.configureProvider(provider.name, provider)
+
+    return app.models.SystemSetting.upsert({
+      key: `auth.providers.${provider.name}`,
+      value: true,
+      system: false,
+      type: 'boolean',
+    })
   })
 }

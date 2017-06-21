@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { Store } from '@ngrx/store'
 
-import * as auth from '../../state/auth.actions'
+import * as auth from '../state/auth.actions'
 
 @Component({
   template: `<ui-message [message]="'You are being logged out.'"></ui-message>`,

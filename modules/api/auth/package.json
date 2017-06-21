@@ -5,11 +5,14 @@
   "license": "MIT",
   "dependencies": {
     "@colmena/logger": "0.0.0",
-    "config": "^1.26.1",
-    "loopback": "^3.8.0",
-    "loopback-component-passport": "^3.3.0",
-    "passport-google-oauth": "^1.0.0",
-    "passport-twitter": "^1.0.4"
+    "config": "1.26.1",
+    "cookie-parser": "1.4.3",
+    "express-session": "1.15.3",
+    "loopback": "3.8.0",
+    "loopback-component-passport": "3.3.0",
+    "options": "0.0.6",
+    "passport-google-oauth": "1.0.0",
+    "passport-twitter": "1.0.4"
   },
   "colmena": {
     "module": {
@@ -17,16 +20,16 @@
         "common/models"
       ],
       "models": {
-        "Auth": {
-          "dataSource": false
+        "AuthCredential": {
+          "dataSource": "db"
+        },
+        "AuthIdentity": {
+          "dataSource": "db"
         },
         "AuthProvider": {
           "dataSource": "db"
         }
-      },
-      "sampleData": [
-        "sample-data/sample-data.json"
-      ]
+      }
     }
   }
 }

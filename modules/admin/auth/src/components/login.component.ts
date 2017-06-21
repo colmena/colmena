@@ -1,7 +1,13 @@
 import { Component } from '@angular/core'
+import { Router } from '@angular/router'
 import { Store } from '@ngrx/store'
 
-import * as auth from '../../state/auth.actions'
+import * as auth from '../state/auth.actions'
+
+const getAuthUrl = provider => {
+  const apiConfig = JSON.parse(window.localStorage.getItem('apiConfig'))
+  return [apiConfig.baseUrl, 'auth', provider].join('/')
+}
 
 @Component({
   template: `
@@ -35,6 +41,12 @@ import * as auth from '../../state/auth.actions'
           </a>
         </div>
       </div>
+      <div *ngFor="let button of socialButtons" class="mt-1">
+        <button type="button" class="{{button.classes || btnClass }}" (click)="button.click(item)">
+          <i *ngIf="button.icon" class="{{button.icon}}"></i>
+          {{button.label}}
+        </button>
+      </div>
     </ui-message>
   `,
 })
@@ -47,7 +59,18 @@ export class LoginComponent {
     password: '',
   }
 
+  public socialButtons = [ {
+    label: 'Log in with Twitter',
+    classes: 'btn btn-block btn-social btn-twitter',
+    click: () => this.socialLogin('twitter'),
+  }, {
+    label: 'Log in with Google',
+    classes: 'btn btn-block btn-social btn-google-plus',
+    click: () => this.socialLogin('google'),
+  } ]
+
   constructor(
+    private router: Router,
     private store: Store<any>,
   ) {
     this.store
@@ -66,4 +89,11 @@ export class LoginComponent {
     this.store.dispatch({ type: auth.ActionTypes.AUTH_LOGIN, payload: this.credentials })
   }
 
+  socialLogin(provider) {
+    const socialUrl = getAuthUrl(provider)
+
+    console.log('Log in using provider' , provider, socialUrl)
+
+    return window.location.href = socialUrl
+  }
 }

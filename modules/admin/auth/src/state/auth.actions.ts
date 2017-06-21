@@ -4,6 +4,9 @@ export const ActionTypes = {
   AUTH_LOGIN:                 'AUTH_LOGIN',
   AUTH_LOGIN_ERROR:           'AUTH_LOGIN_ERROR',
   AUTH_LOGIN_SUCCESS:         'AUTH_LOGIN_SUCCESS',
+  AUTH_SOCIAL_LOGIN:          'AUTH_SOCIAL_LOGIN',
+  AUTH_SOCIAL_LOGIN_ERROR:    'AUTH_SOCIAL_LOGIN_ERROR',
+  AUTH_SOCIAL_LOGIN_SUCCESS:  'AUTH_SOCIAL_LOGIN_SUCCESS',
   AUTH_LOGOUT:                'AUTH_LOGOUT',
   AUTH_LOGOUT_ERROR:          'AUTH_LOGOUT_ERROR',
   AUTH_LOGOUT_SUCCESS:        'AUTH_LOGOUT_SUCCESS',
@@ -38,6 +41,20 @@ export class AuthLoginErrorAction implements Action {
 }
 export class AuthLoginSuccessAction implements Action {
   type = ActionTypes.AUTH_LOGIN_SUCCESS
+  constructor(public payload: any) { }
+}
+
+/** SOCIAL_LOGIN **/
+export class AuthSocialLoginAction implements Action {
+  type = ActionTypes.AUTH_SOCIAL_LOGIN
+  constructor(public payload: credentials) { }
+}
+export class AuthSocialLoginErrorAction implements Action {
+  type = ActionTypes.AUTH_SOCIAL_LOGIN_ERROR
+  constructor(public payload: any) { }
+}
+export class AuthSocialLoginSuccessAction implements Action {
+  type = ActionTypes.AUTH_SOCIAL_LOGIN_SUCCESS
   constructor(public payload: any) { }
 }
 
@@ -115,6 +132,9 @@ export type Actions
   = AuthLoginAction
   | AuthLoginErrorAction
   | AuthLoginSuccessAction
+  | AuthSocialLoginAction
+  | AuthSocialLoginErrorAction
+  | AuthSocialLoginSuccessAction
   | AuthLogoutAction
   | AuthLogoutErrorAction
   | AuthLogoutSuccessAction

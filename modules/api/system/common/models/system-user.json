@@ -45,11 +45,11 @@
     },
     "firstName": {
       "type": "String",
-      "required": true
+      "required": false
     },
     "lastName": {
       "type": "String",
-      "required": true
+      "required": false
     },
     "fullName": {
       "type": "String"
@@ -73,6 +73,16 @@
       "model": "SystemRole",
       "foreignKey": "principalId",
       "through": "SystemRoleMapping"
+    },
+    "identities": {
+      "type": "hasMany",
+      "model": "AuthIdentity",
+      "foreignKey": "userId"
+    },
+    "credentials": {
+      "type": "hasMany",
+      "model": "AuthCredential",
+      "foreignKey": "userId"
     }
   },
   "acls": [

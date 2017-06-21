@@ -10,6 +10,7 @@ admin:
   recoverPath: ADMIN_RECOVER_PATH
 
 auth:
+  successRedirect: AUTH_SUCCESS_REDIRECT
   providers:
     googleLogin:
       enabled: AUTH_PROVIDER_GOOGLE_ENABLED

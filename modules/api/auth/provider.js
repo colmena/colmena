@@ -1,5 +1,7 @@
+const config = require('config')
+
 const defaults = {
-  successRedirect: '/auth/account',
+  successRedirect: config.get('auth.successRedirect') || '/auth/account',
   failureRedirect: '/login',
   failureFlash: true,
 }
