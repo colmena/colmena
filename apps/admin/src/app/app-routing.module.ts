@@ -19,12 +19,12 @@ const routes: Routes = [
   }, {
     path: '', component: FullLayoutComponent, children: [
       { path: '', loadChildren: './extensions-routing.module#ExtensionsRoutingModule' },
-      { path: '', loadChildren: '@colmena/module-admin-content#ContentModule' },
-      { path: '', loadChildren: '@colmena/module-admin-dashboard#DashboardModule' },
-      { path: '', loadChildren: '@colmena/module-admin-data-browser#DataBrowserModule' },
-      { path: '', loadChildren: '@colmena/module-admin-dev#DevModule' },
-      { path: '', loadChildren: '@colmena/module-admin-storage#StorageModule' },
-      { path: '', loadChildren: '@colmena/module-admin-system#SystemModule' },
+      { path: 'content', loadChildren: '@colmena/module-admin-content#ContentModule' },
+      { path: 'dashboard', loadChildren: '@colmena/module-admin-dashboard#DashboardModule' },
+      { path: 'browser', loadChildren: '@colmena/module-admin-data-browser#DataBrowserModule' },
+      { path: 'development', loadChildren: '@colmena/module-admin-dev#DevModule' },
+      { path: 'storage', loadChildren: '@colmena/module-admin-storage#StorageModule' },
+      { path: 'system', loadChildren: '@colmena/module-admin-system#SystemModule' },
     ]
   },
   { path: '**', redirectTo: 'not-found' },

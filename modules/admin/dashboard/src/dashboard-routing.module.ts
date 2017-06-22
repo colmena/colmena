@@ -8,7 +8,7 @@ import { PasswordComponent } from './components/password.component'
 import { ProfileComponent } from './components/profile.component'
 
 const routes: Routes = [ {
-  path: 'dashboard',
+  path: '',
   data: {
     title: 'Dashboard',
   },

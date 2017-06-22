@@ -8,7 +8,7 @@ import { DomainResolver } from './content.resolvers'
 
 export const routes: Routes = [
   {
-    path: 'content',
+    path: '',
     data: {
       title: 'Content',
     },
@@ -20,10 +20,10 @@ export const routes: Routes = [
         component: ContentDashboardComponent,
         data: { title: 'Dashboard' },
       },
-      { path: '', loadChildren: './events/events.module#EventsModule' },
-      { path: '', loadChildren: './pages/pages.module#PagesModule' },
-      { path: '', loadChildren: './posts/posts.module#PostsModule' },
-      { path: '', loadChildren: './products/products.module#ProductsModule' },
+      { path: 'events', loadChildren: './events/events.module#EventsModule' },
+      { path: 'pages', loadChildren: './pages/pages.module#PagesModule' },
+      { path: 'posts', loadChildren: './posts/posts.module#PostsModule' },
+      { path: 'products', loadChildren: './products/products.module#ProductsModule' },
     ],
   },
 ]

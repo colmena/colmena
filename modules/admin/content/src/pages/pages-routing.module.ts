@@ -9,7 +9,7 @@ import { PagesResolver } from './pages.resolvers'
 
 const routes: Routes = [
   {
-    path: 'pages',
+    path: '',
     data: { title: 'Pages' },
     children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },

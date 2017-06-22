@@ -7,7 +7,7 @@ import { IndexComponent } from './components/index.component'
 import { FilesComponent } from './components/files.component'
 
 const routes: Routes = [ {
-  path: 'storage',
+  path: '',
   data: {
     title: 'Storage',
   },

@@ -9,7 +9,7 @@ import { DomainResolver } from './domains.resolvers'
 
 export const SystemDomainsRoutes: Routes = [
   {
-    path: 'domains',
+    path: '',
     data: { title: 'Domains' },
     children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },

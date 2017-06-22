@@ -9,7 +9,7 @@ import { PostsResolver } from './posts.resolvers'
 
 const routes: Routes = [
   {
-    path: 'posts',
+    path: '',
     data: { title: 'Posts' },
     children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },

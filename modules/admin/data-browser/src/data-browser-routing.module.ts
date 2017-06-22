@@ -7,7 +7,7 @@ import { BrowserItemsComponent } from './browser/browser-items.component'
 import { BrowserListComponent } from './browser/browser-list.component'
 
 export const routes: Routes = [ {
-  path: 'browser',
+  path: '',
   data: {
     title: 'Data Browser',
   },

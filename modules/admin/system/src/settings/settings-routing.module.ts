@@ -9,7 +9,7 @@ import { SettingResolver } from './settings.resolvers'
 
 export const SystemSettingsRoutes: Routes = [
   {
-    path: 'settings',
+    path: '',
     data: { title: 'Settings' },
     children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },

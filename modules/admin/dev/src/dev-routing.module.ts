@@ -11,7 +11,7 @@ import { FormsComponent } from './components/forms.component'
 import { ToastComponent } from './components/toast.component'
 
 export const routes: Routes = [ {
-  path: 'development',
+  path: '',
   canActivate: [HasDevAccess],
   children: [
     {

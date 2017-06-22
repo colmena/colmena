@@ -13,7 +13,7 @@ import { UserResolver } from './users.resolvers'
 
 const routes: Routes = [
   {
-    path: 'users',
+    path: '',
     data: { title: 'Users' },
     children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },

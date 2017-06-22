@@ -9,7 +9,7 @@ import { EventsResolver } from './events.resolvers'
 
 const routes: Routes = [
   {
-    path: 'events',
+    path: '',
     data: { title: 'Events' },
     children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },
