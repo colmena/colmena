@@ -1,13 +1,13 @@
 {
   "name": "@colmena/module-admin-dashboard",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@colmena/module-admin-content": "0.0.0",
-    "@colmena/module-admin-system": "0.0.0",
-    "@colmena/admin-ui": "0.0.0",
+    "@colmena/admin-ui": "0.1.0",
+    "@colmena/module-admin-content": "0.1.0",
+    "@colmena/module-admin-system": "0.1.0",
     "@ngrx/core": "1.2.0",
     "@ngrx/store": "2.2.2"
   },

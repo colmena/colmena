@@ -1,6 +1,6 @@
 {
   "name": "@colmena/api",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Colmena API",
   "publishConfig": {
     "access": "public"
@@ -36,13 +36,13 @@
   },
   "main": "server/server.js",
   "dependencies": {
-    "@colmena/api-explorer-style": "0.0.0",
-    "@colmena/api-helpers": "0.0.0",
-    "@colmena/logger": "0.0.0",
-    "@colmena/module-api-content": "0.0.0",
-    "@colmena/module-api-dev": "0.0.0",
-    "@colmena/module-api-storage": "0.0.0",
-    "@colmena/module-api-system": "0.0.0",
+    "@colmena/api-explorer-style": "0.1.0",
+    "@colmena/api-helpers": "0.1.0",
+    "@colmena/logger": "0.1.0",
+    "@colmena/module-api-content": "0.1.0",
+    "@colmena/module-api-dev": "0.1.0",
+    "@colmena/module-api-storage": "0.1.0",
+    "@colmena/module-api-system": "0.1.0",
     "@mean-expert/loopback-sdk-builder": "2.1.0-rc.12",
     "bluebird": "3.5.0",
     "compression": "1.6.2",

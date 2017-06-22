@@ -1,6 +1,6 @@
 {
   "name": "@colmena/module-admin-system",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "publishConfig": {
     "access": "public"
   },
@@ -8,8 +8,8 @@
   "author": "Bram Borggreve <bram@colmena.io> (https://github.com/beeman) (https://twitter.com/beeman_nl)",
   "url": "https://github.com/colmena/colmena",
   "dependencies": {
-    "@colmena/admin-lb-sdk": "0.0.0",
-    "@colmena/admin-ui": "0.0.0",
+    "@colmena/admin-lb-sdk": "0.1.0",
+    "@colmena/admin-ui": "0.1.0",
     "@ngrx/core": "1.2.0",
     "@ngrx/effects": "2.0.3",
     "@ngrx/store": "2.2.2",
