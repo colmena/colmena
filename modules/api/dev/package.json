@@ -1,6 +1,7 @@
 {
   "name": "@colmena/module-api-dev",
   "version": "0.0.0",
+  "private": false,
   "license": "MIT",
   "dependencies": {},
   "colmena": {

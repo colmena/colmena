@@ -1,6 +1,7 @@
 {
   "name": "@colmena/module-api-content",
   "version": "0.0.0",
+  "private": false,
   "license": "MIT",
   "dependencies": {
     "faker": "4.1.0"

@@ -2,6 +2,7 @@
   "name": "@colmena/admin-layout",
   "version": "0.0.0",
   "license": "MIT",
+  "private": false,
   "dependencies": {
     "@ngrx/core": "1.2.0",
     "@ngrx/store": "2.2.2",

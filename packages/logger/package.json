@@ -1,7 +1,8 @@
 {
   "name": "@colmena/logger",
   "version": "0.0.0",
-  "mail": "index.js",
+  "main": "index.js",
+  "private": false,
   "license": "MIT",
   "dependencies": {
     "bunyan": "1.8.10",

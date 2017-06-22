@@ -2,6 +2,7 @@
   "name": "@colmena/api-helpers",
   "version": "0.0.0",
   "mail": "index.js",
+  "private": false,
   "dependencies": {
     "@colmena/logger": "0.0.0",
     "config": "1.26.1",

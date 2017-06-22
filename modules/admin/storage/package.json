@@ -1,6 +1,7 @@
 {
   "name": "@colmena/module-admin-storage",
   "version": "0.0.0",
+  "private": false,
   "license": "MIT",
   "dependencies": {
     "@colmena/admin-lb-sdk": "0.0.0",

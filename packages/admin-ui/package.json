@@ -1,6 +1,7 @@
 {
   "name": "@colmena/admin-ui",
   "version": "0.0.0",
+  "private": false,
   "license": "MIT",
   "dependencies": {
     "coreui-styles": "1.0.2",

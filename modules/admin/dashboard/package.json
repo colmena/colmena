@@ -1,6 +1,7 @@
 {
   "name": "@colmena/module-admin-dashboard",
   "version": "0.0.0",
+  "private": false,
   "dependencies": {
     "@colmena/module-admin-content": "0.0.0",
     "@colmena/module-admin-system": "0.0.0",

@@ -1,6 +1,7 @@
 {
   "name": "@colmena/admin-lb-sdk",
   "version": "0.0.0",
+  "private": false,
   "license": "MIT",
   "dependencies": {
     "socket.io-client": "2.0.3"
