@@ -1,7 +1,9 @@
 {
   "name": "@colmena/module-admin-dashboard",
   "version": "0.0.0",
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@colmena/module-admin-content": "0.0.0",
     "@colmena/module-admin-system": "0.0.0",
@@ -9,5 +11,7 @@
     "@ngrx/core": "1.2.0",
     "@ngrx/store": "2.2.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "author": "Bram Borggreve <bram@colmena.io> (https://github.com/beeman) (https://twitter.com/beeman_nl)",
+  "url": "https://github.com/colmena/colmena"
 }

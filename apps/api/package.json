@@ -2,9 +2,11 @@
   "name": "@colmena/api",
   "version": "0.0.0",
   "description": "Colmena API",
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
-  "author": "Bram Borggreve <bram@colmena.io>",
+  "author": "Bram Borggreve <bram@colmena.io> (https://github.com/beeman) (https://twitter.com/beeman_nl)",
   "url": "https://github.com/colmena/colmena",
   "homepage": "https://github.com/colmena/colmena",
   "repository": {

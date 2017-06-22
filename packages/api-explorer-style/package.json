@@ -2,6 +2,10 @@
   "name": "@colmena/api-explorer-style",
   "version": "0.0.0",
   "description": "Colmena style for the Loopback API Explorer",
-  "private": false,
-  "license": "MIT"
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "author": "Bram Borggreve <bram@colmena.io> (https://github.com/beeman) (https://twitter.com/beeman_nl)",
+  "url": "https://github.com/colmena/colmena"
 }

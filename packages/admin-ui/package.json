@@ -1,8 +1,12 @@
 {
   "name": "@colmena/admin-ui",
   "version": "0.0.0",
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
+  "author": "Bram Borggreve <bram@colmena.io> (https://github.com/beeman) (https://twitter.com/beeman_nl)",
+  "url": "https://github.com/colmena/colmena",
   "dependencies": {
     "coreui-styles": "1.0.2",
     "font-awesome": "4.7.0",
