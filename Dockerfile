@@ -4,6 +4,9 @@ FROM colmena/dev:latest
 # Copy over the whole app
 COPY . .
 
+# Copy over the Production settings
+COPY production.yaml /app/apps/api/config/production.yaml
+
 # Remove any local configuration settings
 RUN touch /app/apps/api/config/local.yaml
 RUN rm /app/apps/api/config/local*
