@@ -27,4 +27,14 @@ if (config.has('smtp') && config.get('smtp.host') && config.get('smtp.port')) {
   }
 }
 
+if (config.has('storage') && config.get('storage.path')) {
+  log.magenta.b('[data-sources] Configure Storage')
+  datasources['storage'] = {
+    name: 'storage',
+    connector: 'loopback-component-storage',
+    provider: 'filesystem',
+    root: config.get('storage.path'),
+  }
+}
+
 module.exports = datasources
