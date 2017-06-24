@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { ColmenaUiModule } from '@colmena/admin-ui'
 
 import { DashboardRoutingModule } from './dashboard-routing.module'
+import { DashboardService } from './dashboard.service'
 
 import { ContentModule } from '@colmena/module-admin-content'
 import { SystemModule } from '@colmena/module-admin-system'
@@ -26,5 +27,8 @@ import { ProfileComponent } from './components/profile.component'
     PasswordComponent,
     ProfileComponent,
   ],
+  providers: [
+    DashboardService ,
+  ]
 })
 export class DashboardModule { }
