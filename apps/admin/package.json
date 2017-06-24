@@ -48,6 +48,7 @@
     "@colmena/admin-ui": "0.1.0",
     "@colmena/module-admin-auth": "0.1.0",
     "@colmena/module-admin-content": "0.1.0",
+    "@colmena/module-admin-core": "0.1.0",
     "@colmena/module-admin-dashboard": "0.1.0",
     "@colmena/module-admin-data-browser": "0.1.0",
     "@colmena/module-admin-dev": "0.1.0",

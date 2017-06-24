@@ -20,6 +20,7 @@ const routes: Routes = [
     path: '', component: FullLayoutComponent, children: [
       { path: '', loadChildren: './extensions-routing.module#ExtensionsRoutingModule' },
       { path: 'content', loadChildren: '@colmena/module-admin-content#ContentModule' },
+      { path: 'core', loadChildren: '@colmena/module-admin-core#CoreModule' },
       { path: 'dashboard', loadChildren: '@colmena/module-admin-dashboard#DashboardModule' },
       { path: 'browser', loadChildren: '@colmena/module-admin-data-browser#DataBrowserModule' },
       { path: 'development', loadChildren: '@colmena/module-admin-dev#DevModule' },
