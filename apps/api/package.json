@@ -40,6 +40,7 @@
     "@colmena/api-helpers": "0.1.0",
     "@colmena/logger": "0.1.0",
     "@colmena/module-api-content": "0.1.0",
+    "@colmena/module-api-core": "0.1.0",
     "@colmena/module-api-dev": "0.1.0",
     "@colmena/module-api-storage": "0.1.0",
     "@colmena/module-api-system": "0.1.0",

@@ -12,6 +12,7 @@ admin:
 colmena:
   modules:
     '@colmena/module-api-content': true
+    '@colmena/module-api-core': true
     '@colmena/module-api-storage': true
     '@colmena/module-api-system': true
 
