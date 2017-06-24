@@ -1,6 +1,7 @@
 /* tslint:disable */
 import { Injectable } from '@angular/core';
 import { Email } from '../../models/Email';
+import { Core } from '../../models/Core';
 import { StorageContainer } from '../../models/StorageContainer';
 import { System } from '../../models/System';
 import { ContentEvent } from '../../models/ContentEvent';
@@ -21,6 +22,7 @@ export class SDKModels {
 
   private models: Models = {
     Email: Email,
+    Core: Core,
     StorageContainer: StorageContainer,
     System: System,
     ContentEvent: ContentEvent,

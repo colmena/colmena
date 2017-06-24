@@ -49,6 +49,7 @@ import { SocketDriver } from './sockets/socket.driver';
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { EmailApi } from './services/custom/Email';
+import { CoreApi } from './services/custom/Core';
 import { StorageContainerApi } from './services/custom/StorageContainer';
 import { SystemApi } from './services/custom/System';
 import { ContentEventApi } from './services/custom/ContentEvent';
@@ -93,6 +94,7 @@ export class SDKBrowserModule {
         SDKModels,
         RealTime,
         EmailApi,
+        CoreApi,
         StorageContainerApi,
         SystemApi,
         ContentEventApi,
