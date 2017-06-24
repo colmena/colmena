@@ -1,0 +1,6 @@
+{
+  "name": "Core",
+  "plural": "Core",
+  "description": "Core: basic model",
+  "base": "Model"
+}

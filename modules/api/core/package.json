@@ -1,0 +1,19 @@
+{
+  "name": "@colmena/module-api-core",
+  "description": "Colmena API core",
+  "version": "0.1.0",
+  "license": "MIT",
+  "dependencies": {},
+  "colmena": {
+    "module": {
+      "modelSources": [
+        "common/models"
+      ],
+      "models": {
+        "Core": {
+          "dataSource": "db"
+        }
+      }
+    }
+  }
+}
