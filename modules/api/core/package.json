@@ -1,8 +1,12 @@
 {
   "name": "@colmena/module-api-core",
-  "description": "Colmena API core",
   "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
+  "author": "Bram Borggreve <bram@colmena.io> (https://github.com/beeman) (https://twitter.com/beeman_nl)",
+  "url": "https://github.com/colmena/colmena",
   "dependencies": {},
   "colmena": {
     "module": {
