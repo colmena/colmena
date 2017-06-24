@@ -27,9 +27,7 @@ const relationMixin = (ModelFrom, options, relationType) => {
 
   if (!blacklist.includes(modelName)) {
     ModelTo.on('attached', () => {
-      debug(
-        `[relation-mixin] ${targetModelName} ${relationType} ${modelName}`
-      )
+      debug(`[relation-mixin] ${targetModelName} ${relationType} ${modelName}`)
 
       switch (relationType) {
         case 'hasMany':
