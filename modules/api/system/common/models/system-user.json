@@ -3,7 +3,7 @@
   "plural": "Users",
   "description": "System: Manage Users",
   "base": "User",
-  "components": "../../modules/api/system/common/models/system-user",
+  "componentPackage": "@colmena/module-api-system/common/models/system-user/",
   "idInjection": true,
   "options": {
     "validateUpsert": true

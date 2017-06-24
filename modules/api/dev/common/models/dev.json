@@ -3,7 +3,7 @@
   "plural": "Dev",
   "description": "Dev: Development Environment",
   "base": "Model",
-  "components": "../../modules/api/dev/common/models/dev",
+  "componentPackage": "@colmena/module-api-dev/common/models/dev/",
   "idInjection": true,
   "forceId": false,
   "properties": {},
