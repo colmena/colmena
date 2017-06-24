@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { get } from 'lodash'
 import { UiService } from '@colmena/admin-ui'
-import { DashboardService, User } from '../dashboard.service';
+import { DashboardService } from '../dashboard.service';
 
 @Component({
   selector: 'app-profile',
@@ -26,13 +26,13 @@ import { DashboardService, User } from '../dashboard.service';
   `,
 })
 export class ProfileComponent implements OnInit {
-  public item: User
+  public item: any
   public config: any = {}
 
   constructor(
     private store: Store<any>,
-    public uiService: UiService,
-    public service: DashboardService,
+    private uiService: UiService,
+    private service: DashboardService,
   ) { }
 
   ngOnInit() {

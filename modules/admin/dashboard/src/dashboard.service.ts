@@ -10,12 +10,27 @@ export class DashboardService {
   constructor(
     private api: SystemUserApi,
     private formService: FormService,
-  ) {
+  ) { }
+
+  public formConfigPassword() {
+    return {
+      fields: [
+        this.formService.password('password', {
+          label: 'Password',
+          placeholder: 'Must be at least 5 characters',
+        }),
+        this.formService.password('password', {
+          label: 'Confirm Password',
+          placeholder: 'Re-enter the password to confirm',
+        }),
+      ],
+      showCancel: false,
+      hasHeader: false,
+    }
   }
 
   public formConfigProfile() {
     return {
-      icon: 'fa fa-user',
       fields: [
         this.formService.input('firstName', {
           label: 'First name',
