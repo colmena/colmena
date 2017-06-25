@@ -30,11 +30,14 @@ export class BrowserItemsComponent {
     public schemaApi: DataBrowserApi,
     private route: ActivatedRoute,
 ) {
-    this.modelName = this.route.snapshot.params['modelName']
+    this.route.params.subscribe(params => this.handleRouteChange(params));
+  }
+
+  handleRouteChange(params) {
+    this.modelName = params['modelName']
     this.schemaApi.setModelName(this.modelName)
 
     this.schemaApi.find()
       .subscribe(items => this.items = items)
   }
-
 }
