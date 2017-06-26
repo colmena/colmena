@@ -20,8 +20,6 @@ import { Store } from '@ngrx/store'
         </div>
       </div>
     </div>
-    <app-system-info></app-system-info>
-    <app-system-modules></app-system-modules>
   `,
   styles: [`
     ui-card {

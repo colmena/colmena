@@ -9,7 +9,7 @@ import { HasDevAccess } from './dev.guards'
 import { AlertComponent } from './components/alert.component'
 import { DashboardComponent } from './components/dashboard.component'
 import { FormsComponent } from './components/forms.component'
-import { IndexComponent } from './containers/index.component'
+import { IndexComponent } from './components/index.component'
 import { ToastComponent } from './components/toast.component'
 
 @NgModule({
@@ -35,6 +35,5 @@ export class DevModule {
     { icon: 'icon-note', title: 'Forms', link: 'forms', type: 'warning' },
     { icon: 'icon-info', title: 'Alerts', link: 'alerts', type: 'danger' },
     { icon: 'icon-bubble', title: 'Toasts', link: 'toasts', type: 'success' },
-    { icon: 'fa fa-cube', title: 'Colmena', link: 'colmena', type: 'primary' },
   ]
 }

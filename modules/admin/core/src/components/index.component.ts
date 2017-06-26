@@ -12,8 +12,9 @@ import { UiTabLink } from '@colmena/admin-ui'
 export class IndexComponent {
 
   public tabs: UiTabLink[] = [
-    { icon: 'icon-speedometer', title: 'Dashboard', link: 'index' },
-    { icon: 'icon-info', title: 'About', link: 'about' },
+    { icon: 'fa fa-info', title: 'System Information', link: 'info' },
+    { icon: 'fa fa-cubes', title: 'Modules', link: 'modules/api' },
+    { icon: 'fa fa-cubes', title: 'Admin Modules', link: 'modules/admin' },
   ]
 
 }

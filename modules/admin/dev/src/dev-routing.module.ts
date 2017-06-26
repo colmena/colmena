@@ -3,11 +3,10 @@ import { Routes, RouterModule } from '@angular/router'
 
 import { HasDevAccess } from './dev.guards'
 
-import { IndexComponent } from './containers/index.component'
-
 import { AlertComponent } from './components/alert.component'
 import { DashboardComponent } from './components/dashboard.component'
 import { FormsComponent } from './components/forms.component'
+import { IndexComponent } from './components/index.component'
 import { ToastComponent } from './components/toast.component'
 
 export const routes: Routes = [ {
@@ -41,10 +40,6 @@ export const routes: Routes = [ {
           path: 'toasts',
           component: ToastComponent,
           data: { title: 'Toasts' }
-        },
-        {
-          path: '',
-          loadChildren: './colmena/colmena.module#ColmenaModule',
         },
     ] },
   ],

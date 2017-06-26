@@ -3,55 +3,8 @@
   "plural": "System",
   "description": "System: Get information from the system",
   "base": "Model",
-  "componentPackage": "@colmena/module-api-system/common/models/system/",
   "validations": [],
   "relations": {},
-  "acls": [
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY",
-      "property": [
-        "modules",
-        "ping"
-      ]
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "system-admin",
-      "permission": "ALLOW",
-      "property": [
-        "modules",
-        "ping"
-      ]
-    }
-  ],
-  "methods": {
-    "modules": {
-      "returns": {
-        "arg": "result",
-        "type": "Object",
-        "root": true
-      },
-      "description": "Show the modules loaded by the API",
-      "http": {
-        "path": "/modules",
-        "verb": "get"
-      }
-    },
-    "ping": {
-      "returns": {
-        "arg": "result",
-        "type": "Object",
-        "root": true
-      },
-      "description": "Ping the API to retrieve its internal state",
-      "http": {
-        "path": "/ping",
-        "verb": "get"
-      }
-    }
-  }
+  "acls": [],
+  "methods": {}
 }

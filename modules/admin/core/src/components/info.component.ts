@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 
-import { SystemApi } from '@colmena/admin-lb-sdk'
+import { CoreApi } from '@colmena/admin-lb-sdk'
 
 @Component({
   selector: 'app-system-info',
@@ -38,10 +38,10 @@ import { SystemApi } from '@colmena/admin-lb-sdk'
     </div>
   `,
 })
-export class SystemInfoComponent implements OnInit {
+export class InfoComponent implements OnInit {
   public ping: any = {}
 
-  constructor(private systemApi: SystemApi) {
+  constructor(private coreApi: CoreApi) {
   }
 
   ngOnInit() {
@@ -49,7 +49,7 @@ export class SystemInfoComponent implements OnInit {
   }
 
   poll() {
-    this.systemApi.ping()
+    this.coreApi.ping()
       .subscribe((res: any) => this.ping = res)
   }
 }

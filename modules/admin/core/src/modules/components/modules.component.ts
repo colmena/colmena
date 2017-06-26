@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { ColmenaService } from '../colmena.service'
+import { ModulesService} from '../modules.service'
 
 @Component({
   template: `
@@ -28,12 +28,12 @@ export class ModulesComponent implements OnInit {
   public modules = []
 
   constructor(
-    private colmenaService: ColmenaService,
+    private service: ModulesService,
   ) {
   }
 
   ngOnInit() {
-    this.colmenaService.getModules()
+    this.service.getModules()
       .subscribe(res => this.modules = res)
   }
 }
