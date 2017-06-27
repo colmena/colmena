@@ -10,9 +10,9 @@
   "dependencies": {
     "@colmena/api-helpers": "0.1.0",
     "@colmena/logger": "0.1.0",
-    "config": "^1.26.1",
-    "inflection": "^1.12.0",
-    "lodash": "^4.17.4"
+    "config": "1.26.1",
+    "inflection": "1.12.0",
+    "lodash": "4.17.4"
   },
   "colmena": {
     "module": {
