@@ -1,6 +1,6 @@
 {
   "name": "@colmena/module-api-core",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publishConfig": {
     "access": "public"
   },
@@ -8,7 +8,7 @@
   "author": "Bram Borggreve <bram@colmena.io> (https://github.com/beeman) (https://twitter.com/beeman_nl)",
   "url": "https://github.com/colmena/colmena",
   "dependencies": {
-    "@colmena/api-helpers": "0.1.0"
+    "@colmena/api-helpers": "^0.2.0"
   },
   "colmena": {
     "module": {
