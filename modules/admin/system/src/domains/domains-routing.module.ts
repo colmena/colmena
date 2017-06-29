@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
+import { DomainResolver } from './domains.resolvers'
+
 import { DomainListComponent } from './components/domain-list.component'
 import { DomainDetailComponent } from './components/domain-detail.component'
 import { DomainFormComponent } from './components/domain-form.component'
-
-import { DomainResolver } from './domains.resolvers'
+import { DomainSettingsComponent } from './components/domain-settings.component'
 
 export const SystemDomainsRoutes: Routes = [
   {
@@ -42,6 +43,11 @@ export const SystemDomainsRoutes: Routes = [
             path: 'edit',
             component: DomainFormComponent,
             data: { title: 'Edit' },
+          },
+          {
+            path: 'settings',
+            component: DomainSettingsComponent,
+            data: { title: 'Settings' },
           },
         ],
       },

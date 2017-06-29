@@ -9,10 +9,21 @@
     "validateUpsert": true
   },
   "properties": {
-    "key": {
+    "id": {
       "type": "string",
       "id": true,
+      "required": true,
+      "defaultFn": "uuidv4"
+    },
+    "key": {
+      "type": "string",
       "required": true
+    },
+    "referenceId": {
+      "type": "string"
+    },
+    "referenceType": {
+      "type": "string"
     },
     "system": {
       "type": "boolean",
@@ -28,7 +39,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "reference": {
+      "primaryKey": "key",
+      "type": "belongsTo",
+      "polymorphic": "reference"
+    }
+  },
   "acls": [],
   "methods": {}
 }

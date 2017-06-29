@@ -26,6 +26,18 @@
     }
   ],
   "methods": {
+    "datasources": {
+      "returns": {
+        "arg": "result",
+        "type": "Object",
+        "root": true
+      },
+      "description": "Show the datasources loaded by the API",
+      "http": {
+        "path": "/datasources",
+        "verb": "get"
+      }
+    },
     "modules": {
       "returns": {
         "arg": "result",

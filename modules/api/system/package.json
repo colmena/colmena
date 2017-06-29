@@ -12,7 +12,8 @@
     "@colmena/logger": "0.1.0",
     "config": "1.26.1",
     "inflection": "1.12.0",
-    "lodash": "4.17.4"
+    "lodash": "4.17.4",
+    "object-path": "0.11.4"
   },
   "colmena": {
     "module": {

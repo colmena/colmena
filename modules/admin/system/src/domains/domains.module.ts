@@ -10,6 +10,7 @@ import { DomainDetailComponent } from './components/domain-detail.component'
 import { DomainFormComponent } from './components/domain-form.component'
 import { DomainHeaderComponent } from './components/domain-header.component'
 import { DomainListComponent } from './components/domain-list.component'
+import { DomainSettingsComponent } from './components/domain-settings.component'
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { DomainListComponent } from './components/domain-list.component'
     DomainFormComponent,
     DomainHeaderComponent,
     DomainListComponent,
+    DomainSettingsComponent,
   ],
   providers: [
     DomainsService,

@@ -20,6 +20,7 @@ export class DomainDetailComponent implements OnInit {
 
   public tabs: UiTabLink[] = [
     { icon: 'fa fa-pencil', title: 'Edit', link: 'edit' },
+    { icon: 'fa fa-cog', title: 'Settings', link: 'settings' },
   ]
 
   public item: any

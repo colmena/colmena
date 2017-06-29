@@ -67,6 +67,7 @@
     "loopback-ds-readonly-mixin": "2.0.2",
     "loopback-ds-timestamp-mixin": "3.4.1",
     "nsp": "2.6.3",
+    "object-path": "0.11.4",
     "options": "0.0.6",
     "request": "2.81.0",
     "serve-favicon": "2.4.3",

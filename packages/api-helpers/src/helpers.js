@@ -5,7 +5,17 @@ const log = require('@colmena/logger')
 const path = require('path')
 const prequire = require('parent-require')
 
-const parentRequire = moduleName => prequire(moduleName)
+const parentRequire = moduleName => {
+  try {
+    return prequire(moduleName)
+  } catch (e) {
+    log.red.b('The module you are trying to load cannot be found:')
+    log.red.b(e.message)
+    log.yellow.b('Verify if the module is listed in apps/api/package.json')
+    log.yellow.b('You can disable the module in apps/api/config/*.yaml')
+    throw e
+  }
+}
 
 const getModuleList = () => config.get('colmena.modules')
 const getActiveModules = () =>

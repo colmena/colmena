@@ -24,9 +24,28 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "settings": {
+      "type": "hasMany",
+      "model": "SystemSetting",
+      "polymorphic": "reference"
+    }
+  },
   "acls": [],
   "methods": {
+    "prototype.init": {
+      "accepts": [],
+      "returns": {
+        "arg": "result",
+        "type": "Object",
+        "root": true
+      },
+      "description": "Initialize a domain",
+      "http": {
+        "path": "/init",
+        "verb": "get"
+      }
+    },
     "prototype.importFileByUrl": {
       "accepts": [
         {
