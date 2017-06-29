@@ -4,7 +4,8 @@ import {
   ContentPage,
   ContentProduct,
   ContentPost,
-  StorageFile
+  StorageFile,
+  SystemSetting
 } from '../index';
 
 declare var Object: any;
@@ -19,6 +20,7 @@ export interface SystemDomainInterface {
   contentProducts?: ContentProduct[];
   contentPosts?: ContentPost[];
   storageFiles?: StorageFile[];
+  settings?: SystemSetting[];
 }
 
 export class SystemDomain implements SystemDomainInterface {
@@ -32,6 +34,7 @@ export class SystemDomain implements SystemDomainInterface {
   contentProducts: ContentProduct[];
   contentPosts: ContentPost[];
   storageFiles: StorageFile[];
+  settings: SystemSetting[];
   constructor(data?: SystemDomainInterface) {
     Object.assign(this, data);
   }
@@ -109,6 +112,11 @@ export class SystemDomain implements SystemDomainInterface {
           name: 'storageFiles',
           type: 'StorageFile[]',
           model: 'StorageFile'
+        },
+        settings: {
+          name: 'settings',
+          type: 'SystemSetting[]',
+          model: 'SystemSetting'
         },
       }
     }

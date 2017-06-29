@@ -2,21 +2,29 @@
 
 declare var Object: any;
 export interface SystemSettingInterface {
+  "id": string;
   "key": string;
+  "referenceId"?: string;
+  "referenceType"?: string;
   "system"?: boolean;
   "type": string;
   "description"?: string;
   "created"?: Date;
   "modified"?: Date;
+  reference?: any;
 }
 
 export class SystemSetting implements SystemSettingInterface {
+  "id": string;
   "key": string;
+  "referenceId": string;
+  "referenceType": string;
   "system": boolean;
   "type": string;
   "description": string;
   "created": Date;
   "modified": Date;
+  reference: any;
   constructor(data?: SystemSettingInterface) {
     Object.assign(this, data);
   }
@@ -48,8 +56,20 @@ export class SystemSetting implements SystemSettingInterface {
       name: 'SystemSetting',
       plural: 'Settings',
       properties: {
+        "id": {
+          name: 'id',
+          type: 'string'
+        },
         "key": {
           name: 'key',
+          type: 'string'
+        },
+        "referenceId": {
+          name: 'referenceId',
+          type: 'string'
+        },
+        "referenceType": {
+          name: 'referenceType',
           type: 'string'
         },
         "system": {
@@ -76,6 +96,11 @@ export class SystemSetting implements SystemSettingInterface {
         },
       },
       relations: {
+        reference: {
+          name: 'reference',
+          type: 'any',
+          model: ''
+        },
       }
     }
   }

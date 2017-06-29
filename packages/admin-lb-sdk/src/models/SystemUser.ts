@@ -16,9 +16,7 @@ export interface SystemUserInterface {
   "fullName"?: string;
   "avatar"?: string;
   "realm"?: string;
-  "password": string;
   "emailVerified"?: boolean;
-  "verificationToken"?: string;
   "created"?: Date;
   "modified"?: Date;
   accessTokens?: any[];
@@ -38,9 +36,7 @@ export class SystemUser implements SystemUserInterface {
   "fullName": string;
   "avatar": string;
   "realm": string;
-  "password": string;
   "emailVerified": boolean;
-  "verificationToken": string;
   "created": Date;
   "modified": Date;
   accessTokens: any[];
@@ -112,17 +108,9 @@ export class SystemUser implements SystemUserInterface {
           name: 'realm',
           type: 'string'
         },
-        "password": {
-          name: 'password',
-          type: 'string'
-        },
         "emailVerified": {
           name: 'emailVerified',
           type: 'boolean'
-        },
-        "verificationToken": {
-          name: 'verificationToken',
-          type: 'string'
         },
         "created": {
           name: 'created',

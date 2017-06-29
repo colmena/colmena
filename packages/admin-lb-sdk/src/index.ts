@@ -50,12 +50,12 @@ import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { EmailApi } from './services/custom/Email';
 import { CoreApi } from './services/custom/Core';
-import { StorageContainerApi } from './services/custom/StorageContainer';
 import { SystemApi } from './services/custom/System';
 import { ContentEventApi } from './services/custom/ContentEvent';
 import { ContentPageApi } from './services/custom/ContentPage';
 import { ContentProductApi } from './services/custom/ContentProduct';
 import { ContentPostApi } from './services/custom/ContentPost';
+import { DomainApi } from './services/custom/Domain';
 import { StorageFileApi } from './services/custom/StorageFile';
 import { SystemDomainApi } from './services/custom/SystemDomain';
 import { SystemSettingApi } from './services/custom/SystemSetting';
@@ -95,12 +95,12 @@ export class SDKBrowserModule {
         RealTime,
         EmailApi,
         CoreApi,
-        StorageContainerApi,
         SystemApi,
         ContentEventApi,
         ContentPageApi,
         ContentProductApi,
         ContentPostApi,
+        DomainApi,
         StorageFileApi,
         SystemDomainApi,
         SystemSettingApi,
