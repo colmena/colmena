@@ -3,12 +3,6 @@
     "name": "db",
     "connector": "memory"
   },
-  "storage": {
-    "name": "storage",
-    "connector": "loopback-component-storage",
-    "provider": "filesystem",
-    "root": "./storage"
-  },
   "mail": {
     "name": "mail",
     "connector": "mail"

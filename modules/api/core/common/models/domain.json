@@ -1,6 +1,6 @@
 {
-  "name": "SystemDomain",
-  "plural": "Domains",
+  "name": "Domain",
+  "plural": "CoreDomains",
   "description": "System: Manage Domains and related content",
   "base": "SystemBaseModel",
   "componentPackage": "@colmena/module-api-system/common/models/system-domain/",

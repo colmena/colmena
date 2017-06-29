@@ -1,7 +1,7 @@
 {
   "name": "Core",
   "plural": "Core",
-  "description": "Core: basic model",
+  "description": "Core: Colmena Core model",
   "base": "Model",
   "acls": [
     {
@@ -10,7 +10,8 @@
       "principalId": "$everyone",
       "permission": "DENY",
       "property": [
-        "modules",
+        "getDatasources",
+        "getModules",
         "ping"
       ]
     },
@@ -20,13 +21,14 @@
       "principalId": "system-admin",
       "permission": "ALLOW",
       "property": [
-        "modules",
+        "getDatasources",
+        "getModules",
         "ping"
       ]
     }
   ],
   "methods": {
-    "datasources": {
+    "getDatasources": {
       "returns": {
         "arg": "result",
         "type": "Object",
@@ -38,7 +40,31 @@
         "verb": "get"
       }
     },
-    "modules": {
+    "getDomains": {
+      "returns": {
+        "arg": "result",
+        "type": "Object",
+        "root": true
+      },
+      "description": "List the domains hosted by the API",
+      "http": {
+        "path": "/domains",
+        "verb": "get"
+      }
+    },
+    "getSettings": {
+      "returns": {
+        "arg": "result",
+        "type": "Object",
+        "root": true
+      },
+      "description": "List the public settings hosted by the API",
+      "http": {
+        "path": "/settings",
+        "verb": "get"
+      }
+    },
+    "getModules": {
       "returns": {
         "arg": "result",
         "type": "Object",

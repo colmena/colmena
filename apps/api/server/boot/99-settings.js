@@ -16,6 +16,7 @@ module.exports = (app, cb) => {
       key,
       value,
       system: true,
+      public: true,
       type: typeof value,
     }
   })

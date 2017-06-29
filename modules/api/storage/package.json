@@ -22,8 +22,8 @@
       ],
       "models": {
         "StorageContainer": {
-          "dataSource": "storage",
-          "public": true
+          "dataSource": false,
+          "public": false
         },
         "StorageFile": {
           "dataSource": "db",

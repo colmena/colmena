@@ -25,6 +25,19 @@
       ]
     }
   },
+  "acls": [
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": [
+        "exists",
+        "find",
+        "findById"
+      ]
+    }
+  ],
   "properties": {
     "id": {
       "type": "String",

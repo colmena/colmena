@@ -5,6 +5,12 @@
       "name": "Default Domain",
       "email": "no-reply@example.com",
       "description": "This domain is defined in the sample data."
+    },
+    {
+      "id": "system",
+      "name": "System Domain",
+      "email": "no-reply@example.com",
+      "description": "This domain is defined in the sample data."
     }
   ],
   "SystemSetting": [
@@ -28,6 +34,28 @@
       "group": "storage",
       "key": "root",
       "value": "./storage"
+    },
+    {
+      "referenceId": "system",
+      "referenceType": "SystemDomain",
+      "group": "storage",
+      "key": "provider",
+      "value": "filesystem"
+    },
+    {
+      "referenceId": "system",
+      "referenceType": "SystemDomain",
+      "group": "storage",
+      "key": "container",
+      "value": "system"
+    },
+    {
+      "referenceId": "system",
+      "referenceType": "SystemDomain",
+      "group": "storage",
+      "key": "root",
+      "value": "./storage"
     }
+
   ]
 }

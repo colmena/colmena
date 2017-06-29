@@ -41,7 +41,7 @@ module.exports = function(SystemDomain) {
     const storage = _.get(this.settingsMap, 'storage', { provider: false })
 
     const config = {
-      // name: dsName,
+      name: dsName,
       connector: 'loopback-component-storage',
       provider: storage.provider,
       debug: true,
@@ -84,10 +84,7 @@ module.exports = function(SystemDomain) {
     ds.connect(() => {})
 
     ds.on('connected', () => {
-      console.log('DataSource Connected')
-      console.log(Object.keys((SystemDomain.app.dataSources)))
-
-      this.getFiles().then(files => console.log('files', files))
+      this.getFiles().then(files => console.log('files', files.length))
     })
   }
 
