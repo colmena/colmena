@@ -18,9 +18,6 @@
       "models": {
         "Core": {
           "dataSource": false
-        },
-        "Domain": {
-          "dataSource": "db"
         }
       }
     }

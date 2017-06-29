@@ -93,7 +93,7 @@ const loadModules = config => {
   return config
 }
 
-const getDomain = (app, domain) => app.models.SystemDomain.findById('default')
+const getDomain = (app, domain) => app.models.SystemDomain.findById(domain)
 
 const importDomainFileByUrl = (domain, url, fileName) =>
   domain

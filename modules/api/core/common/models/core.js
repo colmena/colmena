@@ -1,8 +1,13 @@
 'use strict'
-const _ = require('lodash')
+const { get } = require('lodash')
 const { getAppConfigs } = require('@colmena/api-helpers')
 
 module.exports = function(Core) {
+
+  Core.ping = () => Core.app.models.Ping.ping()
+
+  Core.getModules = () => Promise.resolve(getAppConfigs())
+
   Core.getDomains = () =>
     Core.app.models.SystemDomain.find().map(domain => ({
       id: domain.id,
@@ -20,33 +25,19 @@ module.exports = function(Core) {
         value: setting.value,
       }))
 
-  Core.ping = () => Core.app.models.Ping.ping()
-
   Core.getDatasources = () => {
     const modelNames = Object.keys(Core.app.models)
+    const dataSources = {}
 
+    modelNames.map(name => {
+      const Model = Core.app.models[name]
+      const dsName = get(Model, 'dataSource.settings.name')
 
-    const result = {}
-
-
-    modelNames.forEach(modelName => {
-      const Model = Core.app.models[modelName]
-
-      const dsName = _.get(Model, 'dataSource.settings.name')
       if (dsName) {
-        result[dsName] = Model.dataSource.settings
+        dataSources[dsName] = Model.dataSource.settings
       }
     })
 
-    const dataSources = Core.app.dataSources
-    const dataSourceKeys = Object.keys(dataSources)
-    // const result = {}
-
-    dataSourceKeys.forEach(dataSourceKey => {
-      result[dataSourceKey.toLowerCase()] = dataSources[dataSourceKey].settings
-    })
-    return Promise.resolve(result)
+    return Promise.resolve(dataSources)
   }
-
-  Core.getModules = () => Promise.resolve(getAppConfigs())
 }

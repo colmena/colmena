@@ -25,6 +25,15 @@ const relationMixin = (ModelFrom, options, relationType) => {
   const modelName = ModelFrom.modelName
   const targetModelName = ModelTo.modelName
 
+  const allowUnauthenticated = options.allowUnauthenticated || false
+
+  ModelTo.settings.acls.push({
+    principalType: 'ROLE',
+    principalId: '$unauthenticated',
+    permission: allowUnauthenticated ? 'ALLOW' : 'DENY',
+    property: '__get__' + hasManyRelationName(modelName),
+  })
+
   if (!blacklist.includes(modelName)) {
     ModelTo.on('attached', () => {
       debug(`[relation-mixin] ${targetModelName} ${relationType} ${modelName}`)

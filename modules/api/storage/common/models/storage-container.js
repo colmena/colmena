@@ -101,11 +101,12 @@ module.exports = function(Container) {
    * Import an image form a URL, rename it and add a reference to a model
    *
    * @param {String} url The URL to download the file from
-   * @param {String} containerName The storage container to download the file to
+   * @param {String} containerModel The storage container to download the file to
    * @param {String} fileName The name of the file to download the file to
    */
   Container.importUrl = function importUrl(
     url,
+    containerModel,
     containerName,
     fileName = null
   ) {
@@ -125,10 +126,11 @@ module.exports = function(Container) {
         id: `${containerName}-${fileName}`,
         name: fileName,
         container: containerName,
+        containerModel: containerModel,
       }
 
       // Create a Writable stream to upload to
-      const stream = Container.uploadStream(containerName, fileName)
+      const stream = Container.app.models[containerModel].uploadStream(containerName, fileName)
 
       // Create the request
       const req = request.get(url)

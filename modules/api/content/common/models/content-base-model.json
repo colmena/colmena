@@ -17,7 +17,8 @@
       "blacklist": [
         "ContentBaseModel"
       ],
-      "required": false
+      "required": false,
+      "allowUnauthenticated": true
     },
     "SystemUser": {
       "blacklist": [
