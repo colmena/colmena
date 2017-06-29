@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Store } from '@ngrx/store'
 
-import { SystemDomainApi, SystemSettingApi } from '@colmena/admin-lb-sdk'
-
-import { LogService } from './log.service'
+import { CoreApi } from '@colmena/admin-lb-sdk'
 
 @Injectable()
 export class AppService {
@@ -17,23 +15,19 @@ export class AppService {
   }
 
   public fetchSettings() {
-    this.log.info('AppService: Fetch Settings')
-    return this.settingApi
-      .find({ fields: { key: true, value: true } })
+    return this.coreApi
+      .getSettings()
       .subscribe(res => res.forEach(setting => this.dispatchSetting(setting)))
   }
 
   public fetchDomains() {
-    this.log.info('AppService: Fetch Domains')
-    return this.domainApi
-      .find({ fields: { id: true, name: true } })
+    return this.coreApi
+      .getDomains()
       .subscribe(res => res.forEach(domain => this.dispatchDomain(domain)))
   }
 
   constructor(
-    private domainApi: SystemDomainApi,
-    private log: LogService,
-    private settingApi: SystemSettingApi,
+    private coreApi: CoreApi,
     private store: Store<any>
   ) {
     if (window.localStorage.getItem('domain')) {

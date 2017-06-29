@@ -29,7 +29,7 @@ export class SettingListComponent {
     switch (event.action) {
       case 'edit':
       case 'view':
-        return this.router.navigate([event.item['key']], { relativeTo: this.route.parent })
+        return this.router.navigate([event.item['id']], { relativeTo: this.route.parent })
       case 'add':
         return this.router.navigate(['create'], { relativeTo: this.route.parent })
       case 'delete':

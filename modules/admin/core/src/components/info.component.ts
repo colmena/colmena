@@ -18,7 +18,7 @@ import { CoreApi } from '@colmena/admin-lb-sdk'
           <ui-dashboard-icon class="col-md-3"
                              [count]="ping?.application?.node_env"
                              icon="fa fa-2x fa-server"
-                             label="Node Environment"
+                             label="Node Env"
                              type="danger">
           </ui-dashboard-icon>
           <ui-dashboard-icon class="col-md-3"

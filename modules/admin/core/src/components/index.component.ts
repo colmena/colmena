@@ -13,8 +13,9 @@ export class IndexComponent {
 
   public tabs: UiTabLink[] = [
     { icon: 'fa fa-info', title: 'System Information', link: 'info' },
-    { icon: 'fa fa-cubes', title: 'Modules', link: 'modules/api' },
-    { icon: 'fa fa-cubes', title: 'Admin Modules', link: 'modules/admin' },
+    { icon: 'fa fa-database', title: 'Data Sources', link: 'datasources' },
+    { icon: 'fa fa-cubes', title: 'Modules', link: 'api' },
+    { icon: 'fa fa-cubes', title: 'Admin Modules', link: 'admin' },
   ]
 
 }

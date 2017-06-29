@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { ModulesService} from '../modules.service'
+import { CoreService} from '../core.service'
 
 @Component({
   template: `
@@ -28,7 +28,7 @@ export class ModulesComponent implements OnInit {
   public modules = []
 
   constructor(
-    private service: ModulesService,
+    private service: CoreService,
   ) {
   }
 
