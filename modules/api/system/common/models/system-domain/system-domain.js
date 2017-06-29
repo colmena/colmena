@@ -4,10 +4,7 @@ module.exports = function(SystemDomain) {
   // Observe new domain creation to register a storage container
   SystemDomain.observe('after save', (ctx, next) => {
     if (ctx.instance && ctx.isNewInstance) {
-      ctx.instance
-        .init()
-        .then(() => next())
-        .catch(err => next(err))
+      ctx.instance.init().then(() => next()).catch(err => next(err))
     } else {
       return next()
     }

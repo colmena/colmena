@@ -130,7 +130,10 @@ module.exports = function(Container) {
       }
 
       // Create a Writable stream to upload to
-      const stream = Container.app.models[containerModel].uploadStream(containerName, fileName)
+      const stream = Container.app.models[containerModel].uploadStream(
+        containerName,
+        fileName
+      )
 
       // Create the request
       const req = request.get(url)

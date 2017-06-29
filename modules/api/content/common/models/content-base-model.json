@@ -37,6 +37,12 @@
         "find",
         "findById"
       ]
+    },
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "system-admin",
+      "permission": "ALLOW"
     }
   ],
   "properties": {

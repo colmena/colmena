@@ -77,7 +77,8 @@ module.exports = function(SystemDomain) {
         settings: {
           container: storage.container,
         },
-      })
+      }
+    )
 
     SystemDomain.app.model(Model, { dataSource: ds, public: false })
 

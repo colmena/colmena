@@ -95,10 +95,23 @@
       "permission": "DENY"
     },
     {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "system-admin",
+      "permission": "ALLOW"
+    },
+    {
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$owner",
       "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": [ "info" ]
     },
     {
       "principalType": "ROLE",
@@ -111,28 +124,10 @@
       "principalType": "ROLE",
       "principalId": "system-admin",
       "permission": "ALLOW",
-      "property": "addRole"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "system-admin",
-      "permission": "ALLOW",
-      "property": "removeRole"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "system-manager",
-      "permission": "ALLOW",
-      "property": "addRole"
-    },
-    {
-      "accessType": "EXECUTE",
-      "principalType": "ROLE",
-      "principalId": "system-manager",
-      "permission": "ALLOW",
-      "property": "removeRole"
+      "property": [
+        "addRole",
+        "removeRole"
+      ]
     }
   ],
   "methods": {

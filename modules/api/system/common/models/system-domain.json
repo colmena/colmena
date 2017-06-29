@@ -45,7 +45,7 @@
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
-      "principalId": "admin",
+      "principalId": "system-admin",
       "permission": "ALLOW",
       "property": "__get__settings"
     }

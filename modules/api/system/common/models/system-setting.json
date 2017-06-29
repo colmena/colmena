@@ -56,7 +56,7 @@
     {
       "accessType": "*",
       "principalType": "ROLE",
-      "principalId": "admin",
+      "principalId": "system-admin",
       "permission": "ALLOW"
     }
   ],

@@ -3,7 +3,6 @@ const { get } = require('lodash')
 const { getAppConfigs } = require('@colmena/api-helpers')
 
 module.exports = function(Core) {
-
   Core.ping = () => Core.app.models.Ping.ping()
 
   Core.getModules = () => Promise.resolve(getAppConfigs())
