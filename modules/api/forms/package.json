@@ -1,7 +1,7 @@
 {
   "name": "@colmena/module-api-forms",
   "description": "Colmena API forms",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "license": "MIT",
   "dependencies": {},
   "colmena": {

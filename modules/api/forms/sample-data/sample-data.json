@@ -2,18 +2,194 @@
   "Form": [
     {
       "id": "1",
-      "name": "Form 1",
-      "definition": {}
+      "name": "Contact",
+      "systemDomainId": "default",
+      "definition": [
+        {
+          "type": "input",
+          "key": "name",
+          "options": {
+            "label": "Name",
+            "placeholder": "Name"
+          }
+        },
+        {
+          "type": "password",
+          "key": "password",
+          "options": {
+            "label": "Password",
+            "placeholder": "Password"
+          }
+        },
+        {
+          "type": "email",
+          "key": "email",
+          "options": {
+            "label": "Email",
+            "placeholder": "Email"
+          }
+        },
+        {
+          "type": "date",
+          "key": "date",
+          "options": {
+            "label": "Date",
+            "placeholder": "Date"
+          }
+        },
+        {
+          "type": "textarea",
+          "key": "description",
+          "options": {
+            "label": "Description",
+            "placeholder": "Description"
+          }
+        }
+      ]
     },
     {
       "id": "2",
-      "name": "Form 2",
-      "definition": {}
+      "name": "Registration",
+      "systemDomainId": "default",
+      "definition": [
+        {
+          "type": "input",
+          "key": "firstName",
+          "options": {
+            "label": "First Name",
+            "placeholder": "First Name"
+          }
+        },
+        {
+          "type": "input",
+          "key": "lastName",
+          "options": {
+            "label": "Last Name",
+            "placeholder": "Last Name"
+          }
+        },
+        {
+          "type": "email",
+          "key": "email",
+          "options": {
+            "label": "Email",
+            "placeholder": "Email"
+          }
+        },
+        {
+          "type": "password",
+          "key": "password",
+          "options": {
+            "label": "Password",
+            "placeholder": "Password"
+          }
+        },
+        {
+          "type": "password",
+          "key": "config",
+          "options": {
+            "label": "Verify Password",
+            "placeholder": "Verify Password"
+          }
+        }
+      ]
     },
     {
       "id": "3",
-      "name": "Form 3",
-      "definition": {}
+      "name": "Login",
+      "systemDomainId": "default",
+      "definition": [
+        {
+          "type": "input",
+          "key": "username",
+          "options": {
+            "label": "Username",
+            "placeholder": "Username"
+          }
+        },
+        {
+          "type": "password",
+          "key": "password",
+          "options": {
+            "label": "Password",
+            "placeholder": "Password"
+          }
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Full",
+      "systemDomainId": "default",
+      "definition": [
+        {
+          "type": "input",
+          "key": "input",
+          "options": {
+            "label": "Input",
+            "placeholder": "Input"
+          }
+        },
+        {
+          "type": "password",
+          "key": "password",
+          "options": {
+            "label": "Password",
+            "placeholder": "Password"
+          }
+        },
+        {
+          "type": "email",
+          "key": "email",
+          "options": {
+            "label": "Email",
+            "placeholder": "Email"
+          }
+        },
+        {
+          "type": "date",
+          "key": "date",
+          "options": {
+            "label": "Date",
+            "placeholder": "Date"
+          }
+        },
+        {
+          "type": "select",
+          "key": "select",
+          "icon": "fa fa-fw fa-mouse-pointer",
+          "options": {
+            "label": "Select",
+            "options": [
+              {
+                "value": "option-value-1",
+                "label": "option-label-1"
+              },
+              {
+                "value": "option-value-2",
+                "label": "option-label-2"
+              }
+            ]
+          }
+        },
+        {
+          "type": "textarea",
+          "key": "textarea",
+          "options": {
+            "label": "Textarea",
+            "placeholder": "Textarea"
+          }
+        },
+        {
+          "type": "wysiwyg",
+          "key": "wysiwyg",
+          "icon": "fa fa-fw fa-tint",
+          "options": {
+            "label": "Rich Text",
+            "placeholder": "Rich Text"
+          }
+        }
+      ]
     }
   ],
   "FormResult": [
