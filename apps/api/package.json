@@ -40,6 +40,7 @@
     "@colmena/module-api-content": "0.1.0",
     "@colmena/module-api-core": "^0.2.0",
     "@colmena/module-api-dev": "^0.2.0",
+    "@colmena/module-api-forms": "^0.2.0",
     "@colmena/module-api-storage": "^0.2.0",
     "@colmena/module-api-system": "^0.2.0",
     "@mean-expert/loopback-sdk-builder": "2.1.0-rc.12.1",
