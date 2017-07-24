@@ -6,6 +6,7 @@ import { CoreConfigModule } from '@colmena/module-admin-core'
 import { DashboardConfigModule } from '@colmena/module-admin-dashboard'
 import { DataBrowserConfigModule } from '@colmena/module-admin-data-browser'
 import { DevConfigModule } from '@colmena/module-admin-dev'
+import { FormsConfigModule } from '@colmena/module-admin-forms'
 import { StorageConfigModule } from '@colmena/module-admin-storage'
 import { SystemConfigModule } from '@colmena/module-admin-system'
 
@@ -17,6 +18,7 @@ import { SystemConfigModule } from '@colmena/module-admin-system'
     DashboardConfigModule,
     DataBrowserConfigModule,
     DevConfigModule,
+    FormsConfigModule,
     StorageConfigModule,
     SystemConfigModule,
   ],

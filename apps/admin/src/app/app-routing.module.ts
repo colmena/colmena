@@ -24,6 +24,7 @@ const routes: Routes = [
       { path: 'dashboard', loadChildren: '@colmena/module-admin-dashboard#DashboardModule' },
       { path: 'browser', loadChildren: '@colmena/module-admin-data-browser#DataBrowserModule' },
       { path: 'development', loadChildren: '@colmena/module-admin-dev#DevModule' },
+      { path: 'forms', loadChildren: '@colmena/module-admin-forms#FormsModule' },
       { path: 'storage', loadChildren: '@colmena/module-admin-storage#StorageModule' },
       { path: 'system', loadChildren: '@colmena/module-admin-system#SystemModule' },
     ]
