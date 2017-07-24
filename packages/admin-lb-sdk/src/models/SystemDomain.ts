@@ -4,6 +4,8 @@ import {
   ContentPage,
   ContentProduct,
   ContentPost,
+  Form,
+  FormResult,
   StorageFile
 } from '../index';
 
@@ -18,6 +20,8 @@ export interface SystemDomainInterface {
   contentPages?: ContentPage[];
   contentProducts?: ContentProduct[];
   contentPosts?: ContentPost[];
+  forms?: Form[];
+  formResults?: FormResult[];
   storageFiles?: StorageFile[];
 }
 
@@ -31,6 +35,8 @@ export class SystemDomain implements SystemDomainInterface {
   contentPages: ContentPage[];
   contentProducts: ContentProduct[];
   contentPosts: ContentPost[];
+  forms: Form[];
+  formResults: FormResult[];
   storageFiles: StorageFile[];
   constructor(data?: SystemDomainInterface) {
     Object.assign(this, data);
@@ -104,6 +110,16 @@ export class SystemDomain implements SystemDomainInterface {
           name: 'contentPosts',
           type: 'ContentPost[]',
           model: 'ContentPost'
+        },
+        forms: {
+          name: 'forms',
+          type: 'Form[]',
+          model: 'Form'
+        },
+        formResults: {
+          name: 'formResults',
+          type: 'FormResult[]',
+          model: 'FormResult'
         },
         storageFiles: {
           name: 'storageFiles',

@@ -3,7 +3,9 @@ import {
   ContentEvent,
   ContentPage,
   ContentProduct,
-  ContentPost
+  ContentPost,
+  Form,
+  FormResult
 } from '../index';
 
 declare var Object: any;
@@ -16,9 +18,7 @@ export interface SystemUserInterface {
   "fullName"?: string;
   "avatar"?: string;
   "realm"?: string;
-  "password": string;
   "emailVerified"?: boolean;
-  "verificationToken"?: string;
   "created"?: Date;
   "modified"?: Date;
   accessTokens?: any[];
@@ -27,6 +27,8 @@ export interface SystemUserInterface {
   contentPages?: ContentPage[];
   contentProducts?: ContentProduct[];
   contentPosts?: ContentPost[];
+  forms?: Form[];
+  formResults?: FormResult[];
 }
 
 export class SystemUser implements SystemUserInterface {
@@ -38,9 +40,7 @@ export class SystemUser implements SystemUserInterface {
   "fullName": string;
   "avatar": string;
   "realm": string;
-  "password": string;
   "emailVerified": boolean;
-  "verificationToken": string;
   "created": Date;
   "modified": Date;
   accessTokens: any[];
@@ -49,6 +49,8 @@ export class SystemUser implements SystemUserInterface {
   contentPages: ContentPage[];
   contentProducts: ContentProduct[];
   contentPosts: ContentPost[];
+  forms: Form[];
+  formResults: FormResult[];
   constructor(data?: SystemUserInterface) {
     Object.assign(this, data);
   }
@@ -112,17 +114,9 @@ export class SystemUser implements SystemUserInterface {
           name: 'realm',
           type: 'string'
         },
-        "password": {
-          name: 'password',
-          type: 'string'
-        },
         "emailVerified": {
           name: 'emailVerified',
           type: 'boolean'
-        },
-        "verificationToken": {
-          name: 'verificationToken',
-          type: 'string'
         },
         "created": {
           name: 'created',
@@ -163,6 +157,16 @@ export class SystemUser implements SystemUserInterface {
           name: 'contentPosts',
           type: 'ContentPost[]',
           model: 'ContentPost'
+        },
+        forms: {
+          name: 'forms',
+          type: 'Form[]',
+          model: 'Form'
+        },
+        formResults: {
+          name: 'formResults',
+          type: 'FormResult[]',
+          model: 'FormResult'
         },
       }
     }

@@ -7,6 +7,8 @@ export * from './ContentEvent';
 export * from './ContentPage';
 export * from './ContentProduct';
 export * from './ContentPost';
+export * from './Form';
+export * from './FormResult';
 export * from './StorageFile';
 export * from './SystemDomain';
 export * from './SystemSetting';

@@ -69,7 +69,14 @@ export abstract class BaseLoopBackApi {
       url = url.replace(new RegExp(":" + key + "(\/|$)", "g"), routeParams[key] + "$1")
     });
     if (pubsub) {
-      console.info('SDK: PubSub functionality is disabled, generate SDK using -io enabled');
+      if (url.match(/fk/)) {
+        let arr = url.split('/'); arr.pop();
+        url = arr.join('/');
+      }
+      let event: string = (`[${method}]${url}`).replace(/\?/, '');
+      let subject: Subject<any> = new Subject<any>();
+      this.connection.on(event, res => subject.next(res));
+      return subject.asObservable();
     } else {
       // Headers to be sent
       let headers: Headers = new Headers();

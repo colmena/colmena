@@ -4,6 +4,8 @@ import {
   ContentPage,
   ContentProduct,
   ContentPost,
+  Form,
+  FormResult,
   SystemDomain
 } from '../index';
 
@@ -19,6 +21,8 @@ export interface StorageFileInterface {
   contentPages?: ContentPage[];
   contentProducts?: ContentProduct[];
   contentPosts?: ContentPost[];
+  forms?: Form[];
+  formResults?: FormResult[];
   systemDomain?: SystemDomain;
 }
 
@@ -33,6 +37,8 @@ export class StorageFile implements StorageFileInterface {
   contentPages: ContentPage[];
   contentProducts: ContentProduct[];
   contentPosts: ContentPost[];
+  forms: Form[];
+  formResults: FormResult[];
   systemDomain: SystemDomain;
   constructor(data?: StorageFileInterface) {
     Object.assign(this, data);
@@ -110,6 +116,16 @@ export class StorageFile implements StorageFileInterface {
           name: 'contentPosts',
           type: 'ContentPost[]',
           model: 'ContentPost'
+        },
+        forms: {
+          name: 'forms',
+          type: 'Form[]',
+          model: 'Form'
+        },
+        formResults: {
+          name: 'formResults',
+          type: 'FormResult[]',
+          model: 'FormResult'
         },
         systemDomain: {
           name: 'systemDomain',

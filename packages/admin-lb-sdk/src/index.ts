@@ -56,6 +56,8 @@ import { ContentEventApi } from './services/custom/ContentEvent';
 import { ContentPageApi } from './services/custom/ContentPage';
 import { ContentProductApi } from './services/custom/ContentProduct';
 import { ContentPostApi } from './services/custom/ContentPost';
+import { FormApi } from './services/custom/Form';
+import { FormResultApi } from './services/custom/FormResult';
 import { StorageFileApi } from './services/custom/StorageFile';
 import { SystemDomainApi } from './services/custom/SystemDomain';
 import { SystemSettingApi } from './services/custom/SystemSetting';
@@ -101,6 +103,8 @@ export class SDKBrowserModule {
         ContentPageApi,
         ContentProductApi,
         ContentPostApi,
+        FormApi,
+        FormResultApi,
         StorageFileApi,
         SystemDomainApi,
         SystemSettingApi,

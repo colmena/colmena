@@ -8,6 +8,8 @@ import { ContentEvent } from '../../models/ContentEvent';
 import { ContentPage } from '../../models/ContentPage';
 import { ContentProduct } from '../../models/ContentProduct';
 import { ContentPost } from '../../models/ContentPost';
+import { Form } from '../../models/Form';
+import { FormResult } from '../../models/FormResult';
 import { StorageFile } from '../../models/StorageFile';
 import { SystemDomain } from '../../models/SystemDomain';
 import { SystemSetting } from '../../models/SystemSetting';
@@ -29,6 +31,8 @@ export class SDKModels {
     ContentPage: ContentPage,
     ContentProduct: ContentProduct,
     ContentPost: ContentPost,
+    Form: Form,
+    FormResult: FormResult,
     StorageFile: StorageFile,
     SystemDomain: SystemDomain,
     SystemSetting: SystemSetting,
