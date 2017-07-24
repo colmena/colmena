@@ -1,0 +1,54 @@
+<div class="builder">
+  <div class="builder-target">
+    <ngx-dnd-container (drop)="update()" (remove)="update()" class="root-container"
+                       [model]="definition" dropZone="builder-target" [removeOnSpill]="true">
+      <ng-template let-model="model" let-template="template">
+        <div class="card">
+          <div class="input-group">
+              <span class="input-group-addon">
+                <i class="{{service.fieldTypeIcon(model.type)}}"></i>
+              </span>
+            <input (change)="update()" class="form-control" [(ngModel)]="model.key">
+            <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button" (click)="model.showOptions=!model.showOptions">
+                  <i class="fa" [class.fa-chevron-up]="model.showOptions"
+                     [class.fa-chevron-down]="!model.showOptions"></i>
+                </button>
+              </span>
+          </div>
+          <div class="collapse" [collapse]="model.showOptions">
+            <div class="card-block-details">
+              <div [ngSwitch]="model.type">
+                <div *ngSwitchDefault>
+                  <table class="table table-bordered table-sm">
+                    <tr>
+                      <th>Type</th>
+                      <td>
+                        <select (change)="update()" class="form-control form-control-sm" [(ngModel)]="model.type">
+                          <option *ngFor="let type of service.fieldTypesNames()"
+                                  [value]="type">{{type}}
+                          </option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Label</th>
+                      <td><input (change)="update()" class="form-control form-control-sm"
+                                 [(ngModel)]="model.options.label"></td>
+                    </tr>
+                    <tr>
+                      <th>Placeholder</th>
+                      <td><input (change)="update()" class="form-control form-control-sm"
+                                 [(ngModel)]="model.options.placeholder">
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngx-dnd-container>
+  </div>
+</div>

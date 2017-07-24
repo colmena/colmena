@@ -1,0 +1,13 @@
+{
+  "name": "@colmena/module-admin-forms",
+  "version": "0.2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@colmena/admin-lb-sdk": "0.2.0",
+    "@colmena/admin-ui": "0.2.0",
+    "@swimlane/ngx-dnd": "2.2.0"
+  }
+}

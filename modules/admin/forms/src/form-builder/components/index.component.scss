@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+.card {
+  margin-bottom: 0;
+}
+.builder {
+  .ngx-dnd-container {
+    background-color: inherit!important;
+    margin: 0!important;
+    padding: 0!important;
+  }
+  .ngx-dnd-item {
+    padding: 0;
+    padding: 5px!important;
+    background-color: inherit!important;
+  }
+
+  .builder-source .ngx-dnd-container {
+    border: none;
+    padding: 5px;
+  }
+
+  .builder-target {
+
+    .ngx-input {
+      margin: 0;
+
+      .ngx-input-wrap {
+        margin: 0;
+      }
+
+    }
+
+    .ngx-dnd-container {
+      justify-content: space-between;
+      flex-flow: row wrap;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      box-sizing: border-box;
+
+      border: 2px dotted transparent;
+
+      .gu-unselectable &, &.gu-over, &.gu-over .ngx-dnd-container {
+        border: 2px dotted orange;
+      }
+
+      .ngx-dnd-item {
+        margin: 2px;
+        border: 1px solid transparent;
+
+        flex: 1 1 100%;
+        box-sizing: border-box;
+        -webkit-box-flex: 1;
+        max-width: 100%;
+
+        &.half {
+          flex: 1 1 48%;
+          box-sizing: border-box;
+          -webkit-box-flex: 1;
+          max-width: 48%;
+        }
+      }
+
+      .ngx-dnd-item.gu-transit,
+      .ngx-dnd-item:hover  {
+        border: 1px solid #1786e9
+      }
+      .ngx-dnd-item.gu-transit {
+        padding: 7px;
+      }
+    }
+  }
+}
