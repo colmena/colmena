@@ -19,6 +19,7 @@ import { FormlyFieldWysiwygComponent } from './formly-wysiwyg/wysiwyg.component'
   ],
   exports: [
     FormlyModule,
+    QuillModule
   ],
   declarations: [
     FormlyFieldWysiwygComponent,
