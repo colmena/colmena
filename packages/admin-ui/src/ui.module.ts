@@ -40,6 +40,7 @@ const modules = [
   UiModalModule,
   UiTagModule,
   FileUploadModule,
+  UiFormlyModule
 ]
 
 /**
@@ -83,7 +84,6 @@ const declarations = []
     ReactiveFormsModule,
     RouterModule,
     ToastyModule,
-    UiFormlyModule,
     BsDropdownModule.forRoot(),
     ...modules,
   ],
