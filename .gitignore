@@ -4,3 +4,4 @@ dist
 admin/db.json
 lerna-debug.log
 production.yaml
+package-lock.json
