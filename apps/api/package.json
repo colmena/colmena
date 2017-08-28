@@ -26,6 +26,7 @@
     "admin"
   ],
   "scripts": {
+    "clean": "npx rimraf ./client",
     "dev": "nodemon",
     "initdb": "node bin/initdb",
     "sdk": "cross-env NODE_ENV=codegen lb-sdk --wipe enabled server/server.js ../../packages/admin-lb-sdk/src",
