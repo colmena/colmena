@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { DevModule } from '../dev.module'
+import { navLinks } from '../dev-config.module'
 
 @Component({
   selector: 'app-dashboard',
@@ -19,7 +19,6 @@ import { DevModule } from '../dev.module'
 })
 export class DashboardComponent {
 
-  public tabs = DevModule.navLinks
-
+  public tabs = navLinks
 
 }
