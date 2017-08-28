@@ -23,7 +23,7 @@ export class PageFormComponent implements OnInit {
 
   constructor(
     private service: PagesService,
-    private uiService: UiService,
+    private ui: UiService,
     private router: Router
   ) {}
 
@@ -39,12 +39,12 @@ export class PageFormComponent implements OnInit {
           event.item,
           () => {
             this.router.navigate(['/content/pages'])
-            this.uiService.toastSuccess(
+            this.ui.alerts.toastSuccess(
               'Save Page Success',
               `<u>${event.item.name}</u> has been saved successfully`
             )
           },
-          err => this.uiService.toastError('Save Page Fail', err.message)
+          err => this.ui.alerts.toastError('Save Page Fail', err.message)
         )
       case 'cancel':
         return this.router.navigate(['/content/pages'])

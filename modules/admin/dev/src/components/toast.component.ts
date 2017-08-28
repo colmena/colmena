@@ -35,26 +35,26 @@ export class ToastComponent {
     text: 'This is the Toast Text!',
   }
 
-  constructor(private uiService: UiService) {}
+  constructor(private ui: UiService) {}
 
   testToastError() {
-    this.uiService.toastError(`Error ${this.toast.title}`, this.toast.text)
+    this.ui.alerts.toastError(`Error ${this.toast.title}`, this.toast.text)
   }
 
   testToastInfo() {
-    this.uiService.toastInfo(`Info ${this.toast.title}`, this.toast.text)
+    this.ui.alerts.toastInfo(`Info ${this.toast.title}`, this.toast.text)
   }
 
   testToastSuccess() {
-    this.uiService.toastSuccess(`Success ${this.toast.title}`, this.toast.text)
+    this.ui.alerts.toastSuccess(`Success ${this.toast.title}`, this.toast.text)
   }
 
   testToastWait() {
-    this.uiService.toastWait(`Wait ${this.toast.title}`, this.toast.text)
+    this.ui.alerts.toastWait(`Wait ${this.toast.title}`, this.toast.text)
   }
 
   testToastWarning() {
-    this.uiService.toastWarning(`Warning ${this.toast.title}`, this.toast.text)
+    this.ui.alerts.toastWarning(`Warning ${this.toast.title}`, this.toast.text)
   }
 
   testToast() {

@@ -17,7 +17,7 @@ export class SettingFormComponent implements OnInit {
 
   constructor(
     private service: SettingsService,
-    private uiService: UiService,
+    private ui: UiService,
     private router: Router,
   ) { }
 
@@ -32,10 +32,10 @@ export class SettingFormComponent implements OnInit {
         return this.service.upsertItem(
           event.item,
           () => {
-            this.uiService.toastSuccess('Save Setting Success', `<u>${event.item.key}</u> has been saved successfully`)
+            this.ui.alerts.toastSuccess('Save Setting Success', `<u>${event.item.key}</u> has been saved successfully`)
             this.handleAction({ action: 'cancel' })
           },
-          err => this.uiService.toastError('Save Setting Fail', err.message)
+          err => this.ui.alerts.toastError('Save Setting Fail', err.message)
         )
       case 'cancel':
         return this.router.navigate(['/system/settings'])

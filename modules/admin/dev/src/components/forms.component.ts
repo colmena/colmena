@@ -27,7 +27,7 @@ export class FormsComponent implements OnInit {
 
   constructor(
     private formService: FormService,
-    private uiService: UiService,
+    private ui: UiService,
   ) {}
 
   ngOnInit() {
@@ -74,7 +74,7 @@ export class FormsComponent implements OnInit {
   handleAction(event) {
     switch (event.action) {
       case 'save':
-        this.uiService.toastSuccess('Save!', event.item)
+        this.ui.alerts.toastSuccess('Save!', event.item)
         return
       default:
         console.log('Unknown event action', event)

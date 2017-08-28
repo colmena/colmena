@@ -29,11 +29,4 @@ import { ToastComponent } from './components/toast.component'
     HasDevAccess,
   ]
 })
-export class DevModule {
-
-  public static navLinks = [
-    { icon: 'icon-note', title: 'Forms', link: 'forms', type: 'warning' },
-    { icon: 'icon-info', title: 'Alerts', link: 'alerts', type: 'danger' },
-    { icon: 'icon-bubble', title: 'Toasts', link: 'toasts', type: 'success' },
-  ]
-}
+export class DevModule {}

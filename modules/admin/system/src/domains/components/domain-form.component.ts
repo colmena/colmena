@@ -17,7 +17,7 @@ export class DomainFormComponent implements OnInit {
 
   constructor(
     private service: DomainsService,
-    private uiService: UiService,
+    private ui: UiService,
     private router: Router,
   ) { }
 
@@ -32,10 +32,10 @@ export class DomainFormComponent implements OnInit {
         return this.service.upsertItem(
           event.item,
           () => {
-            this.uiService.toastSuccess('Save Domain Success', `<u>${event.item.name}</u> has been saved successfully`)
+            this.ui.alerts.toastSuccess('Save Domain Success', `<u>${event.item.name}</u> has been saved successfully`)
             this.handleAction({ action: 'cancel' })
           },
-          err => this.uiService.toastError('Save Domain Fail', err.message)
+          err => this.ui.alerts.toastError('Save Domain Fail', err.message)
         )
       case 'cancel':
         return this.router.navigate(['/system/domains'])

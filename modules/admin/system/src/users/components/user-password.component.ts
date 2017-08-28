@@ -19,7 +19,7 @@ export class UserPasswordComponent implements OnInit {
 
   constructor(
     public service: UsersService,
-    public uiService: UiService,
+    public ui: UiService,
     private formService: FormService,
     private router: Router,
   ) {
@@ -44,18 +44,18 @@ export class UserPasswordComponent implements OnInit {
       case 'save':
         return this.service.changePassword(
           Object.assign(this.item, event.item),
-          res => this.uiService.toastSuccess(
+          res => this.ui.alerts.toastSuccess(
             'Change Password Success', `<u>${this.item.email}</u>'s password has been changed successfully'`
           ),
-          err => this.uiService.toastError('Change Password Fail', err.message)
+          err => this.ui.alerts.toastError('Change Password Fail', err.message)
         )
       case 'reset':
         return this.service.resetPassword(
           Object.assign(this.item),
-          res => this.uiService.toastSuccess(
+          res => this.ui.alerts.toastSuccess(
             'Password Reset Success', `An email with a password recovery link has been sent to <u>${this.item.email}</u>`
           ),
-          err => this.uiService.toastError('Password Reset Fail', err.message)
+          err => this.ui.alerts.toastError('Password Reset Fail', err.message)
         )
       case 'cancel':
         return this.router.navigate(['/system/users'])

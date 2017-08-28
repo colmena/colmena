@@ -14,7 +14,7 @@ export class DownloadComponent implements OnInit {
   public item = {}
   constructor(
     public service: StorageService,
-    public uiService: UiService,
+    public ui: UiService,
   ) {
   }
 
@@ -27,9 +27,9 @@ export class DownloadComponent implements OnInit {
     this.service.importFile(
       item,
       () => {
-        this.uiService.toastSuccess('File imported', item.url)
+        this.ui.alerts.toastSuccess('File imported', item.url)
       },
-      err => this.uiService.toastError('Error saving file', err.message)
+      err => this.ui.alerts.toastError('Error saving file', err.message)
     )
   }
 

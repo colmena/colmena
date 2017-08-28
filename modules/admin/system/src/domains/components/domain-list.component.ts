@@ -20,7 +20,7 @@ export class DomainListComponent {
 
   constructor(
     public service: DomainsService,
-    private uiService: UiService,
+    private ui: UiService,
     private router: Router,
     private route: ActivatedRoute,
   ) { }
@@ -36,9 +36,9 @@ export class DomainListComponent {
         const successCb = () => this.service
           .deleteItem(event.item,
           () => this.grid.refreshData(),
-          (err) => this.uiService.toastError('Error deleting item', err.message))
+          (err) => this.ui.alerts.toastError('Error deleting item', err.message))
         const question = { title: 'Are you sure?', text: 'The action can not be undone.' }
-        return this.uiService.alertQuestion(question, successCb, () => ({}))
+        return this.ui.alerts.alertQuestion(question, successCb, () => ({}))
       default:
         return console.log('Unknown event action', event)
     }

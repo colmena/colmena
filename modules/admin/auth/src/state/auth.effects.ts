@@ -29,14 +29,14 @@ export class AuthEffects {
   @Effect({ dispatch: false })
   loginError: Observable<Action> = this.actions$
     .ofType(auth.ActionTypes.AUTH_LOGIN_ERROR)
-    .do((action) => this.ui.toastError(get(action, 'payload.name'), get(action, 'payload.message')))
+    .do((action) => this.ui.alerts.toastError(get(action, 'payload.name'), get(action, 'payload.message')))
 
   @Effect({ dispatch: false })
   loginSuccess: Observable<Action> = this.actions$
     .ofType(auth.ActionTypes.AUTH_LOGIN_SUCCESS)
     .do((action) => {
       window.localStorage.setItem('token', JSON.stringify(action.payload))
-      this.ui.toastSuccess('Sign In Successful', `You are logged in as ${get(action, 'payload.user.email')}`)
+      this.ui.alerts.toastSuccess('Sign In Successful', `You are logged in as ${get(action, 'payload.user.email')}`)
       return this.store.dispatch({ type: 'APP_REDIRECT_ROUTER' })
     })
 
@@ -59,14 +59,14 @@ export class AuthEffects {
   registerSuccess: Observable<Action> = this.actions$
     .ofType(auth.ActionTypes.AUTH_REGISTER_SUCCESS)
     .do((action: any) => {
-      this.ui.toastSuccess('Successfully registered', `${action.payload.email} has been created`)
+      this.ui.alerts.toastSuccess('Successfully registered', `${action.payload.email} has been created`)
       return this.store.dispatch(new auth.AuthLoginAction(action.payload))
     })
 
   @Effect({ dispatch: false })
   registerError: Observable<Action> = this.actions$
     .ofType(auth.ActionTypes.AUTH_REGISTER_ERROR)
-    .do((action) => this.ui.toastError(get(action, 'payload.name'), get(action, 'payload.message')))
+    .do((action) => this.ui.alerts.toastError(get(action, 'payload.name'), get(action, 'payload.message')))
 
 
   @Effect({ dispatch: false })
@@ -86,7 +86,7 @@ export class AuthEffects {
     .ofType(auth.ActionTypes.AUTH_LOGOUT_ERROR)
     .do((action) => {
       window.localStorage.removeItem('token')
-      this.ui.toastError(get(action, 'payload.name'), get(action, 'payload.message'))
+      this.ui.alerts.toastError(get(action, 'payload.name'), get(action, 'payload.message'))
       return this.store.dispatch({ type: 'APP_REDIRECT_ROUTER' })
     })
 
@@ -95,7 +95,7 @@ export class AuthEffects {
     .ofType(auth.ActionTypes.AUTH_LOGOUT_SUCCESS)
     .do(() => {
       window.localStorage.removeItem('token')
-      this.ui.toastSuccess('Log Out Successful', 'You are logged out')
+      this.ui.alerts.toastSuccess('Log Out Successful', 'You are logged out')
       return this.store.dispatch({ type: 'APP_REDIRECT_ROUTER' })
     })
 
@@ -124,7 +124,7 @@ export class AuthEffects {
   checkTokenError: Observable<Action> = this.actions$
     .ofType(auth.ActionTypes.AUTH_CHECK_TOKEN_ERROR)
     .do((action) => {
-      this.ui.toastError('Invalid Token', 'Redirecting to login screen')
+      this.ui.alerts.toastError('Invalid Token', 'Redirecting to login screen')
       return this.store.dispatch({ type: 'APP_REDIRECT_LOGIN' })
     })
 
@@ -132,7 +132,7 @@ export class AuthEffects {
   checkTokenSuccess: Observable<Action> = this.actions$
     .ofType(auth.ActionTypes.AUTH_CHECK_TOKEN_SUCCESS)
     .do(() => {
-      this.ui.toastSuccess('Valid Token', 'It all looks good :)')
+      this.ui.alerts.toastSuccess('Valid Token', 'It all looks good :)')
       return true
     })
 

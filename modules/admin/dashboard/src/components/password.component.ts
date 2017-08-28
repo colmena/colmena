@@ -24,7 +24,7 @@ export class PasswordComponent implements OnInit {
 
   constructor(
     private store: Store<any>,
-    private uiService: UiService,
+    private ui: UiService,
     private service: DashboardService,
   ) { }
 
@@ -41,12 +41,12 @@ export class PasswordComponent implements OnInit {
         return this.service.upsertItem(
           event.item,
           () => {
-            this.uiService.toastSuccess(
+            this.ui.alerts.toastSuccess(
               'Change Password Success',
               `Your password has been changed successfully`
             )
           },
-          err => this.uiService.toastError('Change Password Fail', err.message)
+          err => this.ui.alerts.toastError('Change Password Fail', err.message)
         )
       default:
         return console.log('Unknown Event Action', event)

@@ -23,7 +23,7 @@ export class ProductFormComponent implements OnInit {
 
   constructor(
     private service: ProductsService,
-    private uiService: UiService,
+    private ui: UiService,
     private router: Router
   ) {}
 
@@ -38,13 +38,13 @@ export class ProductFormComponent implements OnInit {
         return this.service.upsertItem(
           event.item,
           () => {
-            this.uiService.toastSuccess(
+            this.ui.alerts.toastSuccess(
               'Save Product Success',
               `<u>${event.item.name}</u> has been saved successfully`
             )
             this.handleAction({ action: 'cancel' })
           },
-          err => this.uiService.toastError('Save Product Fail', err.message)
+          err => this.ui.alerts.toastError('Save Product Fail', err.message)
         )
       case 'cancel':
         return this.router.navigate(['/content/products'])

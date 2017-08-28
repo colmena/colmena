@@ -23,7 +23,7 @@ export class EventFormComponent implements OnInit {
 
   constructor(
     private service: EventsService,
-    private uiService: UiService,
+    private ui: UiService,
     private router: Router
   ) {}
 
@@ -38,13 +38,13 @@ export class EventFormComponent implements OnInit {
         return this.service.upsertItem(
           event.item,
           () => {
-            this.uiService.toastSuccess(
+            this.ui.alerts.toastSuccess(
               'Save Event Success',
               `<u>${event.item.name}</u> has been saved successfully`
             )
             this.handleAction({ action: 'cancel' })
           },
-          err => this.uiService.toastError('Save Event Fail', err.message)
+          err => this.ui.alerts.toastError('Save Event Fail', err.message)
         )
       case 'cancel':
         return this.router.navigate(['/content/events'])

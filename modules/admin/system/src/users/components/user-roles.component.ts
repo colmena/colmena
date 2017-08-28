@@ -25,7 +25,7 @@ export class UserRolesComponent implements OnInit, OnDestroy {
 
   constructor(
     public service: UsersService,
-    public uiService: UiService,
+    public ui: UiService,
   ) {
   }
 
@@ -56,9 +56,9 @@ export class UserRolesComponent implements OnInit, OnDestroy {
           },
           () => {
             this.refresh()
-            this.uiService.toastSuccess('Add Role Success', `<u>${this.item.username}</u> has been successfully added to the <u>${event.payload}</u> role`)
+            this.ui.alerts.toastSuccess('Add Role Success', `<u>${this.item.username}</u> has been successfully added to the <u>${event.payload}</u> role`)
           },
-          err => this.uiService.toastError('Add Role Fail', err.message)
+          err => this.ui.alerts.toastError('Add Role Fail', err.message)
         )
       case 'removeRole':
         return this.service.removeUserFromRole(
@@ -68,9 +68,9 @@ export class UserRolesComponent implements OnInit, OnDestroy {
           },
           () => {
             this.refresh()
-            this.uiService.toastSuccess('Remove Role Success', `<u>${this.item.username}</u> has been successfully removed from the <u>${event.payload}</u> role`)
+            this.ui.alerts.toastSuccess('Remove Role Success', `<u>${this.item.username}</u> has been successfully removed from the <u>${event.payload}</u> role`)
           },
-          err => this.uiService.toastError('Remove Role Fail', err.message)
+          err => this.ui.alerts.toastError('Remove Role Fail', err.message)
         )
       default:
         return console.log('Unknown Event Type', event)
