@@ -9,8 +9,8 @@
   "author": "Bram Borggreve <bram@colmena.io> (https://github.com/beeman) (https://twitter.com/beeman_nl)",
   "url": "https://github.com/colmena/colmena",
   "dependencies": {
-    "bunyan": "1.8.10",
+    "bunyan": "1.8.12",
     "bunyan-format": "0.2.1",
-    "chalk": "1.1.3"
+    "chalk": "2.1.0"
   }
 }

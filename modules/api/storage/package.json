@@ -10,7 +10,7 @@
   "dependencies": {
     "@colmena/api-helpers": "^0.2.0",
     "@colmena/logger": "0.1.0",
-    "config": "1.26.1"
+    "config": "1.26.2"
   },
   "colmena": {
     "module": {

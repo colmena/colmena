@@ -10,7 +10,7 @@
     "@colmena/module-admin-content": "^0.2.0",
     "@colmena/module-admin-system": "^0.2.0",
     "@ngrx/core": "1.2.0",
-    "@ngrx/store": "2.2.2"
+    "@ngrx/store": "2.2.3"
   },
   "license": "MIT",
   "author": "Bram Borggreve <bram@colmena.io> (https://github.com/beeman) (https://twitter.com/beeman_nl)",

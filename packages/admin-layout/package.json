@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@ngrx/core": "1.2.0",
-    "@ngrx/store": "2.2.2",
-    "ngx-bootstrap": "1.7.1"
+    "@ngrx/store": "2.2.3",
+    "ngx-bootstrap": "1.9.1"
   }
 }
