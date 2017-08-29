@@ -3,6 +3,6 @@ machine:
     version: 8.1.0
 dependencies:
   pre:
-    - npm install -g @angular/cli lerna loopback-cli
+    - npm install -g @angular/cli lerna loopback-cli npm@5.x.x
   post:
     - npm run build
