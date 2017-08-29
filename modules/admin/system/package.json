@@ -13,7 +13,6 @@
     "@ngrx/core": "1.2.0",
     "@ngrx/effects": "2.0.4",
     "@ngrx/store": "2.2.3",
-    "config": "1.26.2",
     "reselect": "3.0.1"
   }
 }

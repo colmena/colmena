@@ -2,16 +2,13 @@ import { Injectable } from '@angular/core'
 import { Router } from '@angular/router'
 import { Effect, Actions } from '@ngrx/effects'
 import { Action, Store } from '@ngrx/store'
-import { Observable } from 'rxjs/Observable'
-import 'rxjs/add/operator/do';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/do'
 
 import * as app from './app.actions'
 
 @Injectable()
 export class AppEffects {
-
-
-
 
   @Effect({ dispatch: false })
   loadModule$ = this.actions$

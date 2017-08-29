@@ -11,6 +11,6 @@
   "dependencies": {
     "bunyan": "1.8.12",
     "bunyan-format": "0.2.1",
-    "chalk": "2.1.0"
+    "chalk": "2.3.0"
   }
 }

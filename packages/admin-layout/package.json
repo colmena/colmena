@@ -10,6 +10,6 @@
   "dependencies": {
     "@ngrx/core": "1.2.0",
     "@ngrx/store": "2.2.3",
-    "ngx-bootstrap": "1.9.1"
+    "ngx-bootstrap": "1.9.3"
   }
 }

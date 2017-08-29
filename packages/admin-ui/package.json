@@ -10,12 +10,12 @@
   "dependencies": {
     "coreui-styles": "1.0.2",
     "font-awesome": "4.7.0",
-    "ng-formly": "1.0.0-rc.10",
+    "ng-formly": "1.0.0-rc.14",
     "ng2-file-upload": "1.2.1",
     "ng2-toasty": "4.0.3",
-    "ngx-bootstrap": "1.9.1",
-    "ngx-quill": "1.4.0",
+    "ngx-bootstrap": "1.9.3",
+    "ngx-quill": "1.5.1",
     "simple-line-icons": "2.4.1",
-    "sweetalert2": "6.6.9"
+    "sweetalert2": "6.11.1"
   }
 }

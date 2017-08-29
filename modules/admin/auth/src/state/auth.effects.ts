@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core'
 import { Effect, Actions } from '@ngrx/effects'
 import { Action, Store } from '@ngrx/store'
 import { Observable } from 'rxjs/Observable'
+import 'rxjs/add/operator/do'
 
 import { UiService } from '@colmena/admin-ui'
 import { SystemUserApi } from '@colmena/admin-lb-sdk'
