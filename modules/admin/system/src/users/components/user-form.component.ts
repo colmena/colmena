@@ -17,7 +17,7 @@ export class UserFormComponent implements OnInit {
 
   constructor(
     private service: UsersService,
-    private uiService: UiService,
+    private ui: UiService,
     private router: Router,
   ) { }
 
@@ -32,11 +32,16 @@ export class UserFormComponent implements OnInit {
         return this.service.upsertItem(
           event.item,
           () => {
-            this.uiService.toastSuccess('Update Profile Success',
-              `<u>${event.item.username}</u>'s profile has been ${event.item.id ? 'created' : 'updated '} successfully'`)
+            this.ui.alerts.notifySuccess({
+              title: 'Update Profile Success',
+              body: `<u>${event.item.username}</u>'s profile has been ${event.item.id ? 'created' : 'updated '} successfully'`,
+            })
             this.handleAction({ action: 'cancel' })
           },
-          err => this.uiService.toastError('Update Profile Fail', err.message)
+          err => this.ui.alerts.notifyError({
+            title: 'Update Profile Fail',
+            body: err.message,
+          })
         )
       case 'cancel':
         return this.router.navigate(['/system/users'])

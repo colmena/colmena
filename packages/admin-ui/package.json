@@ -8,14 +8,13 @@
   "author": "Bram Borggreve <bram@colmena.io> (https://github.com/beeman) (https://twitter.com/beeman_nl)",
   "url": "https://github.com/colmena/colmena",
   "dependencies": {
+    "@ngx-plus/ngx-alerts": "0.2.0",
     "coreui-styles": "1.0.2",
     "font-awesome": "4.7.0",
     "ng-formly": "1.0.0-rc.10",
     "ng2-file-upload": "1.2.1",
-    "ng2-toasty": "4.0.3",
     "ngx-bootstrap": "1.9.1",
     "ngx-quill": "1.4.0",
-    "simple-line-icons": "2.4.1",
-    "sweetalert2": "6.6.9"
+    "simple-line-icons": "2.4.1"
   }
 }

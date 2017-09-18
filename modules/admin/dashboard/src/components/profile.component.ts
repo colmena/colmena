@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private store: Store<any>,
-    private uiService: UiService,
+    private ui: UiService,
     private service: DashboardService,
   ) { }
 
@@ -47,12 +47,20 @@ export class ProfileComponent implements OnInit {
         return this.service.upsertItem(
           event.item,
           () => {
-            this.uiService.toastSuccess(
-              'Update Profile Success',
-              `Your profile has been ${event.item.id ? 'created' : 'updated '} successfully'`
-            )
+            console.log({
+              title: 'Update Profile Success',
+              body: `Your profile has been ${event.item.id ? 'created' : 'updated '} successfully'`,
+            })
+            console.log(this.ui)
+            this.ui.alerts.notifySuccess({
+              title: 'Update Profile Success',
+              body: `Your profile has been ${event.item.id ? 'created' : 'updated '} successfully'`,
+            })
           },
-          err => this.uiService.toastError('Update Profile Fail', err.message)
+          err => this.ui.alerts.notifyError({
+            title: 'Update Profile Fail',
+            body: err.message,
+          })
         )
       default:
         return console.log('Unknown Event Action:', event)

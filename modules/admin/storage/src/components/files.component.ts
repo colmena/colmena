@@ -19,7 +19,7 @@ export class FilesComponent {
 
   public item: any = {}
 
-  constructor(public service: StorageService, public uiService: UiService) {
+  constructor(public service: StorageService, public ui: UiService) {
     this.service.domain = { id: 'default' }
   }
 
@@ -36,13 +36,16 @@ export class FilesComponent {
           this.service.deleteItem(
             event.item,
             () => this.grid.refreshData(),
-            err => this.uiService.toastError('Error deleting item', err.message)
+            err => this.ui.alerts.notifyError({
+              title: 'Error deleting item',
+              body: err.message,
+            })
           )
         const question = {
           title: 'Are you sure?',
           text: 'The action can not be undone.',
         }
-        this.uiService.alertQuestion(question, successCb, () => ({}))
+        this.ui.alerts.alertQuestion(question, successCb, () => ({}))
         break
       default:
         console.log('Unknown event action', event)

@@ -8,7 +8,7 @@ const link = (...links) =>  ([ '/', moduleName, ...links ])
 export const navLinks = [
   { icon: 'icon-note', title: 'Forms', link: 'forms', type: 'warning' },
   { icon: 'icon-info', title: 'Alerts', link: 'alerts', type: 'danger' },
-  { icon: 'icon-bubble', title: 'Toasts', link: 'toasts', type: 'success' },
+  { icon: 'icon-bubble', title: 'Notifications', link: 'notifications', type: 'success' },
 ]
 
 const moduleConfig = {
