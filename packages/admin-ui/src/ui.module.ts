@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core'
+import { NgModule, ModuleWithProviders } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
@@ -34,13 +34,14 @@ import { FormService } from './services/form.service'
  * @type { Array }
  */
 const modules = [
+  NgxAlertsModule,
   UiButtonsModule,
   UiCardModule,
   UiDataGridModule,
   UiModalModule,
   UiTagModule,
   FileUploadModule,
-  UiFormlyModule
+  UiFormlyModule,
 ]
 
 /**
@@ -75,7 +76,6 @@ const providers = [
  */
 const declarations = []
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -90,9 +90,6 @@ const declarations = []
     ...declarations,
     ...components,
   ],
-  providers: [
-    ...providers
-  ],
   exports: [
     CommonModule,
     BsDropdownModule,
@@ -102,4 +99,10 @@ const declarations = []
   ],
 })
 export class ColmenaUiModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: ColmenaUiModule,
+      providers: [...providers],
+    }
+  }
 }
