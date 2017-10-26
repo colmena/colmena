@@ -26,9 +26,9 @@
     "admin"
   ],
   "scripts": {
-    "clean": "npx rimraf ../api/client && git checkout -- ../api/client ",
+    "clean": "npx rimraf ../api/client/dist",
     "prebuild": "npm run clean",
-    "build": "ng build --output-path ../api/client",
+    "build": "ng build --output-path ../api/client/dist",
     "dev": "ng serve --preserve-symlinks --hmr true -e hmr --port 9000 --host 127.0.0.1 --progress true --proxy-config proxy.conf.json",
     "start": "ng",
     "test": "ng test"
