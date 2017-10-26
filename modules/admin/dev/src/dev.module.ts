@@ -10,7 +10,7 @@ import { AlertComponent } from './components/alert.component'
 import { DashboardComponent } from './components/dashboard.component'
 import { FormsComponent } from './components/forms.component'
 import { IndexComponent } from './components/index.component'
-import { ToastComponent } from './components/toast.component'
+import { NotifyComponent } from './components/notifications.component'
 
 @NgModule({
   imports: [
@@ -23,7 +23,7 @@ import { ToastComponent } from './components/toast.component'
     DashboardComponent,
     FormsComponent,
     IndexComponent,
-    ToastComponent,
+    NotifyComponent,
   ],
   providers: [
     HasDevAccess,

@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core'
+import { NgModule, ModuleWithProviders } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 
 import { FileUploadModule } from 'ng2-file-upload'
-import { ToastyService, ToastyModule } from 'ng2-toasty'
+import { NgxAlertsModule } from '@ngx-plus/ngx-alerts'
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown'
 
 import { UiFormlyModule } from './modules/formly/formly.module'
@@ -34,13 +34,14 @@ import { FormService } from './services/form.service'
  * @type { Array }
  */
 const modules = [
+  NgxAlertsModule,
   UiButtonsModule,
   UiCardModule,
   UiDataGridModule,
   UiModalModule,
   UiTagModule,
   FileUploadModule,
-  UiFormlyModule
+  UiFormlyModule,
 ]
 
 /**
@@ -67,7 +68,6 @@ const components = [
 const providers = [
   FormService,
   UiService,
-  ToastyService,
 ]
 
 /**
@@ -76,23 +76,19 @@ const providers = [
  */
 const declarations = []
 
-
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    ToastyModule,
     BsDropdownModule.forRoot(),
+    NgxAlertsModule.forRoot(),
     ...modules,
   ],
   declarations: [
     ...declarations,
     ...components,
-  ],
-  providers: [
-    ...providers
   ],
   exports: [
     CommonModule,
@@ -103,4 +99,10 @@ const declarations = []
   ],
 })
 export class ColmenaUiModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: ColmenaUiModule,
+      providers: [...providers],
+    }
+  }
 }

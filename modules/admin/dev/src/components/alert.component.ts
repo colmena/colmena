@@ -30,43 +30,43 @@ export class AlertComponent {
   }
 
   constructor(
-    private uiService: UiService,
+    private ui: UiService,
   ) {
   }
 
   testAlertSuccess() {
-    this.uiService.alertSuccess({
+    this.ui.alerts.alertSuccess({
       title: 'Success alert',
       text: this.alert.text,
     })
   }
 
   testAlertWarning() {
-    this.uiService.alertWarning({
+    this.ui.alerts.alertWarning({
       title: 'Warning alert',
       text: this.alert.text,
     })
   }
 
   testAlertError() {
-    this.uiService.alertError({
+    this.ui.alerts.alertError({
       title: 'Error alert',
       text: this.alert.text,
     })
   }
 
   testAlertInfo() {
-    this.uiService.alertInfo({
+    this.ui.alerts.alertInfo({
       title: 'Info alert',
       text: this.alert.text,
     })
   }
 
   testAlertQuestion() {
-    const successCb = () => this.uiService.alertSuccess({ title: '<i class="fa fa-thumbs-up"></i> Glad you liked it' })
-    const closeCb = () => this.uiService.alertError({ title: '<i class="fa fa-thumbs-down"></i> That\'s a pity...' })
+    const successCb = () => this.ui.alerts.alertSuccess({ title: '<i class="fa fa-thumbs-up"></i> Glad you liked it' })
+    const closeCb = () => this.ui.alerts.alertError({ title: '<i class="fa fa-thumbs-down"></i> That\'s a pity...' })
 
-    this.uiService.alertQuestion({
+    this.ui.alerts.alertQuestion({
       title: 'Do you like these alerts?',
       confirmButtonText: '<i class="fa fa-thumbs-up"></i> Awesome!',
       cancelButtonText: '<i class="fa fa-thumbs-down"></i> Not so much...',
@@ -74,10 +74,10 @@ export class AlertComponent {
   }
 
   testAlertPrompt() {
-    const successCb = name => this.uiService.alert({ title: `You claim your name is ${name}` })
-    const closeCb = () => this.uiService.alert({ title: `You did not tell your name` })
+    const successCb = name => this.ui.alerts.alert({ title: `You claim your name is ${name}` })
+    const closeCb = () => this.ui.alerts.alert({ title: `You did not tell your name` })
 
-    this.uiService.alertQuestion({
+    this.ui.alerts.alertQuestion({
       title: 'What is your name?',
       input: 'text',
     }, successCb, closeCb)

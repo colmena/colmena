@@ -36,7 +36,7 @@ import { RouterComponent } from './components/router/router.component'
 
     SDKBrowserModule.forRoot(),
     ColmenaLayoutModule,
-    ColmenaUiModule,
+    ColmenaUiModule.forRoot(),
 
     AppStoreModule,
     AppRoutingModule,
@@ -55,7 +55,7 @@ import { RouterComponent } from './components/router/router.component'
   ],
   bootstrap: [
     AppComponent,
-  ]
+  ],
 })
 export class AppModule {
 
@@ -75,5 +75,4 @@ export class AppModule {
     this.appService.fetchSettings()
     this.appService.fetchDomains()
   }
-
 }

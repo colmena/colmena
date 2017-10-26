@@ -19,7 +19,7 @@ export class ProductListComponent {
 
   constructor(
     public service: ProductsService,
-    private uiService: UiService,
+    private ui: UiService,
     private router: Router,
     private route: ActivatedRoute
   ) {
@@ -43,13 +43,16 @@ export class ProductListComponent {
             event.item,
             () => this.grid.refreshData(),
             err =>
-              this.uiService.toastError('Error Deleting Product', err.message)
+              this.ui.alerts.notifyError({
+                title: 'Error Deleting Product',
+                body: err.message,
+              })
           )
         const question = {
           title: 'Are You Sure?',
           text: 'The action can not be undone.',
         }
-        return this.uiService.alertQuestion(question, successCb, () => ({}))
+        return this.ui.alerts.alertQuestion(question, successCb, () => ({}))
       default:
         return console.log('Unknown Event Action', event)
     }

@@ -11,7 +11,7 @@ export class HasContentAccess implements CanActivate {
 
   constructor(
     private store: Store<any>,
-    private uiService: UiService,
+    private ui: UiService,
   ) {}
 
   public canActivate(): Observable<boolean> {
@@ -22,7 +22,7 @@ export class HasContentAccess implements CanActivate {
         if (roles.includes('system-admin') || roles.includes('system-manager')) {
           return true
         }
-        this.uiService.toastError('Access Denied', 'Your assigned roles do not allow access.')
+        this.ui.alerts.notifyError({ title: 'Access Denied', body: 'Your assigned roles do not allow access.' })
         return false
       })
       .take(1)

@@ -23,7 +23,7 @@ export class PostFormComponent implements OnInit {
 
   constructor(
     private service: PostsService,
-    private uiService: UiService,
+    private ui: UiService,
     private router: Router
   ) {}
 
@@ -39,12 +39,15 @@ export class PostFormComponent implements OnInit {
           .upsertItem(
             event.item,
             () => {
-              this.uiService.toastSuccess(
-                'Save Post Success',
-                `<u>${event.item.name}</u> has been saved successfully`
-              )
+              this.ui.alerts.notifySuccess({
+                title: 'Save Post Success',
+                body: `<u>${event.item.name}</u> has been saved successfully`
+              })
             },
-            err => this.uiService.toastError('Save Post Fail', err.message)
+            err => this.ui.alerts.notifyError({
+              title: 'Save Post Fail',
+              body: err.message,
+            })
           )
           .add(() => this.handleAction({ action: 'cancel' }))
       case 'cancel':
