@@ -120,6 +120,7 @@
       "colmena-demo"
     ],
     "env": {
+      "MIGRATEDB": true,
       "INITDB": true,
       "API_HOST": "0.0.0.0",
       "API_BASE_URL": "https://colmena.now.sh"
