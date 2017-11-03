@@ -10,19 +10,26 @@ module.exports = function userPasswordReset(User) {
    */
   const _resetPassword = User.resetPassword
 
-  User.resetPassword = function resetPassword(options) {
+  User.resetPassword = function resetPassword(options, cb) {
+    log.info(`User.resetPassword: request password: %j`, options)
     return _resetPassword.call(User, options, err => {
       // Limit the information we reveal.
       if (err && err.code !== 'EMAIL_NOT_FOUND') {
-        return Promise.reject(err)
+        return cb(err)
       }
-      return Promise.resolve()
+      if (err && err.code === 'EMAIL_NOT_FOUND') {
+        log.info(`User.resetPassword: EMAIL_NOT_FOUND: %j`, options)
+      }
+      return cb()
     })
   }
 
   User.sendPasswordResetMessage = function sendPasswordResetMessage(ctx) {
     // We first retrieve the domain based on the realm to get the reply-to email and name
-    return User.app.models.Domain
+    if (ctx.user.realm === undefined || ctx.user.realm === null) {
+      ctx.user.realm = 'default'
+    }
+    return User.app.models.SystemDomain
       .findById(ctx.user.realm)
       .then(domain => {
         // This is the access token we will send to the user
@@ -43,7 +50,7 @@ module.exports = function userPasswordReset(User) {
 
         // This is the message that is composed
         const message = {
-          to: `"${ctx.user.fullName()}" <${ctx.email}>`,
+          to: `"${ctx.user.fullName}" <${ctx.email}>`,
           from: domain.email,
           subject: `Reset your ${domain.name} password`,
           html: User._template_passwordResetHtml()(mailVars),
