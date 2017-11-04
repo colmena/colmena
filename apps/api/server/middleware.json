@@ -28,6 +28,12 @@
     "helmet#noSniff": {},
     "helmet#noCache": {
       "enabled": false
+    },
+    "loopback#token": {
+      "params": {
+        "model": "SystemAccessToken",
+        "currentUserLiteral": "me"
+      }
     }
   },
   "session": {},
