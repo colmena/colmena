@@ -67,12 +67,6 @@
       "options": {
         "disableInclude": false
       }
-    },
-    "roles": {
-      "type": "hasMany",
-      "model": "SystemRole",
-      "foreignKey": "principalId",
-      "through": "SystemRoleMapping"
     }
   },
   "acls": [

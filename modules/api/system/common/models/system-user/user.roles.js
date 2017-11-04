@@ -123,7 +123,7 @@ module.exports = function(SystemUser) {
    * @returns {string[]} array of role names
    */
   SystemUser.prototype.getUserRoleNames = function getUserRoleNames() {
-    return this.roles.getAsync().map(userRole => userRole.name)
+    return this.roles.find().map(userRole => userRole.name)
   }
 
   /**
