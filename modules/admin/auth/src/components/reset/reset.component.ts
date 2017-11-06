@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { LoopBackAuth, SDKToken } from '@colmena/admin-lb-sdk'
 
-import { AuthService } from '../../auth.service'
+import { Store } from '@ngrx/store'
+import * as auth from '../../state/auth.actions'
 
 @Component({
   selector: 'app-password-reset',
@@ -35,8 +36,8 @@ export class ResetComponent implements OnInit {
 
   constructor(
     private loopBackAuth: LoopBackAuth,
-    private authService: AuthService,
     private route: ActivatedRoute,
+    private store: Store<any>
   ) { }
 
   ngOnInit() {
@@ -46,7 +47,7 @@ export class ResetComponent implements OnInit {
   }
 
   reset() {
-    this.authService.reset(this.user)
+    this.store.dispatch({ type: auth.ActionTypes.AUTH_SET_PASSWORD, payload: this.user })
   }
 
 

@@ -18,21 +18,21 @@ export class AuthEffects {
     .do(action => {
       this.userApi.login(action.payload, 'user', true)
         .subscribe(
-          (success) => {
-            this.store.dispatch({ type: 'AUTH_GET_USER_ROLES', payload: success })
-            this.store.dispatch(new auth.AuthLoginSuccessAction(success))
-          },
-          (error) => this.store.dispatch(new auth.AuthLoginErrorAction(error)),
-        )
+        (success) => {
+          this.store.dispatch({ type: 'AUTH_GET_USER_ROLES', payload: success })
+          this.store.dispatch(new auth.AuthLoginSuccessAction(success))
+        },
+        (error) => this.store.dispatch(new auth.AuthLoginErrorAction(error)),
+      )
     })
 
   @Effect({ dispatch: false })
   loginError: Observable<Action> = this.actions$
     .ofType(auth.ActionTypes.AUTH_LOGIN_ERROR)
     .do((action) => this.ui.alerts.notifyError({
-        title: get(action, 'payload.name'),
-        body: get(action, 'payload.message'),
-      })
+      title: get(action, 'payload.name'),
+      body: get(action, 'payload.message'),
+    })
     )
 
   @Effect({ dispatch: false })
@@ -53,13 +53,13 @@ export class AuthEffects {
     .do((action: any) => {
       this.userApi.create(action.payload)
         .subscribe(
-          (success: any) => this.store.dispatch(new auth.AuthRegisterSuccessAction({
-            realm: action.payload.realm,
-            email: action.payload.email,
-            password: action.payload.password,
-          })),
-          (error) => this.store.dispatch(new auth.AuthRegisterErrorAction(error)),
-        )
+        (success: any) => this.store.dispatch(new auth.AuthRegisterSuccessAction({
+          realm: action.payload.realm,
+          email: action.payload.email,
+          password: action.payload.password,
+        })),
+        (error) => this.store.dispatch(new auth.AuthRegisterErrorAction(error)),
+      )
     })
 
   @Effect({ dispatch: false })
@@ -88,9 +88,9 @@ export class AuthEffects {
       window.localStorage.removeItem('token')
       this.userApi.logout()
         .subscribe(
-          (success) => this.store.dispatch(new auth.AuthLogoutSuccessAction(success)),
-          (error) => this.store.dispatch(new auth.AuthLogoutErrorAction(error)),
-        )
+        (success) => this.store.dispatch(new auth.AuthLogoutSuccessAction(success)),
+        (error) => this.store.dispatch(new auth.AuthLogoutErrorAction(error)),
+      )
     })
 
   @Effect({ dispatch: false })
@@ -133,9 +133,9 @@ export class AuthEffects {
     .ofType(auth.ActionTypes.AUTH_CHECK_TOKEN)
     .do(() => this.userApi.getCurrent()
       .subscribe(
-        (success) => this.store.dispatch(new auth.AuthCheckTokenSuccessAction(success)),
-        (error) => this.store.dispatch(new auth.AuthCheckTokenErrorAction(error)),
-      )
+      (success) => this.store.dispatch(new auth.AuthCheckTokenSuccessAction(success)),
+      (error) => this.store.dispatch(new auth.AuthCheckTokenErrorAction(error)),
+    )
     )
 
   @Effect({ dispatch: false })
@@ -159,6 +159,45 @@ export class AuthEffects {
       })
       return true
     })
+
+
+  @Effect({ dispatch: false })
+  setPassword: Observable<Action> = this.actions$
+    .ofType(auth.ActionTypes.AUTH_SET_PASSWORD)
+    .do(action => {
+      if (action.payload.password !== action.payload.verify) {
+        this.ui.alerts.notifyError({
+          title: 'Invalid Password',
+          body: 'Passwords don\'t match',
+        })
+      } else {
+        this.userApi.setPassword(action.payload.password)
+          .subscribe(
+          (success) => this.store.dispatch(new auth.AuthSetPasswordSuccessAction(success)),
+          (error) => this.store.dispatch(new auth.AuthSetPasswordErrorAction(error)),
+        )
+      }
+    })
+
+  @Effect({ dispatch: false })
+  setPasswordSuccess: Observable<Action> = this.actions$
+    .ofType(auth.ActionTypes.AUTH_SET_PASSWORD_SUCCESS)
+    .do((action) => {
+      this.ui.alerts.notifySuccess({
+        title: 'Reset Password Success',
+        body: 'You can login using the new password now :)',
+      })
+      return this.store.dispatch({ type: 'APP_REDIRECT_LOGIN' })
+    })
+
+  @Effect({ dispatch: false })
+  setPasswordError: Observable<Action> = this.actions$
+    .ofType(auth.ActionTypes.AUTH_SET_PASSWORD_ERROR)
+    .do((action) => this.ui.alerts.notifyError({
+      title: get(action, 'payload.name'),
+      body: get(action, 'payload.message'),
+    })
+    )
 
   constructor(
     private actions$: Actions,
