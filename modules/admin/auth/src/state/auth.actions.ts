@@ -22,6 +22,9 @@ export const ActionTypes = {
   AUTH_SET_PASSWORD: 'AUTH_SET_PASSWORD',
   AUTH_SET_PASSWORD_ERROR: 'AUTH_SET_PASSWORD_ERROR',
   AUTH_SET_PASSWORD_SUCCESS: 'AUTH_SET_PASSWORD_SUCCESS',
+  AUTH_RECOVER: 'AUTH_RECOVER',
+  AUTH_RECOVER_ERROR: 'AUTH_RECOVER_ERROR',
+  AUTH_RECOVER_SUCCESS: 'AUTH_RECOVER_SUCCESS',
 }
 
 type credentials = {
@@ -128,6 +131,20 @@ export class AuthSetPasswordSuccessAction implements Action {
   constructor(public payload: any) { }
 }
 
+/** AUTH_RECOVER **/
+export class AuthRecoverAction implements Action {
+  type = ActionTypes.AUTH_RECOVER
+  constructor(public payload: any) { }
+}
+export class AuthRecoverErrorAction implements Action {
+  type = ActionTypes.AUTH_RECOVER_ERROR
+  constructor(public payload: any) { }
+}
+export class AuthRecoverSuccessAction implements Action {
+  type = ActionTypes.AUTH_RECOVER_SUCCESS
+  constructor(public payload: any) { }
+}
+
 export type Actions
   = AuthLoginAction
   | AuthLoginErrorAction
@@ -150,3 +167,6 @@ export type Actions
   | AuthSetPasswordAction
   | AuthSetPasswordErrorAction
   | AuthSetPasswordSuccessAction
+  | AuthRecoverAction
+  | AuthRecoverErrorAction
+  | AuthRecoverSuccessAction

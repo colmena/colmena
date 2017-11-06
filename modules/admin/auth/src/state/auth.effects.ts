@@ -199,6 +199,35 @@ export class AuthEffects {
     })
     )
 
+  @Effect({ dispatch: false })
+  recover: Observable<Action> = this.actions$
+    .ofType(auth.ActionTypes.AUTH_RECOVER)
+    .do(action => this.userApi.resetPassword(action.payload)
+      .subscribe(
+      (success) => this.store.dispatch(new auth.AuthRecoverSuccessAction({ email: action.payload.email })),
+      (error) => this.store.dispatch(new auth.AuthRecoverErrorAction(error))
+      )
+    )
+
+  @Effect({ dispatch: false })
+  recoverSuccess: Observable<Action> = this.actions$
+    .ofType(auth.ActionTypes.AUTH_RECOVER_SUCCESS)
+    .do((action) => this.ui.alerts.notifySuccess({
+      title: 'Check your email',
+      body: `We've sent an email to ${get(action, 'payload.email')}. Click the link in the email to reset your password. :)`,
+    })
+    )
+
+  @Effect({ dispatch: false })
+  recoverError: Observable<Action> = this.actions$
+    .ofType(auth.ActionTypes.AUTH_RECOVER_ERROR)
+    .do((action) => this.ui.alerts.notifyError({
+      title: get(action, 'payload.name'),
+      body: get(action, 'payload.message'),
+    })
+    )
+
+
   constructor(
     private actions$: Actions,
     private store: Store<any>,

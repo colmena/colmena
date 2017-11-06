@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 
-import { AuthService } from '../../auth.service'
+import { Store } from '@ngrx/store'
+import * as auth from '../../state/auth.actions'
 
 @Component({
   selector: 'app-password-recover',
@@ -29,11 +30,11 @@ export class RecoverComponent {
   }
 
   constructor(
-    private authService: AuthService,
-  ) {}
+    private store: Store<any>
+  ) { }
 
   recover() {
-    this.authService.recover(this.user)
+    this.store.dispatch({ type: auth.ActionTypes.AUTH_RECOVER, payload: this.user })
   }
 
 }
