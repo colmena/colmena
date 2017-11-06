@@ -11,10 +11,14 @@ module.exports = function userPasswordReset(User) {
   const _resetPassword = User.resetPassword
 
   User.resetPassword = function resetPassword(options, cb) {
+    log.info(`User.resetPassword: request password: %j`, options)
     return _resetPassword.call(User, options, err => {
       // Limit the information we reveal.
       if (err && err.code !== 'EMAIL_NOT_FOUND') {
         return cb(err)
+      }
+      if (err && err.code === 'EMAIL_NOT_FOUND') {
+        log.info(`User.resetPassword: EMAIL_NOT_FOUND: %j`, options)
       }
       return cb()
     })
