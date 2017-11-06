@@ -68,6 +68,12 @@ You can file new issues by filling out our [new issue form](https://github.com/c
 ### <a name="submit-pr"></a> Submitting a Pull Request (PR)
 Before you submit your Pull Request (PR) consider the following guidelines:
 
+* Don't combine multiple changes in one PR! Use multiple PR's if you have multiple changes that are not very closely
+related. This will greatly enhance the chance of the PR being merged as is.
+
+* Please discuss on Slack before making large changes to the codebase. The smaller the change, the bigger the chance it
+will be merged. This also prevents wasting effort on writing code that does not gets merged.
+
 * Search [GitHub](https://github.com/colmena/colmena/pulls) for an open or closed PR that relates to your submission.
 You don't want to duplicate effort.
 * Make your changes in a new git branch:
