@@ -6,6 +6,6 @@ const gravatarUrl = 'http://www.gravatar.com/avatar/'
 const gravatarSize = 150
 
 const getGravatarUrl = email =>
-  `${gravatarUrl}${getHash(email)}?s=${gravatarSize}`
+  email instanceof String ? `${gravatarUrl}${getHash(email)}?s=${gravatarSize}` : ''
 
 module.exports = { getGravatarUrl }
