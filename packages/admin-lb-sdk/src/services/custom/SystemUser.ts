@@ -1625,10 +1625,13 @@ export class SystemUserApi extends BaseLoopBackApi {
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Users/change-password";
     let _routeParams: any = {};
-    let _postBody: any = {};
+    let _postBody: any = {
+      data: {
+        oldPassword: oldPassword,
+        newPassword: newPassword
+      }
+    };
     let _urlParams: any = {};
-    if (typeof oldPassword !== 'undefined' && oldPassword !== null) _urlParams.oldPassword = oldPassword;
-    if (typeof newPassword !== 'undefined' && newPassword !== null) _urlParams.newPassword = newPassword;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -1651,9 +1654,12 @@ export class SystemUserApi extends BaseLoopBackApi {
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/Users/reset-password";
     let _routeParams: any = {};
-    let _postBody: any = {};
+    let _postBody: any = {
+      data: {
+        newPassword: newPassword
+      }
+    };
     let _urlParams: any = {};
-    if (typeof newPassword !== 'undefined' && newPassword !== null) _urlParams.newPassword = newPassword;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
