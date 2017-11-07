@@ -124,4 +124,9 @@ module.exports = function userPasswordReset(User) {
       })
     })
   }
+
+  User.afterRemote('setPassword', function (ctx, inst, next) {
+    // Invalidate the token after password reset
+    User.logout(ctx.req.accessToken.id, next)
+  });
 }
