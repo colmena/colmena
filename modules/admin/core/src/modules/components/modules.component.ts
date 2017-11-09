@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { ModulesService} from '../modules.service'
+import { ModulesService } from '../modules.service'
 
 @Component({
   template: `
@@ -21,19 +21,14 @@ import { ModulesService} from '../modules.service'
         </div>
       </div>
     </div>
-  `
+  `,
 })
 export class ModulesComponent implements OnInit {
-
   public modules = []
 
-  constructor(
-    private service: ModulesService,
-  ) {
-  }
+  constructor(private service: ModulesService) {}
 
   ngOnInit() {
-    this.service.getModules()
-      .subscribe(res => this.modules = res)
+    this.service.getModules().subscribe(res => (this.modules = res))
   }
 }

@@ -41,15 +41,13 @@ import { CoreApi } from '@colmena/admin-lb-sdk'
 export class InfoComponent implements OnInit {
   public ping: any = {}
 
-  constructor(private coreApi: CoreApi) {
-  }
+  constructor(private coreApi: CoreApi) {}
 
   ngOnInit() {
     this.poll()
   }
 
   poll() {
-    this.coreApi.ping()
-      .subscribe((res: any) => this.ping = res)
+    this.coreApi.ping().subscribe((res: any) => (this.ping = res))
   }
 }

@@ -8,16 +8,8 @@ import { IndexComponent } from './components/index.component'
 import { InfoComponent } from './components/info.component'
 
 @NgModule({
-  imports: [
-    ColmenaUiModule,
-    CoreRoutingModule,
-  ],
-  providers: [
-    CoreService,
-  ],
-  declarations: [
-    IndexComponent,
-    InfoComponent,
-  ],
+  imports: [ColmenaUiModule, CoreRoutingModule],
+  providers: [CoreService],
+  declarations: [IndexComponent, InfoComponent],
 })
-export class CoreModule { }
+export class CoreModule {}

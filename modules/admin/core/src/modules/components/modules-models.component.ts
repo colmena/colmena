@@ -15,15 +15,14 @@ import { Component, Input, OnInit } from '@angular/core'
         <td>{{model.public ? 'V': 'X'}}</td>
       </tr>
     </table>
-  `
+  `,
 })
 export class ModulesModelsComponent implements OnInit {
-
   @Input() module = {}
   public models
 
   ngOnInit() {
-    const models = this.module && this.module['models'] || []
+    const models = (this.module && this.module['models']) || []
     const modelNames = Object.keys(models)
     this.models = modelNames.map(modelName => {
       return {

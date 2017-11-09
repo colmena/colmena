@@ -17,16 +17,12 @@ import { Component, Input, OnInit } from '@angular/core'
       </li>
     </ul>
 
-  `
+  `,
 })
 export class ModulesSampleDataComponent implements OnInit {
-
   @Input() module
 
-  constructor(
-  ) {
-  }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

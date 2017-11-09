@@ -25,15 +25,11 @@ import { Store } from '@ngrx/store'
 export class AdminModulesComponent implements OnInit {
   public modules = []
 
-  constructor(
-    private store: Store<any>,
-  ) {
-  }
+  constructor(private store: Store<any>) {}
 
   ngOnInit() {
-    this.store.select('app')
-      .subscribe((res: any) => {
-        Object.keys(res.modules).forEach(module => this.modules.push(res.modules[module]))
-      })
+    this.store.select('app').subscribe((res: any) => {
+      Object.keys(res.modules).forEach(module => this.modules.push(res.modules[module]))
+    })
   }
 }
