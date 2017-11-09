@@ -13,20 +13,8 @@ import { IndexComponent } from './components/index.component'
 import { NotifyComponent } from './components/notifications.component'
 
 @NgModule({
-  imports: [
-    FormsModule,
-    ColmenaUiModule,
-    DevRoutingModule,
-  ],
-  declarations: [
-    AlertComponent,
-    DashboardComponent,
-    FormsComponent,
-    IndexComponent,
-    NotifyComponent,
-  ],
-  providers: [
-    HasDevAccess,
-  ]
+  imports: [FormsModule, ColmenaUiModule, DevRoutingModule],
+  declarations: [AlertComponent, DashboardComponent, FormsComponent, IndexComponent, NotifyComponent],
+  providers: [HasDevAccess],
 })
 export class DevModule {}

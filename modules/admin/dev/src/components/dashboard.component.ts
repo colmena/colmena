@@ -18,7 +18,5 @@ import { navLinks } from '../dev-config.module'
   `,
 })
 export class DashboardComponent {
-
   public tabs = navLinks
-
 }

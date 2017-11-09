@@ -9,18 +9,14 @@ import { UiService } from '@colmena/admin-ui'
 
 @Injectable()
 export class HasDevAccess implements CanActivate {
-
-  constructor(
-    private store: Store<any>,
-    private ui: UiService,
-  ) {}
+  constructor(private store: Store<any>, private ui: UiService) {}
 
   public canActivate(): Observable<boolean> {
     return this.store
       .select('auth')
       .map((res: any) => res.roles.assigned)
       .map((roles: any) => {
-        if(roles.includes('system-admin')) {
+        if (roles.includes('system-admin')) {
           return true
         }
         this.ui.alerts.notifyError({

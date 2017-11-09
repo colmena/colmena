@@ -21,18 +21,14 @@ import { UiService } from '@colmena/admin-ui'
       </ui-card-content>
     </ui-card>
   `,
-  styles: []
+  styles: [],
 })
 export class AlertComponent {
-
   public alert = {
     text: 'This is the Alert Text!',
   }
 
-  constructor(
-    private ui: UiService,
-  ) {
-  }
+  constructor(private ui: UiService) {}
 
   testAlertSuccess() {
     this.ui.alerts.alertSuccess({
@@ -66,21 +62,28 @@ export class AlertComponent {
     const successCb = () => this.ui.alerts.alertSuccess({ title: '<i class="fa fa-thumbs-up"></i> Glad you liked it' })
     const closeCb = () => this.ui.alerts.alertError({ title: '<i class="fa fa-thumbs-down"></i> That\'s a pity...' })
 
-    this.ui.alerts.alertQuestion({
-      title: 'Do you like these alerts?',
-      confirmButtonText: '<i class="fa fa-thumbs-up"></i> Awesome!',
-      cancelButtonText: '<i class="fa fa-thumbs-down"></i> Not so much...',
-    }, successCb, closeCb)
+    this.ui.alerts.alertQuestion(
+      {
+        title: 'Do you like these alerts?',
+        confirmButtonText: '<i class="fa fa-thumbs-up"></i> Awesome!',
+        cancelButtonText: '<i class="fa fa-thumbs-down"></i> Not so much...',
+      },
+      successCb,
+      closeCb
+    )
   }
 
   testAlertPrompt() {
     const successCb = name => this.ui.alerts.alert({ title: `You claim your name is ${name}` })
     const closeCb = () => this.ui.alerts.alert({ title: `You did not tell your name` })
 
-    this.ui.alerts.alertQuestion({
-      title: 'What is your name?',
-      input: 'text',
-    }, successCb, closeCb)
+    this.ui.alerts.alertQuestion(
+      {
+        title: 'What is your name?',
+        input: 'text',
+      },
+      successCb,
+      closeCb
+    )
   }
-
 }

@@ -25,10 +25,9 @@ import { UiService } from '@colmena/admin-ui'
       </ui-card-content>
     </ui-card>
   `,
-  styles: []
+  styles: [],
 })
 export class NotifyComponent {
-
   public notify = {
     title: 'Notification Title',
     body: 'This is the Notification Text!',
@@ -58,5 +57,4 @@ export class NotifyComponent {
     this.testNotifySuccess()
     this.testNotifyWarning()
   }
-
 }

@@ -18,17 +18,13 @@ import { FormService, UiService } from '@colmena/admin-ui'
       </div>
     </div>
   `,
-  styles: []
+  styles: [],
 })
 export class FormsComponent implements OnInit {
-
   public item: any = {}
   public formConfig: any = {}
 
-  constructor(
-    private formService: FormService,
-    private ui: UiService,
-  ) {}
+  constructor(private formService: FormService, private ui: UiService) {}
 
   ngOnInit() {
     this.formConfig = {
@@ -38,34 +34,34 @@ export class FormsComponent implements OnInit {
       fields: [
         this.formService.input('name', {
           label: 'Name',
-          placeholder: 'Name'
+          placeholder: 'Name',
         }),
         this.formService.email('email', {
           label: 'Email',
-          placeholder: 'Email'
+          placeholder: 'Email',
         }),
         this.formService.password('password', {
           label: 'Password',
-          placeholder: 'Password'
+          placeholder: 'Password',
         }),
         this.formService.textarea('text', {
           label: 'Text',
-          placeholder: 'Text'
+          placeholder: 'Text',
         }),
         this.formService.wysiwyg('wysiwyg', {
           label: 'Wysiwyg',
-          placeholder: 'Wysiwyg'
+          placeholder: 'Wysiwyg',
         }),
         this.formService.date('date', {
           label: 'Date',
-          placeholder: 'Date'
+          placeholder: 'Date',
         }),
         this.formService.select('select', {
           label: 'Select',
           options: [
             { value: 'option-value-1', label: 'option-label-1' },
             { value: 'option-value-2', label: 'option-label-2' },
-          ]
+          ],
         }),
       ],
     }

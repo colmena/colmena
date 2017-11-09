@@ -10,10 +10,5 @@ import { navLinks } from '../dev-config.module'
   `,
 })
 export class IndexComponent {
-
-  public tabs = [
-    { icon: 'icon-wrench', title: 'Dashboard', link: 'dashboard' },
-    ...navLinks,
-  ]
-
+  public tabs = [{ icon: 'icon-wrench', title: 'Dashboard', link: 'dashboard' }, ...navLinks]
 }
