@@ -7,3 +7,5 @@ production.json
 package-lock.json
 config/local*
 config/production*
+storage/*
+.ts-cache/
