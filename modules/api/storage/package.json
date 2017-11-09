@@ -14,12 +14,8 @@
   },
   "colmena": {
     "module": {
-      "mixinSources": [
-        "common/mixins"
-      ],
-      "modelSources": [
-        "common/models"
-      ],
+      "mixinSources": ["common/mixins"],
+      "modelSources": ["common/models"],
       "models": {
         "StorageContainer": {
           "dataSource": "storage",
@@ -30,9 +26,7 @@
           "public": true
         }
       },
-      "sampleFiles": [
-        "sample-files/file-list.json"
-      ]
+      "sampleFiles": ["sample-files/file-list.json"]
     }
   }
 }
