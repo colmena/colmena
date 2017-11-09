@@ -1,6 +1,5 @@
-'use strict'
-const config = require('config')
-const log = require('@colmena/logger')
+import * as config from 'config'
+import * as log from '@colmena/logger'
 
 const { importSampleData, importSampleFiles } = require('@colmena/api-helpers')
 

@@ -1,6 +1,5 @@
-'use strict'
-const config = require('config')
-const log = require('@colmena/logger')
+import * as config from 'config'
+import * as log from '@colmena/logger'
 
 module.exports = (app, cb) => {
   const nodeEnv = process.env.NODE_ENV || 'development'
