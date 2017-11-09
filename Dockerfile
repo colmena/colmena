@@ -9,11 +9,11 @@ WORKDIR /app
 COPY . .
 
 # Copy over the Production settings
-COPY production.json /app/apps/api/config/production.json
+COPY production.json /app/config/production.json
 
 # Remove any local configuration settings
-RUN touch /app/apps/api/config/local.yaml
-RUN rm /app/apps/api/config/local*
+RUN touch /app/config/local.yaml
+RUN rm /app/config/local*
 
 # Install global dependencies
 RUN npm install -g lerna pm2

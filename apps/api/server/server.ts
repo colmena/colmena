@@ -19,7 +19,7 @@ if (!config.has('hideBootWarning') || config.get('hideBootWarning') === false) {
   log.yellow.b(`|                                                                                    |`) // eslint-disable-line
   log.yellow.b(`| Join our Slack for support if the issues persist: http://colmena-slack.now.sh/     |`) // eslint-disable-line
   log.yellow.b(`--------------------------------------------------------------------------------------`) // eslint-disable-line
-  log.yellow.d(`To disable this warning set 'hideBootWarning: true' in apps/api/config/local.yaml `) // eslint-disable-line
+  log.yellow.d(`To disable this warning set 'hideBootWarning: true' in config/local.yaml `) // eslint-disable-line
 }
 
 const app = (module.exports = loopback())
