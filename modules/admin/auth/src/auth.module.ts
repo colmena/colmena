@@ -14,21 +14,8 @@ import { ResetComponent } from './components/reset/reset.component'
 import { AuthRoutingModule } from './auth-routes.module'
 
 @NgModule({
-  imports: [
-    FormsModule,
-    ColmenaUiModule,
-
-    AuthRoutingModule,
-  ],
-  declarations: [
-    LoginComponent,
-    LogoutComponent,
-    RecoverComponent,
-    RegisterComponent,
-    ResetComponent,
-  ],
-  providers: [
-    AuthService,
-  ]
+  imports: [FormsModule, ColmenaUiModule, AuthRoutingModule],
+  declarations: [LoginComponent, LogoutComponent, RecoverComponent, RegisterComponent, ResetComponent],
+  providers: [AuthService],
 })
-export class AuthModule { }
+export class AuthModule {}

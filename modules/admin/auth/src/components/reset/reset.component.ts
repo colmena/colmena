@@ -24,20 +24,15 @@ import { AuthService } from '../../auth.service'
         </div>
       </div>
     </ui-message>
-  `
+  `,
 })
 export class ResetComponent implements OnInit {
-
   public user: any = {
     password: '',
     verify: '',
   }
 
-  constructor(
-    private loopBackAuth: LoopBackAuth,
-    private authService: AuthService,
-    private route: ActivatedRoute,
-  ) { }
+  constructor(private loopBackAuth: LoopBackAuth, private authService: AuthService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.queryParams.subscribe((params: any) => {
@@ -48,6 +43,4 @@ export class ResetComponent implements OnInit {
   reset() {
     this.authService.reset(this.user)
   }
-
-
 }

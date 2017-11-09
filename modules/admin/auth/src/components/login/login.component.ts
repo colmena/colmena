@@ -39,7 +39,6 @@ import * as auth from '../../state/auth.actions'
   `,
 })
 export class LoginComponent {
-
   public settings: any
 
   public credentials = {
@@ -47,23 +46,18 @@ export class LoginComponent {
     password: '',
   }
 
-  constructor(
-    private store: Store<any>,
-  ) {
-    this.store
-      .select('app')
-      .subscribe((res: any) => {
-        this.settings = res.settings
+  constructor(private store: Store<any>) {
+    this.store.select('app').subscribe((res: any) => {
+      this.settings = res.settings
 
-        if (this.settings.nodeEnv === 'development') {
-          this.credentials.email = 'admin@example.com'
-          this.credentials.password = 'password'
-        }
-      })
+      if (this.settings.nodeEnv === 'development') {
+        this.credentials.email = 'admin@example.com'
+        this.credentials.password = 'password'
+      }
+    })
   }
 
   login() {
     this.store.dispatch({ type: auth.ActionTypes.AUTH_LOGIN, payload: this.credentials })
   }
-
 }

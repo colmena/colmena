@@ -1,13 +1,13 @@
 import { Action, ActionReducer } from '@ngrx/store'
 
 export interface State {
-  currentUser: any,
-  loggedIn: boolean,
-  realms: any[],
+  currentUser: any
+  loggedIn: boolean
+  realms: any[]
   roles: {
-    assigned: any[],
-    unassigned: any[],
-  },
+    assigned: any[]
+    unassigned: any[]
+  }
 }
 
 const initialState: State = {
@@ -22,7 +22,6 @@ const initialState: State = {
 
 export function reducer(state = initialState, action: Action): State {
   switch (action.type) {
-
     case 'AUTH_LOGIN':
       return Object.assign({}, state)
 

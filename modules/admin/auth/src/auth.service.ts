@@ -5,14 +5,10 @@ import 'rxjs/observable/of'
 
 @Injectable()
 export class AuthService {
-
   private user: User = new User()
   private token: AccessToken = new AccessToken()
 
-  constructor(
-    private userApi: SystemUserApi,
-  ) {
-  }
+  constructor(private userApi: SystemUserApi) {}
 
   login(credentials) {
     return this.userApi.login(credentials)
@@ -30,10 +26,11 @@ export class AuthService {
   }
 
   recover(user: any) {
-    this.userApi.resetPassword(user)
+    this.userApi
+      .resetPassword(user)
       .subscribe(
-        (success) => console.log({type: 'AUTH_RECOVER_SUCCESS', payload: user }),
-        (error) => console.log({type: 'AUTH_RECOVER_ERROR', payload: error }),
+        success => console.log({ type: 'AUTH_RECOVER_SUCCESS', payload: user }),
+        error => console.log({ type: 'AUTH_RECOVER_ERROR', payload: error })
       )
   }
 
@@ -64,5 +61,4 @@ export class AuthService {
       resolve(this.user)
     })
   }
-
 }

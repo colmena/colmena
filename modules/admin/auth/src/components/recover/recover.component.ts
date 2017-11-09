@@ -21,19 +21,16 @@ import { AuthService } from '../../auth.service'
         </div>
       </div>
     </ui-message>
-  `
+  `,
 })
 export class RecoverComponent {
   public user: any = {
     email: '',
   }
 
-  constructor(
-    private authService: AuthService,
-  ) {}
+  constructor(private authService: AuthService) {}
 
   recover() {
     this.authService.recover(this.user)
   }
-
 }

@@ -3,8 +3,6 @@ import { Store } from '@ngrx/store'
 
 const moduleName = 'auth'
 
-
-
 const moduleConfig = {
   name: 'Auth',
   icon: 'icon-lock',
@@ -15,10 +13,7 @@ const moduleConfig = {
 }
 @NgModule({})
 export class AuthConfigModule {
-
   constructor(protected store: Store<any>) {
-    this.store.dispatch({ type: 'APP_LOAD_MODULE', payload: { moduleName, moduleConfig }})
+    this.store.dispatch({ type: 'APP_LOAD_MODULE', payload: { moduleName, moduleConfig } })
   }
-
 }
-

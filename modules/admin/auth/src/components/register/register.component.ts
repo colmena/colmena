@@ -57,7 +57,6 @@ import * as auth from '../../state/auth.actions'
   `,
 })
 export class RegisterComponent {
-
   public settings: any
 
   public credentials = {
@@ -69,19 +68,14 @@ export class RegisterComponent {
     confirm: '',
   }
 
-  constructor(
-    private store: Store<any>,
-  ) {
-    this.store
-      .select('app')
-      .subscribe((res: any) => {
-        this.settings = res.settings
-      })
+  constructor(private store: Store<any>) {
+    this.store.select('app').subscribe((res: any) => {
+      this.settings = res.settings
+    })
   }
 
   register() {
     this.credentials.username = this.credentials.email
     this.store.dispatch({ type: auth.ActionTypes.AUTH_REGISTER, payload: this.credentials })
   }
-
 }

@@ -7,10 +7,7 @@ import * as auth from '../../state/auth.actions'
   template: `<ui-message [message]="'You are being logged out.'"></ui-message>`,
 })
 export class LogoutComponent {
-
-  constructor(
-    private store: Store<any>
-  ) {
+  constructor(private store: Store<any>) {
     this.store.dispatch(new auth.AuthLogoutAction())
   }
 }
