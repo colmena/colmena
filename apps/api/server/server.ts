@@ -10,16 +10,7 @@ const packageJson = require('../package.json')
 log.green.b(`Starting ${packageJson.name} ${packageJson.version}`) // eslint-disable-line
 
 if (!config.has('hideBootWarning') || config.get('hideBootWarning') === false) {
-  log.yellow.b(`--------------------------------------------------------------------------------------`) // eslint-disable-line
-  log.yellow.b(`| Colmena is currently being developed and this means that things will break.        |`) // eslint-disable-line
-  log.yellow.b(`|                                                                                    |`) // eslint-disable-line
-  log.yellow.b(`| In case of any issues first try: 'npm run clean' followed by 'npm install'.        |`) // eslint-disable-line
-  log.yellow.b(`| After changing internal dependencies run 'lerna bootstrap' correctly link them.    |`) // eslint-disable-line
-  log.yellow.b(`| After changing the API structure run 'npm run sdk' to re-generate the Angular SDK. |`) // eslint-disable-line
-  log.yellow.b(`|                                                                                    |`) // eslint-disable-line
-  log.yellow.b(`| Join our Slack for support if the issues persist: http://colmena-slack.now.sh/     |`) // eslint-disable-line
-  log.yellow.b(`--------------------------------------------------------------------------------------`) // eslint-disable-line
-  log.yellow.d(`To disable this warning set 'hideBootWarning: true' in config/local.yaml `) // eslint-disable-line
+  require('./bootwarning')
 }
 
 const app = (module.exports = loopback())
