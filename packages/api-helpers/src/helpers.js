@@ -8,8 +8,7 @@ const prequire = require('parent-require')
 const parentRequire = moduleName => prequire(moduleName)
 
 const getModuleList = () => config.get('colmena.modules')
-const getActiveModules = () =>
-  Object.keys(getModuleList()).filter(module => getModuleList()[module])
+const getActiveModules = () => Object.keys(getModuleList()).filter(module => getModuleList()[module])
 const getModules = () => getActiveModules()
 
 /**
@@ -44,8 +43,7 @@ const dbUpdate = db => {
     })
 }
 
-const getAppConfigs = () =>
-  getModules().map(moduleName => parentRequire(moduleName))
+const getAppConfigs = () => getModules().map(moduleName => parentRequire(moduleName))
 
 const getAppFileList = prop =>
   getAppConfigs()
@@ -58,9 +56,7 @@ const loadModulePath = (moduleName, file) => path.join(moduleName, file)
 const loadModules = config => {
   getModules().forEach(moduleName => {
     const module = parentRequire(moduleName)
-    log.white.b(
-      `[loopback-modules] Registering models from module: ${moduleName}`
-    )
+    log.white.b(`[loopback-modules] Registering models from module: ${moduleName}`)
 
     if (module.models) {
       config = Object.assign(config, module.models)
@@ -86,15 +82,11 @@ const loadModules = config => {
 const getDomain = (app, domain) => app.models.SystemDomain.findById('default')
 
 const importDomainFileByUrl = (domain, url, fileName) =>
-  domain
-    .importFileByUrl(url, fileName)
-    .then(() => log.gray('[sample-files]', `Import url ${url}`))
+  domain.importFileByUrl(url, fileName).then(() => log.gray('[sample-files]', `Import url ${url}`))
 
 const importSampleFileSet = (app, set) => {
   const importToDomain = (domainName, files) =>
-    getDomain(app, domainName).then(domain =>
-      files.map(file => importDomainFileByUrl(domain, file.url, file.fileName))
-    )
+    getDomain(app, domainName).then(domain => files.map(file => importDomainFileByUrl(domain, file.url, file.fileName)))
 
   const domains = Object.keys(set)
   const promises = domains.map(domainName => {
@@ -107,9 +99,7 @@ const importSampleFileSet = (app, set) => {
 }
 
 const importDataIntoModel = (Model, data) =>
-  Model.create(data).then(res =>
-    log.gray('[sample-data]', `${res.length} items for model`, Model.name)
-  )
+  Model.create(data).then(res => log.gray('[sample-data]', `${res.length} items for model`, Model.name))
 
 const importSampleDataSet = (app, set) =>
   Promise.all(

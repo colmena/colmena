@@ -9,10 +9,8 @@ const { camelCase } = require('lodash')
 const belongsToRelationName = modelName => camelCase(modelName)
 const hasManyRelationName = modelName => pluralize(camelCase(modelName))
 
-const belongsTo = (modelFrom, modelTo, as, foreignKey) =>
-  modelFrom.belongsTo(modelTo, { as, foreignKey })
-const hasMany = (modelFrom, modelTo, as, foreignKey) =>
-  modelFrom.hasMany(modelTo, { as, foreignKey })
+const belongsTo = (modelFrom, modelTo, as, foreignKey) => modelFrom.belongsTo(modelTo, { as, foreignKey })
+const hasMany = (modelFrom, modelTo, as, foreignKey) => modelFrom.hasMany(modelTo, { as, foreignKey })
 
 const relationMixin = (ModelFrom, options, relationType) => {
   const blacklist = options.blacklist || []
@@ -31,18 +29,8 @@ const relationMixin = (ModelFrom, options, relationType) => {
 
       switch (relationType) {
         case 'hasMany':
-          hasMany(
-            ModelTo,
-            ModelFrom,
-            hasManyRelationName(modelName),
-            foreignKey
-          )
-          belongsTo(
-            ModelFrom,
-            ModelTo,
-            belongsToRelationName(targetModelName),
-            foreignKey
-          )
+          hasMany(ModelTo, ModelFrom, hasManyRelationName(modelName), foreignKey)
+          belongsTo(ModelFrom, ModelTo, belongsToRelationName(targetModelName), foreignKey)
           break
       }
     })
@@ -51,17 +39,14 @@ const relationMixin = (ModelFrom, options, relationType) => {
 
     ModelFrom.observe('after save', (ctx, next) => {
       if (required && ctx.instance && !ctx.instance[foreignKey]) {
-        log.warn(
-          `[relation-mixin] Missing foreignKey ${foreignKey} on ${modelName} after save`
-        )
+        log.warn(`[relation-mixin] Missing foreignKey ${foreignKey} on ${modelName} after save`)
       }
       next()
     })
   }
 }
 
-const hasManyRelation = (ModelFrom, options) =>
-  relationMixin(ModelFrom, options, 'hasMany')
+const hasManyRelation = (ModelFrom, options) => relationMixin(ModelFrom, options, 'hasMany')
 
 module.exports = {
   hasManyRelation,
