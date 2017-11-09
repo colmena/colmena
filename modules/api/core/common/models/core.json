@@ -9,20 +9,14 @@
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "DENY",
-      "property": [
-        "modules",
-        "ping"
-      ]
+      "property": ["modules", "ping"]
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "system-admin",
       "permission": "ALLOW",
-      "property": [
-        "modules",
-        "ping"
-      ]
+      "property": ["modules", "ping"]
     }
   ],
   "methods": {
