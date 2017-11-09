@@ -12,14 +12,15 @@ import { ModalDirective } from 'ngx-bootstrap'
       </div>
     </div>
   `,
-  styles: [`
+  styles: [
+    `
     .card {
       margin-bottom: 0;
     }
-  `]
+  `,
+  ],
 })
 export class UiModalFormComponent implements OnInit {
-
   public modalClass = 'modal-dialog'
 
   @Input() form = true
@@ -46,5 +47,4 @@ export class UiModalFormComponent implements OnInit {
   public hide(): void {
     this.modal.hide()
   }
-
 }

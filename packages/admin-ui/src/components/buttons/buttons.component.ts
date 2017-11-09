@@ -24,7 +24,8 @@ import { Component, Input, OnInit } from '@angular/core'
       </ng-template>
     </div>
 `,
-styles: [`
+  styles: [
+    `
   .btn-group-sm .btn-sm.btn-social, 
   .btn-group-vertical-sm .btn-sm.btn-social {
     padding-left: 35px;
@@ -37,10 +38,10 @@ styles: [`
   .btn-group-vertical-lg .btn-lg.btn-social{
     padding-left: 60px;
   }
-`]
+`,
+  ],
 })
 export class UiButtonsComponent implements OnInit {
-
   btnClass: string = 'btn btn-secondary'
   groupClass: string = 'btn-group'
 

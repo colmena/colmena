@@ -65,10 +65,7 @@ const components = [
  * Exported Providers
  * @type { Array }
  */
-const providers = [
-  FormService,
-  UiService,
-]
+const providers = [FormService, UiService]
 
 /**
  * Exported Declarations
@@ -86,17 +83,8 @@ const declarations = []
     NgxAlertsModule.forRoot(),
     ...modules,
   ],
-  declarations: [
-    ...declarations,
-    ...components,
-  ],
-  exports: [
-    CommonModule,
-    BsDropdownModule,
-    ...declarations,
-    ...modules,
-    ...components,
-  ],
+  declarations: [...declarations, ...components],
+  exports: [CommonModule, BsDropdownModule, ...declarations, ...modules, ...components],
 })
 export class ColmenaUiModule {
   static forRoot(): ModuleWithProviders {

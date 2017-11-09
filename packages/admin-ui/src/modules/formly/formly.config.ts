@@ -8,6 +8,6 @@ export const formlyConfig: ConfigOption = {
       name: 'wysiwyg',
       component: FormlyFieldWysiwygComponent,
       wrappers: ['fieldset', 'label'],
-    }
-  ]
+    },
+  ],
 }

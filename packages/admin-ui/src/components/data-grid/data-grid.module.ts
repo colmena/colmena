@@ -13,23 +13,9 @@ import { PagerComponent } from './pager/pager.component'
 import { RowsComponent } from './rows/rows.component'
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    AlertModule.forRoot(),
-    PaginationModule.forRoot(),
-  ],
-  declarations: [
-    UiDataGridComponent,
-
-    HeaderComponent,
-    ItemButtonsComponent,
-    RowsComponent,
-    PagerComponent
-  ],
+  imports: [CommonModule, FormsModule, AlertModule.forRoot(), PaginationModule.forRoot()],
+  declarations: [UiDataGridComponent, HeaderComponent, ItemButtonsComponent, RowsComponent, PagerComponent],
   providers: [],
-  exports: [
-    UiDataGridComponent,
-  ]
+  exports: [UiDataGridComponent],
 })
-export class UiDataGridModule { }
+export class UiDataGridModule {}

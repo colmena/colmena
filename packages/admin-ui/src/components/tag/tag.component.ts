@@ -16,10 +16,9 @@ enum tagTypes {
     <span class="{{classList}}">
       <ng-content></ng-content>
     </span>
-  `
+  `,
 })
 export class UiTagComponent implements OnInit {
-
   public classList: string = 'tag'
 
   @Input() pill: boolean = false

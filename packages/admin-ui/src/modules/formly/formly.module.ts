@@ -9,22 +9,8 @@ import { formlyConfig } from './formly.config'
 import { FormlyFieldWysiwygComponent } from './formly-wysiwyg/wysiwyg.component'
 
 @NgModule({
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    FormlyModule.forRoot(formlyConfig),
-    FormlyBootstrapModule,
-
-    QuillModule,
-  ],
-  exports: [
-    FormlyModule,
-    QuillModule
-  ],
-  declarations: [
-    FormlyFieldWysiwygComponent,
-  ]
+  imports: [FormsModule, ReactiveFormsModule, FormlyModule.forRoot(formlyConfig), FormlyBootstrapModule, QuillModule],
+  exports: [FormlyModule, QuillModule],
+  declarations: [FormlyFieldWysiwygComponent],
 })
-export class UiFormlyModule {
-
-}
+export class UiFormlyModule {}

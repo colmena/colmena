@@ -17,7 +17,7 @@ import { Component, Input, ViewChild, AfterViewInit, ChangeDetectorRef } from '@
         <ng-content select="ui-card-footer?"></ng-content>
       </div>
     </div>
-`
+`,
 })
 export class UiCardComponent implements AfterViewInit {
   // By default display all the parts of the card
@@ -33,10 +33,7 @@ export class UiCardComponent implements AfterViewInit {
   // Add additional classNames to a card
   @Input() classNames = ''
 
-  constructor(
-    private _changeDetectorRef: ChangeDetectorRef,
-  ) {
-  }
+  constructor(private _changeDetectorRef: ChangeDetectorRef) {}
 
   // Determine visibility based on existence of child sections
   ngAfterViewInit() {
@@ -50,18 +47,18 @@ export class UiCardComponent implements AfterViewInit {
 // The cards work without these three classes. These are defined merely to have the IDE's know about them
 @Component({
   selector: 'ui-card-header',
-  template: `<ng-content></ng-content>`
+  template: `<ng-content></ng-content>`,
 })
 export class UiCardHeaderComponent {}
 
 @Component({
   selector: 'ui-card-content',
-  template: `<ng-content></ng-content>`
+  template: `<ng-content></ng-content>`,
 })
 export class UiCardContentComponent {}
 
 @Component({
   selector: 'ui-card-footer',
-  template: `<ng-content></ng-content>`
+  template: `<ng-content></ng-content>`,
 })
 export class UiCardFooterComponent {}

@@ -11,20 +11,20 @@ import { Component, Input } from '@angular/core'
       </div>
     </div>
   `,
-  styles: [`
+  styles: [
+    `
     .card {
       cursor: pointer;
     }
     .card:hover {
       box-shadow: 0px 0px 8px #a1a1a1;
     }
-  `]
+  `,
+  ],
 })
 export class UiDashboardIconComponent {
-
   @Input() count
   @Input() icon
   @Input() label
   @Input() type
-
 }

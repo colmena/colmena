@@ -65,7 +65,8 @@ import { FileUploader } from 'ng2-file-upload'
       </div>
     </div>
   `,
-  styles: [`
+  styles: [
+    `
     .nv-file-over {
       background: rgba(100,181,246, 0.5);
     }
@@ -82,10 +83,10 @@ import { FileUploader } from 'ng2-file-upload'
       outline: none;
       cursor: inherit;
     }
-  `]
+  `,
+  ],
 })
 export class UiUploaderComponent implements OnInit {
-
   @Input() url: string
 
   public uploader: FileUploader

@@ -13,7 +13,5 @@ import { UiTabLink } from './tabs.interface'
   `,
 })
 export class UiTabsVerticalComponent {
-
   @Input() tabs: UiTabLink[]
-
 }

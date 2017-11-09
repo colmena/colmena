@@ -19,10 +19,9 @@ import { ModalDirective } from 'ngx-bootstrap'
         </div>
       </div>
     </div>
-`
+`,
 })
 export class UiModalComponent implements OnInit {
-
   public modalClass = 'modal-dialog'
 
   @Input() size
@@ -48,5 +47,4 @@ export class UiModalComponent implements OnInit {
   public hide(): void {
     this.modal.hide()
   }
-
 }

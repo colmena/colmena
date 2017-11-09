@@ -4,5 +4,4 @@ import { Component } from '@angular/core'
   selector: 'ui-logo',
   template: `<div class="brand-logo"></div>`,
 })
-export class UiLogoComponent {
-}
+export class UiLogoComponent {}

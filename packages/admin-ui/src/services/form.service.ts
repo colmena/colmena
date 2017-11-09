@@ -3,23 +3,16 @@ import { Validators } from '@angular/forms'
 
 @Injectable()
 export class FormService {
-
   field(type, templateType, key, options: any = {}) {
-
     const templateOptions = {
       type: templateType,
     }
 
     const validators = {
-      validation: Validators.compose([ Validators.required ]),
+      validation: Validators.compose([Validators.required]),
     }
 
-    const toKeys = [
-      'disabled',
-      'label',
-      'options',
-      'placeholder',
-    ]
+    const toKeys = ['disabled', 'label', 'options', 'placeholder']
 
     toKeys.forEach(toKey => {
       if (options[toKey]) {
@@ -62,5 +55,4 @@ export class FormService {
   select(key, options: any = {}) {
     return this.field('select', 'text', key, options)
   }
-
 }

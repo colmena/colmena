@@ -26,11 +26,13 @@ import { FormGroup } from '@angular/forms'
       </div>
     </form>
   `,
-  styles: [`
+  styles: [
+    `
     .card {
       margin-bottom: 0px;
     }
-  `]
+  `,
+  ],
 })
 export class UiFormComponent {
   form: FormGroup = new FormGroup({})

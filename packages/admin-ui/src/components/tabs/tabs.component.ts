@@ -12,7 +12,8 @@ import { UiTabLink } from './tabs.interface'
       </li>
     </ul>
   `,
-  styles: [`
+  styles: [
+    `
     .nav-tabs {
       padding-top: 10px;
     }
@@ -27,10 +28,9 @@ import { UiTabLink } from './tabs.interface'
       border-top: 1px solid #cfd8dc !important;
       border-bottom: 0;
     }
-  `],
+  `,
+  ],
 })
 export class UiTabsComponent {
-
   @Input() tabs: UiTabLink[]
-
 }

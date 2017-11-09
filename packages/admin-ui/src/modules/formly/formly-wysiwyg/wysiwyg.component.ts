@@ -12,13 +12,12 @@ import { FieldType } from 'ng-formly'
   `,
 })
 export class FormlyFieldWysiwygComponent extends FieldType implements OnInit {
-
   public toolbars = {
     default: {
       toolbar: [
         ['bold', 'italic', 'underline', 'strike'],
         ['blockquote', 'code-block'],
-        [{'list': 'ordered'}, {'list': 'bullet'}],
+        [{ list: 'ordered' }, { list: 'bullet' }],
         ['clean'],
         ['link'],
       ],
@@ -35,6 +34,4 @@ export class FormlyFieldWysiwygComponent extends FieldType implements OnInit {
     this.toolbar = this.toolbars[this.to['toolbar']] || this.toolbars.default
     this.theme = this.to['theme'] || this.theme
   }
-
-
 }

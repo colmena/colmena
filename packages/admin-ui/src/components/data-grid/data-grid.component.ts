@@ -5,7 +5,6 @@ import { Component, Input, OnInit, Output, EventEmitter, TemplateRef } from '@an
   templateUrl: './data-grid.component.html',
 })
 export class UiDataGridComponent implements OnInit {
-
   @Input() limit = 20
 
   @Input() config: any = {}
@@ -26,11 +25,9 @@ export class UiDataGridComponent implements OnInit {
     this.columnSorting = this.service.columnSorting
     this.limit = this.service.limit
 
-    this.service.getItems()
-      .subscribe(res => this.items = res)
+    this.service.getItems().subscribe(res => (this.items = res))
 
-    this.service.getItemCount()
-      .subscribe(res => this.totalItems = res.count)
+    this.service.getItemCount().subscribe(res => (this.totalItems = res.count))
   }
 
   ngOnInit() {
@@ -39,9 +36,7 @@ export class UiDataGridComponent implements OnInit {
 
     if (!this.config.header) {
       this.config.header = {
-        buttons: [
-          { action: 'add', icon: 'icon-plus', classNames: 'btn btn-outline-success' },
-        ]
+        buttons: [{ action: 'add', icon: 'icon-plus', classNames: 'btn btn-outline-success' }],
       }
     }
   }
@@ -83,5 +78,4 @@ export class UiDataGridComponent implements OnInit {
         return this.action.emit(event)
     }
   }
-
 }

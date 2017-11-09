@@ -8,18 +8,13 @@
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "target": "es5",
-    "lib": [
-      "es2016",
-      "dom"
-    ],
+    "lib": ["es2016", "dom"],
     "paths": {
       "@angular/*": ["node_modules/@angular/*"],
       "@ngrx/*": ["node_modules/@ngrx/*"],
       "@colmena/*": ["node_modules/@colmena/*"],
       "rxjs/*": ["node_modules/rxjs/*"]
     },
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types"]
   }
 }

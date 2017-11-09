@@ -4,9 +4,8 @@ import { CommonModule } from '@angular/common'
 import { UiTagComponent } from './tag.component'
 
 @NgModule({
-  declarations: [ UiTagComponent ],
-  exports: [ UiTagComponent ],
-  imports: [ CommonModule ]
+  declarations: [UiTagComponent],
+  exports: [UiTagComponent],
+  imports: [CommonModule],
 })
-export class UiTagModule {
-}
+export class UiTagModule {}

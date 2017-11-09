@@ -5,7 +5,6 @@ import 'rxjs/add/observable/of'
 
 @Injectable()
 export class UiDataGridService {
-
   public _domain
 
   set domain(domain) {
@@ -40,11 +39,10 @@ export class UiDataGridService {
     where: {},
     limit: 20,
     offset: 0,
-    order: ''
+    order: '',
   }
 
   private _page = 1
-
 
   public getFilters(filters = {}) {
     return Object.assign({}, this._filters, filters)
@@ -70,7 +68,6 @@ export class UiDataGridService {
     return this._filters.limit
   }
 
-
   set limit(limit) {
     this._filters.limit = limit
   }
@@ -90,7 +87,6 @@ export class UiDataGridService {
 
     // Search for each word separated by a space
     query.split(' ').forEach(queryPart => {
-
       // Each word has an 'or' query
       const orQuery = []
 
@@ -101,13 +97,13 @@ export class UiDataGridService {
 
       // Add the 'or' query as a segment of the 'and' query
       andQuery.push({
-        or: orQuery
+        or: orQuery,
       })
     })
     //
     // Update the filters
     this._filters.where = {
-      and: andQuery
+      and: andQuery,
     }
   }
 
@@ -123,20 +119,18 @@ export class UiDataGridService {
     // Removing this method allows sorting on multiple fields :)
     for (const field in this._sorting) {
       if (field !== fieldName) {
-        delete this._sorting[ field ]
+        delete this._sorting[field]
       }
     }
 
     // Determine the sorting order (asc/desc/not sorted)
-    if (typeof this._sorting[ fieldName ] === 'undefined') {
-      this._sorting[ fieldName ] = 'asc'
-    }
-    else if (this._sorting[ fieldName ] === 'asc') {
-      this._sorting[ fieldName ] = 'desc'
-    }
-    else if (this._sorting[ fieldName ] === 'desc') {
+    if (typeof this._sorting[fieldName] === 'undefined') {
+      this._sorting[fieldName] = 'asc'
+    } else if (this._sorting[fieldName] === 'asc') {
+      this._sorting[fieldName] = 'desc'
+    } else if (this._sorting[fieldName] === 'desc') {
       this._filters.order = ''
-      delete this._sorting[ fieldName ]
+      delete this._sorting[fieldName]
     }
 
     // Get a list of keys that's being sorted on
@@ -144,11 +138,10 @@ export class UiDataGridService {
 
     // Loop over the keys and add them to the array
     Object.keys(this._sorting).forEach(key => {
-      orderKeys.push(`${key} ${this._sorting[ key ]}`)
+      orderKeys.push(`${key} ${this._sorting[key]}`)
     })
 
     // Join the array in the actual sort order string
     this._filters.order = orderKeys.join(',')
   }
-
 }

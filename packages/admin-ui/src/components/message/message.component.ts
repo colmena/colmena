@@ -23,7 +23,5 @@ import { Component, Input } from '@angular/core'
   `,
 })
 export class UiMessageComponent {
-
-  @Input()
-  public message: string = null
+  @Input() public message: string = null
 }

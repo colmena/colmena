@@ -3,10 +3,9 @@ import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core
 @Component({
   selector: 'ui-data-grid-header',
   templateUrl: './header.component.html',
-  styleUrls: [ './header.component.scss' ]
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-
   @ViewChild('search') searchBox
 
   @Input() public config
@@ -15,12 +14,7 @@ export class HeaderComponent {
 
   @Output() action = new EventEmitter()
 
-  public limits = [
-    10,
-    20,
-    50,
-    100,
-  ]
+  public limits = [10, 20, 50, 100]
 
   public query: string = null
 

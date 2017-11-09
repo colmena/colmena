@@ -7,17 +7,8 @@ import { BsDropdownModule } from 'ngx-bootstrap'
 import { UiButtonsComponent } from './buttons.component'
 
 @NgModule({
-  declarations: [
-    UiButtonsComponent,
-  ],
-  exports: [
-    UiButtonsComponent,
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    BsDropdownModule.forRoot(),
-  ]
+  declarations: [UiButtonsComponent],
+  exports: [UiButtonsComponent],
+  imports: [CommonModule, FormsModule, BsDropdownModule.forRoot()],
 })
-export class UiButtonsModule {
-}
+export class UiButtonsModule {}
