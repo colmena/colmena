@@ -27,24 +27,18 @@ import { get } from 'lodash'
   `,
 })
 export class HeaderDomainsComponent {
-
   public activeDomain: any
   public domains: any
 
-  constructor(
-    private store: Store<any>,
-  ) {
-    this.store
-      .select('app')
-      .subscribe((res: any) => {
-        this.activeDomain = get(res, 'activeDomain')
-        this.domains = get(res, 'domains')
-      })
+  constructor(private store: Store<any>) {
+    this.store.select('app').subscribe((res: any) => {
+      this.activeDomain = get(res, 'activeDomain')
+      this.domains = get(res, 'domains')
+    })
   }
 
   switchDomain($event, domain) {
     $event.preventDefault()
     this.store.dispatch({ type: 'APP_DOMAIN_SELECT', payload: domain })
   }
-
 }

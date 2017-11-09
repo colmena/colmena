@@ -18,7 +18,7 @@ import { NavDropdownDirective, NavDropdownToggleDirective } from './directives/n
 import {
   MobileSidebarToggleDirective,
   SidebarToggleDirective,
-  SidebarOffCanvasCloseDirective
+  SidebarOffCanvasCloseDirective,
 } from './directives/sidebar/sidebar.directives'
 
 export const components: any[] = [
@@ -45,19 +45,8 @@ export const directives: any[] = [
 ]
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-
-    BsDropdownModule.forRoot(),
-  ],
-  declarations: [
-    ...components,
-    ...directives,
-  ],
-  exports: [
-    ...components,
-    ...directives,
-  ]
+  imports: [CommonModule, RouterModule, BsDropdownModule.forRoot()],
+  declarations: [...components, ...directives],
+  exports: [...components, ...directives],
 })
-export class ColmenaLayoutModule { }
+export class ColmenaLayoutModule {}

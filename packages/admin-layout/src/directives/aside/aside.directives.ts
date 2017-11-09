@@ -7,7 +7,6 @@ import { Directive, HostListener } from '@angular/core'
   selector: '.aside-toggle',
 })
 export class AsideToggleDirective {
-
   @HostListener('click', ['$event'])
   toggleOpen($event: any): void {
     $event.preventDefault()

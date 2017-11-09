@@ -4,9 +4,7 @@ import { Directive, HostListener, HostBinding } from '@angular/core'
   selector: '.nav-dropdown',
 })
 export class NavDropdownDirective {
-
-  @HostBinding('class.open')
-  private _open: boolean = false
+  @HostBinding('class.open') private _open: boolean = false
 
   /**
    * Checks if the dropdown menu is open or not.
@@ -48,10 +46,9 @@ export class NavDropdownDirective {
   selector: '.nav-dropdown-toggle',
 })
 export class NavDropdownToggleDirective {
-  constructor(private dropdown: NavDropdownDirective) {
-  }
+  constructor(private dropdown: NavDropdownDirective) {}
 
-  @HostListener('click', [ '$event' ])
+  @HostListener('click', ['$event'])
   toggleOpen($event: any): void {
     $event.preventDefault()
     this.dropdown.toggle()

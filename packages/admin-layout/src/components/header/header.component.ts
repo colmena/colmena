@@ -22,25 +22,21 @@ import { get } from 'lodash'
       </div>
     </header>
   `,
-  styles: [`
+  styles: [
+    `
     @media (max-width: 991px) {
       a.navbar-brand {
         width: 155px!important;
         margin-left: 60px!important
       }
     }
-  `],
+  `,
+  ],
 })
 export class HeaderComponent {
-
   public config: any
 
-  constructor(
-    private store: Store<any>
-  ) {
-    this.store
-      .select('layout')
-      .subscribe((res: any) => this.config = get(res, 'header'))
+  constructor(private store: Store<any>) {
+    this.store.select('layout').subscribe((res: any) => (this.config = get(res, 'header')))
   }
-
 }

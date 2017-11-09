@@ -14,15 +14,9 @@ import { get } from 'lodash'
 `,
 })
 export class HeaderNavComponent {
-
   public items
 
-  constructor(
-    private store: Store<any>
-  ) {
-    this.store
-      .select('layout')
-      .subscribe((res: any) => this.items = get(res, 'headerNav', []))
+  constructor(private store: Store<any>) {
+    this.store.select('layout').subscribe((res: any) => (this.items = get(res, 'headerNav', [])))
   }
-
 }

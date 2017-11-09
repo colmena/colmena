@@ -16,8 +16,7 @@ import 'rxjs/add/operator/filter'
 export class BreadcrumbsComponent implements OnInit {
   breadcrumbs: Array<Object>
 
-  constructor(private router: Router, private route: ActivatedRoute) {
-  }
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.router.events.filter(event => event instanceof NavigationEnd).subscribe(() => {
@@ -33,7 +32,7 @@ export class BreadcrumbsComponent implements OnInit {
             url += '/' + routeSnapshot.url.map((segment: any) => segment.path).join('/')
             this.breadcrumbs.push({
               label: route.snapshot.data,
-              url: url
+              url: url,
             })
             currentRoute = route
           }

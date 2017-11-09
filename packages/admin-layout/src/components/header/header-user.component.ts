@@ -20,23 +20,19 @@ import { get } from 'lodash'
       </div>
     </li>
   `,
-  styles: [`
+  styles: [
+    `
     .avatar {
       height: 50px;
       width: 50px;
     }
-  `]
+  `,
+  ],
 })
 export class HeaderUserComponent {
-
   public user: any
 
-  constructor(
-    private store: Store<any>
-  ) {
-    this.store
-      .select('auth')
-      .subscribe((res: any) => this.user = get(res, 'currentUser.user', {}))
+  constructor(private store: Store<any>) {
+    this.store.select('auth').subscribe((res: any) => (this.user = get(res, 'currentUser.user', {})))
   }
-
 }

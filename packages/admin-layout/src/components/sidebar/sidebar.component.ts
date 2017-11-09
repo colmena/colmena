@@ -18,18 +18,12 @@ import { Store } from '@ngrx/store'
     </nav>
   </div>
   `,
-  styles: []
+  styles: [],
 })
 export class SidebarComponent {
-
   public sidebarNav: any[]
 
-  constructor(
-    private store: Store<any>,
-  ) {
-    this.store
-      .select('layout')
-      .subscribe((res: any) => this.sidebarNav = res.sidebarNav)
+  constructor(private store: Store<any>) {
+    this.store.select('layout').subscribe((res: any) => (this.sidebarNav = res.sidebarNav))
   }
-
 }

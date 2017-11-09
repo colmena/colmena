@@ -11,16 +11,13 @@ import { Store } from '@ngrx/store'
   `,
 })
 export class FooterComponent {
-
   public footerLeft = ''
   public footerRight = ''
 
   constructor(private store: Store<any>) {
-    this.store
-      .select('layout')
-      .subscribe((res: any) => {
-        this.footerLeft = res.footerLeft
-        this.footerRight = res.footerRight
-      })
+    this.store.select('layout').subscribe((res: any) => {
+      this.footerLeft = res.footerLeft
+      this.footerRight = res.footerRight
+    })
   }
 }

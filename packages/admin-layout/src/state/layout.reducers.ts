@@ -19,7 +19,6 @@ const initialState: State = {
 
 export function reducer(state = initialState, action: Action): State {
   switch (action.type) {
-
     case 'LAYOUT_HEADER_NAV':
       return Object.assign({}, state, { headerNav: sortBy([...state.headerNav, action.payload], ['weight']) })
 
