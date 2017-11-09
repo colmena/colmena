@@ -5,7 +5,7 @@
 <h3 align="center">
 
 ```javascript
-Free and Open Source 
+Free and Open Source
 Full Stack
 RAPID API DEVELOPMENT
 ```
@@ -23,7 +23,7 @@ RAPID API DEVELOPMENT
   <a href="#sponsors"><img src="https://opencollective.com/colmena/sponsors/badge.svg" /></a>
 </p>
 
-<br> 
+<br>
 
 <a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/wnKKYkBUvZeL828tHvWRAczJ/colmena/colmena'>
   <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/wnKKYkBUvZeL828tHvWRAczJ/colmena/colmena.svg' />
@@ -97,6 +97,7 @@ Clone the repository and install the dependencies:
 git clone https://github.com/colmena/colmena
 cd colmena
 npm install
+lerna bootstrap
 ```
 
 ## Development
@@ -140,7 +141,7 @@ npm run dev:admin
 During development it can be useful to bring the project back to a clean state. To do this run:
 
 ```bash
-npm run clean && npm install
+npm run clean
 ```
 
 ### Configuring the development setup
