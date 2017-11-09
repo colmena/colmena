@@ -10,12 +10,10 @@ import { StorageService } from '../storage.service'
 export class UploadComponent implements OnInit {
   public uploadUrl
 
-  constructor(public service: StorageService) {
-  }
+  constructor(public service: StorageService) {}
 
   ngOnInit() {
     this.service.domain = { id: 'default' }
     this.uploadUrl = this.service.getUploadUrl()
   }
-
 }

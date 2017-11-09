@@ -37,7 +37,5 @@ import { Component, Input } from '@angular/core'
   `,
 })
 export class FileComponent {
-
   @Input() item: any = {}
-
 }

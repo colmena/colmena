@@ -13,20 +13,8 @@ import { IndexComponent } from './components/index.component'
 import { UploadComponent } from './components/upload.component'
 
 @NgModule({
-  imports: [
-    FormsModule,
-    ColmenaUiModule,
-    StorageRoutingModule,
-  ],
-  providers: [
-    StorageService,
-  ],
-  declarations: [
-    DownloadComponent,
-    FileComponent,
-    FilesComponent,
-    IndexComponent,
-    UploadComponent,
-  ],
+  imports: [FormsModule, ColmenaUiModule, StorageRoutingModule],
+  providers: [StorageService],
+  declarations: [DownloadComponent, FileComponent, FilesComponent, IndexComponent, UploadComponent],
 })
-export class StorageModule { }
+export class StorageModule {}

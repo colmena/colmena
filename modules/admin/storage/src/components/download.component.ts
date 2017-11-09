@@ -12,11 +12,7 @@ export class DownloadComponent implements OnInit {
   public formConfig
 
   public item = {}
-  constructor(
-    public service: StorageService,
-    public ui: UiService,
-  ) {
-  }
+  constructor(public service: StorageService, public ui: UiService) {}
 
   ngOnInit() {
     this.service.domain = { id: 'default' }
@@ -32,10 +28,11 @@ export class DownloadComponent implements OnInit {
           body: item.url,
         })
       },
-      err => this.ui.alerts.notifyError({
-        title: 'Error saving file',
-        body: err.message,
-      })
+      err =>
+        this.ui.alerts.notifyError({
+          title: 'Error saving file',
+          body: err.message,
+        })
     )
   }
 
@@ -48,5 +45,4 @@ export class DownloadComponent implements OnInit {
         break
     }
   }
-
 }

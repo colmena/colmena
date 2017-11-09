@@ -10,11 +10,9 @@ import { UiTabLink } from '@colmena/admin-ui'
   `,
 })
 export class IndexComponent {
-
   public tabs: UiTabLink[] = [
     { icon: 'icon-docs', title: 'Files', link: 'files' },
     { icon: 'icon-cloud-upload', title: 'Upload', link: 'upload' },
     { icon: 'icon-cloud-download', title: 'Download', link: 'download' },
   ]
-
 }

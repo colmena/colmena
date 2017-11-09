@@ -6,7 +6,6 @@ import { UiDataGridService, FormService } from '@colmena/admin-ui'
 
 @Injectable()
 export class StorageService extends UiDataGridService {
-
   public icon = 'icon-doc'
   public title = 'Files'
 
@@ -23,10 +22,7 @@ export class StorageService extends UiDataGridService {
     }),
   ]
 
-  constructor(
-    public domainApi: SystemDomainApi,
-    public formService: FormService,
-  ) {
+  constructor(public domainApi: SystemDomainApi, public formService: FormService) {
     super()
     this.columns = this.tableColumns
   }
@@ -42,13 +38,16 @@ export class StorageService extends UiDataGridService {
   getUploadUrl() {
     const apiConfig = JSON.parse(window.localStorage.getItem('apiConfig'))
 
-    return [ apiConfig.baseUrl, apiConfig.version, 'StorageContainers', this.domain.id, 'upload' ].join('/')
+    return [apiConfig.baseUrl, apiConfig.version, 'StorageContainers', this.domain.id, 'upload'].join('/')
   }
 
   getItems() {
-    return this.domainApi.getStorageFiles(this.domain.id, this.getFilters({
-      include: [ 'contentEvents', 'contentPages', 'contentPosts', 'contentProducts'],
-    }))
+    return this.domainApi.getStorageFiles(
+      this.domain.id,
+      this.getFilters({
+        include: ['contentEvents', 'contentPages', 'contentPosts', 'contentProducts'],
+      })
+    )
   }
 
   getItemCount() {
@@ -62,10 +61,6 @@ export class StorageService extends UiDataGridService {
   deleteItem(itemId, successCb, errorCb) {
     this.domainApi
       .destroyByIdStorageFiles(this.domain.id, itemId)
-      .subscribe(
-        (success) => successCb(success),
-        (error) => errorCb(error),
-      )
+      .subscribe(success => successCb(success), error => errorCb(error))
   }
-
 }
