@@ -33,8 +33,7 @@ module.exports = function(SystemUser) {
    * Method that retrieves all the roles in the system
    * @returns {boolean}
    */
-  const getSystemRoleNames = () =>
-    Role.find().then(roles => roles.map(role => role.name))
+  const getSystemRoleNames = () => Role.find().then(roles => roles.map(role => role.name))
 
   /**
    * Find a role with a given name
@@ -43,12 +42,7 @@ module.exports = function(SystemUser) {
    */
   const findRoleByName = roleName =>
     Role.findOne({ where: { name: roleName } }).then(
-      role =>
-        role
-          ? role
-          : Promise.reject(
-              new Error(`Unable to find role with name ${roleName}`)
-            )
+      role => (role ? role : Promise.reject(new Error(`Unable to find role with name ${roleName}`)))
     )
 
   /**
@@ -60,11 +54,7 @@ module.exports = function(SystemUser) {
   const hasRole = (userId, roleId) =>
     findUserRoleMapping(userId, roleId)
       .then(roleMapping => (roleMapping ? roleMapping.id : false))
-      .catch(err =>
-        Promise.reject(
-          `Error getting role ${roleId} assignment from user ${userId}. ${err.message}`
-        )
-      )
+      .catch(err => Promise.reject(`Error getting role ${roleId} assignment from user ${userId}. ${err.message}`))
 
   /**
    * Add a role to a user
@@ -74,14 +64,8 @@ module.exports = function(SystemUser) {
    */
   const addUserRole = (userId, roleId) =>
     hasRole(userId, roleId)
-      .then(roleMappingId =>
-        upsertUserRoleMapping(roleMappingId, userId, roleId)
-      )
-      .catch(err =>
-        Promise.reject(
-          `Error adding role ${roleId} to user ${userId}. ${err.message}`
-        )
-      )
+      .then(roleMappingId => upsertUserRoleMapping(roleMappingId, userId, roleId))
+      .catch(err => Promise.reject(`Error adding role ${roleId} to user ${userId}. ${err.message}`))
 
   /**
    * Remove a role from a user
@@ -92,11 +76,7 @@ module.exports = function(SystemUser) {
   const removeUserRole = (userId, roleId) =>
     hasRole(userId, roleId)
       .then(() => removeUserRoleMapping(userId, roleId))
-      .catch(err =>
-        Promise.reject(
-          `Error removing role ${roleId} from user ${userId}. ${err.message}`
-        )
-      )
+      .catch(err => Promise.reject(`Error removing role ${roleId} from user ${userId}. ${err.message}`))
 
   /**
    * Add a role to the current user
@@ -113,9 +93,7 @@ module.exports = function(SystemUser) {
    * @returns {Boolean} True if successful
    */
   SystemUser.prototype.removeRole = function removeRole(roleName) {
-    return findRoleByName(roleName).then(role =>
-      removeUserRole(this.id, role.id)
-    )
+    return findRoleByName(roleName).then(role => removeUserRole(this.id, role.id))
   }
 
   /**
@@ -142,9 +120,7 @@ module.exports = function(SystemUser) {
    */
   SystemUser.prototype.info = function info() {
     return Promise.all([getSystemRoleNames(), this.getUserRoleNames()])
-      .then(([systemRoles, userRoles]) =>
-        getRoleAssignment(systemRoles, userRoles)
-      )
+      .then(([systemRoles, userRoles]) => getRoleAssignment(systemRoles, userRoles))
       .then(roles => ({ user: this, roles }))
   }
 }

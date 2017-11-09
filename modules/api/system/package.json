@@ -16,12 +16,8 @@
   },
   "colmena": {
     "module": {
-      "modelSources": [
-        "common/models"
-      ],
-      "mixinSources": [
-        "common/mixins"
-      ],
+      "modelSources": ["common/models"],
+      "mixinSources": ["common/mixins"],
       "models": {
         "System": {
           "dataSource": false

@@ -5,8 +5,7 @@ const log = require('@colmena/logger')
 
 module.exports = function(SystemUser) {
   const isRegistrationEnabled = () =>
-    config.has('settings.registrationEnabled') &&
-    config.get('settings.registrationEnabled') !== false
+    config.has('settings.registrationEnabled') && config.get('settings.registrationEnabled') !== false
 
   const setCreateAcl = enabled =>
     SystemUser.settings.acls.push({

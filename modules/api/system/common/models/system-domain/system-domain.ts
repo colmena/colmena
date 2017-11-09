@@ -27,14 +27,7 @@ module.exports = function(SystemDomain) {
     }
   })
 
-  SystemDomain.prototype.importFileByUrl = function importFileByUrl(
-    url,
-    fileName
-  ) {
-    return SystemDomain.app.models.StorageContainer.importUrl(
-      url,
-      this.id,
-      fileName
-    )
+  SystemDomain.prototype.importFileByUrl = function importFileByUrl(url, fileName) {
+    return SystemDomain.app.models.StorageContainer.importUrl(url, this.id, fileName)
   }
 }

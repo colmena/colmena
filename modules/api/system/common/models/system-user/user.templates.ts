@@ -9,9 +9,7 @@ module.exports = function modelFnProduct(UserModel) {
   }
 
   UserModel._templates = () => ({
-    passwordResetHtml: params =>
-      templateHelper.parse(getTemplatePath('password-reset.html'), params),
-    passwordResetText: params =>
-      templateHelper.parse(getTemplatePath('password-reset.txt'), params),
+    passwordResetHtml: params => templateHelper.parse(getTemplatePath('password-reset.html'), params),
+    passwordResetText: params => templateHelper.parse(getTemplatePath('password-reset.txt'), params),
   })
 }

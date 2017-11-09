@@ -35,9 +35,7 @@ module.exports = function userPasswordReset(User) {
         // This is the access token we will send to the user
         const accessToken = ctx.accessToken.id
         // This is the frontend URL that has the password reset dialog
-        const baseUrl =
-          config.get('admin.url').replace(/\/$/, '') +
-          config.get('admin.recoverPath')
+        const baseUrl = config.get('admin.url').replace(/\/$/, '') + config.get('admin.recoverPath')
         const resetPasswordUrl = `${baseUrl}?token=${accessToken}`
 
         // These variables are passed into the password reset mails
@@ -93,11 +91,7 @@ module.exports = function userPasswordReset(User) {
     }
 
     // Verify passwords match
-    if (
-      !req.body.password ||
-      !req.body.verify ||
-      req.body.password !== req.body.verify
-    ) {
+    if (!req.body.password || !req.body.verify || req.body.password !== req.body.verify) {
       const err = new Error('Passwords do not match')
 
       err.statusCode = 401
@@ -125,8 +119,8 @@ module.exports = function userPasswordReset(User) {
     })
   }
 
-  User.afterRemote('setPassword', function (ctx, inst, next) {
+  User.afterRemote('setPassword', function(ctx, inst, next) {
     // Invalidate the token after password reset
     User.logout(ctx.req.accessToken.id, next)
-  });
+  })
 }

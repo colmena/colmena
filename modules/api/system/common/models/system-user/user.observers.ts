@@ -16,5 +16,4 @@ module.exports = function(SystemUser) {
     }
     next()
   })
-
 }

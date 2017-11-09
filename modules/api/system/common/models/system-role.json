@@ -15,11 +15,11 @@
     },
     "description": "string",
     "created": {
-      "type":"date",
+      "type": "date",
       "defaultFn": "now"
     },
     "modified": {
-      "type":"date",
+      "type": "date",
       "defaultFn": "now"
     }
   },
