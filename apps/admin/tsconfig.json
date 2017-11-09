@@ -7,18 +7,13 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [
-      "es2016",
-      "dom"
-    ],
+    "lib": ["es2016", "dom"],
     "paths": {
       "@angular/*": ["node_modules/@angular/*"],
       "@colmena/*": ["node_modules/@colmena/*"],
       "@ngrx/*": ["node_modules/@ngrx/*"],
       "rxjs/*": ["node_modules/rxjs/*"]
     },
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types"]
   }
 }

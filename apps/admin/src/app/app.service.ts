@@ -7,7 +7,6 @@ import { LogService } from './log.service'
 
 @Injectable()
 export class AppService {
-
   public dispatchDomain(domain) {
     this.store.dispatch({ type: 'APP_DOMAIN_ADD', payload: domain })
   }
@@ -37,17 +36,16 @@ export class AppService {
     private store: Store<any>
   ) {
     if (window.localStorage.getItem('domain')) {
-      this.store.dispatch({ type: 'APP_DOMAIN_SET', payload: JSON.parse(window.localStorage.getItem('domain'))})
+      this.store.dispatch({ type: 'APP_DOMAIN_SET', payload: JSON.parse(window.localStorage.getItem('domain')) })
     } else {
       this.store.dispatch({ type: 'APP_DOMAIN_SET_DEFAULT' })
     }
     if (window.localStorage.getItem('token')) {
       this.store.dispatch({ type: 'AUTH_CHECK_TOKEN' })
-      this.store.dispatch({ type: 'AUTH_SET_TOKEN', payload: JSON.parse(window.localStorage.getItem('token'))})
+      this.store.dispatch({ type: 'AUTH_SET_TOKEN', payload: JSON.parse(window.localStorage.getItem('token')) })
     }
     if (window.localStorage.getItem('roles')) {
-      this.store.dispatch({ type: 'AUTH_SET_ROLES', payload: JSON.parse(window.localStorage.getItem('roles'))})
+      this.store.dispatch({ type: 'AUTH_SET_ROLES', payload: JSON.parse(window.localStorage.getItem('roles')) })
     }
   }
-
 }

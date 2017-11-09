@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
 const routes: Routes = [
-// { path: '', loadChildren: '@colmena/module-admin-starter#StarterModule' },
+  // { path: '', loadChildren: '@colmena/module-admin-starter#StarterModule' },
 ]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ExtensionsRoutingModule { }
+export class ExtensionsRoutingModule {}

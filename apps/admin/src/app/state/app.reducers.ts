@@ -18,12 +18,11 @@ const initialState: any = {
   settings: {},
   contentDashboard: [],
   systemDashboard: [],
-  modules: {}
+  modules: {},
 }
 
 export function reducer(state = initialState, action: Action): State {
   switch (action.type) {
-
     case 'APP_LOAD_MODULE':
       const modules = state.modules
       modules[action.payload.moduleName] = action.payload.moduleConfig
@@ -34,7 +33,7 @@ export function reducer(state = initialState, action: Action): State {
 
     case 'APP_DOMAIN_ADD':
       return Object.assign({}, state, {
-        domains: [...state.domains, action.payload ],
+        domains: [...state.domains, action.payload],
         activeDomain: state.activeDomain || action.payload,
       })
 
@@ -50,12 +49,12 @@ export function reducer(state = initialState, action: Action): State {
 
     case 'APP_CONTENT_DASHBOARD':
       return Object.assign({}, state, {
-        contentDashboard: sortBy([...state.contentDashboard, action.payload], ['weight'])
+        contentDashboard: sortBy([...state.contentDashboard, action.payload], ['weight']),
       })
 
     case 'APP_SYSTEM_DASHBOARD':
       return Object.assign({}, state, {
-        systemDashboard: sortBy([...state.systemDashboard, action.payload], ['weight'])
+        systemDashboard: sortBy([...state.systemDashboard, action.payload], ['weight']),
       })
 
     default:

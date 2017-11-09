@@ -7,4 +7,4 @@ import { Component } from '@angular/core'
     <ui-templates></ui-templates>
   `,
 })
-export class AppComponent { }
+export class AppComponent {}

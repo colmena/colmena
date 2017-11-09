@@ -11,13 +11,18 @@ import { RouterComponent } from './components/router/router.component'
 const routes: Routes = [
   { path: '', redirectTo: 'router', pathMatch: 'full' },
   {
-    path: '', component: SimpleLayoutComponent, children: [
-    { path: '', loadChildren: '@colmena/module-admin-auth#AuthModule' },
-    { path: 'router', component: RouterComponent },
-    { path: 'not-found', component: NotFoundComponent },
-  ]
-  }, {
-    path: '', component: FullLayoutComponent, children: [
+    path: '',
+    component: SimpleLayoutComponent,
+    children: [
+      { path: '', loadChildren: '@colmena/module-admin-auth#AuthModule' },
+      { path: 'router', component: RouterComponent },
+      { path: 'not-found', component: NotFoundComponent },
+    ],
+  },
+  {
+    path: '',
+    component: FullLayoutComponent,
+    children: [
       { path: '', loadChildren: './extensions-routing.module#ExtensionsRoutingModule' },
       { path: 'content', loadChildren: '@colmena/module-admin-content#ContentModule' },
       { path: 'core', loadChildren: '@colmena/module-admin-core#CoreModule' },
@@ -26,13 +31,13 @@ const routes: Routes = [
       { path: 'development', loadChildren: '@colmena/module-admin-dev#DevModule' },
       { path: 'storage', loadChildren: '@colmena/module-admin-storage#StorageModule' },
       { path: 'system', loadChildren: '@colmena/module-admin-system#SystemModule' },
-    ]
+    ],
   },
   { path: '**', redirectTo: 'not-found' },
 ]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { enableTracing: false, useHash: true })],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

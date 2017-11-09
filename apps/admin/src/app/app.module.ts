@@ -44,21 +44,11 @@ import { RouterComponent } from './components/router/router.component'
 
     ExtensionsModule,
   ],
-  providers: [
-    AppService,
-    LogService,
-  ],
-  declarations: [
-    AppComponent,
-    NotFoundComponent,
-    RouterComponent,
-  ],
-  bootstrap: [
-    AppComponent,
-  ],
+  providers: [AppService, LogService],
+  declarations: [AppComponent, NotFoundComponent, RouterComponent],
+  bootstrap: [AppComponent],
 })
 export class AppModule {
-
   configureLoopBack() {
     const apiConfig = JSON.parse(window.localStorage.getItem('apiConfig'))
 
@@ -67,10 +57,7 @@ export class AppModule {
     this.logService.info(`Configure LoopBack: ${apiConfig.baseUrl}/${apiConfig.version}`)
   }
 
-  constructor(
-    private appService: AppService,
-    private logService: LogService,
-  ) {
+  constructor(private appService: AppService, private logService: LogService) {
     this.configureLoopBack()
     this.appService.fetchSettings()
     this.appService.fetchDomains()
