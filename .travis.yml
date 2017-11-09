@@ -7,6 +7,7 @@ node_js:
 install:
   - npm install -g @angular/cli lerna loopback-cli
   - npm install
+  - lerna bootstrap
 script:
   - npm run build
 cache:

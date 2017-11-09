@@ -1,0 +1,16 @@
+/* eslint-disable */
+const log = require('@colmena/logger')
+
+log.white(`--------------------------------------------------------------------------------------`)
+log.white(`| Colmena is Free and Open Source Software licensed under the MIT License            |`)
+log.white(`|                                                                                    |`)
+log.white(`| If you like Colmena and would like to support its development please consider      |`)
+log.white(`| becoming a Sponsor or a Backer of our project via our OpenCollective page          |`)
+log.white(`|                                                                                    |`)
+log.white(`| https://opencollective.com/colmena                                                 |`)
+log.white(`| https://opencollective.com/colmena/donate                                          |`)
+log.white(`--------------------------------------------------------------------------------------`)
+log.magenta.b(`--------------------------------------------------------------------------------------`)
+log.magenta.b(`| [!] Colmena's dependencies are installed.                                          |`)
+log.magenta.b(`| [!] Please run 'lerna bootstrap' to link the local dependencies                    |`)
+log.magenta.b(`--------------------------------------------------------------------------------------`)

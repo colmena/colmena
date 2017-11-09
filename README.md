@@ -97,6 +97,7 @@ Clone the repository and install the dependencies:
 git clone https://github.com/colmena/colmena
 cd colmena
 npm install
+lerna bootstrap
 ```
 
 ## Development
@@ -140,7 +141,7 @@ npm run dev:admin
 During development it can be useful to bring the project back to a clean state. To do this run:
 
 ```bash
-npm run clean && npm install
+npm run clean && npm install && lerna bootstrap
 ```
 
 ### Configuring the development setup

@@ -1,0 +1,18 @@
+{
+  "verbose": false,
+  "execMap": {
+    "js": "ts-node --fast --cache-directory ./.ts-cache",
+    "ts": "ts-node --fast --cache-directory ./.ts-cache"
+  },
+  "watch": [
+    "apps/api/common/",
+    "apps/api/lib/",
+    "apps/api/server/",
+    "extensions/",
+    "modules/api"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js json ts"
+}

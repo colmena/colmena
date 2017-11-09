@@ -5,4 +5,5 @@ dependencies:
   pre:
     - npm install -g @angular/cli lerna loopback-cli npm@5.x.x
   post:
+    - lerna bootstrap
     - npm run build
