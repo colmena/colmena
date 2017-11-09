@@ -147,10 +147,10 @@ npm run clean && npm install
 
 #### local.yaml
 
-You can configure the API in development mode by creating a `local.yaml` file in `apps/api/config`. The contents of this
+You can configure the API in development mode by creating a `local.yaml` file in `config`. The contents of this
 file is not tracked by git so it only lives on your local machine.
 
-To start with the default settings copy `apps/api/config/default.yaml` to `apps/api/config/local.yaml`.
+To start with the default settings copy `config/default.yaml` to `config/local.yaml`.
 
 #### Sample data
 
