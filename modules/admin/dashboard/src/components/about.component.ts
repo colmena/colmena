@@ -101,7 +101,8 @@ import { Component } from '@angular/core'
       </div>
     </div>
   `,
-  styles: [ `
+  styles: [
+    `
     .branding ui-logo {
       margin: 30px 0;
       display: block;
@@ -142,19 +143,22 @@ import { Component } from '@angular/core'
     .legal {
       font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
-  ` ],
+  `,
+  ],
 })
 export class AboutComponent {
-
-  public giants = [ {
-    name: 'LoopBack',
-    link: 'https://loopback.io',
-  }, {
-    name: 'Angular',
-    link: 'https://angular.io',
-  }, {
-    name: 'CoreUI',
-    link: 'https://coreui.io',
-  }, ]
-
+  public giants = [
+    {
+      name: 'LoopBack',
+      link: 'https://loopback.io',
+    },
+    {
+      name: 'Angular',
+      link: 'https://angular.io',
+    },
+    {
+      name: 'CoreUI',
+      link: 'https://coreui.io',
+    },
+  ]
 }

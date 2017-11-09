@@ -14,21 +14,8 @@ import { PasswordComponent } from './components/password.component'
 import { ProfileComponent } from './components/profile.component'
 
 @NgModule({
-  imports: [
-    ColmenaUiModule,
-    DashboardRoutingModule,
-    ContentModule,
-    SystemModule,
-  ],
-  declarations: [
-    AboutComponent,
-    DashboardComponent,
-    IndexComponent,
-    PasswordComponent,
-    ProfileComponent,
-  ],
-  providers: [
-    DashboardService ,
-  ]
+  imports: [ColmenaUiModule, DashboardRoutingModule, ContentModule, SystemModule],
+  declarations: [AboutComponent, DashboardComponent, IndexComponent, PasswordComponent, ProfileComponent],
+  providers: [DashboardService],
 })
-export class DashboardModule { }
+export class DashboardModule {}

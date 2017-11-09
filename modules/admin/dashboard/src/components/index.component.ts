@@ -10,7 +10,6 @@ import { UiTabLink } from '@colmena/admin-ui'
   `,
 })
 export class IndexComponent {
-
   public tabs: UiTabLink[] = [
     { icon: 'icon-grid', title: 'Overview', link: 'index' },
     { icon: 'icon-user', title: 'Profile', link: 'profile' },

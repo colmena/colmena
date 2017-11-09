@@ -22,18 +22,12 @@ export class PasswordComponent implements OnInit {
   public item: any
   public config: any = {}
 
-  constructor(
-    private store: Store<any>,
-    private ui: UiService,
-    private service: DashboardService,
-  ) { }
+  constructor(private store: Store<any>, private ui: UiService, private service: DashboardService) {}
 
   ngOnInit() {
     this.config = this.service.formConfigPassword()
-    this.store.select('auth')
-      .subscribe((res: any) => this.item = get(res, 'currentUser.user'))
+    this.store.select('auth').subscribe((res: any) => (this.item = get(res, 'currentUser.user')))
   }
-
 
   handleAction(event) {
     switch (event.action) {
@@ -46,10 +40,11 @@ export class PasswordComponent implements OnInit {
               body: `Your password has been changed successfully`,
             })
           },
-          err => this.ui.alerts.notifyError({
-            title: 'Change Password Fail',
-            body: err.message,
-          })
+          err =>
+            this.ui.alerts.notifyError({
+              title: 'Change Password Fail',
+              body: err.message,
+            })
         )
       default:
         return console.log('Unknown Event Action', event)

@@ -6,11 +6,7 @@ import { FormService } from '@colmena/admin-ui'
 
 @Injectable()
 export class DashboardService {
-
-  constructor(
-    private api: SystemUserApi,
-    private formService: FormService,
-  ) { }
+  constructor(private api: SystemUserApi, private formService: FormService) {}
 
   public formConfigPassword() {
     return {

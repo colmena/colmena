@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { Store } from '@ngrx/store'
 import { get } from 'lodash'
 import { UiService } from '@colmena/admin-ui'
-import { DashboardService } from '../dashboard.service';
+import { DashboardService } from '../dashboard.service'
 
 @Component({
   selector: 'app-profile',
@@ -29,16 +29,11 @@ export class ProfileComponent implements OnInit {
   public item: any
   public config: any = {}
 
-  constructor(
-    private store: Store<any>,
-    private ui: UiService,
-    private service: DashboardService,
-  ) { }
+  constructor(private store: Store<any>, private ui: UiService, private service: DashboardService) {}
 
   ngOnInit() {
     this.config = this.service.formConfigProfile()
-    this.store.select('auth')
-      .subscribe((res: any) => this.item = get(res, 'currentUser.user'))
+    this.store.select('auth').subscribe((res: any) => (this.item = get(res, 'currentUser.user')))
   }
 
   handleAction(event) {
@@ -57,10 +52,11 @@ export class ProfileComponent implements OnInit {
               body: `Your profile has been ${event.item.id ? 'created' : 'updated '} successfully'`,
             })
           },
-          err => this.ui.alerts.notifyError({
-            title: 'Update Profile Fail',
-            body: err.message,
-          })
+          err =>
+            this.ui.alerts.notifyError({
+              title: 'Update Profile Fail',
+              body: err.message,
+            })
         )
       default:
         return console.log('Unknown Event Action:', event)
