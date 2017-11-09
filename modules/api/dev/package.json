@@ -9,17 +9,13 @@
   "url": "https://github.com/colmena/colmena",
   "colmena": {
     "module": {
-      "modelSources": [
-        "common/models"
-      ],
+      "modelSources": ["common/models"],
       "models": {
         "Dev": {
           "dataSource": "db"
         }
       },
-      "sampleData": [
-        "sample-data/sample-data.json"
-      ]
+      "sampleData": ["sample-data/sample-data.json"]
     }
   }
 }
