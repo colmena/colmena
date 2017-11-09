@@ -16,15 +16,7 @@
   "bugs": {
     "url": "https://github.com/colmena/colmena/issues"
   },
-  "keywords": [
-    "colmena",
-    "cms",
-    "mobile",
-    "backend",
-    "loopback",
-    "angular",
-    "admin"
-  ],
+  "keywords": ["colmena", "cms", "mobile", "backend", "loopback", "angular", "admin"],
   "scripts": {
     "clean": "npx rimraf ./client",
     "dev": "nodemon",

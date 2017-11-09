@@ -24,10 +24,6 @@ module.exports = (app, cb) => {
       system: true,
     })
     .then(() => app.models.SystemSetting.create(systemSettings))
-    .then(res =>
-      res.forEach(item =>
-        log.cyan.b(`[system-settings] Set ${item.key} = ${item.value}`)
-      )
-    )
+    .then(res => res.forEach(item => log.cyan.b(`[system-settings] Set ${item.key} = ${item.value}`)))
     .asCallback(cb)
 }

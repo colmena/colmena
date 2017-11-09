@@ -13,9 +13,7 @@
     },
     "helmet#xssFilter": {},
     "helmet#frameguard": {
-      "params": [
-        "deny"
-      ]
+      "params": ["deny"]
     },
     "helmet#hsts": {
       "params": {
@@ -41,14 +39,10 @@
   "parse": {},
   "routes": {
     "loopback#rest": {
-      "paths": [
-        "${restApiRoot}"
-      ]
+      "paths": ["${restApiRoot}"]
     },
     "@colmena/api-helpers/src/publish-config.js": {
-      "paths": [
-        "/config.js"
-      ]
+      "paths": ["/config.js"]
     }
   },
   "files": {

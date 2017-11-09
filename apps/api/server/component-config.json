@@ -24,9 +24,7 @@
   },
   "loopback-component-explorer": {
     "mountPath": "/explorer",
-    "uiDirs": [
-      "node_modules/@colmena/api-explorer-style"
-    ]
+    "uiDirs": ["node_modules/@colmena/api-explorer-style"]
   },
   "loopback-component-meta": {
     "enableRest": true,
