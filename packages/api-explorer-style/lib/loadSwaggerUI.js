@@ -46,7 +46,9 @@ $(function() {
         if (window.localStorage) {
           var key = window.localStorage.getItem(lsKey)
           if (key) {
-            $('#input_accessToken').val(key).submit()
+            $('#input_accessToken')
+              .val(key)
+              .submit()
           }
         }
       },
@@ -59,9 +61,7 @@ $(function() {
       apisSorter: 'alpha',
       operationsSorter: function(a, b) {
         var pathCompare = a.path.localeCompare(b.path)
-        return pathCompare !== 0
-          ? pathCompare
-          : methodOrder.indexOf(a.method) - methodOrder.indexOf(b.method)
+        return pathCompare !== 0 ? pathCompare : methodOrder.indexOf(a.method) - methodOrder.indexOf(b.method)
       },
     })
     /* eslint-disable camelcase */
@@ -80,14 +80,12 @@ $(function() {
     log('key: ' + key)
     if (key && key.trim() !== '') {
       log('added accessToken ' + key)
-      var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization(
-        'access_token',
-        key,
-        'query'
-      )
+      var apiKeyAuth = new SwaggerClient.ApiKeyAuthorization('access_token', key, 'query')
       window.swaggerUi.api.clientAuthorizations.add('key', apiKeyAuth)
       accessToken = key
-      $('.accessTokenDisplay').text('Token Set.').addClass('set')
+      $('.accessTokenDisplay')
+        .text('Token Set.')
+        .addClass('set')
       $('.accessTokenDisplay').attr('data-tooltip', 'Current Token: ' + key)
 
       // Save this token to localStorage if we can to make it persist on refresh.
@@ -98,7 +96,9 @@ $(function() {
       // If submitted with an empty token, remove the current token. Can be
       // useful to intentionally remove authorization.
       log('removed accessToken.')
-      $('.accessTokenDisplay').text('Token Not Set.').removeClass('set')
+      $('.accessTokenDisplay')
+        .text('Token Not Set.')
+        .removeClass('set')
       $('.accessTokenDisplay').removeAttr('data-tooltip')
       if (window.swaggerUi) {
         window.swaggerUi.api.clientAuthorizations.remove('key')

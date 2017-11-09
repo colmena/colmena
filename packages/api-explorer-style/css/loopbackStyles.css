@@ -23,7 +23,7 @@ body {
 }
 
 body #header {
-  background-color: #243447!important;
+  background-color: #243447 !important;
   position: fixed;
   width: 100%;
   top: 0;
@@ -39,9 +39,8 @@ body #header form#api_selector .input a#explore {
   background-color: #1b95e0 !important;
 }
 
-
 body #header form#api_selector .input a#explore:hover {
-  background-color: #40C4FF !important;
+  background-color: #40c4ff !important;
 }
 
 /* HTTP GET */
@@ -51,7 +50,17 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
   border: 1px solid #bfe1e8 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.get div.heading h3 span.http_method a {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.get
+  div.heading
+  h3
+  span.http_method
+  a {
   background-color: #0085a1 !important;
 }
 
@@ -68,7 +77,16 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
   color: #0085a1 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.get div.content form input[type='text'].error {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.get
+  div.content
+  form
+  input[type='text'].error {
   outline: 2px solid #cc0000 !important;
 }
 
@@ -87,7 +105,17 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
   border: 1px solid #e3d8f3 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.post div.heading h3 span.http_method a {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.post
+  div.heading
+  h3
+  span.http_method
+  a {
   background-color: #9063cd !important;
 }
 
@@ -109,11 +137,29 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
   color: #9063cd !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.post div.content form input[type='text'].error {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.post
+  div.content
+  form
+  input[type='text'].error {
   outline: 2px solid #cc0000 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.post div.content div.sandbox_header a {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.post
+  div.content
+  div.sandbox_header
+  a {
   color: #bca1e1 !important;
 }
 
@@ -128,7 +174,17 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
   border: 1px solid #d1c2d6 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.put div.heading h3 span.http_method a {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.put
+  div.heading
+  h3
+  span.http_method
+  a {
   background-color: #470a59;
 }
 
@@ -150,7 +206,16 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
   color: #470a59 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.put div.content form input[type='text'].error {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.put
+  div.content
+  form
+  input[type='text'].error {
   outline: 2px solid #cc0000 !important;
 }
 
@@ -169,7 +234,17 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
   border: 1px solid #bff0f5 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.patch div.heading h3 span.http_method a {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.patch
+  div.heading
+  h3
+  span.http_method
+  a {
   background-color: #00c1d5 !important;
 }
 
@@ -191,11 +266,29 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
   color: #00c1d5 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.patch div.content form input[type='text'].error {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.patch
+  div.content
+  form
+  input[type='text'].error {
   outline: 2px solid #cc0000 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.patch div.content div.sandbox_header a {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.patch
+  div.content
+  div.sandbox_header
+  a {
   color: #66dae6 !important;
 }
 
@@ -210,7 +303,17 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
   border: 1px solid #ffdfd0 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.head div.heading h3 span.http_method a {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.head
+  div.heading
+  h3
+  span.http_method
+  a {
   background-color: #ff7f41 !important;
 }
 
@@ -232,11 +335,29 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
   color: #ff7f41 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.head div.content form input[type='text'].error {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.head
+  div.content
+  form
+  input[type='text'].error {
   outline: 2px solid #cc0000 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.head div.content div.sandbox_header a {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.head
+  div.content
+  div.sandbox_header
+  a {
   color: #ffb28d !important;
 }
 
@@ -251,7 +372,17 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
   border: 1px solid #f4d1c3 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.delete div.heading h3 span.http_method a {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.delete
+  div.heading
+  h3
+  span.http_method
+  a {
   background-color: #d4470f !important;
 }
 
@@ -273,11 +404,29 @@ body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operatio
   color: #d4470f !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.delete div.content form input[type='text'].error {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.delete
+  div.content
+  form
+  input[type='text'].error {
   outline: 2px solid #cc0000 !important;
 }
 
-body ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.delete div.content div.sandbox_header a {
+body
+  ul#resources
+  li.resource
+  ul.endpoints
+  li.endpoint
+  ul.operations
+  li.operation.delete
+  div.content
+  div.sandbox_header
+  a {
   color: #e5916f !important;
 }
 
@@ -292,7 +441,9 @@ li.operation.delete .content > .content-type > div > label {
   margin-right: 10px;
 }
 .accessTokenDisplay.set {
-  border-bottom: 1px dotted #333; position: relative; cursor: pointer;
+  border-bottom: 1px dotted #333;
+  position: relative;
+  cursor: pointer;
 }
 .accessTokenDisplay.set:hover:after {
   content: attr(data-tooltip);
@@ -301,7 +452,7 @@ li.operation.delete .content > .content-type > div > label {
   font-size: 12px;
   background: rgba(0, 0, 0, 0.85);
   padding: 3px 7px;
-  color: #FFF;
+  color: #fff;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -310,7 +461,8 @@ li.operation.delete .content > .content-type > div > label {
 }
 
 /* JSON syntax highlighting */
-.json, .json .attribute {
+.json,
+.json .attribute {
   color: black;
 }
 
@@ -318,20 +470,22 @@ li.operation.delete .content > .content-type > div > label {
   color: #800;
 }
 
-.json .value .number, .json .value .literal {
+.json .value .number,
+.json .value .literal {
   color: #080;
 }
 
 .contentWell {
-    padding-left: 30px;
-    padding-right: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 /*
 FIXME: Separate the overrides from the rest of the styles, rather than override screen.css entirely.
 */
 /* Improve spacing when the browser window is small */
-#message-bar, #swagger-ui-container {
+#message-bar,
+#swagger-ui-container {
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -341,7 +495,7 @@ FIXME: Separate the overrides from the rest of the styles, rather than override 
 }
 .swagger-section #api_selector input {
   padding: 2px 4px;
-  border: 1px solid #546E7A;
+  border: 1px solid #546e7a;
 }
 .swagger-section #header {
   padding: 18px 0px;
@@ -363,13 +517,13 @@ FIXME: Separate the overrides from the rest of the styles, rather than override 
   color: #1b95e0;
 }
 
-.options li a.toggleEndpointList  {
+.options li a.toggleEndpointList {
   /*border: 1px solid red;*/
   content: 'a';
 }
 #message-bar {
   padding-top: 5px;
-  color: #243447!important;
+  color: #243447 !important;
 }
 #swagger-ui-container {
   background: white;
