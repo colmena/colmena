@@ -1,11 +1,5 @@
 {
   "lerna": "2.0.0-rc.5",
-  "packages": [
-    "./",
-    "apps/*",
-    "extensions/**/*",
-    "modules/**/*",
-    "packages/*"
-  ],
+  "packages": ["./", "apps/*", "extensions/**/*", "modules/**/*", "packages/*"],
   "version": "0.2.0"
 }
