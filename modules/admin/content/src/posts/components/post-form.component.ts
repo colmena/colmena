@@ -21,11 +21,7 @@ export class PostFormComponent implements OnInit {
   public formConfig: any = {}
   public item: any
 
-  constructor(
-    private service: PostsService,
-    private ui: UiService,
-    private router: Router
-  ) {}
+  constructor(private service: PostsService, private ui: UiService, private router: Router) {}
 
   ngOnInit() {
     this.item = this.service.selectedPost || new ContentPost()
@@ -41,13 +37,14 @@ export class PostFormComponent implements OnInit {
             () => {
               this.ui.alerts.notifySuccess({
                 title: 'Save Post Success',
-                body: `<u>${event.item.name}</u> has been saved successfully`
+                body: `<u>${event.item.name}</u> has been saved successfully`,
               })
             },
-            err => this.ui.alerts.notifyError({
-              title: 'Save Post Fail',
-              body: err.message,
-            })
+            err =>
+              this.ui.alerts.notifyError({
+                title: 'Save Post Fail',
+                body: err.message,
+              })
           )
           .add(() => this.handleAction({ action: 'cancel' }))
       case 'cancel':

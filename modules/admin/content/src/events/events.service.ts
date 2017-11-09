@@ -12,15 +12,9 @@ export class EventsService extends UiDataGridService {
   public files: any[] = []
   public selectedEvent: ContentEvent
 
-  public tableColumns = [
-    { field: 'name', label: 'Name', action: 'edit' },
-    { field: 'location', label: 'Location' },
-  ]
+  public tableColumns = [{ field: 'name', label: 'Name', action: 'edit' }, { field: 'location', label: 'Location' }]
 
-  constructor(
-    private domainApi: SystemDomainApi,
-    private formService: FormService
-  ) {
+  constructor(private domainApi: SystemDomainApi, private formService: FormService) {
     super()
     this.columns = this.tableColumns
   }
@@ -65,16 +59,11 @@ export class EventsService extends UiDataGridService {
   getFiles() {
     this.domainApi
       .getStorageFiles(this.domain.id)
-      .subscribe(files =>
-        files.map(file => this.files.push({ value: file.id, label: file.name }))
-      )
+      .subscribe(files => files.map(file => this.files.push({ value: file.id, label: file.name })))
   }
 
   getItems(): Observable<ContentEvent[]> {
-    return this.domainApi.getContentEvents(
-      this.domain.id,
-      this.getFilters({ include: ['storageFile'] })
-    )
+    return this.domainApi.getContentEvents(this.domain.id, this.getFilters({ include: ['storageFile'] }))
   }
 
   getItem(id): Observable<ContentEvent> {
@@ -82,10 +71,7 @@ export class EventsService extends UiDataGridService {
   }
 
   getItemCount(): Observable<any> {
-    return this.domainApi.countContentEvents(
-      this.domain.id,
-      this.getWhereFilters()
-    )
+    return this.domainApi.countContentEvents(this.domain.id, this.getWhereFilters())
   }
 
   upsertItem(item, successCb, errorCb): Subscription {
@@ -96,20 +82,14 @@ export class EventsService extends UiDataGridService {
   }
 
   upsertEvent(item, successCb, errorCb): Subscription {
-    return this.domainApi
-      .updateByIdContentEvents(this.domain.id, item.id, item)
-      .subscribe(successCb, errorCb)
+    return this.domainApi.updateByIdContentEvents(this.domain.id, item.id, item).subscribe(successCb, errorCb)
   }
 
   createEvent(item, successCb, errorCb): Subscription {
-    return this.domainApi
-      .createContentEvents(this.domain.id, item)
-      .subscribe(successCb, errorCb)
+    return this.domainApi.createContentEvents(this.domain.id, item).subscribe(successCb, errorCb)
   }
 
   deleteItem(item, successCb, errorCb): Subscription {
-    return this.domainApi
-      .destroyByIdContentEvents(this.domain.id, item.id)
-      .subscribe(successCb, errorCb)
+    return this.domainApi.destroyByIdContentEvents(this.domain.id, item.id).subscribe(successCb, errorCb)
   }
 }

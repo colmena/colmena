@@ -21,11 +21,7 @@ export class PageFormComponent implements OnInit {
   public formConfig: any = {}
   public item: any
 
-  constructor(
-    private service: PagesService,
-    private ui: UiService,
-    private router: Router
-  ) {}
+  constructor(private service: PagesService, private ui: UiService, private router: Router) {}
 
   ngOnInit() {
     this.item = this.service.selectedPage || new ContentPage()
@@ -41,13 +37,14 @@ export class PageFormComponent implements OnInit {
             this.router.navigate(['/content/pages'])
             this.ui.alerts.notifySuccess({
               title: 'Save Page Success',
-              body: `<u>${event.item.name}</u> has been saved successfully`
+              body: `<u>${event.item.name}</u> has been saved successfully`,
             })
           },
-          err => this.ui.alerts.notifyError({
-            title: 'Save Page Fail',
-            body: err.message,
-          })
+          err =>
+            this.ui.alerts.notifyError({
+              title: 'Save Page Fail',
+              body: err.message,
+            })
         )
       case 'cancel':
         return this.router.navigate(['/content/pages'])

@@ -14,9 +14,7 @@ import { PagesService } from '../pages.service'
   `,
 })
 export class PageDetailComponent implements OnInit {
-  public tabs: UiTabLink[] = [
-    { icon: 'fa fa-pencil', title: 'Edit', link: 'edit' },
-  ]
+  public tabs: UiTabLink[] = [{ icon: 'fa fa-pencil', title: 'Edit', link: 'edit' }]
 
   public item: any
 

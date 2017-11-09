@@ -14,9 +14,7 @@ import { PostsService } from '../posts.service'
   `,
 })
 export class PostDetailComponent implements OnInit {
-  public tabs: UiTabLink[] = [
-    { icon: 'fa fa-pencil', title: 'Edit', link: 'edit' },
-  ]
+  public tabs: UiTabLink[] = [{ icon: 'fa fa-pencil', title: 'Edit', link: 'edit' }]
 
   public item: any
 

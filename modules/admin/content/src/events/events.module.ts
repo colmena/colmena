@@ -12,19 +12,8 @@ import { EventFormComponent } from './components/event-form.component'
 import { EventListComponent } from './components/event-list.component'
 
 @NgModule({
-  imports: [
-    ColmenaUiModule,
-    EventsRoutingModule,
-  ],
-  declarations: [
-    EventComponent,
-    EventDetailComponent,
-    EventFormComponent,
-    EventListComponent,
-  ],
-  providers: [
-    EventsService,
-    EventsResolver,
-  ],
+  imports: [ColmenaUiModule, EventsRoutingModule],
+  declarations: [EventComponent, EventDetailComponent, EventFormComponent, EventListComponent],
+  providers: [EventsService, EventsResolver],
 })
 export class EventsModule {}

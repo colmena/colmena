@@ -45,10 +45,11 @@ export class PageListComponent {
           this.service.deleteItem(
             event.item,
             () => this.grid.refreshData(),
-            err => this.ui.alerts.notifyError({
-              title: 'Error deleting item',
-              body: err.message,
-            })
+            err =>
+              this.ui.alerts.notifyError({
+                title: 'Error deleting item',
+                body: err.message,
+              })
           )
         const question = {
           title: 'Are you sure?',

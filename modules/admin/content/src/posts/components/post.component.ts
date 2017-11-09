@@ -16,7 +16,5 @@ import { Component, Input } from '@angular/core'
   `,
 })
 export class PostComponent {
-
   @Input() item: any = {}
-
 }

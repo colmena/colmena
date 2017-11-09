@@ -8,20 +8,9 @@ import { DomainResolver } from './content.resolvers'
 import { ContentRoutingModule } from './content-routing.module'
 
 @NgModule({
-  imports: [
-    ColmenaUiModule,
-    ContentRoutingModule,
-  ],
-  declarations: [
-    ContentDashboardComponent,
-  ],
-  exports: [
-    ContentDashboardComponent,
-  ],
-  providers: [
-    HasContentAccess,
-    DomainResolver,
-  ],
+  imports: [ColmenaUiModule, ContentRoutingModule],
+  declarations: [ContentDashboardComponent],
+  exports: [ContentDashboardComponent],
+  providers: [HasContentAccess, DomainResolver],
 })
-export class ContentModule {
-}
+export class ContentModule {}

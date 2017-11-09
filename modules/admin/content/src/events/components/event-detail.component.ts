@@ -14,9 +14,7 @@ import { EventsService } from '../events.service'
   `,
 })
 export class EventDetailComponent implements OnInit {
-  public tabs: UiTabLink[] = [
-    { icon: 'fa fa-pencil', title: 'Edit', link: 'edit' },
-  ]
+  public tabs: UiTabLink[] = [{ icon: 'fa fa-pencil', title: 'Edit', link: 'edit' }]
 
   public item: any
 

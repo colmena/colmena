@@ -8,11 +8,7 @@ import { UiService } from '@colmena/admin-ui'
 
 @Injectable()
 export class HasContentAccess implements CanActivate {
-
-  constructor(
-    private store: Store<any>,
-    private ui: UiService,
-  ) {}
+  constructor(private store: Store<any>, private ui: UiService) {}
 
   public canActivate(): Observable<boolean> {
     return this.store

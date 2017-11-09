@@ -7,7 +7,6 @@ import 'rxjs/add/operator/take'
 
 @Injectable()
 export class DomainResolver implements Resolve<any> {
-
   constructor(private store: Store<any>) {}
 
   resolve() {

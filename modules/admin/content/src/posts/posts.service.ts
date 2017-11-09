@@ -15,10 +15,7 @@ export class PostsService extends UiDataGridService {
 
   public tableColumns = [{ field: 'title', label: 'Title', action: 'view' }]
 
-  constructor(
-    private domainApi: SystemDomainApi,
-    private formService: FormService
-  ) {
+  constructor(private domainApi: SystemDomainApi, private formService: FormService) {
     super()
     this.columns = this.tableColumns
   }
@@ -56,16 +53,11 @@ export class PostsService extends UiDataGridService {
   getFiles() {
     this.domainApi
       .getStorageFiles(this.domain.id)
-      .subscribe(files =>
-        files.map(file => this.files.push({ value: file.id, label: file.name }))
-      )
+      .subscribe(files => files.map(file => this.files.push({ value: file.id, label: file.name })))
   }
 
   getItems(): Observable<ContentPost[]> {
-    return this.domainApi.getContentPosts(
-      this.domain.id,
-      this.getFilters({ include: ['storageFile'] })
-    )
+    return this.domainApi.getContentPosts(this.domain.id, this.getFilters({ include: ['storageFile'] }))
   }
 
   getItem(id): Observable<ContentPost> {
@@ -84,20 +76,14 @@ export class PostsService extends UiDataGridService {
   }
 
   upsertPost(item, successCb, errorCb): Subscription {
-    return this.domainApi
-      .updateByIdContentPosts(this.domain.id, item.id, item)
-      .subscribe(successCb, errorCb)
+    return this.domainApi.updateByIdContentPosts(this.domain.id, item.id, item).subscribe(successCb, errorCb)
   }
 
   createPost(item, successCb, errorCb): Subscription {
-    return this.domainApi
-      .createContentPosts(this.domain.id, item)
-      .subscribe(successCb, errorCb)
+    return this.domainApi.createContentPosts(this.domain.id, item).subscribe(successCb, errorCb)
   }
 
   deleteItem(item, successCb, errorCb): Subscription {
-    return this.domainApi
-      .destroyByIdContentPosts(this.domain.id, item.id)
-      .subscribe(successCb, errorCb)
+    return this.domainApi.destroyByIdContentPosts(this.domain.id, item.id).subscribe(successCb, errorCb)
   }
 }

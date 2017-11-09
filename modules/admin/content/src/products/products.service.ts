@@ -12,15 +12,9 @@ export class ProductsService extends UiDataGridService {
   public files: any[] = []
   public selectedProduct: ContentProduct
 
-  public tableColumns = [
-    { field: 'name', label: 'Name', action: 'edit' },
-    { field: 'location', label: 'Location' },
-  ]
+  public tableColumns = [{ field: 'name', label: 'Name', action: 'edit' }, { field: 'location', label: 'Location' }]
 
-  constructor(
-    private domainApi: SystemDomainApi,
-    private formService: FormService
-  ) {
+  constructor(private domainApi: SystemDomainApi, private formService: FormService) {
     super()
     this.columns = this.tableColumns
   }
@@ -62,16 +56,11 @@ export class ProductsService extends UiDataGridService {
   getFiles() {
     this.domainApi
       .getStorageFiles(this.domain.id)
-      .subscribe(files =>
-        files.map(file => this.files.push({ value: file.id, label: file.name }))
-      )
+      .subscribe(files => files.map(file => this.files.push({ value: file.id, label: file.name })))
   }
 
   getItems(): Observable<ContentProduct[]> {
-    return this.domainApi.getContentProducts(
-      this.domain.id,
-      this.getFilters({ include: ['storageFile'] })
-    )
+    return this.domainApi.getContentProducts(this.domain.id, this.getFilters({ include: ['storageFile'] }))
   }
 
   getItem(id): Observable<ContentProduct> {
@@ -79,10 +68,7 @@ export class ProductsService extends UiDataGridService {
   }
 
   getItemCount(): Observable<any> {
-    return this.domainApi.countContentProducts(
-      this.domain.id,
-      this.getWhereFilters()
-    )
+    return this.domainApi.countContentProducts(this.domain.id, this.getWhereFilters())
   }
 
   upsertItem(item, successCb, errorCb): Subscription {
@@ -93,20 +79,14 @@ export class ProductsService extends UiDataGridService {
   }
 
   upsertProduct(item, successCb, errorCb): Subscription {
-    return this.domainApi
-      .updateByIdContentProducts(this.domain.id, item.id, item)
-      .subscribe(successCb, errorCb)
+    return this.domainApi.updateByIdContentProducts(this.domain.id, item.id, item).subscribe(successCb, errorCb)
   }
 
   createProduct(item, successCb, errorCb): Subscription {
-    return this.domainApi
-      .createContentProducts(this.domain.id, item)
-      .subscribe(successCb, errorCb)
+    return this.domainApi.createContentProducts(this.domain.id, item).subscribe(successCb, errorCb)
   }
 
   deleteItem(item, successCb, errorCb): Subscription {
-    return this.domainApi
-      .destroyByIdContentProducts(this.domain.id, item.id)
-      .subscribe(successCb, errorCb)
+    return this.domainApi.destroyByIdContentProducts(this.domain.id, item.id).subscribe(successCb, errorCb)
   }
 }

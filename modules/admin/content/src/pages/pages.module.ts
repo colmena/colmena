@@ -12,19 +12,8 @@ import { PageFormComponent } from './components/page-form.component'
 import { PageListComponent } from './components/page-list.component'
 
 @NgModule({
-  imports: [
-    ColmenaUiModule,
-    PagesRoutingModule,
-  ],
-  declarations: [
-    PageComponent,
-    PageDetailComponent,
-    PageFormComponent,
-    PageListComponent,
-  ],
-  providers: [
-    PagesService,
-    PagesResolver,
-  ],
+  imports: [ColmenaUiModule, PagesRoutingModule],
+  declarations: [PageComponent, PageDetailComponent, PageFormComponent, PageListComponent],
+  providers: [PagesService, PagesResolver],
 })
 export class PagesModule {}

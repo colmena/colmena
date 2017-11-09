@@ -20,7 +20,5 @@ import { Component, Input } from '@angular/core'
   `,
 })
 export class EventComponent {
-
   @Input() item: any = {}
-
 }

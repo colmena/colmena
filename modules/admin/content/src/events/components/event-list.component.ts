@@ -42,10 +42,11 @@ export class EventListComponent {
           this.service.deleteItem(
             event.item,
             () => this.grid.refreshData(),
-            err => this.ui.alerts.notifyError({
-              title: 'Error Deleting item',
-              body: err.message,
-            })
+            err =>
+              this.ui.alerts.notifyError({
+                title: 'Error Deleting item',
+                body: err.message,
+              })
           )
         const question = {
           title: 'Are You Sure?',

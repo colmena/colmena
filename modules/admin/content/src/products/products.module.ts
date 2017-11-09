@@ -12,19 +12,8 @@ import { ProductFormComponent } from './components/product-form.component'
 import { ProductListComponent } from './components/product-list.component'
 
 @NgModule({
-  imports: [
-    ColmenaUiModule,
-    ProductsRoutingModule,
-  ],
-  declarations: [
-    ProductComponent,
-    ProductDetailComponent,
-    ProductFormComponent,
-    ProductListComponent,
-  ],
-  providers: [
-    ProductsService,
-    ProductsResolver,
-  ],
+  imports: [ColmenaUiModule, ProductsRoutingModule],
+  declarations: [ProductComponent, ProductDetailComponent, ProductFormComponent, ProductListComponent],
+  providers: [ProductsService, ProductsResolver],
 })
 export class ProductsModule {}

@@ -21,11 +21,7 @@ export class ProductFormComponent implements OnInit {
   public formConfig: any = {}
   public item: any
 
-  constructor(
-    private service: ProductsService,
-    private ui: UiService,
-    private router: Router
-  ) {}
+  constructor(private service: ProductsService, private ui: UiService, private router: Router) {}
 
   ngOnInit() {
     this.item = this.service.selectedProduct || new ContentProduct()
@@ -44,10 +40,11 @@ export class ProductFormComponent implements OnInit {
             })
             this.handleAction({ action: 'cancel' })
           },
-          err => this.ui.alerts.notifyError({
-            title: 'Save Product Fail',
-            body: err.message,
-          })
+          err =>
+            this.ui.alerts.notifyError({
+              title: 'Save Product Fail',
+              body: err.message,
+            })
         )
       case 'cancel':
         return this.router.navigate(['/content/products'])

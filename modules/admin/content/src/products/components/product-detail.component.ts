@@ -14,16 +14,11 @@ import { ProductsService } from '../products.service'
   `,
 })
 export class ProductDetailComponent implements OnInit {
-  public tabs: UiTabLink[] = [
-    { icon: 'fa fa-pencil', title: 'Edit', link: 'edit' },
-  ]
+  public tabs: UiTabLink[] = [{ icon: 'fa fa-pencil', title: 'Edit', link: 'edit' }]
 
   public item: any
 
-  constructor(
-    private service: ProductsService,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private service: ProductsService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.item = this.route.snapshot.data.product

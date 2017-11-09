@@ -21,11 +21,7 @@ export class EventFormComponent implements OnInit {
   public formConfig: any = {}
   public item: any
 
-  constructor(
-    private service: EventsService,
-    private ui: UiService,
-    private router: Router
-  ) {}
+  constructor(private service: EventsService, private ui: UiService, private router: Router) {}
 
   ngOnInit() {
     this.item = this.service.selectedEvent || new ContentEvent()
@@ -44,10 +40,11 @@ export class EventFormComponent implements OnInit {
             })
             this.handleAction({ action: 'cancel' })
           },
-          err => this.ui.alerts.notifyError({
-            title: 'Save Event Fail',
-            body: err.message,
-          })
+          err =>
+            this.ui.alerts.notifyError({
+              title: 'Save Event Fail',
+              body: err.message,
+            })
         )
       case 'cancel':
         return this.router.navigate(['/content/events'])
