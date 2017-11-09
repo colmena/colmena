@@ -14,16 +14,9 @@ export class UsersService extends UiDataGridService {
   public domains: any[] = []
   public selectedUser: any
 
-  public tableColumns = [
-    { field: 'fullName', label: 'Name', action: 'edit' },
-    { field: 'email', label: 'Email' },
-  ]
+  public tableColumns = [{ field: 'fullName', label: 'Name', action: 'edit' }, { field: 'email', label: 'Email' }]
 
-  constructor(
-    public userApi: SystemUserApi,
-    public formService: FormService,
-    private store: Store<any>
-  ) {
+  constructor(public userApi: SystemUserApi, public formService: FormService, private store: Store<any>) {
     super()
     this.getDomains()
     this.columns = this.tableColumns
@@ -34,12 +27,15 @@ export class UsersService extends UiDataGridService {
   }
 
   getDomains(): void {
-    this.store.select('app').map(data => data['domains']).subscribe(domains => {
-      this.domains = domains.map(domain => ({
-        label: domain.name,
-        value: domain.id,
-      }))
-    })
+    this.store
+      .select('app')
+      .map(data => data['domains'])
+      .subscribe(domains => {
+        this.domains = domains.map(domain => ({
+          label: domain.name,
+          value: domain.id,
+        }))
+      })
   }
 
   getFormFields(editForm = false) {
@@ -102,9 +98,7 @@ export class UsersService extends UiDataGridService {
   }
 
   updateUser(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .patchAttributes(item.id, item)
-      .subscribe(successCb, errorCb)
+    return this.userApi.patchAttributes(item.id, item).subscribe(successCb, errorCb)
   }
 
   deleteItem(item, successCb, errorCb): Subscription {
@@ -112,15 +106,11 @@ export class UsersService extends UiDataGridService {
   }
 
   addUserToRole(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .addRole(item.user.id, item.role)
-      .subscribe(successCb, errorCb)
+    return this.userApi.addRole(item.user.id, item.role).subscribe(successCb, errorCb)
   }
 
   removeUserFromRole(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .removeRole(item.user.id, item.role)
-      .subscribe(successCb, errorCb)
+    return this.userApi.removeRole(item.user.id, item.role).subscribe(successCb, errorCb)
   }
 
   getUserAccessTokens(item, successCb, errorCb): Subscription {
@@ -128,27 +118,19 @@ export class UsersService extends UiDataGridService {
   }
 
   generateToken(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .createAccessTokens(item.id)
-      .subscribe(successCb, errorCb)
+    return this.userApi.createAccessTokens(item.id).subscribe(successCb, errorCb)
   }
 
   removeTtl(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .updateByIdAccessTokens(item.user.id, item.token.id, { ttl: -1 })
-      .subscribe(successCb, errorCb)
+    return this.userApi.updateByIdAccessTokens(item.user.id, item.token.id, { ttl: -1 }).subscribe(successCb, errorCb)
   }
 
   deleteToken(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .destroyByIdAccessTokens(item.user.id, item.token.id)
-      .subscribe(successCb, errorCb)
+    return this.userApi.destroyByIdAccessTokens(item.user.id, item.token.id).subscribe(successCb, errorCb)
   }
 
   deleteAllTokens(item, successCb, errorCb): Subscription {
-    return this.userApi
-      .deleteAccessTokens(item.id)
-      .subscribe(successCb, errorCb)
+    return this.userApi.deleteAccessTokens(item.id).subscribe(successCb, errorCb)
   }
 
   changePassword(item, successCb, errorCb): Subscription {

@@ -15,10 +15,7 @@ import { UserPasswordComponent } from './components/user-password.component'
 import { UserRolesComponent } from './components/user-roles.component'
 
 @NgModule({
-  imports: [
-    ColmenaUiModule,
-    UsersRoutingModule,
-  ],
+  imports: [ColmenaUiModule, UsersRoutingModule],
   declarations: [
     UserAccessTokensComponent,
     UserDetailComponent,
@@ -28,9 +25,6 @@ import { UserRolesComponent } from './components/user-roles.component'
     UserPasswordComponent,
     UserRolesComponent,
   ],
-  providers: [
-    UsersService,
-    UserResolver,
-  ],
+  providers: [UsersService, UserResolver],
 })
 export class SystemUsersModule {}

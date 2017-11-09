@@ -17,25 +17,17 @@ import { DomainsService } from '../domains.service'
   `,
 })
 export class DomainDetailComponent implements OnInit {
-
-  public tabs: UiTabLink[] = [
-    { icon: 'fa fa-pencil', title: 'Edit', link: 'edit' },
-  ]
+  public tabs: UiTabLink[] = [{ icon: 'fa fa-pencil', title: 'Edit', link: 'edit' }]
 
   public item: any
 
-  constructor(
-    private service: DomainsService,
-    private route: ActivatedRoute
-  ) { }
+  constructor(private service: DomainsService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.item = this.route.snapshot.data.systemDomain
 
     if (!this.item) {
-      this.tabs = [
-        { icon: 'fa fa-plus', title: 'Create', link: '' },
-      ]
+      this.tabs = [{ icon: 'fa fa-plus', title: 'Create', link: '' }]
     }
     this.service.setSelectedDomain(this.item)
   }

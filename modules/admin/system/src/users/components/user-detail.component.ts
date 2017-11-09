@@ -17,7 +17,6 @@ import { UsersService } from '../users.service'
   `,
 })
 export class UserDetailComponent implements OnInit {
-
   public tabs: UiTabLink[] = [
     { icon: 'fa fa-user', title: 'Profile', link: 'profile' },
     { icon: 'fa fa-key', title: 'Password', link: 'password' },
@@ -27,19 +26,13 @@ export class UserDetailComponent implements OnInit {
 
   public item: any = {}
 
-  constructor(
-    public service: UsersService,
-    private route: ActivatedRoute,
-  ) {
-  }
+  constructor(public service: UsersService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.item = this.route.snapshot.data.systemUser
 
     if (!this.item) {
-      this.tabs = [
-        { icon: 'fa fa-plus', title: 'Create', link: '' },
-      ]
+      this.tabs = [{ icon: 'fa fa-plus', title: 'Create', link: '' }]
     }
     this.service.setSelectedUser(this.item)
   }

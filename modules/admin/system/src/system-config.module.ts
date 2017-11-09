@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store'
 
 const moduleName = 'system'
 
-const link = (...links) =>  ([ '/', moduleName, ...links ])
+const link = (...links) => ['/', moduleName, ...links]
 
 const moduleConfig = {
   name: 'System',
@@ -25,15 +25,12 @@ const moduleConfig = {
       { count: '∞', label: 'Domains', type: 'info', icon: 'icon-globe', link: link('domains') },
       { count: '∞', label: 'Settings', type: 'success', icon: 'icon-settings', link: link('settings') },
       { count: '∞', label: 'Users', type: 'warning', icon: 'icon-people', link: link('users') },
-    ]
+    ],
   },
 }
 @NgModule()
 export class SystemConfigModule {
-
   constructor(protected store: Store<any>) {
-    this.store.dispatch({ type: 'APP_LOAD_MODULE', payload: { moduleName, moduleConfig }})
+    this.store.dispatch({ type: 'APP_LOAD_MODULE', payload: { moduleName, moduleConfig } })
   }
-
 }
-

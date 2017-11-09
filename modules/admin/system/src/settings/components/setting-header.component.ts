@@ -12,7 +12,5 @@ import { Component, Input } from '@angular/core'
   `,
 })
 export class SettingHeaderComponent {
-
   @Input() item
-
 }

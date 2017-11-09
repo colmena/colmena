@@ -12,19 +12,8 @@ import { SettingHeaderComponent } from './components/setting-header.component'
 import { SettingListComponent } from './components/setting-list.component'
 
 @NgModule({
-  imports: [
-    ColmenaUiModule,
-    SettingsRoutingModule,
-  ],
-  declarations: [
-    SettingDetailComponent,
-    SettingFormComponent,
-    SettingHeaderComponent,
-    SettingListComponent,
-  ],
-  providers: [
-    SettingsService,
-    SettingResolver,
-  ],
+  imports: [ColmenaUiModule, SettingsRoutingModule],
+  declarations: [SettingDetailComponent, SettingFormComponent, SettingHeaderComponent, SettingListComponent],
+  providers: [SettingsService, SettingResolver],
 })
-export class SystemSettingsModule { }
+export class SystemSettingsModule {}

@@ -7,20 +7,13 @@ import { Subscription } from 'rxjs/Subscription'
 
 @Injectable()
 export class DomainsService extends UiDataGridService {
-
   public icon = 'icon-globe'
   public title = 'Domains'
   public selectedDomain: Domain
 
-  public tableColumns = [
-    { field: 'id', label: 'ID', action: 'view' },
-    { field: 'name', label: 'Name', action: 'view' },
-  ]
+  public tableColumns = [{ field: 'id', label: 'ID', action: 'view' }, { field: 'name', label: 'Name', action: 'view' }]
 
-  constructor(
-    private domainApi: SystemDomainApi,
-    private formService: FormService,
-  ) {
+  constructor(private domainApi: SystemDomainApi, private formService: FormService) {
     super()
     this.columns = this.tableColumns
   }

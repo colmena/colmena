@@ -7,18 +7,9 @@ import { SystemRoutingModule } from './system-routing.module'
 import { HasSystemAccess } from './system.guards'
 
 @NgModule({
-  imports: [
-    ColmenaUiModule,
-    SystemRoutingModule,
-  ],
-  declarations: [
-    SystemDashboardComponent,
-  ],
-  providers: [
-    HasSystemAccess,
-  ],
-  exports: [
-    SystemDashboardComponent,
-  ],
+  imports: [ColmenaUiModule, SystemRoutingModule],
+  declarations: [SystemDashboardComponent],
+  providers: [HasSystemAccess],
+  exports: [SystemDashboardComponent],
 })
-export class SystemModule { }
+export class SystemModule {}

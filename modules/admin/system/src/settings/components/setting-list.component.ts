@@ -15,15 +15,14 @@ import { SettingsService } from '../settings.service'
   `,
 })
 export class SettingListComponent {
-
   @ViewChild('grid') private grid
 
   constructor(
     public service: SettingsService,
     private ui: UiService,
     private router: Router,
-    private route: ActivatedRoute,
-  ) { }
+    private route: ActivatedRoute
+  ) {}
 
   action(event) {
     switch (event.action) {
@@ -33,18 +32,20 @@ export class SettingListComponent {
       case 'add':
         return this.router.navigate(['create'], { relativeTo: this.route.parent })
       case 'delete':
-        const successCb = () => this.service
-          .deleteItem(event.item,
-          () => this.grid.refreshData(),
-          (err) => this.ui.alerts.notifyError({
-            title: 'Error deleting item',
-            body: err.message,
-          }))
+        const successCb = () =>
+          this.service.deleteItem(
+            event.item,
+            () => this.grid.refreshData(),
+            err =>
+              this.ui.alerts.notifyError({
+                title: 'Error deleting item',
+                body: err.message,
+              })
+          )
         const question = { title: 'Are you sure?', text: 'The action can not be undone.' }
         return this.ui.alerts.alertQuestion(question, successCb, () => ({}))
       default:
         return console.log('Unknown event action', event)
     }
   }
-
 }

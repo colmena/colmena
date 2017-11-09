@@ -11,7 +11,8 @@ import { Component, Input } from '@angular/core'
       <ng-template #message>Add New User</ng-template>
     </h5>
   `,
-  styles: [`
+  styles: [
+    `
     h5 {
       padding: 10px 0;
     }
@@ -20,10 +21,9 @@ import { Component, Input } from '@angular/core'
       width: 50px;
       margin-right: 10px;
     }
-  `]
+  `,
+  ],
 })
 export class UserHeaderComponent {
-
   @Input() user
-
 }

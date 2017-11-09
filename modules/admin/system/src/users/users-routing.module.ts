@@ -31,13 +31,13 @@ const routes: Routes = [
             path: '',
             component: UserFormComponent,
           },
-        ]
+        ],
       },
       {
         path: ':id',
         component: UserDetailComponent,
         resolve: {
-          systemUser: UserResolver
+          systemUser: UserResolver,
         },
         data: { title: 'user' },
         children: [
@@ -62,12 +62,13 @@ const routes: Routes = [
             component: UserRolesComponent,
             data: { title: 'Roles' },
           },
-        ]
+        ],
       },
-    ]
-  } ]
+    ],
+  },
+]
 @NgModule({
-  imports: [ RouterModule.forChild(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
 export class UsersRoutingModule {}

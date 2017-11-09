@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 
 import { SystemSetting as Setting, SystemSettingApi } from '@colmena/admin-lb-sdk'
-export { SystemSetting as Setting} from '@colmena/admin-lb-sdk'
+export { SystemSetting as Setting } from '@colmena/admin-lb-sdk'
 
 import { UiDataGridService, FormService } from '@colmena/admin-ui'
 import { Observable } from 'rxjs/Observable'
@@ -9,7 +9,6 @@ import { Subscription } from 'rxjs/Subscription'
 
 @Injectable()
 export class SettingsService extends UiDataGridService {
-
   public icon = 'icon-settings'
   public title = 'Settings'
   public settings: Setting[]
@@ -21,10 +20,7 @@ export class SettingsService extends UiDataGridService {
     { field: 'type', label: 'Type' },
   ]
 
-  constructor(
-    private settingApi: SystemSettingApi,
-    private formService: FormService,
-  ) {
+  constructor(private settingApi: SystemSettingApi, private formService: FormService) {
     super()
     this.columns = this.tableColumns
   }

@@ -11,15 +11,10 @@ import { Domain, DomainsService } from '../domains.service'
   `,
 })
 export class DomainFormComponent implements OnInit {
-
   public formConfig: any = {}
   public item: any
 
-  constructor(
-    private service: DomainsService,
-    private ui: UiService,
-    private router: Router,
-  ) { }
+  constructor(private service: DomainsService, private ui: UiService, private router: Router) {}
 
   ngOnInit() {
     this.item = this.service.selectedDomain || new Domain()
@@ -38,10 +33,11 @@ export class DomainFormComponent implements OnInit {
             })
             this.handleAction({ action: 'cancel' })
           },
-          err => this.ui.alerts.notifyError({
-            title: 'Save Domain Fail',
-            body: err.message,
-          })
+          err =>
+            this.ui.alerts.notifyError({
+              title: 'Save Domain Fail',
+              body: err.message,
+            })
         )
       case 'cancel':
         return this.router.navigate(['/system/domains'])
@@ -49,5 +45,4 @@ export class DomainFormComponent implements OnInit {
         return console.log('Unknown event action:', event)
     }
   }
-
 }

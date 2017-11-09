@@ -6,8 +6,7 @@ import { Setting, SettingsService } from './settings.service'
 
 @Injectable()
 export class SettingResolver implements Resolve<Setting> {
-
-  constructor(private service: SettingsService) { }
+  constructor(private service: SettingsService) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Setting> {
     return this.service.getItem(route.params.id)

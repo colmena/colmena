@@ -8,7 +8,6 @@ import { UsersService } from '../users.service'
   templateUrl: './user-password.component.html',
 })
 export class UserPasswordComponent implements OnInit {
-
   public formConfig: any = {
     hasHeader: false,
     fields: [],
@@ -21,20 +20,19 @@ export class UserPasswordComponent implements OnInit {
     public service: UsersService,
     public ui: UiService,
     private formService: FormService,
-    private router: Router,
-  ) {
-  }
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.item = this.service.selectedUser['user']
     this.formConfig.fields = [
       this.formService.password('password', {
         label: 'Password',
-        placeholder: 'Must be at least 5 characters'
+        placeholder: 'Must be at least 5 characters',
       }),
       this.formService.password('password', {
         label: 'Confirm Password',
-        placeholder: 'Re-enter the password to confirm'
+        placeholder: 'Re-enter the password to confirm',
       }),
     ]
   }
@@ -44,26 +42,30 @@ export class UserPasswordComponent implements OnInit {
       case 'save':
         return this.service.changePassword(
           Object.assign(this.item, event.item),
-          res => this.ui.alerts.notifySuccess({
-            title: 'Change Password Success',
-            body: `<u>${this.item.email}</u>'s password has been changed successfully'`,
-          }),
-          err => this.ui.alerts.notifyError({
-            title: 'Change Password Fail',
-            body: err.message,
-          })
+          res =>
+            this.ui.alerts.notifySuccess({
+              title: 'Change Password Success',
+              body: `<u>${this.item.email}</u>'s password has been changed successfully'`,
+            }),
+          err =>
+            this.ui.alerts.notifyError({
+              title: 'Change Password Fail',
+              body: err.message,
+            })
         )
       case 'reset':
         return this.service.resetPassword(
           Object.assign(this.item),
-          res => this.ui.alerts.notifySuccess({
-            title: 'Password Reset Success',
-            body: `An email with a password recovery link has been sent to <u>${this.item.email}</u>`,
-          }),
-          err => this.ui.alerts.notifyError({
-            title: 'Password Reset Fail',
-            body: err.message,
-          })
+          res =>
+            this.ui.alerts.notifySuccess({
+              title: 'Password Reset Success',
+              body: `An email with a password recovery link has been sent to <u>${this.item.email}</u>`,
+            }),
+          err =>
+            this.ui.alerts.notifyError({
+              title: 'Password Reset Fail',
+              body: err.message,
+            })
         )
       case 'cancel':
         return this.router.navigate(['/system/users'])
@@ -71,5 +73,4 @@ export class UserPasswordComponent implements OnInit {
         return console.log('Unknown event action', event)
     }
   }
-
 }

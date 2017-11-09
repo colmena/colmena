@@ -49,7 +49,7 @@ export const SystemDomainsRoutes: Routes = [
   },
 ]
 @NgModule({
-  imports: [ RouterModule.forChild(SystemDomainsRoutes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forChild(SystemDomainsRoutes)],
+  exports: [RouterModule],
 })
 export class DomainsRoutingModule {}

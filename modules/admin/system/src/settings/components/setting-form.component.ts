@@ -11,15 +11,10 @@ import { Setting, SettingsService } from '../settings.service'
   `,
 })
 export class SettingFormComponent implements OnInit {
-
   public formConfig: any = {}
   public item: any
 
-  constructor(
-    private service: SettingsService,
-    private ui: UiService,
-    private router: Router,
-  ) { }
+  constructor(private service: SettingsService, private ui: UiService, private router: Router) {}
 
   ngOnInit() {
     this.item = this.service.selectedSetting || new Setting()
@@ -38,10 +33,11 @@ export class SettingFormComponent implements OnInit {
             })
             this.handleAction({ action: 'cancel' })
           },
-          err => this.ui.alerts.notifyError({
-            title: 'Save Setting Fail',
-            body: err.message,
-          })
+          err =>
+            this.ui.alerts.notifyError({
+              title: 'Save Setting Fail',
+              body: err.message,
+            })
         )
       case 'cancel':
         return this.router.navigate(['/system/settings'])
@@ -49,5 +45,4 @@ export class SettingFormComponent implements OnInit {
         return console.log('Unknown event action:', event)
     }
   }
-
 }

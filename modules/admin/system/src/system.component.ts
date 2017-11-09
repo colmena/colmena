@@ -21,24 +21,21 @@ import { Store } from '@ngrx/store'
       </div>
     </div>
   `,
-  styles: [`
+  styles: [
+    `
     ui-card {
       cursor: pointer;
     }
     ui-card h4 {
       margin: 0;
     }
-  `]
+  `,
+  ],
 })
 export class SystemDashboardComponent {
-
   public widgets = []
 
-  constructor(
-    private store: Store<any>,
-  ) {
-    this.store
-      .select('app')
-      .subscribe((res: any) => this.widgets = res.systemDashboard)
+  constructor(private store: Store<any>) {
+    this.store.select('app').subscribe((res: any) => (this.widgets = res.systemDashboard))
   }
 }

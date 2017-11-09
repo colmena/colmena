@@ -17,25 +17,17 @@ import { SettingsService } from '../settings.service'
   `,
 })
 export class SettingDetailComponent implements OnInit {
-
-  public tabs: UiTabLink[] = [
-    { icon: 'fa fa-pencil', title: 'Edit', link: 'edit' },
-  ]
+  public tabs: UiTabLink[] = [{ icon: 'fa fa-pencil', title: 'Edit', link: 'edit' }]
 
   public item: any
 
-  constructor(
-    private service: SettingsService,
-    private route: ActivatedRoute
-  ) { }
+  constructor(private service: SettingsService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.item = this.route.snapshot.data.systemSetting
 
     if (!this.item) {
-      this.tabs = [
-        { icon: 'fa fa-plus', title: 'Create', link: '' },
-      ]
+      this.tabs = [{ icon: 'fa fa-plus', title: 'Create', link: '' }]
     }
     this.service.setSelectedSetting(this.item)
   }

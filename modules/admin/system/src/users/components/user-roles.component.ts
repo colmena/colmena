@@ -10,24 +10,22 @@ import { UsersService } from '../users.service'
   templateUrl: './user-roles.component.html',
 })
 export class UserRolesComponent implements OnInit, OnDestroy {
-
   public item: any
   public items: any[]
-  public columns = [ {
-    label: 'Role',
-    field: 'name',
-  }, {
-    label: 'Description',
-    field: 'description',
-  } ]
+  public columns = [
+    {
+      label: 'Role',
+      field: 'name',
+    },
+    {
+      label: 'Description',
+      field: 'description',
+    },
+  ]
 
   private subscriptions: Subscription[] = []
 
-  constructor(
-    public service: UsersService,
-    public ui: UiService,
-  ) {
-  }
+  constructor(public service: UsersService, public ui: UiService) {}
 
   ngOnInit() {
     this.refresh()
@@ -38,21 +36,22 @@ export class UserRolesComponent implements OnInit, OnDestroy {
   }
 
   refresh() {
-    const id = this.service.selectedUser[ 'user' ].id
+    const id = this.service.selectedUser['user'].id
     this.subscriptions.push(
-      this.service.getItem(id)
-        .subscribe((item) => {
-          this.item = item.user
-          this.items = item.roles
-        }))
+      this.service.getItem(id).subscribe(item => {
+        this.item = item.user
+        this.items = item.roles
+      })
+    )
   }
 
   handleAction(event) {
     switch (event.type) {
       case 'addRole':
-        return this.service.addUserToRole({
+        return this.service.addUserToRole(
+          {
             user: this.item,
-            role: event.payload
+            role: event.payload,
           },
           () => {
             this.refresh()
@@ -61,16 +60,17 @@ export class UserRolesComponent implements OnInit, OnDestroy {
               body: `<u>${this.item.username}</u> has been successfully added to the <u>${event.payload}</u> role`,
             })
           },
-          err => this.ui.alerts.notifyError({
-            title: 'Add Role Fail',
-            body: err.message,
-          })
+          err =>
+            this.ui.alerts.notifyError({
+              title: 'Add Role Fail',
+              body: err.message,
+            })
         )
       case 'removeRole':
         return this.service.removeUserFromRole(
           {
             user: this.item,
-            role: event.payload
+            role: event.payload,
           },
           () => {
             this.refresh()
@@ -79,14 +79,14 @@ export class UserRolesComponent implements OnInit, OnDestroy {
               body: `<u>${this.item.username}</u> has been successfully removed from the <u>${event.payload}</u> role`,
             })
           },
-          err => this.ui.alerts.notifyError({
-            title: 'Remove Role Fail',
-            body: err.message,
-          })
+          err =>
+            this.ui.alerts.notifyError({
+              title: 'Remove Role Fail',
+              body: err.message,
+            })
         )
       default:
         return console.log('Unknown Event Type', event)
     }
   }
-
 }
