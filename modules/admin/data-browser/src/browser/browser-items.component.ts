@@ -22,22 +22,17 @@ import { DataBrowserApi } from '../data-browser.service'
   `,
 })
 export class BrowserItemsComponent {
-
   public modelName: any = {}
   public items
 
-  constructor(
-    public schemaApi: DataBrowserApi,
-    private route: ActivatedRoute,
-) {
-    this.route.params.subscribe(params => this.handleRouteChange(params));
+  constructor(public schemaApi: DataBrowserApi, private route: ActivatedRoute) {
+    this.route.params.subscribe(params => this.handleRouteChange(params))
   }
 
   handleRouteChange(params) {
     this.modelName = params['modelName']
     this.schemaApi.setModelName(this.modelName)
 
-    this.schemaApi.find()
-      .subscribe(items => this.items = items)
+    this.schemaApi.find().subscribe(items => (this.items = items))
   }
 }

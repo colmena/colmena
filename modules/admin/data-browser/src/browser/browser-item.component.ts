@@ -24,7 +24,6 @@ import { DataBrowserApi } from '../data-browser.service'
   `,
 })
 export class BrowserItemComponent {
-
   public modelId: any = {}
   public modelName: any = {}
   public fields: string[] = []
@@ -34,24 +33,23 @@ export class BrowserItemComponent {
   public config = {}
 
   getFieldsFromItem() {
-    this.fields = Object.keys(this.item).filter(field => field !== 'id').sort()
+    this.fields = Object.keys(this.item)
+      .filter(field => field !== 'id')
+      .sort()
   }
 
   setItem(item) {
     this.item = item
   }
 
-  constructor(
-    public dataBrowserApi: DataBrowserApi,
-    private route: ActivatedRoute,
-  ) {
+  constructor(public dataBrowserApi: DataBrowserApi, private route: ActivatedRoute) {
     this.modelId = this.route.snapshot.params['modelId']
     this.modelName = this.route.snapshot.params['modelName']
     this.dataBrowserApi.setModelName(this.modelName)
 
-    this.dataBrowserApi.findById(this.modelId)
+    this.dataBrowserApi
+      .findById(this.modelId)
       .subscribe(item => this.setItem(item))
       .add(() => this.getFieldsFromItem())
   }
-
 }
