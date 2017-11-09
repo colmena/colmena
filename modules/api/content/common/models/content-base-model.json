@@ -9,20 +9,14 @@
   },
   "mixins": {
     "StorageFile": {
-      "blacklist": [
-        "ContentBaseModel"
-      ]
+      "blacklist": ["ContentBaseModel"]
     },
     "SystemDomain": {
-      "blacklist": [
-        "ContentBaseModel"
-      ],
+      "blacklist": ["ContentBaseModel"],
       "required": false
     },
     "SystemUser": {
-      "blacklist": [
-        "ContentBaseModel"
-      ]
+      "blacklist": ["ContentBaseModel"]
     }
   },
   "properties": {

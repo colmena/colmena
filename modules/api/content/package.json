@@ -12,9 +12,7 @@
   },
   "colmena": {
     "module": {
-      "modelSources": [
-        "common/models"
-      ],
+      "modelSources": ["common/models"],
       "models": {
         "ContentBaseModel": {
           "dataSource": "db",
@@ -39,9 +37,7 @@
         "sample-data/products.json",
         "sample-data/posts.json"
       ],
-      "sampleFiles": [
-        "sample-files/file-list.json"
-      ]
+      "sampleFiles": ["sample-files/file-list.json"]
     }
   }
 }
