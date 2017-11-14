@@ -9,3 +9,4 @@ config/local*
 config/production*
 storage/*
 .ts-cache/
+yarn.lock
