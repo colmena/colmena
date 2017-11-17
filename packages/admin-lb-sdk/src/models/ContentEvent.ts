@@ -1,48 +1,44 @@
 /* tslint:disable */
-import {
-  StorageFile,
-  SystemDomain,
-  SystemUser
-} from '../index';
+import { StorageFile, SystemDomain, SystemUser } from '../index'
 
-declare var Object: any;
+declare var Object: any
 export interface ContentEventInterface {
-  "name": string;
-  "date"?: Date;
-  "location"?: string;
-  "id"?: number;
-  "systemDomainId"?: string;
-  "systemUserId"?: string;
-  "storageFileId"?: string;
-  "created"?: Date;
-  "modified"?: Date;
-  storageFile?: StorageFile;
-  systemDomain?: SystemDomain;
-  systemUser?: SystemUser;
+  name: string
+  date?: Date
+  location?: string
+  id?: number
+  systemDomainId?: string
+  systemUserId?: string
+  storageFileId?: string
+  created?: Date
+  modified?: Date
+  storageFile?: StorageFile
+  systemDomain?: SystemDomain
+  systemUser?: SystemUser
 }
 
 export class ContentEvent implements ContentEventInterface {
-  "name": string;
-  "date": Date;
-  "location": string;
-  "id": number;
-  "systemDomainId": string;
-  "systemUserId": string;
-  "storageFileId": string;
-  "created": Date;
-  "modified": Date;
-  storageFile: StorageFile;
-  systemDomain: SystemDomain;
-  systemUser: SystemUser;
+  name: string
+  date: Date
+  location: string
+  id: number
+  systemDomainId: string
+  systemUserId: string
+  storageFileId: string
+  created: Date
+  modified: Date
+  storageFile: StorageFile
+  systemDomain: SystemDomain
+  systemUser: SystemUser
   constructor(data?: ContentEventInterface) {
-    Object.assign(this, data);
+    Object.assign(this, data)
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `ContentEvent`.
    */
   public static getModelName() {
-    return "ContentEvent";
+    return 'ContentEvent'
   }
   /**
   * @method factory
@@ -50,8 +46,8 @@ export class ContentEvent implements ContentEventInterface {
   * @license MIT
   * This method creates an instance of ContentEvent for dynamic purposes.
   **/
-  public static factory(data: ContentEventInterface): ContentEvent{
-    return new ContentEvent(data);
+  public static factory(data: ContentEventInterface): ContentEvent {
+    return new ContentEvent(data)
   }
   /**
   * @method getModelDefinition
@@ -64,61 +60,62 @@ export class ContentEvent implements ContentEventInterface {
     return {
       name: 'ContentEvent',
       plural: 'ContentEvents',
+      path: 'ContentEvents',
       properties: {
-        "name": {
+        name: {
           name: 'name',
-          type: 'string'
+          type: 'string',
         },
-        "date": {
+        date: {
           name: 'date',
-          type: 'Date'
+          type: 'Date',
         },
-        "location": {
+        location: {
           name: 'location',
-          type: 'string'
+          type: 'string',
         },
-        "id": {
+        id: {
           name: 'id',
-          type: 'number'
+          type: 'number',
         },
-        "systemDomainId": {
+        systemDomainId: {
           name: 'systemDomainId',
-          type: 'string'
+          type: 'string',
         },
-        "systemUserId": {
+        systemUserId: {
           name: 'systemUserId',
-          type: 'string'
+          type: 'string',
         },
-        "storageFileId": {
+        storageFileId: {
           name: 'storageFileId',
-          type: 'string'
+          type: 'string',
         },
-        "created": {
+        created: {
           name: 'created',
-          type: 'Date'
+          type: 'Date',
         },
-        "modified": {
+        modified: {
           name: 'modified',
-          type: 'Date'
+          type: 'Date',
         },
       },
       relations: {
         storageFile: {
           name: 'storageFile',
           type: 'StorageFile',
-          model: 'StorageFile'
+          model: 'StorageFile',
         },
         systemDomain: {
           name: 'systemDomain',
           type: 'SystemDomain',
-          model: 'SystemDomain'
+          model: 'SystemDomain',
         },
         systemUser: {
           name: 'systemUser',
           type: 'SystemUser',
-          model: 'SystemUser'
+          model: 'SystemUser',
         },
-      }
+      },
     }
   }
 }

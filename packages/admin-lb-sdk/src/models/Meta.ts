@@ -1,21 +1,21 @@
 /* tslint:disable */
 
-declare var Object: any;
+declare var Object: any
 export interface MetaInterface {
-  "id"?: number;
+  id?: number
 }
 
 export class Meta implements MetaInterface {
-  "id": number;
+  id: number
   constructor(data?: MetaInterface) {
-    Object.assign(this, data);
+    Object.assign(this, data)
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `Meta`.
    */
   public static getModelName() {
-    return "Meta";
+    return 'Meta'
   }
   /**
   * @method factory
@@ -23,8 +23,8 @@ export class Meta implements MetaInterface {
   * @license MIT
   * This method creates an instance of Meta for dynamic purposes.
   **/
-  public static factory(data: MetaInterface): Meta{
-    return new Meta(data);
+  public static factory(data: MetaInterface): Meta {
+    return new Meta(data)
   }
   /**
   * @method getModelDefinition
@@ -37,14 +37,14 @@ export class Meta implements MetaInterface {
     return {
       name: 'Meta',
       plural: 'Meta',
+      path: 'Meta',
       properties: {
-        "id": {
+        id: {
           name: 'id',
-          type: 'number'
+          type: 'number',
         },
       },
-      relations: {
-      }
+      relations: {},
     }
   }
 }

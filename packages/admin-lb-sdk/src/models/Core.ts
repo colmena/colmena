@@ -1,21 +1,21 @@
 /* tslint:disable */
 
-declare var Object: any;
+declare var Object: any
 export interface CoreInterface {
-  "id"?: number;
+  id?: number
 }
 
 export class Core implements CoreInterface {
-  "id": number;
+  id: number
   constructor(data?: CoreInterface) {
-    Object.assign(this, data);
+    Object.assign(this, data)
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `Core`.
    */
   public static getModelName() {
-    return "Core";
+    return 'Core'
   }
   /**
   * @method factory
@@ -23,8 +23,8 @@ export class Core implements CoreInterface {
   * @license MIT
   * This method creates an instance of Core for dynamic purposes.
   **/
-  public static factory(data: CoreInterface): Core{
-    return new Core(data);
+  public static factory(data: CoreInterface): Core {
+    return new Core(data)
   }
   /**
   * @method getModelDefinition
@@ -37,14 +37,14 @@ export class Core implements CoreInterface {
     return {
       name: 'Core',
       plural: 'Core',
+      path: 'Core',
       properties: {
-        "id": {
+        id: {
           name: 'id',
-          type: 'number'
+          type: 'number',
         },
       },
-      relations: {
-      }
+      relations: {},
     }
   }
 }

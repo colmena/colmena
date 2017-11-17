@@ -1,21 +1,21 @@
 /* tslint:disable */
 
-declare var Object: any;
+declare var Object: any
 export interface PingInterface {
-  "id"?: string;
+  id?: string
 }
 
 export class Ping implements PingInterface {
-  "id": string;
+  id: string
   constructor(data?: PingInterface) {
-    Object.assign(this, data);
+    Object.assign(this, data)
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `Ping`.
    */
   public static getModelName() {
-    return "Ping";
+    return 'Ping'
   }
   /**
   * @method factory
@@ -23,8 +23,8 @@ export class Ping implements PingInterface {
   * @license MIT
   * This method creates an instance of Ping for dynamic purposes.
   **/
-  public static factory(data: PingInterface): Ping{
-    return new Ping(data);
+  public static factory(data: PingInterface): Ping {
+    return new Ping(data)
   }
   /**
   * @method getModelDefinition
@@ -37,14 +37,14 @@ export class Ping implements PingInterface {
     return {
       name: 'Ping',
       plural: 'Ping',
+      path: 'Ping',
       properties: {
-        "id": {
+        id: {
           name: 'id',
-          type: 'string'
+          type: 'string',
         },
       },
-      relations: {
-      }
+      relations: {},
     }
   }
 }

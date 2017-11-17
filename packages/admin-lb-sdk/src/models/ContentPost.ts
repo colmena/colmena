@@ -1,46 +1,42 @@
 /* tslint:disable */
-import {
-  StorageFile,
-  SystemDomain,
-  SystemUser
-} from '../index';
+import { StorageFile, SystemDomain, SystemUser } from '../index'
 
-declare var Object: any;
+declare var Object: any
 export interface ContentPostInterface {
-  "title"?: string;
-  "content"?: string;
-  "id"?: number;
-  "systemDomainId"?: string;
-  "systemUserId"?: string;
-  "storageFileId"?: string;
-  "created"?: Date;
-  "modified"?: Date;
-  storageFile?: StorageFile;
-  systemDomain?: SystemDomain;
-  systemUser?: SystemUser;
+  title?: string
+  content?: string
+  id?: number
+  systemDomainId?: string
+  systemUserId?: string
+  storageFileId?: string
+  created?: Date
+  modified?: Date
+  storageFile?: StorageFile
+  systemDomain?: SystemDomain
+  systemUser?: SystemUser
 }
 
 export class ContentPost implements ContentPostInterface {
-  "title": string;
-  "content": string;
-  "id": number;
-  "systemDomainId": string;
-  "systemUserId": string;
-  "storageFileId": string;
-  "created": Date;
-  "modified": Date;
-  storageFile: StorageFile;
-  systemDomain: SystemDomain;
-  systemUser: SystemUser;
+  title: string
+  content: string
+  id: number
+  systemDomainId: string
+  systemUserId: string
+  storageFileId: string
+  created: Date
+  modified: Date
+  storageFile: StorageFile
+  systemDomain: SystemDomain
+  systemUser: SystemUser
   constructor(data?: ContentPostInterface) {
-    Object.assign(this, data);
+    Object.assign(this, data)
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `ContentPost`.
    */
   public static getModelName() {
-    return "ContentPost";
+    return 'ContentPost'
   }
   /**
   * @method factory
@@ -48,8 +44,8 @@ export class ContentPost implements ContentPostInterface {
   * @license MIT
   * This method creates an instance of ContentPost for dynamic purposes.
   **/
-  public static factory(data: ContentPostInterface): ContentPost{
-    return new ContentPost(data);
+  public static factory(data: ContentPostInterface): ContentPost {
+    return new ContentPost(data)
   }
   /**
   * @method getModelDefinition
@@ -62,57 +58,58 @@ export class ContentPost implements ContentPostInterface {
     return {
       name: 'ContentPost',
       plural: 'ContentPosts',
+      path: 'ContentPosts',
       properties: {
-        "title": {
+        title: {
           name: 'title',
-          type: 'string'
+          type: 'string',
         },
-        "content": {
+        content: {
           name: 'content',
-          type: 'string'
+          type: 'string',
         },
-        "id": {
+        id: {
           name: 'id',
-          type: 'number'
+          type: 'number',
         },
-        "systemDomainId": {
+        systemDomainId: {
           name: 'systemDomainId',
-          type: 'string'
+          type: 'string',
         },
-        "systemUserId": {
+        systemUserId: {
           name: 'systemUserId',
-          type: 'string'
+          type: 'string',
         },
-        "storageFileId": {
+        storageFileId: {
           name: 'storageFileId',
-          type: 'string'
+          type: 'string',
         },
-        "created": {
+        created: {
           name: 'created',
-          type: 'Date'
+          type: 'Date',
         },
-        "modified": {
+        modified: {
           name: 'modified',
-          type: 'Date'
+          type: 'Date',
         },
       },
       relations: {
         storageFile: {
           name: 'storageFile',
           type: 'StorageFile',
-          model: 'StorageFile'
+          model: 'StorageFile',
         },
         systemDomain: {
           name: 'systemDomain',
           type: 'SystemDomain',
-          model: 'SystemDomain'
+          model: 'SystemDomain',
         },
         systemUser: {
           name: 'systemUser',
           type: 'SystemUser',
-          model: 'SystemUser'
+          model: 'SystemUser',
         },
-      }
+      },
     }
   }
 }

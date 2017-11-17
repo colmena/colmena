@@ -1,21 +1,21 @@
 /* tslint:disable */
 
-declare var Object: any;
+declare var Object: any
 export interface StorageContainerInterface {
-  "id"?: number;
+  id?: number
 }
 
 export class StorageContainer implements StorageContainerInterface {
-  "id": number;
+  id: number
   constructor(data?: StorageContainerInterface) {
-    Object.assign(this, data);
+    Object.assign(this, data)
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `StorageContainer`.
    */
   public static getModelName() {
-    return "StorageContainer";
+    return 'StorageContainer'
   }
   /**
   * @method factory
@@ -23,8 +23,8 @@ export class StorageContainer implements StorageContainerInterface {
   * @license MIT
   * This method creates an instance of StorageContainer for dynamic purposes.
   **/
-  public static factory(data: StorageContainerInterface): StorageContainer{
-    return new StorageContainer(data);
+  public static factory(data: StorageContainerInterface): StorageContainer {
+    return new StorageContainer(data)
   }
   /**
   * @method getModelDefinition
@@ -37,14 +37,14 @@ export class StorageContainer implements StorageContainerInterface {
     return {
       name: 'StorageContainer',
       plural: 'StorageContainers',
+      path: 'StorageContainers',
       properties: {
-        "id": {
+        id: {
           name: 'id',
-          type: 'number'
+          type: 'number',
         },
       },
-      relations: {
-      }
+      relations: {},
     }
   }
 }

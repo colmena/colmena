@@ -1,31 +1,31 @@
 /* tslint:disable */
 
-declare var Object: any;
+declare var Object: any
 export interface EmailInterface {
-  "to": string;
-  "from": string;
-  "subject": string;
-  "text"?: string;
-  "html"?: string;
-  "id"?: number;
+  to: string
+  from: string
+  subject: string
+  text?: string
+  html?: string
+  id?: number
 }
 
 export class Email implements EmailInterface {
-  "to": string;
-  "from": string;
-  "subject": string;
-  "text": string;
-  "html": string;
-  "id": number;
+  to: string
+  from: string
+  subject: string
+  text: string
+  html: string
+  id: number
   constructor(data?: EmailInterface) {
-    Object.assign(this, data);
+    Object.assign(this, data)
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `Email`.
    */
   public static getModelName() {
-    return "Email";
+    return 'Email'
   }
   /**
   * @method factory
@@ -33,8 +33,8 @@ export class Email implements EmailInterface {
   * @license MIT
   * This method creates an instance of Email for dynamic purposes.
   **/
-  public static factory(data: EmailInterface): Email{
-    return new Email(data);
+  public static factory(data: EmailInterface): Email {
+    return new Email(data)
   }
   /**
   * @method getModelDefinition
@@ -47,34 +47,34 @@ export class Email implements EmailInterface {
     return {
       name: 'Email',
       plural: 'Emails',
+      path: 'Emails',
       properties: {
-        "to": {
+        to: {
           name: 'to',
-          type: 'string'
+          type: 'string',
         },
-        "from": {
+        from: {
           name: 'from',
-          type: 'string'
+          type: 'string',
         },
-        "subject": {
+        subject: {
           name: 'subject',
-          type: 'string'
+          type: 'string',
         },
-        "text": {
+        text: {
           name: 'text',
-          type: 'string'
+          type: 'string',
         },
-        "html": {
+        html: {
           name: 'html',
-          type: 'string'
+          type: 'string',
         },
-        "id": {
+        id: {
           name: 'id',
-          type: 'number'
+          type: 'number',
         },
       },
-      relations: {
-      }
+      relations: {},
     }
   }
 }
