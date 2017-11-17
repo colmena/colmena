@@ -1,40 +1,46 @@
 /* tslint:disable */
-import { ContentEvent, ContentPage, ContentProduct, ContentPost, StorageFile } from '../index'
+import {
+  ContentEvent,
+  ContentPage,
+  ContentProduct,
+  ContentPost,
+  StorageFile
+} from '../index';
 
-declare var Object: any
+declare var Object: any;
 export interface SystemDomainInterface {
-  id: string
-  name: string
-  email: string
-  created?: Date
-  modified?: Date
-  contentEvents?: ContentEvent[]
-  contentPages?: ContentPage[]
-  contentProducts?: ContentProduct[]
-  contentPosts?: ContentPost[]
-  storageFiles?: StorageFile[]
+  "id": string;
+  "name": string;
+  "email": string;
+  "created"?: Date;
+  "modified"?: Date;
+  contentEvents?: ContentEvent[];
+  contentPages?: ContentPage[];
+  contentProducts?: ContentProduct[];
+  contentPosts?: ContentPost[];
+  storageFiles?: StorageFile[];
 }
 
 export class SystemDomain implements SystemDomainInterface {
-  id: string
-  name: string
-  email: string
-  created: Date
-  modified: Date
-  contentEvents: ContentEvent[]
-  contentPages: ContentPage[]
-  contentProducts: ContentProduct[]
-  contentPosts: ContentPost[]
-  storageFiles: StorageFile[]
+  "id": string;
+  "name": string;
+  "email": string;
+  "created": Date;
+  "modified": Date;
+  contentEvents: ContentEvent[];
+  contentPages: ContentPage[];
+  contentProducts: ContentProduct[];
+  contentPosts: ContentPost[];
+  storageFiles: StorageFile[];
   constructor(data?: SystemDomainInterface) {
-    Object.assign(this, data)
+    Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `SystemDomain`.
    */
   public static getModelName() {
-    return 'SystemDomain'
+    return "SystemDomain";
   }
   /**
   * @method factory
@@ -42,8 +48,8 @@ export class SystemDomain implements SystemDomainInterface {
   * @license MIT
   * This method creates an instance of SystemDomain for dynamic purposes.
   **/
-  public static factory(data: SystemDomainInterface): SystemDomain {
-    return new SystemDomain(data)
+  public static factory(data: SystemDomainInterface): SystemDomain{
+    return new SystemDomain(data);
   }
   /**
   * @method getModelDefinition
@@ -58,54 +64,54 @@ export class SystemDomain implements SystemDomainInterface {
       plural: 'Domains',
       path: 'Domains',
       properties: {
-        id: {
+        "id": {
           name: 'id',
-          type: 'string',
+          type: 'string'
         },
-        name: {
+        "name": {
           name: 'name',
-          type: 'string',
+          type: 'string'
         },
-        email: {
+        "email": {
           name: 'email',
-          type: 'string',
+          type: 'string'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date',
+          type: 'Date'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date',
+          type: 'Date'
         },
       },
       relations: {
         contentEvents: {
           name: 'contentEvents',
           type: 'ContentEvent[]',
-          model: 'ContentEvent',
+          model: 'ContentEvent'
         },
         contentPages: {
           name: 'contentPages',
           type: 'ContentPage[]',
-          model: 'ContentPage',
+          model: 'ContentPage'
         },
         contentProducts: {
           name: 'contentProducts',
           type: 'ContentProduct[]',
-          model: 'ContentProduct',
+          model: 'ContentProduct'
         },
         contentPosts: {
           name: 'contentPosts',
           type: 'ContentPost[]',
-          model: 'ContentPost',
+          model: 'ContentPost'
         },
         storageFiles: {
           name: 'storageFiles',
           type: 'StorageFile[]',
-          model: 'StorageFile',
+          model: 'StorageFile'
         },
-      },
+      }
     }
   }
 }

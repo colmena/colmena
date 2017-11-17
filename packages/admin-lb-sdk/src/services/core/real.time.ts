@@ -1,12 +1,12 @@
-import { Injectable, Inject } from '@angular/core'
-import { IO } from './io.service'
-import { LoopBackAuth } from './auth.service'
-import { FireLoop } from '../../models/FireLoop'
-import { SocketConnection } from '../../sockets/socket.connections'
-import { SDKModels } from '../custom/SDKModels'
-import { Observable } from 'rxjs/Rx'
-import { Subject } from 'rxjs/Subject'
-import { Subscription } from 'rxjs/Subscription'
+import { Injectable, Inject } from '@angular/core';
+import { IO } from './io.service';
+import { LoopBackAuth } from './auth.service';
+import { FireLoop } from '../../models/FireLoop';
+import { SocketConnection } from '../../sockets/socket.connections';
+import { SDKModels } from '../custom/SDKModels';
+import { Observable } from 'rxjs/Rx';
+import { Subject } from 'rxjs/Subject';
+import { Subscription } from 'rxjs/Subscription';
 /**
 * @author Jonathan Casarrubias <twitter:@johncasarrubias> <github:@johncasarrubias>
 * @module RealTime
@@ -18,11 +18,11 @@ import { Subscription } from 'rxjs/Subscription'
 **/
 @Injectable()
 export class RealTime {
-  public IO: IO
-  public FireLoop: FireLoop
-  private connecting: boolean = false
-  private onReadySubject: Subject<string> = new Subject<string>()
-  private sharedOnReady: Observable<string> = this.onReadySubject.asObservable().share()
+  public IO: IO;
+  public FireLoop: FireLoop;
+  private connecting: boolean = false;
+  private onReadySubject: Subject<string> = new Subject<string>();
+  private sharedOnReady: Observable<string> = this.onReadySubject.asObservable().share();
   /**
   * @method constructor
   * @param {SocketConnection} connection WebSocket connection service
@@ -36,7 +36,7 @@ export class RealTime {
     @Inject(SDKModels) protected models: SDKModels,
     @Inject(LoopBackAuth) protected auth: LoopBackAuth
   ) {
-    this.sharedOnReady.subscribe()
+    this.sharedOnReady.subscribe();
   }
   /**
   * @method onDisconnect
@@ -45,7 +45,7 @@ export class RealTime {
   * Will trigger when Real-Time Service is disconnected from server.
   **/
   onDisconnect(): Observable<any> {
-    return this.connection.sharedObservables.sharedOnDisconnect
+    return this.connection.sharedObservables.sharedOnDisconnect;
   }
   /**
   * @method onAuthenticated
@@ -54,7 +54,7 @@ export class RealTime {
   * Will trigger when Real-Time Service is authenticated with the server.
   **/
   onAuthenticated(): Observable<any> {
-    return this.connection.sharedObservables.sharedOnAuthenticated
+    return this.connection.sharedObservables.sharedOnAuthenticated;
   }
   /**
   * @method onUnAuthorized
@@ -63,7 +63,7 @@ export class RealTime {
   * Will trigger when Real-Time Service is not authorized to connect with the server.
   **/
   onUnAuthorized(): Observable<any> {
-    return this.connection.sharedObservables.sharedOnUnAuthorized
+    return this.connection.sharedObservables.sharedOnUnAuthorized;
   }
   /**
   * @method onReady
@@ -77,38 +77,38 @@ export class RealTime {
     // Or next will be executed before the actual subscription.
     if (this.connection.isConnected()) {
       let to = setTimeout(() => {
-        this.onReadySubject.next('shared-connection')
-        clearTimeout(to)
-      })
-      // Else if there is a current attempt of connection we wait for the prior
-      // process that started the connection flow.
+        this.onReadySubject.next('shared-connection');
+        clearTimeout(to);
+      });
+    // Else if there is a current attempt of connection we wait for the prior
+    // process that started the connection flow.
     } else if (this.connecting) {
       let ti = setInterval(() => {
         if (this.connection.isConnected()) {
-          this.onReadySubject.next('shared-connection')
-          clearInterval(ti)
+          this.onReadySubject.next('shared-connection');
+          clearInterval(ti);
         }
-      }, 500)
-      // If there is not valid connection or attempt, then we start the connection flow
-      // and make sure we notify all the onReady subscribers when done.
-      // Also it will listen for desconnections so we unsubscribe and avoid both:
-      // Memory leaks and duplicated triggered events.
+      }, 500);
+    // If there is not valid connection or attempt, then we start the connection flow
+    // and make sure we notify all the onReady subscribers when done.
+    // Also it will listen for desconnections so we unsubscribe and avoid both:
+    // Memory leaks and duplicated triggered events.
     } else {
-      this.connecting = true
-      this.connection.connect(this.auth.getToken())
-      this.IO = new IO(this.connection)
-      this.FireLoop = new FireLoop(this.connection, this.models)
-      // Fire event for those subscribed
+      this.connecting = true;
+      this.connection.connect(this.auth.getToken());
+      this.IO       = new IO(this.connection);
+      this.FireLoop = new FireLoop(this.connection, this.models);
+      // Fire event for those subscribed 
       let s1: Subscription = this.connection.sharedObservables.sharedOnConnect.subscribe(() => {
-        console.log('Real-Time connection has been established')
-        this.connecting = false
-        this.onReadySubject.next('connected')
+        console.log('Real-Time connection has been established');
+        this.connecting = false;
+        this.onReadySubject.next('connected');
         let s2: Subscription = this.connection.sharedObservables.sharedOnDisconnect.subscribe(() => {
-          s1.unsubscribe()
-          s2.unsubscribe()
-        })
-      })
+          s1.unsubscribe();
+          s2.unsubscribe();
+        });
+      });
     }
-    return this.sharedOnReady
+    return this.sharedOnReady;
   }
 }

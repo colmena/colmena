@@ -1,31 +1,31 @@
 /* tslint:disable */
 
-declare var Object: any
+declare var Object: any;
 export interface SystemSettingInterface {
-  key: string
-  system?: boolean
-  type: string
-  description?: string
-  created?: Date
-  modified?: Date
+  "key": string;
+  "system"?: boolean;
+  "type": string;
+  "description"?: string;
+  "created"?: Date;
+  "modified"?: Date;
 }
 
 export class SystemSetting implements SystemSettingInterface {
-  key: string
-  system: boolean
-  type: string
-  description: string
-  created: Date
-  modified: Date
+  "key": string;
+  "system": boolean;
+  "type": string;
+  "description": string;
+  "created": Date;
+  "modified": Date;
   constructor(data?: SystemSettingInterface) {
-    Object.assign(this, data)
+    Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `SystemSetting`.
    */
   public static getModelName() {
-    return 'SystemSetting'
+    return "SystemSetting";
   }
   /**
   * @method factory
@@ -33,8 +33,8 @@ export class SystemSetting implements SystemSettingInterface {
   * @license MIT
   * This method creates an instance of SystemSetting for dynamic purposes.
   **/
-  public static factory(data: SystemSettingInterface): SystemSetting {
-    return new SystemSetting(data)
+  public static factory(data: SystemSettingInterface): SystemSetting{
+    return new SystemSetting(data);
   }
   /**
   * @method getModelDefinition
@@ -49,34 +49,35 @@ export class SystemSetting implements SystemSettingInterface {
       plural: 'Settings',
       path: 'Settings',
       properties: {
-        key: {
+        "key": {
           name: 'key',
-          type: 'string',
+          type: 'string'
         },
-        system: {
+        "system": {
           name: 'system',
           type: 'boolean',
-          default: false,
+          default: false
         },
-        type: {
+        "type": {
           name: 'type',
           type: 'string',
-          default: 'string',
+          default: 'string'
         },
-        description: {
+        "description": {
           name: 'description',
-          type: 'string',
+          type: 'string'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date',
+          type: 'Date'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date',
+          type: 'Date'
         },
       },
-      relations: {},
+      relations: {
+      }
     }
   }
 }

@@ -1,42 +1,46 @@
 /* tslint:disable */
-import { StorageFile, SystemDomain, SystemUser } from '../index'
+import {
+  StorageFile,
+  SystemDomain,
+  SystemUser
+} from '../index';
 
-declare var Object: any
+declare var Object: any;
 export interface ContentPageInterface {
-  name: string
-  content?: string
-  id?: number
-  systemDomainId?: string
-  systemUserId?: string
-  storageFileId?: string
-  created?: Date
-  modified?: Date
-  storageFile?: StorageFile
-  systemDomain?: SystemDomain
-  systemUser?: SystemUser
+  "name": string;
+  "content"?: string;
+  "id"?: number;
+  "systemDomainId"?: string;
+  "systemUserId"?: string;
+  "storageFileId"?: string;
+  "created"?: Date;
+  "modified"?: Date;
+  storageFile?: StorageFile;
+  systemDomain?: SystemDomain;
+  systemUser?: SystemUser;
 }
 
 export class ContentPage implements ContentPageInterface {
-  name: string
-  content: string
-  id: number
-  systemDomainId: string
-  systemUserId: string
-  storageFileId: string
-  created: Date
-  modified: Date
-  storageFile: StorageFile
-  systemDomain: SystemDomain
-  systemUser: SystemUser
+  "name": string;
+  "content": string;
+  "id": number;
+  "systemDomainId": string;
+  "systemUserId": string;
+  "storageFileId": string;
+  "created": Date;
+  "modified": Date;
+  storageFile: StorageFile;
+  systemDomain: SystemDomain;
+  systemUser: SystemUser;
   constructor(data?: ContentPageInterface) {
-    Object.assign(this, data)
+    Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `ContentPage`.
    */
   public static getModelName() {
-    return 'ContentPage'
+    return "ContentPage";
   }
   /**
   * @method factory
@@ -44,8 +48,8 @@ export class ContentPage implements ContentPageInterface {
   * @license MIT
   * This method creates an instance of ContentPage for dynamic purposes.
   **/
-  public static factory(data: ContentPageInterface): ContentPage {
-    return new ContentPage(data)
+  public static factory(data: ContentPageInterface): ContentPage{
+    return new ContentPage(data);
   }
   /**
   * @method getModelDefinition
@@ -60,56 +64,56 @@ export class ContentPage implements ContentPageInterface {
       plural: 'ContentPages',
       path: 'ContentPages',
       properties: {
-        name: {
+        "name": {
           name: 'name',
-          type: 'string',
+          type: 'string'
         },
-        content: {
+        "content": {
           name: 'content',
-          type: 'string',
+          type: 'string'
         },
-        id: {
+        "id": {
           name: 'id',
-          type: 'number',
+          type: 'number'
         },
-        systemDomainId: {
+        "systemDomainId": {
           name: 'systemDomainId',
-          type: 'string',
+          type: 'string'
         },
-        systemUserId: {
+        "systemUserId": {
           name: 'systemUserId',
-          type: 'string',
+          type: 'string'
         },
-        storageFileId: {
+        "storageFileId": {
           name: 'storageFileId',
-          type: 'string',
+          type: 'string'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date',
+          type: 'Date'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date',
+          type: 'Date'
         },
       },
       relations: {
         storageFile: {
           name: 'storageFile',
           type: 'StorageFile',
-          model: 'StorageFile',
+          model: 'StorageFile'
         },
         systemDomain: {
           name: 'systemDomain',
           type: 'SystemDomain',
-          model: 'SystemDomain',
+          model: 'SystemDomain'
         },
         systemUser: {
           name: 'systemUser',
           type: 'SystemUser',
-          model: 'SystemUser',
+          model: 'SystemUser'
         },
-      },
+      }
     }
   }
 }

@@ -1,21 +1,21 @@
 /* tslint:disable */
 
-declare var Object: any
+declare var Object: any;
 export interface SystemInterface {
-  id?: number
+  "id"?: number;
 }
 
 export class System implements SystemInterface {
-  id: number
+  "id": number;
   constructor(data?: SystemInterface) {
-    Object.assign(this, data)
+    Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `System`.
    */
   public static getModelName() {
-    return 'System'
+    return "System";
   }
   /**
   * @method factory
@@ -23,8 +23,8 @@ export class System implements SystemInterface {
   * @license MIT
   * This method creates an instance of System for dynamic purposes.
   **/
-  public static factory(data: SystemInterface): System {
-    return new System(data)
+  public static factory(data: SystemInterface): System{
+    return new System(data);
   }
   /**
   * @method getModelDefinition
@@ -39,12 +39,13 @@ export class System implements SystemInterface {
       plural: 'System',
       path: 'System',
       properties: {
-        id: {
+        "id": {
           name: 'id',
-          type: 'number',
+          type: 'number'
         },
       },
-      relations: {},
+      relations: {
+      }
     }
   }
 }

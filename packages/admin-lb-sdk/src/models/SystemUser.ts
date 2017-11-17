@@ -1,54 +1,59 @@
 /* tslint:disable */
-import { ContentEvent, ContentPage, ContentProduct, ContentPost } from '../index'
+import {
+  ContentEvent,
+  ContentPage,
+  ContentProduct,
+  ContentPost
+} from '../index';
 
-declare var Object: any
+declare var Object: any;
 export interface SystemUserInterface {
-  id: string
-  username: string
-  email: string
-  firstName: string
-  lastName: string
-  fullName?: string
-  avatar?: string
-  realm?: string
-  emailVerified?: boolean
-  created?: Date
-  modified?: Date
-  password?: string
-  accessTokens?: any[]
-  contentEvents?: ContentEvent[]
-  contentPages?: ContentPage[]
-  contentProducts?: ContentProduct[]
-  contentPosts?: ContentPost[]
+  "id": string;
+  "username": string;
+  "email": string;
+  "firstName": string;
+  "lastName": string;
+  "fullName"?: string;
+  "avatar"?: string;
+  "realm"?: string;
+  "emailVerified"?: boolean;
+  "created"?: Date;
+  "modified"?: Date;
+  "password"?: string;
+  accessTokens?: any[];
+  contentEvents?: ContentEvent[];
+  contentPages?: ContentPage[];
+  contentProducts?: ContentProduct[];
+  contentPosts?: ContentPost[];
 }
 
 export class SystemUser implements SystemUserInterface {
-  id: string
-  username: string
-  email: string
-  firstName: string
-  lastName: string
-  fullName: string
-  avatar: string
-  realm: string
-  emailVerified: boolean
-  created: Date
-  modified: Date
-  password: string
-  accessTokens: any[]
-  contentEvents: ContentEvent[]
-  contentPages: ContentPage[]
-  contentProducts: ContentProduct[]
-  contentPosts: ContentPost[]
+  "id": string;
+  "username": string;
+  "email": string;
+  "firstName": string;
+  "lastName": string;
+  "fullName": string;
+  "avatar": string;
+  "realm": string;
+  "emailVerified": boolean;
+  "created": Date;
+  "modified": Date;
+  "password": string;
+  accessTokens: any[];
+  contentEvents: ContentEvent[];
+  contentPages: ContentPage[];
+  contentProducts: ContentProduct[];
+  contentPosts: ContentPost[];
   constructor(data?: SystemUserInterface) {
-    Object.assign(this, data)
+    Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `SystemUser`.
    */
   public static getModelName() {
-    return 'SystemUser'
+    return "SystemUser";
   }
   /**
   * @method factory
@@ -56,8 +61,8 @@ export class SystemUser implements SystemUserInterface {
   * @license MIT
   * This method creates an instance of SystemUser for dynamic purposes.
   **/
-  public static factory(data: SystemUserInterface): SystemUser {
-    return new SystemUser(data)
+  public static factory(data: SystemUserInterface): SystemUser{
+    return new SystemUser(data);
   }
   /**
   * @method getModelDefinition
@@ -72,82 +77,82 @@ export class SystemUser implements SystemUserInterface {
       plural: 'Users',
       path: 'Users',
       properties: {
-        id: {
+        "id": {
           name: 'id',
-          type: 'string',
+          type: 'string'
         },
-        username: {
+        "username": {
           name: 'username',
-          type: 'string',
+          type: 'string'
         },
-        email: {
+        "email": {
           name: 'email',
-          type: 'string',
+          type: 'string'
         },
-        firstName: {
+        "firstName": {
           name: 'firstName',
-          type: 'string',
+          type: 'string'
         },
-        lastName: {
+        "lastName": {
           name: 'lastName',
-          type: 'string',
+          type: 'string'
         },
-        fullName: {
+        "fullName": {
           name: 'fullName',
-          type: 'string',
+          type: 'string'
         },
-        avatar: {
+        "avatar": {
           name: 'avatar',
-          type: 'string',
+          type: 'string'
         },
-        realm: {
+        "realm": {
           name: 'realm',
-          type: 'string',
+          type: 'string'
         },
-        emailVerified: {
+        "emailVerified": {
           name: 'emailVerified',
-          type: 'boolean',
+          type: 'boolean'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date',
+          type: 'Date'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date',
+          type: 'Date'
         },
-        password: {
+        "password": {
           name: 'password',
-          type: 'string',
+          type: 'string'
         },
       },
       relations: {
         accessTokens: {
           name: 'accessTokens',
           type: 'any[]',
-          model: '',
+          model: ''
         },
         contentEvents: {
           name: 'contentEvents',
           type: 'ContentEvent[]',
-          model: 'ContentEvent',
+          model: 'ContentEvent'
         },
         contentPages: {
           name: 'contentPages',
           type: 'ContentPage[]',
-          model: 'ContentPage',
+          model: 'ContentPage'
         },
         contentProducts: {
           name: 'contentProducts',
           type: 'ContentProduct[]',
-          model: 'ContentProduct',
+          model: 'ContentProduct'
         },
         contentPosts: {
           name: 'contentPosts',
           type: 'ContentPost[]',
-          model: 'ContentPost',
+          model: 'ContentPost'
         },
-      },
+      }
     }
   }
 }

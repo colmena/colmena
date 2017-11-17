@@ -1,42 +1,48 @@
 /* tslint:disable */
-import { ContentEvent, ContentPage, ContentProduct, ContentPost, SystemDomain } from '../index'
+import {
+  ContentEvent,
+  ContentPage,
+  ContentProduct,
+  ContentPost,
+  SystemDomain
+} from '../index';
 
-declare var Object: any
+declare var Object: any;
 export interface StorageFileInterface {
-  id?: string
-  name?: string
-  type?: string
-  created?: Date
-  modified?: Date
-  container?: string
-  contentEvents?: ContentEvent[]
-  contentPages?: ContentPage[]
-  contentProducts?: ContentProduct[]
-  contentPosts?: ContentPost[]
-  systemDomain?: SystemDomain
+  "id"?: string;
+  "name"?: string;
+  "type"?: string;
+  "created"?: Date;
+  "modified"?: Date;
+  "container"?: string;
+  contentEvents?: ContentEvent[];
+  contentPages?: ContentPage[];
+  contentProducts?: ContentProduct[];
+  contentPosts?: ContentPost[];
+  systemDomain?: SystemDomain;
 }
 
 export class StorageFile implements StorageFileInterface {
-  id: string
-  name: string
-  type: string
-  created: Date
-  modified: Date
-  container: string
-  contentEvents: ContentEvent[]
-  contentPages: ContentPage[]
-  contentProducts: ContentProduct[]
-  contentPosts: ContentPost[]
-  systemDomain: SystemDomain
+  "id": string;
+  "name": string;
+  "type": string;
+  "created": Date;
+  "modified": Date;
+  "container": string;
+  contentEvents: ContentEvent[];
+  contentPages: ContentPage[];
+  contentProducts: ContentProduct[];
+  contentPosts: ContentPost[];
+  systemDomain: SystemDomain;
   constructor(data?: StorageFileInterface) {
-    Object.assign(this, data)
+    Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
    * i.e. `StorageFile`.
    */
   public static getModelName() {
-    return 'StorageFile'
+    return "StorageFile";
   }
   /**
   * @method factory
@@ -44,8 +50,8 @@ export class StorageFile implements StorageFileInterface {
   * @license MIT
   * This method creates an instance of StorageFile for dynamic purposes.
   **/
-  public static factory(data: StorageFileInterface): StorageFile {
-    return new StorageFile(data)
+  public static factory(data: StorageFileInterface): StorageFile{
+    return new StorageFile(data);
   }
   /**
   * @method getModelDefinition
@@ -60,58 +66,58 @@ export class StorageFile implements StorageFileInterface {
       plural: 'StorageFiles',
       path: 'StorageFiles',
       properties: {
-        id: {
+        "id": {
           name: 'id',
-          type: 'string',
+          type: 'string'
         },
-        name: {
+        "name": {
           name: 'name',
-          type: 'string',
+          type: 'string'
         },
-        type: {
+        "type": {
           name: 'type',
-          type: 'string',
+          type: 'string'
         },
-        created: {
+        "created": {
           name: 'created',
-          type: 'Date',
+          type: 'Date'
         },
-        modified: {
+        "modified": {
           name: 'modified',
-          type: 'Date',
+          type: 'Date'
         },
-        container: {
+        "container": {
           name: 'container',
-          type: 'string',
+          type: 'string'
         },
       },
       relations: {
         contentEvents: {
           name: 'contentEvents',
           type: 'ContentEvent[]',
-          model: 'ContentEvent',
+          model: 'ContentEvent'
         },
         contentPages: {
           name: 'contentPages',
           type: 'ContentPage[]',
-          model: 'ContentPage',
+          model: 'ContentPage'
         },
         contentProducts: {
           name: 'contentProducts',
           type: 'ContentProduct[]',
-          model: 'ContentProduct',
+          model: 'ContentProduct'
         },
         contentPosts: {
           name: 'contentPosts',
           type: 'ContentPost[]',
-          model: 'ContentPost',
+          model: 'ContentPost'
         },
         systemDomain: {
           name: 'systemDomain',
           type: 'SystemDomain',
-          model: 'SystemDomain',
+          model: 'SystemDomain'
         },
-      },
+      }
     }
   }
 }
