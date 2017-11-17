@@ -48,6 +48,7 @@
     "@colmena/module-admin-storage": "^0.2.0",
     "@colmena/module-admin-system": "^0.2.0",
     "core-js": "2.5.0",
+    "node-sass": "^4.6.1",
     "rxjs": "5.4.3",
     "zone.js": "0.8.17"
   },
