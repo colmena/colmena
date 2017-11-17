@@ -37,6 +37,7 @@ export class Meta implements MetaInterface {
     return {
       name: 'Meta',
       plural: 'Meta',
+      path: 'Meta',
       properties: {
         "id": {
           name: 'id',

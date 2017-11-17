@@ -16,13 +16,11 @@ export interface SystemUserInterface {
   "fullName"?: string;
   "avatar"?: string;
   "realm"?: string;
-  "password": string;
   "emailVerified"?: boolean;
-  "verificationToken"?: string;
   "created"?: Date;
   "modified"?: Date;
+  "password"?: string;
   accessTokens?: any[];
-  roles?: any[];
   contentEvents?: ContentEvent[];
   contentPages?: ContentPage[];
   contentProducts?: ContentProduct[];
@@ -38,13 +36,11 @@ export class SystemUser implements SystemUserInterface {
   "fullName": string;
   "avatar": string;
   "realm": string;
-  "password": string;
   "emailVerified": boolean;
-  "verificationToken": string;
   "created": Date;
   "modified": Date;
+  "password": string;
   accessTokens: any[];
-  roles: any[];
   contentEvents: ContentEvent[];
   contentPages: ContentPage[];
   contentProducts: ContentProduct[];
@@ -79,6 +75,7 @@ export class SystemUser implements SystemUserInterface {
     return {
       name: 'SystemUser',
       plural: 'Users',
+      path: 'Users',
       properties: {
         "id": {
           name: 'id',
@@ -112,17 +109,9 @@ export class SystemUser implements SystemUserInterface {
           name: 'realm',
           type: 'string'
         },
-        "password": {
-          name: 'password',
-          type: 'string'
-        },
         "emailVerified": {
           name: 'emailVerified',
           type: 'boolean'
-        },
-        "verificationToken": {
-          name: 'verificationToken',
-          type: 'string'
         },
         "created": {
           name: 'created',
@@ -132,15 +121,14 @@ export class SystemUser implements SystemUserInterface {
           name: 'modified',
           type: 'Date'
         },
+        "password": {
+          name: 'password',
+          type: 'string'
+        },
       },
       relations: {
         accessTokens: {
           name: 'accessTokens',
-          type: 'any[]',
-          model: ''
-        },
-        roles: {
-          name: 'roles',
           type: 'any[]',
           model: ''
         },

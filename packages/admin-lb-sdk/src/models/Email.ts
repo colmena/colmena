@@ -47,6 +47,7 @@ export class Email implements EmailInterface {
     return {
       name: 'Email',
       plural: 'Emails',
+      path: 'Emails',
       properties: {
         "to": {
           name: 'to',

@@ -62,6 +62,7 @@ export class ContentPost implements ContentPostInterface {
     return {
       name: 'ContentPost',
       plural: 'ContentPosts',
+      path: 'ContentPosts',
       properties: {
         "title": {
           name: 'title',

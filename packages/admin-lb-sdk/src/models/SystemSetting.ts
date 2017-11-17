@@ -47,6 +47,7 @@ export class SystemSetting implements SystemSettingInterface {
     return {
       name: 'SystemSetting',
       plural: 'Settings',
+      path: 'Settings',
       properties: {
         "key": {
           name: 'key',

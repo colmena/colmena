@@ -64,6 +64,7 @@ export class StorageFile implements StorageFileInterface {
     return {
       name: 'StorageFile',
       plural: 'StorageFiles',
+      path: 'StorageFiles',
       properties: {
         "id": {
           name: 'id',

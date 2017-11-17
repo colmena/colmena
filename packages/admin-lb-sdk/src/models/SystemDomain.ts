@@ -62,6 +62,7 @@ export class SystemDomain implements SystemDomainInterface {
     return {
       name: 'SystemDomain',
       plural: 'Domains',
+      path: 'Domains',
       properties: {
         "id": {
           name: 'id',

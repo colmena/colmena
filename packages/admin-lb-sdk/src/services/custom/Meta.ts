@@ -102,7 +102,6 @@ export class MetaApi extends BaseLoopBackApi {
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (typeof res !== 'undefined' && res !== null) _urlParams.res = res;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
