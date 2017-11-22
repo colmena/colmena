@@ -62,6 +62,7 @@ export class ContentPage implements ContentPageInterface {
     return {
       name: 'ContentPage',
       plural: 'ContentPages',
+      path: 'ContentPages',
       properties: {
         "name": {
           name: 'name',

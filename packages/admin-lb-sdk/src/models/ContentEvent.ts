@@ -64,6 +64,7 @@ export class ContentEvent implements ContentEventInterface {
     return {
       name: 'ContentEvent',
       plural: 'ContentEvents',
+      path: 'ContentEvents',
       properties: {
         "name": {
           name: 'name',

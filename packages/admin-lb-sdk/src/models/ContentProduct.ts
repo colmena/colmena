@@ -66,6 +66,7 @@ export class ContentProduct implements ContentProductInterface {
     return {
       name: 'ContentProduct',
       plural: 'ContentProducts',
+      path: 'ContentProducts',
       properties: {
         "name": {
           name: 'name',

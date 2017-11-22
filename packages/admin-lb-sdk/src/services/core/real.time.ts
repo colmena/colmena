@@ -1,7 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { IO } from './io.service';
 import { LoopBackAuth } from './auth.service';
-import { LoopBackConfig } from '../../lb.config';
 import { FireLoop } from '../../models/FireLoop';
 import { SocketConnection } from '../../sockets/socket.connections';
 import { SDKModels } from '../custom/SDKModels';

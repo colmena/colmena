@@ -75,7 +75,7 @@ export class SocketConnection {
       // Create new socket connection
       this.socket = this.driver.connect(LoopBackConfig.getPath(), {
         log: false,
-        secure: false,
+        secure: LoopBackConfig.isSecureWebSocketsSet(),
         forceNew: true,
         forceWebsockets: true,
         transports: ['websocket']
@@ -163,6 +163,21 @@ export class SocketConnection {
     }
   }
   /**
+   * @method removeAllListeners
+   * @param {string} event Event name
+   * @param {Function} handler Event listener handler
+   * @return {void}
+   * @description
+   * This method will wrap the original "on" method and run it within the Angular Zone
+   * Note: off is being used since the nativescript socket io client does not provide
+   * removeListener method, but only provides with off which is provided in any platform.
+   **/
+  public removeAllListeners(event: string): void {
+    if (typeof this.socket.removeAllListeners === 'function') {
+      this.socket.removeAllListeners(event);
+    }
+  }
+  /**
    * @method disconnect
    * @return {void}
    * @description
@@ -183,6 +198,7 @@ export class SocketConnection {
       if (this.isConnected()) {
         this.socket.emit('lb-ping');
       } else {
+        this.socket.removeAllListeners('lb-pong');
         clearInterval(heartbeater);
       }
     }, 15000);

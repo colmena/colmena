@@ -45,7 +45,8 @@
     "servers:rm": "npm run servers:stop && docker-compose rm -f",
     "lint": "prettier --write",
     "sdk": "npm run sdk:api",
-    "sdk:api": "cross-env NODE_ENV=codegen lb-sdk --wipe enabled server/server.js ../../packages/admin-lb-sdk/src",
+    "sdk:api":
+      "cross-env NODE_ENV=codegen ts-node  --fast --cache-directory ./.ts-cache node_modules/.bin/lb-sdk --wipe enabled apps/api/server/server.ts packages/admin-lb-sdk/src",
     "start": "cd apps/api && npm start",
     "test": "true",
     "precommit": "lint-staged",

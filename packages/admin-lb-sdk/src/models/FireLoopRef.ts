@@ -18,6 +18,8 @@ export class FireLoopRef<T> {
   private instance: any;
   // Model Childs
   private childs: any = {};
+  // Disposable Events
+  private disposable: { [key: string]: any } = {};
   /**
   * @method constructor
   * @param {any} model The model we want to create a reference
@@ -37,8 +39,8 @@ export class FireLoopRef<T> {
     private relationship: string = null
   ) {
     this.socket.emit(
-      `Subscribe.${ !parent ? model.getModelName() : parent.model.getModelName() }`,
-      { id : this.id, scope:  model.getModelName(), relationship: relationship }
+      `Subscribe.${!parent ? model.getModelName() : parent.model.getModelName()}`,
+      { id: this.id, scope: model.getModelName(), relationship: relationship }
     );
     return this;
   }
@@ -54,9 +56,13 @@ export class FireLoopRef<T> {
   * }
   **/
   public dispose(): void {
-    this.operation('dispose', {})
-        .subscribe()
-        .unsubscribe();
+    const subscription = this.operation('dispose', {}).subscribe(() => {
+      Object.keys(this.disposable).forEach((channel: string) => {
+        this.socket.removeListener(channel, this.disposable[channel]);
+        this.socket.removeAllListeners(channel);
+      });
+      subscription.unsubscribe();
+    });
   }
   /**
   * @method upsert
@@ -116,9 +122,9 @@ export class FireLoopRef<T> {
   public onRemote(method: string): Observable<any> {
     let event: string = 'remote';
     if (!this.relationship) {
-      event = `${ this.model.getModelName() }.${event}`;
+      event = `${this.model.getModelName()}.${event}`;
     } else {
-      event = `${ this.parent.model.getModelName() }.${ this.relationship }.${event}`;
+      event = `${this.parent.model.getModelName()}.${this.relationship}.${event}`;
     }
     return this.broadcasts(event, {});
   }
@@ -141,10 +147,10 @@ export class FireLoopRef<T> {
     }
     let request: any;
     if (!this.relationship) {
-      event = `${ this.model.getModelName() }.${event}`;
+      event = `${this.model.getModelName()}.${event}`;
       request = { filter };
     } else {
-      event = `${ this.parent.model.getModelName() }.${ this.relationship }.${event}`;
+      event = `${this.parent.model.getModelName()}.${this.relationship}.${event}`;
       request = { filter, parent: this.parent.instance };
     }
     if (event.match(/(value|change|stats)/)) {
@@ -182,7 +188,7 @@ export class FireLoopRef<T> {
   **/
   public make(instance: any): FireLoopRef<T> {
     let reference: FireLoopRef<T> = new FireLoopRef<T>(this.model, this.socket);
-        reference.instance = instance;
+    reference.instance = instance;
     return reference;
   }
   /**
@@ -200,15 +206,15 @@ export class FireLoopRef<T> {
     let settings: any = this.model.getModelDefinition().relations[relationship];
     // Verify the relationship actually exists
     if (!settings) {
-      throw new Error(`Invalid model relationship ${ this.model.getModelName() } <-> ${ relationship }, verify your model settings.`);
+      throw new Error(`Invalid model relationship ${this.model.getModelName()} <-> ${relationship}, verify your model settings.`);
     }
     // Verify if the relationship model is public
     if (settings.model === '') {
-      throw new Error(`Relationship model is private, cam't use ${ relationship } unless you set your model as public.`);
+      throw new Error(`Relationship model is private, cam't use ${relationship} unless you set your model as public.`);
     }
     // Lets get a model reference and add a reference for all of the models
-    let model: any   = this.model.models.get(settings.model);
-        model.models = this.model.models;
+    let model: any = this.model.models.get(settings.model);
+    model.models = this.model.models;
     // If everything goes well, we will store a child reference and return it.
     this.childs[relationship] = new FireLoopRef<T>(model, this.socket, this, relationship);
     return this.childs[relationship];
@@ -224,8 +230,8 @@ export class FireLoopRef<T> {
   private pull(event: string, request: any): Observable<T> {
     let sbj: Subject<T> = new Subject<T>();
     let that: FireLoopRef<T> = this;
-    let nowEvent: any = `${event}.pull.requested.${ this.id }`;
-    this.socket.emit(`${event}.pull.request.${ this.id }`, request);
+    let nowEvent: any = `${event}.pull.requested.${this.id}`;
+    this.socket.emit(`${event}.pull.request.${this.id}`, request);
     function pullNow(data: any) {
       if (that.socket.removeListener) {
         that.socket.removeListener(nowEvent, pullNow);
@@ -246,12 +252,21 @@ export class FireLoopRef<T> {
   **/
   private broadcasts(event: string, request: any): Observable<T> {
     let sbj: Subject<T> = new Subject<T>();
-    this.socket.on(
-      `${event}.broadcast.announce.${ this.id }`,
-      (res: T) =>
-        this.socket.emit(`${event}.broadcast.request.${ this.id }`, request)
-    );
-    this.socket.on(`${ event }.broadcast.${ this.id }`, (data: any) => sbj.next(data));
+    let channels: { announce: string, broadcast: string } = {
+      announce: `${event}.broadcast.announce.${this.id}`,
+      broadcast: `${event}.broadcast.${this.id}`
+    };
+    let that = this;
+    // Announces Handler
+    this.disposable[channels.announce] = function (res: T) {
+      that.socket.emit(`${event}.broadcast.request.${that.id}`, request)
+    };
+    // Broadcasts Handler
+    this.disposable[channels.broadcast] = function (data: any) {
+      sbj.next(data);
+    };
+    this.socket.on(channels.announce, this.disposable[channels.announce]);
+    this.socket.on(channels.broadcast, this.disposable[channels.broadcast]);
     return sbj.asObservable();
   }
   /**
@@ -264,9 +279,9 @@ export class FireLoopRef<T> {
   **/
   private operation(event: string, data: any): Observable<T> {
     if (!this.relationship) {
-      event = `${ this.model.getModelName() }.${event}.${ this.id }`;
+      event = `${this.model.getModelName()}.${event}.${this.id}`;
     } else {
-      event = `${ this.parent.model.getModelName() }.${ this.relationship }.${ event }.${ this.id }`;
+      event = `${this.parent.model.getModelName()}.${this.relationship}.${event}.${this.id}`;
     }
     let subject: Subject<T> = new Subject<T>();
     let config: { data: any, parent: any } = {
@@ -276,9 +291,9 @@ export class FireLoopRef<T> {
     this.socket.emit(event, config);
     let resultEvent: string = '';
     if (!this.relationship) {
-      resultEvent = `${ this.model.getModelName()}.value.result.${ this.id }`;
+      resultEvent = `${this.model.getModelName()}.value.result.${this.id}`;
     } else {
-      resultEvent = `${ this.parent.model.getModelName() }.${ this.relationship }.value.result.${ this.id }`;
+      resultEvent = `${this.parent.model.getModelName()}.${this.relationship}.value.result.${this.id}`;
     }
     this.socket.on(resultEvent, (res: any) => {
       if (res.error) {
@@ -287,6 +302,9 @@ export class FireLoopRef<T> {
         subject.next(res);
       }
     });
+    if (event.match('dispose')) {
+      setTimeout(() => subject.next());
+    }
     // This event listener will be wiped within socket.connections
     this.socket.sharedObservables.sharedOnDisconnect.subscribe(() => subject.complete());
     return subject.asObservable().catch((error: any) => Observable.throw(error));
