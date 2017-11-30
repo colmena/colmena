@@ -158,6 +158,15 @@
     }
   },
   "lint-staged": {
-    "*.{css,js,json,ts}": ["npm run lint", "git add"]
+    "globOptions": {
+      "nonegate": true,
+      "matchBase": false
+    },
+    "linters": {
+      "packages/!(admin-lb-sdk)/**/*.{css,js,json,ts}": ["npm run lint", "git add"],
+      "packages/*.{css,js,json,ts}": ["npm run lint", "git add"],
+      "!(packages)/**/*.{css,js,json,ts}": ["npm run lint", "git add"],
+      "*.{css,js,json,ts}": ["npm run lint", "git add"]
+    }
   }
 }
