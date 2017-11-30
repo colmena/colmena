@@ -23,12 +23,6 @@ RAPID API DEVELOPMENT
   <a href="#sponsors"><img src="https://opencollective.com/colmena/sponsors/badge.svg" /></a>
 </p>
 
-<br> 
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/wnKKYkBUvZeL828tHvWRAczJ/colmena/colmena'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/wnKKYkBUvZeL828tHvWRAczJ/colmena/colmena.svg' />
-</a>
-
 ## About
 
 Colmena is a starter kit for an API with an Admin interface that can be easily extended and built upon.
