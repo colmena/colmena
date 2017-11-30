@@ -31,8 +31,8 @@
     "contributors:generate": "npx all-contributors generate",
     "build": "npm run build:admin",
     "build:admin": "cd apps/admin && npm run build",
-    "dev": "lerna run dev --stream",
-    "dev:admin": "lerna run dev --stream --scope @colmena/admin",
+    "dev": "concurrently --kill-others 'npm run dev:api' 'npm run dev:admin'",
+    "dev:admin": "cd apps/admin && npm run dev",
     "dev:api": "nodemon apps/api/server/server.ts",
     "docker:build": "docker build -t colmena/colmena:latest .",
     "docker:run": "docker run -it -p 3000:3000 -e INITDB=1 --name colmena --rm colmena/colmena:latest",
@@ -54,6 +54,7 @@
     "update": "ncu -a && npm update && lerna exec 'ncu -a && npm update'"
   },
   "dependencies": {
+    "concurrently": "3.5.1",
     "debug": "3.0.1",
     "ngx-quill": "1.4.0",
     "parent-require": "1.0.0",
