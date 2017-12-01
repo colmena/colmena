@@ -47,7 +47,7 @@
     "sdk": "npm run sdk:api",
     "sdk:api":
       "cross-env NODE_ENV=codegen ts-node  --fast --cache-directory ./.ts-cache node_modules/.bin/lb-sdk --wipe enabled apps/api/server/server.ts packages/admin-lb-sdk/src",
-    "start": "cd apps/api && npm start",
+    "start": "ts-node --fast apps/api/server/server.ts",
     "test": "true",
     "precommit": "lint-staged",
     "postinstall": "node ./postinstall",
